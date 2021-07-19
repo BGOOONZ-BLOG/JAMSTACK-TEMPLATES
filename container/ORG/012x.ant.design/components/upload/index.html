@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Upload 上传 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../../docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../../docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../../docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../../docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../cascader/"
+               class="">
+              Cascader
+              <span class="chinese">级联选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../date-picker/"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree-select/"
+               class="">
+              TreeSelect
+              <span class="chinese">树选择</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Upload
+              <span class="chinese">上传</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Upload 上传
+    </h1>
+    <p>文件选择上传和拖拽上传控件。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><p>上传是将信息（网页、文字、图片、视频等）通过网页或者上传工具发布到远程服务器上的过程。</p>
+<ul>
+<li>当需要上传一个或一些文件时。</li>
+<li>当需要展现上传的进度时。</li>
+<li>当需要使用拖拽交互时。</li>
+</ul>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>可选参数, 上传的文件</td>
+<td>String</td>
+<td>file</td>
+</tr>
+<tr>
+<td>action</td>
+<td>必选参数, 上传的地址</td>
+<td>String</td>
+<td>无</td>
+</tr>
+<tr>
+<td>data</td>
+<td>可选参数, 上传所需参数</td>
+<td>Object</td>
+<td>无</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>可选参数, 设置上传的请求头部，IE10 以上有效</td>
+<td>Object</td>
+<td>无</td>
+</tr>
+<tr>
+<td>showUploadList</td>
+<td>可选参数, 是否展示 uploadList, 默认开启</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>可选参数, 是否支持多选文件，<code>ie10+</code> 支持。开启后按住 ctrl 可选择多个文件。</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>可选参数, 接受上传的文件类型, 详见 input accept Attribute</td>
+<td>String</td>
+<td>无</td>
+</tr>
+<tr>
+<td>beforeUpload</td>
+<td>可选参数, 上传文件之前的钩子，参数为上传的文件，若返回 <code>false</code> 或者 Promise 则停止上传。<strong>注意：该方法不支持老 IE</strong>。</td>
+<td>Function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>可选参数, 上传文件改变时的状态，详见 onChange</td>
+<td>Function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>listType</td>
+<td>上传列表的内建样式，支持两种基本样式 <code>text</code> or <code>picture</code></td>
+<td>String</td>
+<td>&#39;text&#39;</td>
+</tr>
+<tr>
+<td>className</td>
+<td>自定义类名</td>
+<td>String</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onchange">onChange<a href="#onchange" class="anchor">#</a> </h3><p>文件状态改变的回调，返回为：</p>
+<div class="highlight"><pre><code class="javascript">{
+  file: { ... },
+  fileList: [ ... ],
+  event: { ... }
+}</code></pre></div><ol>
+<li><p><code>file</code> 当前操作的文件对象。</p>
+<div class="highlight"><pre><code class="javascript">{
+  uid: <span class="hljs-string">'uid'</span>,      <span class="hljs-comment">// 文件唯一标识，建议设置为负数，防止和内部产生的 id 冲突</span>
+  name: <span class="hljs-string">'xx.png'</span>   <span class="hljs-comment">// 文件名</span>
+  status: <span class="hljs-string">'done'</span>,  <span class="hljs-comment">// 状态有：uploading done error removed</span>
+  response: <span class="hljs-string">'{"status":"success"}'</span>  <span class="hljs-comment">// 服务端响应内容</span>
+}</code></pre></div><p>如果上传控件是 multiple 时，此参数将为一个对象数组 <code>[file, ...]</code>。</p>
+</li>
+<li><p><code>fileList</code> 当前的文件列表。</p>
+</li>
+<li><code>event</code> 上传中的服务端响应内容，包含了上传进度等信息，高级浏览器支持。</li>
+</ol>
+<h2 id="显示下载链接">显示下载链接<a href="#显示下载链接" class="anchor">#</a> </h2><p>请使用 fileList 属性设置数组项的 url 属性进行展示控制。</p>
+<h2 id="ie-note">IE note<a href="#ie-note" class="anchor">#</a> </h2><ul>
+<li><a href="https://github.com/react-component/upload#ie89-note">https://github.com/react-component/upload#ie89-note</a></li>
+</ul>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var props = {
+  name: 'file',
+  action: '/upload.do',
+  headers: {
+    authorization: 'authorization-text'
+  },
+  onChange: function onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === 'done') {
+      _antd.message.success(info.file.name + ' \u4E0A\u4F20\u6210\u529F\u3002');
+    } else if (info.file.status === 'error') {
+      _antd.message.error(info.file.name + ' \u4E0A\u4F20\u5931\u8D25\u3002');
+    }
+  }
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Upload,
+  props,
+  React.createElement(
+    _antd.Button,
+    { type: 'ghost' },
+    React.createElement(_antd.Icon, { type: 'upload' }),
+    ' \u70B9\u51FB\u4E0A\u4F20'
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, message, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  name: <span class="hljs-string">'file'</span>,
+  action: <span class="hljs-string">'/upload.do'</span>,
+  headers: {
+    authorization: <span class="hljs-string">'authorization-text'</span>,
+  },
+  onChange(info) {
+    <span class="hljs-keyword">if</span> (info.file.status !== <span class="hljs-string">'uploading'</span>) {
+      <span class="hljs-built_in">console</span>.log(info.file, info.fileList);
+    }
+    <span class="hljs-keyword">if</span> (info.file.status === <span class="hljs-string">'done'</span>) {
+      message.success(<span class="hljs-string">`<span class="hljs-subst">${info.file.name}</span> 上传成功。`</span>);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (info.file.status === <span class="hljs-string">'error'</span>) {
+      message.error(<span class="hljs-string">`<span class="hljs-subst">${info.file.name}</span> 上传失败。`</span>);
+    }
+  }
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">点击上传</a>
+    </div>
+    
+<p>经典款式，用户点击按钮弹出文件选择框。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-filelist">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-filelist"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-filelist');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require('antd');
+
+var MyUpload = React.createClass({
+  displayName: 'MyUpload',
+  getInitialState: function getInitialState() {
+    return {
+      fileList: [{
+        uid: -1,
+        name: 'xxx.png',
+        status: 'done',
+        url: 'http://www.baidu.com/xxx.png'
+      }]
+    };
+  },
+  handleChange: function handleChange(info) {
+    var fileList = info.fileList;
+
+    // 1. 上传列表数量的限制
+    //    只显示最近上传的一个，旧的会被新的顶掉
+    fileList = fileList.slice(-2);
+
+    // 2. 读取远程路径并显示链接
+    fileList = fileList.map(function (file) {
+      if (file.response) {
+        // 组件会将 file.url 作为链接进行展示
+        file.url = file.response.url;
+      }
+      return file;
+    });
+
+    // 3. 按照服务器返回信息筛选成功上传的文件
+    fileList = fileList.filter(function (file) {
+      if (file.response) {
+        return file.response.status === 'success';
+      }
+      return true;
+    });
+
+    this.setState({ fileList: fileList });
+  },
+  render: function render() {
+    var props = {
+      action: '/upload.do',
+      onChange: this.handleChange,
+      multiple: true
+    };
+    return React.createElement(
+      _antd.Upload,
+      _extends({}, props, { fileList: this.state.fileList }),
+      React.createElement(
+        _antd.Button,
+        { type: 'ghost' },
+        React.createElement(_antd.Icon, { type: 'upload' }),
+        ' \u70B9\u51FB\u4E0A\u4F20'
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(MyUpload, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> MyUpload = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      fileList: [{
+        uid: -<span class="hljs-number">1</span>,
+        name: <span class="hljs-string">'xxx.png'</span>,
+        status: <span class="hljs-string">'done'</span>,
+        url: <span class="hljs-string">'http://www.baidu.com/xxx.png'</span>
+      }]
+    };
+  },
+  handleChange(info) {
+    <span class="hljs-keyword">let</span> fileList = info.fileList;
+
+    <span class="hljs-comment">// 1. 上传列表数量的限制</span>
+    <span class="hljs-comment">//    只显示最近上传的一个，旧的会被新的顶掉</span>
+    fileList = fileList.slice(-<span class="hljs-number">2</span>);
+
+    <span class="hljs-comment">// 2. 读取远程路径并显示链接</span>
+    fileList = fileList.map((file) =&gt; {
+      <span class="hljs-keyword">if</span> (file.response) {
+        <span class="hljs-comment">// 组件会将 file.url 作为链接进行展示</span>
+        file.url = file.response.url;
+      }
+      <span class="hljs-keyword">return</span> file;
+    });
+
+    <span class="hljs-comment">// 3. 按照服务器返回信息筛选成功上传的文件</span>
+    fileList = fileList.filter((file) =&gt; {
+      <span class="hljs-keyword">if</span> (file.response) {
+        <span class="hljs-keyword">return</span> file.response.status === <span class="hljs-string">'success'</span>;
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    });
+
+    <span class="hljs-keyword">this</span>.setState({ fileList });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> props = {
+      action: <span class="hljs-string">'/upload.do'</span>,
+      onChange: <span class="hljs-keyword">this</span>.handleChange,
+      multiple: <span class="hljs-literal">true</span>
+    };
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>} <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">MyUpload</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-filelist">完全控制的上传列表</a>
+    </div>
+    
+<p>使用 <code>fileList</code> 对列表进行完全控制，可以实现各种自定义功能，以下演示三种情况：</p>
+<p>1) 上传列表数量的限制。</p>
+<p>2) 读取远程路径并显示链接。</p>
+<p>3) 按照服务器返回信息筛选成功上传的文件。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-picture-style">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-picture-style"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-picture-style');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require('antd');
+
+var props = {
+  action: '/upload.do',
+  listType: 'picture',
+  defaultFileList: [{
+    uid: -1,
+    name: 'xxx.png',
+    status: 'done',
+    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+  }, {
+    uid: -2,
+    name: 'yyy.png',
+    status: 'done',
+    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+  }]
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    _antd.Upload,
+    props,
+    React.createElement(
+      _antd.Button,
+      { type: 'ghost' },
+      React.createElement(_antd.Icon, { type: 'upload' }),
+      ' \u70B9\u51FB\u4E0A\u4F20'
+    )
+  ),
+  React.createElement('br', null),
+  React.createElement('br', null),
+  React.createElement(
+    _antd.Upload,
+    _extends({}, props, { className: 'upload-list-inline' }),
+    React.createElement(
+      _antd.Button,
+      { type: 'ghost' },
+      React.createElement(_antd.Icon, { type: 'upload' }),
+      ' \u70B9\u51FB\u4E0A\u4F20'
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  action: <span class="hljs-string">'/upload.do'</span>,
+  listType: <span class="hljs-string">'picture'</span>,
+  defaultFileList: [{
+    uid: -<span class="hljs-number">1</span>,
+    name: <span class="hljs-string">'xxx.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+    thumbUrl: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+  }, {
+    uid: -<span class="hljs-number">2</span>,
+    name: <span class="hljs-string">'yyy.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+    thumbUrl: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+  }]
+};
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>} <span class="hljs-attribute">className</span>=<span class="hljs-value">"upload-list-inline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">/* 加几行样式将上传项变成平铺样式 */
+.upload-list-inline .ant-upload-list-item {
+  display: inline-block;
+  width: 200px;
+  margin-right: 8px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-comment">/* 加几行样式将上传项变成平铺样式 */</span>
+<span class="hljs-class">.upload-list-inline</span> <span class="hljs-class">.ant-upload-list-item</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-picture-style">图片列表样式</a>
+    </div>
+    
+<p>上传文件为图片，可展示本地缩略图。</p>
+<p><code>IE8/9</code> 不支持浏览器本地缩略图展示（<a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL">Ref</a>），可以写 <code>thumbUrl</code> 属性来代替。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-picture-card">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-picture-card"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-picture-card');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var props = {
+  action: '/upload.do',
+  listType: 'picture-card',
+  defaultFileList: [{
+    uid: -1,
+    name: 'xxx.png',
+    status: 'done',
+    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+  }]
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  { className: 'clearfix' },
+  React.createElement(
+    _antd.Upload,
+    props,
+    React.createElement(_antd.Icon, { type: 'plus' }),
+    React.createElement(
+      'div',
+      { className: 'ant-upload-text' },
+      '\u4E0A\u4F20\u7167\u7247'
+    )
+  ),
+  React.createElement(
+    'a',
+    { href: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png', target: '_blank', className: 'upload-example' },
+    React.createElement('img', { src: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png' }),
+    React.createElement(
+      'span',
+      null,
+      '\u793A\u4F8B'
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  action: <span class="hljs-string">'/upload.do'</span>,
+  listType: <span class="hljs-string">'picture-card'</span>,
+  defaultFileList: [{
+    uid: -<span class="hljs-number">1</span>,
+    name: <span class="hljs-string">'xxx.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+    thumbUrl: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+  }]
+};
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"clearfix"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-text"</span>&gt;</span>上传照片<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"upload-example"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>示例<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">/* 配合样式可以做出上传按钮和示例效果 */
+.ant-upload-select-picture-card i {
+  font-size: 28px;
+  color: #999;
+}
+
+.ant-upload-select-picture-card .ant-upload-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.upload-example {
+  position: relative;
+  display: inline-block;
+  height: 96px;
+  width: 96px;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  vertical-align: top;
+}
+
+.upload-example img {
+  height: 78px;
+  width: 78px;
+}
+
+.upload-example:before {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  content: ' ';
+  width: 78px;
+  height: 24px;
+  background-color: #808080;
+  opacity: .8;
+}
+
+.upload-example span {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 78px;
+  height: 24px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-comment">/* 配合样式可以做出上传按钮和示例效果 */</span>
+<span class="hljs-class">.ant-upload-select-picture-card</span> <span class="hljs-tag">i</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">28px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#999</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-upload-select-picture-card</span> <span class="hljs-class">.ant-upload-text</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">12px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#666</span></span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">96px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">96px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#d9d9d9</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> top</span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span> <span class="hljs-tag">img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">' '</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#808080</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">8</span></span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span> <span class="hljs-tag">span</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-picture-card">图片卡片样式</a>
+    </div>
+    
+<p>上传文件为图片，可展示本地缩略图。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-defaultfilelist">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-defaultfilelist"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-defaultfilelist');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var props = {
+  action: '/upload.do',
+  onChange: function onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file);
+      console.log(info.fileList);
+    }
+  },
+
+  defaultFileList: [{
+    uid: -1,
+    name: 'xxx.png',
+    status: 'done',
+    url: 'http://www.baidu.com/xxx.png'
+  }, {
+    uid: -2,
+    name: 'yyy.png',
+    status: 'done',
+    url: 'http://www.baidu.com/yyy.png'
+  }]
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Upload,
+  props,
+  React.createElement(
+    _antd.Button,
+    { type: 'ghost' },
+    React.createElement(_antd.Icon, { type: 'upload' }),
+    ' \u70B9\u51FB\u4E0A\u4F20'
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  action: <span class="hljs-string">'/upload.do'</span>,
+  onChange(info) {
+    <span class="hljs-keyword">if</span> (info.file.status !== <span class="hljs-string">'uploading'</span>) {
+      <span class="hljs-built_in">console</span>.log(info.file);
+      <span class="hljs-built_in">console</span>.log(info.fileList);
+    }
+  },
+  defaultFileList: [{
+    uid: -<span class="hljs-number">1</span>,
+    name: <span class="hljs-string">'xxx.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'http://www.baidu.com/xxx.png'</span>
+  }, {
+    uid: -<span class="hljs-number">2</span>,
+    name: <span class="hljs-string">'yyy.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'http://www.baidu.com/yyy.png'</span>
+  }]
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-defaultfilelist">传入已上传的文件</a>
+    </div>
+    
+<p>对已上传的文件进行编辑。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-drag">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-drag"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-drag');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Dragger = _antd.Upload.Dragger;
+
+var props = {
+  name: 'file',
+  showUploadList: false,
+  action: '/upload.do'
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'div',
+    { style: { width: 246, height: 140 } },
+    React.createElement(
+      Dragger,
+      props,
+      React.createElement(_antd.Icon, { type: 'plus' })
+    )
+  ),
+  React.createElement(
+    'div',
+    { style: { marginTop: 16, height: 180 } },
+    React.createElement(
+      Dragger,
+      props,
+      React.createElement(
+        'p',
+        { className: 'ant-upload-drag-icon' },
+        React.createElement(_antd.Icon, { type: 'inbox' })
+      ),
+      React.createElement(
+        'p',
+        { className: 'ant-upload-text' },
+        '\u70B9\u51FB\u6216\u5C06\u6587\u4EF6\u62D6\u62FD\u5230\u6B64\u533A\u57DF\u4E0A\u4F20'
+      ),
+      React.createElement(
+        'p',
+        { className: 'ant-upload-hint' },
+        '\u652F\u6301\u5355\u4E2A\u6216\u6279\u91CF\u4E0A\u4F20\uFF0C\u4E25\u7981\u4E0A\u4F20\u516C\u53F8\u5185\u90E8\u8D44\u6599\u53CA\u5176\u4ED6\u8FDD\u7981\u6587\u4EF6'
+      )
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Dragger = Upload.Dragger;
+
+<span class="hljs-keyword">const</span> props = {
+  name: <span class="hljs-string">'file'</span>,
+  showUploadList: <span class="hljs-literal">false</span>,
+  action: <span class="hljs-string">'/upload.do'</span>,
+};
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">246</span>, <span class="hljs-attribute">height:</span> <span class="hljs-attribute">140</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Dragger</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Dragger</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginTop:</span> <span class="hljs-attribute">16</span>, <span class="hljs-attribute">height:</span> <span class="hljs-attribute">180</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Dragger</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-drag-icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"inbox"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-text"</span>&gt;</span>点击或将文件拖拽到此区域上传<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-hint"</span>&gt;</span>支持单个或批量上传，严禁上传公司内部资料及其他违禁文件<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Dragger</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-drag">拖拽上传</a>
+    </div>
+    
+<p>可以把文件拖入指定区域，完成上传，同样支持点击上传。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-beforeupload">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-beforeupload"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-beforeupload');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var props = {
+  action: '/upload.do',
+  beforeUpload: function beforeUpload(file) {
+    var isJPG = file.type === 'image/jpeg';
+    if (!isJPG) {
+      _antd.message.error('只能上传 JPG 文件哦！');
+    }
+    return isJPG;
+  }
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Upload,
+  props,
+  React.createElement(
+    _antd.Button,
+    { type: 'ghost' },
+    React.createElement(_antd.Icon, { type: 'upload' }),
+    ' \u70B9\u51FB\u4E0A\u4F20'
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Button, Icon, message } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  action: <span class="hljs-string">'/upload.do'</span>,
+  beforeUpload(file) {
+    <span class="hljs-keyword">const</span> isJPG = file.type === <span class="hljs-string">'image/jpeg'</span>;
+    <span class="hljs-keyword">if</span> (!isJPG) {
+      message.error(<span class="hljs-string">'只能上传 JPG 文件哦！'</span>);
+    }
+    <span class="hljs-keyword">return</span> isJPG;
+  }
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-beforeupload">限制用户上传的文件</a>
+    </div>
+    
+<p>可以通过 <code>beforeUpload</code> 在文件上传之前进行干预，如限制用户只能上传 JPG 文件。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+  </div>
+</div>
+<ul class="toc demos-anchor">
+  <li>
+    <a title="点击上传" href="#demo-basic">
+      <span>点击上传</span>
+    </a>
+  </li>
+  <li>
+    <a title="传入已上传的文件" href="#demo-defaultfilelist">
+      <span>传入已上传的文件</span>
+    </a>
+  </li>
+  <li>
+    <a title="完全控制的上传列表" href="#demo-filelist">
+      <span>完全控制的上传列表</span>
+    </a>
+  </li>
+  <li>
+    <a title="拖拽上传" href="#demo-drag">
+      <span>拖拽上传</span>
+    </a>
+  </li>
+  <li>
+    <a title="图片列表样式" href="#demo-picture-style">
+      <span>图片列表样式</span>
+    </a>
+  </li>
+  <li>
+    <a title="限制用户上传的文件" href="#demo-beforeupload">
+      <span>限制用户上传的文件</span>
+    </a>
+  </li>
+  <li>
+    <a title="图片卡片样式" href="#demo-picture-card">
+      <span>图片卡片样式</span>
+    </a>
+  </li>
+</ul>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

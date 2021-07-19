@@ -1,0 +1,35 @@
+<div class="code-box" id="demo-duration">
+  <div class="code-box-demo">
+    <div id="components-message-demo-duration"></div>
+    <script>mountNode = document.getElementById('components-message-demo-duration');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var success = function success() {
+  _antd.message.success('这是一条成功的提示,并将于10秒后消失', 10);
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Button,
+  { onClick: success },
+  '\u81EA\u5B9A\u4E49\u65F6\u957F\u63D0\u793A'
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> success = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  message.success(<span class="hljs-string">'这是一条成功的提示,并将于10秒后消失'</span>, <span class="hljs-number">10</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>自定义时长提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-duration">修改延时</a>
+    </div>
+    
+<p>自定义时长 <code>10s</code>，默认时长为 <code>1.5s</code>。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

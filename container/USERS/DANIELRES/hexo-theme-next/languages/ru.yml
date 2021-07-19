@@ -71,5 +71,5 @@ cheers:
 keep_on: Продолжаю писать.
 
 symbol:
-  comma: ', '
-  period: '. '
+  comma: ", "
+  period: ". "

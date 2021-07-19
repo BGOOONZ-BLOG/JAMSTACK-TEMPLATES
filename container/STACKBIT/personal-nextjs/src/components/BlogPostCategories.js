@@ -22,7 +22,7 @@ export default class BlogPostCategories extends React.Component {
                     <span>{category.title}</span>
                     {index < categoryLength - 1 && ', '}
                 </React.Fragment>
-            )
+            );
         }
     }
 
@@ -33,9 +33,7 @@ export default class BlogPostCategories extends React.Component {
         const containerClass = _.get(this.props, 'containerClass', '');
 
         return (
-            <span className={containerClass}>
-                {_.map(categories, (categoryRef, index) =>this.renderCategory(categoryRef, categoryLength, index, data))}
-            </span>
+            <span className={containerClass}>{_.map(categories, (categoryRef, index) => this.renderCategory(categoryRef, categoryLength, index, data))}</span>
         );
     }
 }

@@ -27,6 +27,6 @@ export function init(config: IDataConfiguration): IDatabase {
   return {
     loggingModel: LoggingModel,
     taskModel: TaskModel,
-    userModel: UserModel
+    userModel: UserModel,
   };
 }

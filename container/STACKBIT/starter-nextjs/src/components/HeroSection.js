@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {classNames, withPrefix} from '../utils';
+import { classNames, withPrefix } from '../utils';
 import SectionActions from './SectionActions';
 
 export default class HeroSection extends React.Component {
@@ -38,12 +38,12 @@ export default class HeroSection extends React.Component {
         const backgroundImage = _.get(background, 'background_image');
 
         return (
-            <section 
+            <section
                 className={classNames('section', 'hero', {
                     'bg-image': hasBackground && backgroundImage,
                     'bg-gray': hasBackground && backgroundColor === 'gray',
                     'bg-blue': hasBackground && backgroundColor === 'blue',
-                    'inverse': hasBackground && backgroundColor === 'blue',
+                    inverse: hasBackground && backgroundColor === 'blue',
                     'section--padding': hasBackground && image
                 })}
             >
@@ -66,7 +66,11 @@ export default class HeroSection extends React.Component {
                         )}
                         <div className="cell section__body">
                             {title && <h1 className="section__title">{title}</h1>}
-                            {subtitle && <div className="section__copy"><p>{subtitle}</p></div>}
+                            {subtitle && (
+                                <div className="section__copy">
+                                    <p>{subtitle}</p>
+                                </div>
+                            )}
                             {!_.isEmpty(actions) && (
                                 <div className="section__actions btn-group">
                                     <SectionActions actions={actions} />

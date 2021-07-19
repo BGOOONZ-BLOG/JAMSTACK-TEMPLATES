@@ -1,21 +1,21 @@
-import React from 'react'
-import { Formik, Form } from 'formik'
+import React from "react";
+import { Formik, Form } from "formik";
 
-import FormRow from 'shared/Forms/Row'
+import FormRow from "shared/Forms/Row";
 
 const EmailPasswordForm = ({ onSubmit }) => {
   return (
     <Formik
       initialValues={{
-        email: '',
-        password: '',
+        email: "",
+        password: "",
       }}
       onSubmit={onSubmit}
-      validate={values => {
-        let errors = {}
-        if (!values.email) errors.email = 'Required'
-        if (!values.password) errors.password = 'Required'
-        return errors
+      validate={(values) => {
+        let errors = {};
+        if (!values.email) errors.email = "Required";
+        if (!values.password) errors.password = "Required";
+        return errors;
       }}
     >
       {() => (
@@ -32,7 +32,7 @@ const EmailPasswordForm = ({ onSubmit }) => {
         </Form>
       )}
     </Formik>
-  )
-}
+  );
+};
 
-export default EmailPasswordForm
+export default EmailPasswordForm;

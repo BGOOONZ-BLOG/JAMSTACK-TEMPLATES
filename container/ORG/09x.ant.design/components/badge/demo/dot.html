@@ -1,0 +1,51 @@
+<div class="code-box" id="demo-dot">
+  <div class="code-box-demo">
+    <div id="components-badge-demo-dot"></div>
+    <script>(function(){"use strict";
+
+var Badge = antd.Badge;
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    Badge,
+    { dot: true },
+    React.createElement("i", { className: "anticon anticon-notification" })
+  ),
+  React.createElement(
+    Badge,
+    { dot: true },
+    React.createElement(
+      "a",
+      { href: "#" },
+      "一个链接"
+    )
+  )
+), document.getElementById('components-badge-demo-dot'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Badge = antd.Badge;
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Badge</span> <span class="attribute">dot</span>=<span class="value">{true}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-notification"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Badge</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Badge</span> <span class="attribute">dot</span>=<span class="value">{true}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>一个链接<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Badge</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>, document.getElementById('components-badge-demo-dot'));</span></code></pre></div><style>
+.anticon-notification {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-dot">讨嫌的小红点</a>
+    </div>
+    <p>没有具体的数字。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

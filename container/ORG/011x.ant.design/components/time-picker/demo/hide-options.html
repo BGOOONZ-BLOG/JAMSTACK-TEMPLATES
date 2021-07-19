@@ -1,0 +1,58 @@
+<div class="code-box" id="picker-demo-hide-options">
+  <div class="code-box-demo">
+    <div id="components-time-picker-demo-hide-options"></div>
+    <script>mountNode = document.getElementById('components-time-picker-demo-hide-options');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function newArray(start, end) {
+  var result = [];
+  for (var i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+function disabledMinutes() {
+  return newArray(0, 60).filter(function (value) {
+    return value % 10 !== 0;
+  });
+}
+
+function disabledSeconds() {
+  return newArray(0, 60).filter(function (value) {
+    return value % 30 !== 0;
+  });
+}
+
+ReactDOM.render(React.createElement(_antd.TimePicker, { disabledMinutes: disabledMinutes, disabledSeconds: disabledSeconds, hideDisabledOptions: true }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { TimePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newArray</span>(<span class="hljs-params">start, end</span>) </span>{
+  <span class="hljs-keyword">let</span> result = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = start; i &lt; end; i++) {
+    result.push(i);
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">disabledMinutes</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> newArray(<span class="hljs-number">0</span>, <span class="hljs-number">60</span>).filter(value =&gt; value % <span class="hljs-number">10</span> !== <span class="hljs-number">0</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">disabledSeconds</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> newArray(<span class="hljs-number">0</span>, <span class="hljs-number">60</span>).filter(value =&gt; value % <span class="hljs-number">30</span> !== <span class="hljs-number">0</span>);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">TimePicker</span> <span class="hljs-attribute">disabledMinutes</span>=<span class="hljs-value">{disabledMinutes}</span> <span class="hljs-attribute">disabledSeconds</span>=<span class="hljs-value">{disabledSeconds}</span> <span class="hljs-attribute">hideDisabledOptions</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-hide-options">只显示部分选项</a>
+    </div>
+    <p>通过 <code>hideDisabledOptions</code> 将不可选的选项隐藏。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

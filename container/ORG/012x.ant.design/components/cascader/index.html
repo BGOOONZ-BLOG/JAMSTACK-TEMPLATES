@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Cascader 级联选择 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../../docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../../docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../../docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../../docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Cascader
+              <span class="chinese">级联选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../date-picker/"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree-select/"
+               class="">
+              TreeSelect
+              <span class="chinese">树选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">上传</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Cascader 级联选择
+    </h1>
+    <p>级联选择框。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><ul>
+<li>需要从一组相关联的数据集合进行选择，例如省市区，公司层级，事物分类等。</li>
+<li>从一个较大的数据集合中进行选择时，用多级分类进行分隔，方便选择。</li>
+<li>比起 Select 组件，可以在同一个浮层中完成选择，有较好的体验。</li>
+</ul>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span></code></pre></div><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>可选项数据源</td>
+<td>object</td>
+<td>-</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>默认的选中项</td>
+<td>array</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>value</td>
+<td>指定选中项</td>
+<td>array</td>
+<td>-</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>选择完成后的回调</td>
+<td><code>function(value, selectedOptions)</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>displayRender</td>
+<td>选择后展示的渲染函数</td>
+<td><code>function(label)</code></td>
+<td><code>label =&gt; label.join(&#39; / &#39;)</code></td>
+</tr>
+<tr>
+<td>style</td>
+<td>自定义样式</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>className</td>
+<td>自定义类名</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>popupClassName</td>
+<td>自定义浮层类名</td>
+<td>string</td>
+<td>-</td>
+</tr>
+<tr>
+<td>popupPlacement</td>
+<td>浮层预设位置：<code>bottomLeft</code> <code>bottomRight</code> <code>topLeft</code> <code>topRight</code></td>
+<td>string</td>
+<td><code>bottomLeft</code></td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>输入框占位文本</td>
+<td>string</td>
+<td>&#39;请选择&#39;</td>
+</tr>
+<tr>
+<td>size</td>
+<td>输入框大小，可选 <code>large</code> <code>default</code> <code>small</code></td>
+<td>string</td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>禁用</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>allowClear</td>
+<td>是否支持清除</td>
+<td>boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>expandTrigger</td>
+<td>次级菜单的展开方式，可选 &#39;click&#39; 和 &#39;hover&#39;</td>
+<td>string</td>
+<td>&#39;click&#39;</td>
+</tr>
+<tr>
+<td>changeOnSelect</td>
+<td>当此项为 true 时，点选每级菜单选项值都会发生变化，具体见上面的演示</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { options: options, onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    
+<p>省市区级联。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-custom-trigger">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-custom-trigger"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-custom-trigger');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州'
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京'
+  }]
+}];
+
+var CitySwitcher = React.createClass({
+  displayName: 'CitySwitcher',
+  getInitialState: function getInitialState() {
+    return {
+      text: '未选择'
+    };
+  },
+  onChange: function onChange(value, selectedOptions) {
+    this.setState({
+      text: selectedOptions.map(function (o) {
+        return o.label;
+      }).join(', ')
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'span',
+      null,
+      this.state.text,
+      '\xA0',
+      React.createElement(
+        _antd.Cascader,
+        { options: options, onChange: this.onChange },
+        React.createElement(
+          'a',
+          { href: '#' },
+          '\u5207\u6362\u57CE\u5E02'
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(CitySwitcher, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+  }],
+}];
+
+<span class="hljs-keyword">const</span> CitySwitcher = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      text: <span class="hljs-string">'未选择'</span>,
+    };
+  },
+  onChange(value, selectedOptions) {
+    <span class="hljs-keyword">this</span>.setState({
+      text: selectedOptions.map(o =&gt; o.label).join(<span class="hljs-string">', '</span>),
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>
+        {this.state.text}
+        &amp;nbsp;
+        <span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>切换城市<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Cascader</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    )</span>;
+  },
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">CitySwitcher</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-custom-trigger">可以自定义显示</a>
+    </div>
+    
+<p>切换按钮和结果分开。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-disabled-option">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-disabled-option"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-disabled-option');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  disabled: true,
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { options: options, onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  disabled: <span class="hljs-literal">true</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-disabled-option">禁用选项</a>
+    </div>
+    
+<p>通过指定 options 里的 <code>disabled</code> 字段。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-size">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-size"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-size');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(_antd.Cascader, { size: 'large', options: options, onChange: onChange }),
+  React.createElement('br', null),
+  React.createElement('br', null),
+  React.createElement(_antd.Cascader, { options: options, onChange: onChange }),
+  React.createElement('br', null),
+  React.createElement('br', null),
+  React.createElement(_antd.Cascader, { size: 'small', options: options, onChange: onChange }),
+  React.createElement('br', null),
+  React.createElement('br', null)
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-size">大小</a>
+    </div>
+    
+<p>不同大小的级联选择器。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-default-value">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-default-value"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-default-value');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { defaultValue: ['zhejiang', 'hangzhou', 'xihu'], options: options, onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{['zhejiang',</span> '<span class="hljs-attribute">hangzhou</span>', '<span class="hljs-attribute">xihu</span>']} <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-default-value">默认值</a>
+    </div>
+    
+<p>默认值通过数组的方式指定。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-hover">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-hover"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-hover');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+// 只展示最后一项
+function displayRender(label) {
+  return label[label.length - 1];
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { options: options, expandTrigger: 'hover',
+  displayRender: displayRender, onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+<span class="hljs-comment">// 只展示最后一项</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">displayRender</span>(<span class="hljs-params">label</span>) </span>{
+  <span class="hljs-keyword">return</span> label[label.length - <span class="hljs-number">1</span>];
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">expandTrigger</span>=<span class="hljs-value">"hover"</span>
+    <span class="hljs-attribute">displayRender</span>=<span class="hljs-value">{displayRender}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-hover">移入展开</a>
+    </div>
+    
+<p>通过移入展开下级菜单，点击完成选择。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-change-on-select">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-change-on-select"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-change-on-select');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { options: options, onChange: onChange, changeOnSelect: true }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> <span class="hljs-attribute">changeOnSelect</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-change-on-select">选择即改变</a>
+    </div>
+    
+<p>这种交互允许只选中父级选项。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+  </div>
+</div>
+<ul class="toc demos-anchor">
+  <li>
+    <a title="基本" href="#demo-basic">
+      <span>基本</span>
+    </a>
+  </li>
+  <li>
+    <a title="默认值" href="#demo-default-value">
+      <span>默认值</span>
+    </a>
+  </li>
+  <li>
+    <a title="可以自定义显示" href="#demo-custom-trigger">
+      <span>可以自定义显示</span>
+    </a>
+  </li>
+  <li>
+    <a title="移入展开" href="#demo-hover">
+      <span>移入展开</span>
+    </a>
+  </li>
+  <li>
+    <a title="禁用选项" href="#demo-disabled-option">
+      <span>禁用选项</span>
+    </a>
+  </li>
+  <li>
+    <a title="选择即改变" href="#demo-change-on-select">
+      <span>选择即改变</span>
+    </a>
+  </li>
+  <li>
+    <a title="大小" href="#demo-size">
+      <span>大小</span>
+    </a>
+  </li>
+</ul>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

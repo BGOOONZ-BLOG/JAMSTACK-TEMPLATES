@@ -18,14 +18,18 @@ export default class CtaSection extends React.Component {
                 <div className="container container--lg">
                     <div
                         className={classNames('section__body', 'align-center', {
-                            'inverse': hasBackground && backgroundColor === 'blue',
+                            inverse: hasBackground && backgroundColor === 'blue',
                             'bg-blue': hasBackground && backgroundColor === 'blue',
                             'bg-gray': hasBackground && backgroundColor === 'gray'
                         })}
                     >
                         <div className="container container--md">
                             {title && <h2 className="section__title">{title}</h2>}
-                            {subtitle && <div className="section__copy"><p>{subtitle}</p></div>}
+                            {subtitle && (
+                                <div className="section__copy">
+                                    <p>{subtitle}</p>
+                                </div>
+                            )}
                             {!_.isEmpty(actions) && (
                                 <div className="section__actions btn-group">
                                     <SectionActions actions={actions} />

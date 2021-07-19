@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Validation 表单校验 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/??component/console-polyfill/0.2.2/index.js,component/es5-shim/4.1.14/es5-shim.min.js,component/es5-shim/4.1.14/es5-sham.min.js,component/html5shiv/3.7.2/html5shiv.min.js,g/component/media-match/2.0.2/media.match.min.js"></script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timepicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.10.5',
+        stable: '0.10.5'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    <script src="https://t.alipayobjects.com/images/T1DrxhXe0mXXXXXXXX.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/install" class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/upgrade-to-0.10" class="">
+          0.10 升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timepicker/"
+               class="">
+              Timepicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Validation 表单校验
+    </h1>
+    <p>表单校验。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><p>同表单结合使用，对表单域进行校验，提供前台校验和后台实时反馈校验，并对表单错误提供有效信息提示。</p>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Validation</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">CustomComponent</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">CustomComponent</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Validation</span>&gt;</span></code></pre></div><h3 id="validation">Validation<a href="#validation" class="anchor">#</a> </h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onValidate</td>
+<td>func</td>
+<td>当内部 Validator 开始校验时被调用。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validate(callback)</td>
+<td>对所有表单域进行校验。</td>
+</tr>
+<tr>
+<td>reset()</td>
+<td>将表单域的值恢复为初始值。</td>
+</tr>
+<tr>
+<td>forceValidate(fields, callback)</td>
+<td>对指定的表单域进行校验，fields 对应每个 Validator 包裹的表单域的 name 属性值。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="validation-validator">Validation.Validator<a href="#validation-validator" class="anchor">#</a> </h3><p>一个 Validator 对应一个表单域，校验的表单域需要声明 <code>name</code> 属性作为校验标识，如 <code>&lt;input name=&quot;username&quot;  /&gt;</code>。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rules</td>
+<td>array 或者 object</td>
+<td></td>
+<td>支持多规则校验，默认提供的规则详见 <a href="https://github.com/yiminghe/async-validator">async-validator</a>，同时支持用户自定义校验规则。</td>
+</tr>
+<tr>
+<td>trigger</td>
+<td>String</td>
+<td>onChange</td>
+<td>设定如何触发校验动作。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rules-说明（async-validator）">rules 说明（<a href="https://github.com/yiminghe/async-validator">async-validator</a>）<a href="#rules-说明（async-validator）" class="anchor">#</a> </h3><p>示例： <code>{type: &quot;string&quot;, required: true, min: 5, message: &quot;请至少填写 5 个字符。&quot; }</code></p>
+<ul>
+<li><code>type</code> : 声明校验的值类型（如 string email），这样就会使用默认提供的规则进行校验，更多详见 <a href="https://github.com/yiminghe/async-validator#user-content-type">type</a>；</li>
+<li><code>required</code>: 是否必填；</li>
+<li><code>pattern</code>: 声明校验正则表达式；</li>
+<li><code>min</code> / <code>max</code>: 最小值、最大值声明（对于 string 和 array 来说，针对的是其长度 length。）；</li>
+<li><code>len</code>: 字符长度；</li>
+<li><code>enum</code>: 枚举值，对应 type 值为 <code>enum</code>，例如 <code>role: {type: &quot;enum&quot;, enum: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]}</code>；</li>
+<li><code>whitespace</code>: 是否允许空格， <code>true</code> 为允许；</li>
+<li><code>fields</code>: 当你需要对类型为 object 或者 array 的每个值做校验时使用，详见 <a href="https://github.com/yiminghe/async-validator#deep-rules">fields</a>；</li>
+<li><code>transform</code>: 当你需要在校验前对值做一些处理的时候；</li>
+<li><code>message</code>: 自定义提示信息，<a href="https://github.com/yiminghe/async-validator#messages">更多</a>；</li>
+<li><code>validator</code>: 自定义校验规则。</li>
+</ul>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-validation-demo-basic"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Validator = _antd.Validation.Validator;
+var FormItem = _antd.Form.Item;
+
+function cx(classNames) {
+  if (typeof classNames === 'object') {
+    return Object.keys(classNames).filter(function (className) {
+      return classNames[className];
+    }).join(' ');
+  } else {
+    return Array.prototype.join.call(arguments, ' ');
+  }
+}
+
+function noop() {
+  return false;
+}
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+
+  mixins: [_antd.Validation.FieldMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      status: {
+        email: {},
+        name: {},
+        passwd: {},
+        rePasswd: {},
+        textarea: {}
+      },
+      formData: {
+        email: undefined,
+        name: undefined,
+        passwd: undefined,
+        rePasswd: undefined,
+        textarea: undefined
+      },
+      isEmailOver: false, // email 是否输入完毕
+      emailValidateMethod: 'onBlur' // 用于改变 email 的验证方法
+    };
+  },
+
+  renderValidateStyle: function renderValidateStyle(item) {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = cx({
+      'error': status[item].errors,
+      'validating': status[item].isValidating,
+      'success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  handleEmailInputBlur: function handleEmailInputBlur() {
+    this.setState({
+      isEmailOver: true
+    });
+  },
+
+  handleEmailInputFocus: function handleEmailInputFocus() {
+    if (this.state.isEmailOver) {
+      this.setState({
+        emailValidateMethod: 'onChange'
+      });
+    }
+  },
+
+  handleReset: function handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    var _this = this;
+
+    e.preventDefault();
+    this.setState({
+      isEmailOver: true
+    });
+    var validation = this.refs.validation;
+    validation.validate(function (valid) {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(_this.state.formData);
+    });
+  },
+
+  userExists: function userExists(rule, value, callback) {
+    if (!value) {
+      callback();
+    } else {
+      setTimeout(function () {
+        if (value === 'JasonWood') {
+          callback([new Error('抱歉，该用户名已被占用。')]);
+        } else {
+          callback();
+        }
+      }, 800);
+    }
+  },
+
+  checkPass: function checkPass(rule, value, callback) {
+    if (this.state.formData.passwd) {
+      this.refs.validation.forceValidate(['rePasswd']);
+    }
+
+    callback();
+  },
+
+  checkPass2: function checkPass2(rule, value, callback) {
+    if (value && value !== this.state.formData.passwd) {
+      callback('两次输入密码不一致！');
+    } else {
+      callback();
+    }
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return React.createElement(
+      _antd.Form,
+      { horizontal: true },
+      React.createElement(
+        _antd.Validation,
+        { ref: 'validation', onValidate: this.handleValidate },
+        React.createElement(
+          FormItem,
+          {
+            label: '用户名：',
+            id: 'name',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('name'),
+            hasFeedback: true,
+            help: status.name.isValidating ? '正在校验中..' : status.name.errors && status.name.errors.join(','),
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, min: 5, message: '用户名至少为 5 个字符' }, { validator: this.userExists }] },
+            React.createElement(_antd.Input, { name: 'name', id: 'name', value: formData.name, placeholder: '实时校验，输入 JasonWood 看看', onChange: this.setField.bind(this, 'name') })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '邮箱：',
+            id: 'email',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('email'),
+            hasFeedback: this.state.isEmailOver,
+            help: status.email.errors ? status.email.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, type: 'email', message: '请输入正确的邮箱地址' }], trigger: this.state.emailValidateMethod },
+            React.createElement(_antd.Input, { type: 'email', name: 'email', id: 'email', value: formData.email, placeholder: 'onBlur 与 onChange 相结合', onBlur: this.handleEmailInputBlur, onFocus: this.handleEmailInputFocus })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '密码：',
+            id: 'password',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('passwd'),
+            hasFeedback: true,
+            help: status.passwd.errors ? status.passwd.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, whitespace: true, message: '请填写密码' }, { validator: this.checkPass }] },
+            React.createElement(_antd.Input, { name: 'passwd', id: 'password', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autoComplete: 'off', value: formData.passwd })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '确认密码：',
+            id: 'password2',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('rePasswd'),
+            hasFeedback: true,
+            help: status.rePasswd.errors ? status.rePasswd.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{
+                required: true,
+                whitespace: true,
+                message: '请再次输入密码'
+              }, { validator: this.checkPass2 }] },
+            React.createElement(_antd.Input, { name: 'rePasswd', id: 'password2', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autoComplete: 'off', value: formData.rePasswd, placeholder: '两次输入密码保持一致' })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '备注：',
+            id: 'textarea',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('textarea'),
+            help: status.textarea.errors ? status.textarea.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, message: '真的不打算写点什么吗？' }] },
+            React.createElement(_antd.Input, { type: 'textarea', placeholder: '随便写', id: 'textarea', name: 'textarea', value: formData.textarea })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            wrapperCol: { span: 12, offset: 7 } },
+          React.createElement(
+            _antd.Button,
+            { type: 'primary', onClick: this.handleSubmit },
+            '确定'
+          ),
+          '   ',
+          React.createElement(
+            _antd.Button,
+            { type: 'ghost', onClick: this.handleReset },
+            '重置'
+          )
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-validation-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> {Validation, Button, Form, Input} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Validator = Validation.Validator;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cx</span>(<span class="hljs-params">classNames</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> classNames === <span class="hljs-string">'object'</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.keys(classNames).filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">className</span>) </span>{
+      <span class="hljs-keyword">return</span> classNames[className];
+    }).join(<span class="hljs-string">' '</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.prototype.join.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-string">' '</span>);
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noop</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      status: {
+        email: {},
+        name: {},
+        passwd: {},
+        rePasswd: {},
+        textarea: {}
+      },
+      formData: {
+        email: <span class="hljs-literal">undefined</span>,
+        name: <span class="hljs-literal">undefined</span>,
+        passwd: <span class="hljs-literal">undefined</span>,
+        rePasswd: <span class="hljs-literal">undefined</span>,
+        textarea: <span class="hljs-literal">undefined</span>
+      },
+      isEmailOver: <span class="hljs-literal">false</span>, <span class="hljs-comment">// email 是否输入完毕</span>
+      emailValidateMethod: <span class="hljs-string">'onBlur'</span> <span class="hljs-comment">// 用于改变 email 的验证方法</span>
+    };
+  },
+
+  renderValidateStyle(item) {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">const</span> classes = cx({
+      <span class="hljs-string">'error'</span>: status[item].errors,
+      <span class="hljs-string">'validating'</span>: status[item].isValidating,
+      <span class="hljs-string">'success'</span>: formData[item] &amp;&amp; !status[item].errors &amp;&amp; !status[item].isValidating
+    });
+
+    <span class="hljs-keyword">return</span> classes;
+  },
+
+  handleEmailInputBlur() {
+    <span class="hljs-keyword">this</span>.setState({
+      isEmailOver: <span class="hljs-literal">true</span>
+    });
+  },
+
+  handleEmailInputFocus() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.isEmailOver) {
+      <span class="hljs-keyword">this</span>.setState({
+        emailValidateMethod: <span class="hljs-string">'onChange'</span>
+      });
+    }
+  },
+
+  handleReset(e) {
+    <span class="hljs-keyword">this</span>.refs.validation.reset();
+    <span class="hljs-keyword">this</span>.setState(<span class="hljs-keyword">this</span>.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.setState({
+      isEmailOver: <span class="hljs-literal">true</span>
+    });
+    <span class="hljs-keyword">const</span> validation = <span class="hljs-keyword">this</span>.refs.validation;
+    validation.validate((valid) =&gt; {
+      <span class="hljs-keyword">if</span> (!valid) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error in form'</span>);
+        <span class="hljs-keyword">return</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'submit'</span>);
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.formData);
+    });
+  },
+
+  userExists(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (!value) {
+      callback();
+    } <span class="hljs-keyword">else</span> {
+      setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (value === <span class="hljs-string">'JasonWood'</span>) {
+          callback([<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'抱歉，该用户名已被占用。'</span>)]);
+        } <span class="hljs-keyword">else</span> {
+          callback();
+        }
+      }, <span class="hljs-number">800</span>);
+    }
+  },
+
+  checkPass(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.formData.passwd) {
+      <span class="hljs-keyword">this</span>.refs.validation.forceValidate([<span class="hljs-string">'rePasswd'</span>]);
+    }
+
+    callback();
+  },
+
+  checkPass2(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value !== <span class="hljs-keyword">this</span>.state.formData.passwd) {
+      callback(<span class="hljs-string">'两次输入密码不一致！'</span>);
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Validation</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"validation"</span> <span class="hljs-attribute">onValidate</span>=<span class="hljs-value">{this.handleValidate}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"用户名："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"name"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('name')}</span>
+            <span class="hljs-attribute">hasFeedback</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.name.isValidating</span> ? '正在校验中<span class="hljs-attribute">..</span>' <span class="hljs-attribute">:</span> (<span class="hljs-attribute">status.name.errors</span> &amp;&amp; <span class="hljs-attribute">status.name.errors.join</span>(','))}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">min:</span> <span class="hljs-attribute">5</span>, <span class="hljs-attribute">message:</span> '用户名至少为 <span class="hljs-attribute">5</span> 个字符'}, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.userExists</span>}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.name}</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"实时校验，输入 JasonWood 看看"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.setField.bind(this,</span> '<span class="hljs-attribute">name</span>')} /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"邮箱："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"email"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('email')}</span>
+            <span class="hljs-attribute">hasFeedback</span>=<span class="hljs-value">{this.state.isEmailOver}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.email.errors</span> ? <span class="hljs-attribute">status.email.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">type:</span>'<span class="hljs-attribute">email</span>', <span class="hljs-attribute">message:</span> '请输入正确的邮箱地址'}]} <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{this.state.emailValidateMethod}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.email}</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"onBlur 与 onChange 相结合"</span> <span class="hljs-attribute">onBlur</span>=<span class="hljs-value">{this.handleEmailInputBlur}</span> <span class="hljs-attribute">onFocus</span>=<span class="hljs-value">{this.handleEmailInputFocus}</span> /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"password"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('passwd')}</span>
+            <span class="hljs-attribute">hasFeedback</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.passwd.errors</span> ? <span class="hljs-attribute">status.passwd.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">whitespace:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '请填写密码'}, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkPass</span>}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"passwd"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.passwd}</span>/&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"确认密码："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"password2"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('rePasswd')}</span>
+            <span class="hljs-attribute">hasFeedback</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.rePasswd.errors</span> ? <span class="hljs-attribute">status.rePasswd.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{</span>
+                <span class="hljs-attribute">required:</span> <span class="hljs-attribute">true</span>,
+                <span class="hljs-attribute">whitespace:</span> <span class="hljs-attribute">true</span>,
+                <span class="hljs-attribute">message:</span> '请再次输入密码'
+              }, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkPass2</span>}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"rePasswd"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"password2"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.rePasswd}</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"两次输入密码保持一致"</span>/&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"备注："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"textarea"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('textarea')}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.textarea.errors</span> ? <span class="hljs-attribute">status.textarea.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '真的不打算写点什么吗？'}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"随便写"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.textarea}</span> /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">7</span>}} &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleSubmit}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleReset}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Validation</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-validation-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">Input 表单域</a>
+    </div>
+    <p>基本的表单校验例子。</p>
+<p><strong>每个表单域要声明 <code>name</code> 属性作为校验的标识</strong>，可通过其 <code>isValidating</code>、<code>errors</code> 属性判断是否处于校验中、是否校验不通过状态，具体可参见 <strong>用户名</strong> 校验。</p>
+<p>表单提交的时候，通过 Validation 的 validate 方法判断是否所有表单域校验通过（isValid 会作为回调函数的参数传入）。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-customize">
+  <div class="code-box-demo">
+    <div id="components-validation-demo-customize"></div>
+    <script>(function(){'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _antd = require('antd');
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var Validator = _antd.Validation.Validator;
+var FormItem = _antd.Form.Item;
+
+function noop() {
+  return false;
+}
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+
+  mixins: [_antd.Validation.FieldMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      status: {
+        pass: {},
+        rePass: {}
+      },
+      formData: {
+        pass: undefined,
+        rePass: undefined
+      },
+      passBarShow: false, // 是否显示密码强度提示条
+      rePassBarShow: false,
+      passStrength: 'L', // 密码强度
+      rePassStrength: 'L'
+    };
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    var _this = this;
+
+    e.preventDefault();
+    var validation = this.refs.validation;
+    validation.validate(function (valid) {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(_this.state.formData);
+    });
+  },
+
+  handleReset: function handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  renderValidateStyle: function renderValidateStyle(item) {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = (0, _classnames2['default'])({
+      'error': status[item].errors,
+      'validating': status[item].isValidating,
+      'success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  getPassStrenth: function getPassStrenth(value, type) {
+    if (value) {
+      var strength = undefined;
+      // 密码强度的校验规则自定义，这里只是做个简单的示例
+      if (value.length < 6) {
+        strength = 'L';
+      } else if (value.length <= 9) {
+        strength = 'M';
+      } else {
+        strength = 'H';
+      }
+      if (type === 'pass') {
+        this.setState({ passBarShow: true, passStrength: strength });
+      } else {
+        this.setState({ rePassBarShow: true, rePassStrength: strength });
+      }
+    } else {
+      if (type === 'pass') {
+        this.setState({ passBarShow: false });
+      } else {
+        this.setState({ rePassBarShow: false });
+      }
+    }
+  },
+
+  checkPass: function checkPass(rule, value, callback) {
+    this.getPassStrenth(value, 'pass');
+
+    if (this.state.formData.pass) {
+      this.refs.validation.forceValidate(['rePass']);
+    }
+
+    callback();
+  },
+
+  checkPass2: function checkPass2(rule, value, callback) {
+    this.getPassStrenth(value, 'rePass');
+
+    if (value && value !== this.state.formData.pass) {
+      callback('两次输入密码不一致！');
+    } else {
+      callback();
+    }
+  },
+
+  renderPassStrengthBar: function renderPassStrengthBar(type) {
+    var strength = type === 'pass' ? this.state.passStrength : this.state.rePassStrength;
+    var classSet = (0, _classnames2['default'])({
+      'ant-pwd-strength': true,
+      'ant-pwd-strength-low': strength === 'L',
+      'ant-pwd-strength-medium': strength === 'M',
+      'ant-pwd-strength-high': strength === 'H'
+    });
+    var level = {
+      L: '低',
+      M: '中',
+      H: '高'
+    };
+
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'ul',
+        { className: classSet },
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-1' }),
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-2' }),
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-3' }),
+        React.createElement(
+          'span',
+          { className: 'ant-form-text' },
+          level[strength]
+        )
+      )
+    );
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return React.createElement(
+      _antd.Form,
+      { horizontal: true },
+      React.createElement(
+        _antd.Validation,
+        { ref: 'validation', onValidate: this.handleValidate },
+        React.createElement(
+          _antd.Row,
+          null,
+          React.createElement(
+            _antd.Col,
+            { span: '18' },
+            React.createElement(
+              FormItem,
+              {
+                label: '密码：',
+                id: 'confirmPass',
+                labelCol: { span: 6 },
+                wrapperCol: { span: 18 },
+                validateStatus: this.renderValidateStyle('pass'),
+                help: status.pass.errors ? status.pass.errors.join(',') : null,
+                required: true },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, whitespace: true, message: '请填写密码' }, { validator: this.checkPass }], trigger: 'onChange' },
+                React.createElement(_antd.Input, { name: 'pass', id: 'confirmPass', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autoComplete: 'off', value: formData.pass })
+              )
+            )
+          ),
+          React.createElement(
+            _antd.Col,
+            { span: '6' },
+            this.state.passBarShow ? this.renderPassStrengthBar('pass') : null
+          )
+        ),
+        React.createElement(
+          _antd.Row,
+          null,
+          React.createElement(
+            _antd.Col,
+            { span: '18' },
+            React.createElement(
+              FormItem,
+              {
+                label: '确认密码：',
+                id: 'confirmPass2',
+                labelCol: { span: 6 },
+                wrapperCol: { span: 18 },
+                validateStatus: this.renderValidateStyle('rePass'),
+                help: status.rePass.errors ? status.rePass.errors.join(',') : null,
+                required: true },
+              React.createElement(
+                Validator,
+                { rules: [{
+                    required: true,
+                    whitespace: true,
+                    message: '请再次输入密码'
+                  }, { validator: this.checkPass2 }] },
+                React.createElement(_antd.Input, { name: 'rePass', id: 'confirmPass2', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autoComplete: 'off', value: formData.rePass })
+              )
+            )
+          ),
+          React.createElement(
+            _antd.Col,
+            { span: '6' },
+            this.state.rePassBarShow ? this.renderPassStrengthBar('rePass') : null
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            wrapperCol: { span: 12, offset: 6 },
+            required: true },
+          React.createElement(
+            _antd.Button,
+            { type: 'primary', onClick: this.handleSubmit },
+            '确定'
+          ),
+          '   ',
+          React.createElement(
+            _antd.Button,
+            { type: 'ghost', onClick: this.handleReset },
+            '重置'
+          )
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-validation-demo-customize'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Validation, Button, Form, Input, Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> classNames <span class="hljs-keyword">from</span> <span class="hljs-string">'classnames'</span>;
+<span class="hljs-keyword">const</span> Validator = Validation.Validator;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noop</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      status: {
+        pass: {},
+        rePass: {}
+      },
+      formData: {
+        pass: <span class="hljs-literal">undefined</span>,
+        rePass: <span class="hljs-literal">undefined</span>
+      },
+      passBarShow: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 是否显示密码强度提示条</span>
+      rePassBarShow: <span class="hljs-literal">false</span>,
+      passStrength: <span class="hljs-string">'L'</span>, <span class="hljs-comment">// 密码强度</span>
+      rePassStrength: <span class="hljs-string">'L'</span>
+    };
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">const</span> validation = <span class="hljs-keyword">this</span>.refs.validation;
+    validation.validate((valid) =&gt; {
+      <span class="hljs-keyword">if</span> (!valid) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error in form'</span>);
+        <span class="hljs-keyword">return</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'submit'</span>);
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.formData);
+    });
+  },
+
+  handleReset(e) {
+    <span class="hljs-keyword">this</span>.refs.validation.reset();
+    <span class="hljs-keyword">this</span>.setState(<span class="hljs-keyword">this</span>.getInitialState());
+    e.preventDefault();
+  },
+
+  renderValidateStyle(item) {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">const</span> classes = classNames({
+      <span class="hljs-string">'error'</span>: status[item].errors,
+      <span class="hljs-string">'validating'</span>: status[item].isValidating,
+      <span class="hljs-string">'success'</span>: formData[item] &amp;&amp; !status[item].errors &amp;&amp; !status[item].isValidating
+    });
+
+    <span class="hljs-keyword">return</span> classes;
+  },
+
+  getPassStrenth(value, type) {
+    <span class="hljs-keyword">if</span> (value) {
+      <span class="hljs-keyword">let</span> strength;
+      <span class="hljs-comment">// 密码强度的校验规则自定义，这里只是做个简单的示例</span>
+      <span class="hljs-keyword">if</span> (value.length &lt; <span class="hljs-number">6</span>) {
+        strength = <span class="hljs-string">'L'</span>;
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value.length &lt;= <span class="hljs-number">9</span>) {
+        strength = <span class="hljs-string">'M'</span>;
+      } <span class="hljs-keyword">else</span> {
+        strength = <span class="hljs-string">'H'</span>;
+      }
+      <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'pass'</span>) {
+        <span class="hljs-keyword">this</span>.setState({ passBarShow: <span class="hljs-literal">true</span>, passStrength: strength });
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({ rePassBarShow: <span class="hljs-literal">true</span>, rePassStrength: strength });
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'pass'</span>) {
+        <span class="hljs-keyword">this</span>.setState({ passBarShow: <span class="hljs-literal">false</span> });
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({ rePassBarShow: <span class="hljs-literal">false</span> });
+      }
+    }
+  },
+
+  checkPass(rule, value, callback) {
+    <span class="hljs-keyword">this</span>.getPassStrenth(value, <span class="hljs-string">'pass'</span>);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.formData.pass) {
+      <span class="hljs-keyword">this</span>.refs.validation.forceValidate([<span class="hljs-string">'rePass'</span>]);
+    }
+
+    callback();
+  },
+
+  checkPass2(rule, value, callback) {
+    <span class="hljs-keyword">this</span>.getPassStrenth(value, <span class="hljs-string">'rePass'</span>);
+
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value !== <span class="hljs-keyword">this</span>.state.formData.pass) {
+      callback(<span class="hljs-string">'两次输入密码不一致！'</span>);
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  renderPassStrengthBar(type) {
+    <span class="hljs-keyword">const</span> strength = type === <span class="hljs-string">'pass'</span> ? <span class="hljs-keyword">this</span>.state.passStrength : <span class="hljs-keyword">this</span>.state.rePassStrength;
+    <span class="hljs-keyword">const</span> classSet = classNames({
+      <span class="hljs-string">'ant-pwd-strength'</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">'ant-pwd-strength-low'</span>: strength === <span class="hljs-string">'L'</span>,
+      <span class="hljs-string">'ant-pwd-strength-medium'</span>: strength === <span class="hljs-string">'M'</span>,
+      <span class="hljs-string">'ant-pwd-strength-high'</span>: strength === <span class="hljs-string">'H'</span>
+    });
+    <span class="hljs-keyword">const</span> level = {
+      L: <span class="hljs-string">'低'</span>,
+      M: <span class="hljs-string">'中'</span>,
+      H: <span class="hljs-string">'高'</span>
+    };
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classSet}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-pwd-strength-item ant-pwd-strength-item-1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-pwd-strength-item ant-pwd-strength-item-2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-pwd-strength-item ant-pwd-strength-item-3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span>
+            {level[strength]}
+          <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Validation</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"validation"</span> <span class="hljs-attribute">onValidate</span>=<span class="hljs-value">{this.handleValidate}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"18"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+                <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>
+                <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass"</span>
+                <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">6</span>}}
+                <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">18</span>}}
+                <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('pass')}</span>
+                <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.pass.errors</span> ? <span class="hljs-attribute">status.pass.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+                <span class="hljs-attribute">required</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">whitespace:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '请填写密码'}, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkPass</span>}]} <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"onChange"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"pass"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.pass}</span>/&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+              {this.state.passBarShow ? this.renderPassStrengthBar('pass') : null}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"18"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+                <span class="hljs-attribute">label</span>=<span class="hljs-value">"确认密码："</span>
+                <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass2"</span>
+                <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">6</span>}}
+                <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">18</span>}}
+                <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('rePass')}</span>
+                <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.rePass.errors</span> ? <span class="hljs-attribute">status.rePass.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+                <span class="hljs-attribute">required</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{</span>
+                    <span class="hljs-attribute">required:</span> <span class="hljs-attribute">true</span>,
+                    <span class="hljs-attribute">whitespace:</span> <span class="hljs-attribute">true</span>,
+                    <span class="hljs-attribute">message:</span> '请再次输入密码'
+                  }, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkPass2</span>}]}&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"rePass"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass2"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.rePass}</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+              {this.state.rePassBarShow ? this.renderPassStrengthBar('rePass') : null}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">6</span>}}
+            <span class="hljs-attribute">required</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleSubmit}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleReset}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Validation</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-validation-demo-customize'));</span></code></pre></div><style type="text/css">.ant-pwd-strength {
+  display: inline-block;
+  margin-left: 8px;
+  line-height: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.ant-pwd-strength-item {
+  float: left;
+  margin-right: 1px;
+  margin-top: 12px;
+  width: 19px;
+  height: 8px;
+  line-height: 8px;
+  list-style: none;
+  background-color: #f3f3f3;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-pwd-strength-item-1 {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.ant-pwd-strength-item-2 {
+  width: 20px;
+}
+
+.ant-pwd-strength-item-3 {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 8px;
+}
+
+.ant-pwd-strength-low .ant-pwd-strength-item-1, .ant-pwd-strength-medium .ant-pwd-strength-item-1, .ant-pwd-strength-high .ant-pwd-strength-item-1 {
+  background-color: #FAC450;
+}
+
+.ant-pwd-strength-medium .ant-pwd-strength-item-2, .ant-pwd-strength-high .ant-pwd-strength-item-2 {
+  background-color: rgba(135, 208, 104, .6);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#9987D068,endColorstr=#9987D068);
+}
+
+.ant-pwd-strength-high .ant-pwd-strength-item-3 {
+  background-color: #87D068;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.ant-pwd-strength</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> middle</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> left</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">12px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f3f3f3</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all <span class="hljs-number">0.3s</span> <span class="hljs-function">cubic-bezier</span>(<span class="hljs-number">0.645</span>, <span class="hljs-number">0.045</span>, <span class="hljs-number">0.355</span>, <span class="hljs-number">1</span>)</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item-1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item-2</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item-3</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-low</span> <span class="hljs-class">.ant-pwd-strength-item-1</span>, <span class="hljs-class">.ant-pwd-strength-medium</span> <span class="hljs-class">.ant-pwd-strength-item-1</span>, <span class="hljs-class">.ant-pwd-strength-high</span> <span class="hljs-class">.ant-pwd-strength-item-1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#FAC450</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-medium</span> <span class="hljs-class">.ant-pwd-strength-item-2</span>, <span class="hljs-class">.ant-pwd-strength-high</span> <span class="hljs-class">.ant-pwd-strength-item-2</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-function">rgba</span>(<span class="hljs-number">135</span>, <span class="hljs-number">208</span>, <span class="hljs-number">104</span>, .<span class="hljs-number">6</span>)</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">filter</span>:<span class="hljs-value">progid:DXImageTransform.Microsoft.<span class="hljs-function">gradient</span>(startColorstr=<span class="hljs-hexcolor">#9987D068</span>,endColorstr=<span class="hljs-hexcolor">#9987D068</span>)</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-high</span> <span class="hljs-class">.ant-pwd-strength-item-3</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#87D068</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-customize">自定义校验规则</a>
+    </div>
+    <p>密码校验实例。</p>
+<p>这里使用了 validation 的 <code>forceValidate(fields, callback)</code>  方法，在对第一次输入的密码进行校验时会触发二次密码的校验。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-other-items">
+  <div class="code-box-demo">
+    <div id="components-validation-demo-other-items"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Validator = _antd.Validation.Validator;
+var Option = _antd.Select.Option;
+var RadioGroup = _antd.Radio.Group;
+var FormItem = _antd.Form.Item;
+
+function cx(classNames) {
+  if (typeof classNames === 'object') {
+    return Object.keys(classNames).filter(function (className) {
+      return classNames[className];
+    }).join(' ');
+  } else {
+    return Array.prototype.join.call(arguments, ' ');
+  }
+}
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+
+  mixins: [_antd.Validation.FieldMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      status: {
+        select: {},
+        multiSelect: {},
+        radio: {},
+        birthday: {},
+        primeNumber: {}
+      },
+      formData: {
+        select: undefined,
+        multiSelect: undefined,
+        radio: undefined,
+        birthday: null,
+        primeNumber: 9
+      }
+    };
+  },
+
+  renderValidateStyle: function renderValidateStyle(item) {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = cx({
+      'error': status[item].errors,
+      'validating': status[item].isValidating,
+      'success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  handleReset: function handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    var _this = this;
+
+    e.preventDefault();
+    this.setState({
+      isEmailOver: true
+    });
+    var validation = this.refs.validation;
+    validation.validate(function (valid) {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(_this.state.formData);
+    });
+  },
+
+  checkBirthday: function checkBirthday(rule, value, callback) {
+    if (value && value.getTime() >= Date.now()) {
+      callback(new Error('你不可能在未来出生吧!'));
+    } else {
+      callback();
+    }
+  },
+
+  checkPrime: function checkPrime(rule, value, callback) {
+    if (value !== 11) {
+      callback(new Error('8~12之间的质数明明是11啊!'));
+    } else {
+      callback();
+    }
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return React.createElement(
+      _antd.Form,
+      { horizontal: true },
+      React.createElement(
+        _antd.Validation,
+        { ref: 'validation', onValidate: this.handleValidate },
+        React.createElement(
+          FormItem,
+          {
+            label: '国籍：',
+            id: 'select',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('select'),
+            help: status.select.errors ? status.select.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, message: '请选择您的国籍' }] },
+            React.createElement(
+              _antd.Select,
+              { size: 'large', placeholder: '请选择国家', style: { width: '100%' }, name: 'select', value: formData.select },
+              React.createElement(
+                Option,
+                { value: 'china' },
+                '中国'
+              ),
+              React.createElement(
+                Option,
+                { value: 'use' },
+                '美国'
+              ),
+              React.createElement(
+                Option,
+                { value: 'japan' },
+                '日本'
+              ),
+              React.createElement(
+                Option,
+                { value: 'korean' },
+                '韩国'
+              ),
+              React.createElement(
+                Option,
+                { value: 'Thailand' },
+                '泰国'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '喜欢的颜色：',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('multiSelect'),
+            help: status.multiSelect.errors ? status.multiSelect.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, message: '请选择您喜欢的颜色', type: 'array' }] },
+            React.createElement(
+              _antd.Select,
+              { multiple: true, size: 'large', placeholder: '请选择颜色', style: { width: '100%' }, name: 'multiSelect', value: formData.multiSelect },
+              React.createElement(
+                Option,
+                { value: 'red' },
+                '红色'
+              ),
+              React.createElement(
+                Option,
+                { value: 'orange' },
+                '橙色'
+              ),
+              React.createElement(
+                Option,
+                { value: 'yellow' },
+                '黄色'
+              ),
+              React.createElement(
+                Option,
+                { value: 'green' },
+                '绿色'
+              ),
+              React.createElement(
+                Option,
+                { value: 'blue' },
+                '蓝色'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '性别：',
+            id: 'radio',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('radio'),
+            help: status.radio.errors ? status.radio.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ required: true, message: '请选择您的性别' }] },
+            React.createElement(
+              RadioGroup,
+              { name: 'radio', value: formData.radio },
+              React.createElement(
+                _antd.Radio,
+                { value: 'male' },
+                '男'
+              ),
+              React.createElement(
+                _antd.Radio,
+                { value: 'female' },
+                '女'
+              )
+            )
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '生日：',
+            id: 'birthday',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('birthday'),
+            help: status.birthday.errors ? status.birthday.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{
+                required: true,
+                type: 'date',
+                message: '你的生日是什么呢?'
+              }, { validator: this.checkBirthday }] },
+            React.createElement(_antd.Datepicker, { name: 'birthday', value: formData.birthday })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            label: '8~12间的质数：',
+            id: 'primeNumber',
+            labelCol: { span: 7 },
+            wrapperCol: { span: 12 },
+            validateStatus: this.renderValidateStyle('primeNumber'),
+            help: status.primeNumber.errors ? status.primeNumber.errors.join(',') : null,
+            required: true },
+          React.createElement(
+            Validator,
+            { rules: [{ validator: this.checkPrime }] },
+            React.createElement(_antd.InputNumber, { name: 'primeNumber', min: 8, max: 12, value: formData.primeNumber })
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            wrapperCol: { span: 12, offset: 7 } },
+          React.createElement(
+            _antd.Button,
+            { type: 'primary', onClick: this.handleSubmit },
+            '确定'
+          ),
+          '   ',
+          React.createElement(
+            _antd.Button,
+            { type: 'ghost', onClick: this.handleReset },
+            '重置'
+          )
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-validation-demo-other-items'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> {Validation, Select, Radio, Button, Datepicker, InputNumber, Form} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Validator = Validation.Validator;
+<span class="hljs-keyword">const</span> Option = Select.Option;
+<span class="hljs-keyword">const</span> RadioGroup = Radio.Group;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cx</span>(<span class="hljs-params">classNames</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> classNames === <span class="hljs-string">'object'</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.keys(classNames).filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">className</span>) </span>{
+      <span class="hljs-keyword">return</span> classNames[className];
+    }).join(<span class="hljs-string">' '</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Array</span>.prototype.join.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-string">' '</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      status: {
+        select: {},
+        multiSelect: {},
+        radio: {},
+        birthday: {},
+        primeNumber: {}
+      },
+      formData: {
+        select: <span class="hljs-literal">undefined</span>,
+        multiSelect: <span class="hljs-literal">undefined</span>,
+        radio: <span class="hljs-literal">undefined</span>,
+        birthday: <span class="hljs-literal">null</span>,
+        primeNumber: <span class="hljs-number">9</span>
+      }
+    };
+  },
+
+  renderValidateStyle(item) {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">const</span> classes = cx({
+      <span class="hljs-string">'error'</span>: status[item].errors,
+      <span class="hljs-string">'validating'</span>: status[item].isValidating,
+      <span class="hljs-string">'success'</span>: formData[item] &amp;&amp; !status[item].errors &amp;&amp; !status[item].isValidating
+    });
+
+    <span class="hljs-keyword">return</span> classes;
+  },
+
+  handleReset(e) {
+    <span class="hljs-keyword">this</span>.refs.validation.reset();
+    <span class="hljs-keyword">this</span>.setState(<span class="hljs-keyword">this</span>.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.setState({
+      isEmailOver: <span class="hljs-literal">true</span>
+    });
+    <span class="hljs-keyword">const</span> validation = <span class="hljs-keyword">this</span>.refs.validation;
+    validation.validate((valid) =&gt; {
+      <span class="hljs-keyword">if</span> (!valid) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error in form'</span>);
+        <span class="hljs-keyword">return</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'submit'</span>);
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.formData);
+    });
+  },
+
+  checkBirthday(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value.getTime() &gt;= <span class="hljs-built_in">Date</span>.now()){
+      callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'你不可能在未来出生吧!'</span>));
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  checkPrime(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (value !== <span class="hljs-number">11</span>) {
+      callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'8~12之间的质数明明是11啊!'</span>));
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Validation</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"validation"</span> <span class="hljs-attribute">onValidate</span>=<span class="hljs-value">{this.handleValidate}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"国籍："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"select"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('select')}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.select.errors</span> ? <span class="hljs-attribute">status.select.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '请选择您的国籍'}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请选择国家"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> '<span class="hljs-attribute">100</span>%'}} <span class="hljs-attribute">name</span>=<span class="hljs-value">"select"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.select}</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"china"</span>&gt;</span>中国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"use"</span>&gt;</span>美国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"japan"</span>&gt;</span>日本<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"korean"</span>&gt;</span>韩国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Thailand"</span>&gt;</span>泰国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"喜欢的颜色："</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('multiSelect')}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.multiSelect.errors</span> ? <span class="hljs-attribute">status.multiSelect.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '请选择您喜欢的颜色', <span class="hljs-attribute">type:</span> '<span class="hljs-attribute">array</span>'}]}&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">multiple</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请选择颜色"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> '<span class="hljs-attribute">100</span>%'}} <span class="hljs-attribute">name</span>=<span class="hljs-value">"multiSelect"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.multiSelect}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"red"</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"orange"</span>&gt;</span>橙色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"yellow"</span>&gt;</span>黄色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"green"</span>&gt;</span>绿色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"blue"</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"性别："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"radio"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('radio')}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.radio.errors</span> ? <span class="hljs-attribute">status.radio.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '请选择您的性别'}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroup</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.radio}</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"male"</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"female"</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroup</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"生日："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"birthday"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('birthday')}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.birthday.errors</span> ? <span class="hljs-attribute">status.birthday.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{</span>
+                <span class="hljs-attribute">required:</span> <span class="hljs-attribute">true</span>,
+                <span class="hljs-attribute">type:</span> '<span class="hljs-attribute">date</span>',
+                <span class="hljs-attribute">message:</span> '你的生日是什么呢?'
+              }, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkBirthday</span>}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Datepicker</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"birthday"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.birthday}</span> /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">label</span>=<span class="hljs-value">"8~12间的质数："</span>
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"primeNumber"</span>
+            <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">7</span>}}
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>}}
+            <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('primeNumber')}</span>
+            <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.primeNumber.errors</span> ? <span class="hljs-attribute">status.primeNumber.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+            <span class="hljs-attribute">required</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{validator:</span> <span class="hljs-attribute">this.checkPrime</span>}]}&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">InputNumber</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"primeNumber"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">{8}</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.primeNumber}</span> /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">7</span>}} &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleSubmit}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleReset}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Validation</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-validation-demo-other-items'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-other-items">其他表单域校验</a>
+    </div>
+    <p>提供以下组件表单域的校验。</p>
+<p><code>Select</code> <code>Radio</code> <code>Datepicker</code> <code>InputNumber</code>。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2dJ2mg">报告 Bug</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

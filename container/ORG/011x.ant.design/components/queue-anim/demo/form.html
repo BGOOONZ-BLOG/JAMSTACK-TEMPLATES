@@ -1,0 +1,223 @@
+<div class="code-box" id="anim-demo-form">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-form"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-form');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var RadioGroup = _antd.Radio.Group;
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "切换"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { component: "form", className: "ant-form-horizontal", type: "bottom", leaveReverse: true },
+        this.state.show ? [React.createElement(
+          "div",
+          { className: "ant-form-item ant-form-item-compact", key: "name" },
+          React.createElement(
+            "label",
+            { htmlFor: "userName", className: "col-6", required: true },
+            "用户名："
+          ),
+          React.createElement(
+            "div",
+            { className: "col-6" },
+            React.createElement(
+              "p",
+              { className: "ant-form-text" },
+              "大眼萌 minion"
+            )
+          )
+        ), React.createElement(
+          "div",
+          { className: "ant-form-item", key: "password" },
+          React.createElement(
+            "label",
+            { htmlFor: "password", className: "col-6", required: true },
+            "密码："
+          ),
+          React.createElement(
+            "div",
+            { className: "col-14" },
+            React.createElement("input", { className: "ant-input", type: "password", id: "password", placeholder: "请输入密码" })
+          )
+        ), React.createElement(
+          "div",
+          { className: "ant-form-item ant-form-item-compact", key: "sex" },
+          React.createElement(
+            "label",
+            { className: "col-6", required: true },
+            "您的性别："
+          ),
+          React.createElement(
+            "div",
+            { className: "col-14" },
+            React.createElement(
+              RadioGroup,
+              { value: "male" },
+              React.createElement(
+                _antd.Radio,
+                { value: "male" },
+                "男的"
+              ),
+              React.createElement(
+                _antd.Radio,
+                { value: "female" },
+                "女的"
+              )
+            )
+          )
+        ), React.createElement(
+          "div",
+          { className: "ant-form-item", key: "remark" },
+          React.createElement(
+            "label",
+            { htmlFor: "remark", className: "col-6", required: true },
+            "备注："
+          ),
+          React.createElement(
+            "div",
+            { className: "col-14" },
+            React.createElement("textarea", { className: "ant-input", id: "remark", placeholder: "随便写" }),
+            React.createElement(
+              "p",
+              { className: "ant-form-explain" },
+              "随便写点什么"
+            )
+          )
+        ), React.createElement(
+          "div",
+          { className: "ant-form-item ant-form-item-compact", key: "checkbox" },
+          React.createElement(
+            "div",
+            { className: "col-14 col-offset-6" },
+            React.createElement(
+              "label",
+              null,
+              React.createElement(_antd.Checkbox, null),
+              "同意"
+            )
+          )
+        ), React.createElement(
+          "div",
+          { className: "row", key: "btn" },
+          React.createElement(
+            "div",
+            { className: "col-16 col-offset-6" },
+            React.createElement(
+              _antd.Button,
+              { type: "primary" },
+              "确定"
+            )
+          )
+        )] : null
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript">import { QueueAnim, Button, Checkbox, Radio } from 'antd';
+const RadioGroup = Radio.Group;
+
+const Test = React.createClass({
+  getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p className="buttons"&gt;
+          &lt;Button type="primary" onClick={this.onClick}&gt;切换&lt;/Button&gt;
+        &lt;/p&gt;
+        &lt;QueueAnim component="form" className="ant-form-horizontal" type="bottom" leaveReverse&gt;
+          {this.state.show ? [
+            &lt;div className="ant-form-item ant-form-item-compact" key="name"&gt;
+              &lt;label htmlFor="userName" className="col-6" required&gt;用户名：&lt;/label&gt;
+              &lt;div className="col-6"&gt;
+                &lt;p className="ant-form-text"&gt;大眼萌 minion&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;,
+            &lt;div className="ant-form-item" key="password"&gt;
+              &lt;label htmlFor="password" className="col-6" required&gt;密码：&lt;/label&gt;
+              &lt;div className="col-14"&gt;
+                &lt;input className="ant-input" type="password" id="password" placeholder="请输入密码"/&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;,
+            &lt;div className="ant-form-item ant-form-item-compact" key="sex"&gt;
+              &lt;label className="col-6" required&gt;您的性别：&lt;/label&gt;
+              &lt;div className="col-14"&gt;
+                &lt;RadioGroup value="male"&gt;
+                  &lt;Radio value="male"&gt;男的&lt;/Radio&gt;
+                  &lt;Radio value="female"&gt;女的&lt;/Radio&gt;
+                &lt;/RadioGroup&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;,
+            &lt;div className="ant-form-item" key="remark"&gt;
+              &lt;label htmlFor="remark" className="col-6" required&gt;备注：&lt;/label&gt;
+              &lt;div className="col-14"&gt;
+                &lt;textarea className="ant-input" id="remark" placeholder="随便写"&gt;&lt;/textarea&gt;
+                &lt;p className="ant-form-explain"&gt;随便写点什么&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;,
+            &lt;div className="ant-form-item ant-form-item-compact" key="checkbox"&gt;
+              &lt;div className="col-14 col-offset-6"&gt;
+                &lt;label&gt;
+                  &lt;Checkbox /&gt;
+                  同意
+                &lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;,
+            &lt;div className="row" key="btn"&gt;
+              &lt;div className="col-16 col-offset-6"&gt;
+                &lt;Button type="primary"&gt;确定&lt;/Button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          ] : null}
+        &lt;/QueueAnim&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(&lt;Test /&gt;, mountNode);</code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-form">表单动画进出场</a>
+    </div>
+    <p>表单组合的进场与出场动画。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="code-box" id="demo-small">
+  <div class="code-box-demo">
+    <div id="components-table-demo-small"></div>
+    <script>(function(){'use strict';
+
+var Table = antd.Table;
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name'
+}, {
+  title: '年龄',
+  dataIndex: 'age'
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+var data = [{
+  key: '1',
+  name: '胡彦斌',
+  age: 32,
+  address: '西湖区湖底公园1号'
+}, {
+  key: '2',
+  name: '胡彦祖',
+  age: 42,
+  address: '西湖区湖底公园1号'
+}, {
+  key: '3',
+  name: '李大嘴',
+  age: 32,
+  address: '西湖区湖底公园1号'
+}];
+
+React.render(React.createElement(Table, { columns: columns, dataSource: data, size: 'small' }), document.getElementById('components-table-demo-small'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Table = antd.Table;
+<span class="keyword">var</span> columns = [{
+  title: <span class="string">'姓名'</span>,
+  dataIndex: <span class="string">'name'</span>
+}, {
+  title: <span class="string">'年龄'</span>,
+  dataIndex: <span class="string">'age'</span>
+}, {
+  title: <span class="string">'住址'</span>,
+  dataIndex: <span class="string">'address'</span>
+}];
+<span class="keyword">var</span> data = [{
+  key: <span class="string">'1'</span>,
+  name: <span class="string">'胡彦斌'</span>,
+  age: <span class="number">32</span>,
+  address: <span class="string">'西湖区湖底公园1号'</span>
+}, {
+  key: <span class="string">'2'</span>,
+  name: <span class="string">'胡彦祖'</span>,
+  age: <span class="number">42</span>,
+  address: <span class="string">'西湖区湖底公园1号'</span>
+}, {
+  key: <span class="string">'3'</span>,
+  name: <span class="string">'李大嘴'</span>,
+  age: <span class="number">32</span>,
+  address: <span class="string">'西湖区湖底公园1号'</span>
+}];
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Table</span> <span class="attribute">columns</span>=<span class="value">{columns}</span> <span class="attribute">dataSource</span>=<span class="value">{data}</span> <span class="attribute">size</span>=<span class="value">"small"</span> /&gt;</span>
+, document.getElementById('components-table-demo-small'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-small">小型列表</a>
+    </div>
+    <p><code>size=&quot;small&quot;</code>, 用在对话框等空间较小的地方。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

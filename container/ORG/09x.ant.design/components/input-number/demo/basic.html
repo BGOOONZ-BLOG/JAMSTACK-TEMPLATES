@@ -1,0 +1,29 @@
+<div class="code-box" id="number-demo-basic">
+  <div class="code-box-demo">
+    <div id="components-input-number-demo-basic"></div>
+    <script>(function(){'use strict';
+
+var InputNumber = antd.InputNumber;
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+React.render(React.createElement(InputNumber, { min: 1, max: 10, defaultValue: 3, onChange: onChange }), document.getElementById('components-input-number-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> InputNumber = antd.InputNumber;
+
+<span class="function"><span class="keyword">function</span> <span class="title">onChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'changed'</span>, value);
+}
+
+React.render(
+<span class="xml"><span class="tag">&lt;<span class="title">InputNumber</span> <span class="attribute">min</span>=<span class="value">{1}</span> <span class="attribute">max</span>=<span class="value">{10}</span> <span class="attribute">defaultValue</span>=<span class="value">{3}</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> /&gt;</span>
+, document.getElementById('components-input-number-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#number-demo-basic">基本</a>
+    </div>
+    <p>数字输入框</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

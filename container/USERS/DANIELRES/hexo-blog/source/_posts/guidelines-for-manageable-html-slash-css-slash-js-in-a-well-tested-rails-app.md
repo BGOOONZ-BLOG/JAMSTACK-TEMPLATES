@@ -2,16 +2,20 @@ title: Decoupling feature specs from markup
 sub: Simple guidelines for resilient tests
 date: 2013-02-12 14:47
 categories:
+
 - programming
 - testing
 - ruby
-tags:
+  tags:
 - TDD
 - cucumber
 - capybara
 - rspec
+
 ---
+
 &nbsp;
+
 <!--more -->
 
 # Typical scenario
@@ -19,6 +23,7 @@ tags:
 Consider this HTML fragment:
 
 {% codeblock lang:html %}
+
 <section id="recipes">
   <h1>The tasty recipes of uncle Alfred <button class="close">Close</button></h1>
   <div id="toad-recipe" class="recipe">
@@ -32,7 +37,7 @@ And this css:
 
 {% codeblock lang:css %}
 section#recipes button.close{
-  /* some funky styles */
+/_ some funky styles _/
 }
 {% endcodeblock %}
 
@@ -40,7 +45,7 @@ And javascript (jQuery):
 
 {% codeblock lang:javascript %}
 $("#recipes > h1 > button.close").click(function(){
-  /* some funky behavior */
+/_ some funky behavior _/
 });
 {% endcodeblock %}
 
@@ -48,7 +53,9 @@ And this example step definition in your tests:
 
 {% codeblock lang:ruby %}
 click_on("div#toad-recipe > h2 > button.add")
+
 # some funky testing
+
 {% endcodeblock %}
 
 ### When it goes bad
@@ -64,13 +71,14 @@ Should you want to change the h2 for an h3, and you'll have to fix everything ev
 
 Here are my guidelines for manageable html, css and javascript in a well-tested project, I'm still experimenting with this and I'm open to any suggestion or critic.
 
-* For css: use class attributes only
-* For javascript: use IDs for unique elements or data-attributes for generic elements
-* For testing: use data-attributes only, except when you're targeting a specific object from the domain, in which case you're allowed to use the ID.
+- For css: use class attributes only
+- For javascript: use IDs for unique elements or data-attributes for generic elements
+- For testing: use data-attributes only, except when you're targeting a specific object from the domain, in which case you're allowed to use the ID.
 
 The refactored HTML fragment:
 
 {% codeblock lang:ruby %}
+
 <section id="recipes" class="recipes" data-purpose="recipes-list">
   <h1>
     The tasty recipes of uncle Alfred
@@ -90,7 +98,7 @@ And css:
 
 {% codeblock lang:css %}
 .recipe .add {
-  /* some funky styles */
+/_ some funky styles _/
 }
 {% endcodeblock %}
 
@@ -98,7 +106,7 @@ And javascript:
 
 {% codeblock lang:js %}
 $("[data-purpose='add-button']").click(function(){
-  // some funky javascript
+// some funky javascript
 });
 {% endcodeblock %}
 
@@ -106,9 +114,11 @@ And step definition:
 
 {% codeblock lang:ruby %}
 within( "[data-purpose='recipes-list']" )
-  click_on( "[data-purpose='add-button']" )
+click_on( "[data-purpose='add-button']" )
 end
+
 # some funky testing
+
 {% endcodeblock %}
 
 # Benefit
@@ -123,25 +133,22 @@ On a large project, it's a life saver.
 
 For css:
 
-* You should really never use ids to style elements, find a way to tag the specific element with a meaningful class instead.
+- You should really never use ids to style elements, find a way to tag the specific element with a meaningful class instead.
 
 For javascript:
 
-* Instead of writing js code for specific cases, write generic code and use data-attributes instead, like Twitter Bootstrap does.
-* Use ids only to target a unique element corresponding to real objects in the domain logic, ex: #post51.
+- Instead of writing js code for specific cases, write generic code and use data-attributes instead, like Twitter Bootstrap does.
+- Use ids only to target a unique element corresponding to real objects in the domain logic, ex: #post51.
 
 For tests:
 
-* Use data attributes instead of classes to describe the purpose of elements
-* With links: use the rel attribute to describe its purpose, as [described by Steve Klabnik](http://blog.steveklabnik.com/posts/2011-12-20-write-better-cukes-with-the-rel-attribute#making_our_link__with_semantics_) on his blog:
-{% codeblock lang:html %}
+- Use data attributes instead of classes to describe the purpose of elements
+- With links: use the rel attribute to describe its purpose, as [described by Steve Klabnik](http://blog.steveklabnik.com/posts/2011-12-20-write-better-cukes-with-the-rel-attribute#making_our_link__with_semantics_) on his blog:
+  {% codeblock lang:html %}
   <a href="/articles/1/edit" rel="edit-article">Edit this article</a>
-{% endcodeblock %}
-{% codeblock lang:ruby %}
+  {% endcodeblock %}
+  {% codeblock lang:ruby %}
   When /^I choose to edit the article$/ do
-    find("//a[@rel='edit-article']").click
+  find("//a[@rel='edit-article']").click
   end
-{% endcodeblock %}
-
-
-
+  {% endcodeblock %}

@@ -1,0 +1,87 @@
+<div class="code-box" id="demo-drag">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-drag"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-drag');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Dragger = _antd.Upload.Dragger;
+
+var props = {
+  name: 'file',
+  showUploadList: false,
+  action: '/upload.do'
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'div',
+    { style: { width: 246, height: 140 } },
+    React.createElement(
+      Dragger,
+      props,
+      React.createElement(_antd.Icon, { type: 'plus' })
+    )
+  ),
+  React.createElement(
+    'div',
+    { style: { marginTop: 16, height: 180 } },
+    React.createElement(
+      Dragger,
+      props,
+      React.createElement(
+        'p',
+        { className: 'ant-upload-drag-icon' },
+        React.createElement(_antd.Icon, { type: 'inbox' })
+      ),
+      React.createElement(
+        'p',
+        { className: 'ant-upload-text' },
+        '点击或将文件拖拽到此区域上传'
+      ),
+      React.createElement(
+        'p',
+        { className: 'ant-upload-hint' },
+        '支持单个或批量上传，严禁上传公司内部资料及其他违禁文件'
+      )
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Dragger = Upload.Dragger;
+
+<span class="hljs-keyword">const</span> props = {
+  name: <span class="hljs-string">'file'</span>,
+  showUploadList: <span class="hljs-literal">false</span>,
+  action: <span class="hljs-string">'/upload.do'</span>,
+};
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">246</span>, <span class="hljs-attribute">height:</span> <span class="hljs-attribute">140</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Dragger</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Dragger</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginTop:</span> <span class="hljs-attribute">16</span>, <span class="hljs-attribute">height:</span> <span class="hljs-attribute">180</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Dragger</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-drag-icon"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"inbox"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-text"</span>&gt;</span>点击或将文件拖拽到此区域上传<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-hint"</span>&gt;</span>支持单个或批量上传，严禁上传公司内部资料及其他违禁文件<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Dragger</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-drag">拖拽上传</a>
+    </div>
+    <p>可以把文件拖入指定区域，完成上传，同样支持点击上传。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

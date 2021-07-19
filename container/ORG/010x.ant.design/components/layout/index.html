@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Layout 布局 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/??component/console-polyfill/0.2.2/index.js,component/es5-shim/4.1.14/es5-shim.min.js,component/es5-shim/4.1.14/es5-sham.min.js,component/html5shiv/3.7.2/html5shiv.min.js,g/component/media-match/2.0.2/media.match.min.js"></script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timepicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.10.5',
+        stable: '0.10.5'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    <script src="https://t.alipayobjects.com/images/T1DrxhXe0mXXXXXXXX.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/install" class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/upgrade-to-0.10" class="">
+          0.10 升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timepicker/"
+               class="">
+              Timepicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Layout 布局
+    </h1>
+    <p>24 栅格系统。</p>
+<h2 id="设计理念">设计理念<a href="#设计理念" class="anchor">#</a> </h2><div class="row demo-row" >
+  <div class="col-24 demo-col demo-col-1">
+    100%
+  </div>
+</div>
+<div class="row demo-row">
+  <div class="col-6 demo-col demo-col-2">
+    25%
+  </div>
+  <div class="col-6 demo-col demo-col-3">
+    25%
+  </div>
+  <div class="col-6 demo-col demo-col-2">
+    25%
+  </div>
+  <div class="col-6 demo-col demo-col-3">
+    25%
+  </div>
+</div>
+<div class="row demo-row">
+  <div class="col-8 demo-col demo-col-4">
+    33.33%
+  </div>
+  <div class="col-8 demo-col demo-col-5">
+    33.33%
+  </div>
+  <div class="col-8 demo-col demo-col-4">
+    33.33%
+  </div>
+</div>
+<div class="row demo-row">
+  <div class="col-12 demo-col demo-col-1">
+    50%
+  </div>
+  <div class="col-12 demo-col demo-col-3">
+    50%
+  </div>
+</div>
+<div class="row demo-row">
+  <div class="col-16 demo-col demo-col-4">
+    66.66%
+  </div>
+  <div class="col-8 demo-col demo-col-5">
+    33.33%
+  </div>
+</div>
+
+<p>在多数业务情况下，Ant Design需要在设计区域内解决大量信息收纳的问题，因此在12栅格系统的基础上，我们将整个设计建议区域按照24等分的原则进行划分。</p>
+<p>划分之后的信息区块我们称之为“盒子”。建议横向排列的盒子数量最多四个，最少一个。“盒子”在整个屏幕上占比见上图。设计部分基于盒子的单位定制盒子内部的排版规则，以保证视觉层面的舒适感。</p>
+<h2 id="概述">概述<a href="#概述" class="anchor">#</a> </h2><p>布局的栅格化系统，我们是基于行（row）和列（col）来定义信息区块的外部框架，以保证页面的每个区域能够稳健地排布起来。下面简单介绍一下它的工作原理：</p>
+<ul>
+<li>通过<code>row</code>在水平方向建立一组<code>column</code>（简写col）</li>
+<li>你的内容应当放置于<code>col</code>内，并且，只有<code>col</code>可以作为<code>row</code>的直接元素</li>
+<li>栅格系统中的列是指1到24的值来表示其跨越的范围。例如，三个等宽d的列可以使用<code>.col-8</code>来创建</li>
+<li>如果一个<code>row</code>中的<code>col</code>总和超过24，那么多余的<code>col</code>会作为一个整体另起一行排列</li>
+</ul>
+<h2 id="flex-布局">Flex 布局<a href="#flex-布局" class="anchor">#</a> </h2><p>我们的栅格化系统支持 Flex 布局，允许子元素在父节点内的水平对齐方式 - 居左、居中、居右、等宽排列、分散排列。子元素与子元素之间，支持顶部对齐、垂直居中对齐、底部对齐的方式。同时，支持使用 order 来定义元素的排列顺序。</p>
+<p>Flex 布局是基于 24 栅格来定义每一个“盒子”的宽度，但排版则不拘泥于栅格。</p>
+<style>
+.demo-row {
+    background-image: linear-gradient(90deg, #F5F5F5 4.16666667%, transparent 4.16666667%, transparent 8.33333333%, #F5F5F5 8.33333333%, #F5F5F5 12.5%,  transparent 12.5%, transparent 16.66666667%, #F5F5F5 16.66666667%, #F5F5F5 20.83333333%, transparent 20.83333333%, transparent 25%, #F5F5F5 25%, #F5F5F5 29.16666667%, transparent 29.16666667%, transparent 33.33333333%, #F5F5F5 33.33333333%, #F5F5F5 37.5%, transparent 37.5%, transparent 41.66666667%, #F5F5F5 41.66666667%, #F5F5F5 45.83333333%, transparent 45.83333333%, transparent 50%, #F5F5F5 50%, #F5F5F5 54.16666667%, transparent 54.16666667%, transparent 58.33333333%, #F5F5F5 58.33333333%, #F5F5F5 62.5%, transparent 62.5%, transparent 66.66666667%, #F5F5F5 66.66666667%, #F5F5F5 70.83333333%,  transparent 70.83333333%, transparent 75%, #F5F5F5 75%, #F5F5F5 79.16666667%, transparent 79.16666667%, transparent 83.33333333%, #F5F5F5 83.33333333%, #F5F5F5 87.5%, transparent 87.5%, transparent 91.66666667%, #F5F5F5 91.66666667%, #F5F5F5 95.83333333%, transparent 95.83333333%);
+    overflow: hidden;
+}
+.row-flex {
+  background: #F5F5F5;
+}
+
+.row div,
+.row-flex div {
+  padding: 5px 0;
+  background: rgba(24, 115, 216, 0.7);
+  text-align: center;
+  min-height: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.row .demo-col {
+  text-align: center;
+  padding: 40px 0;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.row .demo-col-1 {
+  background: rgba(24, 115, 216, 0.7);
+}
+.row .demo-col-2 {
+  background: rgba(24, 115, 216, 0.5);
+}
+.row .demo-col-3 {
+  background: rgba(255, 255, 255, 0.2);
+  color: #999;
+}
+.row .demo-col-4 {
+  background: rgba(24, 115, 216, 0.6);
+}
+.row .demo-col-5 {
+  background: rgba(255, 255, 255, 0.5);
+  color: #999;
+}
+
+.hight-100 {
+  height: 100px;
+}
+.hight-50 {
+  height: 50px;
+}
+.hight-120 {
+  height: 120px;
+}
+.hight-80 {
+  height: 80px;
+}
+</style>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+    <div class="code-boxes-col-1-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-basic"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "12" },
+      ".col-12"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "12" },
+      ".col-12"
+    )
+  ),
+  React.createElement(
+    _antd.Row,
+    { className: "testRowClassName" },
+    React.createElement(
+      _antd.Col,
+      { span: "8" },
+      ".col-8"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "8" },
+      ".col-8"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "8", className: "testColClassName" },
+      ".col-8"
+    )
+  ),
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      ".col-6"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      ".col-6"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      ".col-6"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      ".col-6"
+    )
+  )
+), document.getElementById('components-layout-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"12"</span>&gt;</span>.col-12<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"12"</span>&gt;</span>.col-12<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"testRowClassName"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"testColClassName"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-basic')
+);</span></code></pre></div><style>
+.testRowClassName {
+    background: #f0f0f0;
+}
+div.testColClassName {
+    background: rgba(24, 115, 216, 0.9);
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基础布局</a>
+    </div>
+    <p>从堆叠到水平排列。</p>
+<p>使用单一的一组 <code>.col-*</code> 栅格类，就可以创建一个基本的栅格系统，所有列（column）必须放在 <code>.row</code> 内。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-offset">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-offset"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "8" },
+      ".col-8"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "8", offset: "8" },
+      ".col-8"
+    )
+  ),
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "6", offset: "6" },
+      ".col-6 .col-offset-6"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6", offset: "6" },
+      ".col-6 .col-offset-6"
+    )
+  ),
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "12", offset: "6" },
+      ".col-12 .col-offset-6"
+    )
+  )
+), document.getElementById('components-layout-demo-offset'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"8"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6 .col-offset-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6 .col-offset-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"12"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-12 .col-offset-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-offset')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-offset">左右偏移</a>
+    </div>
+    <p>列偏移。</p>
+<p>使用 <code>.col-offset-*</code> 类可以将列向右侧偏。例如，<code>.col-offset-4</code> 类将 <code>.col-4</code> 元素向右侧偏移了4个列（column）的宽度。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-sort">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-sort"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "18", push: "6" },
+      ".col-18 .col-push-6"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6", pull: "18" },
+      ".col-6 .col-pull-18"
+    )
+  )
+), document.getElementById('components-layout-demo-sort'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"18"</span> <span class="hljs-attribute">push</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-18 .col-push-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">pull</span>=<span class="hljs-value">"18"</span>&gt;</span>.col-6 .col-pull-18<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-sort')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-sort">布局排序</a>
+    </div>
+    <p>列排序。</p>
+<p>通过使用 <code>.col-push-*</code> 和 <code>.col-pull-*</code> 类就可以很容易的改变列（column）的顺序。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-flex">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-flex"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "p",
+    null,
+    "子元素居左排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "start" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素居中排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "center" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素居右排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "end" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素等宽排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "space-between" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素分散对齐"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "space-around" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  )
+), document.getElementById('components-layout-demo-flex'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素居左排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"start"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素居中排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"center"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素居右排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"end"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素等宽排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"space-between"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素分散对齐<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"space-around"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-flex')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-flex">Flex布局</a>
+    </div>
+    <p>Flex 布局基础。</p>
+<p>使用 <code>row-flex</code> 定义 <code>flex</code> 布局，其子元素根据不同的值 <code>start</code>,<code>center</code>,<code>end</code>,<code>space-between</code>,<code>space-around</code>，分别定义其在父节点里面的排版方式。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-flex-align">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-flex-align"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var DemoBox = React.createClass({
+  displayName: "DemoBox",
+
+  render: function render() {
+    var value = this.props.value;
+
+    var className = "hight-" + value;
+    return React.createElement(
+      "p",
+      { className: className },
+      this.props.children
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "p",
+    null,
+    "顶部对齐"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "center", align: "top" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "100" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "50" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "120" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "80" },
+        ".col-4"
+      )
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "居中对齐"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "space-around", align: "middle" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "100" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "50" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "120" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "80" },
+        ".col-4"
+      )
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "底部对齐"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "space-between", align: "bottom" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "100" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "50" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "120" },
+        ".col-4"
+      )
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      React.createElement(
+        DemoBox,
+        { value: "80" },
+        ".col-4"
+      )
+    )
+  )
+), document.getElementById('components-layout-demo-flex-align'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> DemoBox = React.createClass({
+  render() {
+    <span class="hljs-keyword">const</span> { value } = <span class="hljs-keyword">this</span>.props;
+    <span class="hljs-keyword">const</span> className = <span class="hljs-string">`hight-<span class="hljs-subst">${value}</span>`</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{className}</span>&gt;</span>{this.props.children}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>顶部对齐<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"center"</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">"top"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"100"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"50"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"120"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"80"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>居中对齐<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"space-around"</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">"middle"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"100"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"50"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"120"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"80"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>底部对齐<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"space-between"</span> <span class="hljs-attribute">align</span>=<span class="hljs-value">"bottom"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"100"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"50"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"120"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">DemoBox</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"80"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">DemoBox</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-flex-align')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-flex-align">Flex对齐</a>
+    </div>
+    <p>Flex 子元素垂直对齐。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-flex-order">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-flex-order"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Row,
+    { type: "flex" },
+    React.createElement(
+      _antd.Col,
+      { span: "6", order: "4" },
+      "1 col-order-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6", order: "3" },
+      "2 col-order-3"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6", order: "2" },
+      "3 col-order-2"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6", order: "1" },
+      "4 col-order-1"
+    )
+  )
+), document.getElementById('components-layout-demo-flex-order'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">order</span>=<span class="hljs-value">"4"</span>&gt;</span>1 col-order-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">order</span>=<span class="hljs-value">"3"</span>&gt;</span>2 col-order-3<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">order</span>=<span class="hljs-value">"2"</span>&gt;</span>3 col-order-2<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">order</span>=<span class="hljs-value">"1"</span>&gt;</span>4 col-order-1<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-flex-order')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-flex-order">Flex排序</a>
+    </div>
+    <p>通过 Flex 布局的 Order 来改变元素的排序。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+    </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2dJ2mg">报告 Bug</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

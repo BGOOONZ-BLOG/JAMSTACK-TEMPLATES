@@ -5,15 +5,15 @@ sub: Make specs more efficient to write and execute
 path: /2013/01/making-rspec-feature-specs-easy-with-devise/
 comments: true
 categories:
-- programming
-- testing
-- ruby
-tags: 
-- rspec
-- integration-tests
-- devise
-- rails
-- capybara
+  - programming
+  - testing
+  - ruby
+tags:
+  - rspec
+  - integration-tests
+  - devise
+  - rails
+  - capybara
 ---
 
 I love writing feature specs with Rspec and Capybara.
@@ -40,16 +40,16 @@ This means you already should have authentication well tested, with its complete
 
 <!-- {% codeblock file: %} -->
 
-``` ruby 
-# file: spec/features/admin_users_datatable.rb 
+```ruby
+# file: spec/features/admin_users_datatable.rb
 
 require 'spec_helper'
 
 # including some warden magic:
-include Warden::Test::Helpers             
+include Warden::Test::Helpers
 
 # telling warden we are testing stuff:
-Warden.test_mode!                         
+Warden.test_mode!
 
 feature "(...)" do
   context "(...)" do
@@ -57,7 +57,7 @@ feature "(...)" do
       admin = FactoryGirl.create(:admin)
 
       # our instant magic authentication:
-      login_as(admin , :scope => :user)   
+      login_as(admin , :scope => :user)
     end
 
     scenario "(...)", js: true do
@@ -102,6 +102,3 @@ end
 
 - [The classic but slower, full-stack way to do this](http://robots.thoughtbot.com/post/33771089985/rspec-integration-tests-with-capybara)
 - [General documentation for Rspec feature specs](https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec)
-
-
-

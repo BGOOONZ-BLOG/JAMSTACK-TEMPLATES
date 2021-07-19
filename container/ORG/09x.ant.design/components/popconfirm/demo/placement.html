@@ -1,0 +1,88 @@
+<div class="code-box" id="demo-placement">
+  <div class="code-box-demo">
+    <div id="components-popconfirm-demo-placement"></div>
+    <script>(function(){'use strict';
+
+var Popconfirm = antd.Popconfirm;
+var message = antd.message;
+var text = '确定要删除这个任务吗？';
+
+function confirm() {
+  message.info('点击了确定');
+}
+
+React.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    Popconfirm,
+    { placement: 'left', title: text, onConfirm: confirm },
+    React.createElement(
+      'a',
+      { href: 'javascript:;' },
+      '左边'
+    )
+  ),
+  React.createElement(
+    Popconfirm,
+    { placement: 'top', title: text, onConfirm: confirm },
+    React.createElement(
+      'a',
+      { href: 'javascript:;' },
+      '上边'
+    )
+  ),
+  React.createElement(
+    Popconfirm,
+    { placement: 'bottom', title: text, onConfirm: confirm },
+    React.createElement(
+      'a',
+      { href: 'javascript:;' },
+      '下边'
+    )
+  ),
+  React.createElement(
+    Popconfirm,
+    { placement: 'right', title: text, onConfirm: confirm },
+    React.createElement(
+      'a',
+      { href: 'javascript:;' },
+      '右边'
+    )
+  )
+), document.getElementById('components-popconfirm-demo-placement'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Popconfirm = antd.Popconfirm;
+<span class="keyword">var</span> message = antd.message;
+<span class="keyword">var</span> text = <span class="string">'确定要删除这个任务吗？'</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">confirm</span><span class="params">()</span> {</span>
+  message.info(<span class="string">'点击了确定'</span>);
+}
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Popconfirm</span> <span class="attribute">placement</span>=<span class="value">"left"</span> <span class="attribute">title</span>=<span class="value">{text}</span> <span class="attribute">onConfirm</span>=<span class="value">{confirm}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>左边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Popconfirm</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Popconfirm</span> <span class="attribute">placement</span>=<span class="value">"top"</span> <span class="attribute">title</span>=<span class="value">{text}</span> <span class="attribute">onConfirm</span>=<span class="value">{confirm}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>上边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Popconfirm</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Popconfirm</span> <span class="attribute">placement</span>=<span class="value">"bottom"</span> <span class="attribute">title</span>=<span class="value">{text}</span> <span class="attribute">onConfirm</span>=<span class="value">{confirm}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>下边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Popconfirm</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Popconfirm</span> <span class="attribute">placement</span>=<span class="value">"right"</span> <span class="attribute">title</span>=<span class="value">{text}</span> <span class="attribute">onConfirm</span>=<span class="value">{confirm}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>右边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Popconfirm</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>, document.getElementById('components-popconfirm-demo-placement'));</span></code></pre></div><style>
+.code-box-demo .ant-popover-wrap > a {
+  margin-right: 1em;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-placement">位置</a>
+    </div>
+    <p>位置有四个方向。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

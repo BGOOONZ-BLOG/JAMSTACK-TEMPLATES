@@ -1,0 +1,69 @@
+<div class="code-box" id="demo-disabled">
+  <div class="code-box-demo">
+    <div id="components-switch-demo-disabled"></div>
+    <script>mountNode = document.getElementById('components-switch-demo-disabled');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      disabled: true
+    };
+  },
+  toggle: function toggle() {
+    this.setState({
+      disabled: !this.state.disabled
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(_antd.Switch, { disabled: this.state.disabled }),
+      React.createElement("br", null),
+      React.createElement("br", null),
+      React.createElement(
+        _antd.Button,
+        { type: "primary", onClick: this.toggle },
+        "Toggle disabled"
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Switch, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      disabled: <span class="hljs-literal">true</span>
+    };
+  },
+  toggle(){
+    <span class="hljs-keyword">this</span>.setState({
+      disabled: !<span class="hljs-keyword">this</span>.state.disabled
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Switch</span> <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{this.state.disabled}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.toggle}</span>&gt;</span>Toggle disabled<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-disabled">不可用</a>
+    </div>
+    <p>Switch 失效状态。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

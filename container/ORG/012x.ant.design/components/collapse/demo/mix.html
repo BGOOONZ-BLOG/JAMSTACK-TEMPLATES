@@ -1,0 +1,95 @@
+<div class="code-box" id="demo-mix">
+  <div class="code-box-demo">
+    <div id="components-collapse-demo-mix"></div>
+    <script>mountNode = document.getElementById('components-collapse-demo-mix');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Panel = _antd.Collapse.Panel;
+
+function callback(key) {
+  console.log(key);
+}
+
+var text = '\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n';
+
+ReactDOM.render(React.createElement(
+  _antd.Collapse,
+  { onChange: callback, accordion: true },
+  React.createElement(
+    Panel,
+    { header: 'This is panel header 1', key: '1' },
+    React.createElement(
+      _antd.Collapse,
+      { defaultActiveKey: '1' },
+      React.createElement(
+        Panel,
+        { header: 'This is panel nest panel', key: '1' },
+        React.createElement(
+          'p',
+          null,
+          text
+        )
+      )
+    )
+  ),
+  React.createElement(
+    Panel,
+    { header: 'This is panel header 2', key: '2' },
+    React.createElement(
+      'p',
+      null,
+      text
+    )
+  ),
+  React.createElement(
+    Panel,
+    { header: 'This is panel header 3', key: '3' },
+    React.createElement(
+      'p',
+      null,
+      text
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Collapse } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Panel = Collapse.Panel;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(key);
+}
+
+<span class="hljs-keyword">const</span> text = <span class="hljs-string">`
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Collapse</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span> <span class="hljs-attribute">accordion</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{'This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">1</span>'} <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Collapse</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{'This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">nest</span> <span class="hljs-attribute">panel</span>'} <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Collapse</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{'This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">2</span>'} <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{'This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">3</span>'} <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Collapse</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-mix">面板嵌套</a>
+    </div>
+    
+<p>手风琴嵌套折叠面板。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

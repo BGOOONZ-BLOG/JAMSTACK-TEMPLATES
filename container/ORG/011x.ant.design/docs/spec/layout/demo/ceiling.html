@@ -1,0 +1,171 @@
+<div class="code-box" id="layout-demo-ceiling">
+  <div class="code-box-demo">
+    <div id="docs-spec-layout-demo-ceiling"></div>
+    <script>mountNode = document.getElementById('docs-spec-layout-demo-ceiling');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  BrowserDemo,
+  null,
+  React.createElement(
+    "div",
+    { className: "ant-layout-ceiling-demo" },
+    React.createElement(
+      "div",
+      { className: "ant-layout-ceiling" },
+      React.createElement(
+        "div",
+        { className: "ant-layout-wrapper" },
+        React.createElement(
+          "ul",
+          { className: "right" },
+          React.createElement(
+            "li",
+            null,
+            "xxx@example.com"
+          ),
+          React.createElement(
+            "li",
+            null,
+            "|"
+          ),
+          React.createElement(
+            "li",
+            null,
+            "帮助中心"
+          ),
+          React.createElement(
+            "li",
+            null,
+            "|"
+          ),
+          React.createElement(
+            "li",
+            null,
+            "客服/投诉电话：400-826-7710"
+          )
+        )
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "ant-layout-header" },
+      React.createElement(
+        "div",
+        { className: "ant-layout-wrapper" },
+        React.createElement("div", { className: "ant-layout-logo" })
+      )
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Menu, Breadcrumb } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">BrowserDemo</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-layout-ceiling-demo"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-layout-ceiling"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-layout-wrapper"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"right"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>xxx@example.com<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>帮助中心<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>客服/投诉电话：400-826-7710<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-layout-header"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-layout-wrapper"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-layout-logo"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">BrowserDemo</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">.ant-layout-ceiling-demo {
+  height: 100%;
+}
+
+.ant-layout-ceiling {
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #242736;
+  color: #ddd;
+}
+
+.ant-layout-ceiling .right {
+  float: right;
+}
+
+.ant-layout-ceiling ul li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.ant-layout-ceiling-demo .ant-layout-wrapper {
+  padding: 0 50px;
+}
+
+.ant-layout-ceiling-demo .ant-layout-header {
+  background: #fff;
+  height: 64px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.ant-layout-ceiling-demo .ant-layout-logo {
+  width: 120px;
+  height: 32px;
+  background: #eee;
+  border-radius: 6px;
+  margin: 16px 28px 16px 0;
+  float: left;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.ant-layout-ceiling-demo</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-layout-ceiling</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">12px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#242736</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ddd</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-layout-ceiling</span> <span class="hljs-class">.right</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> right</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-layout-ceiling</span> <span class="hljs-tag">ul</span> <span class="hljs-tag">li</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">4px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-layout-ceiling-demo</span> <span class="hljs-class">.ant-layout-wrapper</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">50px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-layout-ceiling-demo</span> <span class="hljs-class">.ant-layout-header</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">64px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-bottom</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#d9d9d9</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-layout-ceiling-demo</span> <span class="hljs-class">.ant-layout-logo</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">120px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">16px</span> <span class="hljs-number">28px</span> <span class="hljs-number">16px</span> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> left</span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#layout-demo-ceiling">吊顶规范</a>
+    </div>
+    <p>吊顶一般用于跨系统/应用场景，可以放置统一的登录/帮助信息。</p>
+<p>吊顶背景深色，高度 <code>30px</code>，和浅色调的主导航配合使用。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,0 +1,211 @@
+<div class="code-box" id="demo-flex">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-flex"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "p",
+    null,
+    "子元素居左排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "start" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素居中排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "center" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素居右排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "end" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素等宽排列"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "space-between" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  ),
+  React.createElement(
+    "p",
+    null,
+    "子元素分散对齐"
+  ),
+  React.createElement(
+    _antd.Row,
+    { type: "flex", justify: "space-around" },
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "4" },
+      ".col-4"
+    )
+  )
+), document.getElementById('components-layout-demo-flex'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素居左排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"start"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素居中排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"center"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素居右排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"end"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素等宽排列<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"space-between"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>子元素分散对齐<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"flex"</span> <span class="hljs-attribute">justify</span>=<span class="hljs-value">"space-around"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"4"</span>&gt;</span>.col-4<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-flex')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-flex">Flex布局</a>
+    </div>
+    <p>Flex 布局基础。</p>
+<p>使用 <code>row-flex</code> 定义 <code>flex</code> 布局，其子元素根据不同的值 <code>start</code>,<code>center</code>,<code>end</code>,<code>space-between</code>,<code>space-around</code>，分别定义其在父节点里面的排版方式。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

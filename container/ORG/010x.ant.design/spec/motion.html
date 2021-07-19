@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+组件动画  - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../dist/demo.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/tomorrow.css">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/??component/console-polyfill/0.2.2/index.js,component/es5-shim/4.1.14/es5-shim.min.js,component/es5-shim/4.1.14/es5-sham.min.js,component/html5shiv/3.7.2/html5shiv.min.js,g/component/media-match/2.0.2/media.match.min.js"></script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timepicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.10.5',
+        stable: '0.10.5'
+      };
+    </script>
+    <script src="../dist/demo.js"></script>
+    <script src="https://t.alipayobjects.com/images/T1DrxhXe0mXXXXXXXX.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href=".." data-no-instant>首页</a>
+          </li>
+          <li class="current">
+            <a href="./introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="">
+            <a href="../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="introduce" class="">
+          Ant Design
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>基础</h4>
+      <ul class="">
+          <li class="">
+            <a href="font"
+               class="">
+              字体
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="typography"
+               class="">
+              排版
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="colors"
+               class="">
+              色彩
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="layout/"
+               class="">
+              常用布局
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>动画</h4>
+      <ul class="">
+          <li class="">
+            <a href="easing"
+               class="">
+              自然运动
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="page-transition"
+               class="">
+              互动转换
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="motion"
+               class="">
+              组件动画
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+      <li class="">
+        <a href="pattern" class="nav-link-disabled">
+          设计模式
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="tools" class="nav-link-disabled">
+          资源下载
+          <span class="chinese"></span>
+        </a>
+      </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>组件动画 </h1>
+    <p>Ant Design 提供了一些预设的组件动画样式。</p>
+<div id="components-motion-demo-basic"></div>
+
+<h2 id="组件动画">组件动画<a href="#组件动画" class="anchor">#</a> </h2><p>通过设置组件的 <code>transitionName</code> 指定组件动画。</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>中文名</th>
+<th>采用动画</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>popover</td>
+<td>气泡浮出</td>
+<td><code>zoom-up</code> <code>zoom-down</code> <code>zoom-left</code> <code>zoom-right</code></td>
+</tr>
+<tr>
+<td>popconfirm</td>
+<td>气泡确认</td>
+<td><code>zoom-up</code> <code>zoom-down</code> <code>zoom-left</code> <code>zoom-right</code></td>
+</tr>
+<tr>
+<td>tooltip</td>
+<td>文字提示</td>
+<td><code>zoom-up</code> <code>zoom-down</code> <code>zoom-left</code> <code>zoom-right</code></td>
+</tr>
+<tr>
+<td>modal</td>
+<td>弹出框</td>
+<td><code>zoom</code></td>
+</tr>
+<tr>
+<td>confirm</td>
+<td>弹出确认框</td>
+<td><code>zoom</code></td>
+</tr>
+<tr>
+<td>message</td>
+<td>信息提示条</td>
+<td><code>move-up</code></td>
+</tr>
+<tr>
+<td>notification</td>
+<td>通知框</td>
+<td><code>move-right</code> &amp; <code>slide-up</code></td>
+</tr>
+<tr>
+<td>dropdown</td>
+<td>下拉菜单</td>
+<td><code>slide-up</code></td>
+</tr>
+<tr>
+<td>select</td>
+<td>选择框</td>
+<td><code>slide-up</code></td>
+</tr>
+<tr>
+<td>datepicker</td>
+<td>日期选择框</td>
+<td><code>slide-up</code></td>
+</tr>
+<tr>
+<td>alert</td>
+<td>警告提示</td>
+<td><code>slide-up</code></td>
+</tr>
+<tr>
+<td>menu</td>
+<td>导航菜单</td>
+<td><code>slide-up</code></td>
+</tr>
+<tr>
+<td>datepicker</td>
+<td>日期选择框</td>
+<td><code>slide-up</code></td>
+</tr>
+</tbody>
+</table>
+<script>(function(){'use strict';
+
+var cssAnimation = require('css-animation');
+var Select = antd.Select;
+var Option = Select.Option;
+var OptGroup = Select.OptGroup;
+
+var motions = [];
+motions = motions.concat([[{
+  name: '淡入',
+  value: 'fade',
+  direction: 'enter',
+  type: '渐隐'
+}, {
+  name: '淡出',
+  value: 'fade',
+  direction: 'leave',
+  type: '渐隐'
+}]]);
+motions = motions.concat([[{
+  name: '中心放大',
+  value: 'zoom',
+  direction: 'enter',
+  type: '缩放'
+}, {
+  name: '中心缩小',
+  value: 'zoom',
+  direction: 'leave',
+  type: '缩放'
+}, {
+  name: '上方放大',
+  value: 'zoom-up',
+  direction: 'enter',
+  type: '缩放'
+}, {
+  name: '上方缩小',
+  value: 'zoom-up',
+  direction: 'leave',
+  type: '缩放'
+}, {
+  name: '下方放大',
+  value: 'zoom-down',
+  direction: 'enter',
+  type: '缩放'
+}, {
+  name: '下方缩小',
+  value: 'zoom-down',
+  direction: 'leave',
+  type: '缩放'
+}, {
+  name: '左方放大',
+  value: 'zoom-left',
+  direction: 'enter',
+  type: '缩放'
+}, {
+  name: '左方缩小',
+  value: 'zoom-left',
+  direction: 'leave',
+  type: '缩放'
+}, {
+  name: '右方放大',
+  value: 'zoom-right',
+  direction: 'enter',
+  type: '缩放'
+}, {
+  name: '右方缩小',
+  value: 'zoom-right',
+  direction: 'leave',
+  type: '缩放'
+}]]);
+motions = motions.concat([[{
+  name: '上方滑入',
+  value: 'move-up',
+  direction: 'enter',
+  type: '移动'
+}, {
+  name: '上方滑出',
+  value: 'move-up',
+  direction: 'leave',
+  type: '移动'
+}, {
+  name: '下方滑入',
+  value: 'move-down',
+  direction: 'enter',
+  type: '移动'
+}, {
+  name: '下方滑出',
+  value: 'move-down',
+  direction: 'leave',
+  type: '移动'
+}, {
+  name: '左方滑入',
+  value: 'move-left',
+  direction: 'enter',
+  type: '移动'
+}, {
+  name: '左方滑出',
+  value: 'move-left',
+  direction: 'leave',
+  type: '移动'
+}, {
+  name: '右方滑入',
+  value: 'move-right',
+  direction: 'enter',
+  type: '移动'
+}, {
+  name: '右方滑入',
+  value: 'move-right',
+  direction: 'leave',
+  type: '移动'
+}]]);
+motions = motions.concat([[{
+  name: '上方展开',
+  value: 'slide-up',
+  direction: 'enter',
+  type: '伸缩'
+}, {
+  name: '上方缩回',
+  value: 'slide-up',
+  direction: 'leave',
+  type: '伸缩'
+}, {
+  name: '下方展开',
+  value: 'slide-down',
+  direction: 'enter',
+  type: '伸缩'
+}, {
+  name: '下方缩回',
+  value: 'slide-down',
+  direction: 'leave',
+  type: '伸缩'
+}, {
+  name: '左方展开',
+  value: 'slide-left',
+  direction: 'enter',
+  type: '伸缩'
+}, {
+  name: '左方缩回',
+  value: 'slide-left',
+  direction: 'leave',
+  type: '伸缩'
+}, {
+  name: '右方展开',
+  value: 'slide-right',
+  direction: 'enter',
+  type: '伸缩'
+}, {
+  name: '右方缩回',
+  value: 'slide-right',
+  direction: 'leave',
+  type: '伸缩'
+}]]);
+motions = motions.concat([[{
+  name: '摇摆',
+  value: 'swing',
+  direction: 'enter',
+  type: '其他'
+}]]);
+var leave = '-leave';
+var Test = React.createClass({
+  displayName: 'Test',
+
+  handleChange: function handleChange(e) {
+    var _this = this;
+
+    var value = e;
+    if (value) {
+      this.demoNode.style.visibility = '';
+      cssAnimation(this.demoNode, value, function () {
+        if (value.slice(-leave.length) === leave) {
+          _this.demoNode.style.visibility = 'hidden';
+        }
+      });
+    }
+  },
+
+  componentDidMount: function componentDidMount() {
+    this.demoNode = ReactDOM.findDOMNode(this.refs.demo);
+  },
+
+  render: function render() {
+    var options = [React.createElement(
+      Option,
+      { value: '' },
+      '请选择预设动画'
+    )].concat(motions.map(function (m) {
+      var opts = m.map(function (m2) {
+        return React.createElement(
+          Option,
+          { value: m2.value + "-" + m2.direction },
+          m2.name + " " + m2.value
+        );
+      });
+      return React.createElement(
+        OptGroup,
+        { label: m[0].type },
+        opts
+      );
+    }));
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { className: 'motion-container' },
+        React.createElement('div', { ref: 'demo', className: 'motion-example' })
+      ),
+      React.createElement(
+        'div',
+        { className: 'motion-select-wrapper' },
+        React.createElement(
+          Select,
+          { value: '', className: 'motion-select', onChange: this.handleChange },
+          options
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), document.getElementById('components-motion-demo-basic'));})()</script><style>
+.motion-container {
+  height: 190px;
+  line-height: 190px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.motion-example {
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  display: inline-block !important;
+  border-radius: 8px;
+  font-weight: bold;
+  background: url(https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg) center/230px;
+}
+.motion-select-wrapper{
+  text-align: center;
+}
+.motion-select {
+  text-align:left;
+  width:180px;
+}
+</style>
+
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2dJ2mg">报告 Bug</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

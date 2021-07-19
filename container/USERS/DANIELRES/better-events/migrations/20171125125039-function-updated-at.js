@@ -1,4 +1,4 @@
-exports.up = db =>
+exports.up = (db) =>
   db.runSql(`
     CREATE OR REPLACE FUNCTION update_updated_at()
     RETURNS TRIGGER AS $$
@@ -7,10 +7,10 @@ exports.up = db =>
         RETURN NEW;
       END;
     $$ language 'plpgsql';
-`)
+`);
 
-exports.down = db => null
+exports.down = (db) => null;
 
 exports._meta = {
   version: 1,
-}
+};

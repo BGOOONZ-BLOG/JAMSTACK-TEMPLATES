@@ -11,10 +11,10 @@ export const LoggingSchema = new Mongoose.Schema(
   {
     userId: { type: String, required: true },
     payload: { type: String, required: true },
-    response: { type: String, required: true }
+    response: { type: String, required: true },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 

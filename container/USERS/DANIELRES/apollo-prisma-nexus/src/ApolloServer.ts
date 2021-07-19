@@ -9,4 +9,4 @@ const _ApolloServer = new ApolloServer({
   playground: process.env.NODE_ENV === 'development',
 })
 
-export default _ApolloServer;
+export default _ApolloServer

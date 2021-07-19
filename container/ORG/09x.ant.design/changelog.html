@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+更新日志  - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="./dist/antd-0.9.2.min.css">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="./static/tomorrow.css">
+    <script>
+      (function (con) {
+        'use strict';
+        var prop, method;
+        var empty = {};
+        var dummy = function () {
+        };
+        var properties = 'memory'.split(',');
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+                       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+                       'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) {
+          con[prop] = con[prop] || empty;
+        }
+        while (method = methods.pop()) {
+          con[method] = con[method] || dummy;
+        }
+      })(this.console = this.console || {});
+    </script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js,es5-shim/4.1.10/es5-shim.js,es5-shim/4.1.10/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'EnterAnimation',
+        desc: '进场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Iconfont',
+        desc: '字体图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="./static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.9.2',
+        stable: '0.9.2'
+      };
+    </script>
+    <script src="./dist/antd-0.9.2.min.js"></script>
+    <script src="./dist/demo.js"></script>
+    <script>
+      window.require = function (path) {
+        var result = window;
+        var namespaces = path.split('/');
+        namespaces.forEach(function (key, i) {
+          if (i !== 0 && i === namespaces.length - 1) {
+            key = capitalizeFirstLetter(key);
+          }
+          if (key !== 'lib') {
+            if (result[key]) {
+              result = result[key];
+            } else {
+              throw 'There should not have modules here 2.';
+            }
+          }
+        });
+        function capitalizeFirstLetter(string) {
+          return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        return result;
+      };
+    </script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="./">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="./" data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="./spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="">
+            <a href="./docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="docs/download" class="">
+          下载
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="current">
+        <a href="changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="components/button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/iconfont/"
+               class=""data-no-instant>
+              Iconfont
+              <span class="chinese">字体图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="components/checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="components/alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/message/"
+               class="">
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/notification/"
+               class="">
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="components/breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="components/affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/enter-animation/"
+               class="">
+              EnterAnimation
+              <span class="chinese">进场动画</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>更新日志 </h1>
+    <h2 id="0-9-2-2015-10-26">0.9.2 <code>2015-10-26</code></h2><ul>
+<li>Tooltip 的 title 为空时不展示浮层。<a href="9b5311791e73270c7c16a602ac74dd59719a5f76">9b53117</a></li>
+<li>修复 Upload 文件列表链接的 target 属性。<a href="340a1702b6a7b065ac02d417c891e1886dfe470d">340a170</a></li>
+<li>修复 Datepicker 设置 defaultValue 时星期顺序错误的问题。<a href="9ef14500f3abfcc7081f8dceab8187ec835e3918">9ef1450</a></li>
+<li>修复一些小的样式问题。</li>
+</ul>
+<h2 id="0-9-1-2015-09-26">0.9.1 <code>2015-09-26</code></h2><ul>
+<li>添加 Pagination pageSize 发生变化的回调。<a href="https://github.com/ant-design/ant-design/issues/317">#317</a></li>
+<li>升级依赖 rc-upload 到 1.6.x，修复 IE8/9 下的兼容性问题。</li>
+<li>升级依赖 rc-steps 到 1.3.x。<ul>
+<li>新增 current 属性，方便配置当前的步骤。<a href="https://github.com/ant-design/ant-design/issues/290">#290</a></li>
+<li>修复因滚动条影响页面宽度导致的错位问题。</li>
+</ul>
+</li>
+<li>升级依赖 rc-menu 到 1.5.x。<ul>
+<li>新增 onSelect 回调中返回参数 keyPath，从而支持只展开当前父级菜单的交互方式。<a href="http://ant.design/components/menu/#demo-sider-current">demo</a></li>
+<li>修复 hover 类型的弹出菜单能响应点击事件的问题。<a href="https://github.com/react-component/menu/issues/14">react-component/menu#14</a></li>
+</ul>
+</li>
+<li>修复一个 Table 的分页无法正确展示的问题。<a href="https://github.com/ant-design/ant-design/issues/253">#253</a></li>
+<li>修复一个 combobox 选择框无法选中的问题。<a href="https://github.com/ant-design/ant-design/commit/0435ca60e3b574bac3808a10ba3db62f482335fd">0435ca6</a></li>
+<li>修复 Radio.Button 在 IE 8 下不可用的问题。<a href="https://github.com/ant-design/ant-design/issues/321">#321</a></li>
+<li>适配 breadcrumb 面包屑组件和 <code>react-router@1.0.0-rc1</code>。</li>
+<li>修复只能同时弹出一个 Modal 通知框的问题。<a href="https://github.com/ant-design/ant-design/commit/d6a4094bc4c72acd05be001c7e46dbd17092001a">d6a4094</a></li>
+<li>升级依赖 rc-tooltip 到 2.8.0，增加 overlayClassName 属性。</li>
+<li>部分组件交互和视觉效果修正。</li>
+</ul>
+<h2 id="0-9-0-2015-09-14">0.9.0 <code>2015-09-14</code></h2><ul>
+<li>新增 <a href="components/timeline/">timeline</a> 和 <a href="components/badge/">badge</a> 组件。</li>
+<li>优化弹出层类组件的动画效果，使其更加流畅。</li>
+<li>部分文案更新。</li>
+<li>优化主站在小分辨率屏幕下的样式。</li>
+<li>使用 instantclick 改造主站，加载速度有明显提升。</li>
+<li>antd-bin 升级到 <a href="https://github.com/ant-design/antd-bin/blob/master/HISTORY.md">0.6.x</a> 。</li>
+<li>Upload <strong>重构了 API 接口，不向下兼容</strong>，支持自定义的功能扩展。<ul>
+<li>新增 <code>onChange(file) {}</code> 接口，移出原来的 <code>onSuccess</code>、<code>onProgess</code>、<code>onError</code> 等接口。</li>
+<li>新增 <code>fileList</code> 和 <code>defaultFileList</code> 属性，以满足更多的自定义功能，具体见演示。</li>
+<li>设置 fileList 数组项的 url 属性可以作为链接展示在文件列表中方便下载。</li>
+<li>移除内建的上传成功或失败的信息提示，业务可自行实现。</li>
+<li>修正多文件选择上传时文件列表只展示一个文件的问题。</li>
+</ul>
+</li>
+<li>Table<ul>
+<li>新增可展开的 table。<a href="https://github.com/ant-design/ant-design/pull/258">#258</a></li>
+<li>新增无数据的展示样式。<a href="https://github.com/ant-design/ant-design/commit/4c54644116d46cb2510d2d475234529bad60e5d5">4c54644</a></li>
+<li>修复本地模式 <code>dataSource</code> 无法更新的问题。<a href="https://github.com/ant-design/ant-design/commit/6d2dcc45393b6ec0ad1ba73caf8b1ec42353743f">6d2dcc4</a></li>
+<li>修复远程模式 loading 失效的问题。<a href="https://github.com/ant-design/ant-design/commit/9b8abb219934c246970a84200818aa8f85974bdf">9b8abb2</a></li>
+<li>用 <a href="http://npmjs.com/reqwest-without-xhr2">reqwest-without-xhr2</a> 代替了 reqwest，解决某些开发环境下 xhr2 依赖的问题。</li>
+</ul>
+</li>
+<li>Select<ul>
+<li>增加 label 属性，允许多选模式下展示标签（原来只能显示 value 值）。<a href="http://react-component.github.io/select/examples/mul-suggest.html">演示</a></li>
+<li>修复 combobox 模式下 value 失效的问题。</li>
+</ul>
+</li>
+<li>Notification 修复不会自动消失的问题。<a href="https://github.com/ant-design/ant-design/commit/23fce559b0b2faf4e0b686a92dbcdd045727a464">23fce55</a></li>
+<li>Steps 新增竖版的步骤条。</li>
+<li>Carousel 修复 fade 模式下可以拖拽的问题。#212</li>
+<li>Collapse 修复动画不生效的问题。</li>
+<li>Datepicker 修复无法设置为空值的问题。</li>
+<li>Modal<ul>
+<li>添加 <a href="http://ant.design/components/modal/#demo-info">通知类型</a> 的对话框函数。</li>
+<li>用 <code>Modal.confirm()</code> 代替 <code>confirm()</code> 方法。</li>
+<li>修改为需要在 onCancel 手动设置 visible 属性来关闭。</li>
+</ul>
+</li>
+<li>Message 添加 <a href="http://ant.design/components/message/#demo-loading">加载中类型</a>。</li>
+<li>Radio 修改 Radio.Group 容器的盒模型属性为 inline-block 。</li>
+<li>Enter Animation<ul>
+<li>大幅度的重构，全新 API 的设计。</li>
+<li>支持和 react-router 结合使用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-8-0-2015-08-25">0.8.0 <code>2015-08-25</code></h2><p>这个版本是第一个稳定版，组件经过三期迭代，基本到齐，并有大量改进和变化，不向下兼容。</p>
+<ul>
+<li>新增九个组件 <code>menu</code>、<code>upload</code>、<code>carousel</code>、<code>tree</code>、<code>notification</code>、<code>validation</code>、<code>affix</code>、<code>alert</code>、<code>enterAnimation</code>。目前共有组件 34 个，基本能满足后台类项目的组件需求。</li>
+<li>新增设计文档部分，包括文字、色彩、动画。</li>
+<li>重新梳理了设计和 React 实现部分的关系，强调了 Ant Design 的设计属性，并更新了网站的信息结构。</li>
+<li>构建工具 <code>antd-bin</code> 升级到 <code>0.4.0</code> 版本，支持合并 webpack 配置，热替换（HMR）等特性，<a href="https://github.com/ant-design/antd-bin">详见</a>。</li>
+<li>组件动画优化和补充，体验更加流畅动感。</li>
+<li>排查并修复 IE 和 safari 等浏览器的兼容问题。</li>
+<li>大量代码重构，演示代码补充，文档更新、以及样式上的优化。</li>
+</ul>
+<h2 id="0-7-3-2015-07-30">0.7.3 <code>2015-07-30</code></h2><ul>
+<li>小幅重构了 Table 分页，修复了分页导致的数据不展示的问题。</li>
+<li>更新了部分文档。</li>
+</ul>
+<h2 id="0-7-2-2015-07-27">0.7.2 <code>2015-07-27</code></h2><ul>
+<li>修复本地模式下 pagination 为 false 时数据无法显示的 <a href="https://github.com/ant-design/ant-design/commit/1954586665e59031eae5d2c8b2cdb08f83d64fcb">问题</a>。</li>
+<li>重构了 message 组件。</li>
+<li>添加英文版说明文档 <a href="https://github.com/ant-design/ant-design/blob/master/README-en_US.md">README-en_US.md</a>。</li>
+<li>部分代码切换至 ES6 模式。</li>
+<li>修正了部分组件的样式和演示，优化部分动画。</li>
+</ul>
+<h2 id="0-7-1-2015-07-22">0.7.1 <code>2015-07-22</code></h2><ul>
+<li>修复了 Table 组件的 pagination 为 false 时分页未消失的 <a href="https://github.com/ant-design/ant-design/commit/01a6c0f1e6707b72a54ef30d073d148a87b391a8">问题</a>。</li>
+<li>select 组件<a href="https://github.com/ant-design/ant-design/issues/50">选中后默认显示标签内容</a>（原来是显示 value）。</li>
+<li>修正了部分组件的样式和演示。</li>
+<li>打包文件为 <a href="https://github.com/ant-design/ant-design/commit/9b7b940cb417429d8fc57d83e252991b043d0f2f">umd 模式</a>。</li>
+</ul>
+<h2 id="0-7-0-2015-07-21">0.7.0 <code>2015-07-21</code></h2><ul>
+<li>第一个公开版本，发布 <code>layout</code>、<code>iconfont</code>、<code>button</code>、<code>form</code>、<code>checkbox</code>、<code>radio</code>、<code>switch</code>、<code>slider</code>、<code>input-number</code>、<code>datepicker</code>、<code>select</code>、<code>tabs</code>、<code>steps</code>、<code>breadcrumb</code>、<code>collapse</code>、<code>pagination</code>、<code>modal</code>、<code>message</code>、<code>dropdown</code>、<code>popover</code>、<code>popconfirm</code>、<code>tooltip</code>、<code>progress</code>、<code>table</code> 等组件。</li>
+<li>发布 <a href="http://ant.design/">Ant Design 首页</a> 和入门文档。</li>
+</ul>
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">问题与建议 - Issues</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

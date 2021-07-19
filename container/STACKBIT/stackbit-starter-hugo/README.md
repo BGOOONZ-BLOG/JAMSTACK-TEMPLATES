@@ -8,18 +8,17 @@ Starter is a flexible, multi-purpose Hugo theme built for developers and ready t
 
 ![Stackbit Starter Hugo Theme screenshot](https://themes.stackbit.com/images/starter-demo-1024x768.png)
 
-
 # Running Your Site Locally
 
-1. Install Hugo [installation guide](https://gohugo.io/getting-started/installing/)
+1.  Install Hugo [installation guide](https://gohugo.io/getting-started/installing/)
 
-2. This theme uses Hugo Pipes to handle SCSS, please make sure you have Hugo extended version installed, use `hugo version` to check
+2.  This theme uses Hugo Pipes to handle SCSS, please make sure you have Hugo extended version installed, use `hugo version` to check
 
-3. Run the hugo development server
+3.  Run the hugo development server
 
         hugo server
 
-4. Browse to [http://localhost:1313/](http://localhost:1313/)
+4.  Browse to [http://localhost:1313/](http://localhost:1313/)
 
 # Deployment
 

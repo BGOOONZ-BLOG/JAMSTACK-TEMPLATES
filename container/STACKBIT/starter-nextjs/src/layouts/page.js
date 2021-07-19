@@ -16,7 +16,11 @@ export default class Page extends React.Component {
             <Layout page={page} config={config}>
                 <article className="page">
                     <div className="container container--md">
-                        {title && <header className="page__header"><h1 className="page__title">{title}</h1></header>}
+                        {title && (
+                            <header className="page__header">
+                                <h1 className="page__title">{title}</h1>
+                            </header>
+                        )}
                         {markdownContent && <div className="page__copy">{markdownify(markdownContent)}</div>}
                     </div>
                 </article>

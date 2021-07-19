@@ -1,0 +1,39 @@
+<div class="code-box" id="demo-loading">
+  <div class="code-box-demo">
+    <div id="components-message-demo-loading"></div>
+    <script>mountNode = document.getElementById('components-message-demo-loading');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var success = function success() {
+  var hide = _antd.message.loading('正在执行中...', 0);
+  // 异步手动移除
+  setTimeout(hide, 2500);
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Button,
+  { onClick: success },
+  '\u663E\u793A\u52A0\u8F7D\u4E2D...'
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> success = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> hide = message.loading(<span class="hljs-string">'正在执行中...'</span>, <span class="hljs-number">0</span>);
+  <span class="hljs-comment">// 异步手动移除</span>
+  setTimeout(hide, <span class="hljs-number">2500</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>显示加载中...<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-loading">加载中</a>
+    </div>
+    
+<p>进行全局 loading，异步自行移除。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

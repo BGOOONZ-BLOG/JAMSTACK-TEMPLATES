@@ -1,17 +1,17 @@
-version: '3'
+version: "3"
 services:
   https-portal:
     image: steveltn/https-portal
     ports:
-      - '80:80'
-      - '443:443'
+      - "80:80"
+      - "443:443"
     links:
       - web
       - auth
     restart: always
     environment:
       DOMAINS: "${HTTPSDOMAINS}"
-      STAGE: 'staging'
+      STAGE: "staging"
 
   web:
     image: danielres/docker-react-node
@@ -31,16 +31,16 @@ services:
       POSTGRES_PASSWORD: "${PGPASSWORD}"
       POSTGRES_USER: "${PGUSER}"
       POSTGRES_DB: "${PGDB}"
-    volumes: 
+    volumes:
       - pgdata:/var/lib/postgresql/data
     depends_on:
       - auth
 
   auth:
-      image: lipp/login-with
-      environment:
-        LW_JWT_SECRET: "${LW_JWT_SECRET}"
-        LW_SESSION_SECRET: "${LW_SESSION_SECRET}"
-        LW_SUBDOMAIN: "${LW_SUBDOMAIN}"
-        LW_FACEBOOK_APPID: "${LW_FACEBOOK_APPID}"
-        LW_FACEBOOK_APPSECRET: "${LW_FACEBOOK_APPSECRET}"
+    image: lipp/login-with
+    environment:
+      LW_JWT_SECRET: "${LW_JWT_SECRET}"
+      LW_SESSION_SECRET: "${LW_SESSION_SECRET}"
+      LW_SUBDOMAIN: "${LW_SUBDOMAIN}"
+      LW_FACEBOOK_APPID: "${LW_FACEBOOK_APPID}"
+      LW_FACEBOOK_APPSECRET: "${LW_FACEBOOK_APPSECRET}"

@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'babel-preset-stage-0' {
+declare module "babel-preset-stage-0" {
   declare module.exports: any;
 }
 
@@ -22,11 +22,11 @@ declare module 'babel-preset-stage-0' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'babel-preset-stage-0/lib/index' {
+declare module "babel-preset-stage-0/lib/index" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'babel-preset-stage-0/lib/index.js' {
-  declare module.exports: $Exports<'babel-preset-stage-0/lib/index'>;
+declare module "babel-preset-stage-0/lib/index.js" {
+  declare module.exports: $Exports<"babel-preset-stage-0/lib/index">;
 }

@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'socket.io' {
+declare module "socket.io" {
   declare module.exports: any;
 }
 
@@ -22,32 +22,32 @@ declare module 'socket.io' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'socket.io/lib/client' {
+declare module "socket.io/lib/client" {
   declare module.exports: any;
 }
 
-declare module 'socket.io/lib/index' {
+declare module "socket.io/lib/index" {
   declare module.exports: any;
 }
 
-declare module 'socket.io/lib/namespace' {
+declare module "socket.io/lib/namespace" {
   declare module.exports: any;
 }
 
-declare module 'socket.io/lib/socket' {
+declare module "socket.io/lib/socket" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'socket.io/lib/client.js' {
-  declare module.exports: $Exports<'socket.io/lib/client'>;
+declare module "socket.io/lib/client.js" {
+  declare module.exports: $Exports<"socket.io/lib/client">;
 }
-declare module 'socket.io/lib/index.js' {
-  declare module.exports: $Exports<'socket.io/lib/index'>;
+declare module "socket.io/lib/index.js" {
+  declare module.exports: $Exports<"socket.io/lib/index">;
 }
-declare module 'socket.io/lib/namespace.js' {
-  declare module.exports: $Exports<'socket.io/lib/namespace'>;
+declare module "socket.io/lib/namespace.js" {
+  declare module.exports: $Exports<"socket.io/lib/namespace">;
 }
-declare module 'socket.io/lib/socket.js' {
-  declare module.exports: $Exports<'socket.io/lib/socket'>;
+declare module "socket.io/lib/socket.js" {
+  declare module.exports: $Exports<"socket.io/lib/socket">;
 }

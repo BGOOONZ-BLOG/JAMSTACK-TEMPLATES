@@ -1,19 +1,23 @@
-title: Using a specific Firefox release 
+title: Using a specific Firefox release
 sub: when testing Rails with Capybara and Selenium
 date: 2013-02-25 13:38
 categories:
+
 - programming
 - testing
 - ruby
-tags: 
+  tags:
 - rspec
 - integration-tests
 - capybara
 - selenium
 - rails
 - cucumber
+
 ---
-&nbsp; 
+
+&nbsp;
+
 <!-- more -->
 
 When Firefox was updated on my laptop a few days ago to version 19, suddenly my Cucumber tests using Selenium and Firefox stopped working, with error:
@@ -27,25 +31,25 @@ In my opinion, the test suite should never depend on the same browser which is u
 
 So, the solution is relatively simple:
 
-1) Download a previous Firefox version (I choosed the version 17, 64bits) here:<br />
-[http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/](http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/)
+1. Download a previous Firefox version (I choosed the version 17, 64bits) here:<br />
+   [http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/](http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/)
 
-2) Extract the archive, you should get a "firefox" folder containing the program and its binaries
+2. Extract the archive, you should get a "firefox" folder containing the program and its binaries
 
-3) Move the entire folder to your desired location.<br />
-For example, on Ubuntu:
+3. Move the entire folder to your desired location.<br />
+   For example, on Ubuntu:
 
 {% codeblock lang:bash %}
 sudo mv firefox /opt/firefox17
 {% endcodeblock %}
 
-4) Now, in your env.rb file, add this:
+4. Now, in your env.rb file, add this:
 
 {% codeblock lang:ruby file: features/support/env.rb %}
 Capybara.register_driver :selenium do |app|
-  require 'selenium/webdriver'
-  Selenium::WebDriver::Firefox::Binary.path = "/opt/firefox17/firefox"
-  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+require 'selenium/webdriver'
+Selenium::WebDriver::Firefox::Binary.path = "/opt/firefox17/firefox"
+Capybara::Selenium::Driver.new(app, :browser => :firefox)
 end
 {% endcodeblock %}
 
@@ -54,9 +58,9 @@ If the environment variable is not present, then it simply falls back to the sys
 
 {% codeblock lang:ruby file: features/support/env.rb %}
 Capybara.register_driver :selenium do |app|
-  require 'selenium/webdriver'
-  Selenium::WebDriver::Firefox::Binary.path = ENV['FIREFOX_BINARY_PATH'] || Selenium::WebDriver::Firefox::Binary.path
-  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+require 'selenium/webdriver'
+Selenium::WebDriver::Firefox::Binary.path = ENV['FIREFOX_BINARY_PATH'] || Selenium::WebDriver::Firefox::Binary.path
+Capybara::Selenium::Driver.new(app, :browser => :firefox)
 end
 {% endcodeblock %}
 
@@ -68,11 +72,3 @@ export FIREFOX_BINARY_PATH="/opt/firefox17/firefox"
 
 Thanks for reading.<br />
 Happy testing !
-
-
-
-
-
-
-
-

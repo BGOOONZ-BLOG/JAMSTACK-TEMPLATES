@@ -51,7 +51,6 @@ state:
   tags: tags
   categories: categories
 
-
 cheers:
   um: Um..
   ok: OK
@@ -63,5 +62,5 @@ cheers:
 keep_on: Et ca ne fait que commencer.
 
 symbol:
-  comma: ', '
-  period: '. '
+  comma: ", "
+  period: ". "

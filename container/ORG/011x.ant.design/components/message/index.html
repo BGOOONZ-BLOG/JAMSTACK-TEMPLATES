@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Message 全局提示 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css?20160114">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.1.14/es5-shim.min.js,es5-shim/4.1.14/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.11.3'
+      };
+    </script>
+    <script src="../../dist/demo.js?20160114"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../../docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../../docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../../docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../../docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../date-picker/"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Message 全局提示
+    </h1>
+    <p>全局展示操作反馈信息。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><ul>
+<li>可提供成功、警告和错误等反馈信息。</li>
+<li>顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。</li>
+</ul>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><ul>
+<li><code>message.success(content, duration)</code></li>
+<li><code>message.error(content, duration)</code></li>
+<li><code>message.info(content, duration)</code></li>
+<li><code>message.loading(content, duration)</code></li>
+</ul>
+<p>组件提供了三个静态方法，参数如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td>提示内容</td>
+<td>React.Element or String</td>
+<td>无</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>自动关闭的延时</td>
+<td>number</td>
+<td>1.5</td>
+</tr>
+</tbody>
+</table>
+<p>还提供了一个全局配置方法：</p>
+<ul>
+<li><code>message.config(options)</code></li>
+</ul>
+<div class="highlight"><pre><code class="javascript">message.config({
+  top: <span class="hljs-number">100</span>
+});</code></pre></div><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>消息距离顶部的位置</td>
+<td>Number</td>
+<td>24px</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-info">
+  <div class="code-box-demo">
+    <div id="components-message-demo-info"></div>
+    <script>mountNode = document.getElementById('components-message-demo-info');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var info = function info() {
+  _antd.message.info('这是一条普通的提醒');
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Button,
+  { type: 'primary', onClick: info },
+  '显示普通提醒'
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> info = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  message.info(<span class="hljs-string">'这是一条普通的提醒'</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{info}</span>&gt;</span>显示普通提醒<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-info">普通提示</a>
+    </div>
+    <p>信息提醒反馈。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-duration">
+  <div class="code-box-demo">
+    <div id="components-message-demo-duration"></div>
+    <script>mountNode = document.getElementById('components-message-demo-duration');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var success = function success() {
+  _antd.message.success('这是一条成功的提示,并将于10秒后消失', 10);
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Button,
+  { onClick: success },
+  '自定义时长提示'
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> success = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  message.success(<span class="hljs-string">'这是一条成功的提示,并将于10秒后消失'</span>, <span class="hljs-number">10</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>自定义时长提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-duration">修改延时</a>
+    </div>
+    <p>自定义时长 <code>10s</code>，默认时长为 <code>1.5s</code>。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-other">
+  <div class="code-box-demo">
+    <div id="components-message-demo-other"></div>
+    <script>mountNode = document.getElementById('components-message-demo-other');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var success = function success() {
+  _antd.message.success('这是一条成功提示');
+};
+
+var error = function error() {
+  _antd.message.error('这是一条报错提示');
+};
+
+var warn = function warn() {
+  _antd.message.warn('这是一条警告提示');
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    _antd.Button,
+    { onClick: success },
+    '显示成功提示'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: error },
+    '显示报错提示'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: warn },
+    '显示警告提示'
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> success = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  message.success(<span class="hljs-string">'这是一条成功提示'</span>);
+};
+
+<span class="hljs-keyword">const</span> error = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  message.error(<span class="hljs-string">'这是一条报错提示'</span>);
+};
+
+<span class="hljs-keyword">const</span> warn = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  message.warn(<span class="hljs-string">'这是一条警告提示'</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>显示成功提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{error}</span>&gt;</span>显示报错提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{warn}</span>&gt;</span>显示警告提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div><style>
+#components-message-demo-other .ant-btn {
+  margin-right: 8px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-other">其他提示类型</a>
+    </div>
+    <p>包括成功、失败、警告。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-loading">
+  <div class="code-box-demo">
+    <div id="components-message-demo-loading"></div>
+    <script>mountNode = document.getElementById('components-message-demo-loading');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var success = function success() {
+  var hide = _antd.message.loading('正在执行中...', 0);
+  // 异步手动移除
+  setTimeout(hide, 2500);
+};
+
+ReactDOM.render(React.createElement(
+  _antd.Button,
+  { onClick: success },
+  '显示加载中...'
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> success = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> hide = message.loading(<span class="hljs-string">'正在执行中...'</span>, <span class="hljs-number">0</span>);
+  <span class="hljs-comment">// 异步手动移除</span>
+  setTimeout(hide, <span class="hljs-number">2500</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>显示加载中...<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-loading">加载中</a>
+    </div>
+    <p>进行全局 loading，异步自行移除。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+<ul class="toc demos-anchor">
+  <li>
+    <a title="普通提示" href="#demo-info">
+      <span>普通提示</span>
+    </a>
+  </li>
+  <li>
+    <a title="其他提示类型" href="#demo-other">
+      <span>其他提示类型</span>
+    </a>
+  </li>
+  <li>
+    <a title="修改延时" href="#demo-duration">
+      <span>修改延时</span>
+    </a>
+  </li>
+  <li>
+    <a title="加载中" href="#demo-loading">
+      <span>加载中</span>
+    </a>
+  </li>
+</ul>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

@@ -1,180 +1,180 @@
 pre.sunburst .DiffInserted {
-   background-color: #253B22;
-   color: #F8F8F8;
+  background-color: #253b22;
+  color: #f8f8f8;
 }
 pre.sunburst .DiffHeader {
-   background-color: #0E2231;
-   color: #F8F8F8;
-   font-style: italic;
+  background-color: #0e2231;
+  color: #f8f8f8;
+  font-style: italic;
 }
 pre.sunburst .CssPropertyValue {
-   color: #F9EE98;
+  color: #f9ee98;
 }
 pre.sunburst .CCCPreprocessorDirective {
-   color: #AFC4DB;
+  color: #afc4db;
 }
 pre.sunburst .Constant {
-   color: #3387CC;
+  color: #3387cc;
 }
 pre.sunburst .DiffChanged {
-   background-color: #4A410D;
-   color: #F8F8F8;
+  background-color: #4a410d;
+  color: #f8f8f8;
 }
 pre.sunburst .Support {
-   color: #9B859D;
+  color: #9b859d;
 }
 pre.sunburst .MarkupList {
-   color: #E1D4B9;
+  color: #e1d4b9;
 }
 pre.sunburst .CssConstructorArgument {
-   color: #8F9D6A;
+  color: #8f9d6a;
 }
 pre.sunburst .Storage {
-   color: #99CF50;
+  color: #99cf50;
 }
 pre.sunburst .line-numbers {
-   background-color: #DDF0FF;
-   color: #000000;
+  background-color: #ddf0ff;
+  color: #000000;
 }
 pre.sunburst .CssClass {
-   color: #9B703F;
+  color: #9b703f;
 }
 pre.sunburst .StringConstant {
-   color: #DDF2A4;
+  color: #ddf2a4;
 }
 pre.sunburst .MarkupSeparator {
-   background-color: #242424;
-   color: #60A633;
+  background-color: #242424;
+  color: #60a633;
 }
 pre.sunburst .MarkupUnderline {
-   text-decoration: underline;
-   color: #E18964;
+  text-decoration: underline;
+  color: #e18964;
 }
 pre.sunburst .CssAtRule {
-   color: #8693A5;
+  color: #8693a5;
 }
 pre.sunburst .MetaTagInline {
-   color: #E0C589;
+  color: #e0c589;
 }
 pre.sunburst .JEntityNameType {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 pre.sunburst .LogEntryError {
-   background-color: #751012;
+  background-color: #751012;
 }
 pre.sunburst .MarkupHeading {
-   background-color: #632D04;
-   color: #FEDCC5;
+  background-color: #632d04;
+  color: #fedcc5;
 }
 pre.sunburst .CssTagName {
-   color: #CDA869;
+  color: #cda869;
 }
 pre.sunburst .SupportConstant {
-   color: #CF6A4C;
+  color: #cf6a4c;
 }
 pre.sunburst .MarkupQuote {
-   background-color: #ECD091;
-   color: #E1D4B9;
-   font-style: italic;
+  background-color: #ecd091;
+  color: #e1d4b9;
+  font-style: italic;
 }
 pre.sunburst .DiffDeleted {
-   background-color: #420E09;
-   color: #F8F8F8;
+  background-color: #420e09;
+  color: #f8f8f8;
 }
 pre.sunburst .CCCPreprocessorLine {
-   color: #8996A8;
+  color: #8996a8;
 }
 pre.sunburst .StringRegexpSpecial {
-   color: #CF7D34;
+  color: #cf7d34;
 }
 pre.sunburst .EmbeddedSourceBright {
-   background-color: #ABADB4;
+  background-color: #abadb4;
 }
 pre.sunburst .InvalidIllegal {
-   background-color: #150B15;
-   color: #FD5FF1;
+  background-color: #150b15;
+  color: #fd5ff1;
 }
 pre.sunburst .MarkupRaw {
-   background-color: #ABADB4;
-   color: #578BB3;
+  background-color: #abadb4;
+  color: #578bb3;
 }
 pre.sunburst .SupportFunction {
-   color: #DAD085;
+  color: #dad085;
 }
 pre.sunburst .CssAdditionalConstants {
-   color: #DD7B3B;
+  color: #dd7b3b;
 }
 pre.sunburst .MetaTagAll {
-   color: #89BDFF;
+  color: #89bdff;
 }
 pre.sunburst .StringRegexp {
-   color: #E9C062;
+  color: #e9c062;
 }
 pre.sunburst .StringEmbeddedSource {
-   color: #DAEFA3;
+  color: #daefa3;
 }
 pre.sunburst .EntityInheritedClass {
-   color: #9B5C2E;
-   font-style: italic;
+  color: #9b5c2e;
+  font-style: italic;
 }
 pre.sunburst .MarkupComment {
-   color: #F67B37;
-   font-style: italic;
+  color: #f67b37;
+  font-style: italic;
 }
 pre.sunburst .MarkupBold {
-   font-weight: bold;
-   color: #E9C062;
+  font-weight: bold;
+  color: #e9c062;
 }
 pre.sunburst .CssId {
-   color: #8B98AB;
+  color: #8b98ab;
 }
 pre.sunburst .CssPseudoClass {
-   color: #8F9D6A;
+  color: #8f9d6a;
 }
 pre.sunburst .JCast {
-   color: #676767;
-   font-style: italic;
+  color: #676767;
+  font-style: italic;
 }
 pre.sunburst .StringVariable {
-   color: #8A9A95;
+  color: #8a9a95;
 }
 pre.sunburst .String {
-   color: #65B042;
+  color: #65b042;
 }
 pre.sunburst .Keyword {
-   color: #E28964;
+  color: #e28964;
 }
 pre.sunburst {
-   background-color: #000000;
-   color: #F8F8F8;
+  background-color: #000000;
+  color: #f8f8f8;
 }
 pre.sunburst .LogEntry {
-   background-color: #C7C7C7;
+  background-color: #c7c7c7;
 }
 pre.sunburst .MarkupItalic {
-   color: #E9C062;
-   font-style: italic;
+  color: #e9c062;
+  font-style: italic;
 }
 pre.sunburst .CssPropertyName {
-   color: #C5AF75;
+  color: #c5af75;
 }
 pre.sunburst .Namespaces {
-   color: #E18964;
+  color: #e18964;
 }
 pre.sunburst .DoctypeXmlProcessing {
-   color: #494949;
+  color: #494949;
 }
 pre.sunburst .InvalidDeprecated {
-   color: #FD5FF1;
-   font-style: italic;
+  color: #fd5ff1;
+  font-style: italic;
 }
 pre.sunburst .Variable {
-   color: #3E87E3;
+  color: #3e87e3;
 }
 pre.sunburst .Entity {
-   color: #89BDFF;
+  color: #89bdff;
 }
 pre.sunburst .Comment {
-   color: #AEAEAE;
-   font-style: italic;
+  color: #aeaeae;
+  font-style: italic;
 }

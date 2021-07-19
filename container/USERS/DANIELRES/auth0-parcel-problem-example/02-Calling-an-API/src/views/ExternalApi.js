@@ -14,8 +14,8 @@ const ExternalApi = () => {
 
       const response = await fetch("/api/external", {
         headers: {
-          Authorization: `Bearer ${token}`
-        }
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       const responseData = await response.json();

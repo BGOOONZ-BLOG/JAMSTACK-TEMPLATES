@@ -1,13 +1,11 @@
-'use strict';
+"use strict";
 
-var Reflux  = require('reflux');
-var SessionActions = require('actions/session_actions');
+var Reflux = require("reflux");
+var SessionActions = require("actions/session_actions");
 
-var ApiHelper = require('helpers/api_helper');
-
+var ApiHelper = require("helpers/api_helper");
 
 module.exports = Reflux.createStore({
-
   listenables: [SessionActions],
 
   getInitialState: function () {
@@ -22,7 +20,7 @@ module.exports = Reflux.createStore({
   onLoginCompleted: function (result) {
     this.user = result;
     this.user.logged = true;
-    sessionStorage.setItem('access_token', this.user.access_token);
+    sessionStorage.setItem("access_token", this.user.access_token);
     this.trigger(this.user);
   },
 
@@ -38,9 +36,7 @@ module.exports = Reflux.createStore({
 
   onLogout: function () {
     this.getInitialState();
-    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem("access_token");
     this.trigger(this.user);
-  }
-
+  },
 });
-

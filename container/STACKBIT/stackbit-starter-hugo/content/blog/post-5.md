@@ -1,6 +1,6 @@
 ---
 title: Amet Nulla Facilisi Morbi Tempus
-date: '2020-06-02'
+date: "2020-06-02"
 author: data/team/gordon-norman.json
 categories:
   - data/categories/tutorials.json

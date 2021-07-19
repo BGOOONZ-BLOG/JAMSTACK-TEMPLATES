@@ -1,0 +1,48 @@
+<div class="code-box" id="demo-colorful">
+  <div class="code-box-demo">
+    <div id="components-tag-demo-colorful"></div>
+    <script>mountNode = document.getElementById('components-tag-demo-colorful');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Tag,
+    { closable: true, color: "blue" },
+    "蓝色"
+  ),
+  React.createElement(
+    _antd.Tag,
+    { closable: true, color: "green" },
+    "绿色"
+  ),
+  React.createElement(
+    _antd.Tag,
+    { closable: true, color: "yellow" },
+    "黄色"
+  ),
+  React.createElement(
+    _antd.Tag,
+    { closable: true, color: "red" },
+    "红色"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tag } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Tag</span> <span class="hljs-attribute">closable</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"blue"</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-title">Tag</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Tag</span> <span class="hljs-attribute">closable</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"green"</span>&gt;</span>绿色<span class="hljs-tag">&lt;/<span class="hljs-title">Tag</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Tag</span> <span class="hljs-attribute">closable</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"yellow"</span>&gt;</span>黄色<span class="hljs-tag">&lt;/<span class="hljs-title">Tag</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Tag</span> <span class="hljs-attribute">closable</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"red"</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-title">Tag</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-colorful">各种类型</a>
+    </div>
+    <p>四种颜色的标签。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

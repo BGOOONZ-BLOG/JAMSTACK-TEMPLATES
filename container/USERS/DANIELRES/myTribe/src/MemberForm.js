@@ -1,6 +1,6 @@
-import { Control, Errors, LocalForm, actions } from 'react-redux-form'
-import React, { Component } from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import { Control, Errors, LocalForm, actions } from "react-redux-form";
+import React, { Component } from "react";
+import styled, { injectGlobal } from "styled-components";
 
 //eslint-disable-next-line no-unused-expressions
 injectGlobal` 
@@ -8,9 +8,11 @@ injectGlobal`
     font-size: small;
     color: red;
   }
-`
+`;
 
-const Button = styled.button`padding: 10px;`
+const Button = styled.button`
+  padding: 10px;
+`;
 
 const Grid = styled.div`
   display: flex;
@@ -27,53 +29,53 @@ const Grid = styled.div`
       margin-right: 20px;
     }
   }
-`
-const FormRow = styled(({ children, className }) =>
-  <Grid className={className}>
-    {children}
-  </Grid>
-)`
+`;
+const FormRow = styled(({ children, className }) => (
+  <Grid className={className}>{children}</Grid>
+))`
   margin-bottom: 5px;
   input,
   textarea {
     width: 100%;
     box-sizing: border-box;
   }
-  label:after {content: ':'}
-`
+  label:after {
+    content: ":";
+  }
+`;
 
-const initialState = { infos: {} }
+const initialState = { infos: {} };
 
-const isRequired = val => val && val.length > 0
+const isRequired = (val) => val && val.length > 0;
 
 export default class extends Component {
   constructor(props) {
-    super(props)
-    this.resetForm = this.resetForm.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    super(props);
+    this.resetForm = this.resetForm.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   resetForm() {
-    this.formDispatch(actions.change('member', initialState))
+    this.formDispatch(actions.change("member", initialState));
   }
 
   onSubmit(values) {
-    fetch('/api/members', {
+    fetch("/api/members", {
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      method: 'post',
+      method: "post",
       body: JSON.stringify(values),
     })
       .then(this.props.onSubmit)
-      .then(this.resetForm)
+      .then(this.resetForm);
   }
 
   render() {
     return (
       <LocalForm
-        getDispatch={dispatch => (this.formDispatch = dispatch)}
+        getDispatch={(dispatch) => (this.formDispatch = dispatch)}
         initialState={initialState}
         model="member"
         onSubmit={this.onSubmit}
@@ -98,13 +100,12 @@ export default class extends Component {
               validators={{ isRequired }}
             />
             <Errors
-              component={({ children }) =>
-                <div className="error">
-                  {children}
-                </div>}
-              messages={{ isRequired: 'Required.' }}
+              component={({ children }) => (
+                <div className="error">{children}</div>
+              )}
+              messages={{ isRequired: "Required." }}
               model="member.displayName"
-              show={field => field.touched && !field.valid}
+              show={(field) => field.touched && !field.valid}
             />
           </div>
         </FormRow>
@@ -121,9 +122,7 @@ export default class extends Component {
           </div>
         </FormRow>
         <FormRow>
-          <label htmlFor="member.infos.fbProfileUrl">
-            FB profile URL
-          </label>
+          <label htmlFor="member.infos.fbProfileUrl">FB profile URL</label>
           <div>
             <Control.text model="member.infos.fbProfileUrl" />
           </div>
@@ -153,6 +152,6 @@ export default class extends Component {
           </div>
         </FormRow>
       </LocalForm>
-    )
+    );
   }
 }

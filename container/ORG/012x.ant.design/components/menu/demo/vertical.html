@@ -1,0 +1,176 @@
+<div class="code-box" id="demo-vertical">
+  <div class="code-box-demo">
+    <div id="components-menu-demo-vertical"></div>
+    <script>mountNode = document.getElementById('components-menu-demo-vertical');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var SubMenu = _antd.Menu.SubMenu;
+var MenuItemGroup = _antd.Menu.ItemGroup;
+
+function handleClick(e) {
+  console.log('click', e);
+}
+
+ReactDOM.render(React.createElement(
+  _antd.Menu,
+  { onClick: handleClick, style: { width: 240 }, mode: 'vertical' },
+  React.createElement(
+    SubMenu,
+    { key: 'sub1', title: React.createElement(
+        'span',
+        null,
+        React.createElement(_antd.Icon, { type: 'mail' }),
+        React.createElement(
+          'span',
+          null,
+          '\u5BFC\u822A\u4E00'
+        )
+      ) },
+    React.createElement(
+      MenuItemGroup,
+      { title: '\u5206\u7EC41' },
+      React.createElement(
+        _antd.Menu.Item,
+        { key: '1' },
+        '\u9009\u98791'
+      ),
+      React.createElement(
+        _antd.Menu.Item,
+        { key: '2' },
+        '\u9009\u98792'
+      )
+    ),
+    React.createElement(
+      MenuItemGroup,
+      { title: '\u5206\u7EC42' },
+      React.createElement(
+        _antd.Menu.Item,
+        { key: '3' },
+        '\u9009\u98793'
+      ),
+      React.createElement(
+        _antd.Menu.Item,
+        { key: '4' },
+        '\u9009\u98794'
+      )
+    )
+  ),
+  React.createElement(
+    SubMenu,
+    { key: 'sub2', title: React.createElement(
+        'span',
+        null,
+        React.createElement(_antd.Icon, { type: 'appstore' }),
+        React.createElement(
+          'span',
+          null,
+          '\u5BFC\u822A\u4E8C'
+        )
+      ) },
+    React.createElement(
+      _antd.Menu.Item,
+      { key: '5' },
+      '\u9009\u98795'
+    ),
+    React.createElement(
+      _antd.Menu.Item,
+      { key: '6' },
+      '\u9009\u98796'
+    ),
+    React.createElement(
+      SubMenu,
+      { key: 'sub3', title: '\u4E09\u7EA7\u5BFC\u822A' },
+      React.createElement(
+        _antd.Menu.Item,
+        { key: '7' },
+        '\u9009\u98797'
+      ),
+      React.createElement(
+        _antd.Menu.Item,
+        { key: '8' },
+        '\u9009\u98798'
+      )
+    )
+  ),
+  React.createElement(
+    SubMenu,
+    { key: 'sub4', title: React.createElement(
+        'span',
+        null,
+        React.createElement('icon', { type: 'setting' }),
+        React.createElement(
+          'span',
+          null,
+          '\u5BFC\u822A\u4E09'
+        )
+      ) },
+    React.createElement(
+      _antd.Menu.Item,
+      { key: '9' },
+      '\u9009\u98799'
+    ),
+    React.createElement(
+      _antd.Menu.Item,
+      { key: '10' },
+      '\u9009\u987910'
+    ),
+    React.createElement(
+      _antd.Menu.Item,
+      { key: '11' },
+      '\u9009\u987911'
+    ),
+    React.createElement(
+      _antd.Menu.Item,
+      { key: '12' },
+      '\u9009\u987912'
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Menu, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> SubMenu = Menu.SubMenu;
+<span class="hljs-keyword">const</span> MenuItemGroup = Menu.ItemGroup;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleClick</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'click'</span>, e);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{handleClick}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">240</span> }} <span class="hljs-attribute">mode</span>=<span class="hljs-value">"vertical"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub1"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"mail"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>导航一<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+      <span class="hljs-tag">&lt;<span class="hljs-title">MenuItemGroup</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"分组1"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项1<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项2<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">MenuItemGroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">MenuItemGroup</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"分组2"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项3<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span>&gt;</span>选项4<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">MenuItemGroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub2"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"appstore"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>导航二<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+      <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"5"</span>&gt;</span>选项5<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"6"</span>&gt;</span>选项6<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub3"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"三级导航"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"7"</span>&gt;</span>选项7<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"8"</span>&gt;</span>选项8<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub4"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"setting"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>导航三<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+      <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"9"</span>&gt;</span>选项9<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"10"</span>&gt;</span>选项10<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"11"</span>&gt;</span>选项11<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"12"</span>&gt;</span>选项12<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-vertical">垂直菜单</a>
+    </div>
+    
+<p>子菜单是弹出的形式。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

@@ -14,18 +14,18 @@ const serverConfig = Configs.getServerConfigs();
 describe("UserController Tests", () => {
   let server;
 
-  before(done => {
-    Server.init(serverConfig, database).then(s => {
+  before((done) => {
+    Server.init(serverConfig, database).then((s) => {
       server = s;
       done();
     });
   });
 
-  beforeEach(done => {
+  beforeEach((done) => {
     Utils.createSeedUserData(database, done);
   });
 
-  afterEach(done => {
+  afterEach((done) => {
     Utils.clearDatabase(database, done);
   });
 
@@ -33,13 +33,13 @@ describe("UserController Tests", () => {
     var user = {
       email: "user@mail.com",
       name: "John Robot",
-      password: "123123"
+      password: "123123",
     };
 
     const res = await server.inject({
       method: "POST",
       url: serverConfig.routePrefix + "/users",
-      payload: user
+      payload: user,
     });
 
     var responseBody: any = JSON.parse(res.payload);
@@ -51,13 +51,13 @@ describe("UserController Tests", () => {
     var user = {
       email: "user",
       name: "John Robot",
-      password: "123123"
+      password: "123123",
     };
 
     const res = await server.inject({
       method: "POST",
       url: serverConfig.routePrefix + "/users",
-      payload: user
+      payload: user,
     });
 
     assert.equal(400, res.statusCode);
@@ -67,7 +67,7 @@ describe("UserController Tests", () => {
     const res = await server.inject({
       method: "POST",
       url: serverConfig.routePrefix + "/users",
-      payload: Utils.createUserDummy()
+      payload: Utils.createUserDummy(),
     });
 
     assert.equal(500, res.statusCode);
@@ -83,7 +83,7 @@ describe("UserController Tests", () => {
     const res = await server.inject({
       method: "GET",
       url: serverConfig.routePrefix + "/users/info",
-      headers: { authorization: login.token }
+      headers: { authorization: login.token },
     });
 
     var responseBody: IUser = <IUser>JSON.parse(res.payload);
@@ -95,7 +95,7 @@ describe("UserController Tests", () => {
     const res = await server.inject({
       method: "GET",
       url: serverConfig.routePrefix + "/users/info",
-      headers: { authorization: "dummy token" }
+      headers: { authorization: "dummy token" },
     });
 
     assert.equal(401, res.statusCode);
@@ -111,7 +111,7 @@ describe("UserController Tests", () => {
     const res = await server.inject({
       method: "DELETE",
       url: serverConfig.routePrefix + "/users",
-      headers: { authorization: login.token }
+      headers: { authorization: login.token },
     });
 
     assert.equal(200, res.statusCode);
@@ -134,7 +134,7 @@ describe("UserController Tests", () => {
       method: "PUT",
       url: serverConfig.routePrefix + "/users",
       payload: updateUser,
-      headers: { authorization: login.token }
+      headers: { authorization: login.token },
     });
 
     var responseBody: IUser = <IUser>JSON.parse(res.payload);

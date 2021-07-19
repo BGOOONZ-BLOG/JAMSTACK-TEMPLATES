@@ -1,0 +1,62 @@
+<div class="code-box" id="demo-vertical">
+  <div class="code-box-demo">
+    <div id="components-steps-demo-vertical"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Step = _antd.Steps.Step;
+var container = document.getElementById('components-steps-demo-vertical');
+
+var steps = [{
+  title: '已完成',
+  description: '这里是信息的描述'
+}, {
+  title: '进行中',
+  description: '这里是信息的描述'
+}, {
+  title: '待运行',
+  description: '这里是信息的描述'
+}, {
+  title: '又一个待运行',
+  description: '这里是信息的描述'
+}].map(function (s, i) {
+  return React.createElement(Step, { key: i, title: s.title, description: s.description });
+});
+
+ReactDOM.render(React.createElement(
+  _antd.Steps,
+  { direction: 'vertical', current: 1 },
+  steps
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Steps } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Step = Steps.Step;
+<span class="hljs-keyword">const</span> container = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-steps-demo-vertical'</span>);
+
+<span class="hljs-keyword">const</span> steps = [{
+  title: <span class="hljs-string">'已完成'</span>,
+  description: <span class="hljs-string">'这里是信息的描述'</span>
+}, {
+  title: <span class="hljs-string">'进行中'</span>,
+  description: <span class="hljs-string">'这里是信息的描述'</span>
+}, {
+  title: <span class="hljs-string">'待运行'</span>,
+  description: <span class="hljs-string">'这里是信息的描述'</span>
+}, {
+  title: <span class="hljs-string">'又一个待运行'</span>,
+  description: <span class="hljs-string">'这里是信息的描述'</span>
+}].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, i</span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{s.title}</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">{s.description}</span> /&gt;</span>
+  )</span>;
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span> <span class="hljs-attribute">direction</span>=<span class="hljs-value">"vertical"</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{1}</span>&gt;</span>{steps}<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-vertical">竖直方向的步骤条</a>
+    </div>
+    <p>简单的竖直方向的步骤条。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

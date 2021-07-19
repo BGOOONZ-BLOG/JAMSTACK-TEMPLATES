@@ -1,0 +1,87 @@
+<div class="code-box" id="demo-disabled">
+  <div class="code-box-demo">
+    <div id="components-button-demo-disabled"></div>
+    <script>mountNode = document.getElementById('components-button-demo-disabled');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Button,
+    { type: "primary" },
+    "\u4E3B\u6309\u94AE"
+  ),
+  React.createElement(
+    _antd.Button,
+    { type: "primary", disabled: true },
+    "\u4E3B\u6309\u94AE(\u5931\u6548)"
+  ),
+  React.createElement("br", null),
+  React.createElement(
+    _antd.Button,
+    null,
+    "\u6B21\u6309\u94AE"
+  ),
+  React.createElement(
+    _antd.Button,
+    { disabled: true },
+    "\u6B21\u6309\u94AE(\u5931\u6548)"
+  ),
+  React.createElement("br", null),
+  React.createElement(
+    _antd.Button,
+    { type: "ghost" },
+    "\u5E7D\u7075\u6309\u94AE"
+  ),
+  React.createElement(
+    _antd.Button,
+    { type: "ghost", disabled: true },
+    "\u5E7D\u7075\u6309\u94AE(\u5931\u6548)"
+  ),
+  React.createElement("br", null),
+  React.createElement(
+    _antd.Button,
+    { type: "dashed" },
+    "\u865A\u7EBF\u6309\u94AE"
+  ),
+  React.createElement(
+    _antd.Button,
+    { type: "dashed", disabled: true },
+    "\u865A\u7EBF\u6309\u94AE(\u5931\u6548)"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span>&gt;</span>主按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">disabled</span>&gt;</span>主按钮(失效)<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>次按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">disabled</span>&gt;</span>次按钮(失效)<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>幽灵按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">disabled</span>&gt;</span>幽灵按钮(失效)<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"dashed"</span>&gt;</span>虚线按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"dashed"</span> <span class="hljs-attribute">disabled</span>&gt;</span>虚线按钮(失效)<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div><style>
+#components-button-demo-disabled .ant-btn {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-disabled">不可用</a>
+    </div>
+    
+<p>添加 <code>disabled</code> 属性即可让按钮处于不可用状态，同时按钮样式也会改变。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

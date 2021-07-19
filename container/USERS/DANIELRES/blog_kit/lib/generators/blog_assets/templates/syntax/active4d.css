@@ -1,114 +1,114 @@
 pre.active4d .DiffHeader {
-   background-color: #656565;
-   color: #FFFFFF;
+  background-color: #656565;
+  color: #ffffff;
 }
 pre.active4d .Operator {
 }
 pre.active4d .InheritedClass {
 }
 pre.active4d .TypeName {
-   color: #21439C;
+  color: #21439c;
 }
 pre.active4d .Number {
-   color: #A8017E;
+  color: #a8017e;
 }
 pre.active4d .EmbeddedSource {
-   background-color: #ECF1FF;
+  background-color: #ecf1ff;
 }
 pre.active4d {
-   background-color: #FFFFFF;
-   color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 pre.active4d .DiffInsertedLine {
-   background-color: #98FF9A;
-   color: #000000;
+  background-color: #98ff9a;
+  color: #000000;
 }
 pre.active4d .LibraryVariable {
-   color: #A535AE;
+  color: #a535ae;
 }
 pre.active4d .Storage {
-   color: #FF5600;
+  color: #ff5600;
 }
 pre.active4d .InterpolatedEntity {
-   font-weight: bold;
-   color: #66CCFF;
+  font-weight: bold;
+  color: #66ccff;
 }
 pre.active4d .line-numbers {
-   background-color: #BAD6FD;
-   color: #000000;
+  background-color: #bad6fd;
+  color: #000000;
 }
 pre.active4d .LocalVariable {
-   font-weight: bold;
-   color: #6392FF;
+  font-weight: bold;
+  color: #6392ff;
 }
 pre.active4d .DiffLineRange {
-   background-color: #1B63FF;
-   color: #FFFFFF;
+  background-color: #1b63ff;
+  color: #ffffff;
 }
 pre.active4d .BlockComment {
-   color: #D33435;
+  color: #d33435;
 }
 pre.active4d .TagName {
-   color: #016CFF;
+  color: #016cff;
 }
 pre.active4d .FunctionArgument {
 }
 pre.active4d .BuiltInConstant {
-   color: #A535AE;
+  color: #a535ae;
 }
 pre.active4d .LineComment {
-   color: #D33535;
+  color: #d33535;
 }
 pre.active4d .DiffDeletedLine {
-   background-color: #FF7880;
-   color: #000000;
+  background-color: #ff7880;
+  color: #000000;
 }
 pre.active4d .NamedConstant {
-   color: #B7734C;
+  color: #b7734c;
 }
 pre.active4d .CommandMethod {
-   font-weight: bold;
-   color: #45AE34;
+  font-weight: bold;
+  color: #45ae34;
 }
 pre.active4d .TableField {
-   color: #0BB600;
+  color: #0bb600;
 }
 pre.active4d .PlainXmlText {
-   color: #000000;
+  color: #000000;
 }
 pre.active4d .Invalid {
-   background-color: #990000;
-   color: #FFFFFF;
+  background-color: #990000;
+  color: #ffffff;
 }
 pre.active4d .LibraryClassType {
-   color: #A535AE;
+  color: #a535ae;
 }
 pre.active4d .TagAttribute {
-   color: #963DFF;
+  color: #963dff;
 }
 pre.active4d .Keyword {
-   font-weight: bold;
-   color: #006699;
+  font-weight: bold;
+  color: #006699;
 }
 pre.active4d .UserDefinedConstant {
 }
 pre.active4d .String {
-   color: #666666;
+  color: #666666;
 }
 pre.active4d .DiffUnchangedLine {
-   color: #5E5E5E;
+  color: #5e5e5e;
 }
 pre.active4d .TagContainer {
-   color: #7A7A7A;
+  color: #7a7a7a;
 }
 pre.active4d .FunctionName {
-   color: #21439C;
+  color: #21439c;
 }
 pre.active4d .Variable {
-   font-weight: bold;
-   color: #0053FF;
+  font-weight: bold;
+  color: #0053ff;
 }
 pre.active4d .DateTimeLiteral {
-   font-weight: bold;
-   color: #66CCFF;
+  font-weight: bold;
+  color: #66ccff;
 }

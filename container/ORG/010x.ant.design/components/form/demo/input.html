@@ -1,0 +1,59 @@
+<div class="code-box" id="demo-input">
+  <div class="code-box-demo">
+    <div id="components-form-demo-input"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var InputGroup = _antd.Input.Group;
+
+ReactDOM.render(React.createElement(
+  _antd.Row,
+  null,
+  React.createElement(
+    InputGroup,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      React.createElement(_antd.Input, { id: "largeInput", size: "large", placeholder: "大尺寸" })
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      React.createElement(_antd.Input, { id: "defaultInput", placeholder: "默认尺寸" })
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6" },
+      React.createElement(_antd.Input, { id: "smallInput", placeholder: "小尺寸", size: "small" })
+    )
+  )
+), document.getElementById('components-form-demo-input'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> {Row, Col, Input} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> InputGroup = Input.Group;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">InputGroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"largeInput"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"大尺寸"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"defaultInput"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"默认尺寸"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"smallInput"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"小尺寸"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">InputGroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+, document.getElementById('components-form-demo-input'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-input">Input 输入框</a>
+    </div>
+    <p>我们为 <code>&lt;Input /&gt;</code> 输入框定义了三种尺寸（大、默认、小），具体使用详见 <a href="/components/form/#input">API</a>。</p>
+<p>注意： 在表单里面，我们只使用<strong>大尺寸</strong>， 即高度为 <strong>32px</strong>，作为唯一的尺寸。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,3 +1,3 @@
-window.onNextjsRouteChangeComplete = function() {
-window.addMainNavigationHandlers();
+window.onNextjsRouteChangeComplete = function () {
+  window.addMainNavigationHandlers();
 };

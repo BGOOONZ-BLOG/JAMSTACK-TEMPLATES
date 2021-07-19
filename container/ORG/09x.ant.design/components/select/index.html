@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Select 选择器 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/antd-0.9.2.min.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <script>
+      (function (con) {
+        'use strict';
+        var prop, method;
+        var empty = {};
+        var dummy = function () {
+        };
+        var properties = 'memory'.split(',');
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+                       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+                       'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) {
+          con[prop] = con[prop] || empty;
+        }
+        while (method = methods.pop()) {
+          con[method] = con[method] || dummy;
+        }
+      })(this.console = this.console || {});
+    </script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js,es5-shim/4.1.10/es5-shim.js,es5-shim/4.1.10/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'EnterAnimation',
+        desc: '进场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Iconfont',
+        desc: '字体图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.9.2',
+        stable: '0.9.2'
+      };
+    </script>
+    <script src="../../dist/antd-0.9.2.min.js"></script>
+    <script src="../../dist/demo.js"></script>
+    <script>
+      window.require = function (path) {
+        var result = window;
+        var namespaces = path.split('/');
+        namespaces.forEach(function (key, i) {
+          if (i !== 0 && i === namespaces.length - 1) {
+            key = capitalizeFirstLetter(key);
+          }
+          if (key !== 'lib') {
+            if (result[key]) {
+              result = result[key];
+            } else {
+              throw 'There should not have modules here 2.';
+            }
+          }
+        });
+        function capitalizeFirstLetter(string) {
+          return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        return result;
+      };
+    </script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/download" class="">
+          下载
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../iconfont/"
+               class=""data-no-instant>
+              Iconfont
+              <span class="chinese">字体图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class="">
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class="">
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../enter-animation/"
+               class="">
+              EnterAnimation
+              <span class="chinese">进场动画</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Select 选择器
+    </h1>
+    <p>类似 Select2 的选择器。</p>
+<h2 id="何时使用">何时使用</h2><p>弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。</p>
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">Select</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">Select</span>&gt;</span></code></pre></div><h2 id="api">API</h2><h3 id="select-props">Select props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>指定当前选中的条目</td>
+<td>string/Array<String></td>
+<td>无</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>指定默认选中的条目</td>
+<td>string/Array<String></td>
+<td>无</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>支持多选</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>filterOption</td>
+<td>是否根据输入项进行筛选</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>可以把随意输入的条目作为tag，输入项不需要与下拉选项匹配</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>被选中时调用，参数为选中的option value值</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onDeselect</td>
+<td>取消选中时调用，参数为选中的option value值，仅在multiple或tags模式下生效</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>选中option，或input的value变化(combobox模式下)时，调用此函数</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>allowClear</td>
+<td>显示清除按钮</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>选择框默认文字</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>searchPlaceholder</td>
+<td>搜索框默认文字</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>optionFilterProp</td>
+<td>输入项过滤对应的 option 属性</td>
+<td>string</td>
+<td>value</td>
+</tr>
+<tr>
+<td>combobox</td>
+<td>输入框自动提示模式</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>size</td>
+<td>选择框大小</td>
+<td>String</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-props">Option props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disabled</td>
+<td>是否禁用</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>key</td>
+<td>如果react需要你设置此项，此项值与value的值相同，然后可以省略value设置</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>默认根据此属性值进行筛选</td>
+<td>String</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optgroup-props">OptGroup props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>组名</td>
+<td>String/React.Element</td>
+<td>无</td>
+</tr>
+<tr>
+<td>key</td>
+<td></td>
+<td>String</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+<h2 class="component-demos">
+  组件演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-select-demo-basic"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+  React.createElement(
+    Option,
+    { value: "jack" },
+    "Jack"
+  ),
+  React.createElement(
+    Option,
+    { value: "lucy" },
+    "Lucy"
+  ),
+  React.createElement(
+    Option,
+    { value: "disabled", disabled: true },
+    "Disabled"
+  ),
+  React.createElement(
+    Option,
+    { value: "yiminghe" },
+    "yiminghe"
+  )
+), document.getElementById('components-select-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本使用</a>
+    </div>
+    <p>基本使用。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-search">
+  <div class="code-box-demo">
+    <div id="components-select-demo-search"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { defaultValue: "lucy", showSearch: true, style: { width: 200 },
+    searchPlaceholder: "输入",
+    onChange: handleChange },
+  React.createElement(
+    Option,
+    { value: "jack" },
+    "jack"
+  ),
+  React.createElement(
+    Option,
+    { value: "lucy" },
+    "lucy"
+  ),
+  React.createElement(
+    Option,
+    { value: "disabled", disabled: true },
+    "disabled"
+  ),
+  React.createElement(
+    Option,
+    { value: "yiminghe" },
+    "yiminghe"
+  )
+), document.getElementById('components-select-demo-search'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">showSearch</span>=<span class="value">{true}</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+  <span class="attribute">searchPlaceholder</span>=<span class="value">"输入"</span>
+  <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-search'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-search">带搜索框</a>
+    </div>
+    <p>在浮层内顶部有搜索框的单项选择器。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-tags">
+  <div class="code-box-demo">
+    <div id="components-select-demo-tags"></div>
+    <script>(function(){'use strict';
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+var children = [];
+for (var i = 10; i < 36; i++) {
+  children.push(React.createElement(
+    Option,
+    { key: i.toString(36) + i },
+    i.toString(36) + i
+  ));
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  {
+    style: { width: '100%' },
+    searchPlaceholder: '标签模式',
+    tags: true, onChange: handleChange },
+  children
+), document.getElementById('components-select-demo-tags'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> children = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">10</span>; i &lt; <span class="number">36</span>; i++) {
+  children.push(<span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{i.toString(36)</span> + <span class="attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>);
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(
+  <span class="tag">&lt;<span class="title">Select
+</span>   <span class="attribute">style</span>=<span class="value">{{width:</span> '<span class="attribute">100</span>%'}}
+   <span class="attribute">searchPlaceholder</span>=<span class="value">"标签模式"</span>
+  <span class="attribute">tags</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    {children}
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-tags'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-tags">标签</a>
+    </div>
+    <p>tags select，随意输入的内容（scroll the menu）</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-optgroup">
+  <div class="code-box-demo">
+    <div id="components-select-demo-optgroup"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+var OptGroup = Select.OptGroup;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { defaultValue: "lucy",
+    style: { width: 200 },
+    showSearch: false,
+    onChange: handleChange },
+  React.createElement(
+    OptGroup,
+    { label: "Manager" },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "lucy"
+    )
+  ),
+  React.createElement(
+    OptGroup,
+    { label: "Engineer" },
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  )
+), document.getElementById('components-select-demo-optgroup'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+<span class="keyword">var</span> OptGroup = Select.OptGroup;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span>
+    <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+    <span class="attribute">showSearch</span>=<span class="value">{false}</span>
+    <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">OptGroup</span> <span class="attribute">label</span>=<span class="value">"Manager"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">OptGroup</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">OptGroup</span> <span class="attribute">label</span>=<span class="value">"Engineer"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">OptGroup</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-optgroup'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-optgroup">分组</a>
+    </div>
+    <p>option分组</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-size">
+  <div class="code-box-demo">
+    <div id="components-select-demo-size"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    Select,
+    { size: "large", defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "Jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "Lucy"
+    ),
+    React.createElement(
+      Option,
+      { value: "disabled", disabled: true },
+      "Disabled"
+    ),
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  ),
+  React.createElement(
+    Select,
+    { defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "Jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "Lucy"
+    ),
+    React.createElement(
+      Option,
+      { value: "disabled", disabled: true },
+      "Disabled"
+    ),
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  ),
+  React.createElement(
+    Select,
+    { size: "small", defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "Jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "Lucy"
+    ),
+    React.createElement(
+      Option,
+      { value: "disabled", disabled: true },
+      "Disabled"
+    ),
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  )
+), document.getElementById('components-select-demo-size'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-select-demo-size'));</span></code></pre></div><style type="text/css">.code-box-demo .ant-select {
+  margin: 0 10px 10px 0;
+}</style><div class="highlight"><pre><code class="css"><span class="class">.code-box-demo</span> <span class="class">.ant-select</span> <span class="rules">{
+  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">10</span>px <span class="number">10</span>px <span class="number">0</span></span></span>;
+<span class="rule">}</span></span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-size">三种大小</a>
+    </div>
+    <p>三种大小的选择框，当 size 分别为 <code>large</code> 和 <code>small</code> 时，输入框高度为 <code>32px</code> 和 <code>22px</code> ，默认高度为 <code>28px</code></p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-multiple">
+  <div class="code-box-demo">
+    <div id="components-select-demo-multiple"></div>
+    <script>(function(){'use strict';
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+var children = [];
+for (var i = 10; i < 36; i++) {
+  children.push(React.createElement(
+    Option,
+    { key: i.toString(36) + i },
+    i.toString(36) + i
+  ));
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { multiple: true,
+    style: { width: 400 },
+    defaultValue: ['a10', 'c12'], onChange: handleChange },
+  children
+), document.getElementById('components-select-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> children = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">10</span>; i &lt; <span class="number">36</span>; i++) {
+  children.push(<span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{i.toString(36)</span> + <span class="attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>);
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(
+  <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">multiple</span>
+  <span class="attribute">style</span>=<span class="value">{{width:400}}</span>
+  <span class="attribute">defaultValue</span>=<span class="value">{['a10',</span> '<span class="attribute">c12</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    {children}
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-multiple'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-multiple">多选</a>
+    </div>
+    <p>多选，从已有条目中选择（scroll the menu）</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-combobox">
+  <div class="code-box-demo">
+    <div id="components-select-demo-combobox"></div>
+    <script>(function(){'use strict';
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      options: []
+    };
+  },
+  handleChange: function handleChange(value) {
+    var options;
+    if (!value || value.indexOf('@') >= 0) {
+      options = [];
+    } else {
+      options = ['gmail.com', '163.com', 'qq.com'].map(function (domain) {
+        var email = value + '@' + domain;
+        return React.createElement(
+          Option,
+          { key: email },
+          email
+        );
+      });
+    }
+    this.setState({
+      options: options
+    });
+  },
+  render: function render() {
+    // filterOption 需要设置为 false，数据是动态设置的
+    return React.createElement(
+      Select,
+      { combobox: true,
+        style: { width: 200 },
+        onChange: this.handleChange,
+        filterOption: false,
+        searchPlaceholder: '请输入账户名' },
+      this.state.options
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-select-demo-combobox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      options: []
+    };
+  },
+  handleChange(value) {
+    <span class="keyword">var</span> options;
+    <span class="keyword">if</span> (!value || value.indexOf(<span class="string">'@'</span>) &gt;= <span class="number">0</span>) {
+      options = [];
+    } <span class="keyword">else</span> {
+      options = [<span class="string">'gmail.com'</span>, <span class="string">'163.com'</span>, <span class="string">'qq.com'</span>].map(<span class="function"><span class="keyword">function</span><span class="params">(domain)</span> {</span>
+        <span class="keyword">var</span> email = value + <span class="string">'@'</span> + domain;
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{email}</span>&gt;</span>{email}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+      });
+    }
+    <span class="keyword">this</span>.setState({
+      options: options
+    });
+  },
+  render() {
+  <span class="comment">// filterOption 需要设置为 false，数据是动态设置的</span>
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">combobox</span>
+      <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+      <span class="attribute">onChange</span>=<span class="value">{this.handleChange}</span>
+      <span class="attribute">filterOption</span>=<span class="value">{false}</span>
+      <span class="attribute">searchPlaceholder</span>=<span class="value">"请输入账户名"</span>&gt;</span>
+      {this.state.options}
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>;</span>
+  }
+});
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Test</span> /&gt;</span>, document.getElementById('components-select-demo-combobox'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-combobox">智能提示</a>
+    </div>
+    <p>输入框自动完成功能，下面是一个账号注册表单的例子。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-coordinate">
+  <div class="code-box-demo">
+    <div id="components-select-demo-coordinate"></div>
+    <script>(function(){'use strict';
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+var provinceData = ['浙江', '江苏'];
+var cityData = {
+  '浙江': ['杭州', '宁波', '温州'],
+  '江苏': ['南京', '苏州', '镇江']
+};
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {
+      cities: cityData[provinceData[0]],
+      secondCity: cityData[provinceData[0]][0]
+    };
+  },
+  handleProvinceChange: function handleProvinceChange(value) {
+    this.setState({
+      cities: cityData[value],
+      secondCity: cityData[value][0]
+    });
+  },
+  onSecondCityChange: function onSecondCityChange(value) {
+    this.setState({
+      secondCity: value
+    });
+  },
+  render: function render() {
+    var provinceOptions = provinceData.map(function (province) {
+      return React.createElement(
+        Option,
+        { key: province },
+        province
+      );
+    });
+    var cityOptions = this.state.cities.map(function (city) {
+      return React.createElement(
+        Option,
+        { key: city },
+        city
+      );
+    });
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Select,
+        { defaultValue: provinceData[0], style: { width: 150 }, onChange: this.handleProvinceChange },
+        provinceOptions
+      ),
+      ' ',
+      React.createElement(
+        Select,
+        { value: this.state.secondCity, style: { width: 150 }, onChange: this.onSecondCityChange },
+        cityOptions
+      )
+    );
+  }
+});
+React.render(React.createElement(App, null), document.getElementById('components-select-demo-coordinate'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> provinceData = [<span class="string">'浙江'</span>, <span class="string">'江苏'</span>];
+<span class="keyword">var</span> cityData = {
+  <span class="string">'浙江'</span>: [<span class="string">'杭州'</span>, <span class="string">'宁波'</span>, <span class="string">'温州'</span>],
+  <span class="string">'江苏'</span>: [<span class="string">'南京'</span>, <span class="string">'苏州'</span>, <span class="string">'镇江'</span>]
+};
+
+
+<span class="keyword">var</span> App = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      cities: cityData[provinceData[<span class="number">0</span>]],
+      secondCity:cityData[provinceData[<span class="number">0</span>]][<span class="number">0</span>]
+    };
+  },
+  handleProvinceChange(value) {
+    <span class="keyword">this</span>.setState({
+      cities: cityData[value],
+      secondCity:cityData[value][<span class="number">0</span>]
+    });
+  },
+  onSecondCityChange(value) {
+    <span class="keyword">this</span>.setState({
+      secondCity: value
+    });
+  },
+  render() {
+    <span class="keyword">var</span> provinceOptions = provinceData.map(<span class="function"><span class="keyword">function</span><span class="params">(province)</span> {</span>
+      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{province}</span>&gt;</span>{province}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+    });
+    <span class="keyword">var</span> cityOptions = <span class="keyword">this</span>.state.cities.map(<span class="function"><span class="keyword">function</span><span class="params">(city)</span> {</span>
+      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{city}</span>&gt;</span>{city}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+    });
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">{provinceData[0]}</span> <span class="attribute">style</span>=<span class="value">{{width:150}}</span> <span class="attribute">onChange</span>=<span class="value">{this.handleProvinceChange}</span>&gt;</span>
+        {provinceOptions}
+      <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+      &amp;nbsp;
+      <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">value</span>=<span class="value">{this.state.secondCity}</span> <span class="attribute">style</span>=<span class="value">{{width:150}}</span> <span class="attribute">onChange</span>=<span class="value">{this.onSecondCityChange}</span>&gt;</span>
+        {cityOptions}
+      <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
+  }
+});
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">App</span> /&gt;</span>, document.getElementById('components-select-demo-coordinate'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-coordinate">联动</a>
+    </div>
+    <p>省市联动是典型的例子。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">问题与建议 - Issues</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

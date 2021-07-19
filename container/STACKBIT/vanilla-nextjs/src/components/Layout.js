@@ -54,9 +54,7 @@ export default class Body extends React.Component {
                 </Helmet>
                 <div className="wrapper">
                     <Header page={page} config={config} />
-                    <div className="container">
-                        {this.props.children}
-                    </div>
+                    <div className="container">{this.props.children}</div>
                     <Footer config={config} />
                 </div>
             </React.Fragment>

@@ -1,0 +1,36 @@
+<div class="code-box" id="demo-text">
+  <div class="code-box-demo">
+    <div id="components-switch-demo-text"></div>
+    <script>mountNode = document.getElementById('components-switch-demo-text');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(_antd.Switch, { checkedChildren: "\u5F00", unCheckedChildren: "\u5173" }),
+  React.createElement(
+    "span",
+    null,
+    " "
+  ),
+  React.createElement(_antd.Switch, { checkedChildren: React.createElement(_antd.Icon, { type: "check" }), unCheckedChildren: React.createElement(_antd.Icon, { type: "cross" }) })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Switch, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Switch</span> <span class="hljs-attribute">checkedChildren</span>=<span class="hljs-value">"开"</span> <span class="hljs-attribute">unCheckedChildren</span>=<span class="hljs-value">"关"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Switch</span> <span class="hljs-attribute">checkedChildren</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"check"</span> /&gt;</span>} unCheckedChildren={<span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"cross"</span> /&gt;</span>} /&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-text">文字和图标</a>
+    </div>
+    
+<p>带有文字和图标。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

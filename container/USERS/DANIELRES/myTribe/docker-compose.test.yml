@@ -1,8 +1,8 @@
-version: '3.2'
+version: "3.2"
 
 volumes:
   src:
-    
+
 services:
   sut:
     build:
@@ -10,12 +10,12 @@ services:
       dockerfile: ./Dockerfile
       cache_from:
         - mhart/alpine-node:6
-        - danielres/docker-react-node      
+        - danielres/docker-react-node
     volumes:
       - .:/src
     # ports:
-      # - 3000:3000
-      # - 3001:3001
+    # - 3000:3000
+    # - 3001:3001
     links:
       - db
     depends_on:
@@ -24,7 +24,7 @@ services:
       NODE_ENV: test
       PGPASSWORD: mytribe
       PGUSER: mytribe
-      PGDB: mytribe_test     
+      PGDB: mytribe_test
     command: npm run _test:ci
 
   db:

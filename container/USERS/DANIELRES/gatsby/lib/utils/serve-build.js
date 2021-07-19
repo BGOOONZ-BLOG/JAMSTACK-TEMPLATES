@@ -1,26 +1,26 @@
 /* @flow weak */
-import Hapi from 'hapi'
-import opn from 'opn'
-import chalk from 'chalk'
-import startWithDynamicPort from './startWithDynamicPort'
+import Hapi from "hapi";
+import opn from "opn";
+import chalk from "chalk";
+import startWithDynamicPort from "./startWithDynamicPort";
 
-const debug = require('debug')('gatsby:application')
+const debug = require("debug")("gatsby:application");
 
-function startServer (program, launchPort) {
-  const directory = program.directory
-  const serverPort = launchPort || program.port
+function startServer(program, launchPort) {
+  const directory = program.directory;
+  const serverPort = launchPort || program.port;
 
-  debug('Serving /public')
-  const server = new Hapi.Server()
+  debug("Serving /public");
+  const server = new Hapi.Server();
 
   server.connection({
     host: program.host,
     port: serverPort,
-  })
+  });
 
   server.route({
-    method: 'GET',
-    path: '/{path*}',
+    method: "GET",
+    path: "/{path*}",
     handler: {
       directory: {
         path: `${directory}/public`,
@@ -28,30 +28,33 @@ function startServer (program, launchPort) {
         index: true,
       },
     },
-  })
-
+  });
 
   server.start((e) => {
     if (e) {
-      if (e.code === 'EADDRINUSE') {
+      if (e.code === "EADDRINUSE") {
         // eslint-disable-next-line max-len
-        console.log(chalk.red(`Unable to start Gatsby on port ${serverPort} as there's already a process listing on that port.`))
+        console.log(
+          chalk.red(
+            `Unable to start Gatsby on port ${serverPort} as there's already a process listing on that port.`
+          )
+        );
       } else {
-        console.log(chalk.red(e))
+        console.log(chalk.red(e));
       }
 
-      process.exit()
+      process.exit();
     } else {
       if (program.open) {
-        opn(server.info.uri)
+        opn(server.info.uri);
       }
-      console.log(chalk.green('Server started successfully!'))
-      console.log()
-      console.log('Listening at:')
-      console.log()
-      console.log('  ', chalk.cyan(server.info.uri))
+      console.log(chalk.green("Server started successfully!"));
+      console.log();
+      console.log("Listening at:");
+      console.log();
+      console.log("  ", chalk.cyan(server.info.uri));
     }
-  })
+  });
 }
 
-module.exports = startWithDynamicPort(startServer)
+module.exports = startWithDynamicPort(startServer);

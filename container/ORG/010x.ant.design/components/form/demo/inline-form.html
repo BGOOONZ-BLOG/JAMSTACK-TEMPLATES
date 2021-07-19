@@ -1,0 +1,133 @@
+<div class="code-box" id="demo-inline-form">
+  <div class="code-box-demo">
+    <div id="components-form-demo-inline-form"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var FormItem = _antd.Form.Item;
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+
+  mixins: [_antd.Form.ValueMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      formData: {
+        userName: undefined,
+        password: undefined,
+        agreement: undefined
+      }
+    };
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    e.preventDefault();
+    _antd.message.success('收到表单值~~~ ：' + JSON.stringify(this.state.formData, function (k, v) {
+      if (typeof v === 'undefined') {
+        return '';
+      }
+      return v;
+    }));
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    return React.createElement(
+      _antd.Form,
+      { inline: true, onSubmit: this.handleSubmit },
+      React.createElement(
+        FormItem,
+        {
+          id: 'userName',
+          label: '账户：' },
+        React.createElement(_antd.Input, { placeholder: '请输入账户名', id: 'userName', name: 'userName', onChange: this.setValue.bind(this, 'userName'), value: formData.userName })
+      ),
+      React.createElement(
+        FormItem,
+        {
+          id: 'password',
+          label: '密码：' },
+        React.createElement(_antd.Input, { type: 'password', placeholder: '请输入密码', id: 'password', name: 'password', onChange: this.setValue.bind(this, 'password'), value: formData.password })
+      ),
+      React.createElement(
+        FormItem,
+        null,
+        React.createElement(
+          'label',
+          { className: 'ant-checkbox-inline' },
+          React.createElement(_antd.Checkbox, { name: 'agreement', value: formData.agreement, onChange: this.setValue.bind(this, 'agreement') }),
+          ' 记住我'
+        )
+      ),
+      React.createElement(
+        _antd.Button,
+        { type: 'primary', htmlType: 'submit' },
+        '登录'
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-inline-form'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> {Form, Input, Button, Checkbox, message} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  mixins: [Form.ValueMixin],
+
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      formData: {
+        userName: <span class="hljs-literal">undefined</span>,
+        password: <span class="hljs-literal">undefined</span>,
+        agreement: <span class="hljs-literal">undefined</span>,
+      }
+    };
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    message.success(<span class="hljs-string">'收到表单值~~~ ：'</span> + <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-keyword">this</span>.state.formData, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">k, v</span>) </span>{
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'undefined'</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>;
+      }
+      <span class="hljs-keyword">return</span> v;
+    }));
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">inline</span> <span class="hljs-attribute">onSubmit</span>=<span class="hljs-value">{this.handleSubmit}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">id</span>=<span class="hljs-value">"userName"</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"账户："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请输入账户名"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"userName"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"userName"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.setValue.bind(this,</span> '<span class="hljs-attribute">userName</span>')} <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.userName}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">id</span>=<span class="hljs-value">"password"</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请输入密码"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.setValue.bind(this,</span> '<span class="hljs-attribute">password</span>')} <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.password}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-checkbox-inline"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Checkbox</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"agreement"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.agreement}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.setValue.bind(this,</span> '<span class="hljs-attribute">agreement</span>')} /&gt;</span> 记住我
+          <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">htmlType</span>=<span class="hljs-value">"submit"</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-inline-form'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-inline-form">平行排列</a>
+    </div>
+    <p>行内排列，常用于登录界面。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

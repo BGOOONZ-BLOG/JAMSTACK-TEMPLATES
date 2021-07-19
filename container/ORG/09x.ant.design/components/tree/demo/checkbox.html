@@ -1,0 +1,66 @@
+<div class="code-box" id="demo-checkbox">
+  <div class="code-box-demo">
+    <div id="components-tree-demo-checkbox"></div>
+    <script>(function(){"use strict";
+
+var Tree = antd.Tree;
+var TreeNode = Tree.TreeNode;
+
+function handleCheck(info) {
+  console.log('check: ', info);
+}
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    Tree,
+    { defaultExpandAll: true, checkable: true, onCheck: handleCheck },
+    React.createElement(
+      TreeNode,
+      { title: "parent 1" },
+      React.createElement(TreeNode, { title: "leaf" }),
+      React.createElement(
+        TreeNode,
+        { title: "parent 1-1" },
+        React.createElement(
+          TreeNode,
+          { title: "parent 2-1" },
+          React.createElement(TreeNode, { title: "leaf" }),
+          React.createElement(TreeNode, { title: "leaf" })
+        ),
+        React.createElement(TreeNode, { title: "leaf" })
+      )
+    )
+  )
+), document.getElementById('components-tree-demo-checkbox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tree = antd.Tree;
+<span class="keyword">var</span> TreeNode = Tree.TreeNode;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleCheck</span><span class="params">(info)</span> {</span>
+  console.log(<span class="string">'check: '</span>, info);
+}
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+ <span class="tag">&lt;<span class="title">Tree</span> <span class="attribute">defaultExpandAll</span>=<span class="value">{true}</span> <span class="attribute">checkable</span>=<span class="value">{true}</span> <span class="attribute">onCheck</span>=<span class="value">{handleCheck}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1-1"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 2-1"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
+          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
+        <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Tree</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-tree-demo-checkbox'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-checkbox">可选择</a>
+    </div>
+    <p>提供复选框操作功能。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

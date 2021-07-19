@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+更新日志  - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="./dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="./dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="./">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="./">首页</a>
+          </li>
+          <li class="">
+            <a href="./docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="./docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="./docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="./docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="./docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="current">
+        <a href="changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="components/button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="components/cascader/"
+               class="">
+              Cascader
+              <span class="chinese">级联选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/date-picker/"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tree-select/"
+               class="">
+              TreeSelect
+              <span class="chinese">树选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/upload/"
+               class="">
+              Upload
+              <span class="chinese">上传</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="components/alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="components/breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="components/affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="components/spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>更新日志 <span class="subtitle"></span></h1>
+    
+
+    <div class="toc"><ul><li><a href="#0-12-17">0.12.17</a></li><li><a href="#0-12-16">0.12.16</a></li><li><a href="#0-12-15">0.12.15</a></li><li><a href="#0-12-14">0.12.14</a></li><li><a href="#0-12-13">0.12.13</a></li><li><a href="#0-12-12">0.12.12</a></li><li><a href="#0-12-11">0.12.11</a></li><li><a href="#0-12-10">0.12.10</a></li><li><a href="#0-12-9">0.12.9</a></li><li><a href="#0-12-8">0.12.8</a></li><li><a href="#0-12-7">0.12.7</a></li><li><a href="#0-12-6">0.12.6</a></li><li><a href="#0-12-5">0.12.5</a></li><li><a href="#0-12-4">0.12.4</a></li><li><a href="#0-12-3">0.12.3</a></li><li><a href="#0-12-2">0.12.2</a></li><li><a href="#0-12-1">0.12.1</a></li><li><a href="#0-12-0">0.12.0</a></li><li><a href="#0-11-3">0.11.3</a></li><li><a href="#0-11-2">0.11.2</a></li><li><a href="#0-11-1">0.11.1</a></li><li><a href="#0-11-0">0.11.0</a></li><li><a href="#0-10-5">0.10.5</a></li><li><a href="#0-10-4">0.10.4</a></li><li><a href="#0-10-3">0.10.3</a></li><li><a href="#0-10-2">0.10.2</a></li><li><a href="#0-10-1">0.10.1</a></li><li><a href="#0-10-0">0.10.0</a></li><li><a href="#0-9-3-0-9-5">0.9.3 ~ 0.9.5</a></li><li><a href="#0-9-2">0.9.2</a></li><li><a href="#0-9-1">0.9.1</a></li><li><a href="#0-9-0">0.9.0</a></li><li><a href="#0-8-0">0.8.0</a></li><li><a href="#0-7-3">0.7.3</a></li><li><a href="#0-7-2">0.7.2</a></li><li><a href="#0-7-1">0.7.1</a></li><li><a href="#0-7-0">0.7.0</a></li></ul></div>
+    <h2 id="0-12-17">0.12.17<a href="#0-12-17" class="anchor">#</a> </h2><ul>
+<li>修复 FormItem 校验时表单项高度跳动的问题。<a href="https://github.com/ant-design/ant-design/issues/1557">#1557</a></li>
+<li>修复一个 Table 圆角样式的小问题。</li>
+</ul>
+<h2 id="0-12-16">0.12.16<a href="#0-12-16" class="anchor">#</a> </h2><ul>
+<li>修复 Collapse 在 safari 中切换动画异常的问题。<a href="https://github.com/ant-design/ant-design/issues/1494">#1494</a></li>
+<li>修复 Table 的 selectedRowKeys 在初次渲染时失效的问题。<a href="https://github.com/ant-design/ant-design/issues/1501">#1501</a></li>
+<li>Table 现在点击选择框时将不再触发 <code>onRowClick</code>。<a href="https://github.com/ant-design/ant-design/issues/1470">#1470</a></li>
+<li>修复一个 Calender 服务端渲染时提示 <code>Option is not defined</code> 的问题。<a href="https://github.com/ant-design/ant-design/issues/1521">#1521</a></li>
+<li>修复 Menu 动态切换模式时的一些细节问题。</li>
+<li>优化了 export 导出图标。</li>
+<li>修复 Form 的一些样式细节。</li>
+</ul>
+<h2 id="0-12-15">0.12.15<a href="#0-12-15" class="anchor">#</a> </h2><ul>
+<li>升级 rc-collapse 修复一个性能问题。</li>
+<li>修复一个 Collapse 内嵌 Tabs 的选中项样式问题。<a href="https://github.com/ant-design/ant-design/issues/1451">#1451</a></li>
+<li>修复 Input 组件服务端渲染报错的问题。<a href="https://github.com/ant-design/ant-design/issues/1321">#1321</a></li>
+<li>修复 Tag 组件调用了两次 afterClose 的问题。<a href="https://github.com/ant-design/ant-design/issues/1435">#1435</a></li>
+<li>修复一个 Table 控制模式的问题。<a href="https://github.com/ant-design/ant-design/issues/1434">#1434</a></li>
+<li>修复一个 Tabs 相互嵌套的样式问题。<a href="https://github.com/ant-design/ant-design/issues/1435">#1435</a></li>
+<li>修复 Dropdown.Button 点击右边也触发 onClick 的问题。</li>
+<li>修复 Radio.Button 在 IE8 下无法选择的问题。<a href="https://github.com/ant-design/ant-design/issues/1459">#1459</a></li>
+<li>优化了 Button 点击后仍然有 focus 效果的问题。</li>
+</ul>
+<h2 id="0-12-14">0.12.14<a href="#0-12-14" class="anchor">#</a> </h2><p><code>2016-04-13</code></p>
+<ul>
+<li>Form 和 Form.Item 支持 style 属性。<a href="https://github.com/ant-design/ant-design/issues/1290">#1290</a></li>
+<li>修正 IE9 下没有 prefix css3 属性的问题。</li>
+<li>修正 Table 中指定了 pagination.current 时依然能响应用户操作的问题。<a href="https://github.com/ant-design/ant-design/issues/1311">#1311</a></li>
+<li>修正 Table 的单选模式无法用 <code>selectedRowKeys</code> 控制的问题。<a href="https://github.com/ant-design/ant-design/issues/1346">#1346</a></li>
+<li>修正 DatePicker 启用 showTime 时时区失效的问题。<a href="https://github.com/ant-design/ant-design/issues/1356">#1356</a></li>
+<li>修正 Menu、Progress、Form、Table、Select、Pagination、Cascader 的样式细节问题。</li>
+<li>修正 Breadcrumb 不支持 IndexRoute 的问题。<a href="https://github.com/ant-design/ant-design/issues/1375">#1375</a></li>
+<li>修正 Table 的筛选菜单 filters 的 value 为数字时无法选中的问题。</li>
+<li>修正 DatePicker 面板输入框的日期格式 format 和外面不一致的问题。<a href="https://github.com/ant-design/ant-design/issues/1403">#1403</a></li>
+</ul>
+<h2 id="0-12-13">0.12.13<a href="#0-12-13" class="anchor">#</a> </h2><p><code>2016-03-29</code></p>
+<ul>
+<li>按照最新的规范修正 Message、Alert、Notification 的默认图标。</li>
+<li>统一梳理和优化了各浮层组件的 <code>z-index</code>，并增加了对应的 less 变量。</li>
+<li>修复一个 Breadcrumb 组件未指定 breadcrumbName 导致的解析问题。<a href="https://github.com/ant-design/ant-design/pull/1251">#1251</a></li>
+<li>现在 Upload 服务端返回数据不是 JSON 格式时将不判断为出错。<a href="https://github.com/ant-design/ant-design/issues/1248">#1248</a></li>
+<li>修复 Cascader 在 Chrome 下无法滚动菜单的问题。</li>
+<li>修复 Select、Radio、Progress、Table、DatePicker 的一些样式细节。</li>
+</ul>
+<h2 id="0-12-12">0.12.12<a href="#0-12-12" class="anchor">#</a> </h2><p><code>2016-03-18</code></p>
+<ul>
+<li>更新了设计资源文件 <code>Axure Components</code> 和 <code>Axure Box</code>。</li>
+<li>修复 Popover 和 Popconfirm 箭头消失的问题。</li>
+<li>修复一个 Table 切换分页长度时的页码溢出的问题。</li>
+</ul>
+<h2 id="0-12-11">0.12.11<a href="#0-12-11" class="anchor">#</a> </h2><p><code>2016-03-16</code></p>
+<ul>
+<li>全新的设计文档 <code>语言</code> 部分。</li>
+<li>修复 Popconfirm <code>onConfirm</code> 和 <code>onCancel</code> 时没有触发 <code>onVisibleChange</code> 的问题。</li>
+<li>TreeSelect 组件补充 <code>showCheckedStrategy</code> 属性，支持回填数据的不同展示方式。</li>
+<li>补充 Modal <code>align</code> 属性的文档。</li>
+<li>修复 Menu 弹出菜单 <code>z-index</code> 丢失的问题。</li>
+<li>Progress 的默认颜色固定，不再随着主色变化。</li>
+<li>优化 Button 点击动画在 Chrome 下的效果。</li>
+<li>修复一个 Affix 的 <code>z-index</code> 太低的问题。</li>
+<li>修复 Table 树形数据的二级节点列前无法选择的问题。<a href="https://github.com/ant-design/ant-design/issues/1212">#1212</a></li>
+<li>修复 Table 修改 <code>pageSize</code> 没有触发 <code>onChange</code> 的问题。<a href="https://github.com/ant-design/ant-design/issues/1206">#1206</a></li>
+<li>修复 Table 指定 <code>rowKey</code> 时导致 <code>rowSelection.onChange</code> 的 <code>selectedRows</code> 参数为空的问题。</li>
+</ul>
+<h2 id="0-12-10">0.12.10<a href="#0-12-10" class="anchor">#</a> </h2><ul>
+<li>修复 0.12.9 版本 npm 包打包错误的问题。</li>
+</ul>
+<h2 id="0-12-9">0.12.9<a href="#0-12-9" class="anchor">#</a> </h2><p><code>2016-03-11</code></p>
+<ul>
+<li>Transfer<ul>
+<li>可以定义 <code>notFoundContent</code>。</li>
+<li>修复 <code>searchPlaceholder</code> 使用了 <code>placeholder</code> 的值的问题。</li>
+</ul>
+</li>
+<li>修复 Popconfirm、Popover、Tooltip 的箭头位置未指向元素的问题。</li>
+<li>修正 Badge 在搜狗等旧版 webkit 浏览器下无法使用的问题。</li>
+<li>调整 Tabs 样式。</li>
+<li>修复 Table 中的 Pagination 默认配置问题。</li>
+<li>调整 Form.Item 在 inline 模式下的 <code>margin-bottom</code>。<a href="https://github.com/ant-design/ant-design/issues/1141">#1141</a></li>
+<li>修复 DatePicker <code>style</code> 设置错误的问题。</li>
+<li>优化 Popconfirm、Button 样式。</li>
+<li>Dropdown 增加默认的 mouseEnterDelay 延迟以优化体验。</li>
+<li>修复 Dialog 样式问题。</li>
+<li>修复 Upload 上传中的状态问题。<a href="https://github.com/ant-design/ant-design/issues/1159">#1159</a></li>
+<li>优化 Menu、Tabs 在 Chorme 下的渲染问题。</li>
+<li>Form 默认阻止 submit 事件。</li>
+</ul>
+<h2 id="0-12-8">0.12.8<a href="#0-12-8" class="anchor">#</a> </h2><p><code>2016-03-06</code></p>
+<ul>
+<li>新增 <code>heart</code> <code>calculator</code> 图标。</li>
+<li>Table 补充了 <code>showHeader</code> 和 <code>footer</code> 属性。</li>
+<li>Modal 补充了 <code>maskClosable</code> 属性。</li>
+<li>修正一个 Tag 和 Popover 配合使用的问题。<a href="https://github.com/ant-design/ant-design/issues/1111">#1111</a></li>
+<li>将 TreeSelect 的 <code>treeDefaultExpandAll</code> 默认属性设为 false，并优化了性能。</li>
+<li>修复 RadioGroup 无法垂直布局的问题。<a href="https://github.com/ant-design/ant-design/issues/1119">#1119</a></li>
+<li>统一了 less 文件的部分变量。</li>
+<li>修正部分组件的样式。</li>
+</ul>
+<h2 id="0-12-7">0.12.7<a href="#0-12-7" class="anchor">#</a> </h2><p><code>2016-03-03</code></p>
+<ul>
+<li>修正 Table 的 <code>rowSelect.onSelectAll</code> 的第三个参数 <code>deselectedRows</code> 为 <code>changeRows</code>，记录每次变化的列。</li>
+</ul>
+<h2 id="0-12-6">0.12.6<a href="#0-12-6" class="anchor">#</a> </h2><p><code>2016-03-02</code></p>
+<ul>
+<li>优化 Table 本地排序在 Chrome 下的稳定性问题。</li>
+<li>修正 Pagination 的 pageSize 属性为受控属性，并补充了 <code>defaultPageSize</code> 属性。<a href="https://github.com/ant-design/ant-design/issues/1087">#1087</a></li>
+<li>优化 Select 的 combobox 模式的交互体验。</li>
+<li>升级 react-slick 依赖到 <code>0.11</code>，修复自动播放有时会失效的问题。<a href="https://github.com/ant-design/ant-design/issues/1009">#1009</a></li>
+<li>修复 TreeSelect 的 allowClear 属性失效的问题。<a href="https://github.com/ant-design/ant-design/issues/1084">#1084</a></li>
+<li>修复 Input 组件的 className 属性失效的问题。<a href="https://github.com/ant-design/ant-design/issues/1103">#1103</a></li>
+<li>修复 Dropdown 的 onClick 属性失效的问题。<a href="https://github.com/ant-design/ant-design/issues/1097">#1097</a></li>
+<li>修复多个 CheckboxGroup 选项互相影响的问题。<a href="https://github.com/ant-design/ant-design/pull/1101">#1101</a></li>
+<li>修复 FormItem 的子元素为 <code>null</code> 时报错的问题。</li>
+<li>修复 Table 组件的选择功能和展开功能配合使用的问题。<a href="https://github.com/ant-design/ant-design/issues/1102">#1102</a></li>
+<li>增加了一个搜索框和提示功能结合的 <a href="http://ant.design/components/select/#demo-search-box">例子</a>。</li>
+<li>允许可编辑的 Tabs 删除最后一个页签。<a href="https://github.com/ant-design/ant-design/issues/1071">#1071</a></li>
+<li>Table 的 <code>rowSelect.onSelectAll</code> 补充了第三个参数 <code>deselectedRows</code>, <code>rowSelect.onChange</code> 补充了第二个参数 <code>selectedRows</code>。<a href="https://github.com/ant-design/ant-design/issues/1105">#1105</a></li>
+<li>修正部分组件的样式。</li>
+</ul>
+<h2 id="0-12-5">0.12.5<a href="#0-12-5" class="anchor">#</a> </h2><p><code>2016-02-25</code></p>
+<ul>
+<li>Pagination 支持 <code>showTotal</code> 属性。<a href="https://github.com/ant-design/ant-design/pull/1077">#1077</a></li>
+<li>Cascader 添加 <code>allowClear</code> 属性，允许隐藏清除按钮。</li>
+<li>补充了一个带图标的搜索建议框的例子。<a href="https://github.com/ant-design/ant-design/issues/1067">#1067</a></li>
+<li>修复 Transfer 在不支持 Object.assign 的浏览器上报错的问题。</li>
+<li>修复 Cascader 在 Safari 下错位的问题。<a href="https://github.com/ant-design/ant-design/issues/1066">#1066</a></li>
+<li>移除对 Button 圆角的降级方案。</li>
+<li>修复了部分组件样式的小问题。</li>
+</ul>
+<h2 id="0-12-4">0.12.4<a href="#0-12-4" class="anchor">#</a> </h2><p><code>2016-02-22</code></p>
+<ul>
+<li>Radio 的 value 支持更多类型。<a href="https://github.com/ant-design/ant-design/pull/1043">#1043</a></li>
+<li>修复 Spin 组件的大小、居中等样式问题。</li>
+<li>FormItem 补充 extra 属性的文档。<a href="https://github.com/ant-design/ant-design/issues/931">#931</a></li>
+<li>修复的 Table 下树形数据和选择框配合时的样式问题。</li>
+<li>修复一个水平表单的错误提示的样式错位问题。<a href="https://github.com/ant-design/ant-design/issues/1040">#1040</a></li>
+<li>添加了一个轻微的 Button 点击动效。</li>
+</ul>
+<h2 id="0-12-3">0.12.3<a href="#0-12-3" class="anchor">#</a> </h2><p><code>2016-02-19</code></p>
+<ul>
+<li>DatePicker 补充 allowClear 属性，支持单选的清空。</li>
+<li>修复显示时间的 DatePicker 的清空按钮失效的问题。</li>
+<li>优化 DatePicker 的 <code>确定</code> 按钮失效样式。</li>
+</ul>
+<h2 id="0-12-2">0.12.2<a href="#0-12-2" class="anchor">#</a> </h2><p><code>2016-02-19</code></p>
+<ul>
+<li>DatePicker 如果有 <code>确定</code> 按钮，现在只有点击 <code>确定</code> 按钮才会触发 onChange 事件。</li>
+<li>修复带时间选择的 DatePicker 日期格式缺少时间部分的问题。<a href="https://github.com/ant-design/ant-design/issues/1005">#1005</a></li>
+<li>修复 DatePicker 内输入框多余的时间展示的问题。<a href="https://github.com/ant-design/ant-design/issues/953">#953</a></li>
+<li>升级依赖 react-slick 到 <code>0.10</code>。</li>
+<li>支持表单校验错误时自动滚动到第一个错误项。<a href="https://github.com/ant-design/ant-design/issues/993">#993</a></li>
+<li>优化了 Select 和 TreeSelect 多选禁用的样式。</li>
+<li>Upload 列表项支持链接展现形式。<a href="https://github.com/ant-design/ant-design/issues/1013">#1013</a></li>
+<li>修复 Safari 下的样式警告信息。<a href="https://github.com/ant-design/ant-design/issues/999">#999</a></li>
+<li>Cascader 支持 popupPlacement 位置配置。</li>
+</ul>
+<h2 id="0-12-1">0.12.1<a href="#0-12-1" class="anchor">#</a> </h2><p><code>2016-02-03</code></p>
+<ul>
+<li>依赖升级到 <code>rc-pagination@1.4</code>、<code>rc-menu@4.10</code>、<code>rc-form@0.12</code>。</li>
+<li>修复 TreeSelect 的不可用样式。</li>
+<li>DatePicker 补充 <code>getCalendarContainer</code> 属性，用于解决问题 <a href="https://github.com/ant-design/ant-design/issues/991">#991</a>。</li>
+<li>修正 Modal <code>onCancel</code> 的参数为点击事件。<a href="https://github.com/ant-design/ant-design/issues/980">#980</a></li>
+<li>修复一个 Tooltip 内嵌套 Popconfirm 的问题。<a href="https://github.com/ant-design/ant-design/issues/977">#977</a></li>
+<li>修复 DatePicker 和 RangePicker 的 <code>onOk</code> 一直不可用的问题。</li>
+<li>修复一个 Badge 的 count 无法切换的问题。<a href="https://github.com/ant-design/ant-design/issues/983">#983</a></li>
+</ul>
+<h2 id="0-12-0">0.12.0<a href="#0-12-0" class="anchor">#</a> </h2><p><code>2016-02-01</code></p>
+<ul>
+<li>新增 <a href="http://ant.design/components/cascader/">级联选择(Cascader)</a> 组件。</li>
+<li>新增 <a href="http://ant.design/components/tree-select/">树选择控件(TreeSelect)</a> 组件。</li>
+<li>Form 自身支持校验功能，废弃 Validation。<a href="http://ant.design/components/form/#demo-validate-basic">演示</a></li>
+<li>Tabs<ul>
+<li><code>activeKey</code> 修正为受控属性。</li>
+<li>当前项现在会始终显示。<a href="https://github.com/ant-design/ant-design/issues/815">#815</a></li>
+</ul>
+</li>
+<li>Modal 可以配置右上关闭按钮是否显示。</li>
+<li>Select<ul>
+<li>打开选项菜单时，自动滚动到选中项。</li>
+<li><code>combobox</code> 模式时，可配置是否默认选中第一项。<a href="https://github.com/react-component/select/issues/38">rc-select#38</a></li>
+</ul>
+</li>
+<li>Table<ul>
+<li>filter 支持层级选择。</li>
+<li>支持行点击事件 <code>onRowClick</code>。</li>
+<li>支持多列的横向切换。<a href="http://ant.design/components/table/#demo-paging-columns">演示</a></li>
+<li>更换 <code>dataSource</code> 和变换页面时不再默认清除选择数据，你可以用 <code>selectedRowKeys</code> 手动控制。<code>原来默认清除的行为会触发一个数据更新的死循环，而且难以实现跨页选择。</code></li>
+<li>支持固定表头。<a href="http://ant.design/components/table/#demo-fixed-header">演示</a></li>
+</ul>
+</li>
+<li>Tag 去除 <code>href</code> 属性，默认标签名从 <code>a</code> 改为 <code>span</code>。</li>
+<li>Timeline 支持指定 pending 节点的内容。</li>
+<li>Tree<ul>
+<li>节点支持拖拽。</li>
+<li>支持动态控制节点展开与否。<a href="http://ant.design/components/tree/#demo-basic-controlled">演示</a></li>
+<li>可以监听节点展开/关闭事件 <code>onExpand</code>。</li>
+<li><code>onCheck</code> <code>onSelect</code> 参数调整。</li>
+<li><code>onDataLoaded</code> 改为 <code>loadData</code>。</li>
+<li>新增 drag&amp;drop 相关属性：</li>
+<li><code>onDragStart</code></li>
+<li><code>onDragEnter</code></li>
+<li><code>onDragOver</code></li>
+<li><code>onDragLeave</code></li>
+<li><code>onDrop</code></li>
+<li>新增 TreeNode 节点属性：</li>
+<li><code>disableCheckbox</code></li>
+<li><code>isLeaf</code></li>
+</ul>
+</li>
+<li>Transfer 给 <code>onChange</code> 增加参数。<a href="https://github.com/ant-design/ant-design/issues/972">#972</a></li>
+<li>DatePicker<ul>
+<li>修复 RangePicker 开始结束日期相同的 bug。<a href="https://github.com/ant-design/ant-design/issues/822">#822</a></li>
+<li>修复 <code>format</code> 对浮层不生效问题。<a href="https://github.com/ant-design/ant-design/issues/917">#917</a></li>
+</ul>
+</li>
+<li>TimePicker 修复一个 <code>value</code> 为 <code>null</code> 时没有进入受控模式的问题。</li>
+<li>Upload<ul>
+<li>可以用 <code>headers</code> 设置上传头部。</li>
+<li>新增上传图片卡片样式。<a href="http://ant.design/components/upload/#demo-picture-card">演示</a></li>
+</ul>
+</li>
+<li>Radio<ul>
+<li>更换 Radio.Button 的展现样式。</li>
+<li>可以设置 Radio.Button 的大小。</li>
+</ul>
+</li>
+<li>Progress<ul>
+<li><code>format</code> 属性现在支持自定义 function 的方式进行定义。<a href="https://github.com/ant-design/ant-design/issues/893">#893</a></li>
+<li><code>format</code> 指定 string 和 React.Node 的方式被废弃。</li>
+<li>支持 <code>style</code> 属性。<a href="https://github.com/ant-design/ant-design/issues/895">#895</a></li>
+</ul>
+</li>
+<li>message &amp;&amp; notification 现在可以销毁。</li>
+<li>Button<ul>
+<li>小号 Button 的圆角调整为 <code>4px</code>。</li>
+<li>修复 Button.Group disabled 后的样式问题。<a href="https://github.com/ant-design/ant-design/issues/926">#926</a></li>
+</ul>
+</li>
+<li>BreadCrumb<ul>
+<li>移除 <code>router</code> 属性，无需设置。</li>
+<li>修复一个链接参数不对的问题。</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-11-3">0.11.3<a href="#0-11-3" class="anchor">#</a> </h2><p><code>2016-01-19</code></p>
+<ul>
+<li>修复 TimePicker 受控模式点选即关闭面板的问题。<a href="https://github.com/ant-design/ant-design/issues/818">#818</a></li>
+<li>修复一个两栏的 TimePicker 点击右边空白处无法关闭面板的问题。<a href="https://github.com/ant-design/ant-design/issues/826">#826</a></li>
+<li>修复 Table <code>pagination.onChange</code> 指定无效的问题。<a href="https://github.com/ant-design/ant-design/issues/824">#824</a></li>
+<li>修复 Transfer 搜索功能失效的问题。</li>
+<li>修复 DatePicker 的 MonthPicker 样式错乱的问题。</li>
+<li>修复 RangePicker 时区无法设置的问题。<a href="https://github.com/ant-design/ant-design/issues/837">#837</a></li>
+<li>修复二维码图标，新增一个扫描图标。<a href="https://github.com/ant-design/ant-design/issues/772">#772</a></li>
+</ul>
+<h2 id="0-11-2">0.11.2<a href="#0-11-2" class="anchor">#</a> </h2><p><code>2015-01-03</code></p>
+<ul>
+<li>新增了<a href="https://github.com/ant-design/ant-design/blob/master/CONTRIBUTING.md">贡献文档</a>。</li>
+<li>修复一个 DatePicker 中选择的国际化文案问题。<a href="https://github.com/ant-design/ant-design/issues/771">#771</a></li>
+<li>增加了一个高级搜索类型表单的<a href="http://ant.design/components/form/#demo-advanced-search-form">演示</a>。</li>
+<li>Dropdown 支持多级的下拉菜单。<a href="http://ant.design/components/dropdown/#demo-sub-menu">演示</a></li>
+<li>Table<ul>
+<li>新增 <code>rowSelection.onChange</code> 和 <code>rowSelection.selectedRowKeys</code>，完善选择功能。</li>
+<li>更新 dataSource 时，选中项现在会被清空。</li>
+<li>修复一个全选框和禁用的选择项配合的问题。</li>
+</ul>
+</li>
+<li>修复 <code>0.11.1</code>版本 menu 内嵌型菜单（inline）选中后关闭的问题。</li>
+<li>修复 <code>0.11.1</code>版本对 React 版本要求太严的问题，对应的警告提示对于 <code>0.14.x</code> 将不再出现。</li>
+<li>组件和文档的样式小调整。</li>
+</ul>
+<h2 id="0-11-1">0.11.1<a href="#0-11-1" class="anchor">#</a> </h2><p><code>2015-12-29</code></p>
+<ul>
+<li>修复一个 Table 无法修改 pageSize 的问题。</li>
+<li>修复一个 Table 子表格展开的对齐问题。</li>
+<li>修复一个 Chrome 下部分图标左侧切边的问题。</li>
+<li>修复搜索输入框在表单下使用的样式问题。<a href="https://github.com/ant-design/ant-design/issues/762">#762</a></li>
+</ul>
+<h2 id="0-11-0">0.11.0<a href="#0-11-0" class="anchor">#</a> </h2><p><code>2015-12-28</code></p>
+<ul>
+<li><strong>移除默认加载的样式文件，样式现在需要独立加载。</strong></li>
+<li>按钮圆角调整为 <code>6px</code>。</li>
+<li>Modal、Popconfirm、Table、TimePicker 支持国际化配置。</li>
+<li>新增虚线型按钮。</li>
+<li>新增 <a href="http://ant.design/components/form/#demo-search-input">通用搜索框</a> 样式。</li>
+<li>新增图片上传列表样式<a href="http://ant.design/components/upload/#demo-picture-style">演示</a>。</li>
+<li><strong>部分设计资源开放 <a href="http://ant.design/spec/tools">下载</a>，包括 Axure 组件库和 Iconfont 字体打包文件。</strong></li>
+<li>新增 <a href="http://ant.design/spec/layout/#demo-ceiling">吊顶规范</a>。</li>
+<li>组件演示页面增加锚点。</li>
+<li>新增穿梭框 <a href="http://ant.design/components/transfer/">Transfer</a> 组件。</li>
+<li>新增小尺寸的 Switch 开关组件。</li>
+<li>增加更多的图标。<a href="https://github.com/ant-design/ant-design/commit/087c64649d73206a4d62e52f9b3f6042c1d28608#diff-dc1a1f4794c1c4ee3b083381d4c50c47R180">#</a></li>
+<li>全局微调了警告和错误状态色。</li>
+<li>Select<ul>
+<li>选中样式进行了调整。</li>
+<li>在标签/多选模式下，选中或删除选项增加了动画效果。</li>
+</ul>
+</li>
+<li>Alert<ul>
+<li>默认样式不展示图标。</li>
+<li>带描述的警告框图标改为描线图标。</li>
+<li><code>type=&quot;warn&quot;</code> 图标修改。</li>
+</ul>
+</li>
+<li>Dropdown 新增带菜单触发的按钮 <code>Dropdown.Button</code>。<a href="http://ant.design/components/dropdown/#demo-dropdown-button">演示</a></li>
+<li>Menu<ul>
+<li>新增 <code>Menu.ItemGroup</code> 用于把菜单项分组。</li>
+<li>onOpen 和 onClose 函数的参数新增了 <code>keyPath</code> 数据，可用于制作手风琴类型的菜单。</li>
+</ul>
+</li>
+<li>Badge<ul>
+<li>徽章可以独立使用。<a href="http://ant.design/components/badge/#demo-no-wrapper">演示</a></li>
+<li>支持设置封顶的 <code>99+</code> 的数字。<a href="http://ant.design/components/badge/#demo-overflow">演示</a></li>
+</ul>
+</li>
+<li>Slider<ul>
+<li>增加 <code>onAfterChange</code> 事件。<a href="http://ant.design/components/slider/#demo-event">演示</a></li>
+<li>现在设置 <code>tipFormatter={null}</code> 可以隐藏 <code>Tooltip</code>。</li>
+<li>双滑块拖动体验优化，一个滑块在拖动时可以直接跨过另一滑块。</li>
+</ul>
+</li>
+<li>Breadcrumb 可以自定义分隔符。<a href="http://ant.design/components/breadcrumb/#demo-separator">演示</a></li>
+<li>Popconfirm 添加 <code>visible</code> 属性，使其可以控制是否显示。<a href="http://ant.design/components/popconfirm/#demo-dynamic-trigger">演示</a></li>
+<li>修复 Icon <code>ref</code> 引起的报错。</li>
+<li>修复 Calendar 组件无法切换年/月的问题。<a href="https://github.com/ant-design/ant-design/issues/757">#757</a></li>
+<li>Checkbox 新增 <code>Checkbox.Group</code>，现可以方便的 <a href="http://ant.design/components/checkbox/#demo-group">生成一组选择框</a></li>
+<li>Tabs<ul>
+<li>新增 <a href="http://ant.design/components/tabs/#demo-card">卡片式页签</a>。</li>
+<li>调整 <a href="http://ant.design/components/tabs/#demo-editable-card">新增和关闭页签</a> 的样式。</li>
+<li>现在支持页签的四个位置 <code>tabPosition=&quot;top|right|bottom|left&quot;</code>。</li>
+<li>移除 <code>animation</code> 属性，并在 <code>tabPosition=&quot;top|bottom&quot;</code> 时默认启用切换动画。</li>
+</ul>
+</li>
+<li>Timepicker<ul>
+<li><strong>重命名为 TimePicker。</strong></li>
+<li>国际化属性 <code>locale</code> 结构发生了 <a href="https://github.com/ant-design/ant-design/issues/1270#issuecomment-201181384">变化</a>。</li>
+<li>新增 <code>value</code> 属性。</li>
+<li>新增属性 <code>disabledHours</code> <code>disabledMinutes</code> <code>disabledSeconds</code>。<a href="http://ant.design/components/time-picker/#picker-demo-disable-options">演示</a></li>
+<li>移除 <code>hourOptions</code> <code>minuteOptions</code> <code>secondOptions</code>，新增 <code>hideDisabled</code> 属性用于替代。</li>
+</ul>
+</li>
+<li>Datepicker<ul>
+<li><strong>重命名为 DatePicker。</strong></li>
+<li>新增 <a href="http://ant.design/components/date-picker/#picker-demo-range">日期范围选择控件</a>。</li>
+<li>修改 <code>showTime</code> 的交互。<a href="http://ant.design/components/date-picker/#picker-demo-time">演示</a></li>
+<li>修正为受控组件。</li>
+</ul>
+</li>
+<li>Table<ul>
+<li><strong>移除 <code>dataSource</code> 的远程模式。</strong></li>
+<li>新增 <a href="http://ant.design/components/table/#demo-size">紧凑型表格</a>。</li>
+<li>允许监听分页的 <code>onShowSizeChange</code>。<a href="http://ant.design/components/table/#demo-paging">演示</a></li>
+<li>优化表格对树形数据的显示。<a href="http://ant.design/components/table/#demo-indent-size">演示</a></li>
+<li>优化了筛选菜单的样式，并添加了最大高度。<a href="http://ant.design/components/table/#demo-head">演示</a>。</li>
+<li>修复 column.key 设置失效的问题。<a href="https://github.com/ant-design/ant-design/issues/642">#642</a></li>
+<li>修复设置时 rowKey 时单选会导致全部选中的问题。<a href="https://github.com/ant-design/ant-design/issues/697">#697</a></li>
+<li>修复一个列重新渲染导致选项错乱的问题。<a href="https://github.com/ant-design/ant-design/issues/418#issuecomment-163093580">#418</a></li>
+<li>修复选择列无法设置宽度的问题。<a href="https://github.com/ant-design/ant-design/issues/649">#649</a></li>
+</ul>
+</li>
+<li>Form<ul>
+<li>修复了 Textarea 无法输入的问题。<a href="https://github.com/ant-design/ant-design/issues/646">#646</a></li>
+<li>修复了 Textarea 设置 <code>cols</code> 和 <code>rows</code> 属性失效的问题。<a href="https://github.com/ant-design/ant-design/issues/694">#694</a></li>
+<li>修复无法设置 <code>className</code> 的问题。<a href="https://github.com/ant-design/ant-design/issues/711">#711</a></li>
+</ul>
+</li>
+<li>修复 Upload 组件在 <code>beforeUpload</code> 返回 <code>false</code> 后依然更新上传列表问题。<a href="https://github.com/ant-design/ant-design/issues/757">#757</a></li>
+<li>工具<ul>
+<li>替换 <code>antd build</code> 为 <a href="https://github.com/ant-tool/atool-build">atool-build</a>，重构并改善了 webpack 配置的自定义方式。</li>
+<li>替换 <code>antd server</code> 为 <a href="https://github.com/dora-js/dora">dora</a>，一个完全插件化的开发服务器，支持<a href="https://github.com/dora-js/dora-plugin-proxy">代理转发和数据 Mock</a>、<a href="https://github.com/dora-js/dora-plugin-atool-build">atool-build</a>、<a href="https://github.com/dora-js/dora-plugin-hmr">热替换</a>。</li>
+<li>新增 babel 插件 <a href="https://github.com/ant-design/babel-plugin-antd">babel-plugin-antd</a>，转换 <code>import {Button} from &#39;antd&#39;</code> 为 <code>import Button from &#39;antd/lib/button&#39;</code>。</li>
+<li>发布了 <code>antd-init@0.6.x</code>，支持以上改动。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="http://ant.design/docs/react/upgrade-notes#0-10-gt-0-11">0.11 升级指南</a></p>
+</blockquote>
+<hr>
+<h2 id="0-10-5">0.10.5<a href="#0-10-5" class="anchor">#</a> </h2><p><code>2016-01-04</code></p>
+<ul>
+<li>修复 Table 更新 dataSource 后，选中项没有置空的问题。<a href="https://github.com/ant-design/ant-design/issues/793">#793</a></li>
+</ul>
+<h2 id="0-10-4">0.10.4<a href="#0-10-4" class="anchor">#</a> </h2><p><code>2015-11-30</code></p>
+<ul>
+<li>将 media-match 加入默认的 polyfill 文件中。<a href="https://github.com/ant-design/ant-design/commit/562697423b1139eb324c1dceb051c143f4870ed7">5626974</a></li>
+<li>修复了 <a href="http://ant.design/components/datepicker/#demo-month-picker">MonthPicker</a> 报错问题，并增加了相关演示。</li>
+<li>修复 RadioGroup 中的 Radio/RadioButton 无法单独设置 disabled 的问题。<a href="https://github.com/ant-design/ant-design/issues/603">#603</a></li>
+<li>修复今天是不可选日期时的一个展示问题。<a href="https://github.com/ant-design/ant-design/issues/606">#606</a></li>
+</ul>
+<h2 id="0-10-3">0.10.3<a href="#0-10-3" class="anchor">#</a> </h2><p><code>2015-11-26</code></p>
+<ul>
+<li>和 0.9.x 保持一致默认引入 <code>antd/lib/index.css</code>（而非 less 文件），方便第三方引用。引用 less 文件进行变量配置的可自行 <code>import &#39;antd/style/index.less&#39;</code>。<a href="https://github.com/ant-design/ant-design/issues/593">#593</a></li>
+<li>升级 Pagination，增加 <code>defaultCurrent</code> 属性，修正原来的 <code>current</code> 为<a href="https://facebook.github.io/react/docs/forms.html#controlled-components">完全受控属性</a>。</li>
+<li>Pagination 的改动也修复了 Table 切换数据源后回到<a href="http://ant.design/components/table/#demo-ajax">第一页的例子</a>。</li>
+<li>对演示和样式代码增加了 lint 检查。</li>
+</ul>
+<h2 id="0-10-2">0.10.2<a href="#0-10-2" class="anchor">#</a> </h2><p><code>2015-11-25</code></p>
+<ul>
+<li>Slider 新增 <code>tipFormatter</code> 用于格式化 Tooltip 的内容。</li>
+<li>优化 Badge 动画效果。</li>
+<li>修复以下问题：<ul>
+<li>文本域的表单校验无法重置。</li>
+<li>设置 Upload 的 <code>multiple</code> 为 <code>true</code> 时，未显示每个文件的上传进度。</li>
+<li>Breadcrumb 配合 Router 的时候如果没有 <code>breadcrumbName</code> 会抛错。</li>
+<li>InputNumber 同时设置 <code>size</code> <code>className</code> 时会有冲突。</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-10-1">0.10.1<a href="#0-10-1" class="anchor">#</a> </h2><p><code>2015-11-20</code></p>
+<ul>
+<li><p>修改内部组件的引用结构，方便工具优化。<a href="https://github.com/ant-design/ant-design/pull/566">#566</a></p>
+<ul>
+<li>移除了演示中没有使用过的 <code>antd.ButtonGroup</code>，依然用 <code>const ButtonGroup = Button.Group</code> 来使用。</li>
+<li><p>Form 和 Input 目录分离，<code>import { Form, Input } from &#39;ant/lib/form&#39;</code> 的引用方式被废弃。</p>
+<p>现在可以 <code>import Form from &#39;ant/lib/form&#39;</code> 和 <code>import Input from &#39;ant/lib/input&#39;</code>。</p>
+<p>原有的 <code>import { Form, Input } from &#39;antd&#39;</code> 则不受影响。</p>
+</li>
+</ul>
+</li>
+<li><p>修复 Datepicker 的 <code>style</code> 和 <code>calendarStyle</code> 属性失效的问题，并将 <code>calendarStyle</code> 更名为 <code>popupStyle</code>。</p>
+</li>
+</ul>
+<h2 id="0-10-0">0.10.0<a href="#0-10-0" class="anchor">#</a> </h2><p><code>2015-11-20</code></p>
+<ul>
+<li>全面兼容 <code>react@0.14.x</code>。</li>
+<li>新增 <a href="http://ant.design/components/timepicker/">时间选择 Timepicker</a>、<a href="http://ant.design/components/calendar/">日历 Calendar</a>、<a href="http://ant.design/components/spin/">加载中 Spin</a> 组件。</li>
+<li><a href="http://ant.design/components/button/">Button</a>、<a href="http://ant.design/components/icon/">Iconfont</a>、<a href="http://ant.design/components/layout/">Layout</a>、<a href="http://ant.design/components/form/">Form</a>、<a href="http://ant.design/components/form/#demo-input">Input</a> 等样式模块改造为 React 组件。</li>
+<li>新增 <a href="http://ant.design/components/queue-anim/">Queue-anim</a> 组件，更换了原来的 enter-animation。</li>
+<li>全新的<a href="/components/icon">字体图标</a>。<ul>
+<li>全面更新视觉风格，补充更多图标。<a href="https://github.com/ant-design/ant-design/issues/313">#313</a></li>
+<li>调整字体基线，告别对图标位置的特殊调节。(感谢 <a href="http://iconfont.cn">iconfont.cn</a> 的鼎力支持)</li>
+</ul>
+</li>
+<li>Datepicker、Dropdown、Select、Popover、Popconfirm 等浮层组件添加在空间不足的情况下自动调整位置功能。</li>
+<li>Popover、Tooltip、Popconfirm 组件支持 12 个方向。<a href="https://github.com/ant-design/ant-design/issues/312">#312</a></li>
+<li>优先使用苹方字体。</li>
+<li>统一 size 属性的可选值为 <code>small</code> <code>default</code> <code>large</code>。</li>
+<li>开始初步补充<a href="https://github.com/ant-design/ant-design/tree/1a3a19793c0791201666fdcf0dbd12a30fad4be0/tests">测试用例</a>。</li>
+<li>提供主色系更换的<a href="https://github.com/ant-tool/xtool/tree/master/examples/customize-antd-theme">方案</a>。<a href="https://github.com/ant-design/ant-design/issues/384">#384</a></li>
+<li>添加<a href="http://ant.design/spec/colors#色彩换算工具">色彩换算工具</a>。</li>
+<li>添加布局和导航规范，以及<a href="http://ant.design/spec/layout/">常用布局</a>。</li>
+<li>文档支持标题和演示的锚点，方便分享文档和演示代码。</li>
+<li>提供多版本的文档，在<a href="http://ant.design">主站</a>的右下角提供切换按钮。</li>
+<li><a href="https://github.com/ant-tool/xtool">antd-bin</a> 升级到 <code>0.10</code>。<ul>
+<li>拆分出 <a href="https://github.com/ant-design/antd-init">antd-init</a> 和 <a href="https://github.com/ant-design/antd-build">antd-build</a>。</li>
+<li>提供代理功能。</li>
+<li>提供 UI 测试功能。</li>
+</ul>
+</li>
+</ul>
+<h4 id="组件变更">组件变更<a href="#组件变更" class="anchor">#</a> </h4><ul>
+<li>Table<ul>
+<li>支持单选。<a href="http://ant.design/components/table/#demo-row-selection-radio-props">演示</a></li>
+<li>选择模式支持默认选中和不可用效果。<a href="/components/table/#demo-row-selection-props">演示</a></li>
+<li>列支持了 <code>colSpan</code> 和 <code>rowSpan</code> 配置。<a href="/components/table/#demo-colspan-rowspan">演示</a></li>
+<li>新增 <code>loading</code> 属性。</li>
+<li>筛选增加 <code>filterMultiple</code> 属性，支持单选的配置。</li>
+</ul>
+</li>
+<li>Datepicker<ul>
+<li>添加国际化支持。</li>
+<li>添加手动输入和清除功能。</li>
+<li>优化了视觉样式。</li>
+<li>修复不标准的日期格式导致显示错误的问题。</li>
+<li>用 <code>onChange</code> 属性代替 <code>onSelect</code> 属性。</li>
+</ul>
+</li>
+<li>Validation 修复了 对 Datepicker、Input-number、Select 的支持，并添加了相关演示。</li>
+<li>Carousel 的依赖 react-slick 升级到 0.9.x，相关 API 也相应更新。</li>
+<li>Tree 组件支持完全受控模式。<a href="https://github.com/ant-design/ant-design/issues/397">#397</a></li>
+<li>Input Number<ul>
+<li>组件输入体验优化，现在可以键入任意字符，失焦时格式化为合法值。</li>
+<li>修复不支持小数 step 的问题。<a href="https://github.com/ant-design/ant-design/issues/530">#530</a></li>
+</ul>
+</li>
+<li>Tabs 新增<a href="http://ant.design/components/tabs/#demo-vertical-left">垂直页签功能</a>。</li>
+<li>Upload 组件视觉优化，新增高级浏览器下的上传进度展示。<a href="https://github.com/ant-design/ant-design/issues/311">#311</a></li>
+<li>Menu<ul>
+<li>视觉效果大幅优化。</li>
+<li>新增 <a href="http://ant.design/components/menu/#demo-theme">dark 主题</a> 的样式。</li>
+<li>修复一个链接点击区域的问题。<a href="https://github.com/ant-design/ant-design/issues/535">#535</a></li>
+</ul>
+</li>
+<li>Dropdown 用 onClick 代替 onSelect 作为推荐的使用方式，因为原有的 onSelect 只在变化时触发。</li>
+<li>Slider<ul>
+<li>新增<a href="http://ant.design/components/slider/#demo-range">双滑块功能</a>。</li>
+<li>优化 marks 属性的使用逻辑，使其可以和具体数值进行绑定。<a href="https://github.com//react-component/slider/issues/26">slider#26</a></li>
+<li>属性命名优化，用 <code>dots</code> 代替了 <code>withDots</code> 属性，用 <code>included</code> 代替了 <code>isIncluded</code>。</li>
+</ul>
+</li>
+<li>Badge 当 <code>count</code> 为 0 时不展示。</li>
+<li>Progress 新增 <code>format</code> 属性，能够自定义展示的进度文案。</li>
+<li>Modal 新增 <code>confirmLoading</code> 属性。</li>
+<li>新增 Radio.Button 的失效样式。</li>
+<li>提供 IE8 下的圆角按钮<a href="http://ant.design/components/button/#ie8-border-radius-support">兼容方案</a>。</li>
+<li><code>antd.Notification()</code> 修正为 <code>antd.notification()</code>。</li>
+<li>另有巨量样式的修复和优化。</li>
+</ul>
+<blockquote>
+<p>备注：</p>
+<ul>
+<li><a href="https://github.com/ant-design/ant-design/issues/276">计划和推进 issue</a></li>
+<li><a href="http://010x.ant.design/docs/upgrade-to-0.10">0.10 升级指南</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="0-9-3-0-9-5">0.9.3 ~ 0.9.5<a href="#0-9-3-0-9-5" class="anchor">#</a> </h2><p><code>2015-11-04</code></p>
+<ul>
+<li>增加对 React 版本的检测提示机制，0.9.x 序列只能使用 <code>react@~0.13.3</code>。</li>
+</ul>
+<h2 id="0-9-2">0.9.2<a href="#0-9-2" class="anchor">#</a> </h2><p><code>2015-10-26</code></p>
+<ul>
+<li>Tooltip 的 title 为空时不展示浮层。<a href="https://github.com/ant-design/ant-design/commit/9b5311791e73270c7c16a602ac74dd59719a5f76">9b53117</a></li>
+<li>修复 Upload 文件列表链接的 target 属性。<a href="https://github.com/ant-design/ant-design/commit/340a1702b6a7b065ac02d417c891e1886dfe470d">340a170</a></li>
+<li>修复 Datepicker 设置 defaultValue 时星期顺序错误的问题。<a href="https://github.com/ant-design/ant-design/commit/9ef14500f3abfcc7081f8dceab8187ec835e3918">9ef1450</a></li>
+<li>修复一些小的样式问题。</li>
+</ul>
+<h2 id="0-9-1">0.9.1<a href="#0-9-1" class="anchor">#</a> </h2><p><code>2015-09-26</code></p>
+<ul>
+<li>添加 Pagination pageSize 发生变化的回调。<a href="https://github.com/ant-design/ant-design/issues/317">#317</a></li>
+<li>升级依赖 rc-upload 到 1.6.x，修复 IE8/9 下的兼容性问题。</li>
+<li>升级依赖 rc-steps 到 1.3.x。<ul>
+<li>新增 current 属性，方便配置当前的步骤。<a href="https://github.com/ant-design/ant-design/issues/290">#290</a></li>
+<li>修复因滚动条影响页面宽度导致的错位问题。</li>
+</ul>
+</li>
+<li>升级依赖 rc-menu 到 1.5.x。<ul>
+<li>新增 onSelect 回调中返回参数 keyPath，从而支持只展开当前父级菜单的交互方式。<a href="http://ant.design/components/menu/#demo-sider-current">demo</a></li>
+<li>修复 hover 类型的弹出菜单能响应点击事件的问题。<a href="https://github.com/react-component/menu/issues/14">react-component/menu#14</a></li>
+</ul>
+</li>
+<li>修复一个 Table 的分页无法正确展示的问题。<a href="https://github.com/ant-design/ant-design/issues/253">#253</a></li>
+<li>修复一个 combobox 选择框无法选中的问题。<a href="https://github.com/ant-design/ant-design/commit/0435ca60e3b574bac3808a10ba3db62f482335fd">0435ca6</a></li>
+<li>修复 Radio.Button 在 IE 8 下不可用的问题。<a href="https://github.com/ant-design/ant-design/issues/321">#321</a></li>
+<li>适配 breadcrumb 面包屑组件和 <code>react-router@1.0.0-rc1</code>。</li>
+<li>修复只能同时弹出一个 Modal 通知框的问题。<a href="https://github.com/ant-design/ant-design/commit/d6a4094bc4c72acd05be001c7e46dbd17092001a">d6a4094</a></li>
+<li>升级依赖 rc-tooltip 到 2.8.0，增加 overlayClassName 属性。</li>
+<li>部分组件交互和视觉效果修正。</li>
+</ul>
+<h2 id="0-9-0">0.9.0<a href="#0-9-0" class="anchor">#</a> </h2><p><code>2015-09-14</code></p>
+<ul>
+<li>新增 <a href="components/timeline/">timeline</a> 和 <a href="components/badge/">badge</a> 组件。</li>
+<li>优化弹出层类组件的动画效果，使其更加流畅。</li>
+<li>部分文案更新。</li>
+<li>优化主站在小分辨率屏幕下的样式。</li>
+<li>使用 instantclick 改造主站，加载速度有明显提升。</li>
+<li>antd-bin 升级到 <a href="https://github.com/ant-design/antd-bin/blob/master/HISTORY.md">0.6.x</a> 。</li>
+<li>Upload <strong>重构了 API 接口，不向下兼容</strong>，支持自定义的功能扩展。<ul>
+<li>新增 <code>onChange(file) {}</code> 接口，移出原来的 <code>onSuccess</code>、<code>onProgess</code>、<code>onError</code> 等接口。</li>
+<li>新增 <code>fileList</code> 和 <code>defaultFileList</code> 属性，以满足更多的自定义功能，具体见演示。</li>
+<li>设置 fileList 数组项的 url 属性可以作为链接展示在文件列表中方便下载。</li>
+<li>移除内建的上传成功或失败的信息提示，业务可自行实现。</li>
+<li>修正多文件选择上传时文件列表只展示一个文件的问题。</li>
+</ul>
+</li>
+<li>Table<ul>
+<li>新增可展开的 table。<a href="https://github.com/ant-design/ant-design/pull/258">#258</a></li>
+<li>新增无数据的展示样式。<a href="https://github.com/ant-design/ant-design/commit/4c54644116d46cb2510d2d475234529bad60e5d5">4c54644</a></li>
+<li>修复本地模式 <code>dataSource</code> 无法更新的问题。<a href="https://github.com/ant-design/ant-design/commit/6d2dcc45393b6ec0ad1ba73caf8b1ec42353743f">6d2dcc4</a></li>
+<li>修复远程模式 loading 失效的问题。<a href="https://github.com/ant-design/ant-design/commit/9b8abb219934c246970a84200818aa8f85974bdf">9b8abb2</a></li>
+<li>用 <a href="http://npmjs.com/reqwest-without-xhr2">reqwest-without-xhr2</a> 代替了 reqwest，解决某些开发环境下 xhr2 依赖的问题。</li>
+</ul>
+</li>
+<li>Select<ul>
+<li>增加 label 属性，允许多选模式下展示标签（原来只能显示 value 值）。<a href="http://react-component.github.io/select/examples/mul-suggest.html">演示</a></li>
+<li>修复 combobox 模式下 value 失效的问题。</li>
+</ul>
+</li>
+<li>Notification 修复不会自动消失的问题。<a href="https://github.com/ant-design/ant-design/commit/23fce559b0b2faf4e0b686a92dbcdd045727a464">23fce55</a></li>
+<li>Steps 新增竖版的步骤条。</li>
+<li>Carousel 修复 fade 模式下可以拖拽的问题。#212</li>
+<li>Collapse 修复动画不生效的问题。</li>
+<li>Datepicker 修复无法设置为空值的问题。</li>
+<li>Modal<ul>
+<li>添加 <a href="http://ant.design/components/modal/#demo-info">通知类型</a> 的对话框函数。</li>
+<li>用 <code>Modal.confirm()</code> 代替 <code>confirm()</code> 方法。</li>
+<li>修改为需要在 onCancel 手动设置 visible 属性来关闭。</li>
+</ul>
+</li>
+<li>Message 添加 <a href="http://ant.design/components/message/#demo-loading">加载中类型</a>。</li>
+<li>Radio 修改 Radio.Group 容器的盒模型属性为 inline-block 。</li>
+<li>Enter Animation<ul>
+<li>大幅度的重构，全新 API 的设计。</li>
+<li>支持和 react-router 结合使用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="0-8-0">0.8.0<a href="#0-8-0" class="anchor">#</a> </h2><p><code>2015-08-25</code></p>
+<p>这个版本是第一个稳定版，组件经过三期迭代，基本到齐，并有大量改进和变化，不向下兼容。</p>
+<ul>
+<li>新增九个组件 <code>menu</code>、<code>upload</code>、<code>carousel</code>、<code>tree</code>、<code>notification</code>、<code>validation</code>、<code>affix</code>、<code>alert</code>、<code>enterAnimation</code>。目前共有组件 34 个，基本能满足后台类项目的组件需求。</li>
+<li>新增设计文档部分，包括文字、色彩、动画。</li>
+<li>重新梳理了设计和 React 实现部分的关系，强调了 Ant Design 的设计属性，并更新了网站的信息结构。</li>
+<li>构建工具 <code>antd-bin</code> 升级到 <code>0.4.0</code> 版本，支持合并 webpack 配置，热替换（HMR）等特性，<a href="https://github.com/ant-design/antd-bin">详见</a>。</li>
+<li>组件动画优化和补充，体验更加流畅动感。</li>
+<li>排查并修复 IE 和 safari 等浏览器的兼容问题。</li>
+<li>大量代码重构，演示代码补充，文档更新、以及样式上的优化。</li>
+</ul>
+<h2 id="0-7-3">0.7.3<a href="#0-7-3" class="anchor">#</a> </h2><p><code>2015-07-30</code></p>
+<ul>
+<li>小幅重构了 Table 分页，修复了分页导致的数据不展示的问题。</li>
+<li>更新了部分文档。</li>
+</ul>
+<h2 id="0-7-2">0.7.2<a href="#0-7-2" class="anchor">#</a> </h2><p><code>2015-07-27</code></p>
+<ul>
+<li>修复本地模式下 pagination 为 false 时数据无法显示的 <a href="https://github.com/ant-design/ant-design/commit/1954586665e59031eae5d2c8b2cdb08f83d64fcb">问题</a>。</li>
+<li>重构了 message 组件。</li>
+<li>添加英文版说明文档 <a href="https://github.com/ant-design/ant-design/blob/master/README-en_US.md">README-en_US.md</a>。</li>
+<li>部分代码切换至 ES6 模式。</li>
+<li>修正了部分组件的样式和演示，优化部分动画。</li>
+</ul>
+<h2 id="0-7-1">0.7.1<a href="#0-7-1" class="anchor">#</a> </h2><p><code>2015-07-22</code></p>
+<ul>
+<li>修复了 Table 组件的 pagination 为 false 时分页未消失的 <a href="https://github.com/ant-design/ant-design/commit/01a6c0f1e6707b72a54ef30d073d148a87b391a8">问题</a>。</li>
+<li>select 组件<a href="https://github.com/ant-design/ant-design/issues/50">选中后默认显示标签内容</a>（原来是显示 value）。</li>
+<li>修正了部分组件的样式和演示。</li>
+<li>打包文件为 <a href="https://github.com/ant-design/ant-design/commit/9b7b940cb417429d8fc57d83e252991b043d0f2f">umd 模式</a>。</li>
+</ul>
+<h2 id="0-7-0">0.7.0<a href="#0-7-0" class="anchor">#</a> </h2><p><code>2015-07-21</code></p>
+<ul>
+<li>第一个公开版本，发布 <code>layout</code>、<code>iconfont</code>、<code>button</code>、<code>form</code>、<code>checkbox</code>、<code>radio</code>、<code>switch</code>、<code>slider</code>、<code>input-number</code>、<code>datepicker</code>、<code>select</code>、<code>tabs</code>、<code>steps</code>、<code>breadcrumb</code>、<code>collapse</code>、<code>pagination</code>、<code>modal</code>、<code>message</code>、<code>dropdown</code>、<code>popover</code>、<code>popconfirm</code>、<code>tooltip</code>、<code>progress</code>、<code>table</code> 等组件。</li>
+<li>发布 <a href="http://ant.design/">Ant Design 首页</a> 和入门文档。</li>
+</ul>
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

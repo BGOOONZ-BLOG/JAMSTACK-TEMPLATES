@@ -1,0 +1,133 @@
+<div class="code-box" id="demo-filelist">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-filelist"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-filelist');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require('antd');
+
+var MyUpload = React.createClass({
+  displayName: 'MyUpload',
+  getInitialState: function getInitialState() {
+    return {
+      fileList: [{
+        uid: -1,
+        name: 'xxx.png',
+        status: 'done',
+        url: 'http://www.baidu.com/xxx.png'
+      }]
+    };
+  },
+  handleChange: function handleChange(info) {
+    var fileList = info.fileList;
+
+    // 1. 上传列表数量的限制
+    //    只显示最近上传的一个，旧的会被新的顶掉
+    fileList = fileList.slice(-2);
+
+    // 2. 读取远程路径并显示链接
+    fileList = fileList.map(function (file) {
+      if (file.response) {
+        // 组件会将 file.url 作为链接进行展示
+        file.url = file.response.url;
+      }
+      return file;
+    });
+
+    // 3. 按照服务器返回信息筛选成功上传的文件
+    fileList = fileList.filter(function (file) {
+      if (file.response) {
+        return file.response.status === 'success';
+      }
+      return true;
+    });
+
+    this.setState({ fileList: fileList });
+  },
+  render: function render() {
+    var props = {
+      action: '/upload.do',
+      onChange: this.handleChange,
+      multiple: true
+    };
+    return React.createElement(
+      _antd.Upload,
+      _extends({}, props, { fileList: this.state.fileList }),
+      React.createElement(
+        _antd.Button,
+        { type: 'ghost' },
+        React.createElement(_antd.Icon, { type: 'upload' }),
+        ' 点击上传'
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(MyUpload, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> MyUpload = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      fileList: [{
+        uid: -<span class="hljs-number">1</span>,
+        name: <span class="hljs-string">'xxx.png'</span>,
+        status: <span class="hljs-string">'done'</span>,
+        url: <span class="hljs-string">'http://www.baidu.com/xxx.png'</span>
+      }]
+    };
+  },
+  handleChange(info) {
+    <span class="hljs-keyword">let</span> fileList = info.fileList;
+
+    <span class="hljs-comment">// 1. 上传列表数量的限制</span>
+    <span class="hljs-comment">//    只显示最近上传的一个，旧的会被新的顶掉</span>
+    fileList = fileList.slice(-<span class="hljs-number">2</span>);
+
+    <span class="hljs-comment">// 2. 读取远程路径并显示链接</span>
+    fileList = fileList.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
+      <span class="hljs-keyword">if</span> (file.response) {
+        <span class="hljs-comment">// 组件会将 file.url 作为链接进行展示</span>
+        file.url = file.response.url;
+      }
+      <span class="hljs-keyword">return</span> file;
+    });
+
+    <span class="hljs-comment">// 3. 按照服务器返回信息筛选成功上传的文件</span>
+    fileList = fileList.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">file</span>) </span>{
+      <span class="hljs-keyword">if</span> (file.response) {
+        <span class="hljs-keyword">return</span> file.response.status === <span class="hljs-string">'success'</span>;
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    });
+
+    <span class="hljs-keyword">this</span>.setState({ fileList });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> props = {
+      action: <span class="hljs-string">'/upload.do'</span>,
+      onChange: <span class="hljs-keyword">this</span>.handleChange,
+      multiple: <span class="hljs-literal">true</span>
+    };
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>} <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">MyUpload</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-filelist">完全控制的上传列表</a>
+    </div>
+    <p>使用 <code>fileList</code> 对列表进行完全控制，可以实现各种自定义功能，以下演示三种情况：</p>
+<p>1) 上传列表数量的限制。</p>
+<p>2) 读取远程路径并显示链接。</p>
+<p>3) 按照服务器返回信息筛选成功上传的文件。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="code-box" id="demo-step-next">
+  <div class="code-box-demo">
+    <div id="components-steps-demo-step-next"></div>
+    <style type="text/css">#components-steps-demo-step-next > div > div {
+  margin-bottom: 30px;
+}</style><div class="highlight"><pre><code class="css"><span class="id">#components-steps-demo-step-next</span> &gt; <span class="tag">div</span> &gt; <span class="tag">div</span> <span class="rules">{
+  <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">30</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div><script>(function(){'use strict';
+
+var Steps = antd.Steps;
+var Step = Steps.Step;
+var container = document.getElementById('components-steps-demo-step-next');
+var array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
+var steps = array.map(function (item, i) {
+  return {
+    title: '步骤' + (i + 1)
+  };
+});
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {
+      currentStep: Math.floor(Math.random() * steps.length)
+    };
+  },
+  next: function next() {
+    var s = this.state.currentStep + 1;
+    if (s === steps.length) {
+      s = 0;
+    }
+    this.setState({
+      currentStep: s
+    });
+  },
+  render: function render() {
+    var cs = this.state.currentStep;
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        null,
+        '当前正在执行第 ',
+        cs + 1,
+        ' 步'
+      ),
+      React.createElement(
+        Steps,
+        { current: cs },
+        steps.map(function (s, i) {
+          return React.createElement(Step, { key: i, title: s.title, description: s.description });
+        })
+      ),
+      React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'button',
+          { className: 'ant-btn', onClick: this.next },
+          '下一步'
+        )
+      )
+    );
+  }
+});
+
+React.render(React.createElement(App, null), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = antd.Steps;
+<span class="keyword">var</span> Step = Steps.Step;
+<span class="keyword">var</span> container = document.getElementById(<span class="string">'components-steps-demo-step-next'</span>);
+<span class="keyword">var</span> array = Array.apply(<span class="literal">null</span>, Array(Math.floor(Math.random() * <span class="number">3</span>) + <span class="number">3</span>));
+<span class="keyword">var</span> steps = array.map(<span class="function"><span class="keyword">function</span><span class="params">(item, i)</span> {</span>
+  <span class="keyword">return</span> {
+    title: <span class="string">'步骤'</span> + (i + <span class="number">1</span>)
+  };
+});
+
+<span class="keyword">var</span> App = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      currentStep: Math.floor(Math.random() * steps.length)
+    }
+  },
+  next() {
+    <span class="keyword">var</span> s = <span class="keyword">this</span>.state.currentStep + <span class="number">1</span>;
+    <span class="keyword">if</span> (s === steps.length) {
+      s = <span class="number">0</span>;
+    }
+    <span class="keyword">this</span>.setState({
+      currentStep: s
+    });
+  },
+  render() {
+    <span class="keyword">var</span> cs = <span class="keyword">this</span>.state.currentStep;
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span>&gt;</span>当前正在执行第 {cs + 1} 步<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{cs}</span>&gt;</span>
+          {steps.map((s, i) =&gt; <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>)}
+        <span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">'ant-btn'</span> <span class="attribute">onClick</span>=<span class="value">{this.next}</span>&gt;</span>下一步<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">App</span> /&gt;</span>, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-step-next">切换到下一步</a>
+    </div>
+    <p>随机生成 3~6 个步骤，初始随机进行到其中一个步骤。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

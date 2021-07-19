@@ -1,4 +1,3 @@
-{{ $tags := .tags }}
-{{ range $tag := $tags }}
-  <span>{{ $tag }}</span>
+{{ $tags := .tags }} {{ range $tag := $tags }}
+<span>{{ $tag }}</span>
 {{ end }}

@@ -1,15 +1,14 @@
-'use strict';
+"use strict";
 
-var React = require('react');
-var B  = require('react-bootstrap');
+var React = require("react");
+var B = require("react-bootstrap");
 
-var SessionActions = require('actions/session_actions');
-
+var SessionActions = require("actions/session_actions");
 
 var LoginFormComponent = React.createClass({
-  displayName: 'LoginFormComponent',
+  displayName: "LoginFormComponent",
 
-  handleSubmit: function(e){
+  handleSubmit: function (e) {
     e.preventDefault();
     SessionActions.login(
       this.refs.username.getValue(),
@@ -17,7 +16,7 @@ var LoginFormComponent = React.createClass({
     );
   },
 
-  render: function() {
+  render: function () {
     return (
       <form
         className="form-horizontal"
@@ -48,8 +47,7 @@ var LoginFormComponent = React.createClass({
         />
       </form>
     );
-  }
+  },
 });
-
 
 module.exports = LoginFormComponent;

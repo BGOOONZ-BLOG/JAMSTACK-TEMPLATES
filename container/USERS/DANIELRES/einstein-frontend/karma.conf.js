@@ -1,38 +1,34 @@
-'use strict';
-
+"use strict";
 
 var webpackConfig = {
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   module: {
-    loaders: require('./webpack.config.js').module.loaders
+    loaders: require("./webpack.config.js").module.loaders,
   },
-  resolve: require('./webpack.config.js').resolve,
-  watch: true
+  resolve: require("./webpack.config.js").resolve,
+  watch: true,
 };
-
 
 module.exports = function (config) {
   config.set({
-    browsers: ['Chrome' ],
-    frameworks: [ 'mocha' ],
-    files: [
-      { pattern: 'tests.webpack.js', watched: false },
-    ],
+    browsers: ["Chrome"],
+    frameworks: ["mocha"],
+    files: [{ pattern: "tests.webpack.js", watched: false }],
     preprocessors: {
-      'tests.webpack.js': [ 'webpack' ]
+      "tests.webpack.js": ["webpack"],
     },
-    reporters: [ 'spec' ],
+    reporters: ["spec"],
     singleRun: false,
     webpack: webpackConfig,
     webpackServer: {
-      noInfo: true
+      noInfo: true,
     },
     plugins: [
-      'karma-mocha',
-      'karma-webpack',
-      'karma-chrome-launcher',
-      'karma-phantomjs-launcher',
-      'karma-spec-reporter'
-    ]
+      "karma-mocha",
+      "karma-webpack",
+      "karma-chrome-launcher",
+      "karma-phantomjs-launcher",
+      "karma-spec-reporter",
+    ],
   });
 };

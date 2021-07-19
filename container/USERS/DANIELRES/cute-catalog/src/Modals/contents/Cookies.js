@@ -1,18 +1,18 @@
-import Cookies from 'js-cookie'
-import React from 'react'
+import Cookies from "js-cookie";
+import React from "react";
 
-import { closeModal, openModal } from 'Modals/bus'
+import { closeModal, openModal } from "Modals/bus";
 
-const onConsent = e => {
-  e.preventDefault()
-  Cookies.set('isCookiesConsented', true)
-  closeModal()
-}
+const onConsent = (e) => {
+  e.preventDefault();
+  Cookies.set("isCookiesConsented", true);
+  closeModal();
+};
 
-const onLearnMore = e => {
-  e.preventDefault()
-  openModal('COOKIES_POLICY')
-}
+const onLearnMore = (e) => {
+  e.preventDefault();
+  openModal("COOKIES_POLICY");
+};
 
 export default () => (
   <div className="text-center">
@@ -30,4 +30,4 @@ export default () => (
       </button>
     </p>
   </div>
-)
+);

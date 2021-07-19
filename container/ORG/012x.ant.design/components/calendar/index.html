@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Calendar 日历 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../../docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../../docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../../docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../../docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../cascader/"
+               class="">
+              Cascader
+              <span class="chinese">级联选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../date-picker/"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree-select/"
+               class="">
+              TreeSelect
+              <span class="chinese">树选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">上传</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Calendar 日历
+    </h1>
+    <p>按照日历形式展示数据的容器。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><p>当数据是日期或按照日期划分时，例如日程、课表、价格日历等，农历等。目前支持年/月切换。</p>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span>
+  <span class="hljs-attribute">dateCellRender</span>=<span class="hljs-value">{dateCellRender}</span>
+  <span class="hljs-attribute">monthCellRender</span>=<span class="hljs-value">{monthCellRender}</span>
+  <span class="hljs-attribute">onPanelChange</span>=<span class="hljs-value">{onPanelChange}</span>
+/&gt;</span></code></pre></div><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>展示日期</td>
+<td>Date</td>
+<td>当前日期</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>默认展示日期</td>
+<td>Date</td>
+<td>当前日期</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>初始模式，<code>month/year</code></td>
+<td>string</td>
+<td>month</td>
+</tr>
+<tr>
+<td>fullscreen</td>
+<td>是否全屏显示</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+<tr>
+<td>dateCellRender</td>
+<td>自定义渲染日期单元格</td>
+<td>function(<a href="https://github.com/yiminghe/gregorian-calendar/">GregorianCalendar</a>)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>monthCellRender</td>
+<td>自定义渲染月单元格</td>
+<td>function(<a href="https://github.com/yiminghe/gregorian-calendar/">GregorianCalendar</a>)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>国际化配置</td>
+<td>object</td>
+<td><a href="https://github.com/ant-design/ant-design/issues/424">默认配置</a></td>
+</tr>
+<tr>
+<td>onPanelChange</td>
+<td>日期面板变化回调</td>
+<td>function(date, mode)</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+    <div class="code-boxes-col-1-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-calendar-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-calendar-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function onPanelChange(value, mode) {
+  console.log(value, mode);
+}
+
+ReactDOM.render(React.createElement(_antd.Calendar, { onPanelChange: onPanelChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Calendar } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onPanelChange</span>(<span class="hljs-params">value, mode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value, mode);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">onPanelChange</span>=<span class="hljs-value">{onPanelChange}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    
+<p>一个通用的日历面板，支持年/月切换。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-custom-render">
+  <div class="code-box-demo">
+    <div id="components-calendar-demo-custom-render"></div>
+    <script>mountNode = document.getElementById('components-calendar-demo-custom-render');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function dateCellRender(value) {
+  return React.createElement(
+    'div',
+    null,
+    '\u81EA\u5B9A\u4E49\u65E5\u6570\u636E ',
+    value.getDayOfMonth()
+  );
+}
+
+function monthCellRender(value) {
+  return React.createElement(
+    'div',
+    null,
+    '\u81EA\u5B9A\u4E49\u6708\u6570\u636E ',
+    value.getMonth()
+  );
+}
+
+ReactDOM.render(React.createElement(_antd.Calendar, { defaultValue: new Date('2010-10-10'),
+  dateCellRender: dateCellRender, monthCellRender: monthCellRender }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Calendar } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dateCellRender</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>自定义日数据 {value.getDayOfMonth()}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">monthCellRender</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>自定义月数据 {value.getMonth()}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{new</span> <span class="hljs-attribute">Date</span>('<span class="hljs-attribute">2010-10-10</span>')}
+    <span class="hljs-attribute">dateCellRender</span>=<span class="hljs-value">{dateCellRender}</span> <span class="hljs-attribute">monthCellRender</span>=<span class="hljs-value">{monthCellRender}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-custom-render">自定义渲染</a>
+    </div>
+    
+<p>用 <code>dateCellRender</code> 和 <code>monthCellRender</code> 函数来自定义需要渲染的数据。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-notice-calendar">
+  <div class="code-box-demo">
+    <div id="components-calendar-demo-notice-calendar"></div>
+    <script>mountNode = document.getElementById('components-calendar-demo-notice-calendar');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function getListData(value) {
+  var listData = void 0;
+  switch (value.getDayOfMonth()) {
+    case 8:
+      listData = [{ type: 'warn', content: '这里是警告事项.' }, { type: 'normal', content: '这里是普通事项.' }];break;
+    case 10:
+      listData = [{ type: 'warn', content: '这里是警告事项.' }, { type: 'normal', content: '这里是普通事项.' }, { type: 'error', content: '这里是错误事项.' }];break;
+    case 15:
+      listData = [{ type: 'warn', content: '这里是警告事项.' }, { type: 'normal', content: '这里是普通事项好长啊。。....' }, { type: 'error', content: '这里是错误事项.' }, { type: 'error', content: '这里是错误事项.' }, { type: 'error', content: '这里是错误事项.' }, { type: 'error', content: '这里是错误事项.' }];break;
+    default:
+  }
+  return listData || [];
+}
+
+function dateCellRender(value) {
+  var listData = getListData(value);
+  return React.createElement(
+    'ul',
+    { className: 'events' },
+    listData.map(function (item, index) {
+      return React.createElement(
+        'li',
+        { key: index },
+        React.createElement(
+          'span',
+          { className: 'event-' + item.type },
+          '\u25CF'
+        ),
+        item.content
+      );
+    })
+  );
+}
+
+function getMonthData(value) {
+  if (value.getMonth() === 8) {
+    return 1394;
+  }
+}
+
+function monthCellRender(value) {
+  var num = getMonthData(value);
+  return num ? React.createElement(
+    'div',
+    { className: 'notes-month' },
+    React.createElement(
+      'section',
+      null,
+      num
+    ),
+    React.createElement(
+      'span',
+      null,
+      '\u5F85\u529E\u4E8B\u9879\u6570'
+    )
+  ) : null;
+}
+
+ReactDOM.render(React.createElement(_antd.Calendar, { dateCellRender: dateCellRender, monthCellRender: monthCellRender }), mountNode);})()</script><div class="highlight"><pre><code class="javascript">import { Calendar } from 'antd';
+
+function getListData(value) {
+  let listData;
+  switch (value.getDayOfMonth()) {
+    case 8:
+      listData = [
+        { type: 'warn', content: '这里是警告事项.' },
+        { type: 'normal', content: '这里是普通事项.' }
+      ]; break;
+    case 10:
+      listData = [
+        { type: 'warn', content: '这里是警告事项.' },
+        { type: 'normal', content: '这里是普通事项.' },
+        { type: 'error', content: '这里是错误事项.' }
+      ]; break;
+    case 15:
+      listData = [
+        { type: 'warn', content: '这里是警告事项.' },
+        { type: 'normal', content: '这里是普通事项好长啊。。....' },
+        { type: 'error', content: '这里是错误事项.' },
+        { type: 'error', content: '这里是错误事项.' },
+        { type: 'error', content: '这里是错误事项.' },
+        { type: 'error', content: '这里是错误事项.' }
+      ]; break;
+    default:
+  }
+  return listData || [];
+}
+
+function dateCellRender(value) {
+  let listData = getListData(value);
+  return (
+    &lt;ul className="events"&gt;
+      {
+        listData.map((item, index) =&gt;
+          &lt;li key={index}&gt;
+            &lt;span className={`event-${item.type}`}&gt;●&lt;/span&gt;
+            {item.content}
+          &lt;/li&gt;
+        )
+      }
+    &lt;/ul&gt;
+  );
+}
+
+
+function getMonthData(value) {
+  if (value.getMonth() === 8) {
+    return 1394;
+  }
+}
+
+function monthCellRender(value) {
+  let num = getMonthData(value);
+  return num ? &lt;div className="notes-month"&gt;
+    &lt;section&gt;{num}&lt;/section&gt;
+    &lt;span&gt;待办事项数&lt;/span&gt;
+  &lt;/div&gt; : null;
+}
+
+ReactDOM.render(
+  &lt;Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} /&gt;
+, mountNode);</code></pre></div><style type="text/css">.events {
+  line-height: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.events li {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.events li span {
+  vertical-align: middle;
+}
+
+.events li span:first-child {
+  font-size: 9px;
+  margin-right: 4px;
+}
+
+.event-warn {
+  color: #fac450;
+}
+
+.event-normal {
+  color: #2db7f5;
+}
+
+.event-error {
+  color: #f60;
+}
+
+.notes-month {
+  text-align: center;
+}
+.notes-month section {
+  font-size: 28px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.events</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+}</span>
+
+<span class="hljs-class">.events</span> <span class="hljs-tag">li</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#999</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-overflow</span>:<span class="hljs-value"> ellipsis</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> nowrap</span></span>;
+}</span>
+
+<span class="hljs-class">.events</span> <span class="hljs-tag">li</span> <span class="hljs-tag">span</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> middle</span></span>;
+}</span>
+
+<span class="hljs-class">.events</span> <span class="hljs-tag">li</span> <span class="hljs-tag">span</span><span class="hljs-pseudo">:first-child</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">9px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">4px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.event-warn</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fac450</span></span></span>;
+}</span>
+
+<span class="hljs-class">.event-normal</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#2db7f5</span></span></span>;
+}</span>
+
+<span class="hljs-class">.event-error</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f60</span></span></span>;
+}</span>
+
+<span class="hljs-class">.notes-month</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+}</span>
+<span class="hljs-class">.notes-month</span> <span class="hljs-tag">section</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">28px</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-notice-calendar">通知事项日历演示</a>
+    </div>
+    
+<p>一个复杂的应用实例。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-locale">
+  <div class="code-box-demo">
+    <div id="components-calendar-demo-locale"></div>
+    <script>mountNode = document.getElementById('components-calendar-demo-locale');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var _en_US = require('antd/lib/calendar/locale/en_US');
+
+var _en_US2 = _interopRequireDefault(_en_US);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function onPanelChange(value, mode) {
+  console.log(value, mode);
+}
+
+ReactDOM.render(React.createElement(_antd.Calendar, { onPanelChange: onPanelChange, locale: _en_US2.default }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Calendar } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> enUS <span class="hljs-keyword">from</span> <span class="hljs-string">'antd/lib/calendar/locale/en_US'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onPanelChange</span>(<span class="hljs-params">value, mode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value, mode);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">onPanelChange</span>=<span class="hljs-value">{onPanelChange}</span> <span class="hljs-attribute">locale</span>=<span class="hljs-value">{enUS}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-locale">国际化</a>
+    </div>
+    
+<p>通过 <code>locale</code> 配置时区、语言等, 默认支持 en_US, zh_CN</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="demo-card">
+  <div class="code-box-demo">
+    <div id="components-calendar-demo-card"></div>
+    <script>mountNode = document.getElementById('components-calendar-demo-card');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function onPanelChange(value, mode) {
+  console.log(value, mode);
+}
+
+ReactDOM.render(React.createElement(
+  'div',
+  { style: { width: 290, border: '1px solid #d9d9d9', borderRadius: 4 } },
+  React.createElement(_antd.Calendar, { fullscreen: false, onPanelChange: onPanelChange })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Calendar } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onPanelChange</span>(<span class="hljs-params">value, mode</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value, mode);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">290</span>, <span class="hljs-attribute">border:</span> '<span class="hljs-attribute">1px</span> <span class="hljs-attribute">solid</span> #<span class="hljs-attribute">d9d9d9</span>', <span class="hljs-attribute">borderRadius:</span> <span class="hljs-attribute">4</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">fullscreen</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">onPanelChange</span>=<span class="hljs-value">{onPanelChange}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-card">卡片模式</a>
+    </div>
+    
+<p>用于嵌套在空间有限的容器中。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+    </div>
+</div>
+<ul class="toc demos-anchor">
+  <li>
+    <a title="基本" href="#demo-basic">
+      <span>基本</span>
+    </a>
+  </li>
+  <li>
+    <a title="自定义渲染" href="#demo-custom-render">
+      <span>自定义渲染</span>
+    </a>
+  </li>
+  <li>
+    <a title="通知事项日历演示" href="#demo-notice-calendar">
+      <span>通知事项日历演示</span>
+    </a>
+  </li>
+  <li>
+    <a title="国际化" href="#demo-locale">
+      <span>国际化</span>
+    </a>
+  </li>
+  <li>
+    <a title="卡片模式" href="#demo-card">
+      <span>卡片模式</span>
+    </a>
+  </li>
+</ul>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

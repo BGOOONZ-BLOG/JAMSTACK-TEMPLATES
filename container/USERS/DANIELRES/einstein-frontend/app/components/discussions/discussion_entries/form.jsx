@@ -1,27 +1,26 @@
-'use strict';
+"use strict";
 
-var React  = require('react');
-var Reflux = require('reflux');
+var React = require("react");
+var Reflux = require("reflux");
 
-var B      = require('react-bootstrap');
+var B = require("react-bootstrap");
 
-var DiscussionEntriesActions = require('actions/discussion_entries_actions');
-var FormErrorsComponent = require('components/shared/form').Errors;
-
+var DiscussionEntriesActions = require("actions/discussion_entries_actions");
+var FormErrorsComponent = require("components/shared/form").Errors;
 
 var DiscussionEntryForm = React.createClass({
-  displayName: 'DiscussionEntryForm',
+  displayName: "DiscussionEntryForm",
 
-  getInitialState: function(){
-    return ({
+  getInitialState: function () {
+    return {
       errors: {},
-    });
+    };
   },
 
-  handleSubmit: function(e){
+  handleSubmit: function (e) {
     e.preventDefault();
     var params = {
-      body:          this.refs.body.getValue(),
+      body: this.refs.body.getValue(),
       discussion_id: this.props.discussionId,
     };
     DiscussionEntriesActions.create(params);
@@ -29,16 +28,15 @@ var DiscussionEntryForm = React.createClass({
     this.handleSubmitResult();
   },
 
-  handleSubmitResult: function(){
+  handleSubmitResult: function () {
     this.refs.addingADiscussionEntryForm.getDOMNode().reset();
   },
 
-
-  render: function() {
+  render: function () {
     return (
       <div>
         <form
-          className='form-horizontal'
+          className="form-horizontal"
           onSubmit={this.handleSubmit}
           ref="addingADiscussionEntryForm"
         >
@@ -47,15 +45,15 @@ var DiscussionEntryForm = React.createClass({
             data-ref="adding-a-discussion-entry-input-body"
             label=""
             labelClassName="col-xs-4"
-            ref='body'
-            type='text'
+            ref="body"
+            type="text"
             wrapperClassName="col-xs-7"
           />
           <B.Button type="submit">Submit</B.Button>
         </form>
       </div>
     );
-  }
+  },
 });
 
 module.exports = DiscussionEntryForm;

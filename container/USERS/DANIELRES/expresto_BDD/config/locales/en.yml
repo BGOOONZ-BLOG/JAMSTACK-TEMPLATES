@@ -3,7 +3,7 @@
 
 en:
   hello: "Hello world"
-  sign_in:  "Sign in"
+  sign_in: "Sign in"
   sign_out: "Sign out"
   sign_up: "Create an account"
   sign_in_or_sign_up_to_create_expression: "Please sign in or create an account to add an expression"
@@ -22,7 +22,7 @@ en:
       to_expression: "to expression"
   expressions_added_by_in:
     one: "%{count} expression added by %{user} in %{language}"
-    other:  "%{count} expressions added by %{user} in %{language}"
+    other: "%{count} expressions added by %{user} in %{language}"
   info_not_provided_yet: Information not provided yet
   added_by: "Added by %{author}"
   created_by: "Created by %{author}"
@@ -76,7 +76,7 @@ en:
       choose_your_avatar: Choose your avatar
       how_to_add_your_own_photo: "Tip: how to add your own photo"
       just_create_an_account_at_gravatar: 'Just create an account at <a href="http://www.gravatar.com/">Gravatar</a> to associate a picture with your email address.'
-      then_come_back_here_and_it_will_be_shown: 'Then come back here, and it will be shown in the list above.'
+      then_come_back_here_and_it_will_be_shown: "Then come back here, and it will be shown in the list above."
       apply: Apply
   modals:
     add_comment:

@@ -1,0 +1,36 @@
+<div class="code-box" id="demo-link">
+  <div class="code-box-demo">
+    <div id="components-badge-demo-link"></div>
+    <script>mountNode = document.getElementById('components-badge-demo-link');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "a",
+  { href: "#" },
+  React.createElement(
+    _antd.Badge,
+    { count: 5 },
+    React.createElement("span", { className: "head-example" })
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Badge } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Badge</span> <span class="hljs-attribute">count</span>=<span class="hljs-value">{5}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"head-example"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-link">可点击</a>
+    </div>
+    
+<p>用 a 标签进行包裹即可。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

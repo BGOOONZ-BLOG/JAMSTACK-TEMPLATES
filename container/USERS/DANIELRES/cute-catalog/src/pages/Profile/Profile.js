@@ -1,13 +1,13 @@
-import Link from 'redux-first-router-link'
-import React from 'react'
+import Link from "redux-first-router-link";
+import React from "react";
 
-import Loader from 'shared/Loader'
-import LoginStatus from './LoginTimer'
+import Loader from "shared/Loader";
+import LoginStatus from "./LoginTimer";
 
-import { toAdmin } from 'store/routerActions'
+import { toAdmin } from "store/routerActions";
 
-const Label = ({ children }) => <div className="col-3">{children}</div>
-const Value = ({ children }) => <div className="col-9">{children}</div>
+const Label = ({ children }) => <div className="col-3">{children}</div>;
+const Value = ({ children }) => <div className="col-9">{children}</div>;
 
 const Profile = ({ currentUser, isLoading }) => (
   <Loader isLoading={isLoading}>
@@ -35,6 +35,6 @@ const Profile = ({ currentUser, isLoading }) => (
       </div>
     )}
   </Loader>
-)
+);
 
-export default Profile
+export default Profile;

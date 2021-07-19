@@ -1,14 +1,14 @@
 // Test support code, lifted from:
 // https://github.com/faceyspacey/redux-first-router/blob/24565179bc0f7b951c220f5e4d80cc157fd2629c/__test-helpers__/setup.js
 
-import { applyMiddleware, createStore, compose } from 'redux';
-import createHistory from 'history/createMemoryHistory';
-import { connectRoutes } from 'redux-first-router';
-import routesMap from './routesMap';
+import { applyMiddleware, createStore, compose } from "redux";
+import createHistory from "history/createMemoryHistory";
+import { connectRoutes } from "redux-first-router";
+import routesMap from "./routesMap";
 
 const setup = (
-  path = '/',
-  options = { title: 'title', location: 'location' }
+  path = "/",
+  options = { title: "title", location: "location" }
 ) => {
   const history = createHistory({
     initialEntries: [path],
@@ -22,12 +22,7 @@ const setup = (
 
 export default setup;
 
-export const setupAll = (
-  path,
-  options,
-  rootReducer,
-  preLoadedState
-) => {
+export const setupAll = (path, options, rootReducer, preLoadedState) => {
   const tools = setup(path, options);
   const { middleware, reducer, enhancer } = tools;
   const middlewares = applyMiddleware(middleware);

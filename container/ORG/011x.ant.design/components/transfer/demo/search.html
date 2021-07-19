@@ -1,0 +1,105 @@
+<div class="code-box" id="demo-search">
+  <div class="code-box-demo">
+    <div id="components-transfer-demo-search"></div>
+    <script>mountNode = document.getElementById('components-transfer-demo-search');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var App = React.createClass({
+  displayName: 'App',
+  getInitialState: function getInitialState() {
+    return {
+      mockData: [],
+      targetKeys: []
+    };
+  },
+  componentDidMount: function componentDidMount() {
+    this.getMock();
+  },
+  getMock: function getMock() {
+    var targetKeys = [];
+    var mockData = [];
+    for (var i = 0; i < 20; i++) {
+      var data = {
+        key: i,
+        title: '内容' + (i + 1),
+        description: '内容' + (i + 1) + '的描述',
+        chosen: Math.random() * 2 > 1
+      };
+      if (data.chosen) {
+        targetKeys.push(data.key);
+      }
+      mockData.push(data);
+    }
+    this.setState({ mockData: mockData, targetKeys: targetKeys });
+  },
+  handleChange: function handleChange(targetKeys) {
+    this.setState({ targetKeys: targetKeys });
+  },
+  render: function render() {
+    return React.createElement(_antd.Transfer, {
+      dataSource: this.state.mockData,
+      showSearch: true,
+      targetKeys: this.state.targetKeys,
+      onChange: this.handleChange,
+      render: function render(item) {
+        return item.title;
+      } });
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Transfer } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      mockData: [],
+      targetKeys: [],
+    };
+  },
+  componentDidMount() {
+    <span class="hljs-keyword">this</span>.getMock();
+  },
+  getMock() {
+    <span class="hljs-keyword">let</span> targetKeys = [];
+    <span class="hljs-keyword">let</span> mockData = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; i++) {
+      <span class="hljs-keyword">const</span> data = {
+        key: i,
+        title: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>),
+        description: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">'的描述'</span>,
+        chosen: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>
+      };
+      <span class="hljs-keyword">if</span> (data.chosen) {
+        targetKeys.push(data.key);
+      }
+      mockData.push(data);
+    }
+    <span class="hljs-keyword">this</span>.setState({ mockData, targetKeys });
+  },
+  handleChange(targetKeys) {
+    <span class="hljs-keyword">this</span>.setState({ targetKeys });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Transfer</span>
+        <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{this.state.mockData}</span>
+        <span class="hljs-attribute">showSearch</span>
+        <span class="hljs-attribute">targetKeys</span>=<span class="hljs-value">{this.state.targetKeys}</span>
+        <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange}</span>
+        <span class="hljs-attribute">render</span>=<span class="hljs-value">{item</span> =&gt;</span> item.title} /&gt;
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-search">带搜索框</a>
+    </div>
+    <p>带搜索框的穿梭框。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

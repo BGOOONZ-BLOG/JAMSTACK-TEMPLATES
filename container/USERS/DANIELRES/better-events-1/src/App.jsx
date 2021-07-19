@@ -1,11 +1,11 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
-import './App.css';
+import "./App.css";
 
-import { Col, Grid, PageHeader, Row } from 'react-bootstrap';
-import Link from 'redux-first-router-link';
-import React, { Component } from 'react';
-import styled from 'react-emotion';
+import { Col, Grid, PageHeader, Row } from "react-bootstrap";
+import Link from "redux-first-router-link";
+import React, { Component } from "react";
+import styled from "react-emotion";
 
 const Header = styled(PageHeader)`
   margin: 0;
@@ -30,10 +30,10 @@ class App extends Component {
     return (
       <Grid>
         <Header>
-          <Link to={{ type: 'HOMEPAGE' }}>Better Events</Link>
+          <Link to={{ type: "HOMEPAGE" }}>Better Events</Link>
           <div className="pull-right">
             <small>
-              <Link to={{ type: 'ADMINPAGE' }}>admin</Link>
+              <Link to={{ type: "ADMINPAGE" }}>admin</Link>
             </small>
           </div>
         </Header>

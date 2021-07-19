@@ -1,4 +1,5 @@
 # WMD Markdown Editor
+
 #### A WYSIWYM (What You See Is What You Mean) [Markdown](http://daringfireball.net/projects/markdown/) editor.
 
 WMD was originally developed by John Fraser/[Attacklab](http://attacklab.net/), and the original demo and
@@ -10,11 +11,11 @@ They successfully de-obfuscated it, and their fork is currently maintained on [G
 This, for better or worse, is a fork of StackOverflow's fork. There are many reasons for undertaking
 this project, but the main goals include:
 
- - Cleaning up the external API to make it easier to understand and interact with
- - Allow for OO-style WMD instance creation, including multiple instances per page
- - Provide a clean mechanism for extending the editor with custom commands
- - **Maintain library independence** - as StackOverflow are planning on introducing a jQuery dependence with their
-   upcoming "3.0" release
+- Cleaning up the external API to make it easier to understand and interact with
+- Allow for OO-style WMD instance creation, including multiple instances per page
+- Provide a clean mechanism for extending the editor with custom commands
+- **Maintain library independence** - as StackOverflow are planning on introducing a jQuery dependence with their
+  upcoming "3.0" release
 
 Please note that, as it stands now, this code is far from complete. There are still many bugs to work out,
 and quite a number of features haven't even been implemented yet. However, the basic framework is there, so feel

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import { closeModal } from 'Modals/bus'
+import { closeModal } from "Modals/bus";
 
 export default () => (
   <section>
@@ -23,4 +23,4 @@ export default () => (
       </button>
     </p>
   </section>
-)
+);

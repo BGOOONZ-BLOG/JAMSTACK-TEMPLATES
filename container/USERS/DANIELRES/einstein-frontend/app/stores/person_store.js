@@ -1,13 +1,11 @@
-'use strict';
+"use strict";
 
-var Reflux  = require('reflux');
-var PersonActions = require('actions/person_actions');
+var Reflux = require("reflux");
+var PersonActions = require("actions/person_actions");
 
-var ApiHelper = require('helpers/api_helper');
-
+var ApiHelper = require("helpers/api_helper");
 
 module.exports = Reflux.createStore({
-
   listenables: [PersonActions],
 
   getInitialState: function () {
@@ -17,7 +15,5 @@ module.exports = Reflux.createStore({
 
   onLoad: function (personId) {
     ApiHelper.fetchPerson(personId, this);
-  }
-
+  },
 });
-

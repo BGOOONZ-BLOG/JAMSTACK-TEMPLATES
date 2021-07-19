@@ -1,0 +1,386 @@
+<div class="code-box" id="demo-validate-basic">
+  <div class="code-box-demo">
+    <div id="components-form-demo-validate-basic"></div>
+    <script>mountNode = document.getElementById('components-form-demo-validate-basic');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _antd = require('antd');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var createForm = _antd.Form.create;
+var FormItem = _antd.Form.Item;
+
+function noop() {
+  return false;
+}
+
+var BasicDemo = function (_React$Component) {
+  _inherits(BasicDemo, _React$Component);
+
+  function BasicDemo() {
+    _classCallCheck(this, BasicDemo);
+
+    return _possibleConstructorReturn(this, (BasicDemo.__proto__ || Object.getPrototypeOf(BasicDemo)).apply(this, arguments));
+  }
+
+  _createClass(BasicDemo, [{
+    key: 'getValidateStatus',
+    value: function getValidateStatus(field) {
+      var _props$form = this.props.form,
+          isFieldValidating = _props$form.isFieldValidating,
+          getFieldError = _props$form.getFieldError,
+          getFieldValue = _props$form.getFieldValue;
+
+
+      if (isFieldValidating(field)) {
+        return 'validating';
+      } else if (!!getFieldError(field)) {
+        return 'error';
+      } else if (getFieldValue(field)) {
+        return 'success';
+      }
+    }
+  }, {
+    key: 'handleReset',
+    value: function handleReset(e) {
+      e.preventDefault();
+      this.props.form.resetFields();
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.form.validateFields(function (errors, values) {
+        if (!!errors) {
+          console.log('Errors in form!!!');
+          return;
+        }
+        console.log('Submit!!!');
+        console.log(values);
+      });
+    }
+  }, {
+    key: 'userExists',
+    value: function userExists(rule, value, callback) {
+      if (!value) {
+        callback();
+      } else {
+        setTimeout(function () {
+          if (value === 'JasonWood') {
+            callback([new Error('抱歉，该用户名已被占用。')]);
+          } else {
+            callback();
+          }
+        }, 800);
+      }
+    }
+  }, {
+    key: 'checkPass',
+    value: function checkPass(rule, value, callback) {
+      var validateFields = this.props.form.validateFields;
+
+      if (value) {
+        validateFields(['rePasswd']);
+      }
+      callback();
+    }
+  }, {
+    key: 'checkPass2',
+    value: function checkPass2(rule, value, callback) {
+      var getFieldValue = this.props.form.getFieldValue;
+
+      if (value && value !== getFieldValue('passwd')) {
+        callback('两次输入密码不一致！');
+      } else {
+        callback();
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props$form2 = this.props.form,
+          getFieldProps = _props$form2.getFieldProps,
+          getFieldError = _props$form2.getFieldError,
+          isFieldValidating = _props$form2.isFieldValidating;
+
+      var nameProps = getFieldProps('name', {
+        rules: [{ required: true, min: 5, message: '用户名至少为 5 个字符' }, { validator: this.userExists }]
+      });
+      var emailProps = getFieldProps('email', {
+        validate: [{
+          rules: [{ required: true }],
+          trigger: 'onBlur'
+        }, {
+          rules: [{ type: 'email', message: '请输入正确的邮箱地址' }],
+          trigger: ['onBlur', 'onChange']
+        }]
+      });
+      var passwdProps = getFieldProps('passwd', {
+        rules: [{ required: true, whitespace: true, message: '请填写密码' }, { validator: this.checkPass.bind(this) }]
+      });
+      var rePasswdProps = getFieldProps('rePasswd', {
+        rules: [{
+          required: true,
+          whitespace: true,
+          message: '请再次输入密码'
+        }, {
+          validator: this.checkPass2.bind(this)
+        }]
+      });
+      var textareaProps = getFieldProps('textarea', {
+        rules: [{ required: true, message: '真的不打算写点什么吗？' }]
+      });
+      var formItemLayout = {
+        labelCol: { span: 7 },
+        wrapperCol: { span: 12 }
+      };
+      return React.createElement(
+        _antd.Form,
+        { horizontal: true, form: this.props.form },
+        React.createElement(
+          FormItem,
+          _extends({}, formItemLayout, {
+            label: '\u7528\u6237\u540D\uFF1A',
+            hasFeedback: true,
+            help: isFieldValidating('name') ? '校验中...' : (getFieldError('name') || []).join(', ') }),
+          React.createElement(_antd.Input, _extends({}, nameProps, { placeholder: '\u5B9E\u65F6\u6821\u9A8C\uFF0C\u8F93\u5165 JasonWood \u770B\u770B' }))
+        ),
+        React.createElement(
+          FormItem,
+          _extends({}, formItemLayout, {
+            label: '\u90AE\u7BB1\uFF1A',
+            hasFeedback: true }),
+          React.createElement(_antd.Input, _extends({}, emailProps, { type: 'email', placeholder: 'onBlur \u4E0E onChange \u76F8\u7ED3\u5408' }))
+        ),
+        React.createElement(
+          FormItem,
+          _extends({}, formItemLayout, {
+            label: '\u5BC6\u7801\uFF1A',
+            hasFeedback: true }),
+          React.createElement(_antd.Input, _extends({}, passwdProps, { type: 'password', autoComplete: 'off',
+            onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop }))
+        ),
+        React.createElement(
+          FormItem,
+          _extends({}, formItemLayout, {
+            label: '\u786E\u8BA4\u5BC6\u7801\uFF1A',
+            hasFeedback: true }),
+          React.createElement(_antd.Input, _extends({}, rePasswdProps, { type: 'password', autoComplete: 'off', placeholder: '\u4E24\u6B21\u8F93\u5165\u5BC6\u7801\u4FDD\u6301\u4E00\u81F4',
+            onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop }))
+        ),
+        React.createElement(
+          FormItem,
+          _extends({}, formItemLayout, {
+            label: '\u5907\u6CE8\uFF1A' }),
+          React.createElement(_antd.Input, _extends({}, textareaProps, { type: 'textarea', placeholder: '\u968F\u4FBF\u5199', id: 'textarea', name: 'textarea' }))
+        ),
+        React.createElement(
+          FormItem,
+          { wrapperCol: { span: 12, offset: 7 } },
+          React.createElement(
+            _antd.Button,
+            { type: 'primary', onClick: this.handleSubmit.bind(this) },
+            '\u786E\u5B9A'
+          ),
+          '\xA0\xA0\xA0',
+          React.createElement(
+            _antd.Button,
+            { type: 'ghost', onClick: this.handleReset.bind(this) },
+            '\u91CD\u7F6E'
+          )
+        )
+      );
+    }
+  }]);
+
+  return BasicDemo;
+}(React.Component);
+
+BasicDemo = createForm()(BasicDemo);
+
+ReactDOM.render(React.createElement(BasicDemo, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Button, Form, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> createForm = Form.create;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noop</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BasicDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  getValidateStatus(field) {
+    <span class="hljs-keyword">const</span> { isFieldValidating, getFieldError, getFieldValue } = <span class="hljs-keyword">this</span>.props.form;
+
+    <span class="hljs-keyword">if</span> (isFieldValidating(field)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'validating'</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!!getFieldError(field)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'error'</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (getFieldValue(field)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'success'</span>;
+    }
+  }
+
+  handleReset(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.props.form.resetFields();
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.props.form.validateFields((errors, values) =&gt; {
+      <span class="hljs-keyword">if</span> (!!errors) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Errors in form!!!'</span>);
+        <span class="hljs-keyword">return</span>;
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Submit!!!'</span>);
+      <span class="hljs-built_in">console</span>.log(values);
+    });
+  }
+
+  userExists(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (!value) {
+      callback();
+    } <span class="hljs-keyword">else</span> {
+      setTimeout(() =&gt; {
+        <span class="hljs-keyword">if</span> (value === <span class="hljs-string">'JasonWood'</span>) {
+          callback([<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'抱歉，该用户名已被占用。'</span>)]);
+        } <span class="hljs-keyword">else</span> {
+          callback();
+        }
+      }, <span class="hljs-number">800</span>);
+    }
+  }
+
+  checkPass(rule, value, callback) {
+    <span class="hljs-keyword">const</span> { validateFields } = <span class="hljs-keyword">this</span>.props.form;
+    <span class="hljs-keyword">if</span> (value) {
+      validateFields([<span class="hljs-string">'rePasswd'</span>]);
+    }
+    callback();
+  }
+
+  checkPass2(rule, value, callback) {
+    <span class="hljs-keyword">const</span> { getFieldValue } = <span class="hljs-keyword">this</span>.props.form;
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value !== getFieldValue(<span class="hljs-string">'passwd'</span>)) {
+      callback(<span class="hljs-string">'两次输入密码不一致！'</span>);
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  }
+
+  render() {
+    <span class="hljs-keyword">const</span> { getFieldProps, getFieldError, isFieldValidating } = <span class="hljs-keyword">this</span>.props.form;
+    <span class="hljs-keyword">const</span> nameProps = getFieldProps(<span class="hljs-string">'name'</span>, {
+      rules: [
+        { required: <span class="hljs-literal">true</span>, min: <span class="hljs-number">5</span>, message: <span class="hljs-string">'用户名至少为 5 个字符'</span> },
+        { validator: <span class="hljs-keyword">this</span>.userExists },
+      ],
+    });
+    <span class="hljs-keyword">const</span> emailProps = getFieldProps(<span class="hljs-string">'email'</span>, {
+      validate: [{
+        rules: [
+          { required: <span class="hljs-literal">true</span> },
+        ],
+        trigger: <span class="hljs-string">'onBlur'</span>,
+      }, {
+        rules: [
+          { type: <span class="hljs-string">'email'</span>, message: <span class="hljs-string">'请输入正确的邮箱地址'</span> },
+        ],
+        trigger: [<span class="hljs-string">'onBlur'</span>, <span class="hljs-string">'onChange'</span>],
+      }]
+    });
+    <span class="hljs-keyword">const</span> passwdProps = getFieldProps(<span class="hljs-string">'passwd'</span>, {
+      rules: [
+        { required: <span class="hljs-literal">true</span>, whitespace: <span class="hljs-literal">true</span>, message: <span class="hljs-string">'请填写密码'</span> },
+        { validator: <span class="hljs-keyword">this</span>.checkPass.bind(<span class="hljs-keyword">this</span>) },
+      ],
+    });
+    <span class="hljs-keyword">const</span> rePasswdProps = getFieldProps(<span class="hljs-string">'rePasswd'</span>, {
+      rules: [{
+        required: <span class="hljs-literal">true</span>,
+        whitespace: <span class="hljs-literal">true</span>,
+        message: <span class="hljs-string">'请再次输入密码'</span>,
+      }, {
+        validator: <span class="hljs-keyword">this</span>.checkPass2.bind(<span class="hljs-keyword">this</span>),
+      }],
+    });
+    <span class="hljs-keyword">const</span> textareaProps = getFieldProps(<span class="hljs-string">'textarea'</span>, {
+      rules: [
+        { required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">'真的不打算写点什么吗？'</span> },
+      ],
+    });
+    <span class="hljs-keyword">const</span> formItemLayout = {
+      labelCol: { span: <span class="hljs-number">7</span> },
+      wrapperCol: { span: <span class="hljs-number">12</span> },
+    };
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span> <span class="hljs-attribute">form</span>=<span class="hljs-value">{this.props.form}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"用户名："</span>
+          <span class="hljs-attribute">hasFeedback</span>
+          <span class="hljs-attribute">help</span>=<span class="hljs-value">{isFieldValidating('name')</span> ? '校验中<span class="hljs-attribute">...</span>' <span class="hljs-attribute">:</span> (<span class="hljs-attribute">getFieldError</span>('<span class="hljs-attribute">name</span>') || [])<span class="hljs-attribute">.join</span>(', ')}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> {<span class="hljs-attribute">...nameProps</span>} <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"实时校验，输入 JasonWood 看看"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"邮箱："</span>
+          <span class="hljs-attribute">hasFeedback</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> {<span class="hljs-attribute">...emailProps</span>} <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"onBlur 与 onChange 相结合"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>
+          <span class="hljs-attribute">hasFeedback</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> {<span class="hljs-attribute">...passwdProps</span>} <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span>
+            <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"确认密码："</span>
+          <span class="hljs-attribute">hasFeedback</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> {<span class="hljs-attribute">...rePasswdProps</span>} <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"两次输入密码保持一致"</span>
+            <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"备注："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> {<span class="hljs-attribute">...textareaProps</span>} <span class="hljs-attribute">type</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"随便写"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"textarea"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">12</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">7</span> }}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleSubmit.bind(this)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          &amp;nbsp;&amp;nbsp;&amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleReset.bind(this)}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+}
+
+BasicDemo = createForm()(BasicDemo);
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">BasicDemo</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-validate-basic">表单校验</a>
+    </div>
+    
+<p>基本的表单校验例子。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

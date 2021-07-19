@@ -1,13 +1,13 @@
-const User = require('../models/User')
+const User = require("../models/User");
 
-const findOrCreateUserByFacebookId = async params => {
-  const { facebookId } = params
+const findOrCreateUserByFacebookId = async (params) => {
+  const { facebookId } = params;
 
   const user =
     (await User.query().where({ facebookId }))[0] ||
-    (await User.query().insert(params))
+    (await User.query().insert(params));
 
-  return user
-}
+  return user;
+};
 
-module.exports = findOrCreateUserByFacebookId
+module.exports = findOrCreateUserByFacebookId;

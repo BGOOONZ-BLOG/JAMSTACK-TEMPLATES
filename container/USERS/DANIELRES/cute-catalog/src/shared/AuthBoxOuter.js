@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const AuthBoxOuter = ({ children }) => (
   <div className="row justify-content-center">
@@ -6,6 +6,6 @@ const AuthBoxOuter = ({ children }) => (
       <div className="bg-gray p-5 rounded">{children}</div>
     </div>
   </div>
-)
+);
 
-export default AuthBoxOuter
+export default AuthBoxOuter;

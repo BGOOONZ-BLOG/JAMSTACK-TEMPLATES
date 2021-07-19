@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-      "module": "es6", // makes absolute import paths work in VSCode
-      "module": "commonjs",
-      "baseUrl": "./src/"
+    "module": "es6", // makes absolute import paths work in VSCode
+    "module": "commonjs",
+    "baseUrl": "./src/"
   }
 }

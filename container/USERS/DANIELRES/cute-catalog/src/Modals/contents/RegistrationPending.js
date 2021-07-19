@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default ({ registrationTokenMaxAge }) => (
   <>
@@ -8,8 +8,8 @@ export default ({ registrationTokenMaxAge }) => (
       activate your account.
     </p>
     <p className="alert alert-info">
-      Please note that the registration link will expire in{' '}
+      Please note that the registration link will expire in{" "}
       {registrationTokenMaxAge} days.
     </p>
   </>
-)
+);

@@ -1,5 +1,6 @@
 title: "Creations"
 sub: "Drawings, photos, experiments,..."
+
 ---
 
 {% img /images/octo.jpg [My friend Ocktopuss [My friend Ocktopuss drawing ]] %}
@@ -18,11 +19,9 @@ sub: "Drawings, photos, experiments,..."
 <hr />
 <br />
 
-
 <p style="text-align: center">
   <i class="icon-flickr2" style="font-size: 20px; position: relative; top: 3px"></i> <a href="https://www.flickr.com/photos/pixarea/"> More of my creations on Flickr</a>
 </p>
-
 
 <br />
 <br />

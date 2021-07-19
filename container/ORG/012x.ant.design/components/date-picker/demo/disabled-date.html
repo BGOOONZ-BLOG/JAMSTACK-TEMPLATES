@@ -1,0 +1,35 @@
+<div class="code-box" id="picker-demo-disabled-date">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-disabled-date"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-disabled-date');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var disabledDate = function disabledDate(current) {
+  // can not select days after today
+  return current && current.getTime() > Date.now();
+};
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { disabledDate: disabledDate }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> disabledDate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">current</span>) </span>{
+  <span class="hljs-comment">// can not select days after today</span>
+  <span class="hljs-keyword">return</span> current &amp;&amp; current.getTime() &gt; <span class="hljs-built_in">Date</span>.now();
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">disabledDate</span>=<span class="hljs-value">{disabledDate}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-disabled-date">指定不可选择日期</a>
+    </div>
+    
+<p>设置 <code>disabledDate</code> 方法，来确定不可选时段。</p>
+<p>如上例：不可选择今天之后的日期。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

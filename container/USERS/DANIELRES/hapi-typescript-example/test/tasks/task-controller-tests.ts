@@ -15,18 +15,18 @@ const serverConfig = Configs.getServerConfigs();
 describe("TastController Tests", () => {
   let server;
 
-  before(done => {
-    Server.init(serverConfig, database).then(s => {
+  before((done) => {
+    Server.init(serverConfig, database).then((s) => {
       server = s;
       done();
     });
   });
 
-  beforeEach(done => {
+  beforeEach((done) => {
     Utils.createSeedTaskData(database, done);
   });
 
-  afterEach(done => {
+  afterEach((done) => {
     Utils.clearDatabase(database, done);
   });
 });

@@ -1,65 +1,78 @@
 /* @flow weak */
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { applyRouterMiddleware, browserHistory, Router } from 'react-router'
-import useScroll from 'react-router-scroll/lib/useScroll'
-import createRoutes from 'create-routes'
-import { onRouteChange, onRouteUpdate, modifyRoutes, shouldUpdateScroll, replaceDOMRenderer, wrapRootComponent } from 'gatsby-browser'
+import React from "react";
+import ReactDOM from "react-dom";
+import { applyRouterMiddleware, browserHistory, Router } from "react-router";
+import useScroll from "react-router-scroll/lib/useScroll";
+import createRoutes from "create-routes";
+import {
+  onRouteChange,
+  onRouteUpdate,
+  modifyRoutes,
+  shouldUpdateScroll,
+  replaceDOMRenderer,
+  wrapRootComponent,
+} from "gatsby-browser";
 
-const loadContext = require('.gatsby-context')
+const loadContext = require(".gatsby-context");
 
-function loadConfig (cb) {
-  const stuff = require('config')
+function loadConfig(cb) {
+  const stuff = require("config");
 
   if (module.hot) {
-    module.hot.accept(stuff.id, () => cb())
+    module.hot.accept(stuff.id, () => cb());
   }
-  return cb()
+  return cb();
 }
 
-let currentLocation = null
+let currentLocation = null;
 
 browserHistory.listen((location) => {
-  currentLocation = location
+  currentLocation = location;
   if (onRouteChange) {
-    console.warn('onRouteChange is now deprecated and will be removed in the next major Gatsby release (0.13). Please use onRouteUpdate instead. See the PR for more info (https://github.com/gatsbyjs/gatsby/pull/321).')
-    onRouteChange(location)
+    console.warn(
+      "onRouteChange is now deprecated and will be removed in the next major Gatsby release (0.13). Please use onRouteUpdate instead. See the PR for more info (https://github.com/gatsbyjs/gatsby/pull/321)."
+    );
+    onRouteChange(location);
   }
-})
+});
 
-function onUpdate () {
+function onUpdate() {
   if (onRouteUpdate) {
-    onRouteUpdate(currentLocation)
+    onRouteUpdate(currentLocation);
   }
 }
 
-function defaultShouldUpdateScroll (prevRouterProps, nextRouterProps) {
+function defaultShouldUpdateScroll(prevRouterProps, nextRouterProps) {
   if (shouldUpdateScroll) {
-    return shouldUpdateScroll(prevRouterProps, nextRouterProps)
+    return shouldUpdateScroll(prevRouterProps, nextRouterProps);
   }
   if (prevRouterProps) {
-    const { location: { pathname: oldPathname } } = prevRouterProps
-    const { location: { pathname } } = nextRouterProps
+    const {
+      location: { pathname: oldPathname },
+    } = prevRouterProps;
+    const {
+      location: { pathname },
+    } = nextRouterProps;
     if (oldPathname === pathname) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
-let routes
+let routes;
 loadConfig(() =>
   loadContext((pagesReq) => {
-    const { pages } = require('config')
+    const { pages } = require("config");
 
     if (!routes) {
-      routes = createRoutes(pages, pagesReq)
+      routes = createRoutes(pages, pagesReq);
     } else {
-      createRoutes(pages, pagesReq)
+      createRoutes(pages, pagesReq);
     }
 
     if (modifyRoutes) {
-      routes = modifyRoutes(routes)
+      routes = modifyRoutes(routes);
     }
 
     let Root = () => (
@@ -69,16 +82,21 @@ loadConfig(() =>
         render={applyRouterMiddleware(useScroll(defaultShouldUpdateScroll))}
         onUpdate={onUpdate}
       />
-    )
+    );
 
     if (wrapRootComponent) {
-      Root = wrapRootComponent(Root)
+      Root = wrapRootComponent(Root);
     }
 
     if (replaceDOMRenderer) {
-      replaceDOMRenderer({ routes, defaultShouldUpdateScroll, onUpdate })
+      replaceDOMRenderer({ routes, defaultShouldUpdateScroll, onUpdate });
     } else {
-      ReactDOM.render(<Root />, typeof window !== 'undefined' ? document.getElementById('react-mount') : undefined)
+      ReactDOM.render(
+        <Root />,
+        typeof window !== "undefined"
+          ? document.getElementById("react-mount")
+          : undefined
+      );
     }
-  }),
-)
+  })
+);

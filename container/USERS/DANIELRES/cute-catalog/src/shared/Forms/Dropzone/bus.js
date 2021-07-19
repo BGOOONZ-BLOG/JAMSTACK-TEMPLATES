@@ -1,8 +1,8 @@
-import { createBus } from 'suber'
+import { createBus } from "suber";
 
-const bus = createBus()
+const bus = createBus();
 
-export const imageUploadSuccess = payload =>
-  bus.send('IMAGE_UPLOAD_SUCCESS', { payload })
+export const imageUploadSuccess = (payload) =>
+  bus.send("IMAGE_UPLOAD_SUCCESS", { payload });
 
-export default bus
+export default bus;

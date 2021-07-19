@@ -1,14 +1,14 @@
-import reducer from './productsReducer'
-import * as types from 'store/types'
+import reducer from "./productsReducer";
+import * as types from "store/types";
 
 describe(`on ${types.FETCH_PRODUCTS_SUCCESS}`, () => {
-  it('updates the products list', () => {
+  it("updates the products list", () => {
     const state = {
       items: {
-        1: { id: 1, title: 'one' },
-        2: { id: 2, title: 'two' },
+        1: { id: 1, title: "one" },
+        2: { id: 2, title: "two" },
       },
-    }
+    };
 
     const action = {
       type: types.FETCH_PRODUCTS_SUCCESS,
@@ -16,50 +16,50 @@ describe(`on ${types.FETCH_PRODUCTS_SUCCESS}`, () => {
         products: [
           {
             id: 2,
-            title: 'two(new)',
+            title: "two(new)",
           },
-          { id: 3, title: 'three' },
+          { id: 3, title: "three" },
         ],
       },
-    }
+    };
 
     const expected = {
       items: {
-        1: { id: 1, title: 'one' },
-        2: { id: 2, title: 'two(new)' },
-        3: { id: 3, title: 'three' },
+        1: { id: 1, title: "one" },
+        2: { id: 2, title: "two(new)" },
+        3: { id: 3, title: "three" },
       },
-    }
-    expect(reducer(state, action)).toEqual(expected)
-  })
-})
+    };
+    expect(reducer(state, action)).toEqual(expected);
+  });
+});
 
 describe(`on ${types.FETCH_PRODUCT_SUCCESS}`, () => {
-  it('updates the product in the list', () => {
+  it("updates the product in the list", () => {
     const state = {
       items: {
-        1: { id: 1, title: 'one' },
-        2: { id: 2, title: 'two' },
+        1: { id: 1, title: "one" },
+        2: { id: 2, title: "two" },
       },
-    }
+    };
 
     const action = {
       type: types.FETCH_PRODUCT_SUCCESS,
       payload: {
         product: {
           id: 2,
-          title: 'two',
-          details: 'details',
+          title: "two",
+          details: "details",
         },
       },
-    }
+    };
 
     const expected = {
       items: {
-        1: { id: 1, title: 'one' },
-        2: { id: 2, title: 'two', details: 'details' },
+        1: { id: 1, title: "one" },
+        2: { id: 2, title: "two", details: "details" },
       },
-    }
-    expect(reducer(state, action)).toEqual(expected)
-  })
-})
+    };
+    expect(reducer(state, action)).toEqual(expected);
+  });
+});

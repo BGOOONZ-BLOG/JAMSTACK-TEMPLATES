@@ -1,121 +1,121 @@
 pre.dawn .MetaSeparator {
-   font-weight: bold;
-   background-color: #DCDCDC;
-   color: #19356D;
+  font-weight: bold;
+  background-color: #dcdcdc;
+  color: #19356d;
 }
 pre.dawn .SupportVariable {
-   color: #234A97;
+  color: #234a97;
 }
 pre.dawn .Constant {
-   font-weight: bold;
-   color: #811F24;
+  font-weight: bold;
+  color: #811f24;
 }
 pre.dawn .EmbeddedSource {
-   background-color: #829AC2;
+  background-color: #829ac2;
 }
 pre.dawn .StringRegexpConstantCharacterEscape {
-   font-weight: bold;
-   color: #811F24;
+  font-weight: bold;
+  color: #811f24;
 }
 pre.dawn .Support {
-   color: #691C97;
+  color: #691c97;
 }
 pre.dawn .MarkupList {
-   color: #693A17;
+  color: #693a17;
 }
 pre.dawn .Storage {
-   color: #A71D5D;
-   font-style: italic;
+  color: #a71d5d;
+  font-style: italic;
 }
 pre.dawn .line-numbers {
-   background-color: #7496CF;
-   color: #000000;
+  background-color: #7496cf;
+  color: #000000;
 }
 pre.dawn .StringConstant {
-   font-weight: bold;
-   color: #696969;
+  font-weight: bold;
+  color: #696969;
 }
 pre.dawn .MarkupUnderline {
-   text-decoration: underline;
-   color: #080808;
+  text-decoration: underline;
+  color: #080808;
 }
 pre.dawn .MarkupHeading {
-   font-weight: bold;
-   color: #19356D;
+  font-weight: bold;
+  color: #19356d;
 }
 pre.dawn .SupportConstant {
-   color: #B4371F;
+  color: #b4371f;
 }
 pre.dawn .MarkupQuote {
-   background-color: #C5C5C5;
-   color: #0B6125;
-   font-style: italic;
+  background-color: #c5c5c5;
+  color: #0b6125;
+  font-style: italic;
 }
 pre.dawn .StringRegexpSpecial {
-   font-weight: bold;
-   color: #CF5628;
+  font-weight: bold;
+  color: #cf5628;
 }
 pre.dawn .InvalidIllegal {
-   background-color: #B52A1D;
-   color: #F8F8F8;
-   font-style: italic;
+  background-color: #b52a1d;
+  color: #f8f8f8;
+  font-style: italic;
 }
 pre.dawn .MarkupDeleted {
-   color: #B52A1D;
+  color: #b52a1d;
 }
 pre.dawn .MarkupRaw {
-   background-color: #C5C5C5;
-   color: #234A97;
+  background-color: #c5c5c5;
+  color: #234a97;
 }
 pre.dawn .SupportFunction {
-   color: #693A17;
+  color: #693a17;
 }
 pre.dawn .PunctuationSeparator {
-   color: #794938;
+  color: #794938;
 }
 pre.dawn .StringRegexp {
-   color: #CF5628;
+  color: #cf5628;
 }
 pre.dawn .StringEmbeddedSource {
-   background-color: #829AC2;
-   color: #080808;
+  background-color: #829ac2;
+  color: #080808;
 }
 pre.dawn .MarkupLink {
-   color: #234A97;
-   font-style: italic;
+  color: #234a97;
+  font-style: italic;
 }
 pre.dawn .MarkupBold {
-   font-weight: bold;
-   color: #080808;
+  font-weight: bold;
+  color: #080808;
 }
 pre.dawn .StringVariable {
-   color: #234A97;
+  color: #234a97;
 }
 pre.dawn .String {
-   color: #0B6125;
+  color: #0b6125;
 }
 pre.dawn .Keyword {
-   color: #794938;
+  color: #794938;
 }
 pre.dawn {
-   background-color: #F5F5F5;
-   color: #080808;
+  background-color: #f5f5f5;
+  color: #080808;
 }
 pre.dawn .MarkupItalic {
-   color: #080808;
-   font-style: italic;
+  color: #080808;
+  font-style: italic;
 }
 pre.dawn .InvalidDeprecated {
-   font-weight: bold;
-   color: #B52A1D;
+  font-weight: bold;
+  color: #b52a1d;
 }
 pre.dawn .Variable {
-   color: #234A97;
+  color: #234a97;
 }
 pre.dawn .Entity {
-   color: #BF4F24;
+  color: #bf4f24;
 }
 pre.dawn .Comment {
-   color: #5A525F;
-   font-style: italic;
+  color: #5a525f;
+  font-style: italic;
 }

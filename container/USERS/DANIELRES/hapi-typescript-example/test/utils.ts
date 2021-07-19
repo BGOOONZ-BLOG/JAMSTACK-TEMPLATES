@@ -1,9 +1,13 @@
 import * as Database from "../src/database";
 
-export function createTaskDummy(userId?: string, name?: string, description?: string) {
+export function createTaskDummy(
+  userId?: string,
+  name?: string,
+  description?: string
+) {
   var user = {
     name: name || "dummy task",
-    description: description || "I'm a dummy task!"
+    description: description || "I'm a dummy task!",
   };
 
   if (userId) {
@@ -17,7 +21,7 @@ export function createUserDummy(email?: string) {
   var user = {
     email: email || "dummy@mail.com",
     name: "Dummy Jones",
-    password: "123123"
+    password: "123123",
   };
 
   return user;
@@ -31,15 +35,18 @@ export function clearDatabase(database: Database.IDatabase, done: MochaDone) {
     .then(() => {
       done();
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 }
 
-export function createSeedTaskData(database: Database.IDatabase, done: MochaDone) {
+export function createSeedTaskData(
+  database: Database.IDatabase,
+  done: MochaDone
+) {
   return database.userModel
     .create(createUserDummy())
-    .then(user => {
+    .then((user) => {
       return Promise.all([
         database.taskModel.create(
           createTaskDummy(user._id, "Task 1", "Some dummy data 1")
@@ -49,24 +56,27 @@ export function createSeedTaskData(database: Database.IDatabase, done: MochaDone
         ),
         database.taskModel.create(
           createTaskDummy(user._id, "Task 3", "Some dummy data 3")
-        )
+        ),
       ]);
     })
-    .then(task => {
+    .then((task) => {
       done();
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 }
 
-export function createSeedUserData(database: Database.IDatabase, done: MochaDone) {
+export function createSeedUserData(
+  database: Database.IDatabase,
+  done: MochaDone
+) {
   database.userModel
     .create(createUserDummy())
-    .then(user => {
+    .then((user) => {
       done();
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 }
@@ -79,6 +89,6 @@ export async function login(server, config, user) {
   return server.inject({
     method: "POST",
     url: config.routePrefix + "/users/login",
-    payload: { email: user.email, password: user.password }
+    payload: { email: user.email, password: user.password },
   });
 }

@@ -1,5 +1,4 @@
-import React from 'react'
-import BlogIndex from 'blog'
+import React from "react";
+import BlogIndex from "blog";
 
-export default (props) =>
-  <BlogIndex {...props} />
+export default (props) => <BlogIndex {...props} />;

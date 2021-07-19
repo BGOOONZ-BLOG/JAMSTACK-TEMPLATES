@@ -1,0 +1,35 @@
+<div class="code-box" id="demo-circle-mini">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-circle-mini"></div>
+    <script>mountNode = document.getElementById('components-progress-demo-circle-mini');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var ProgressCircle = _antd.Progress.Circle;
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(ProgressCircle, { percent: 30, width: 80 }),
+  React.createElement(ProgressCircle, { percent: 70, width: 80, status: "exception", format: React.createElement(_antd.Icon, { type: "exclamation" }) }),
+  React.createElement(ProgressCircle, { percent: 100, width: 80 })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressCircle = Progress.Circle;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{30}</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{80}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{70}</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{80}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"exception"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"exclamation"</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{80}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  , mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-circle-mini">小型进度圈</a>
+    </div>
+    <p>小一号的圈形进度。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

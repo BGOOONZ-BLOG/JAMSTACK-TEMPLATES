@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+QueueAnim 进出场动画 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../../docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../../docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../../docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../../docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../cascader/"
+               class="">
+              Cascader
+              <span class="chinese">级联选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../date-picker/"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree-select/"
+               class="">
+              TreeSelect
+              <span class="chinese">树选择</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">上传</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      QueueAnim 进出场动画
+    </h1>
+    <p>通过简单的配置对一组元素添加串行的进场动画效果。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><ul>
+<li><p>从内容A到内容B的转变过程时能有效的吸引用户注意力，突出视觉中心，提高整体视觉效果。</p>
+</li>
+<li><p>小的信息元素排布或块状较多的情况下，根据一定的路径层次依次进场，区分维度层级，来凸显量级，使页面转场更加流畅和舒适，提高整体视觉效果和产品的质感。</p>
+</li>
+<li><p>特别适合首页和需要视觉展示效果的宣传页，以及单页应用的切换页面动效。</p>
+</li>
+</ul>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><blockquote>
+<p>此组件取代了 0.9.x 版本的 <a href="http://09x.ant.design/components/enter-animation/">enter-animation</a>。</p>
+</blockquote>
+<p>元素依次进场。</p>
+<div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">'demo1'</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">'demo2'</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">'demo3'</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">'demo4'</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span></code></pre></div><blockquote>
+<p>每个子标签必须带 key，如果未设置 key 将不执行动画。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认</th>
+<th>详细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string / array</td>
+<td><code>right</code></td>
+<td>动画内置参数 <br/> <code>left</code> <code>right</code> <code>top</code> <code>bottom</code> <code>scale</code> <code>scaleBig</code> <code>scaleX</code> <code>scaleY</code></td>
+</tr>
+<tr>
+<td>animConfig</td>
+<td>object / array</td>
+<td>null</td>
+<td>配置动画参数 <br/> 如 <code>{opacity:[1, 0],translateY:[0, -30]}</code> 具体参考 <a href="http://julian.com/research/velocity">velocity</a> 的写法</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>number / array</td>
+<td>0</td>
+<td>整个动画的延时,以毫秒为单位</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>number / array</td>
+<td>500</td>
+<td>每个动画的时间,以毫秒为单位</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>number / array</td>
+<td>100</td>
+<td>每个动画的间隔时间,以毫秒为单位</td>
+</tr>
+<tr>
+<td>leaveReverse</td>
+<td>boolean</td>
+<td>false</td>
+<td>出场时是否倒放,从最后一个 dom 开始往上播放</td>
+</tr>
+<tr>
+<td>ease</td>
+<td>string / array</td>
+<td><code>easeOutQuart</code></td>
+<td>动画的缓动函数,<a href="http://julian.com/research/velocity/#easing">查看详细</a></td>
+</tr>
+<tr>
+<td>animatingClassName</td>
+<td>array</td>
+<td><code>[&#39;queue-anim-entering&#39;, &#39;queue-anim-leaving&#39;]</code></td>
+<td>进出场动画进行中的类名</td>
+</tr>
+<tr>
+<td>component</td>
+<td>string</td>
+<td><code>div</code></td>
+<td>QueueAnim 替换的标签名</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>当以上数据类型为 Array 时，<code>[&#39;left&#39;, &#39;top&#39;]</code> 第一个为进场动画属性, 第二个为离场属性。</p>
+</blockquote>
+<style>
+.code-box-demo .demo-header {
+  width: 100%;
+  background: #ebedee;
+  height: 30px;
+}
+.code-box-demo .demo-header ul {
+  float: right;
+  margin-right: 5px;
+}
+.code-box-demo .demo-header ul li {
+  width: 50px;
+  height: 30px;
+  float: left;
+  background: #e4e4e4;
+  margin-left: 5px;
+}
+.code-box-demo .demo-header ul li:before {
+  margin: 10px auto;
+  width: 20px;
+  height: 10px;
+  background: #ebeded;
+}
+.code-box-demo .demo-header .logo {
+  float: left;
+  margin: 0px auto 0 10px;
+  line-height: 32px;
+}
+.code-box-demo .demo-header .logo img{
+  margin:auto
+}
+.code-box-demo .demo-header .logo span {
+  display: block;
+  float: right;
+}
+.code-box-demo .demo-content {
+  width: 80%;
+  margin: 10px auto;
+}
+.code-box-demo .demo-content .demo-title {
+  text-align:left;
+  background: #a4a4a4;
+  width: 40%;
+  height: 20px;
+  line-height: 20px;
+  color: #ebeded;
+  text-indent:10px
+}
+.code-box-demo .demo-content .demo-listBox {
+  margin-top: 10px;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list .title {
+  height: 30px;
+  background: #cacaca;
+  overflow: hidden;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list .title:before,.code-box-demo .demo-content .demo-listBox .demo-list .title:after{
+  width: 30%;
+  height: 5px;
+  background: #ebeded;
+  float:left;
+  margin:12px 35px 0;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list .title:after{
+  width:15%;
+  float:right;
+  margin:12px 10px 0;
+
+}
+.code-box-demo .demo-content .demo-listBox .demo-list ul li {
+  height: 25px;
+  background: #ebeded;
+  border-bottom: 1px solid #cacaca;
+  overflow: hidden;
+  padding: 5px 15px;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:before {
+  width: 10px;
+  height: 5px;
+  background: #cacaca;
+  float: left;
+  margin-top:4px
+}
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:after {
+  width: 50%;
+  height: 5px;
+  background: #cacaca;
+  float: left;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+.code-box-demo .demo-content .demo-kp {
+  margin: 10px auto;
+}
+.code-box-demo .demo-content .demo-kp ul li {
+  display: inline-block;
+  width: 32%;
+  height: 40px;
+  background: #cacaca;
+  color: #ebeded;
+  text-align: left;
+  padding: 10px;
+  margin-right: calc(2%);
+}
+.code-box-demo .demo-content .demo-kp ul li:last-child {
+  margin-right: 0%;
+}
+.code-box-demo .demo-content .demo-kp ul li:after {
+  width: 60%;
+  height: 5px;
+  background: #ebeded;
+  float: left;
+  margin-top: 7px;
+}
+.code-box-demo .demo-content .demo-kp ul li:before {
+  background: #ebeded;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin:2px 10% 0 0;
+
+}
+.code-box-demo .demo-footer {
+  margin-top: 10px;
+  background: #cacaca;
+  height: 40px;
+  float: left;
+  width: 100%;
+  display: table;
+}
+.code-box-demo .demo-footer:before {
+  width: 60%;
+  height: 5px;
+  background: #ededed;
+  margin: 10px auto 0;
+}
+.code-box-demo .demo-footer:after {
+  width: 30%;
+  height: 5px;
+  background: #ededed;
+  margin: 5px auto;
+}
+.code-box-demo .demo-header ul li:before,
+.code-box-demo .demo-content .demo-kp ul li:before,
+.code-box-demo .demo-content .demo-kp ul li:after,
+.code-box-demo .demo-content .demo-listBox .demo-list .title:before,
+.code-box-demo .demo-content .demo-listBox .demo-list .title:after,
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:before,
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:after,
+.code-box-demo .demo-footer:before,
+.code-box-demo .demo-footer:after {
+  display: block;
+  content: "";
+}
+</style>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="anim-demo-simple">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-simple"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-simple');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  _antd.QueueAnim,
+  { delay: 500, style: { height: 150 } },
+  React.createElement(
+    "div",
+    { key: "a" },
+    "\u4F9D\u6B21\u8FDB\u573A"
+  ),
+  React.createElement(
+    "div",
+    { key: "b" },
+    "\u4F9D\u6B21\u8FDB\u573A"
+  ),
+  React.createElement(
+    "div",
+    { key: "c" },
+    "\u4F9D\u6B21\u8FDB\u573A"
+  ),
+  React.createElement(
+    "div",
+    { key: "d" },
+    "\u4F9D\u6B21\u8FDB\u573A"
+  ),
+  React.createElement(
+    "div",
+    { key: "e" },
+    "\u4F9D\u6B21\u8FDB\u573A"
+  ),
+  React.createElement(
+    "div",
+    { key: "f" },
+    "\u4F9D\u6B21\u8FDB\u573A"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">delay</span>=<span class="hljs-value">{500}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">height:</span> <span class="hljs-attribute">150</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"a"</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"c"</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"d"</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"e"</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"f"</span>&gt;</span>依次进场<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">.code-box-demo > div {
+  overflow: hidden;
+}
+
+.code-box-demo .buttons {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.code-box-demo</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+}</span>
+
+<span class="hljs-class">.code-box-demo</span> <span class="hljs-class">.buttons</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> auto</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-simple">默认</a>
+    </div>
+    
+<p>最简单的进场例子。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="anim-demo-enter-leave">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-enter-leave"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-enter-leave');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    var list = this.state.show ? [React.createElement(
+      "div",
+      { className: "demo-kp", key: "a" },
+      React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null),
+        React.createElement("li", null),
+        React.createElement("li", null)
+      )
+    ), React.createElement(
+      "div",
+      { className: "demo-listBox", key: "b" },
+      React.createElement(
+        "div",
+        { className: "demo-list" },
+        React.createElement("div", { className: "title" }),
+        React.createElement(
+          "ul",
+          null,
+          React.createElement("li", null),
+          React.createElement("li", null),
+          React.createElement("li", null)
+        )
+      )
+    )] : null;
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { className: "demo-content",
+          key: "demo",
+          type: ['right', 'left'],
+          ease: ['easeOutQuart', 'easeInOutQuart'] },
+        list
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show
+    });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> list = <span class="hljs-keyword">this</span>.state.show ? [
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"a"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    ]</span> : <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>
+          <span class="hljs-attribute">key</span>=<span class="hljs-value">"demo"</span>
+          <span class="hljs-attribute">type</span>=<span class="hljs-value">{['right',</span> '<span class="hljs-attribute">left</span>']}
+          <span class="hljs-attribute">ease</span>=<span class="hljs-value">{['easeOutQuart',</span> '<span class="hljs-attribute">easeInOutQuart</span>']}&gt;</span>
+          {list}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-enter-leave">进场和离场</a>
+    </div>
+    
+<p>通过把属性设置一个数组来分别表示进出场的效果，<code>type</code>、<code>animConfig</code>、<code>delay</code>、<code>duration</code>、<code>interval</code>、<code>ease</code> 等属性均支持配置为数组。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="anim-demo-form">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-form"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-form');</script>
+    <script>(function(){"use strict";
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require("antd");
+
+var FormItem = _antd.Form.Item;
+var RadioGroup = _antd.Radio.Group;
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    var formItemLayout = {
+      labelCol: { span: 6 },
+      wrapperCol: { span: 14 }
+    };
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { component: _antd.Form, className: "ant-form ant-form-horizontal", type: "bottom", leaveReverse: true },
+        this.state.show ? [React.createElement(
+          FormItem,
+          _extends({ key: "item1" }, formItemLayout, { label: "\u7528\u6237\u540D\uFF1A" }),
+          React.createElement(
+            "p",
+            { className: "ant-form-text" },
+            "\u5927\u773C\u840C minion"
+          )
+        ), React.createElement(
+          FormItem,
+          _extends({ key: "item2" }, formItemLayout, { label: "\u5BC6\u7801\uFF1A" }),
+          React.createElement(_antd.Input, { type: "password", placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801" })
+        ), React.createElement(
+          FormItem,
+          _extends({ key: "item3" }, formItemLayout, { label: "\u60A8\u7684\u6027\u522B\uFF1A" }),
+          React.createElement(
+            RadioGroup,
+            null,
+            React.createElement(
+              _antd.Radio,
+              { value: "male" },
+              "\u7537\u7684"
+            ),
+            React.createElement(
+              _antd.Radio,
+              { value: "female" },
+              "\u5973\u7684"
+            )
+          )
+        ), React.createElement(
+          FormItem,
+          _extends({ key: "item4" }, formItemLayout, { label: "\u5907\u6CE8\uFF1A" }),
+          React.createElement(_antd.Input, { type: "textarea", placeholder: "\u968F\u4FBF\u5199" })
+        ), React.createElement(
+          _antd.Row,
+          { key: "submit" },
+          React.createElement(
+            _antd.Col,
+            { span: "16", offset: "6" },
+            React.createElement(
+              _antd.Button,
+              { type: "primary", htmlType: "submit" },
+              "\u786E\u5B9A"
+            )
+          )
+        )] : null
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button, Radio, Input, Form, Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+<span class="hljs-keyword">const</span> RadioGroup = Radio.Group;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show
+    });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> formItemLayout = {
+      labelCol: { span: <span class="hljs-number">6</span> },
+      wrapperCol: { span: <span class="hljs-number">14</span> },
+    };
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Form}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form ant-form-horizontal"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"bottom"</span> <span class="hljs-attribute">leaveReverse</span>&gt;</span>
+          {this.state.show ? [
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item1"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"用户名："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span>大眼萌 minion<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item2"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请输入密码"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item3"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"您的性别："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroup</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"male"</span>&gt;</span>男的<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"female"</span>&gt;</span>女的<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroup</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item4"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"备注："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"随便写"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"submit"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"16"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">htmlType</span>=<span class="hljs-value">"submit"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>,
+          ] : null}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-form">表单动画进出场</a>
+    </div>
+    
+<p>表单组合的进场与出场动画。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="anim-demo-page">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-page"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-page');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    var page = this.state.show ? [React.createElement(
+      "div",
+      { className: "demo-header", key: "header" },
+      React.createElement(
+        "div",
+        { className: "logo" },
+        React.createElement("img", { width: "30", src: "https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg" }),
+        React.createElement(
+          "span",
+          null,
+          "logo"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { component: "ul" },
+        React.createElement("li", { key: "0" }),
+        React.createElement("li", { key: "1" }),
+        React.createElement("li", { key: "2" }),
+        React.createElement("li", { key: "3" }),
+        React.createElement("li", { key: "4" })
+      )
+    ), React.createElement(
+      _antd.QueueAnim,
+      { className: "demo-content", key: "content", delay: 300 },
+      React.createElement(
+        "div",
+        { className: "demo-title", key: "title" },
+        "\u6211\u662F\u6807\u9898"
+      ),
+      React.createElement(
+        "div",
+        { className: "demo-kp", key: "b" },
+        React.createElement(
+          _antd.QueueAnim,
+          { component: "ul" },
+          React.createElement("li", { key: "0" }),
+          React.createElement("li", { key: "1" }),
+          React.createElement("li", { key: "2" })
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: "demo-title", key: "title2" },
+        "\u6211\u662F\u6807\u9898"
+      ),
+      React.createElement(
+        "div",
+        { className: "demo-listBox" },
+        React.createElement(
+          _antd.QueueAnim,
+          { className: "demo-list", delay: 500 },
+          React.createElement("div", { className: "title", key: "title3" }),
+          React.createElement(
+            _antd.QueueAnim,
+            { component: "ul", type: "bottom", key: "li" },
+            React.createElement("li", { key: "0" }),
+            React.createElement("li", { key: "1" }),
+            React.createElement("li", { key: "2" }),
+            React.createElement("li", { key: "3" }),
+            React.createElement("li", { key: "4" })
+          )
+        )
+      )
+    ), React.createElement(
+      _antd.QueueAnim,
+      { delay: 1000, type: "bottom", key: "footerBox" },
+      React.createElement("div", { className: "demo-footer", key: "footer" })
+    )] : null;
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { type: ['right', 'left'] },
+        page
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show
+    });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> page = <span class="hljs-keyword">this</span>.state.show ? [
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-header"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"header"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"logo"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"30"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>logo<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+      <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">delay</span>=<span class="hljs-value">{300}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-title"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"title"</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-title"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"title2"</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span> <span class="hljs-attribute">delay</span>=<span class="hljs-value">{500}</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"title3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"bottom"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"li"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>,
+      <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">delay</span>=<span class="hljs-value">{1000}</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"bottom"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"footerBox"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-footer"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"footer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+    ]</span> : <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">{['right',</span> '<span class="hljs-attribute">left</span>']}&gt;</span>{page}<span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-page">一个复杂些的例子</a>
+    </div>
+    
+<p>模拟一个完整的页面。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="anim-demo-basic">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-basic');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    var list = this.state.show ? [React.createElement(
+      "div",
+      { className: "demo-kp", key: "a" },
+      React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null),
+        React.createElement("li", null),
+        React.createElement("li", null)
+      )
+    ), React.createElement(
+      "div",
+      { className: "demo-listBox", key: "b" },
+      React.createElement(
+        "div",
+        { className: "demo-list" },
+        React.createElement("div", { className: "title" }),
+        React.createElement(
+          "ul",
+          null,
+          React.createElement("li", null),
+          React.createElement("li", null),
+          React.createElement("li", null)
+        )
+      )
+    )] : null;
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { className: "demo-content" },
+        list
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show
+    });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> list = <span class="hljs-keyword">this</span>.state.show ? [
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"a"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    ]</span> : <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>&gt;</span>
+          {list}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-basic">进场和离场</a>
+    </div>
+    
+<p>同时支持进场和离场动画。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="anim-demo-custom">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-custom"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-custom');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    var list = this.state.show ? [React.createElement(
+      "div",
+      { className: "demo-kp", key: "a" },
+      React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null),
+        React.createElement("li", null),
+        React.createElement("li", null)
+      )
+    ), React.createElement(
+      "div",
+      { className: "demo-listBox", key: "b" },
+      React.createElement(
+        "div",
+        { className: "demo-list" },
+        React.createElement("div", { className: "title" }),
+        React.createElement(
+          "ul",
+          null,
+          React.createElement("li", null),
+          React.createElement("li", null),
+          React.createElement("li", null)
+        )
+      )
+    )] : null;
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { className: "demo-content",
+          animConfig: [{ opacity: [1, 0], translateY: [0, 50] }, { opacity: [1, 0], translateY: [0, -50] }] },
+        list
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>,
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show,
+    });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> list = <span class="hljs-keyword">this</span>.state.show ? [
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"a"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    ]</span> : <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>
+          <span class="hljs-attribute">animConfig</span>=<span class="hljs-value">{[</span>
+            { <span class="hljs-attribute">opacity:</span> [<span class="hljs-attribute">1</span>, <span class="hljs-attribute">0</span>], <span class="hljs-attribute">translateY:</span> [<span class="hljs-attribute">0</span>, <span class="hljs-attribute">50</span>] },
+            { <span class="hljs-attribute">opacity:</span> [<span class="hljs-attribute">1</span>, <span class="hljs-attribute">0</span>], <span class="hljs-attribute">translateY:</span> [<span class="hljs-attribute">0</span>, <span class="hljs-attribute">-50</span>] }
+          ]}&gt;</span>
+          {list}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-custom">自定义动画进出场</a>
+    </div>
+    
+<p>通过 <code>animConfig</code> 来自定义动画进出场。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="anim-demo-change">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-change"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-change');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true,
+      items: [React.createElement("li", { key: "0" }), React.createElement("li", { key: "1" }), React.createElement("li", { key: "2" })]
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  onAdd: function onAdd() {
+    var items = this.state.items;
+    items.push(React.createElement("li", { key: Date.now() }));
+    this.setState({
+      show: true,
+      items: items
+    });
+  },
+  onRemove: function onRemove() {
+    var items = this.state.items;
+    items.splice(items.length - 1, 1);
+    this.setState({
+      show: true,
+      items: items
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        ),
+        React.createElement(
+          _antd.Button,
+          { onClick: this.onAdd, style: { marginLeft: 10 } },
+          "\u6DFB\u52A0"
+        ),
+        React.createElement(
+          _antd.Button,
+          { onClick: this.onRemove, style: { marginLeft: 10 } },
+          "\u5220\u9664"
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: "demo-content" },
+        React.createElement(
+          "div",
+          { className: "demo-listBox", key: "b" },
+          React.createElement(
+            "div",
+            { className: "demo-list" },
+            React.createElement("div", { className: "title" }),
+            React.createElement(
+              _antd.QueueAnim,
+              { component: "ul", type: ['right', 'left'] },
+              this.state.show ? this.state.items : null
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>,
+      items: [
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>,
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>,
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      ]</span>,
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show,
+    });
+  },
+  onAdd() {
+    <span class="hljs-keyword">let</span> items = <span class="hljs-keyword">this</span>.state.items;
+    items.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{Date.now()}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>)</span>;
+    <span class="hljs-keyword">this</span>.setState({
+      show: <span class="hljs-literal">true</span>,
+      items,
+    });
+  },
+  onRemove() {
+    <span class="hljs-keyword">let</span> items = <span class="hljs-keyword">this</span>.state.items;
+    items.splice(items.length - <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">this</span>.setState({
+      show: <span class="hljs-literal">true</span>,
+      items,
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onAdd}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginLeft:</span> <span class="hljs-attribute">10</span> }}&gt;</span>添加<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onRemove}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginLeft:</span> <span class="hljs-attribute">10</span> }}&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">{['right',</span> '<span class="hljs-attribute">left</span>']}&gt;</span>
+                  {this.state.show ? this.state.items : null}
+                <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-change">添加与删除</a>
+    </div>
+    
+<p>场景里有增加或删除条目时也会触发动画。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div><div class="code-box" id="anim-demo-router">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-router"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-router');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router,
+    Route = ReactRouter.Route,
+    Link = ReactRouter.Link,
+    hashHistory = ReactRouter.hashHistory;
+
+
+var App = React.createClass({
+  displayName: 'App',
+  render: function render() {
+    var key = this.props.location.pathname;
+    var keys = key.replace('/', '') ? [key.replace('/', '')] : ['home'];
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        _antd.Menu,
+        { style: { marginBottom: 10 }, mode: 'horizontal', selectedKeys: keys },
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'home' },
+          React.createElement(
+            Link,
+            { to: '/' },
+            '\u9996\u9875'
+          )
+        ),
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'page1' },
+          React.createElement(
+            Link,
+            { to: '/page1' },
+            'Page 1'
+          )
+        ),
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'page2' },
+          React.createElement(
+            Link,
+            { to: '/page2' },
+            'Page 2'
+          )
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { type: ['right', 'left'], className: 'demo-router-wrap' },
+        React.cloneElement(this.props.children || React.createElement(Home, null), { key: key })
+      )
+    );
+  }
+});
+
+var Home = React.createClass({
+  displayName: 'Home',
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        _antd.QueueAnim,
+        { className: 'demo-content' },
+        React.createElement(
+          'div',
+          { className: 'demo-kp', key: 'a' },
+          React.createElement(
+            _antd.QueueAnim,
+            { component: 'ul' },
+            React.createElement('li', { key: '0' }),
+            React.createElement('li', { key: '1' }),
+            React.createElement('li', { key: '2' })
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'demo-kp', key: 'b' },
+          React.createElement(
+            _antd.QueueAnim,
+            { component: 'ul' },
+            React.createElement('li', { key: '0' }),
+            React.createElement('li', { key: '1' }),
+            React.createElement('li', { key: '2' })
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'demo-kp', key: 'c' },
+          React.createElement(
+            _antd.QueueAnim,
+            { component: 'ul' },
+            React.createElement('li', { key: '0' }),
+            React.createElement('li', { key: '1' }),
+            React.createElement('li', { key: '2' })
+          )
+        )
+      )
+    );
+  }
+});
+
+var Page1 = React.createClass({
+  displayName: 'Page1',
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        _antd.QueueAnim,
+        { className: 'demo-content' },
+        React.createElement(
+          'div',
+          { className: 'demo-kp', key: 'b' },
+          React.createElement(
+            _antd.QueueAnim,
+            { component: 'ul' },
+            React.createElement('li', { key: '0' }),
+            React.createElement('li', { key: '1' }),
+            React.createElement('li', { key: '2' })
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'demo-listBox' },
+          React.createElement(
+            _antd.QueueAnim,
+            { className: 'demo-list', delay: 200 },
+            React.createElement('div', { className: 'title', key: 'title3' }),
+            React.createElement(
+              _antd.QueueAnim,
+              { component: 'ul', animConfig: { opacity: [1, 0], translateY: [0, 30], scale: [1, 0.9] }, key: 'ul' },
+              React.createElement('li', { key: '0' }),
+              React.createElement('li', { key: '1' }),
+              React.createElement('li', { key: '2' })
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+var Page2 = React.createClass({
+  displayName: 'Page2',
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        'div',
+        { className: 'demo-content' },
+        React.createElement(
+          'div',
+          { className: 'demo-listBox' },
+          React.createElement(
+            _antd.QueueAnim,
+            { className: 'demo-list' },
+            React.createElement('div', { className: 'title', key: 'title3' }),
+            React.createElement(
+              _antd.QueueAnim,
+              { component: 'ul', animConfig: { opacity: [1, 0], translateY: [0, 30], scale: [1, 0.9] }, key: 'li' },
+              React.createElement('li', { key: '0' }),
+              React.createElement('li', { key: '1' }),
+              React.createElement('li', { key: '2' }),
+              React.createElement('li', { key: '3' }),
+              React.createElement('li', { key: '4' }),
+              React.createElement('li', { key: '5' })
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(
+  Router,
+  { history: hashHistory },
+  React.createElement(
+    Route,
+    { path: '/', component: App, ignoreScrollBehavior: true },
+    React.createElement(Route, { path: 'page1', component: Page1 }),
+    React.createElement(Route, { path: 'page2', component: Page2 })
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> ReactRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-router'</span>);
+<span class="hljs-keyword">let</span> { Router, Route, Link, hashHistory } = ReactRouter;
+<span class="hljs-keyword">import</span> { QueueAnim, Menu } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  render() {
+    <span class="hljs-keyword">const</span> key = <span class="hljs-keyword">this</span>.props.location.pathname;
+    <span class="hljs-keyword">const</span> keys = key.replace(<span class="hljs-string">'/'</span>, <span class="hljs-string">''</span>) ? [key.replace(<span class="hljs-string">'/'</span>, <span class="hljs-string">''</span>)] : [<span class="hljs-string">'home'</span>];
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginBottom:</span> <span class="hljs-attribute">10</span> }} <span class="hljs-attribute">mode</span>=<span class="hljs-value">"horizontal"</span> <span class="hljs-attribute">selectedKeys</span>=<span class="hljs-value">{keys}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"home"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"page1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/page1"</span>&gt;</span>Page 1<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"page2"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/page2"</span>&gt;</span>Page 2<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">{['right',</span> '<span class="hljs-attribute">left</span>']} <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-router-wrap"</span>&gt;</span>
+          {React.cloneElement(this.props.children || <span class="hljs-tag">&lt;<span class="hljs-title">Home</span> /&gt;</span>, { key })}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+<span class="hljs-keyword">const</span> Home = React.createClass({
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-router-child"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"a"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"c"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+<span class="hljs-keyword">const</span> Page1 = React.createClass({
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-router-child"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-kp"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"b"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span> <span class="hljs-attribute">delay</span>=<span class="hljs-value">{200}</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"title3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span> <span class="hljs-attribute">animConfig</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">opacity:</span> [<span class="hljs-attribute">1</span>, <span class="hljs-attribute">0</span>], <span class="hljs-attribute">translateY:</span> [<span class="hljs-attribute">0</span>, <span class="hljs-attribute">30</span>], <span class="hljs-attribute">scale:</span> [<span class="hljs-attribute">1</span>, <span class="hljs-attribute">0.9</span>] }} <span class="hljs-attribute">key</span>=<span class="hljs-value">"ul"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+<span class="hljs-keyword">const</span> Page2 = React.createClass({
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-router-child"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-listBox"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-list"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"title"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"title3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">"ul"</span> <span class="hljs-attribute">animConfig</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">opacity:</span> [<span class="hljs-attribute">1</span>, <span class="hljs-attribute">0</span>], <span class="hljs-attribute">translateY:</span> [<span class="hljs-attribute">0</span>, <span class="hljs-attribute">30</span>], <span class="hljs-attribute">scale:</span> [<span class="hljs-attribute">1</span>, <span class="hljs-attribute">0.9</span>] }} <span class="hljs-attribute">key</span>=<span class="hljs-value">"li"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"5"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render((
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Router</span> <span class="hljs-attribute">history</span>=<span class="hljs-value">{hashHistory}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{App}</span> <span class="hljs-attribute">ignoreScrollBehavior</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"page1"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Page1}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"page2"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Page2}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Route</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Router</span>&gt;</span>
+)</span>, mountNode);</code></pre></div><style type="text/css">#components-queue-anim-demo-router .demo-router-wrap {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  height:200px;
+  overflow: hidden;
+}
+#components-queue-anim-demo-router .queue-anim-leaving {
+  position: absolute;
+  width:100%;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-id">#components-queue-anim-demo-router</span> <span class="hljs-class">.demo-router-wrap</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> auto</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"><span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+}</span>
+<span class="hljs-id">#components-queue-anim-demo-router</span> <span class="hljs-class">.queue-anim-leaving</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"><span class="hljs-number">100%</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-router">Router 默认进出场</a>
+    </div>
+    
+<p>router 组合的进场与出场动画。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>
+  </div>
+</div>
+<ul class="toc demos-anchor">
+  <li>
+    <a title="默认" href="#anim-demo-simple">
+      <span>默认</span>
+    </a>
+  </li>
+  <li>
+    <a title="进场和离场" href="#anim-demo-basic">
+      <span>进场和离场</span>
+    </a>
+  </li>
+  <li>
+    <a title="进场和离场" href="#anim-demo-enter-leave">
+      <span>进场和离场</span>
+    </a>
+  </li>
+  <li>
+    <a title="自定义动画进出场" href="#anim-demo-custom">
+      <span>自定义动画进出场</span>
+    </a>
+  </li>
+  <li>
+    <a title="表单动画进出场" href="#anim-demo-form">
+      <span>表单动画进出场</span>
+    </a>
+  </li>
+  <li>
+    <a title="添加与删除" href="#anim-demo-change">
+      <span>添加与删除</span>
+    </a>
+  </li>
+  <li>
+    <a title="一个复杂些的例子" href="#anim-demo-page">
+      <span>一个复杂些的例子</span>
+    </a>
+  </li>
+  <li>
+    <a title="Router 默认进出场" href="#anim-demo-router">
+      <span>Router 默认进出场</span>
+    </a>
+  </li>
+</ul>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

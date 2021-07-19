@@ -1,13 +1,13 @@
-const ServerError = require('../ServerError')
+const ServerError = require("../ServerError");
 
-const findUserById = require('../queries/findUserById')
+const findUserById = require("../queries/findUserById");
 
 const ensureAdminMiddleware = async (req, res, next) => {
-  const { userId } = req.decoded
-  const currentUser = await findUserById(userId)
-  if (currentUser.isAdmin) return next()
+  const { userId } = req.decoded;
+  const currentUser = await findUserById(userId);
+  if (currentUser.isAdmin) return next();
 
-  next(ServerError(401, 'Unauthorized'))
-}
+  next(ServerError(401, "Unauthorized"));
+};
 
-module.exports = ensureAdminMiddleware
+module.exports = ensureAdminMiddleware;

@@ -10,7 +10,6 @@ menu:
   tags: 標籤
   about: 關於
 
-
 sidebar:
   overview: 本站概覽
   toc: 文章目錄
@@ -29,7 +28,6 @@ page:
 footer:
   powered: "由 %s 強力驅動"
   theme: 主題
-
 
 counter:
   tag_cloud:
@@ -64,5 +62,5 @@ cheers:
 keep_on: 繼續努力。
 
 symbol:
-  comma: '， '
-  period: '。 '
+  comma: "， "
+  period: "。 "

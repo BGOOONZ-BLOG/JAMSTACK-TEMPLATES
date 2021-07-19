@@ -1,0 +1,57 @@
+<div class="code-box" id="demo-card">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-card"></div>
+    <script>mountNode = document.getElementById('components-tabs-demo-card');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var TabPane = _antd.Tabs.TabPane;
+
+function callback(key) {
+  console.log(key);
+}
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { onChange: callback, type: "card" },
+  React.createElement(
+    TabPane,
+    { tab: "\u9009\u9879\u5361\u4E00", key: "1" },
+    "\u9009\u9879\u5361\u4E00\u5185\u5BB9"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "\u9009\u9879\u5361\u4E8C", key: "2" },
+    "\u9009\u9879\u5361\u4E8C\u5185\u5BB9"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "\u9009\u9879\u5361\u4E09", key: "3" },
+    "\u9009\u9879\u5361\u4E09\u5185\u5BB9"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(key);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-card">卡片式页签</a>
+    </div>
+    
+<p>另一种样式的页签，不提供对应的垂直样式。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

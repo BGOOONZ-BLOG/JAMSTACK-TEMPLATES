@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro'
-import React from 'react'
+import styled from "styled-components/macro";
+import React from "react";
 
 const Separator = styled(({ className, children }) => (
   <div className={`${className} mt-5 mb-5`}>
@@ -16,6 +16,6 @@ const Separator = styled(({ className, children }) => (
     padding: 0 10px;
     position: absolute;
   }
-`
+`;
 
-export default Separator
+export default Separator;

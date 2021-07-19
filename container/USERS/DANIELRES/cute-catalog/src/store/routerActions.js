@@ -1,19 +1,19 @@
-export const toAdmin = () => ({ type: 'ADMIN' })
+export const toAdmin = () => ({ type: "ADMIN" });
 
-export const toHome = () => ({ type: 'HOME' })
+export const toHome = () => ({ type: "HOME" });
 
-export const toLogin = () => ({ type: 'LOGIN' })
+export const toLogin = () => ({ type: "LOGIN" });
 
-export const toRegister = () => ({ type: 'REGISTER' })
+export const toRegister = () => ({ type: "REGISTER" });
 
 export const toAdminProduct = ({ productId }) => ({
-  type: 'ADMIN',
+  type: "ADMIN",
   query: { product: productId },
-})
+});
 
 export const toProduct = ({ productId }) => ({
-  type: 'PRODUCT',
+  type: "PRODUCT",
   payload: { productId },
-})
+});
 
-export const toProfile = () => ({ type: 'PROFILE' })
+export const toProfile = () => ({ type: "PROFILE" });

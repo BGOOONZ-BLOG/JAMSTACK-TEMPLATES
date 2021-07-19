@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components/macro'
+import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyle = createGlobalStyle`
   .bg-gray {
@@ -39,6 +39,6 @@ const GlobalStyle = createGlobalStyle`
       padding-left: 5px;
     }
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

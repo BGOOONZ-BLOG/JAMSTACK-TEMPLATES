@@ -1,0 +1,186 @@
+<div class="code-box" id="demo-router">
+  <div class="code-box-demo">
+    <div id="components-breadcrumb-demo-router"></div>
+    <script>mountNode = document.getElementById('components-breadcrumb-demo-router');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router,
+    Route = ReactRouter.Route,
+    Link = ReactRouter.Link,
+    hashHistory = ReactRouter.hashHistory;
+
+
+var Apps = React.createClass({
+  displayName: 'Apps',
+  render: function render() {
+    return React.createElement(
+      'ul',
+      { className: 'app-list' },
+      React.createElement(
+        'li',
+        null,
+        React.createElement(
+          Link,
+          { to: '/apps/1' },
+          '\u5E94\u75281'
+        ),
+        '\uFF1A',
+        React.createElement(
+          Link,
+          { to: '/apps/1/detail' },
+          '\u8BE6\u60C5'
+        )
+      ),
+      React.createElement(
+        'li',
+        null,
+        React.createElement(
+          Link,
+          { to: '/apps/2' },
+          '\u5E94\u75282'
+        ),
+        '\uFF1A',
+        React.createElement(
+          Link,
+          { to: '/apps/2/detail' },
+          '\u8BE6\u60C5'
+        )
+      )
+    );
+  }
+});
+
+var Home = React.createClass({
+  displayName: 'Home',
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { className: 'demo-nav' },
+        React.createElement(
+          Link,
+          { to: '/' },
+          '\u9996\u9875'
+        ),
+        React.createElement(
+          Link,
+          { to: '/apps' },
+          '\u5E94\u7528\u5217\u8868'
+        )
+      ),
+      this.props.children || 'Home',
+      React.createElement(
+        'div',
+        { style: {
+            marginBottom: 15,
+            marginTop: 15,
+            paddingBottom: 15,
+            borderBottom: '1px dashed #ccc'
+          } },
+        '\u70B9\u51FB\u4E0A\u9762\u7684\u5BFC\u822A\u5207\u6362\u9875\u9762\uFF0C\u9762\u5305\u5C51\u5728\u4E0B\u9762\uFF1A'
+      ),
+      React.createElement(_antd.Breadcrumb, this.props)
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(
+  Router,
+  { history: hashHistory },
+  React.createElement(
+    Route,
+    { name: 'home', breadcrumbName: '\u9996\u9875', path: '/', component: Home },
+    React.createElement(
+      Route,
+      { name: 'apps', breadcrumbName: '\u5E94\u7528\u5217\u8868', path: 'apps', component: Apps },
+      React.createElement(
+        Route,
+        { name: 'app', breadcrumbName: '\u5E94\u7528:id', path: ':id' },
+        React.createElement(Route, { name: 'detail', breadcrumbName: '\u8BE6\u60C5', path: 'detail' })
+      )
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> ReactRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-router'</span>);
+<span class="hljs-keyword">let</span> { Router, Route, Link, hashHistory } = ReactRouter;
+<span class="hljs-keyword">import</span> { Breadcrumb } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Apps = React.createClass({
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"app-list"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/apps/1"</span>&gt;</span>应用1<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>：<span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/apps/1/detail"</span>&gt;</span>详情<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/apps/2"</span>&gt;</span>应用2<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>：<span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/apps/2/detail"</span>&gt;</span>详情<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    )</span>;
+  }
+});
+
+<span class="hljs-keyword">const</span> Home = React.createClass({
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-nav"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Link</span> <span class="hljs-attribute">to</span>=<span class="hljs-value">"/apps"</span>&gt;</span>应用列表<span class="hljs-tag">&lt;/<span class="hljs-title">Link</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        {this.props.children || 'Home'}
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span>
+          <span class="hljs-attribute">marginBottom:</span> <span class="hljs-attribute">15</span>,
+          <span class="hljs-attribute">marginTop:</span> <span class="hljs-attribute">15</span>,
+          <span class="hljs-attribute">paddingBottom:</span> <span class="hljs-attribute">15</span>,
+          <span class="hljs-attribute">borderBottom:</span> '<span class="hljs-attribute">1px</span> <span class="hljs-attribute">dashed</span> #<span class="hljs-attribute">ccc</span>'
+        }}&gt;</span>
+          点击上面的导航切换页面，面包屑在下面：
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Breadcrumb</span> {<span class="hljs-attribute">...this.props</span>} /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Router</span> <span class="hljs-attribute">history</span>=<span class="hljs-value">{hashHistory}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"home"</span> <span class="hljs-attribute">breadcrumbName</span>=<span class="hljs-value">"首页"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"/"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Home}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"apps"</span> <span class="hljs-attribute">breadcrumbName</span>=<span class="hljs-value">"应用列表"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"apps"</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Apps}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"app"</span> <span class="hljs-attribute">breadcrumbName</span>=<span class="hljs-value">"应用:id"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">":id"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Route</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"detail"</span> <span class="hljs-attribute">breadcrumbName</span>=<span class="hljs-value">"详情"</span> <span class="hljs-attribute">path</span>=<span class="hljs-value">"detail"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Route</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Route</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Route</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Router</span>&gt;</span>
+, mountNode);</span></code></pre></div><style>
+.demo-nav {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  background: #f8f8f8;
+}
+.demo-nav a {
+  line-height: 30px;
+  padding: 0 10px;
+}
+.app-list {
+  margin-top: 15px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-router">路由</a>
+    </div>
+    
+<p>和 <code>react-router@2.x</code> 进行结合使用。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

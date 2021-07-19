@@ -8,7 +8,7 @@ var settings = {
   slidesToScroll: 1,
   autoplay: true,
   pauseOnHover: true,
-  autoplaySpeed: 6000
+  autoplaySpeed: 6000,
 };
 
 export default class Testimonial extends Component {
@@ -34,7 +34,7 @@ export default class Testimonial extends Component {
                     />
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: item.node.description.childMarkdownRemark.html
+                        __html: item.node.description.childMarkdownRemark.html,
                       }}
                     />
                     <h3 className="name">{item.node.name}</h3>

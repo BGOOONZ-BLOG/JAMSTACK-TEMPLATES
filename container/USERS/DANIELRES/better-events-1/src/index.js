@@ -1,30 +1,30 @@
-import './index.css';
-import './io/messages';
+import "./index.css";
+import "./io/messages";
 
-import { Provider, connect } from 'react-redux';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { Provider, connect } from "react-redux";
+import React from "react";
+import ReactDOM from "react-dom";
 
-import AdminPage from './AdminPage';
-import App from './App';
-import EventPage from './EventPage';
-import EventSubjectPage from './EventSubjectPage';
-import HomePage from './HomePage';
-import store from './store';
+import AdminPage from "./AdminPage";
+import App from "./App";
+import EventPage from "./EventPage";
+import EventSubjectPage from "./EventSubjectPage";
+import HomePage from "./HomePage";
+import store from "./store";
 
 // import registerServiceWorker from './registerServiceWorker';
 // registerServiceWorker();
 const Switcher = connect(({ location }) => ({
   location,
-}))(props => {
+}))((props) => {
   switch (props.location.type) {
-    case 'ADMINPAGE':
+    case "ADMINPAGE":
       return <AdminPage />;
-    case 'HOMEPAGE':
+    case "HOMEPAGE":
       return <HomePage />;
-    case 'EVENTPAGE':
+    case "EVENTPAGE":
       return <EventPage />;
-    case 'EVENTSUBJECTPAGE':
+    case "EVENTSUBJECTPAGE":
       return <EventSubjectPage />;
     default:
       return <div>NOT FOUND</div>;
@@ -37,5 +37,5 @@ ReactDOM.render(
       <Switcher />
     </App>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

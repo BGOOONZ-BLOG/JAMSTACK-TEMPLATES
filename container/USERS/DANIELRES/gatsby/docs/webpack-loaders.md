@@ -7,10 +7,10 @@ To modify the Webpack configuration, create a `gatsby-node.js` in the root of yo
 and export there a `modifyWebpackConfig` function.
 
 ```javascript
-exports.modifyWebpackConfig = function(config, stage) {
+exports.modifyWebpackConfig = function (config, stage) {
   // edit loaders here
-  return config
-}
+  return config;
+};
 ```
 
 Gatsby calls this function with the webpack-configurator object and
@@ -19,25 +19,25 @@ loads the defaults and then allows you to modify it.
 
 The `stage` can be
 
-1) develop: for `gatsby develop` command, hot reload and CSS injection into page
-2) develop-html: same as develop without react-hmre in the babel config for html renderer
-3) build-css: build styles.css file
-4) build-html: build all HTML files
-5) build-javascript: Build bundle.js for Single Page App in production
+1. develop: for `gatsby develop` command, hot reload and CSS injection into page
+2. develop-html: same as develop without react-hmre in the babel config for html renderer
+3. build-css: build styles.css file
+4. build-html: build all HTML files
+5. build-javascript: Build bundle.js for Single Page App in production
 
 Consider the following example which removes the default css loader
 and replaces it with a loader that uses css-modules.
 
 ```javascript
-exports.modifyWebpackConfig = function(config, stage) {
-  config.removeLoader('css')
-  config.loader('css', function(cfg) {
-    cfg.test = /\.css$/
-    cfg.loader = 'style!css?modules'
-    return cfg
-  })
-  return config
-}
+exports.modifyWebpackConfig = function (config, stage) {
+  config.removeLoader("css");
+  config.loader("css", function (cfg) {
+    cfg.test = /\.css$/;
+    cfg.loader = "style!css?modules";
+    return cfg;
+  });
+  return config;
+};
 ```
 
 Each loader (`cfg` in the above example) can be a valid

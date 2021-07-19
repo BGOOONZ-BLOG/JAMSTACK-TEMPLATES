@@ -50,7 +50,6 @@ Demo App at https://github.com/vwall/Compass-Twitter-Bootstrap-Demo-App
 
     @import "compass_twitter_bootstrap_responsive"
 
-
 ## Usage with Rails 3.1 (via plugin)
 
 **Install plugin**
@@ -59,8 +58,8 @@ Demo App at https://github.com/vwall/Compass-Twitter-Bootstrap-Demo-App
 
 **Add it to your config/initializers/sass.rb**
 
-  Rails.configuration.sass.tap do |config|
-    ...
+Rails.configuration.sass.tap do |config|
+...
 
     # twitter bootstrap
     config.load_paths << Compass::Frameworks['twitter_bootstrap'].stylesheets_directory
@@ -71,7 +70,6 @@ Demo App at https://github.com/vwall/Compass-Twitter-Bootstrap-Demo-App
 **Import it into your SCSS file**
 
     @import "compass_twitter_bootstrap"
-
 
 ## Using [Font Awesome](http://fortawesome.github.com/Font-Awesome/)
 
@@ -114,18 +112,17 @@ There is a Rake-task that will help you to fetch all recent changes from the Twi
 
 When that is done
 
-* update the assets
-* replace `$media ` with @media `, `$page ` with @page `, `$-ms-keyframes ` with @-ms-keyframes `, `$-o-keyframes ` with @-o-keyframes `, see https://github.com/vwall/compass-twitter-bootstrap/issues/100.
-* replace `ctb-reset-filter(` with `ctb-gradient-reset-filter(`
-* replace `ctb-span(` with `ctb-core-span(`
-* replace `@include ctb-opacity(100)` with `@include ctb-opacity(1)` as seen in https://github.com/vwall/compass-twitter-bootstrap/commit/b80ea1bc20f031a4abad7906ba14590bccadc74e
-* search for `(e(` and fix it
-* search for `&-` and fix it, see https://github.com/vwall/compass-twitter-bootstrap/issues/101
-* search fo `.navbar-fixed-bottom .container {` and fix it
-* readd the imports into _buttons.scss as seen in https://github.com/vwall/compass-twitter-bootstrap/commit/18d2d061235d5477c3a30beab9f02c7e9387f0c4
+- update the assets
+- replace `$media ` with @media `, `$page ` with @page `, `$-ms-keyframes `with @-ms-keyframes`, `$-o-keyframes ` with @-o-keyframes `, see https://github.com/vwall/compass-twitter-bootstrap/issues/100.
+- replace `ctb-reset-filter(` with `ctb-gradient-reset-filter(`
+- replace `ctb-span(` with `ctb-core-span(`
+- replace `@include ctb-opacity(100)` with `@include ctb-opacity(1)` as seen in https://github.com/vwall/compass-twitter-bootstrap/commit/b80ea1bc20f031a4abad7906ba14590bccadc74e
+- search for `(e(` and fix it
+- search for `&-` and fix it, see https://github.com/vwall/compass-twitter-bootstrap/issues/101
+- search fo `.navbar-fixed-bottom .container {` and fix it
+- readd the imports into \_buttons.scss as seen in https://github.com/vwall/compass-twitter-bootstrap/commit/18d2d061235d5477c3a30beab9f02c7e9387f0c4
 
 @remark: if some Ruby-genius wants to automate this feel free
-
 
 ## TWITTER BOOTSTRAP
 
@@ -137,14 +134,13 @@ To get started -- checkout http://twitter.github.com/bootstrap!
 
 **Mark Otto**
 
-+ http://twitter.com/mdo
-+ http://github.com/markdotto
+- http://twitter.com/mdo
+- http://github.com/markdotto
 
 **Jacob Thornton**
 
-+ http://twitter.com/fat
-+ http://github.com/fat
-
+- http://twitter.com/fat
+- http://github.com/fat
 
 ##Copyright and License
 
@@ -154,7 +150,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except in compliance with the License.
 You may obtain a copy of the License in the LICENSE file, or at:
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

@@ -1,0 +1,97 @@
+<div class="code-box" id="demo-loading">
+  <div class="code-box-demo">
+    <div id="components-button-demo-loading"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var App = React.createClass({
+  displayName: "App",
+
+  getInitialState: function getInitialState() {
+    return {
+      loading: false
+    };
+  },
+  enterLoading: function enterLoading() {
+    this.setState({
+      loading: true
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        _antd.Button,
+        { type: "primary", size: "large", loading: true },
+        "加载中"
+      ),
+      React.createElement(
+        _antd.Button,
+        { type: "primary", loading: true },
+        "加载中"
+      ),
+      React.createElement(
+        _antd.Button,
+        { type: "primary", size: "small", loading: true },
+        "加载中"
+      ),
+      React.createElement("br", null),
+      React.createElement(
+        _antd.Button,
+        { type: "primary", loading: this.state.loading, onClick: this.enterLoading },
+        "点击变加载"
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('components-button-demo-loading'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      loading: <span class="hljs-literal">false</span>
+    };
+  },
+  enterLoading() {
+    <span class="hljs-keyword">this</span>.setState({
+      loading: <span class="hljs-literal">true</span>
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">loading</span>&gt;</span>
+        加载中
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">loading</span>&gt;</span>
+        加载中
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> <span class="hljs-attribute">loading</span>&gt;</span>
+        加载中
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">loading</span>=<span class="hljs-value">{this.state.loading}</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.enterLoading}</span>&gt;</span>
+        点击变加载
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, document.getElementById('components-button-demo-loading'));</span></code></pre></div><style>
+#components-button-demo-loading .ant-btn {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-loading">加载中</a>
+    </div>
+    <p>添加 <code>loading</code> 属性即可让按钮处于加载状态，最后一个按钮演示点击后进入加载状态。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

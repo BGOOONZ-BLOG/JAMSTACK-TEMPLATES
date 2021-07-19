@@ -2,7 +2,6 @@
 // Navs
 // --------------------------------------------------
 
-
 // BASE CLASS
 // ----------
 
@@ -40,15 +39,13 @@
   font-weight: bold;
   line-height: $baseLineHeight;
   color: $grayLight;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
 }
 // Space them out when they follow another list item (link)
 .nav li + .nav-header {
   margin-top: 9px;
 }
-
-
 
 // NAV LIST
 // --------
@@ -60,9 +57,9 @@
 }
 .nav-list > li > a,
 .nav-list .nav-header {
-  margin-left:  -15px;
+  margin-left: -15px;
   margin-right: -15px;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .nav-list > li > a {
   padding: 3px 15px;
@@ -70,7 +67,7 @@
 .nav-list > .active > a,
 .nav-list > .active > a:hover {
   color: $white;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   background-color: $linkColor;
 }
 .nav-list [class^="icon-"],
@@ -81,8 +78,6 @@
 .nav-list .divider {
   @include ctb-nav-divider();
 }
-
-
 
 // TABS AND PILLS
 // -------------
@@ -136,7 +131,6 @@
   cursor: default;
 }
 
-
 // PILLS
 // -----
 
@@ -155,8 +149,6 @@
   color: $white;
   background-color: $linkColor;
 }
-
-
 
 // STACKED NAV
 // -----------
@@ -196,13 +188,13 @@
   margin-bottom: 1px; // decrease margin to match sizing of stacked tabs
 }
 
-
-
 // DROPDOWNS
 // ---------
 
 .nav-tabs .dropdown-menu {
-  @include ctb-border-radius(0 0 6px 6px); // remove the top rounded corners here since there is a hard edge above the menu
+  @include ctb-border-radius(
+    0 0 6px 6px
+  ); // remove the top rounded corners here since there is a hard edge above the menu
 }
 .nav-pills .dropdown-menu {
   @include ctb-border-radius(6px); // make rounded corners match the pills
@@ -264,11 +256,8 @@
   border-color: $grayLight;
 }
 
-
-
 // TABBABLE
 // --------
-
 
 // COMMON STYLES
 // -------------
@@ -297,7 +286,6 @@
 .pill-content > .active {
   display: block;
 }
-
 
 // BOTTOM
 // ------
@@ -373,8 +361,6 @@
   border-color: #ddd #ddd #ddd transparent;
   *border-left-color: $white;
 }
-
-
 
 // DISABLED STATES
 // ---------------

@@ -1,0 +1,31 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-tooltip-demo-basic"></div>
+    <script>(function(){"use strict";
+
+var Tooltip = antd.Tooltip;
+
+React.render(React.createElement(
+  Tooltip,
+  { title: "提示文字" },
+  React.createElement(
+    "span",
+    null,
+    "鼠标移上来就会出现提示"
+  )
+), document.getElementById('components-tooltip-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tooltip = antd.Tooltip;
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">title</span>=<span class="value">"提示文字"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span>&gt;</span>鼠标移上来就会出现提示<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+, document.getElementById('components-tooltip-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    <p>最简单的用法。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

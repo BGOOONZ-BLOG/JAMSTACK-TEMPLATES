@@ -1,52 +1,52 @@
 // @flow
-import { connect } from 'react-redux'
-import { groupBy } from 'lodash'
-import * as React from 'react'
+import { connect } from "react-redux";
+import { groupBy } from "lodash";
+import * as React from "react";
 
-import { fetchValues } from './store/now/actions'
+import { fetchValues } from "./store/now/actions";
 
-import PortfolioForm from './PortfolioForm'
-import './App.css'
+import PortfolioForm from "./PortfolioForm";
+import "./App.css";
 
-import type { NowValues } from './types'
+import type { NowValues } from "./types";
 
 const originalEntries = [
   {
-    coin: 'BTC',
-    date: '2017-11-23 22:06:04',
+    coin: "BTC",
+    date: "2017-11-23 22:06:04",
     amount: 1,
     price: 1000.0001,
   },
   {
-    coin: 'ETH',
-    date: '2017-07-18 10:46:03',
+    coin: "ETH",
+    date: "2017-07-18 10:46:03",
     amount: 1.00000001,
     price: 100.259,
   },
   {
-    coin: 'ETH',
-    date: '2017-11-23 22:06:04',
+    coin: "ETH",
+    date: "2017-11-23 22:06:04",
     amount: 0.5,
     price: 320.0001,
   },
-]
+];
 
-const entries = groupBy(originalEntries, e => e.coin)
-const coins = Object.keys(entries)
+const entries = groupBy(originalEntries, (e) => e.coin);
+const coins = Object.keys(entries);
 
-const history = [{ date: '2017-11-27 22:12:00', BTC: 8129.9, ETH: 401.05 }]
+const history = [{ date: "2017-11-27 22:12:00", BTC: 8129.9, ETH: 401.05 }];
 
-const headers = coin => [coin, '€', 'amount', 'price']
+const headers = (coin) => [coin, "€", "amount", "price"];
 
-const paid = line => line.price * line.amount
-const cur_value = (line, now): number => now[line.coin] * line.amount
-const gain = (line, now): number => cur_value(line, now) - paid(line)
+const paid = (line) => line.price * line.amount;
+const cur_value = (line, now): number => now[line.coin] * line.amount;
+const gain = (line, now): number => cur_value(line, now) - paid(line);
 
-type Props = { now: NowValues }
+type Props = { now: NowValues };
 
 class App extends React.Component<Props> {
   render() {
-    const { now } = this.props
+    const { now } = this.props;
 
     return (
       <div className="App">
@@ -60,7 +60,7 @@ class App extends React.Component<Props> {
 
         <PortfolioForm />
 
-        {coins.map(coin => (
+        {coins.map((coin) => (
           <table className="table entries" key={coin}>
             <thead>
               <tr>
@@ -89,11 +89,11 @@ class App extends React.Component<Props> {
           </table>
         ))}
       </div>
-    )
+    );
   }
 }
 
 export default connect(
   ({ now }) => ({ now }),
-  dispatch => ({ _init: dispatch(fetchValues()) })
-)(App)
+  (dispatch) => ({ _init: dispatch(fetchValues()) })
+)(App);

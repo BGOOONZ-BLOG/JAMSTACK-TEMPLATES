@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
-var React = require('react');
-
+var React = require("react");
 
 module.exports = React.createClass({
-  displayName: 'INBOX',
+  displayName: "INBOX",
 
-  render: function() {
+  render: function () {
     return <div>INBOX</div>;
-  }
+  },
 });

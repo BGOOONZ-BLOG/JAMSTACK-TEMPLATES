@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import moment from 'moment-strftime';
 
-import {getData, Link, withPrefix} from '../utils';
+import { getData, Link, withPrefix } from '../utils';
 
 export default class BlogPostMeta extends React.Component {
     renderAuthor(authorRef, data) {
@@ -12,7 +12,12 @@ export default class BlogPostMeta extends React.Component {
         }
         const authorName = _.trim(`${author.first_name} ${author.last_name}`);
         if (author.link) {
-            return <span> by <Link href={withPrefix(author.link)}>{authorName}</Link></span>;
+            return (
+                <span>
+                    {' '}
+                    by <Link href={withPrefix(author.link)}>{authorName}</Link>
+                </span>
+            );
         } else {
             return <span> by {authorName}</span>;
         }
@@ -29,7 +34,9 @@ export default class BlogPostMeta extends React.Component {
 
         return (
             <div className={containerClass}>
-                <span>On <time dateTime={dateTimeAttr}>{formattedDate}</time></span>
+                <span>
+                    On <time dateTime={dateTimeAttr}>{formattedDate}</time>
+                </span>
                 {authorRef && this.renderAuthor(authorRef, data)}
             </div>
         );

@@ -14,22 +14,23 @@ If we wanted to extract all of the css in our project into a single
 and add the plugin when generating the static HTML for our site.
 
 ```javascript
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-exports.modifyWebpackConfig = function(config, stage) {
-  if(stage === 'build-html') {
-    config.removeLoader('css')
-    config.loader('css', function(cfg) {
-      cfg.test = /\.css$/
-      cfg.loader = ExtractTextPlugin.extract('css?minimize')
-      return cfg
-    })
-    config.plugin('extract-css',
-                  ExtractTextPlugin,
-                  ["styles.css", { allChunks: true }])
+exports.modifyWebpackConfig = function (config, stage) {
+  if (stage === "build-html") {
+    config.removeLoader("css");
+    config.loader("css", function (cfg) {
+      cfg.test = /\.css$/;
+      cfg.loader = ExtractTextPlugin.extract("css?minimize");
+      return cfg;
+    });
+    config.plugin("extract-css", ExtractTextPlugin, [
+      "styles.css",
+      { allChunks: true },
+    ]);
   }
-  return config
-}
+  return config;
+};
 ```
 
 Each plugin (`extract-css` in the above example) can be a valid

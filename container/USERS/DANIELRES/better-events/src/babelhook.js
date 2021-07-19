@@ -1,13 +1,13 @@
-require('babel-core/register')({
+require("babel-core/register")({
   presets: [
     [
-      'babel-preset-env',
+      "babel-preset-env",
       {
         targets: {
-          node: 'current',
+          node: "current",
         },
       },
     ],
-    'flow',
+    "flow",
   ],
-})
+});

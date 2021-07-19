@@ -8,11 +8,9 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-
 // Responsive
 // For phone and tablet devices
 // -------------------------------------------------------------
-
 
 // REPEAT VARIABLES & MIXINS
 // -------------------------
@@ -21,12 +19,10 @@
 @import "compass_twitter_bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
 @import "compass_twitter_bootstrap/mixins";
 
-
 // RESPONSIVE CLASSES
 // ------------------
 
 @import "compass_twitter_bootstrap/responsive-utilities";
-
 
 // MEDIA QUERIES
 // ------------------
@@ -39,7 +35,6 @@
 
 // Large desktops
 @import "compass_twitter_bootstrap/responsive-1200px-min";
-
 
 // RESPONSIVE NAVBAR
 // ------------------

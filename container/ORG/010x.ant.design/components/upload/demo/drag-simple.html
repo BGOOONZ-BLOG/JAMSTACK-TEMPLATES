@@ -1,0 +1,49 @@
+<div class="code-box" id="demo-drag-simple">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-drag-simple"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Dragger = _antd.Upload.Dragger;
+
+var props = {
+  name: 'file',
+  showUploadList: false,
+  action: '/upload.do'
+};
+
+ReactDOM.render(React.createElement(
+  Dragger,
+  props,
+  React.createElement(_antd.Icon, { type: 'plus' })
+), document.getElementById('components-upload-demo-drag-simple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Dragger = Upload.Dragger;
+
+<span class="hljs-keyword">const</span> props = {
+  name: <span class="hljs-string">'file'</span>,
+  showUploadList: <span class="hljs-literal">false</span>,
+  action: <span class="hljs-string">'/upload.do'</span>
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dragger</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Dragger</span>&gt;</span>,
+  document.getElementById('components-upload-demo-drag-simple')
+);</span></code></pre></div><style type="text/css">#components-upload-demo-drag-simple {
+  width: 246px;
+  height: 146px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-id">#components-upload-demo-drag-simple</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">246px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">146px</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-drag-simple">拖拽上传</a>
+    </div>
+    <p>样式简单一些。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

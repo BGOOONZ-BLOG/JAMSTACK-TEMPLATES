@@ -1,14 +1,12 @@
-'use strict';
+"use strict";
 
-var Reflux  = require('reflux');
-var DiscussionsActions = require('actions/discussions_actions');
-var GroupActions = require('actions/group_actions');
+var Reflux = require("reflux");
+var DiscussionsActions = require("actions/discussions_actions");
+var GroupActions = require("actions/group_actions");
 
-var ApiHelper = require('helpers/api_helper');
-
+var ApiHelper = require("helpers/api_helper");
 
 module.exports = Reflux.createStore({
-
   listenables: [DiscussionsActions],
 
   getInitialState: function () {
@@ -23,7 +21,6 @@ module.exports = Reflux.createStore({
     this.trigger(result.reverse());
   },
 
-
   onCreate: function (params) {
     ApiHelper.createDiscussion(params);
   },
@@ -31,6 +28,4 @@ module.exports = Reflux.createStore({
   onCreateCompleted: function (result) {
     DiscussionsActions.fetch(result.discutable_type, result.discutable_id);
   },
-
 });
-

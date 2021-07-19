@@ -1,0 +1,71 @@
+<div class="code-box" id="demo-accordion">
+  <div class="code-box-demo">
+    <div id="components-collapse-demo-accordion"></div>
+    <script>(function(){"use strict";
+
+var Collapse = antd.Collapse;
+var Panel = Collapse.Panel;
+
+var text = "\n  A dog is a type of domesticated animal.\n  Known for its loyalty and faithfulness,\n  it can be found as a welcome guest in many households across the world.\n";
+
+React.render(React.createElement(
+  Collapse,
+  { accordion: true },
+  React.createElement(
+    Panel,
+    { header: "This is panel header 1", key: "1" },
+    React.createElement(
+      "p",
+      null,
+      text
+    )
+  ),
+  React.createElement(
+    Panel,
+    { header: "This is panel header 2", key: "2" },
+    React.createElement(
+      "p",
+      null,
+      text
+    )
+  ),
+  React.createElement(
+    Panel,
+    { header: "This is panel header 3", key: "3" },
+    React.createElement(
+      "p",
+      null,
+      text
+    )
+  )
+), document.getElementById('components-collapse-demo-accordion'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Collapse = antd.Collapse;
+<span class="keyword">var</span> Panel = Collapse.Panel;
+
+<span class="keyword">var</span> text = `
+  A dog is a type of domesticated animal.
+  Known <span class="keyword">for</span> its loyalty and faithfulness,
+  it can be found as a welcome guest <span class="keyword">in</span> many households across the world.
+`;
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Collapse</span> <span class="attribute">accordion</span>=<span class="value">{true}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">1</span>`} <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">2</span>`} <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">3</span>`} <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Collapse</span>&gt;</span>
+, document.getElementById('components-collapse-demo-accordion'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-accordion">手风琴</a>
+    </div>
+    <p>手风琴，每次只打开一个tab。默认打开第一个。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-declare module 'parse-filepath' {
+declare module "parse-filepath" {
   declare type FileData = {
     root: string,
     dir: string,
@@ -17,8 +17,8 @@ declare module 'parse-filepath' {
 
     // getters
     absolute: () => string,
-    isAbsolute: () => Boolean
-  }
+    isAbsolute: () => Boolean,
+  };
 
-  declare var exports: (input: string) => FileData
+  declare var exports: (input: string) => FileData;
 }

@@ -1,3 +1,3 @@
-window.onGatsbyPreRouteUpdate = function() {
-window.removeMainNavigationHandlers();
+window.onGatsbyPreRouteUpdate = function () {
+  window.removeMainNavigationHandlers();
 };

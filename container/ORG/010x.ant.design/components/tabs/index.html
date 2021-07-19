@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Tabs 标签页 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/??component/console-polyfill/0.2.2/index.js,component/es5-shim/4.1.14/es5-shim.min.js,component/es5-shim/4.1.14/es5-sham.min.js,component/html5shiv/3.7.2/html5shiv.min.js,g/component/media-match/2.0.2/media.match.min.js"></script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timepicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.10.5',
+        stable: '0.10.5'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    <script src="https://t.alipayobjects.com/images/T1DrxhXe0mXXXXXXXX.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/install" class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/upgrade-to-0.10" class="">
+          0.10 升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timepicker/"
+               class="">
+              Timepicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Tabs 标签页
+    </h1>
+    <p>选项卡切换组件。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><p>提供平级的区域将大块内容进行收纳和展现，保持界面整洁。</p>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><h3 id="tabs">Tabs<a href="#tabs" class="anchor">#</a> </h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>activeKey</td>
+<td>当前激活 tab 面板的 key</td>
+<td>String</td>
+<td>无</td>
+</tr>
+<tr>
+<td>animation</td>
+<td>是否启用面板切换动画</td>
+<td>String</td>
+<td>空。目前只支持 slide-horizontal</td>
+</tr>
+<tr>
+<td>defaultActiveKey</td>
+<td>初始化选中面板的 key，如果没有设置 activeKey</td>
+<td>String</td>
+<td>第一个面板</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>切换面板的回调</td>
+<td>Function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onTabClick</td>
+<td>tab 被点击的回调</td>
+<td>Function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>tabBarExtraContent</td>
+<td>tab bar 上格外的元素</td>
+<td>React Node</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tabs-tabpane">Tabs.TabPane<a href="#tabs-tabpane" class="anchor">#</a> </h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>对应 activeKey</td>
+<td>String</td>
+<td>无</td>
+</tr>
+<tr>
+<td>tab</td>
+<td>选项卡头显示文字</td>
+<td>React.Element or String</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-basic"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+function callback(key) {
+  console.log(key);
+}
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "1", onChange: callback },
+  React.createElement(
+    TabPane,
+    { tab: "选项卡一", key: "1" },
+    "选项卡一内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡二", key: "2" },
+    "选项卡二内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡三", key: "3" },
+    "选项卡三内容"
+  )
+), document.getElementById('components-tabs-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(key);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    <p>默认选中第一项。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-icon">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-icon"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+var tabContent = [React.createElement(
+  "span",
+  null,
+  React.createElement(_antd.Icon, { type: "apple" }),
+  "选项卡一"
+), React.createElement(
+  "span",
+  null,
+  React.createElement(_antd.Icon, { type: "android" }),
+  "选项卡二"
+), React.createElement(
+  "span",
+  null,
+  React.createElement(_antd.Icon, { type: "lock" }),
+  "选项卡三"
+)];
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "2" },
+  React.createElement(
+    TabPane,
+    { tab: tabContent[0], key: "1" },
+    "选项卡一"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: tabContent[1], key: "2" },
+    "选项卡二"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: tabContent[2], key: "3" },
+    "选项卡三"
+  )
+), document.getElementById('components-tabs-demo-icon'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-keyword">const</span> tabContent = [
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"apple"</span> /&gt;</span>选项卡一<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>,
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"android"</span> /&gt;</span>选项卡二<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>,
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"lock"</span> /&gt;</span>选项卡三<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>,
+];
+
+ReactDOM.render(
+  <span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">{tabContent[0]}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">{tabContent[1]}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">{tabContent[2]}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-icon'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-icon">图标</a>
+    </div>
+    <p>有图标的标签。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-add">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-add"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+var index = 0;
+var closeStyle = {
+  position: 'absolute',
+  top: 8,
+  right: -9
+};
+
+var addStyle = {
+  pointerEvents: 'auto',
+  color: '#2db7f5',
+  position: 'absolute',
+  top: 8,
+  left: 0,
+  marginLeft: -8
+};
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      tabs: [{
+        title: 'title ' + index,
+        content: 'content ' + index,
+        index: index
+      }],
+      activeKey: index.toString()
+    };
+  },
+  remove: function remove(targetIndex, e) {
+    e.stopPropagation();
+    var tabs = this.state.tabs;
+    var activeKey = this.state.activeKey;
+    var foundIndex = 0;
+
+    if (tabs.length === 1) {
+      _antd.message.error('仅剩一个，不能删除');
+      return;
+    }
+
+    var newTabs = tabs.filter(function (tab) {
+      if (tab.index !== targetIndex) {
+        return true;
+      } else {
+        foundIndex = targetIndex;
+        return false;
+      }
+    });
+
+    if (activeKey === targetIndex) {
+      activeKey = tabs[foundIndex - 1].index;
+    }
+
+    this.setState({
+      tabs: newTabs, activeKey: activeKey
+    });
+  },
+  add: function add() {
+    index += 1;
+    this.setState({
+      tabs: this.state.tabs.concat({
+        title: 'title ' + index,
+        content: 'content ' + index,
+        index: index
+      }),
+      activeKey: index.toString()
+    });
+  },
+  onChange: function onChange(activeKey) {
+    console.log(activeKey);
+    this.setState({ activeKey: activeKey });
+  },
+  render: function render() {
+    var _this = this;
+
+    var addBtn = React.createElement(_antd.Icon, { style: addStyle, type: 'plus-circle', onClick: this.add });
+    var operations = React.createElement(
+      _antd.Button,
+      { style: { marginTop: 2 } },
+      '操作'
+    );
+    return React.createElement(
+      _antd.Tabs,
+      { onChange: this.onChange,
+        activeKey: this.state.activeKey,
+        tabBarExtraContent: operations },
+      this.state.tabs.map(function (tab) {
+        return React.createElement(
+          TabPane,
+          { key: tab.index, tab: React.createElement(
+              'div',
+              null,
+              tab.title,
+              React.createElement(_antd.Icon, { type: 'cross', style: closeStyle, onClick: _this.remove.bind(_this, tab.index) })
+            ) },
+          tab.content
+        );
+      }),
+      React.createElement(TabPane, { key: '__add', disabled: true, tab: addBtn })
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), document.getElementById('components-tabs-demo-add'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs, Button, Icon, message } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> closeStyle = {
+  position: <span class="hljs-string">'absolute'</span>,
+  top: <span class="hljs-number">8</span>,
+  right: -<span class="hljs-number">9</span>,
+};
+
+<span class="hljs-keyword">const</span> addStyle = {
+  pointerEvents: <span class="hljs-string">'auto'</span>,
+  color: <span class="hljs-string">'#2db7f5'</span>,
+  position: <span class="hljs-string">'absolute'</span>,
+  top: <span class="hljs-number">8</span>,
+  left: <span class="hljs-number">0</span>,
+  marginLeft: -<span class="hljs-number">8</span>,
+};
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      tabs: [{
+        title: <span class="hljs-string">'title '</span> + index,
+        content: <span class="hljs-string">'content '</span> + index,
+        index: index
+      }],
+      activeKey: index.toString()
+    };
+  },
+  remove(targetIndex, e) {
+    e.stopPropagation();
+    <span class="hljs-keyword">let</span> tabs = <span class="hljs-keyword">this</span>.state.tabs;
+    <span class="hljs-keyword">let</span> activeKey = <span class="hljs-keyword">this</span>.state.activeKey;
+    <span class="hljs-keyword">let</span> foundIndex = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">if</span>(tabs.length === <span class="hljs-number">1</span>) {
+      message.error(<span class="hljs-string">'仅剩一个，不能删除'</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">const</span> newTabs = tabs.filter(tab =&gt; {
+      <span class="hljs-keyword">if</span> (tab.index !== targetIndex) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+      } <span class="hljs-keyword">else</span> {
+        foundIndex = targetIndex;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+      }
+    });
+
+    <span class="hljs-keyword">if</span> (activeKey === targetIndex) {
+      activeKey = tabs[foundIndex - <span class="hljs-number">1</span>].index;
+    }
+
+    <span class="hljs-keyword">this</span>.setState({
+      tabs: newTabs, activeKey
+    });
+  },
+  add() {
+    index += <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">this</span>.setState({
+      tabs: <span class="hljs-keyword">this</span>.state.tabs.concat({
+        title: <span class="hljs-string">'title '</span> + index,
+        content: <span class="hljs-string">'content '</span> + index,
+        index: index,
+      }),
+      activeKey: index.toString(),
+    });
+  },
+  onChange(activeKey) {
+    <span class="hljs-built_in">console</span>.log(activeKey);
+    <span class="hljs-keyword">this</span>.setState({ activeKey });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> addBtn = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{addStyle}</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus-circle"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.add}</span> /&gt;</span>;</span>
+    <span class="hljs-keyword">const</span> operations = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginTop:</span> <span class="hljs-attribute">2</span> }}&gt;</span>操作<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>;</span>
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange}</span>
+        <span class="hljs-attribute">activeKey</span>=<span class="hljs-value">{this.state.activeKey}</span>
+        <span class="hljs-attribute">tabBarExtraContent</span>=<span class="hljs-value">{operations}</span>&gt;</span>
+        {
+          this.state.tabs.map(tab =&gt; (
+            <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{tab.index}</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">{</span>
+              &lt;<span class="hljs-attribute">div</span>&gt;</span>
+                {tab.title}
+                <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"cross"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{closeStyle}</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.remove.bind(this,</span> <span class="hljs-attribute">tab.index</span>)} /&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            }&gt;{tab.content}<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+          )</span>)
+        }
+        &lt;TabPane key=<span class="hljs-string">"__add"</span> disabled tab={addBtn} /&gt;
+      <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, document.getElementById('components-tabs-demo-add'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-add">动态的页签</a>
+    </div>
+    <p>演示添加删除和附加操作。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-vertical-left">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-vertical-left"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "1", tabPosition: "left" },
+  React.createElement(
+    TabPane,
+    { tab: "选项卡一", key: "1" },
+    "选项卡一内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡二", key: "2" },
+    "选项卡二内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡三长", key: "3" },
+    "选项卡三内容"
+  )
+), document.getElementById('components-tabs-demo-vertical-left'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">tabPosition</span>=<span class="hljs-value">"left"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三长"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-vertical-left'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-vertical-left">垂直</a>
+    </div>
+    <p>选项卡在左边。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-disabled">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-disabled"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+function callback(key) {}
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "1", onChange: callback },
+  React.createElement(
+    TabPane,
+    { tab: "选项卡一", key: "1" },
+    "选项卡一"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡二", disabled: true, key: "2" },
+    "选项卡二"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡三", key: "3" },
+    "选项卡三"
+  )
+), document.getElementById('components-tabs-demo-disabled'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">disabled</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-disabled'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-disabled">禁用</a>
+    </div>
+    <p>禁用某一项。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-slide">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-slide"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+function callback(key) {}
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "1", onChange: callback },
+  React.createElement(
+    TabPane,
+    { tab: "选项一", key: "1" },
+    "选项卡一"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项二", key: "2" },
+    "选项卡二"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项三", key: "3" },
+    "选项卡三"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项四", key: "4" },
+    "选项卡四"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项五", key: "5" },
+    "选项卡五"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项六", key: "6" },
+    "选项卡六"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项七", key: "7" },
+    "选项卡七"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项八", key: "8" },
+    "选项卡八"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项九", key: "9" },
+    "选项卡九"
+  )
+), document.getElementById('components-tabs-demo-slide'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项三"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项四"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span>&gt;</span>选项卡四<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项五"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"5"</span>&gt;</span>选项卡五<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项六"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"6"</span>&gt;</span>选项卡六<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项七"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"7"</span>&gt;</span>选项卡七<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项八"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"8"</span>&gt;</span>选项卡八<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项九"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"9"</span>&gt;</span>选项卡九<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-slide'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-slide">滑动</a>
+    </div>
+    <p>可以左右滑动，容纳更多标签。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-size">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-size"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "2", size: "small" },
+  React.createElement(
+    TabPane,
+    { tab: "选项卡一", key: "1" },
+    "选项卡一内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡二", key: "2" },
+    "选项卡二内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡三", key: "3" },
+    "选项卡三内容"
+  )
+), document.getElementById('components-tabs-demo-size'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-size'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-size">迷你型</a>
+    </div>
+    <p>用在弹出框等较狭窄的容器内。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-vertical-right">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-vertical-right"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var TabPane = _antd.Tabs.TabPane;
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "1", tabPosition: "right" },
+  React.createElement(
+    TabPane,
+    { tab: "选项卡一", key: "1" },
+    "选项卡一内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡二", key: "2" },
+    "选项卡二内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡三长", key: "3" },
+    "选项卡三内容"
+  )
+), document.getElementById('components-tabs-demo-vertical-right'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">tabPosition</span>=<span class="hljs-value">"right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三长"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-vertical-right'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-vertical-right">垂直</a>
+    </div>
+    <p>选项卡在右边。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2dJ2mg">报告 Bug</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

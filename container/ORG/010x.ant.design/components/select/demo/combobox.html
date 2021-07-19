@@ -1,0 +1,94 @@
+<div class="code-box" id="demo-combobox">
+  <div class="code-box-demo">
+    <div id="components-select-demo-combobox"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Option = _antd.Select.Option;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      options: []
+    };
+  },
+  handleChange: function handleChange(value) {
+    var options = undefined;
+    if (!value || value.indexOf('@') >= 0) {
+      options = [];
+    } else {
+      options = ['gmail.com', '163.com', 'qq.com'].map(function (domain) {
+        var email = value + '@' + domain;
+        return React.createElement(
+          Option,
+          { key: email },
+          email
+        );
+      });
+    }
+    this.setState({
+      options: options
+    });
+  },
+  render: function render() {
+    // filterOption 需要设置为 false，数据是动态设置的
+    return React.createElement(
+      _antd.Select,
+      { combobox: true,
+        style: { width: 200 },
+        onChange: this.handleChange,
+        filterOption: false,
+        searchPlaceholder: '请输入账户名' },
+      this.state.options
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), document.getElementById('components-select-demo-combobox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Select } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Option = Select.Option;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      options: []
+    };
+  },
+  handleChange(value) {
+    <span class="hljs-keyword">let</span> options;
+    <span class="hljs-keyword">if</span> (!value || value.indexOf(<span class="hljs-string">'@'</span>) &gt;= <span class="hljs-number">0</span>) {
+      options = [];
+    } <span class="hljs-keyword">else</span> {
+      options = [<span class="hljs-string">'gmail.com'</span>, <span class="hljs-string">'163.com'</span>, <span class="hljs-string">'qq.com'</span>].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">domain</span>) </span>{
+        <span class="hljs-keyword">const</span> email = value + <span class="hljs-string">'@'</span> + domain;
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{email}</span>&gt;</span>{email}<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>;</span>
+      });
+    }
+    <span class="hljs-keyword">this</span>.setState({
+      options: options
+    });
+  },
+  render() {
+    <span class="hljs-comment">// filterOption 需要设置为 false，数据是动态设置的</span>
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">combobox</span>
+      <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:200}}</span>
+      <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange}</span>
+      <span class="hljs-attribute">filterOption</span>=<span class="hljs-value">{false}</span>
+      <span class="hljs-attribute">searchPlaceholder</span>=<span class="hljs-value">"请输入账户名"</span>&gt;</span>
+      {this.state.options}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, document.getElementById('components-select-demo-combobox'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-combobox">智能提示</a>
+    </div>
+    <p>输入框自动完成功能，下面是一个账号注册表单的例子。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

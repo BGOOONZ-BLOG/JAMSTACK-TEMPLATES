@@ -1,5 +1,5 @@
-import disconnectDb from './disconnectDb'
-import resetDb from './resetDb'
+import disconnectDb from "./disconnectDb";
+import resetDb from "./resetDb";
 
-beforeEach(resetDb)
-afterAll(() => resetDb().then(disconnectDb))
+beforeEach(resetDb);
+afterAll(() => resetDb().then(disconnectDb));

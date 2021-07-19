@@ -1,0 +1,127 @@
+<div class="code-box" id="anim-demo-custom">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-custom"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-custom');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "切换"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { className: "demo-content",
+          animConfig: [{ opacity: [1, 0], translateY: [0, 50] }, { opacity: [1, 0], translateY: [0, -50] }] },
+        this.state.show ? [React.createElement(
+          "div",
+          { className: "demo-kp", key: "a" },
+          React.createElement(
+            "ul",
+            null,
+            React.createElement("li", null),
+            React.createElement("li", null),
+            React.createElement("li", null)
+          )
+        ), React.createElement(
+          "div",
+          { className: "demo-listBox", key: "b" },
+          React.createElement(
+            "div",
+            { className: "demo-list" },
+            React.createElement("div", { className: "title" }),
+            React.createElement(
+              "ul",
+              null,
+              React.createElement("li", null),
+              React.createElement("li", null),
+              React.createElement("li", null)
+            )
+          )
+        )] : null
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript">import { QueueAnim, Button } from 'antd';
+
+const Test = React.createClass({
+  getInitialState() {
+    return {
+      show: true,
+    };
+  },
+  onClick() {
+    this.setState({
+      show: !this.state.show,
+    });
+  },
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p className="buttons"&gt;
+          &lt;Button type="primary" onClick={this.onClick}&gt;切换&lt;/Button&gt;
+        &lt;/p&gt;
+        &lt;QueueAnim className="demo-content"
+          animConfig={[
+            { opacity: [1, 0], translateY: [0, 50] },
+            { opacity: [1, 0], translateY: [0, -50] }
+          ]}&gt;
+          {this.state.show ? [
+            &lt;div className="demo-kp" key="a"&gt;
+              &lt;ul&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;,
+            &lt;div className="demo-listBox" key="b"&gt;
+              &lt;div className="demo-list"&gt;
+                &lt;div className="title"&gt;&lt;/div&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          ] : null}
+        &lt;/QueueAnim&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(&lt;Test /&gt;, mountNode);</code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-custom">自定义动画进出场</a>
+    </div>
+    <p>通过 <code>animConfig</code> 来自定义动画进出场。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

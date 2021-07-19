@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Progress 进度条 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/??component/console-polyfill/0.2.2/index.js,component/es5-shim/4.1.14/es5-shim.min.js,component/es5-shim/4.1.14/es5-sham.min.js,component/html5shiv/3.7.2/html5shiv.min.js,g/component/media-match/2.0.2/media.match.min.js"></script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timepicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.10.5',
+        stable: '0.10.5'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    <script src="https://t.alipayobjects.com/images/T1DrxhXe0mXXXXXXXX.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/install" class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/upgrade-to-0.10" class="">
+          0.10 升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timepicker/"
+               class="">
+              Timepicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Progress 进度条
+    </h1>
+    <p>展示操作的当前进度。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><p>在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。</p>
+<ul>
+<li>当一个操作会打断当前界面，或者需要在后台运行，且耗时可能超过2秒时；</li>
+<li>当需要显示一个操作完成的百分比时。</li>
+</ul>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><h2 id="progress-line">Progress Line<a href="#progress-line" class="anchor">#</a> </h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>百分比</td>
+<td>number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>format</td>
+<td>数字的模板</td>
+<td>string</td>
+<td>&quot;${percent}%&quot;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>状态，可选：normal、exception、active</td>
+<td>string</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>strokeWidth</td>
+<td>进度条线的宽度，单位是px</td>
+<td>number</td>
+<td>1</td>
+</tr>
+<tr>
+<td>showInfo</td>
+<td>是否显示进度数值和状态图标</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="progress-circle">Progress Circle<a href="#progress-circle" class="anchor">#</a> </h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>百分比</td>
+<td>number</td>
+<td>0</td>
+</tr>
+<tr>
+<td>format</td>
+<td>数字的模板</td>
+<td>string</td>
+<td>&quot;${percent}%&quot;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>状态，可选：normal、exception</td>
+<td>string</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>strokeWidth</td>
+<td>进度条线的宽度，单位是进度条画布宽度的百分比</td>
+<td>number</td>
+<td>1</td>
+</tr>
+<tr>
+<td>width</td>
+<td>必填，进度条画布宽度，单位px。这里没有提供height属性设置，Line型高度就是strokeWidth，Circle型高度等于width</td>
+<td>number</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-line">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-line"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var ProgressLine = _antd.Progress.Line;
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(ProgressLine, { percent: 30 }),
+  React.createElement(ProgressLine, { percent: 50, status: "active" }),
+  React.createElement(ProgressLine, { percent: 70, status: "exception", format: React.createElement(_antd.Icon, { type: "exclamation" }) }),
+  React.createElement(ProgressLine, { percent: 100 }),
+  React.createElement(ProgressLine, { percent: 50, showInfo: false })
+), document.getElementById('components-progress-demo-line'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressLine = Progress.Line;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{30}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{50}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"active"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{70}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"exception"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"exclamation"</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{50}</span> <span class="hljs-attribute">showInfo</span>=<span class="hljs-value">{false}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, document.getElementById('components-progress-demo-line'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-line">进度条</a>
+    </div>
+    <p>标准的进度条。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-line-mini">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-line-mini"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var ProgressLine = _antd.Progress.Line;
+
+ReactDOM.render(React.createElement(
+  "div",
+  { style: { width: 170 } },
+  React.createElement(ProgressLine, { percent: 30, strokeWidth: 5 }),
+  React.createElement(ProgressLine, { percent: 50, strokeWidth: 5, status: "active" }),
+  React.createElement(ProgressLine, { percent: 70, strokeWidth: 5, status: "exception", format: React.createElement(_antd.Icon, { type: "exclamation" }) }),
+  React.createElement(ProgressLine, { percent: 100, strokeWidth: 5 })
+), document.getElementById('components-progress-demo-line-mini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressLine = Progress.Line;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">170</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{30}</span> <span class="hljs-attribute">strokeWidth</span>=<span class="hljs-value">{5}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{50}</span> <span class="hljs-attribute">strokeWidth</span>=<span class="hljs-value">{5}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"active"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{70}</span> <span class="hljs-attribute">strokeWidth</span>=<span class="hljs-value">{5}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"exception"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"exclamation"</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> <span class="hljs-attribute">strokeWidth</span>=<span class="hljs-value">{5}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, document.getElementById('components-progress-demo-line-mini'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-line-mini">小型进度条</a>
+    </div>
+    <p>适合放在较狭窄的区域内。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-circle-dynamic">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-circle-dynamic"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var ProgressCircle = _antd.Progress.Circle;
+var ButtonGroup = _antd.Button.Group;
+
+var MyProgress = React.createClass({
+  displayName: "MyProgress",
+
+  getInitialState: function getInitialState() {
+    return {
+      percent: 0
+    };
+  },
+  increase: function increase() {
+    var percent = this.state.percent + 10;
+    if (percent > 100) {
+      percent = 100;
+    }
+    this.setState({ percent: percent });
+  },
+  decline: function decline() {
+    var percent = this.state.percent - 10;
+    if (percent < 0) {
+      percent = 0;
+    }
+    this.setState({ percent: percent });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(ProgressCircle, { percent: this.state.percent }),
+      React.createElement(
+        ButtonGroup,
+        null,
+        React.createElement(
+          _antd.Button,
+          { type: "ghost", onClick: this.decline },
+          React.createElement(_antd.Icon, { type: "minus" })
+        ),
+        React.createElement(
+          _antd.Button,
+          { type: "ghost", onClick: this.increase },
+          React.createElement(_antd.Icon, { type: "plus" })
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(MyProgress, null), document.getElementById('components-progress-demo-circle-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressCircle = Progress.Circle;
+<span class="hljs-keyword">const</span> ButtonGroup = Button.Group;
+
+<span class="hljs-keyword">const</span> MyProgress = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      percent: <span class="hljs-number">0</span>
+    };
+  },
+  increase() {
+    <span class="hljs-keyword">let</span> percent = <span class="hljs-keyword">this</span>.state.percent + <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">if</span> (percent &gt; <span class="hljs-number">100</span>) {
+      percent = <span class="hljs-number">100</span>;
+    }
+    <span class="hljs-keyword">this</span>.setState({ percent });
+  },
+  decline() {
+    <span class="hljs-keyword">let</span> percent = <span class="hljs-keyword">this</span>.state.percent - <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">if</span> (percent &lt; <span class="hljs-number">0</span>) {
+      percent = <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">this</span>.setState({ percent });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{this.state.percent}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.decline}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"minus"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.increase}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">MyProgress</span> /&gt;</span>, document.getElementById('components-progress-demo-circle-dynamic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-circle-dynamic">进度圈动态展示</a>
+    </div>
+    <p>会动的进度条才是好进度条。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-circle">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-circle"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var ProgressCircle = _antd.Progress.Circle;
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(ProgressCircle, { percent: 30 }),
+  React.createElement(ProgressCircle, { percent: 70, status: "exception", format: React.createElement(_antd.Icon, { type: "exclamation" }) }),
+  React.createElement(ProgressCircle, { percent: 100 })
+), document.getElementById('components-progress-demo-circle'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressCircle = Progress.Circle;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{30}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{70}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"exception"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"exclamation"</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  , document.getElementById('components-progress-demo-circle'));</span></code></pre></div><style>
+.ant-progress-circle-wrap,
+.ant-progress-line-wrap {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-circle">进度圈</a>
+    </div>
+    <p>圈形的进度。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-circle-mini">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-circle-mini"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var ProgressCircle = _antd.Progress.Circle;
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(ProgressCircle, { percent: 30, width: 80 }),
+  React.createElement(ProgressCircle, { percent: 70, width: 80, status: "exception", format: React.createElement(_antd.Icon, { type: "exclamation" }) }),
+  React.createElement(ProgressCircle, { percent: 100, width: 80 })
+), document.getElementById('components-progress-demo-circle-mini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressCircle = Progress.Circle;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{30}</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{80}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{70}</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{80}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"exception"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"exclamation"</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{80}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  , document.getElementById('components-progress-demo-circle-mini'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-circle-mini">小型进度圈</a>
+    </div>
+    <p>小一号的圈形进度。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="demo-dynamic">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-dynamic"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+var ProgressLine = _antd.Progress.Line;
+var ButtonGroup = _antd.Button.Group;
+
+var MyProgress = React.createClass({
+  displayName: "MyProgress",
+
+  getInitialState: function getInitialState() {
+    return {
+      percent: 0
+    };
+  },
+  increase: function increase() {
+    var percent = this.state.percent + 10;
+    if (percent > 100) {
+      percent = 100;
+    }
+    this.setState({ percent: percent });
+  },
+  decline: function decline() {
+    var percent = this.state.percent - 10;
+    if (percent < 0) {
+      percent = 0;
+    }
+    this.setState({ percent: percent });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(ProgressLine, { percent: this.state.percent }),
+      React.createElement(
+        ButtonGroup,
+        null,
+        React.createElement(
+          _antd.Button,
+          { type: "ghost", onClick: this.decline },
+          React.createElement(_antd.Icon, { type: "minus" })
+        ),
+        React.createElement(
+          _antd.Button,
+          { type: "ghost", onClick: this.increase },
+          React.createElement(_antd.Icon, { type: "plus" })
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(MyProgress, null), document.getElementById('components-progress-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressLine = Progress.Line;
+<span class="hljs-keyword">const</span> ButtonGroup = Button.Group;
+
+<span class="hljs-keyword">const</span> MyProgress = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      percent: <span class="hljs-number">0</span>
+    };
+  },
+  increase() {
+    <span class="hljs-keyword">let</span> percent = <span class="hljs-keyword">this</span>.state.percent + <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">if</span> (percent &gt; <span class="hljs-number">100</span>) {
+      percent = <span class="hljs-number">100</span>;
+    }
+    <span class="hljs-keyword">this</span>.setState({ percent });
+  },
+  decline() {
+    <span class="hljs-keyword">let</span> percent = <span class="hljs-keyword">this</span>.state.percent - <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">if</span> (percent &lt; <span class="hljs-number">0</span>) {
+      percent = <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">this</span>.setState({ percent });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{this.state.percent}</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.decline}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"minus"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.increase}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">MyProgress</span> /&gt;</span>, document.getElementById('components-progress-demo-dynamic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-dynamic">动态展示</a>
+    </div>
+    <p>会动的进度条才是好进度条。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2dJ2mg">报告 Bug</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

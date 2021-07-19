@@ -1,0 +1,215 @@
+<div class="code-box" id="demo-placement">
+  <div class="code-box-demo">
+    <div id="components-popconfirm-demo-placement"></div>
+    <script>mountNode = document.getElementById('components-popconfirm-demo-placement');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var text = '确定要删除这个任务吗？';
+
+function confirm() {
+  _antd.message.info('点击了确定');
+}
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'div',
+    { style: { marginLeft: 60 } },
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'topLeft', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u4E0A\u5DE6'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'top', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u4E0A\u8FB9'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'topRight', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u4E0A\u53F3'
+      )
+    )
+  ),
+  React.createElement(
+    'div',
+    { style: { width: 60, float: 'left' } },
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'leftTop', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u5DE6\u4E0A'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'left', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u5DE6\u8FB9'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'leftBottom', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u5DE6\u4E0B'
+      )
+    )
+  ),
+  React.createElement(
+    'div',
+    { style: { width: 60, marginLeft: 252 } },
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'rightTop', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u53F3\u4E0A'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'right', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u53F3\u8FB9'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'rightBottom', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u53F3\u4E0B'
+      )
+    )
+  ),
+  React.createElement(
+    'div',
+    { style: { marginLeft: 60, clear: 'both' } },
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'bottomLeft', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u4E0B\u5DE6'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'bottom', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u4E0B\u8FB9'
+      )
+    ),
+    React.createElement(
+      _antd.Popconfirm,
+      { placement: 'bottomRight', title: text, onConfirm: confirm },
+      React.createElement(
+        _antd.Button,
+        null,
+        '\u4E0B\u53F3'
+      )
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Popconfirm, message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> text = <span class="hljs-string">'确定要删除这个任务吗？'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">confirm</span>(<span class="hljs-params"></span>) </span>{
+  message.info(<span class="hljs-string">'点击了确定'</span>);
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginLeft:</span> <span class="hljs-attribute">60</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"topLeft"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>上左<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"top"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>上边<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"topRight"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>上右<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">60</span>, <span class="hljs-attribute">float:</span> '<span class="hljs-attribute">left</span>' }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"leftTop"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>左上<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"left"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>左边<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"leftBottom"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>左下<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">60</span>, <span class="hljs-attribute">marginLeft:</span> <span class="hljs-attribute">252</span> }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"rightTop"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>右上<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"right"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>右边<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"rightBottom"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>右下<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginLeft:</span> <span class="hljs-attribute">60</span>, <span class="hljs-attribute">clear:</span> '<span class="hljs-attribute">both</span>' }}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"bottomLeft"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>下左<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"bottom"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>下边<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"bottomRight"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>下右<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div><style>
+.code-box-demo .ant-popover-wrap > a {
+  margin-right: 1em;
+}
+.code-box-demo .ant-btn {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-placement">位置</a>
+    </div>
+    
+<p>位置有十二个方向。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

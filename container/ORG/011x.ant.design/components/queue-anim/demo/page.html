@@ -1,0 +1,187 @@
+<div class="code-box" id="anim-demo-page">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-page"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-page');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "切换"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { type: ['right', 'left'] },
+        this.state.show ? [React.createElement(
+          "div",
+          { className: "demo-header", key: "header" },
+          React.createElement(
+            "div",
+            { className: "logo" },
+            React.createElement("img", { width: "30", src: "https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg" }),
+            React.createElement(
+              "span",
+              null,
+              "logo"
+            )
+          ),
+          React.createElement(
+            _antd.QueueAnim,
+            { component: "ul" },
+            React.createElement("li", { key: "0" }),
+            React.createElement("li", { key: "1" }),
+            React.createElement("li", { key: "2" }),
+            React.createElement("li", { key: "3" }),
+            React.createElement("li", { key: "4" })
+          )
+        ), React.createElement(
+          _antd.QueueAnim,
+          { className: "demo-content", key: "content", delay: 300 },
+          React.createElement(
+            "div",
+            { className: "demo-title", key: "title" },
+            "我是标题"
+          ),
+          React.createElement(
+            "div",
+            { className: "demo-kp", key: "b" },
+            React.createElement(
+              _antd.QueueAnim,
+              { component: "ul" },
+              React.createElement("li", { key: "0" }),
+              React.createElement("li", { key: "1" }),
+              React.createElement("li", { key: "2" })
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "demo-title", key: "title2" },
+            "我是标题"
+          ),
+          React.createElement(
+            "div",
+            { className: "demo-listBox" },
+            React.createElement(
+              _antd.QueueAnim,
+              { className: "demo-list", delay: 500 },
+              React.createElement("div", { className: "title", key: "title3" }),
+              React.createElement(
+                _antd.QueueAnim,
+                { component: "ul", type: "bottom", key: "li" },
+                React.createElement("li", { key: "0" }),
+                React.createElement("li", { key: "1" }),
+                React.createElement("li", { key: "2" }),
+                React.createElement("li", { key: "3" }),
+                React.createElement("li", { key: "4" })
+              )
+            )
+          )
+        ), React.createElement(
+          _antd.QueueAnim,
+          { delay: 1000, type: "bottom", key: "footerBox" },
+          React.createElement("div", { className: "demo-footer", key: "footer" })
+        )] : null
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript">import { QueueAnim, Button } from 'antd';
+
+const Test = React.createClass({
+  getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p className="buttons"&gt;
+          &lt;Button type="primary" onClick={this.onClick}&gt;切换&lt;/Button&gt;
+        &lt;/p&gt;
+        &lt;QueueAnim type={['right', 'left']}&gt;
+        {this.state.show ? [
+          &lt;div className="demo-header" key="header"&gt;
+            &lt;div className="logo"&gt;
+              &lt;img width="30" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg" /&gt;
+              &lt;span&gt;logo&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;QueueAnim component="ul"&gt;
+              &lt;li key="0"&gt;&lt;/li&gt;
+              &lt;li key="1"&gt;&lt;/li&gt;
+              &lt;li key="2"&gt;&lt;/li&gt;
+              &lt;li key="3"&gt;&lt;/li&gt;
+              &lt;li key="4"&gt;&lt;/li&gt;
+            &lt;/QueueAnim&gt;
+          &lt;/div&gt;,
+          &lt;QueueAnim className="demo-content" key="content" delay={300}&gt;
+            &lt;div className="demo-title" key="title"&gt;我是标题&lt;/div&gt;
+            &lt;div className="demo-kp" key="b"&gt;
+              &lt;QueueAnim component="ul"&gt;
+                &lt;li key="0"&gt;&lt;/li&gt;
+                &lt;li key="1"&gt;&lt;/li&gt;
+                &lt;li key="2"&gt;&lt;/li&gt;
+              &lt;/QueueAnim&gt;
+            &lt;/div&gt;
+            &lt;div className="demo-title" key="title2"&gt;我是标题&lt;/div&gt;
+            &lt;div className="demo-listBox"&gt;
+              &lt;QueueAnim className="demo-list" delay={500}&gt;
+                &lt;div className="title" key="title3"&gt;&lt;/div&gt;
+                &lt;QueueAnim component="ul" type="bottom" key="li"&gt;
+                  &lt;li key="0"&gt;&lt;/li&gt;
+                  &lt;li key="1"&gt;&lt;/li&gt;
+                  &lt;li key="2"&gt;&lt;/li&gt;
+                  &lt;li key="3"&gt;&lt;/li&gt;
+                  &lt;li key="4"&gt;&lt;/li&gt;
+                &lt;/QueueAnim&gt;
+              &lt;/QueueAnim&gt;
+            &lt;/div&gt;
+          &lt;/QueueAnim&gt;,
+          &lt;QueueAnim delay={1000} type="bottom" key="footerBox"&gt;
+            &lt;div className="demo-footer" key="footer"&gt;&lt;/div&gt;
+          &lt;/QueueAnim&gt;
+        ] : null}
+        &lt;/QueueAnim&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(&lt;Test /&gt;, mountNode);</code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-page">一个复杂些的例子</a>
+    </div>
+    <p>模拟一个完整的页面。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

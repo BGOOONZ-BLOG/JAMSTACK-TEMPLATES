@@ -1,0 +1,55 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-tabs-demo-basic');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var TabPane = _antd.Tabs.TabPane;
+
+function callback(key) {
+  console.log(key);
+}
+
+ReactDOM.render(React.createElement(
+  _antd.Tabs,
+  { defaultActiveKey: "1", onChange: callback },
+  React.createElement(
+    TabPane,
+    { tab: "选项卡一", key: "1" },
+    "选项卡一内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡二", key: "2" },
+    "选项卡二内容"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: "选项卡三", key: "3" },
+    "选项卡三内容"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(key);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡一"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡二"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡三"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    <p>默认选中第一项。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

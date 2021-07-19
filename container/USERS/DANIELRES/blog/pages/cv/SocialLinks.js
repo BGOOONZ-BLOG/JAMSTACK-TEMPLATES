@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import FaGithub from 'react-icons/lib/fa/github'
-import FaFacebook from 'react-icons/lib/fa/facebook'
-import FaTwitter from 'react-icons/lib/fa/twitter'
-import FaLinkedin from 'react-icons/lib/fa/linkedin'
-import FaFlickr from 'react-icons/lib/fa/flickr'
-import FaSoundcould from 'react-icons/lib/fa/soundcloud'
-import MdInfo from 'react-icons/lib/md/info'
+import React from "react";
+import styled from "styled-components";
+import FaGithub from "react-icons/lib/fa/github";
+import FaFacebook from "react-icons/lib/fa/facebook";
+import FaTwitter from "react-icons/lib/fa/twitter";
+import FaLinkedin from "react-icons/lib/fa/linkedin";
+import FaFlickr from "react-icons/lib/fa/flickr";
+import FaSoundcould from "react-icons/lib/fa/soundcloud";
+import MdInfo from "react-icons/lib/md/info";
 
 const S = styled.span`
   display: inline-block;
@@ -20,69 +20,104 @@ const S = styled.span`
   margin-right: 10px;
   font-size: 30px;
   transition-duration: 0.4s;
-    &:hover {
-      background: #5790C4;
-      color: white;
-    }
+  &:hover {
+    background: #5790c4;
+    color: white;
+  }
   a {
     color: inherit;
   }
   position: relative;
   transition-duration: 0.2s;
   top: 0;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   &:hover {
     top: -5px;
-    box-shadow: -0px 10px 10px rgba(0,0,0,0.2);
+    box-shadow: -0px 10px 10px rgba(0, 0, 0, 0.2);
   }
-`
+`;
 
-const SocialLinks = () =>
+const SocialLinks = () => (
   <div>
     <S>
-      <a title="github.com/danielres" href="https://www.github.com/danielres" target="_blank" rel="external">
+      <a
+        title="github.com/danielres"
+        href="https://www.github.com/danielres"
+        target="_blank"
+        rel="external"
+      >
         <FaGithub />
       </a>
     </S>
 
     <S>
-      <a title="twitter.com/pixarea" href="https://twitter.com/pixarea" target="_blank" rel="external">
+      <a
+        title="twitter.com/pixarea"
+        href="https://twitter.com/pixarea"
+        target="_blank"
+        rel="external"
+      >
         <FaTwitter />
       </a>
     </S>
 
     <S>
-      <a title="facebook.com/daniel.reszka.58" href="https://www.facebook.com/daniel.reszka.58" target="_blank" rel="external">
+      <a
+        title="facebook.com/daniel.reszka.58"
+        href="https://www.facebook.com/daniel.reszka.58"
+        target="_blank"
+        rel="external"
+      >
         <FaFacebook />
       </a>
     </S>
 
     <S>
-      <a title="linkedin.com/in/danielres" href="https://be.linkedin.com/in/danielres" target="_blank" rel="external">
+      <a
+        title="linkedin.com/in/danielres"
+        href="https://be.linkedin.com/in/danielres"
+        target="_blank"
+        rel="external"
+      >
         <FaLinkedin />
       </a>
     </S>
 
     <S>
-      <a title="flickr.com/photos/pixarea" href="https://www.flickr.com/photos/pixarea/albums" target="_blank" rel="external">
+      <a
+        title="flickr.com/photos/pixarea"
+        href="https://www.flickr.com/photos/pixarea/albums"
+        target="_blank"
+        rel="external"
+      >
         <FaFlickr />
       </a>
     </S>
 
     <S>
-      <a title="soundcloud.com/tales-from-within" href="https://soundcloud.com/tales-from-within/sets/tales-from-within" target="_blank" rel="external">
+      <a
+        title="soundcloud.com/tales-from-within"
+        href="https://soundcloud.com/tales-from-within/sets/tales-from-within"
+        target="_blank"
+        rel="external"
+      >
         <FaSoundcould />
       </a>
     </S>
 
-    {false &&
+    {false && (
       <S>
-        <a title="about.me/daniel.r" href="https://about.me/daniel.r" target="_blank" rel="external">
+        <a
+          title="about.me/daniel.r"
+          href="https://about.me/daniel.r"
+          target="_blank"
+          rel="external"
+        >
           <MdInfo />
         </a>
       </S>
-    }
+    )}
   </div>
+);
 
-
-export default SocialLinks
+export default SocialLinks;

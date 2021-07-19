@@ -1,17 +1,17 @@
-const express = require('express')
+const express = require("express");
 
-const ServerError = require('../../ServerError')
+const ServerError = require("../../ServerError");
 
-const router = express.Router()
+const router = express.Router();
 
-router.post('/', (req, res, next) => {
+router.post("/", (req, res, next) => {
   try {
-    res.clearCookie('auth')
-    res.clearCookie('authExpiresAt')
-    res.json({ success: true })
+    res.clearCookie("auth");
+    res.clearCookie("authExpiresAt");
+    res.json({ success: true });
   } catch (e) {
-    next(ServerError(500, 'Logout error', e))
+    next(ServerError(500, "Logout error", e));
   }
-})
+});
 
-module.exports = router
+module.exports = router;

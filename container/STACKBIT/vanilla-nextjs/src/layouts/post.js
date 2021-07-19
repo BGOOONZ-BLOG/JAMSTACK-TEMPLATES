@@ -27,7 +27,11 @@ export default class Post extends React.Component {
                         <div className="copy">
                             <h1>{title}</h1>
                             {subtitle && <h3>{htmlToReact(subtitle)}</h3>}
-                            <h3 className="publish-date"><time className="published" dateTime={dateTimeAttr}>{formattedDate}</time></h3>
+                            <h3 className="publish-date">
+                                <time className="published" dateTime={dateTimeAttr}>
+                                    {formattedDate}
+                                </time>
+                            </h3>
                         </div>
                     </header>
                     {markdownContent && <div className="content">{markdownify(markdownContent)}</div>}

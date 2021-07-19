@@ -14,13 +14,13 @@ export async function init(
   try {
     const port = process.env.PORT || configs.port;
     const server = new Hapi.Server({
-      debug: { request: ['error'] },
+      debug: { request: ["error"] },
       port: port,
       routes: {
         cors: {
-          origin: ["*"]
-        }
-      }
+          origin: ["*"],
+        },
+      },
     });
 
     if (configs.routePrefix) {
@@ -31,7 +31,7 @@ export async function init(
     const plugins: Array<string> = configs.plugins;
     const pluginOptions = {
       database: database,
-      serverConfigs: configs
+      serverConfigs: configs,
     };
 
     let pluginPromises: Promise<any>[] = [];

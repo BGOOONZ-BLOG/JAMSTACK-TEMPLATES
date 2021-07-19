@@ -1,9 +1,9 @@
 //flux/actionsBundle.js
 
-var AppActions = require('./AppActions');
+var AppActions = require("./AppActions");
 
 var actions = {
-    AppActions: AppActions
+  AppActions: AppActions,
 };
 
 module.exports = actions;

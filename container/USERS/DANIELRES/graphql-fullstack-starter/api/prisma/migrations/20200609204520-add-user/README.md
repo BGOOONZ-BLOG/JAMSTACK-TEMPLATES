@@ -42,5 +42,3 @@ migration ..20200609204520-add-user
 +  updatedAt DateTime?
 +}
 ```
-
-

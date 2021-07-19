@@ -67,18 +67,18 @@ comments:
   # via email when someone adds a reply or a new comment. This requires an account
   # with Mailgun, which you can get for free at http://mailgun.com.
   # notifications:
-    # Enable notifications
-    # enabled: true
+  # Enable notifications
+  # enabled: true
 
-    # (!) ENCRYPTED
-    #
-    # Mailgun API key
-    # apiKey: ""
+  # (!) ENCRYPTED
+  #
+  # Mailgun API key
+  # apiKey: ""
 
-    # (!) ENCRYPTED
-    #
-    # Mailgun domain (encrypted)
-    # domain: ""
+  # (!) ENCRYPTED
+  #
+  # Mailgun domain (encrypted)
+  # domain: ""
 
   # (*) REQUIRED
   #

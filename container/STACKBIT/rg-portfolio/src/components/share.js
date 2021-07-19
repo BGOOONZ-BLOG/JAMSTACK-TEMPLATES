@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {
   FacebookShareButton,
   TwitterShareButton,
-  WhatsappShareButton
+  WhatsappShareButton,
 } from "react-share";
 
 const Share = ({ socialConfig }) => {
@@ -49,13 +49,13 @@ Share.propTypes = {
     twitterHandle: PropTypes.string.isRequired,
     config: PropTypes.shape({
       url: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    })
+      title: PropTypes.string.isRequired,
+    }),
   }).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string)
+  tags: PropTypes.arrayOf(PropTypes.string),
 };
 Share.defaultProps = {
-  tags: []
+  tags: [],
 };
 
 export default Share;

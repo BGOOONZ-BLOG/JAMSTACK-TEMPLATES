@@ -1,0 +1,198 @@
+<div class="code-box" id="demo-ajax">
+  <div class="code-box-demo">
+    <div id="components-table-demo-ajax"></div>
+    <script>(function(){'use strict';
+
+var Table = antd.Table;
+
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  filters: [{
+    text: '姓李的',
+    value: '李'
+  }, {
+    text: '姓胡的',
+    value: '胡'
+  }]
+}, {
+  title: '年龄',
+  dataIndex: 'age',
+  sorter: true
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+
+var dataSource = new Table.DataSource({
+  url: "/components/table/demo/data.json",
+  resolve: function resolve(result) {
+    return result.data;
+  },
+  data: {},
+  // 和后台接口返回的分页数据进行适配
+  getPagination: function getPagination(result) {
+    return {
+      total: result.totalCount,
+      pageSize: result.pageSize
+    };
+  },
+  // 和后台接口接收的参数进行适配
+  // 参数里提供了分页、筛选、排序的信息
+  getParams: function getParams(pagination, filters, sorter) {
+    console.log('getParams 的参数是：', pagination, filters, sorter);
+    var params = {
+      pageSize: pagination.pageSize,
+      currentPage: pagination.current,
+      sortField: sorter.field,
+      sortOrder: sorter.order
+    };
+    for (var key in filters) {
+      params[key] = filters[key];
+    }
+    console.log('请求参数：', params);
+    return params;
+  }
+});
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      dataSource: dataSource
+    };
+  },
+  refresh: function refresh() {
+    this.setState({
+      dataSource: dataSource.clone()
+    });
+  },
+  changeAndRefresh: function changeAndRefresh() {
+    // 可以修改原来的 dataSource 再发请求
+    this.setState({
+      dataSource: dataSource.clone({
+        data: {
+          city: 'hz'
+        }
+      })
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(Table, { columns: columns, dataSource: this.state.dataSource }),
+      React.createElement(
+        'button',
+        { className: 'ant-btn ant-btn-primary', onClick: this.refresh },
+        '重新加载数据'
+      ),
+      ' ',
+      React.createElement(
+        'button',
+        { className: 'ant-btn', onClick: this.changeAndRefresh },
+        '加载 city=hz 的数据'
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-table-demo-ajax'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Table = antd.Table;
+
+<span class="keyword">var</span> columns = [{
+  title: <span class="string">'姓名'</span>,
+  dataIndex: <span class="string">'name'</span>,
+  filters: [{
+    text: <span class="string">'姓李的'</span>,
+    value: <span class="string">'李'</span>
+  }, {
+    text: <span class="string">'姓胡的'</span>,
+    value: <span class="string">'胡'</span>
+  }]
+}, {
+  title: <span class="string">'年龄'</span>,
+  dataIndex: <span class="string">'age'</span>,
+  sorter: <span class="literal">true</span>
+}, {
+  title: <span class="string">'住址'</span>,
+  dataIndex: <span class="string">'address'</span>
+}];
+
+<span class="keyword">var</span> dataSource = <span class="keyword">new</span> Table.DataSource({
+  url: <span class="string">"/components/table/demo/data.json"</span>,
+  resolve: <span class="function"><span class="keyword">function</span><span class="params">(result)</span> {</span>
+    <span class="keyword">return</span> result.data;
+  },
+  data: {},
+  <span class="comment">// 和后台接口返回的分页数据进行适配</span>
+  getPagination: <span class="function"><span class="keyword">function</span><span class="params">(result)</span> {</span>
+    <span class="keyword">return</span> {
+      total: result.totalCount,
+      pageSize: result.pageSize
+    }
+  },
+  <span class="comment">// 和后台接口接收的参数进行适配</span>
+  <span class="comment">// 参数里提供了分页、筛选、排序的信息</span>
+  getParams: <span class="function"><span class="keyword">function</span><span class="params">(pagination, filters, sorter)</span> {</span>
+    console.log(<span class="string">'getParams 的参数是：'</span>, pagination, filters, sorter);
+    <span class="keyword">var</span> params = {
+      pageSize: pagination.pageSize,
+      currentPage: pagination.current,
+      sortField: sorter.field,
+      sortOrder: sorter.order
+    };
+    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> filters) {
+      params[key] = filters[key];
+    }
+    console.log(<span class="string">'请求参数：'</span>, params);
+    <span class="keyword">return</span> params;
+  }
+});
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      dataSource: dataSource
+    };
+  },
+  refresh() {
+    <span class="keyword">this</span>.setState({
+      dataSource: dataSource.clone()
+    });
+  },
+  changeAndRefresh() {
+    <span class="comment">// 可以修改原来的 dataSource 再发请求</span>
+    <span class="keyword">this</span>.setState({
+      dataSource: dataSource.clone({
+        data: {
+          city: <span class="string">'hz'</span>
+        }
+      })
+    });
+  },
+  render() {
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Table</span> <span class="attribute">columns</span>=<span class="value">{columns}</span> <span class="attribute">dataSource</span>=<span class="value">{this.state.dataSource}</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.refresh}</span>&gt;</span>
+        重新加载数据
+      <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+      &amp;nbsp;
+      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn"</span> <span class="attribute">onClick</span>=<span class="value">{this.changeAndRefresh}</span>&gt;</span>
+        加载 city=hz 的数据
+      <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
+  }
+});
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Test</span> /&gt;</span>, document.getElementById('components-table-demo-ajax'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-ajax">动态加载数据</a>
+    </div>
+    <p>远程读取的表格是<strong>更为常见的模式</strong>，下面的表格使用了 <code>dataSource</code> 对象和远程数据源绑定和适配，并具有筛选、排序等功能以及页面 loading 效果。</p>
+<p><strong>注意，此示例是静态数据模拟，数据并不准确，请打开网络面板查看请求。</strong></p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

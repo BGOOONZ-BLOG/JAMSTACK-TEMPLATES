@@ -1,0 +1,30 @@
+<div class="code-box" id="picker-demo-basic">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-basic">基本</a>
+    </div>
+    
+<p>最简单的用法。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

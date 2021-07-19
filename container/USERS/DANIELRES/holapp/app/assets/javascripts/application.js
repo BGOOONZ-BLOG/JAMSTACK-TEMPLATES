@@ -22,25 +22,21 @@
 //= require angular-markdown-directive
 //= require ngInfiniteScroll
 
-
 //= require bootstrap
 //= require best_in_place
 //= require typeahead.bundle
 //= require tagmanager
 //= require_tree .
 
-
-$(document).ready(function() {
+$(document).ready(function () {
   jQuery(".best_in_place").best_in_place();
 });
 
-jQuery(function($){
-  $.datepicker.regional['fr'] = {
-    dateFormat: 'dd/mm/yy',
+jQuery(function ($) {
+  $.datepicker.regional["fr"] = {
+    dateFormat: "dd/mm/yy",
     firstDay: 1,
-    showMonthAfterYear: true
+    showMonthAfterYear: true,
   };
-  $.datepicker.setDefaults($.datepicker.regional['fr']);
-
+  $.datepicker.setDefaults($.datepicker.regional["fr"]);
 });
-

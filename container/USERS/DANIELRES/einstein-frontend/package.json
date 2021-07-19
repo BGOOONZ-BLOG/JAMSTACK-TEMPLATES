@@ -13,7 +13,7 @@
     "postinstall": "./node_modules/.bin/webpack -p",
     "dev": "npm run dev-server & npm run api-faker",
     "dev-server": "FAKE_API_URL=http://localhost:3001 ./node_modules/.bin/webpack-dev-server --devtool eval --progress --colors --content-base build",
-    "api-faker":  "FAKE_API_URL=http://localhost:3001 node api/fake-api-server.js",
+    "api-faker": "FAKE_API_URL=http://localhost:3001 node api/fake-api-server.js",
     "lint": "eslint app; eslint tests"
   },
   "author": "",

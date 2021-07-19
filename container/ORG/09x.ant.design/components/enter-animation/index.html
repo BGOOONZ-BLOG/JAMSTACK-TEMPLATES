@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+EnterAnimation 进场动画 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/antd-0.9.2.min.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <script>
+      (function (con) {
+        'use strict';
+        var prop, method;
+        var empty = {};
+        var dummy = function () {
+        };
+        var properties = 'memory'.split(',');
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+                       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+                       'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) {
+          con[prop] = con[prop] || empty;
+        }
+        while (method = methods.pop()) {
+          con[method] = con[method] || dummy;
+        }
+      })(this.console = this.console || {});
+    </script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js,es5-shim/4.1.10/es5-shim.js,es5-shim/4.1.10/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'EnterAnimation',
+        desc: '进场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Iconfont',
+        desc: '字体图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.9.2',
+        stable: '0.9.2'
+      };
+    </script>
+    <script src="../../dist/antd-0.9.2.min.js"></script>
+    <script src="../../dist/demo.js"></script>
+    <script>
+      window.require = function (path) {
+        var result = window;
+        var namespaces = path.split('/');
+        namespaces.forEach(function (key, i) {
+          if (i !== 0 && i === namespaces.length - 1) {
+            key = capitalizeFirstLetter(key);
+          }
+          if (key !== 'lib') {
+            if (result[key]) {
+              result = result[key];
+            } else {
+              throw 'There should not have modules here 2.';
+            }
+          }
+        });
+        function capitalizeFirstLetter(string) {
+          return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        return result;
+      };
+    </script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/download" class="">
+          下载
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../iconfont/"
+               class=""data-no-instant>
+              Iconfont
+              <span class="chinese">字体图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class="">
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class="">
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              EnterAnimation
+              <span class="chinese">进场动画</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      EnterAnimation 进场动画
+    </h1>
+    <p>通过简单的配置对一组元素添加串行的进场动画效果。</p>
+<h2 id="何时使用">何时使用</h2><ul>
+<li><p>从内容A到内容B的转变过程时能有效的吸引用户注意力，突出视觉中心，提高整体视觉效果。</p>
+</li>
+<li><p>小的信息元素排布或块状较多的情况下，根据一定的路径层次依次进场，区分维度层级，来凸显量级，使页面转场更加流畅和舒适，提高整体视觉效果和产品的质感。</p>
+</li>
+</ul>
+<h2 id="api">API</h2><p>元素依次进场。</p>
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">EnterAnimation</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'demo'</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span></code></pre></div><p>如子节点有 <code>enter-data</code> 值，则只执行有 <code>enter-data</code> 的节点的动画，相反所有子节点上都没有 <code>enter-data</code> 值，则执行遍历 dom 下一级节点来执行动画。</p>
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">enter</span>=<span class="value">{type:'left',delay:2}</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'demo'</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">enter-data</span>&gt;</span>
+        依次进场
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">enter-data</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">enter-data</span>=<span class="value">{{type:</span> '<span class="attribute">bottom</span>'}}&gt;</span>依次进场，并修改动画效果<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span>&gt;</span>没有动画<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span></code></pre></div><h3 id=""><EnterAnimation /></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>详细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enter</td>
+<td>object</td>
+<td><code>{type:&#39;right&#39;}</code></td>
+<td>管理进场数据</td>
+</tr>
+<tr>
+<td>leave</td>
+<td>object</td>
+<td>null</td>
+<td>管理当前元素出场的数据, null 时继承 enter 里的所有标签的值</td>
+</tr>
+<tr>
+<td>component</td>
+<td>string</td>
+<td><code>div</code></td>
+<td>EnterAnimation 替换的标签名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="enter-leave">enter = {} | leave = {}</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>详细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td><code>right</code></td>
+<td>内置动画样式：<br/> <code>alpha</code> <code>left</code> <code>right</code> <code>top</code> <code>bottom</code> <code>scale</code> <code>scaleBig</code> <code>scaleX</code> <code>scaleY</code></td>
+</tr>
+<tr>
+<td>style</td>
+<td>object / string</td>
+<td>null</td>
+<td>同上， style 的样式动画, <code>type</code> 有值，此项无效。<br/>如 <code>{transform:&#39;translateX(100px)&#39;}</code> 或 <code>&#39;transform: translateX(100px)&#39;</code></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>number</td>
+<td>0.5</td>
+<td>每个动画的时间,以秒为单位</td>
+</tr>
+<tr>
+<td>ease</td>
+<td>string</td>
+<td><code>cubic-bezier(0.165, 0.84, 0.44, 1);</code></td>
+<td>样式缓动,只支持 css 样式缓动;</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>number</td>
+<td>0</td>
+<td>整个区块的延时，以秒为单位</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否倒放,从最后一个 dom 开始往上播放</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>number</td>
+<td>0.1</td>
+<td>递增延时值，以秒为单位</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>function</td>
+<td>null</td>
+<td>动画结束回调</td>
+</tr>
+</tbody>
+</table>
+<h3 id="一级标签key：">一级标签key：</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>详细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>必需，控制进出场；</td>
+</tr>
+</tbody>
+</table>
+<h3 id="子标签">子标签</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>详细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enter-data</td>
+<td>object</td>
+<td><code>{type:&#39;right&#39;}</code></td>
+<td>子标签进场参数</td>
+</tr>
+<tr>
+<td>leave-data</td>
+<td>object</td>
+<td><code>enter-data</code></td>
+<td>子标签出场参数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enter-data-leave-data">enter-data = {}  | leave-data = {}</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>默认值</th>
+<th>详细</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td><code>right</code></td>
+<td>同标签里的 <code>type</code>,覆盖标签里的值</td>
+</tr>
+<tr>
+<td>style</td>
+<td>object / string</td>
+<td>null</td>
+<td>同标签里的 <code>style</code>,覆盖标签里的值</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>number</td>
+<td>0.5</td>
+<td>同标签里的 <code>duration</code>,覆盖标签里的值</td>
+</tr>
+<tr>
+<td>ease</td>
+<td>string</td>
+<td><code>cubic-bezier(0.165, 0.84, 0.44, 1)</code></td>
+<td>同标签里的 <code>ease</code>,覆盖标签里的值</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>number</td>
+<td>0</td>
+<td>当前动画的延时，依照结构递增以上的 <code>interval</code></td>
+</tr>
+<tr>
+<td>queueId</td>
+<td>number</td>
+<td>0</td>
+<td>动画的线程</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>由于使用了 CSS3 动画，所以 <code>IE9</code> 及更早的版本将没有进场效果。</p>
+</blockquote>
+<style>
+.code-box-demo .demo-header {
+  width: 100%;
+  background: #ebedee;
+  height: 30px;
+}
+.code-box-demo .demo-header ul {
+  float: right;
+  margin-right: 5px;
+}
+.code-box-demo .demo-header ul li {
+  width: 50px;
+  height: 30px;
+  float: left;
+  background: #e4e4e4;
+  margin-left: 5px;
+}
+.code-box-demo .demo-header ul li:before {
+  margin: 10px auto;
+  width: 20px;
+  height: 10px;
+  background: #ebeded;
+}
+.code-box-demo .demo-header .logo {
+  float: left;
+  margin: 0px auto 0 10px;
+  line-height: 32px;
+}
+.code-box-demo .demo-header .logo img{
+  margin:auto
+}
+.code-box-demo .demo-header .logo span {
+  display: block;
+  float: right;
+}
+.code-box-demo .demo-content {
+  width: 80%;
+  margin: 10px auto;
+}
+.code-box-demo .demo-content .demo-title {
+  text-align:left;
+  background: #a4a4a4;
+  width: 40%;
+  height: 20px;
+  line-height: 20px;
+  color: #ebeded;
+  text-indent:10px
+}
+.code-box-demo .demo-content .demo-listBox {
+  margin-top: 10px;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list .title {
+  height: 30px;
+  background: #cacaca;
+  overflow: hidden;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list .title:before,.code-box-demo .demo-content .demo-listBox .demo-list .title:after{
+  width: 30%;
+  height: 5px;
+  background: #ebeded;
+  float:left;
+  margin:12px 35px 0;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list .title:after{
+  width:15%;
+  float:right;
+  margin:12px 10px 0;
+
+}
+.code-box-demo .demo-content .demo-listBox .demo-list ul li {
+  height: 25px;
+  background: #ebeded;
+  border-bottom: 1px solid #cacaca;
+  overflow: hidden;
+  padding: 5px 15px;
+}
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:before {
+  width: 10px;
+  height: 5px;
+  background: #cacaca;
+  float: left;
+  margin-top:4px
+}
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:after {
+  width: 50%;
+  height: 5px;
+  background: #cacaca;
+  float: left;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+.code-box-demo .demo-content .demo-kp {
+  margin: 10px auto;
+}
+.code-box-demo .demo-content .demo-kp ul li {
+  display: inline-block;
+  width: 32%;
+  height: 40px;
+  background: #cacaca;
+  color: #ebeded;
+  text-align: left;
+  padding: 10px;
+  margin-right: calc(2%);
+}
+.code-box-demo .demo-content .demo-kp ul li:last-child {
+  margin-right: 0%;
+}
+.code-box-demo .demo-content .demo-kp ul li:after {
+  width: 60%;
+  height: 5px;
+  background: #ebeded;
+  float: left;
+  margin-top: 7px;
+}
+.code-box-demo .demo-content .demo-kp ul li:before {
+  background: #ebeded;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin:2px 10% 0 0;
+
+}
+.code-box-demo .demo-footer {
+  margin-top: 10px;
+  background: #cacaca;
+  height: 40px;
+  float: left;
+  width: 100%;
+  display: table;
+}
+.code-box-demo .demo-footer:before {
+  width: 60%;
+  height: 5px;
+  background: #ededed;
+  margin: 10px auto 0;
+}
+.code-box-demo .demo-footer:after {
+  width: 30%;
+  height: 5px;
+  background: #ededed;
+  margin: 5px auto;
+}
+.code-box-demo .demo-header ul li:before,
+.code-box-demo .demo-content .demo-kp ul li:before,
+.code-box-demo .demo-content .demo-kp ul li:after,
+.code-box-demo .demo-content .demo-listBox .demo-list .title:before,
+.code-box-demo .demo-content .demo-listBox .demo-list .title:after,
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:before,
+.code-box-demo .demo-content .demo-listBox .demo-list ul li:after,
+.code-box-demo .demo-footer:before,
+.code-box-demo .demo-footer:after {
+  display: block;
+  content: "";
+}
+</style>
+
+  </article>
+<h2 class="component-demos">
+  组件演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="animation-demo-simple">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-simple"></div>
+    <script>(function(){"use strict";
+
+var EnterAnimation = antd.EnterAnimation;
+
+React.render(React.createElement(
+  EnterAnimation,
+  null,
+  React.createElement(
+    "ul",
+    { key: "key" },
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "依次进场"
+    )
+  )
+), document.getElementById('components-enter-animation-demo-simple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">EnterAnimation</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">key</span>=<span class="value">"key"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">li</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+, document.getElementById('components-enter-animation-demo-simple'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-simple">默认</a>
+    </div>
+    <p>最简单的进场例子。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="animation-demo-enter-leave">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-enter-leave"></div>
+    <script>(function(){'use strict';
+
+var EnterAnimation = antd.EnterAnimation;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      enter: {
+        type: 'right',
+        interval: 0.3,
+        callback: function callback() {
+          console.log('enter');
+        }
+      },
+      leave: {
+        type: 'left',
+        interval: .1,
+        callback: function callback() {
+          console.log('leave');
+        }
+      },
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { style: { marginBottom: 20 } },
+        React.createElement(
+          'button',
+          { className: 'ant-btn ant-btn-primary', onClick: this.onClick },
+          '切换'
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { enter: this.state.enter, leave: this.state.leave },
+        this.state.show ? React.createElement(
+          'div',
+          { className: 'demo-content', key: 'demo' },
+          React.createElement(
+            'div',
+            { className: 'demo-kp' },
+            React.createElement(
+              'ul',
+              null,
+              React.createElement('li', null),
+              React.createElement('li', null),
+              React.createElement('li', null)
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'demo-listBox' },
+            React.createElement(
+              'div',
+              { className: 'demo-list' },
+              React.createElement('div', { className: 'title' }),
+              React.createElement(
+                'ul',
+                null,
+                React.createElement('li', null),
+                React.createElement('li', null),
+                React.createElement('li', null)
+              )
+            )
+          )
+        ) : null
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-enter-animation-demo-enter-leave'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      enter:{
+        type: <span class="string">'right'</span>,
+        interval: <span class="number">0.3</span>,
+        callback:() =&gt; {
+          console.log(<span class="string">'enter'</span>);
+        }
+      },
+      leave:{
+        type: <span class="string">'left'</span>,
+        interval: <span class="number">.1</span>,
+        callback:() =&gt; {
+          console.log(<span class="string">'leave'</span>);
+        }
+      },
+      show:<span class="literal">true</span>,
+    }
+  },
+  onClick() {
+    <span class="keyword">this</span>.setState({
+      show:!<span class="keyword">this</span>.state.show,
+
+    })
+  },
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}}&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.onClick}</span>&gt;</span>切换<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span>&gt;</span>
+          {this.state.show ? 
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-content"</span> <span class="attribute">key</span>=<span class="value">'demo'</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-kp"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-listBox"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-list"</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"title"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Test</span> /&gt;</span>
+, document.getElementById('components-enter-animation-demo-enter-leave'));</span></code></pre></div><style>
+#components-enter-animation-demo-enter-leave {
+  text-align: center;
+  overflow: hidden;
+  margin: 20px auto;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-enter-leave">配置进出场的样式</a>
+    </div>
+    <p>配置进出场动画样式。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="animation-demo-style">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-style"></div>
+    <script>(function(){"use strict";
+
+var EnterAnimation = antd.EnterAnimation;
+
+var Test = React.createClass({
+  displayName: "Test",
+
+  getInitialState: function getInitialState() {
+    return {
+      enter: {
+        style: {
+          transform: "translateX(50px)",
+          opacity: 0
+        },
+        interval: .1
+      },
+      leave: {
+        interval: 0.03
+      },
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "div",
+        { style: { marginBottom: 20 } },
+        React.createElement(
+          "button",
+          { className: "ant-btn ant-btn-primary", onClick: this.onClick },
+          "切换"
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { enter: this.state.enter, leave: this.state.leave },
+        this.state.show ? React.createElement(
+          "div",
+          { key: "enter-data" },
+          React.createElement(
+            "div",
+            { className: "demo-content" },
+            React.createElement(
+              "div",
+              { className: "demo-kp" },
+              React.createElement(
+                "ul",
+                null,
+                React.createElement("li", { "enter-data": true }),
+                React.createElement("li", { "enter-data": true }),
+                React.createElement("li", { "enter-data": true })
+              )
+            ),
+            React.createElement(
+              "div",
+              { className: "demo-listBox" },
+              React.createElement(
+                "div",
+                { className: "demo-list" },
+                React.createElement("div", { className: "title", "enter-data": { style: { transform: 'translateY(30px)', opacity: 0 }, queueId: 1 } }),
+                React.createElement(
+                  "ul",
+                  null,
+                  React.createElement("li", { "enter-data": { style: { transform: 'translateY(30px)', opacity: 0 }, queueId: 1 } }),
+                  React.createElement("li", { "enter-data": { style: { transform: 'translateY(30px)', opacity: 0 }, queueId: 1 } }),
+                  React.createElement("li", { "enter-data": { style: { transform: 'translateY(30px)', opacity: 0 }, queueId: 1 } })
+                )
+              )
+            )
+          )
+        ) : null
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-enter-animation-demo-style'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      enter: {
+        style: {
+          transform: <span class="string">"translateX(50px)"</span>,
+          opacity: <span class="number">0</span>
+        },
+        interval: <span class="number">.1</span>,
+      },
+      leave: {
+        interval: <span class="number">0.03</span>
+      },
+      show: <span class="literal">true</span>
+    }
+  },
+  onClick() {
+    <span class="keyword">this</span>.setState({
+      show: !<span class="keyword">this</span>.state.show
+    })
+  },
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}}&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.onClick}</span>&gt;</span>切换<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span>&gt;</span>
+        {this.state.show ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'enter-data'</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-content"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-kp"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-listBox"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-list"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"title"</span> <span class="attribute">enter-data</span>=<span class="value">{{style:</span> {<span class="attribute">transform:</span> '<span class="attribute">translateY</span>(<span class="attribute">30px</span>)', <span class="attribute">opacity:</span> <span class="attribute">0</span>}, <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{style:</span> {<span class="attribute">transform:</span> '<span class="attribute">translateY</span>(<span class="attribute">30px</span>)', <span class="attribute">opacity:</span> <span class="attribute">0</span>}, <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{style:</span> {<span class="attribute">transform:</span> '<span class="attribute">translateY</span>(<span class="attribute">30px</span>)', <span class="attribute">opacity:</span> <span class="attribute">0</span>}, <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{style:</span> {<span class="attribute">transform:</span> '<span class="attribute">translateY</span>(<span class="attribute">30px</span>)', <span class="attribute">opacity:</span> <span class="attribute">0</span>}, <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    )
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Test</span> /&gt;</span>
+, document.getElementById('components-enter-animation-demo-style'));</span></code></pre></div><style>
+#components-enter-animation-demo-style {
+  text-align: center;
+  overflow: hidden;
+  margin: 18px auto;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-style">style 自定义样式动画进出场</a>
+    </div>
+    <p>通过加上属性里的 <code>style</code> 来自定义 CSS 动画进出场。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="animation-demo-form">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-form"></div>
+    <script>(function(){'use strict';
+
+var EnterAnimation = antd.EnterAnimation;
+var Select = antd.Select;
+var Option = Select.Option;
+var Checkbox = antd.Checkbox;
+var Radio = antd.Radio;
+var RadioGroup = antd.Radio.Group;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      enter: {
+        type: 'right',
+        callback: null,
+        interval: 0.1
+      },
+      leave: {
+        type: 'left',
+        reverse: true,
+        interval: 0.05,
+        ease: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
+        callback: function callback() {
+          console.log('出场结束');
+        }
+      },
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { style: { marginBottom: 20, textAlign: 'center' } },
+        React.createElement(
+          'button',
+          { className: 'ant-btn ant-btn-primary', onClick: this.onClick },
+          '切换'
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { enter: this.state.enter, leave: this.state.leave, component: 'form', className: 'ant-form-horizontal' },
+        this.state.show ? React.createElement(
+          'div',
+          { key: 'from' },
+          React.createElement(
+            'div',
+            { className: 'ant-form-item ant-form-item-compact' },
+            React.createElement(
+              'label',
+              { htmlFor: 'userName', className: 'col-6', required: true },
+              '用户名：'
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-6' },
+              React.createElement(
+                'p',
+                { className: 'ant-form-text' },
+                '大眼萌 minion'
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'ant-form-item' },
+            React.createElement(
+              'label',
+              { htmlFor: 'password', className: 'col-6', required: true },
+              '密码：'
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-14' },
+              React.createElement('input', { className: 'ant-input', type: 'password', id: 'password', placeholder: '请输入密码' })
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'ant-form-item ant-form-item-compact' },
+            React.createElement(
+              'label',
+              { className: 'col-6', required: true },
+              '您的性别：'
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-14' },
+              React.createElement(
+                RadioGroup,
+                { value: 'male' },
+                React.createElement(
+                  Radio,
+                  { value: 'male' },
+                  '男的'
+                ),
+                React.createElement(
+                  Radio,
+                  { value: 'female' },
+                  '女的'
+                )
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'ant-form-item' },
+            React.createElement(
+              'label',
+              { htmlFor: 'remark', className: 'col-6', required: true },
+              '备注：'
+            ),
+            React.createElement(
+              'div',
+              { className: 'col-14' },
+              React.createElement('textarea', { className: 'ant-input', id: 'remark', placeholder: '随便写' }),
+              React.createElement(
+                'p',
+                { className: 'ant-form-explain' },
+                '随便写点什么'
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'ant-form-item ant-form-item-compact' },
+            React.createElement(
+              'div',
+              { className: 'col-14 col-offset-6' },
+              React.createElement(
+                'label',
+                null,
+                React.createElement(Checkbox, null),
+                '同意'
+              )
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'row' },
+            React.createElement(
+              'div',
+              { className: 'col-16 col-offset-6' },
+              React.createElement('input', { type: 'submit', className: 'ant-btn ant-btn-primary', value: '确 定' })
+            )
+          )
+        ) : null
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-enter-animation-demo-form'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+<span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+<span class="keyword">var</span> Checkbox = antd.Checkbox;
+<span class="keyword">var</span> Radio = antd.Radio;
+<span class="keyword">var</span> RadioGroup = antd.Radio.Group;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      enter: {
+        type: <span class="string">'right'</span>,
+        callback: <span class="literal">null</span>,
+        interval: <span class="number">0.1</span>
+      },
+      leave: {
+        type: <span class="string">'left'</span>,
+        reverse: <span class="literal">true</span>,
+        interval: <span class="number">0.05</span>,
+        ease:<span class="string">'cubic-bezier(0.55, 0.085, 0.68, 0.53)'</span>,
+        callback: ()=&gt; {
+          console.log(<span class="string">'出场结束'</span>)
+        }
+      },
+      show: <span class="literal">true</span>
+    }
+  },
+  onClick() {
+    <span class="keyword">this</span>.setState({
+      show: !<span class="keyword">this</span>.state.show
+    })
+  },
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>, <span class="attribute">textAlign:</span> '<span class="attribute">center</span>'}}&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.onClick}</span>&gt;</span>切换<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span> <span class="attribute">component</span>=<span class="value">'form'</span> <span class="attribute">className</span>=<span class="value">"ant-form-horizontal"</span>&gt;</span>
+          {this.state.show ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'from'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item ant-form-item-compact"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">"userName"</span> <span class="attribute">className</span>=<span class="value">"col-6"</span> <span class="attribute">required</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-text"</span>&gt;</span>大眼萌 minion<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">"password"</span> <span class="attribute">className</span>=<span class="value">"col-6"</span> <span class="attribute">required</span>&gt;</span>密码：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-14"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">input</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">id</span>=<span class="value">"password"</span> <span class="attribute">placeholder</span>=<span class="value">"请输入密码"</span>/&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item ant-form-item-compact"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span>  <span class="attribute">className</span>=<span class="value">"col-6"</span> <span class="attribute">required</span>&gt;</span>您的性别：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-14"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">RadioGroup</span> <span class="attribute">value</span>=<span class="value">"male"</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">Radio</span> <span class="attribute">value</span>=<span class="value">"male"</span>&gt;</span>男的<span class="tag">&lt;/<span class="title">Radio</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">Radio</span> <span class="attribute">value</span>=<span class="value">"female"</span>&gt;</span>女的<span class="tag">&lt;/<span class="title">Radio</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">RadioGroup</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">"remark"</span> <span class="attribute">className</span>=<span class="value">"col-6"</span> <span class="attribute">required</span>&gt;</span>备注：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-14"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">id</span>=<span class="value">"remark"</span> <span class="attribute">placeholder</span>=<span class="value">"随便写"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>随便写点什么<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item ant-form-item-compact"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-14 col-offset-6"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">label</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">Checkbox</span> /&gt;</span>
+                  同意
+                <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"row"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-16 col-offset-6"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">value</span>=<span class="value">"确 定"</span> /&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    )
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Test</span> /&gt;</span>
+, document.getElementById('components-enter-animation-demo-form'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-form">表单动画进出场</a>
+    </div>
+    <p>表单组合的进场与出场动画。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="animation-demo-basic">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-basic"></div>
+    <script>(function(){"use strict";
+
+var EnterAnimation = antd.EnterAnimation;
+
+var Test = React.createClass({
+  displayName: "Test",
+
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "div",
+        { style: { marginBottom: 20 } },
+        React.createElement(
+          "button",
+          { className: "ant-btn ant-btn-primary", onClick: this.onClick },
+          "切换"
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        null,
+        this.state.show ? React.createElement(
+          "div",
+          { className: "demo-content", key: "a" },
+          React.createElement(
+            "div",
+            { className: "demo-kp" },
+            React.createElement(
+              "ul",
+              null,
+              React.createElement("li", null),
+              React.createElement("li", null),
+              React.createElement("li", null)
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "demo-listBox" },
+            React.createElement(
+              "div",
+              { className: "demo-list" },
+              React.createElement("div", { className: "title" }),
+              React.createElement(
+                "ul",
+                null,
+                React.createElement("li", null),
+                React.createElement("li", null),
+                React.createElement("li", null)
+              )
+            )
+          )
+        ) : null
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-enter-animation-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      show: <span class="literal">true</span>
+    }
+  },
+  onClick() {
+    <span class="keyword">this</span>.setState({
+      show: !<span class="keyword">this</span>.state.show
+    })
+  },
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}}&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.onClick}</span>&gt;</span>切换<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span>&gt;</span>
+          {this.state.show ?
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-content"</span> <span class="attribute">key</span>=<span class="value">'a'</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-kp"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-listBox"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-list"</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"title"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Test</span> /&gt;</span>
+, document.getElementById('components-enter-animation-demo-basic'));</span></code></pre></div><style>
+#components-enter-animation-demo-basic {
+  text-align: center;
+  overflow: hidden;
+  margin: 20px auto;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-basic">进场和离场</a>
+    </div>
+    <p>自动。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="animation-demo-enter-data">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-enter-data"></div>
+    <script>(function(){'use strict';
+
+var EnterAnimation = antd.EnterAnimation;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      enter: {
+        type: 'right',
+        interval: .1
+      },
+      leave: {
+        type: 'left',
+        interval: 0.03
+      },
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { style: { marginBottom: 20 } },
+        React.createElement(
+          'button',
+          { className: 'ant-btn ant-btn-primary', onClick: this.onClick },
+          '切换'
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { enter: this.state.enter, leave: this.state.leave },
+        this.state.show ? React.createElement(
+          'div',
+          { key: 'enter-data' },
+          React.createElement(
+            'div',
+            { className: 'demo-content' },
+            React.createElement(
+              'div',
+              { className: 'demo-kp' },
+              React.createElement(
+                'ul',
+                null,
+                React.createElement('li', { 'enter-data': true }),
+                React.createElement('li', { 'enter-data': true }),
+                React.createElement('li', { 'enter-data': true })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'demo-listBox' },
+              React.createElement(
+                'div',
+                { className: 'demo-list' },
+                React.createElement('div', { className: 'title', 'enter-data': { type: 'bottom', queueId: 1 } }),
+                React.createElement(
+                  'ul',
+                  null,
+                  React.createElement('li', { 'enter-data': { type: 'bottom', queueId: 1 } }),
+                  React.createElement('li', { 'enter-data': { type: 'bottom', queueId: 1 } }),
+                  React.createElement('li', { 'enter-data': { type: 'bottom', queueId: 1 } })
+                )
+              )
+            )
+          )
+        ) : null
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-enter-animation-demo-enter-data'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      enter: {
+        type: <span class="string">'right'</span>,
+        interval: <span class="number">.1</span>,
+      },
+      leave: {
+        type:<span class="string">'left'</span>,
+        interval: <span class="number">0.03</span>
+      },
+      show: <span class="literal">true</span>
+    }
+  },
+  onClick() {
+    <span class="keyword">this</span>.setState({
+      show: !<span class="keyword">this</span>.state.show
+    })
+  },
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}}&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.onClick}</span>&gt;</span>切换<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span>&gt;</span>
+        {this.state.show ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'enter-data'</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-content"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-kp"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-listBox"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-list"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"title"</span> <span class="attribute">enter-data</span>=<span class="value">{{type:</span> '<span class="attribute">bottom</span>', <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:</span> '<span class="attribute">bottom</span>', <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:</span> '<span class="attribute">bottom</span>', <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:</span> '<span class="attribute">bottom</span>', <span class="attribute">queueId:</span> <span class="attribute">1</span>}}&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    )
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Test</span> /&gt;</span>
+, document.getElementById('components-enter-animation-demo-enter-data'));</span></code></pre></div><style>
+#components-enter-animation-demo-enter-data {
+  text-align: center;
+  overflow: hidden;
+  margin: 18px auto;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-enter-data">指定节点动画进出场</a>
+    </div>
+    <p>通过加上 <code>enter-data</code> 属性来指定需要动画进场的元素，并且可以定义每个元素的动画效果。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="animation-demo-page">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-page"></div>
+    <script>(function(){'use strict';
+
+var EnterAnimation = antd.EnterAnimation;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      show: true,
+      enter: {
+        type: 'right',
+        ease: 'cubic-bezier(0.19, 1, 0.22, 1)'
+      },
+      leave: {
+        type: 'left',
+        ease: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+        reverse: true,
+        interval: 0.05
+      }
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        { style: { marginBottom: 20 } },
+        React.createElement(
+          'button',
+          { className: 'ant-btn ant-btn-primary', onClick: this.onClick },
+          '切换'
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { enter: this.state.enter, leave: this.state.leave },
+        this.state.show ? React.createElement(
+          'div',
+          { key: 'a' },
+          React.createElement(
+            'div',
+            { className: 'demo-header', 'enter-data': true, 'leave-data': { type: 'alpha' } },
+            React.createElement(
+              'div',
+              { className: 'logo', 'leave-data': { type: 'left' } },
+              React.createElement('img', { width: '30', src: 'https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg' }),
+              React.createElement(
+                'span',
+                null,
+                'logo'
+              )
+            ),
+            React.createElement(
+              'ul',
+              null,
+              React.createElement('li', { 'enter-data': true, 'leave-data': { type: 'right' } }),
+              React.createElement('li', { 'enter-data': true, 'leave-data': { type: 'right' } }),
+              React.createElement('li', { 'enter-data': true, 'leave-data': { type: 'right' } }),
+              React.createElement('li', { 'enter-data': true, 'leave-data': { type: 'right' } }),
+              React.createElement('li', { 'enter-data': true, 'leave-data': { type: 'right' } })
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'demo-content' },
+            React.createElement(
+              'div',
+              { className: 'demo-title', 'enter-data': { type: 'bottom' }, 'leave-data': { type: 'bottom', queueId: 1 } },
+              '我是标题'
+            ),
+            React.createElement(
+              'div',
+              { className: 'demo-kp' },
+              React.createElement(
+                'ul',
+                null,
+                React.createElement('li', { 'enter-data': { interval: 0.05 }, 'leave-data': { type: 'bottom', queueId: 1 } }),
+                React.createElement('li', { 'enter-data': { interval: 0.05 }, 'leave-data': { type: 'bottom', queueId: 1 } }),
+                React.createElement('li', { 'enter-data': { interval: 0.05 }, 'leave-data': { type: 'bottom', queueId: 1, delay: 0.2 } })
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'demo-title', 'enter-data': { type: 'bottom' }, 'leave-data': { type: 'bottom', queueId: 2 } },
+              '我是标题'
+            ),
+            React.createElement(
+              'div',
+              { className: 'demo-listBox' },
+              React.createElement(
+                'div',
+                { className: 'demo-list' },
+                React.createElement('div', { className: 'title', 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } }),
+                React.createElement(
+                  'ul',
+                  null,
+                  React.createElement('li', { 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } }),
+                  React.createElement('li', { 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } }),
+                  React.createElement('li', { 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } }),
+                  React.createElement('li', { 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } }),
+                  React.createElement('li', { 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } })
+                )
+              )
+            )
+          ),
+          React.createElement('div', { className: 'demo-footer', 'enter-data': { type: 'bottom' }, 'leave-data': { queueId: 2 } })
+        ) : null
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-enter-animation-demo-page'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      show: <span class="literal">true</span>,
+      enter:{
+        type:<span class="string">'right'</span>,
+        ease:<span class="string">'cubic-bezier(0.19, 1, 0.22, 1)'</span>
+      },
+      leave:{
+        type:<span class="string">'left'</span>,
+        ease:<span class="string">'cubic-bezier(0.455, 0.03, 0.515, 0.955)'</span>,
+        reverse:<span class="literal">true</span>,
+        interval:<span class="number">0.05</span>
+      }
+    }
+  },
+  onClick() {
+    <span class="keyword">this</span>.setState({
+      show: !<span class="keyword">this</span>.state.show
+    })
+  },
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}}&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span> <span class="attribute">onClick</span>=<span class="value">{this.onClick}</span>&gt;</span>切换<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span>&gt;</span>
+          {this.state.show ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'a'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-header"</span> <span class="attribute">enter-data</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'alpha'}}</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"logo"</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'left'}}</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">img</span> <span class="attribute">width</span>=<span class="value">"30"</span> <span class="attribute">src</span>=<span class="value">"https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">span</span>&gt;</span>logo<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">ul</span> &gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'right'}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'right'}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'right'}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'right'}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'right'}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-content"</span> &gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-title"</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'bottom',queueId:1}}</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-kp"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{interval:0.05}}</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'bottom',queueId:1}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{interval:0.05}}</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'bottom',queueId:1}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{interval:0.05}}</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'bottom',queueId:1,delay:0.2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-title"</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{type:'bottom',queueId:2}}</span>&gt;</span>我是标题<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-listBox"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-list"</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"title"</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+                  <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-footer"</span> <span class="attribute">enter-data</span>=<span class="value">{{type:'bottom'}}</span> <span class="attribute">leave-data</span>=<span class="value">{{queueId:2}}</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Test</span> /&gt;</span>
+, document.getElementById('components-enter-animation-demo-page'));</span></code></pre></div><style>
+#components-enter-animation-demo-page {
+  text-align: center;
+  overflow: hidden;
+  margin: 20px auto;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-page">页面的进场和离场</a>
+    </div>
+    <p>页面的进场和离场。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="animation-demo-router">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-router"></div>
+    <script>(function(){'use strict';
+
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var Link = ReactRouter.Link;
+var EnterAnimation = antd.EnterAnimation;
+var Menu = antd.Menu;
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {};
+  },
+  clickPage: function clickPage() {
+    this.setState({
+      enter: { delay: 0.3 },
+      leave: { delay: 0 }
+    });
+  },
+  render: function render() {
+    var key = this.props.location.pathname;
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Menu,
+        { style: { marginBottom: 20 }, mode: 'horizontal' },
+        React.createElement(
+          Menu.Item,
+          { key: 'home' },
+          React.createElement(
+            Link,
+            { to: '/', onClick: this.clickPage },
+            '首页'
+          )
+        ),
+        React.createElement(
+          Menu.Item,
+          { key: 'page1' },
+          React.createElement(
+            Link,
+            { to: '/page1', onClick: this.clickPage },
+            'Page 1'
+          )
+        ),
+        React.createElement(
+          Menu.Item,
+          { key: 'page2' },
+          React.createElement(
+            Link,
+            { to: '/page2', onClick: this.clickPage },
+            'Page 2'
+          )
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { className: 'demo-router-wap', enter: this.state.enter, leave: this.state.leave },
+        React.cloneElement(this.props.children || React.createElement(
+          'div',
+          { key: 'home', className: 'demo-router-child' },
+          React.createElement(
+            'h1',
+            null,
+            'Home'
+          ),
+          React.createElement(
+            'div',
+            null,
+            '这是首页'
+          )
+        ), { key: key })
+      )
+    );
+  }
+});
+var Page1 = React.createClass({
+  displayName: 'Page1',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        'h1',
+        null,
+        'Page 1'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '改变样式'
+      )
+    );
+  }
+});
+var Page2 = React.createClass({
+  displayName: 'Page2',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        'h1',
+        null,
+        'Page 2'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      )
+    );
+  }
+});
+React.render(React.createElement(
+  Router,
+  null,
+  React.createElement(
+    Route,
+    { path: '/', component: App, ignoreScrollBehavior: true },
+    React.createElement(Route, { path: 'page1', component: Page1 }),
+    React.createElement(Route, { path: 'page2', component: Page2 })
+  )
+), document.getElementById('components-enter-animation-demo-router'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ReactRouter = require(<span class="string">'react-router'</span>);
+<span class="keyword">var</span> Router = ReactRouter.Router;
+<span class="keyword">var</span> Route = ReactRouter.Route;
+<span class="keyword">var</span> Link = ReactRouter.Link;
+<span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+<span class="keyword">var</span> Menu = antd.Menu;
+
+<span class="keyword">var</span> App = React.createClass({
+  getInitialState: <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="keyword">return</span> {};
+  },
+  clickPage() {
+    <span class="keyword">this</span>.setState({
+      enter: {delay: <span class="number">0.3</span>},
+      leave: {delay: <span class="number">0</span>}
+    });
+  },
+  render() {
+    <span class="keyword">var</span> key = <span class="keyword">this</span>.props.location.pathname;
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Menu</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}} <span class="attribute">mode</span>=<span class="value">"horizontal"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">'home'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/"</span> <span class="attribute">onClick</span>=<span class="value">{this.clickPage}</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">'page1'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span> <span class="attribute">onClick</span>=<span class="value">{this.clickPage}</span>&gt;</span>Page 1<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">'page2'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span> <span class="attribute">onClick</span>=<span class="value">{this.clickPage}</span>&gt;</span>Page 2<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Menu</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">className</span>=<span class="value">'demo-router-wap'</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span>&gt;</span>
+            {React.cloneElement(this.props.children || <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'home'</span> <span class="attribute">className</span>=<span class="value">'demo-router-child'</span>&gt;</span><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">div</span>&gt;</span>这是首页<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>, {key: key})}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+var Page1 = React.createClass({
+  render() {
+    return (
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-router-child"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Page 1<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>改变样式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+var Page2 = React.createClass({
+  render() {
+    return (
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-router-child"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Page 2<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+React.render((
+  <span class="tag">&lt;<span class="title">Router</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Route</span> <span class="attribute">path</span>=<span class="value">"/"</span> <span class="attribute">component</span>=<span class="value">{App}</span> <span class="attribute">ignoreScrollBehavior</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Route</span> <span class="attribute">path</span>=<span class="value">"page1"</span> <span class="attribute">component</span>=<span class="value">{Page1}</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">Route</span> <span class="attribute">path</span>=<span class="value">"page2"</span> <span class="attribute">component</span>=<span class="value">{Page2}</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">Route</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Router</span>&gt;</span>
+), document.getElementById('components-enter-animation-demo-router'));</span></code></pre></div><style>
+#components-enter-animation-demo-router {
+  text-align: center;
+}
+.demo-router-wap{
+  position: relative;
+  transition: height .5s;
+  width: 300px;
+  margin: auto;
+}
+.demo-router-child{
+  text-align:left;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-router">Router 默认进出场</a>
+    </div>
+    <p>router 组合的进场与出场动画。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">问题与建议 - Issues</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

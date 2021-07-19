@@ -1,0 +1,46 @@
+<div class="code-box" id="demo-pending">
+  <div class="code-box-demo">
+    <div id="components-timeline-demo-pending"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var container = document.getElementById('components-timeline-demo-pending');
+
+ReactDOM.render(React.createElement(
+  _antd.Timeline,
+  { pending: true },
+  React.createElement(
+    _antd.Timeline.Item,
+    null,
+    '创建服务现场 2015-09-01'
+  ),
+  React.createElement(
+    _antd.Timeline.Item,
+    null,
+    '初步排除网络异常 2015-09-01'
+  ),
+  React.createElement(
+    _antd.Timeline.Item,
+    null,
+    '技术测试异常 2015-09-01'
+  )
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Timeline } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> container = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-timeline-demo-pending'</span>);
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Timeline</span> <span class="hljs-attribute">pending</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Timeline.Item</span>&gt;</span>创建服务现场 2015-09-01<span class="hljs-tag">&lt;/<span class="hljs-title">Timeline.Item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Timeline.Item</span>&gt;</span>初步排除网络异常 2015-09-01<span class="hljs-tag">&lt;/<span class="hljs-title">Timeline.Item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Timeline.Item</span>&gt;</span>技术测试异常 2015-09-01<span class="hljs-tag">&lt;/<span class="hljs-title">Timeline.Item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Timeline</span>&gt;</span>
+, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-pending">最后一个</a>
+    </div>
+    <p>在最后位置添加一个幽灵节点，表示时间轴未完成，还在记录过程中。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

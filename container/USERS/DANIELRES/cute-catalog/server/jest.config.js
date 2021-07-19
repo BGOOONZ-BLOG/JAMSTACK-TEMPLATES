@@ -1,3 +1,3 @@
 module.exports = {
-  reporters: ['<rootDir>/helpers/tests/customReporter.js'],
-}
+  reporters: ["<rootDir>/helpers/tests/customReporter.js"],
+};

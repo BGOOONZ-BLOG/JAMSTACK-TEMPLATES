@@ -1,0 +1,135 @@
+<div class="code-box" id="demo-horizontal">
+  <div class="code-box-demo">
+    <div id="components-menu-demo-horizontal"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var SubMenu = _antd.Menu.SubMenu;
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {
+      current: 'mail'
+    };
+  },
+  handleClick: function handleClick(e) {
+    console.log('click ', e);
+    this.setState({
+      current: e.key
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      _antd.Menu,
+      { onClick: this.handleClick,
+        selectedKeys: [this.state.current],
+        theme: this.state.theme,
+        mode: 'horizontal' },
+      React.createElement(
+        _antd.Menu.Item,
+        { key: 'mail' },
+        React.createElement(_antd.Icon, { type: 'mail' }),
+        '导航一'
+      ),
+      React.createElement(
+        _antd.Menu.Item,
+        { key: 'app' },
+        React.createElement(_antd.Icon, { type: 'appstore' }),
+        '导航二'
+      ),
+      React.createElement(
+        SubMenu,
+        { title: React.createElement(
+            'span',
+            null,
+            React.createElement(_antd.Icon, { type: 'setting' }),
+            '导航 - 子菜单'
+          ) },
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'setting:1' },
+          '选项1'
+        ),
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'setting:2' },
+          '选项2'
+        ),
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'setting:3' },
+          '选项3'
+        ),
+        React.createElement(
+          _antd.Menu.Item,
+          { key: 'setting:4' },
+          '选项4'
+        )
+      ),
+      React.createElement(
+        _antd.Menu.Item,
+        { key: 'alipay' },
+        React.createElement(
+          'a',
+          { href: 'http://www.alipay.com/', target: '_blank' },
+          '导航四 - 链接'
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), document.getElementById('components-menu-demo-horizontal'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Menu, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> SubMenu = Menu.SubMenu;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      current: <span class="hljs-string">'mail'</span>
+    };
+  },
+  handleClick(e) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'click '</span>, e);
+    <span class="hljs-keyword">this</span>.setState({
+      current: e.key
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>
+        <span class="hljs-attribute">selectedKeys</span>=<span class="hljs-value">{[this.state.current]}</span>
+        <span class="hljs-attribute">theme</span>=<span class="hljs-value">{this.state.theme}</span>
+        <span class="hljs-attribute">mode</span>=<span class="hljs-value">"horizontal"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"mail"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"mail"</span> /&gt;</span>导航一
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"app"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"appstore"</span> /&gt;</span>导航二
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"setting"</span> /&gt;</span>导航 - 子菜单<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"setting:1"</span>&gt;</span>选项1<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"setting:2"</span>&gt;</span>选项2<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"setting:3"</span>&gt;</span>选项3<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"setting:4"</span>&gt;</span>选项4<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"alipay"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.alipay.com/"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>导航四 - 链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, document.getElementById('components-menu-demo-horizontal'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-horizontal">顶部导航</a>
+    </div>
+    <p>水平的顶部导航菜单。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

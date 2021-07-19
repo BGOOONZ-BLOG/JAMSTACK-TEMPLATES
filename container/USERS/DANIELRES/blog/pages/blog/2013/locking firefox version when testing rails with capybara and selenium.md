@@ -4,21 +4,21 @@ sub: when testing Rails with Capybara & Selenium
 date: 2013-02-25 13:38
 path: /2013/02/locking-the-firefox-version-when-testing-rails-with-capybara-and-selenium/
 categories:
-- programming
-- testing
-- ruby
-tags: 
-- rspec
-- integration-tests
-- capybara
-- selenium
-- rails
-- cucumber
+  - programming
+  - testing
+  - ruby
+tags:
+  - rspec
+  - integration-tests
+  - capybara
+  - selenium
+  - rails
+  - cucumber
 ---
 
 When Firefox was updated on my laptop a few days ago to version 19, suddenly my Cucumber tests using Selenium and Firefox stopped working, with error:
 
-    unable to obtain stable firefox connection in 60 seconds 
+    unable to obtain stable firefox connection in 60 seconds
     (127.0.0.1:7055) (Selenium::WebDriver::Error::WebDriverError)
 
 When I investigated, I found that Capybara / Selenium didn't support this version yet.
@@ -28,19 +28,19 @@ In my opinion, the test suite should never depend on the same browser which is u
 
 So, the solution is relatively simple:
 
-1) Download a previous Firefox version (I choosed the version 17, 64bits) here:<br />
-[http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/](http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/)
+1. Download a previous Firefox version (I choosed the version 17, 64bits) here:<br />
+   [http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/](http://releases.mozilla.org/pub/mozilla.org/firefox/releases/17.0/linux-x86_64/en-GB/)
 
-2) Extract the archive, you should get a "firefox" folder containing the program and its binaries
+2. Extract the archive, you should get a "firefox" folder containing the program and its binaries
 
-3) Move the entire folder to your desired location.<br />
-For example, on Ubuntu:
+3. Move the entire folder to your desired location.<br />
+   For example, on Ubuntu:
 
-``` bash
+```bash
 $ sudo mv firefox /opt/firefox17
 ```
 
-4) Now, in your env.rb file, add this:
+4. Now, in your env.rb file, add this:
 
 ```ruby
 # features/support/env.rb
@@ -72,11 +72,3 @@ export FIREFOX_BINARY_PATH="/opt/firefox17/firefox"
 
 Thanks for reading.<br />
 Happy testing !
-
-
-
-
-
-
-
-

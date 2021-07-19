@@ -57,7 +57,7 @@ export default class TaskController {
 
     let deletedTask = await this.database.taskModel.findOneAndRemove({
       _id: id,
-      userId: userId
+      userId: userId,
     });
 
     if (deletedTask) {
@@ -71,7 +71,8 @@ export default class TaskController {
     let userId = request.auth.credentials.id;
     let _id = request.params["id"];
 
-    let task = await this.database.taskModel.findOne({ _id, userId })
+    let task = await this.database.taskModel
+      .findOne({ _id, userId })
       .lean(true);
 
     if (task) {

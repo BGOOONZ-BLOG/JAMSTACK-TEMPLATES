@@ -20,7 +20,7 @@ const Header = ({ data }) => (
             </h2>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.description.childMarkdownRemark.html
+                __html: data.description.childMarkdownRemark.html,
               }}
             />
             <ul className="details">

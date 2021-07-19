@@ -2,7 +2,6 @@
 // Carousel
 // --------------------------------------------------
 
-
 .carousel {
   position: relative;
   margin-bottom: $baseLineHeight;
@@ -16,11 +15,10 @@
 }
 
 .carousel-inner {
-
   > .item {
     display: none;
     position: relative;
-    @include ctb-transition(.6s ease-in-out left);
+    @include ctb-transition(0.6s ease-in-out left);
   }
 
   // Account for jankitude on images
@@ -31,7 +29,9 @@
 
   > .active,
   > .next,
-  > .prev { display: block; }
+  > .prev {
+    display: block;
+  }
 
   > .active {
     left: 0;
@@ -61,7 +61,6 @@
   > .active.right {
     left: 100%;
   }
-
 }
 
 // Left/right controls for nav
@@ -105,7 +104,6 @@
   }
 }
 
-
 // Caption for text below images
 // -----------------------------
 
@@ -116,7 +114,7 @@
   bottom: 0;
   padding: 15px;
   background: $grayDark;
-  background: rgba(0,0,0,.75);
+  background: rgba(0, 0, 0, 0.75);
 }
 .carousel-caption h4,
 .carousel-caption p {

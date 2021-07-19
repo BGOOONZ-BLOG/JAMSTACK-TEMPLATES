@@ -1,4 +1,4 @@
-import Joi from 'joi-browser'
+import Joi from "joi-browser";
 
 export default (values, schema) =>
   Joi.validate(values, schema, { abortEarly: false }, (errors, inputs) =>
@@ -6,4 +6,4 @@ export default (values, schema) =>
       (acc, error) => ({ ...acc, [error.path]: error.message }),
       {}
     )
-  )
+  );

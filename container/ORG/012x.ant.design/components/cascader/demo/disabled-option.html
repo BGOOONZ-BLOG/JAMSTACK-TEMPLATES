@@ -1,0 +1,82 @@
+<div class="code-box" id="demo-disabled-option">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-disabled-option"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-disabled-option');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  disabled: true,
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { options: options, onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  disabled: <span class="hljs-literal">true</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-disabled-option">禁用选项</a>
+    </div>
+    
+<p>通过指定 options 里的 <code>disabled</code> 字段。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

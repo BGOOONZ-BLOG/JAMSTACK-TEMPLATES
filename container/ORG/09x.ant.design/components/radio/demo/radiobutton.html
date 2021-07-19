@@ -1,0 +1,59 @@
+<div class="code-box" id="demo-radiobutton">
+  <div class="code-box-demo">
+    <div id="components-radio-demo-radiobutton"></div>
+    <script>(function(){"use strict";
+
+var RadioButton = antd.Radio.Button;
+var RadioGroup = antd.Radio.Group;
+
+function onChange(e) {
+  console.log('radio checked:' + e.target.value);
+}
+
+React.render(React.createElement(
+  RadioGroup,
+  { onChange: onChange, defaultValue: "a" },
+  React.createElement(
+    RadioButton,
+    { value: "a" },
+    "杭州"
+  ),
+  React.createElement(
+    RadioButton,
+    { value: "b" },
+    "上海"
+  ),
+  React.createElement(
+    RadioButton,
+    { value: "c" },
+    "北京"
+  ),
+  React.createElement(
+    RadioButton,
+    { value: "d" },
+    "成都"
+  )
+), document.getElementById('components-radio-demo-radiobutton'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> RadioButton = antd.Radio.Button;
+<span class="keyword">var</span> RadioGroup = antd.Radio.Group;
+
+<span class="function"><span class="keyword">function</span> <span class="title">onChange</span><span class="params">(e)</span> {</span>
+  console.log(<span class="string">'radio checked:'</span> + e.target.value);
+}
+
+React.render((
+  <span class="xml"><span class="tag">&lt;<span class="title">RadioGroup</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> <span class="attribute">defaultValue</span>=<span class="value">"a"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">RadioButton</span> <span class="attribute">value</span>=<span class="value">"a"</span>&gt;</span>杭州<span class="tag">&lt;/<span class="title">RadioButton</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">RadioButton</span> <span class="attribute">value</span>=<span class="value">"b"</span>&gt;</span>上海<span class="tag">&lt;/<span class="title">RadioButton</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">RadioButton</span> <span class="attribute">value</span>=<span class="value">"c"</span>&gt;</span>北京<span class="tag">&lt;/<span class="title">RadioButton</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">RadioButton</span> <span class="attribute">value</span>=<span class="value">"d"</span>&gt;</span>成都<span class="tag">&lt;/<span class="title">RadioButton</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">RadioGroup</span>&gt;</span>
+), document.getElementById('components-radio-demo-radiobutton'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-radiobutton">按钮样式</a>
+    </div>
+    <p>按钮样式的单选组合。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

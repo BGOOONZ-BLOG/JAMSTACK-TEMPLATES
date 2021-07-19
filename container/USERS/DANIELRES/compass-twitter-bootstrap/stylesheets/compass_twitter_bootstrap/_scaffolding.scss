@@ -2,7 +2,6 @@
 // Scaffolding
 // --------------------------------------------------
 
-
 // Body reset
 // -------------------------
 
@@ -15,7 +14,6 @@ body {
   background-color: $bodyBackground;
 }
 
-
 // Links
 // -------------------------
 
@@ -27,7 +25,6 @@ a:hover {
   color: $linkColorHover;
   text-decoration: underline;
 }
-
 
 // Images
 // -------------------------
@@ -42,11 +39,13 @@ a:hover {
   padding: 4px;
   background-color: #fff;
   border: 1px solid #ccc;
-  border: 1px solid rgba(0,0,0,.2);
-  @include ctb-box-shadow(0 1px 3px rgba(0,0,0,.1));
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  @include ctb-box-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
 }
 
 // Perfect circle
 .img-circle {
-  @include ctb-border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+  @include ctb-border-radius(
+    500px
+  ); // crank the border-radius so it works with most reasonably sized images
 }

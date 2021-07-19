@@ -1,0 +1,33 @@
+<div class="code-box" id="demo-icon">
+  <div class="code-box-demo">
+    <div id="components-steps-demo-icon"></div>
+    <script>(function(){'use strict';
+
+var Steps = antd.Steps;
+var Step = Steps.Step;
+var container = document.getElementById('components-steps-demo-icon');
+
+React.render(React.createElement(
+  Steps,
+  null,
+  React.createElement(Step, { status: 'finish', title: '步骤1', icon: 'cloud' }),
+  React.createElement(Step, { status: 'process', title: '步骤2', icon: 'apple' }),
+  React.createElement(Step, { status: 'wait', title: '步骤3', icon: 'github' })
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = antd.Steps;
+<span class="keyword">var</span> Step = Steps.Step;
+<span class="keyword">var</span> container = document.getElementById(<span class="string">'components-steps-demo-icon'</span>);
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Steps</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">status</span>=<span class="value">'finish'</span> <span class="attribute">title</span>=<span class="value">'步骤1'</span> <span class="attribute">icon</span>=<span class="value">'cloud'</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">status</span>=<span class="value">'process'</span> <span class="attribute">title</span>=<span class="value">'步骤2'</span> <span class="attribute">icon</span>=<span class="value">'apple'</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">status</span>=<span class="value">'wait'</span> <span class="attribute">title</span>=<span class="value">'步骤3'</span> <span class="attribute">icon</span>=<span class="value">'github'</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-icon">带ICON图标的步骤条</a>
+    </div>
+    <p>通过设置 <code>Steps.Step</code> 的 <code>icon</code> 属性，可以启用自定义图标。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

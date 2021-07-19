@@ -1,0 +1,176 @@
+<div class="code-box" id="demo-picture-card">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-picture-card"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-picture-card');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var props = {
+  action: '/upload.do',
+  listType: 'picture-card',
+  defaultFileList: [{
+    uid: -1,
+    name: 'xxx.png',
+    status: 'done',
+    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+  }]
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  { className: 'clearfix' },
+  React.createElement(
+    _antd.Upload,
+    props,
+    React.createElement(_antd.Icon, { type: 'plus' }),
+    React.createElement(
+      'div',
+      { className: 'ant-upload-text' },
+      '\u4E0A\u4F20\u7167\u7247'
+    )
+  ),
+  React.createElement(
+    'a',
+    { href: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png', target: '_blank', className: 'upload-example' },
+    React.createElement('img', { src: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png' }),
+    React.createElement(
+      'span',
+      null,
+      '\u793A\u4F8B'
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  action: <span class="hljs-string">'/upload.do'</span>,
+  listType: <span class="hljs-string">'picture-card'</span>,
+  defaultFileList: [{
+    uid: -<span class="hljs-number">1</span>,
+    name: <span class="hljs-string">'xxx.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+    thumbUrl: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+  }]
+};
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"clearfix"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"plus"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-upload-text"</span>&gt;</span>上传照片<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"upload-example"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>示例<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">/* 配合样式可以做出上传按钮和示例效果 */
+.ant-upload-select-picture-card i {
+  font-size: 28px;
+  color: #999;
+}
+
+.ant-upload-select-picture-card .ant-upload-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.upload-example {
+  position: relative;
+  display: inline-block;
+  height: 96px;
+  width: 96px;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  vertical-align: top;
+}
+
+.upload-example img {
+  height: 78px;
+  width: 78px;
+}
+
+.upload-example:before {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  content: ' ';
+  width: 78px;
+  height: 24px;
+  background-color: #808080;
+  opacity: .8;
+}
+
+.upload-example span {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 78px;
+  height: 24px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-comment">/* 配合样式可以做出上传按钮和示例效果 */</span>
+<span class="hljs-class">.ant-upload-select-picture-card</span> <span class="hljs-tag">i</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">28px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#999</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-upload-select-picture-card</span> <span class="hljs-class">.ant-upload-text</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">12px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#666</span></span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">96px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">96px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#d9d9d9</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> top</span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span> <span class="hljs-tag">img</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">' '</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#808080</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> .<span class="hljs-number">8</span></span></span>;
+}</span>
+
+<span class="hljs-class">.upload-example</span> <span class="hljs-tag">span</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">78px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-picture-card">图片卡片样式</a>
+    </div>
+    
+<p>上传文件为图片，可展示本地缩略图。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

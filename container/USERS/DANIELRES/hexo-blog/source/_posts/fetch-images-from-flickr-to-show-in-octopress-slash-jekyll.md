@@ -1,17 +1,21 @@
-title: Fetch images from Flickr 
+title: Fetch images from Flickr
 sub: And show them in Octopress/Jekyll
 date: 2012-07-21 17:53
 categories:
+
 - programming
 - ruby
-tags:
+  tags:
 - flickr
 - ruby
 - api
 - octopress
 - jekyll
+
 ---
+
 &nbsp;
+
 <!-- more -->
 
 A convenient way to manage images for a blog is to host them on Flickr.
@@ -41,4 +45,5 @@ Put this file in the 'plugins' directory:
 ## Usage in a post
 
 <script src="https://gist.github.com/3156265.js?file=2012-07-21-post-with-images-from-flickr.markdown_"></script>
+
 Done !

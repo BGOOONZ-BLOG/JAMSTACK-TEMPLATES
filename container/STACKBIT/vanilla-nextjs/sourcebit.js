@@ -2,7 +2,6 @@ const _ = require('lodash');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-
 module.exports = {
     plugins: [
         {
@@ -12,13 +11,13 @@ module.exports = {
             }
         },
         ({ data }) => {
-            const objects = data.objects.map(object => {
+            const objects = data.objects.map((object) => {
                 if (_.has(object, 'frontmatter')) {
                     return {
                         __metadata: object.__metadata,
                         ...object.frontmatter,
                         markdown_content: object.markdown || null
-                    }
+                    };
                 }
                 return object;
             });

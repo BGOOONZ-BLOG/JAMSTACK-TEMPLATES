@@ -51,8 +51,6 @@
 ///     }
 ///   }
 
-
-
 // Compile
 // -------
 /// Susy's syntax layer has various moving parts,
@@ -100,17 +98,13 @@
 ///   @each $key, $value in $grid-data {
 ///     /* #{$key}: #{$value}, */
 ///   }
-@function susy-compile(
-  $short,
-  $config: null,
-  $context-only: false
-) {
+@function susy-compile($short, $config: null, $context-only: false) {
   // Get and normalize config
   $config: if($config, susy-settings($config), susy-settings());
   $normal-config: susy-normalize($config);
 
   // Parse and normalize shorthand
-  @if (type-of($short) != 'map') and (length($short) > 0) {
+  @if (type-of($short) != "map") and (length($short) > 0) {
     $short: susy-parse($short, $context-only);
   }
 
@@ -119,8 +113,6 @@
   // Merge and return
   @return map-merge($normal-config, $normal-short);
 }
-
-
 
 // Call
 // ----
@@ -160,31 +152,53 @@
 ///   .su-span {
 ///     width: su-call('su-span', $grid-data);
 ///   }
-@function su-call(
-  $name,
-  $config
-) {
+@function su-call($name, $config) {
   $grid-function-args: (
-    'su-span': ('span', 'columns', 'gutters', 'spread', 'container-spread', 'location'),
-    'su-gutter': ('columns', 'gutters', 'container-spread'),
-    'su-slice': ('span', 'columns', 'location'),
+    "su-span": (
+      "span",
+      "columns",
+      "gutters",
+      "spread",
+      "container-spread",
+      "location",
+    ),
+    "su-gutter": (
+      "columns",
+      "gutters",
+      "container-spread",
+    ),
+    "su-slice": (
+      "span",
+      "columns",
+      "location",
+    ),
   );
 
   $args: map-get($grid-function-args, $name);
 
   @if not $args {
-    $options: 'Try one of these: #{map-keys($grid-function-args)}';
+    $options: "Try one of these: #{map-keys($grid-function-args)}";
     @return _susy-error(
-      '#{$name} is not a public Su function. #{$options}',
-      'su-call');
+      "#{$name} is not a public Su function. #{$options}",
+      "su-call"
+    );
   }
 
-  $call: if(function-exists('get-function'), get-function($name), $name);
+  $call: if(function-exists("get-function"), get-function($name), $name);
   $output: ();
 
   @each $arg in $args {
     $value: map-get($config, $arg);
-    $output: if($value, map-merge($output, ($arg: $value)), $output);
+    $output: if(
+      $value,
+      map-merge(
+        $output,
+        (
+          $arg: $value,
+        )
+      ),
+      $output
+    );
   }
 
   @return call($call, $output...);

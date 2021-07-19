@@ -1,14 +1,14 @@
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 
 const decodeToken = ({ token, secret = process.env.AUTH_SECRET }) =>
   new Promise((resolve, reject) => {
     jwt.verify(token, secret, (err, decoded) => {
       if (err) {
-        reject({ error: 'Unauthorized' })
+        reject({ error: "Unauthorized" });
       } else {
-        resolve(decoded)
+        resolve(decoded);
       }
-    })
-  })
+    });
+  });
 
-module.exports = decodeToken
+module.exports = decodeToken;

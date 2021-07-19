@@ -14,6 +14,6 @@ invoice:
     description: Libellé
     unitary_price: Prix unitaire
     total: Total
-    ex_vat_total:  Total HTVA
-    vat_total:     TVA
+    ex_vat_total: Total HTVA
+    vat_total: TVA
     inc_vat_total: Total TTC

@@ -8,9 +8,9 @@ preview: social-pomodoro-berlin-preview-394x224.jpg
 
 You just need to come with something you want to work on, your tools, and your beautiful mind !
 
-* [meetup.com/Social-Pomodoro-Berlin](http://www.meetup.com/Social-Pomodoro-Berlin)
-* [doma.io/social-pomodoro](http://doma.io/social-pomodoro)
-* [pomodorotechnique.com](http://pomodorotechnique.com)
+- [meetup.com/Social-Pomodoro-Berlin](http://www.meetup.com/Social-Pomodoro-Berlin)
+- [doma.io/social-pomodoro](http://doma.io/social-pomodoro)
+- [pomodorotechnique.com](http://pomodorotechnique.com)
 
 <br />
 

@@ -1,9 +1,9 @@
 title: Stackbit Starter Theme
 baseurl: /
-permalink: '/:title/'
+permalink: "/:title/"
 collections:
   posts:
-    permalink: '/posts/:title/'
+    permalink: "/posts/:title/"
 description: An ultra customizable generic theme for Stackbit
 header:
   title: Starter
@@ -36,21 +36,21 @@ footer:
   has_social: true
   social_links:
     - label: Twitter
-      url: 'https://twitter.com/'
+      url: "https://twitter.com/"
       style: link
       new_window: true
     - label: GitHub
-      url: 'https://github.com/'
+      url: "https://github.com/"
       style: link
       new_window: true
     - label: LinkedIn
-      url: 'https://www.linkedin.com/'
+      url: "https://www.linkedin.com/"
       style: link
       new_window: true
-  content: '&copy; Stackbit-Starter. All rights reserved.'
+  content: "&copy; Stackbit-Starter. All rights reserved."
   links:
     - label: Made with Stackbit.
-      url: 'https://www.stackbit.com'
+      url: "https://www.stackbit.com"
       style: link
       new_window: true
 sass:

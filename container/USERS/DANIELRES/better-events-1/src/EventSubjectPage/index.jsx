@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
-import React from 'react';
-import { sendMessage } from '../io/messages';
-import Link from 'redux-first-router-link';
+import { connect } from "react-redux";
+import React from "react";
+import { sendMessage } from "../io/messages";
+import Link from "redux-first-router-link";
 
 const EventSubjectPage = ({
   event,
@@ -17,37 +17,35 @@ const EventSubjectPage = ({
           <small>
             <Link
               to={{
-                type: 'EVENTPAGE',
+                type: "EVENTPAGE",
                 payload: { eventCode },
               }}
             >
               {event.name}
             </Link>
-            {' / '}
+            {" / "}
           </small>
 
           {subject.name}
         </h2>
         <div>
           {messages
-            .filter(m => m.discussionId === subject.id)
-            .map(m => <li>{m.body}</li>)}
+            .filter((m) => m.discussionId === subject.id)
+            .map((m) => (
+              <li>{m.body}</li>
+            ))}
         </div>
         <form
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault();
             onSubmit({
               body: this.messageInput.value,
               discussionId: subject.id,
             });
-            this.messageInput.value = '';
+            this.messageInput.value = "";
           }}
         >
-          <input
-            autoFocus
-            ref={e => (this.messageInput = e)}
-            type="text"
-          />
+          <input autoFocus ref={(e) => (this.messageInput = e)} type="text" />
 
           <button>Send</button>
         </form>
@@ -63,9 +61,7 @@ const mapState = ({ events, location, messages }) => {
   return {
     event,
     eventCode,
-    subject: event
-      ? event.subjects.find(s => s.id === subjectId)
-      : null,
+    subject: event ? event.subjects.find((s) => s.id === subjectId) : null,
     messages,
   };
 };

@@ -1,0 +1,80 @@
+<div class="code-box" id="demo-change-on-select">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-change-on-select"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-change-on-select');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.Cascader, { options: options, onChange: onChange, changeOnSelect: true }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> <span class="hljs-attribute">changeOnSelect</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-change-on-select">选择即改变</a>
+    </div>
+    
+<p>这种交互允许只选中父级选项。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

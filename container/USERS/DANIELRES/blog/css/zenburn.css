@@ -7,8 +7,8 @@ based on dark.css by Ivan Sagalaev
 
 .markdown pre {
   display: block;
-  background: #3F3F3F;
-  color: #DCDCDC;
+  background: #3f3f3f;
+  color: #dcdcdc;
   overflow-y: hidden;
 }
 
@@ -53,25 +53,25 @@ code {
 .hljs-request,
 .hljs-status,
 .clojure .hljs-attribute {
-  color: #E3CEAB;
+  color: #e3ceab;
 }
 
 .django .hljs-template_tag,
 .django .hljs-variable,
 .django .hljs-filter .hljs-argument {
-  color: #DCDCDC;
+  color: #dcdcdc;
 }
 
 .hljs-number,
 .hljs-date {
-  color: #8CD0D3;
+  color: #8cd0d3;
 }
 
 .dos .hljs-envvar,
 .dos .hljs-stream,
 .hljs-variable,
 .apache .hljs-sqbracket {
-  color: #EFDCBC;
+  color: #efdcbc;
 }
 
 .dos .hljs-flow,
@@ -80,12 +80,12 @@ code {
 .python .hljs-built_in,
 .hljs-literal,
 .tex .hljs-special {
-  color: #EFEFAF;
+  color: #efefaf;
 }
 
 .diff .hljs-chunk,
 .hljs-subst {
-  color: #8F8F8F;
+  color: #8f8f8f;
 }
 
 .dos .hljs-keyword,
@@ -98,14 +98,14 @@ code {
 .nginx .hljs-built_in,
 .tex .hljs-command,
 .hljs-prompt {
-    color: #efef8f;
+  color: #efef8f;
 }
 
 .dos .hljs-winutils,
 .ruby .hljs-symbol,
 .ruby .hljs-symbol .hljs-string,
 .ruby .hljs-string {
-  color: #DCA3A3;
+  color: #dca3a3;
 }
 
 .diff .hljs-deletion,
@@ -125,7 +125,7 @@ code {
 .apache .hljs-cbracket,
 .tex .hljs-formula,
 .coffeescript .hljs-attribute {
-  color: #CC9393;
+  color: #cc9393;
 }
 
 .hljs-shebang,
@@ -135,7 +135,7 @@ code {
 .hljs-template_comment,
 .hljs-pi,
 .hljs-doctype {
-  color: #7F9F7F;
+  color: #7f9f7f;
 }
 
 .coffeescript .javascript,
@@ -147,4 +147,3 @@ code {
 .xml .hljs-cdata {
   opacity: 0.5;
 }
-

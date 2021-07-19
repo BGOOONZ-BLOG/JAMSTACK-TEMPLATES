@@ -5,6 +5,7 @@ A gatsby starter for creating an AMP compliant blog.
 Not sure what Amp is? Learn about [Project AMP](https://www.ampproject.org).
 
 ## Running in development
+
 `npm run develop`
 
 ## Building for production

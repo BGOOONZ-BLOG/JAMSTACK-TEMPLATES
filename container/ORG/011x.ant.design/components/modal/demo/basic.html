@@ -1,0 +1,107 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-modal-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-modal-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var App = React.createClass({
+  displayName: 'App',
+  getInitialState: function getInitialState() {
+    return { visible: false };
+  },
+  showModal: function showModal() {
+    this.setState({
+      visible: true
+    });
+  },
+  handleOk: function handleOk() {
+    console.log('点击了确定');
+    this.setState({
+      visible: false
+    });
+  },
+  handleCancel: function handleCancel() {
+    this.setState({
+      visible: false
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        _antd.Button,
+        { type: 'primary', onClick: this.showModal },
+        '显示对话框'
+      ),
+      React.createElement(
+        _antd.Modal,
+        { title: '第一个 Modal', visible: this.state.visible,
+          onOk: this.handleOk, onCancel: this.handleCancel },
+        React.createElement(
+          'p',
+          null,
+          '对话框的内容'
+        ),
+        React.createElement(
+          'p',
+          null,
+          '对话框的内容'
+        ),
+        React.createElement(
+          'p',
+          null,
+          '对话框的内容'
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Modal, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> { visible: <span class="hljs-literal">false</span> };
+  },
+  showModal() {
+    <span class="hljs-keyword">this</span>.setState({
+      visible: <span class="hljs-literal">true</span>
+    });
+  },
+  handleOk() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'点击了确定'</span>);
+    <span class="hljs-keyword">this</span>.setState({
+      visible: <span class="hljs-literal">false</span>
+    });
+  },
+  handleCancel() {
+    <span class="hljs-keyword">this</span>.setState({
+      visible: <span class="hljs-literal">false</span>
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Modal</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"第一个 Modal"</span> <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
+        <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk}</span> <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{this.handleCancel}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Modal</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    <p>第一个对话框。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { extendType, intArg, objectType, stringArg  } from '@nexus/schema'
+import { extendType, intArg, objectType, stringArg } from '@nexus/schema'
 import * as nexus from '@nexus/schema'
 
 export const User = objectType({
@@ -7,8 +7,8 @@ export const User = objectType({
     t.model.id()
     t.model.name()
     t.model.email()
-    t.model.profile({ type: 'Profile'})
-    t.model.venues({type: "Venue"})
+    t.model.profile({ type: 'Profile' })
+    t.model.venues({ type: 'Venue' })
   },
 })
 
@@ -22,8 +22,6 @@ export const Profile = objectType({
   },
 })
 
-
-
 export const UserMutation = nexus.extendType({
   type: 'Mutation',
   definition(t) {
@@ -36,28 +34,24 @@ export const UserQuery = nexus.extendType({
   type: 'Query',
   definition(t) {
     t.crud.users({
-      alias: "SearchUsers",
+      alias: 'SearchUsers',
       resolve: async (parent, args, ctx) => {
         const users = await ctx.prisma.user.findMany()
         console.log('ctx ===>', users)
         return users
-      }
-    }),
-
-    t.crud.users({ filtering: true, pagination: true }),
-
-    t.field("userCRUDY", {
-      type: User,
-       nullable: true,
-      args: {
-        id: intArg(),
       },
-      description: "Use this as you are a bitch",
-      resolve: (parent, { id }, ctx) => {
-        return ctx.prisma.user.findOne({ where: { id: Number(id) }})
-      }
-    })
+    }),
+      t.crud.users({ filtering: true, pagination: true }),
+      t.field('userCRUDY', {
+        type: User,
+        nullable: true,
+        args: {
+          id: intArg(),
+        },
+        description: 'Use this as you are a bitch',
+        resolve: (parent, { id }, ctx) => {
+          return ctx.prisma.user.findOne({ where: { id: Number(id) } })
+        },
+      })
   },
 })
-
-

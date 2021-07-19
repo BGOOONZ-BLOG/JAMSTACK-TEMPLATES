@@ -2,11 +2,11 @@
 
 ## Pre-Requisites
 
-[Python v2](https://www.python.org/) is required to install Gatsby. Please ensure ``python`` is in your ``PATH``.
+[Python v2](https://www.python.org/) is required to install Gatsby. Please ensure `python` is in your `PATH`.
 
 ## Install
-`npm install -g gatsby`
 
+`npm install -g gatsby`
 
 ## Create a new site from scratch
 
@@ -31,8 +31,7 @@ the Gatsby Starter Blog by running:
 
 `gatsby new blog https://github.com/gatsbyjs/gatsby-starter-blog`
 
-This downloads the files and initializes the site by running `npm
-install`
+This downloads the files and initializes the site by running `npm install`
 
 If you don't specify a custom starter, your site will be created
 from the [default
@@ -41,11 +40,11 @@ starter](https://github.com/gatsbyjs/gatsby-starter-default).
 There are several starters that have been created. Create a PR to
 include yours!
 
-* [Kitchen sink default starter](https://github.com/gatsbyjs/gatsby-starter-default) ([Demo](http://gatsbyjs.github.io/gatsby-starter-default/))
-* [Simple blog](https://github.com/gatsbyjs/gatsby-starter-blog) ([Demo](http://gatsbyjs.github.io/gatsby-starter-blog/))
-* [Simple documentation site](https://github.com/gatsbyjs/gatsby-starter-documentation) ([Demo](http://gatsbyjs.github.io/gatsby-starter-documentation/))
-* [Lumen](https://github.com/wpioneer/gatsby-starter-lumen) ([Demo](http://wpioneer.github.io/gatsby-starter-lumen/))
-* [DrunkenBlog](https://github.com/konsumer/gatsby-starter-drunkenblog) ([Demo](http://konsumer.js.org/gatsby-starter-drunkenblog/))
-* [Clean start](https://github.com/brianstone/gatsby-starter-clean) ([Demo](http://gatsby-starter-clean.netlify.com/))
-* [Project AMP blog](https://github.com/chiedo/gatsby-amp-starter-blog)
-* [Gatstrap](https://github.com/jaxx2104/gatsby-starter-bootstrap) ([Demo](https://jaxx2104.github.io/gatsby-starter-bootstrap/))
+- [Kitchen sink default starter](https://github.com/gatsbyjs/gatsby-starter-default) ([Demo](http://gatsbyjs.github.io/gatsby-starter-default/))
+- [Simple blog](https://github.com/gatsbyjs/gatsby-starter-blog) ([Demo](http://gatsbyjs.github.io/gatsby-starter-blog/))
+- [Simple documentation site](https://github.com/gatsbyjs/gatsby-starter-documentation) ([Demo](http://gatsbyjs.github.io/gatsby-starter-documentation/))
+- [Lumen](https://github.com/wpioneer/gatsby-starter-lumen) ([Demo](http://wpioneer.github.io/gatsby-starter-lumen/))
+- [DrunkenBlog](https://github.com/konsumer/gatsby-starter-drunkenblog) ([Demo](http://konsumer.js.org/gatsby-starter-drunkenblog/))
+- [Clean start](https://github.com/brianstone/gatsby-starter-clean) ([Demo](http://gatsby-starter-clean.netlify.com/))
+- [Project AMP blog](https://github.com/chiedo/gatsby-amp-starter-blog)
+- [Gatstrap](https://github.com/jaxx2104/gatsby-starter-bootstrap) ([Demo](https://jaxx2104.github.io/gatsby-starter-bootstrap/))

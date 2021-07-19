@@ -1,5 +1,5 @@
 export const types = {
-  RECEIVE_MESSAGE: 'RECEIVE_MESSAGE',
+  RECEIVE_MESSAGE: "RECEIVE_MESSAGE",
 };
 
 export const initialState = [];

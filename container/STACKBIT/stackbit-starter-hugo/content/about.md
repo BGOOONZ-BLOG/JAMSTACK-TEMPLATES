@@ -28,7 +28,7 @@ sections:
       - data/team/gordon-norman.json
   - type: cta_section
     title: Join the Team
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     actions:
       - label: Contact Us
         url: /contact

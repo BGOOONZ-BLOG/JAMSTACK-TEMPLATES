@@ -123,11 +123,11 @@ body {
 }
 
 #recent-comments ul ul li:after {
-	content: ", ";
+  content: ", ";
 }
 
 #recent-comments ul ul li.last:after {
-	content: "";
+  content: "";
 }
 
 #recent-comments .count {
@@ -202,11 +202,21 @@ form button {
   height: 450px;
 }
 
-form fieldset { margin-bottom: 10px; width: 622px; padding: 10px; }
-form fieldset.buttons { text-align: center; }
-form fieldset.buttons input { width: 300px; }
+form fieldset {
+  margin-bottom: 10px;
+  width: 622px;
+  padding: 10px;
+}
+form fieldset.buttons {
+  text-align: center;
+}
+form fieldset.buttons input {
+  width: 300px;
+}
 
-p.inline-hints { clear: both; }
+p.inline-hints {
+  clear: both;
+}
 form fieldset ol li {
   border: none;
 }

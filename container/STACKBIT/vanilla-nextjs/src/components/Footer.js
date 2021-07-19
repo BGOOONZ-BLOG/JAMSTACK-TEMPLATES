@@ -18,12 +18,16 @@ export default class Footer extends React.Component {
                 {copyright && <div className="copyright">{htmlToReact(copyright)}</div>}
                 {!_.isEmpty(links) && (
                     <nav>
-                        {_.map(links, (action, index) => <Action key={index} action={action} actionClass={'subtle-link'} />)}
+                        {_.map(links, (action, index) => (
+                            <Action key={index} action={action} actionClass={'subtle-link'} />
+                        ))}
                     </nav>
                 )}
                 {hasSocial && !_.isEmpty(socialLinks) && (
                     <div className="social-links">
-                        {_.map(socialLinks, (action, index) => <Action key={index} action={action} actionClass={'subtle-link'} />)}
+                        {_.map(socialLinks, (action, index) => (
+                            <Action key={index} action={action} actionClass={'subtle-link'} />
+                        ))}
                     </div>
                 )}
             </footer>

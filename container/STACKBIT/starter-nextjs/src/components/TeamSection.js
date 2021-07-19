@@ -31,7 +31,7 @@ export default class TeamSection extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 
     render() {
@@ -49,9 +49,7 @@ export default class TeamSection extends React.Component {
                 )}
                 {!_.isEmpty(team) && (
                     <div className="container container--lg">
-                        <div className="flex flex--col-3">
-                            {_.map(team, (teamMemberRef, index) => this.renderTeamMember(teamMemberRef, index, data))}
-                        </div>
+                        <div className="flex flex--col-3">{_.map(team, (teamMemberRef, index) => this.renderTeamMember(teamMemberRef, index, data))}</div>
                     </div>
                 )}
             </section>

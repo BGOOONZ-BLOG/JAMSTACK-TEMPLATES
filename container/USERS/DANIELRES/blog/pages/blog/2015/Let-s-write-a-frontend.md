@@ -38,10 +38,9 @@ tags:
     $ npm i -D webpack-dev-server
       # same as: npm install webpack-dev-server --save-dev
 
-
 Add the lines starting with `"dev"` and `"build"` (lines 2 and 3) to `package.json`:
 
-``` javascript
+```javascript
 // package.json
 "scripts": {
   "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
@@ -53,10 +52,10 @@ Add the lines starting with `"dev"` and `"build"` (lines 2 and 3) to `package.js
 Let's check the result:
 
     $ npm run dev
-    
+
     $ curl http://localhost:8080
       # => hello world
-    
+
     $ google-chrome http://localhost:8080/webpack-dev-server/
       # => "Connecting to socket.io server..."
 
@@ -64,43 +63,40 @@ Let's add the minimum dependencies needed for developing with React, using .jsx 
 
     $ npm i -s babel-core babel-loader react
 
-
 Let's start with a basic configuration in `webpack.config.js`
 
-``` javascript
+```javascript
 // webpack.config.js
-'use strict';
+"use strict";
 
-var webpack = require('webpack');
+var webpack = require("webpack");
 
 module.exports = {
-  entry: [
-    './app/main.jsx'
-  ],
+  entry: ["./app/main.jsx"],
   resolve: {
-    extensions: ['', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'app']
+    extensions: ["", ".js", ".jsx"],
+    modulesDirectories: ["node_modules", "app"],
   },
   output: {
-    path:     './build',
-    filename: 'bundle.js'
+    path: "./build",
+    filename: "bundle.js",
   },
   module: {
     loaders: [
       {
         test: /\.jsx$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader'
-      }
-    ]
-  }
+        loader: "babel-loader",
+      },
+    ],
+  },
 };
 ```
 
 Let's add a basic `app/main.jsx` to make sure it’s working:
 
-``` javascript
-// app/main.jsx 
+```javascript
+// app/main.jsx
 console.log("hello from app/main.jsx !!");
 ```
 
@@ -117,10 +113,9 @@ Now if you run a:
 
     $ cat buils/bundle.js
 
-
 Then, at the end of the output, you should see something like this:
 
-``` javascript
+```javascript
 /***/ },
 /* 1 */
 /***/ function(module, exports) {

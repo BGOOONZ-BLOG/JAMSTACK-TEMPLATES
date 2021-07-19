@@ -1,11 +1,11 @@
 /* @flow weak */
-import webpack from 'webpack'
-import webpackConfig from './webpack.config'
+import webpack from "webpack";
+import webpackConfig from "./webpack.config";
 
 module.exports = (program, callback) => {
-  const { directory } = program
+  const { directory } = program;
 
-  const compilerConfig = webpackConfig(program, directory, 'build-javascript')
+  const compilerConfig = webpackConfig(program, directory, "build-javascript");
 
-  return webpack(compilerConfig.resolve()).run(callback)
-}
+  return webpack(compilerConfig.resolve()).run(callback);
+};

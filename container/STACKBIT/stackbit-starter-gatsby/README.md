@@ -10,17 +10,17 @@ Starter is a flexible, multi-purpose Gatsby theme built for developers and ready
 
 # Running Your Site Locally
 
-1. Install [Node.js and npm](https://nodejs.org/en/)
+1.  Install [Node.js and npm](https://nodejs.org/en/)
 
-2. Install npm dependencies:
+2.  Install npm dependencies:
 
         npm install
 
-3. Start the Gatsby local development server:
+3.  Start the Gatsby local development server:
 
         npm run develop
 
-4. Browse to [http://localhost:8000/](http://localhost:8000/)
+4.  Browse to [http://localhost:8000/](http://localhost:8000/)
 
 # Deployment
 

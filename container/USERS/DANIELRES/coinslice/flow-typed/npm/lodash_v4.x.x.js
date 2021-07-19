@@ -26,20 +26,11 @@ declare module "lodash" {
     *
   >;
 
-  declare type __CurriedFunction4<
-    A,
-    B,
-    C,
-    D,
-    R,
-    AA: A,
-    BB: B,
-    CC: C,
-    DD: D
-  > = ((...r: [AA]) => CurriedFunction3<BB, CC, DD, R>) &
-    ((...r: [AA, BB]) => CurriedFunction2<CC, DD, R>) &
-    ((...r: [AA, BB, CC]) => CurriedFunction1<DD, R>) &
-    ((...r: [AA, BB, CC, DD]) => R);
+  declare type __CurriedFunction4<A, B, C, D, R, AA: A, BB: B, CC: C, DD: D> =
+    ((...r: [AA]) => CurriedFunction3<BB, CC, DD, R>) &
+      ((...r: [AA, BB]) => CurriedFunction2<CC, DD, R>) &
+      ((...r: [AA, BB, CC]) => CurriedFunction1<DD, R>) &
+      ((...r: [AA, BB, CC, DD]) => R);
   declare type CurriedFunction4<A, B, C, D, R> = __CurriedFunction4<
     A,
     B,
@@ -139,24 +130,24 @@ declare module "lodash" {
     evaluate?: RegExp,
     imports?: Object,
     interpolate?: RegExp,
-    variable?: string
+    variable?: string,
   };
 
   declare type TruncateOptions = {
     length?: number,
     omission?: string,
-    separator?: RegExp | string
+    separator?: RegExp | string,
   };
 
   declare type DebounceOptions = {
     leading?: boolean,
     maxWait?: number,
-    trailing?: boolean
+    trailing?: boolean,
   };
 
   declare type ThrottleOptions = {
     leading?: boolean,
-    trailing?: boolean
+    trailing?: boolean,
   };
 
   declare type NestedArray<T> = Array<Array<T>>;
@@ -1204,20 +1195,11 @@ declare module "lodash/fp" {
     *
   >;
 
-  declare type __CurriedFunction4<
-    A,
-    B,
-    C,
-    D,
-    R,
-    AA: A,
-    BB: B,
-    CC: C,
-    DD: D
-  > = ((...r: [AA]) => CurriedFunction3<BB, CC, DD, R>) &
-    ((...r: [AA, BB]) => CurriedFunction2<CC, DD, R>) &
-    ((...r: [AA, BB, CC]) => CurriedFunction1<DD, R>) &
-    ((...r: [AA, BB, CC, DD]) => R);
+  declare type __CurriedFunction4<A, B, C, D, R, AA: A, BB: B, CC: C, DD: D> =
+    ((...r: [AA]) => CurriedFunction3<BB, CC, DD, R>) &
+      ((...r: [AA, BB]) => CurriedFunction2<CC, DD, R>) &
+      ((...r: [AA, BB, CC]) => CurriedFunction1<DD, R>) &
+      ((...r: [AA, BB, CC, DD]) => R);
   declare type CurriedFunction4<A, B, C, D, R> = __CurriedFunction4<
     A,
     B,
@@ -1317,24 +1299,24 @@ declare module "lodash/fp" {
     evaluate?: RegExp,
     imports?: Object,
     interpolate?: RegExp,
-    variable?: string
+    variable?: string,
   };
 
   declare type TruncateOptions = {
     length?: number,
     omission?: string,
-    separator?: RegExp | string
+    separator?: RegExp | string,
   };
 
   declare type DebounceOptions = {
     leading?: boolean,
     maxWait?: number,
-    trailing?: boolean
+    trailing?: boolean,
   };
 
   declare type ThrottleOptions = {
     leading?: boolean,
-    trailing?: boolean
+    trailing?: boolean,
   };
 
   declare type NestedArray<T> = Array<Array<T>>;
@@ -2966,7 +2948,7 @@ declare module "lodash/fp" {
       curry?: boolean,
       fixed?: boolean,
       immutable?: boolean,
-      rearg?: boolean
+      rearg?: boolean,
     }): void;
 
     // Properties

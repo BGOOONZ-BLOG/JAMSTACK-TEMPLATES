@@ -1,5 +1,5 @@
 /* @flow weak */
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from "react";
 
 module.exports = React.createClass({
   propTypes: {
@@ -10,13 +10,13 @@ module.exports = React.createClass({
     }),
   },
 
-  render () {
-    const post = this.props.route.page.data
+  render() {
+    const post = this.props.route.page.data;
     return (
       <div>
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-    )
+    );
   },
-})
+});

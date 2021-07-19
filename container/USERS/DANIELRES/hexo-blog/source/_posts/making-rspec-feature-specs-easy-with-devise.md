@@ -3,17 +3,21 @@ sub: Making them easier to writer and faster to execute
 date: 2013-01-16 12:22
 comments: true
 categories:
+
 - programming
 - testing
 - ruby
-tags: 
+  tags:
 - rspec
 - integration-tests
 - devise
 - rails
 - capybara
+
 ---
-&nbsp; 
+
+&nbsp;
+
 <!-- more -->
 
 I love writing feature specs with Rspec and Capybara.
@@ -40,11 +44,11 @@ This means you already should have authentication well tested, with its complete
 
 {% codeblock file:spec/features/admin_users_datatable.rb lang:ruby %}
 require 'spec_helper'
-include Warden::Test::Helpers             ## including some warden magic
-Warden.test_mode!                         ## telling warden we are testing stuff
+include Warden::Test::Helpers ## including some warden magic
+Warden.test_mode! ## telling warden we are testing stuff
 
 feature "(...)" do
-  context "(...)" do
+context "(...)" do
 
     before(:each) do
       admin = FactoryGirl.create(:admin)
@@ -55,7 +59,8 @@ feature "(...)" do
       visit admin_users_path
       # (...)
     end
-  end
+
+end
 end
 
 {% endcodeblock %}
@@ -68,7 +73,7 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 feature "admin searching for a specific user" do
-  context "when logged in as admin" do
+context "when logged in as admin" do
 
     before(:each) do
       admin = FactoryGirl.create(:admin)
@@ -86,7 +91,8 @@ feature "admin searching for a specific user" do
       page.body.should     have_content 'foo@foo.com'
       page.body.should_not have_content 'bar@bar.com'
     end
-  end
+
+end
 end
 
 {% endcodeblock %}
@@ -95,6 +101,3 @@ end
 
 - [The classic, clean, full-stach way to do this](http://robots.thoughtbot.com/post/33771089985/rspec-integration-tests-with-capybara)
 - [Rspec's feature specs](https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec)
-
-
-

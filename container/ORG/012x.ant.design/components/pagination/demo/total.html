@@ -1,0 +1,41 @@
+<div class="code-box" id="demo-total">
+  <div class="code-box-demo">
+    <div id="components-pagination-demo-total"></div>
+    <script>mountNode = document.getElementById('components-pagination-demo-total');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function showTotal(total) {
+  return '\u5171 ' + total + ' \u6761';
+}
+
+ReactDOM.render(React.createElement(_antd.Pagination, {
+  selectComponentClass: _antd.Select,
+  total: 80,
+  showTotal: showTotal,
+  pageSize: 20, defaultCurrent: 1 }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Pagination, Select } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showTotal</span>(<span class="hljs-params">total</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`共 <span class="hljs-subst">${total}</span> 条`</span>;
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Pagination</span>
+    <span class="hljs-attribute">selectComponentClass</span>=<span class="hljs-value">{Select}</span>
+    <span class="hljs-attribute">total</span>=<span class="hljs-value">{80}</span>
+    <span class="hljs-attribute">showTotal</span>=<span class="hljs-value">{showTotal}</span>
+    <span class="hljs-attribute">pageSize</span>=<span class="hljs-value">{20}</span> <span class="hljs-attribute">defaultCurrent</span>=<span class="hljs-value">{1}</span> /&gt;</span>,
+  mountNode
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-total">总数</a>
+    </div>
+    
+<p>通过设置 <code>showTotal</code> 展示总共有多少数据。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

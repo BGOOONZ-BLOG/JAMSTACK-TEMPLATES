@@ -1,0 +1,46 @@
+<div class="code-box" id="demo-format">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-format"></div>
+    <script>mountNode = document.getElementById('components-progress-demo-format');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var ProgressCircle = _antd.Progress.Circle;
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(ProgressCircle, { percent: 75, format: function format(percent) {
+      return percent / 10.0 + '\u6298';
+    } }),
+  React.createElement(ProgressCircle, { percent: 100, format: function format() {
+      return '成功';
+    } })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressCircle = Progress.Circle;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{75}</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{percent</span> =&gt;</span> `${percent / 10.0}折` } /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressCircle</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{()</span> =&gt;</span> '成功'} /&gt;
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  , mountNode);</span></code></pre></div><style>
+.ant-progress-circle-wrap,
+.ant-progress-line-wrap {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-format">自定义文字格式</a>
+    </div>
+    
+<p><code>format</code> 属性指定格式。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

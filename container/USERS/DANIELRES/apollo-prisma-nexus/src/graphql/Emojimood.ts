@@ -14,15 +14,13 @@ export const Emojimood = objectType({
 export const EmojimoodMutation = nexus.extendType({
   type: 'Mutation',
   definition(t) {
-    t.crud.createOneEmojimood({ alias: "createEmojimood" })
+    t.crud.createOneEmojimood({ alias: 'createEmojimood' })
   },
 })
 
 export const EmojimoodQuery = nexus.extendType({
   type: 'Query',
   definition(t) {
-    t.crud.emojimoods({ alias: "allEmojimoods" })
-  }
+    t.crud.emojimoods({ alias: 'allEmojimoods' })
+  },
 })
-
-

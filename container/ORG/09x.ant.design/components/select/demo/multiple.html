@@ -1,0 +1,55 @@
+<div class="code-box" id="demo-multiple">
+  <div class="code-box-demo">
+    <div id="components-select-demo-multiple"></div>
+    <script>(function(){'use strict';
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+var children = [];
+for (var i = 10; i < 36; i++) {
+  children.push(React.createElement(
+    Option,
+    { key: i.toString(36) + i },
+    i.toString(36) + i
+  ));
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { multiple: true,
+    style: { width: 400 },
+    defaultValue: ['a10', 'c12'], onChange: handleChange },
+  children
+), document.getElementById('components-select-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> children = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">10</span>; i &lt; <span class="number">36</span>; i++) {
+  children.push(<span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{i.toString(36)</span> + <span class="attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>);
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(
+  <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">multiple</span>
+  <span class="attribute">style</span>=<span class="value">{{width:400}}</span>
+  <span class="attribute">defaultValue</span>=<span class="value">{['a10',</span> '<span class="attribute">c12</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    {children}
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-multiple'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-multiple">多选</a>
+    </div>
+    <p>多选，从已有条目中选择（scroll the menu）</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

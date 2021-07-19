@@ -1,0 +1,156 @@
+<div class="code-box" id="demo-icon-slider">
+  <div class="code-box-demo">
+    <div id="components-slider-demo-icon-slider"></div>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var Slider = antd.Slider;
+
+var IconSlider = React.createClass({
+  displayName: 'IconSlider',
+
+  getInitialState: function getInitialState() {
+    var max = this.props.max;
+    var min = this.props.min;
+    var mid = ((max - min) / 2).toFixed(5);
+
+    var preIcon, nextIcon;
+    if (this.props.value >= mid) {
+      preIcon = this.props.icon[0];
+      nextIcon = this.props.icon[1] + ' anticon-highlight';
+    } else {
+      preIcon = this.props.icon[0] + ' anticon-highlight';
+      nextIcon = this.props.icon[1];
+    }
+
+    return {
+      preIcon: preIcon,
+      nextIcon: nextIcon,
+      mid: mid,
+      sliderValue: this.props.value
+    };
+  },
+
+  handleChange: function handleChange(v) {
+    var preIcon, nextIcon;
+    if (v >= this.state.mid) {
+      preIcon = this.props.icon[0];
+      nextIcon = this.props.icon[1] + ' anticon-highlight';
+    } else {
+      preIcon = this.props.icon[0] + ' anticon-highlight';
+      nextIcon = this.props.icon[1];
+    }
+
+    this.setState({
+      preIcon: preIcon,
+      nextIcon: nextIcon,
+      sliderValue: v
+    });
+  },
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'iconWrapper' },
+      React.createElement('i', { className: this.state.preIcon }),
+      React.createElement('i', { className: this.state.nextIcon }),
+      React.createElement(Slider, _extends({}, this.props, { onChange: this.handleChange, value: this.state.sliderValue }))
+    );
+  }
+});
+
+React.render(React.createElement(IconSlider, { min: 0, max: 20, value: 0, icon: ['anticon anticon-lock', 'anticon anticon-unlock'] }), document.getElementById('components-slider-demo-icon-slider'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Slider = antd.Slider;
+
+<span class="keyword">var</span> IconSlider = React.createClass({
+  getInitialState() {
+    <span class="keyword">var</span> max = <span class="keyword">this</span>.props.max;
+    <span class="keyword">var</span> min = <span class="keyword">this</span>.props.min;
+    <span class="keyword">var</span> mid = ((max - min) / <span class="number">2</span>).toFixed(<span class="number">5</span>);
+
+    <span class="keyword">var</span> preIcon, nextIcon;
+    <span class="keyword">if</span> (<span class="keyword">this</span>.props.value &gt;= mid) {
+      preIcon = <span class="keyword">this</span>.props.icon[<span class="number">0</span>];
+      nextIcon = <span class="keyword">this</span>.props.icon[<span class="number">1</span>] + <span class="string">' anticon-highlight'</span>;
+    } <span class="keyword">else</span> {
+      preIcon = <span class="keyword">this</span>.props.icon[<span class="number">0</span>] + <span class="string">' anticon-highlight'</span>;
+      nextIcon = <span class="keyword">this</span>.props.icon[<span class="number">1</span>];
+    }
+
+    <span class="keyword">return</span> {
+      preIcon: preIcon,
+      nextIcon: nextIcon,
+      mid: mid,
+      sliderValue: <span class="keyword">this</span>.props.value
+    };
+  },
+
+  handleChange(v) {
+    <span class="keyword">var</span> preIcon, nextIcon;
+    <span class="keyword">if</span> (v &gt;= <span class="keyword">this</span>.state.mid) {
+      preIcon = <span class="keyword">this</span>.props.icon[<span class="number">0</span>];
+      nextIcon = <span class="keyword">this</span>.props.icon[<span class="number">1</span>] + <span class="string">' anticon-highlight'</span>;
+    } <span class="keyword">else</span> {
+      preIcon = <span class="keyword">this</span>.props.icon[<span class="number">0</span>] + <span class="string">' anticon-highlight'</span>;
+      nextIcon = <span class="keyword">this</span>.props.icon[<span class="number">1</span>];
+    }
+
+    <span class="keyword">this</span>.setState(
+      {
+        preIcon: preIcon,
+        nextIcon: nextIcon,
+        sliderValue: v
+      }
+    );
+  },
+
+  render() {
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"iconWrapper"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">{this.state.preIcon}</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">{this.state.nextIcon}</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Slider</span> {<span class="attribute">...this.props</span>} <span class="attribute">onChange</span>=<span class="value">{this.handleChange}</span> <span class="attribute">value</span>=<span class="value">{this.state.sliderValue}</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(
+<span class="tag">&lt;<span class="title">IconSlider</span> <span class="attribute">min</span>=<span class="value">{0}</span> <span class="attribute">max</span>=<span class="value">{20}</span> <span class="attribute">value</span>=<span class="value">{0}</span> <span class="attribute">icon</span>=<span class="value">{['anticon</span> <span class="attribute">anticon-lock</span>', '<span class="attribute">anticon</span> <span class="attribute">anticon-unlock</span>']} /&gt;</span>
+, document.getElementById('components-slider-demo-icon-slider'));</span></code></pre></div><style>
+.iconWrapper {
+  position: relative;
+  padding: 0 24px 0 9px;
+}
+
+.iconWrapper .anticon {
+  position: absolute;
+  top: -6px;
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.iconWrapper .anticon-lock {
+  left: 0;
+}
+.iconWrapper .anticon-unlock{
+  right: 0;
+}
+
+.anticon.anticon-highlight {
+  color: #666;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-icon-slider">带 icon 的滑块</a>
+    </div>
+    <p>滑块左右可以设置图标来表达业务含义。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

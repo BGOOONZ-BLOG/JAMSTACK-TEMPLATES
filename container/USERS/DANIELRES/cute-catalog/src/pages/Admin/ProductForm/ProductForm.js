@@ -1,11 +1,11 @@
-import styled from 'styled-components/macro'
-import React from 'react'
-import { Formik, Form } from 'formik'
+import styled from "styled-components/macro";
+import React from "react";
+import { Formik, Form } from "formik";
 
-import bus from 'shared/Forms/Dropzone/bus'
+import bus from "shared/Forms/Dropzone/bus";
 
-import FormRow from 'shared/Forms/Row'
-import UploadImageButton from 'Modals/buttons/UploadImageButton'
+import FormRow from "shared/Forms/Row";
+import UploadImageButton from "Modals/buttons/UploadImageButton";
 
 const ImagePreview = styled(({ className, src }) => (
   <div className={className}>
@@ -19,7 +19,7 @@ const ImagePreview = styled(({ className, src }) => (
   }
 
   img:before {
-    content: ' ';
+    content: " ";
     display: block;
     position: absolute;
     top: -0px;
@@ -30,7 +30,7 @@ const ImagePreview = styled(({ className, src }) => (
   }
 
   img:after {
-    content: '\f127';
+    content: "\f127";
     display: block;
     font-size: 16px;
     font-style: normal;
@@ -42,42 +42,42 @@ const ImagePreview = styled(({ className, src }) => (
     width: 100%;
     text-align: center;
   }
-`
+`;
 
 class ImageUploadSuccessWatcher extends React.Component {
   componentDidMount() {
-    const { setFieldTouched, setFieldValue } = this.props
-    bus.take('IMAGE_UPLOAD_SUCCESS', ({ payload }) =>
-      setFieldValue('imageSrc', payload.url)
-    )
-    setFieldTouched('imageSrc')
+    const { setFieldTouched, setFieldValue } = this.props;
+    bus.take("IMAGE_UPLOAD_SUCCESS", ({ payload }) =>
+      setFieldValue("imageSrc", payload.url)
+    );
+    setFieldTouched("imageSrc");
   }
 
   render() {
-    return null
+    return null;
   }
 }
 
 const Basic = ({ product, onSubmit }) => {
-  if (!product) return null
+  if (!product) return null;
 
   return (
     <Formik
       enableReinitialize
       initialValues={{
-        title: product.title || '',
-        description: product.description || '',
-        imageSrc: product.imageSrc || '',
+        title: product.title || "",
+        description: product.description || "",
+        imageSrc: product.imageSrc || "",
       }}
       onSubmit={async (values, { setSubmitting, resetForm }) => {
-        await onSubmit(values)
-        setSubmitting(false)
-        resetForm()
+        await onSubmit(values);
+        setSubmitting(false);
+        resetForm();
       }}
-      validate={values => {
-        let errors = {}
-        if (!values.imageSrc) errors.imageSrc = 'Required'
-        return errors
+      validate={(values) => {
+        let errors = {};
+        if (!values.imageSrc) errors.imageSrc = "Required";
+        return errors;
       }}
     >
       {({
@@ -122,7 +122,7 @@ const Basic = ({ product, onSubmit }) => {
           <FormRow
             label={
               <>
-                Image src{' '}
+                Image src{" "}
                 <UploadImageButton className="btn btn-link btn-light btn-sm link-gray ml-3" />
               </>
             }
@@ -134,7 +134,7 @@ const Basic = ({ product, onSubmit }) => {
         </Form>
       )}
     </Formik>
-  )
-}
+  );
+};
 
-export default Basic
+export default Basic;

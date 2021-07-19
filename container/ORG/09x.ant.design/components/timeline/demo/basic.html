@@ -1,0 +1,51 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-timeline-demo-basic"></div>
+    <script>(function(){'use strict';
+
+var Timeline = antd.Timeline;
+var container = document.getElementById('components-timeline-demo-basic');
+
+React.render(React.createElement(
+  Timeline,
+  null,
+  React.createElement(
+    Timeline.Item,
+    null,
+    '创建服务现场 2015-09-01'
+  ),
+  React.createElement(
+    Timeline.Item,
+    null,
+    '初步排除网络异常 2015-09-01'
+  ),
+  React.createElement(
+    Timeline.Item,
+    null,
+    '技术测试异常 2015-09-01'
+  ),
+  React.createElement(
+    Timeline.Item,
+    null,
+    '网络异常正在修复 2015-09-01'
+  )
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Timeline = antd.Timeline;
+<span class="keyword">let</span> container = document.getElementById(<span class="string">'components-timeline-demo-basic'</span>);
+
+React.render(
+<span class="xml"><span class="tag">&lt;<span class="title">Timeline</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Timeline.Item</span>&gt;</span>创建服务现场 2015-09-01<span class="tag">&lt;/<span class="title">Timeline.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Timeline.Item</span>&gt;</span>初步排除网络异常 2015-09-01<span class="tag">&lt;/<span class="title">Timeline.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Timeline.Item</span>&gt;</span>技术测试异常 2015-09-01<span class="tag">&lt;/<span class="title">Timeline.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Timeline.Item</span>&gt;</span>网络异常正在修复 2015-09-01<span class="tag">&lt;/<span class="title">Timeline.Item</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">Timeline</span>&gt;</span>
+, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本用法</a>
+    </div>
+    <p>基本的时间轴。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

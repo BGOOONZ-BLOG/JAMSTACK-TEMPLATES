@@ -1,12 +1,12 @@
-import React from 'react'
-import { NavLink } from 'redux-first-router-link'
+import React from "react";
+import { NavLink } from "redux-first-router-link";
 
-import { toHome, toLogin, toProfile } from 'store/routerActions'
+import { toHome, toLogin, toProfile } from "store/routerActions";
 
 const NavbarItem = ({ children, className, onClick, to }) => (
   <li className="nav-item">
     <NavLink
-      className={'nav-link ' + className}
+      className={"nav-link " + className}
       exact
       onClick={onClick}
       to={to}
@@ -14,10 +14,10 @@ const NavbarItem = ({ children, className, onClick, to }) => (
       {children}
     </NavLink>
   </li>
-)
+);
 
 const CurrentUserNavbarItems = ({ isLoading, isLoggedIn, logout }) => {
-  if (isLoading) return null
+  if (isLoading) return null;
 
   if (isLoggedIn)
     return (
@@ -27,14 +27,14 @@ const CurrentUserNavbarItems = ({ isLoading, isLoggedIn, logout }) => {
           Logout
         </NavbarItem>
       </>
-    )
+    );
 
   return (
     <NavbarItem className="pr-0" to={toLogin()}>
       Login
     </NavbarItem>
-  )
-}
+  );
+};
 
 const Navbar = ({ isLoading, isLoggedIn, logout }) => {
   return (
@@ -53,7 +53,7 @@ const Navbar = ({ isLoading, isLoggedIn, logout }) => {
         />
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

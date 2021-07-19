@@ -1,58 +1,58 @@
 // @flow
-import Head from 'next/head'
+import Head from "next/head";
 
-import io from 'socket.io-client'
-import * as React from 'react'
-import { render } from 'react-dom'
-import type { Message } from '../types'
+import io from "socket.io-client";
+import * as React from "react";
+import { render } from "react-dom";
+import type { Message } from "../types";
 
-const socket = io('http://localhost:3001')
+const socket = io("http://localhost:3001");
 
-type Props = { url: Object }
+type Props = { url: Object };
 type State = {
-  status: 'connected' | 'disconnected',
+  status: "connected" | "disconnected",
   messages: Array<Message>,
   messageForm: { body: string },
-}
+};
 
-let i = 0
-const authorId = 'AUTHOR_ID'
+let i = 0;
+const authorId = "AUTHOR_ID";
 
 export default class App extends React.Component<Props, State> {
   state = {
-    status: 'disconnected',
+    status: "disconnected",
     messages: [],
     messageForm: {
-      body: '',
+      body: "",
     },
-  }
+  };
 
   componentDidMount() {
-    socket.on('connect', () => this.setState({ status: 'connected' }))
+    socket.on("connect", () => this.setState({ status: "connected" }));
 
-    socket.on('message', (message: Message) => {
-      this.setState({ messages: [...this.state.messages, message] })
+    socket.on("message", (message: Message) => {
+      this.setState({ messages: [...this.state.messages, message] });
       if (message.authorId === authorId)
-        this.setState({ messageForm: { body: '' } })
-    })
+        this.setState({ messageForm: { body: "" } });
+    });
 
-    socket.on('disconnect', () => this.setState({ status: 'disconnected' }))
+    socket.on("disconnect", () => this.setState({ status: "disconnected" }));
   }
 
-  onChange = e => this.setState({ messageForm: { body: e.target.value } })
+  onChange = (e) => this.setState({ messageForm: { body: e.target.value } });
 
-  submitForm = e => {
-    e.preventDefault()
-    const { body } = this.state.messageForm
-    if (!body) return
+  submitForm = (e) => {
+    e.preventDefault();
+    const { body } = this.state.messageForm;
+    if (!body) return;
     socket.emit(
-      'message',
+      "message",
       ({
         authorId,
         body,
       }: Message)
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -80,6 +80,6 @@ export default class App extends React.Component<Props, State> {
           </li>
         ))}
       </div>
-    )
+    );
   }
 }

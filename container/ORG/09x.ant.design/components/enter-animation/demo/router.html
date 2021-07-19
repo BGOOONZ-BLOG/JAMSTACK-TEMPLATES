@@ -1,0 +1,307 @@
+<div class="code-box" id="animation-demo-router">
+  <div class="code-box-demo">
+    <div id="components-enter-animation-demo-router"></div>
+    <script>(function(){'use strict';
+
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var Link = ReactRouter.Link;
+var EnterAnimation = antd.EnterAnimation;
+var Menu = antd.Menu;
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {};
+  },
+  clickPage: function clickPage() {
+    this.setState({
+      enter: { delay: 0.3 },
+      leave: { delay: 0 }
+    });
+  },
+  render: function render() {
+    var key = this.props.location.pathname;
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Menu,
+        { style: { marginBottom: 20 }, mode: 'horizontal' },
+        React.createElement(
+          Menu.Item,
+          { key: 'home' },
+          React.createElement(
+            Link,
+            { to: '/', onClick: this.clickPage },
+            '首页'
+          )
+        ),
+        React.createElement(
+          Menu.Item,
+          { key: 'page1' },
+          React.createElement(
+            Link,
+            { to: '/page1', onClick: this.clickPage },
+            'Page 1'
+          )
+        ),
+        React.createElement(
+          Menu.Item,
+          { key: 'page2' },
+          React.createElement(
+            Link,
+            { to: '/page2', onClick: this.clickPage },
+            'Page 2'
+          )
+        )
+      ),
+      React.createElement(
+        EnterAnimation,
+        { className: 'demo-router-wap', enter: this.state.enter, leave: this.state.leave },
+        React.cloneElement(this.props.children || React.createElement(
+          'div',
+          { key: 'home', className: 'demo-router-child' },
+          React.createElement(
+            'h1',
+            null,
+            'Home'
+          ),
+          React.createElement(
+            'div',
+            null,
+            '这是首页'
+          )
+        ), { key: key })
+      )
+    );
+  }
+});
+var Page1 = React.createClass({
+  displayName: 'Page1',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        'h1',
+        null,
+        'Page 1'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '依次进场'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page2' },
+          'A link to page 2 should be active'
+        ),
+        '改变样式'
+      )
+    );
+  }
+});
+var Page2 = React.createClass({
+  displayName: 'Page2',
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'demo-router-child' },
+      React.createElement(
+        'h1',
+        null,
+        'Page 2'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      ),
+      React.createElement(
+        'p',
+        null,
+        React.createElement(
+          Link,
+          { to: '/page1' },
+          'a link to page 1 '
+        ),
+        '我是页面2.'
+      )
+    );
+  }
+});
+React.render(React.createElement(
+  Router,
+  null,
+  React.createElement(
+    Route,
+    { path: '/', component: App, ignoreScrollBehavior: true },
+    React.createElement(Route, { path: 'page1', component: Page1 }),
+    React.createElement(Route, { path: 'page2', component: Page2 })
+  )
+), document.getElementById('components-enter-animation-demo-router'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> ReactRouter = require(<span class="string">'react-router'</span>);
+<span class="keyword">var</span> Router = ReactRouter.Router;
+<span class="keyword">var</span> Route = ReactRouter.Route;
+<span class="keyword">var</span> Link = ReactRouter.Link;
+<span class="keyword">var</span> EnterAnimation = antd.EnterAnimation;
+<span class="keyword">var</span> Menu = antd.Menu;
+
+<span class="keyword">var</span> App = React.createClass({
+  getInitialState: <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="keyword">return</span> {};
+  },
+  clickPage() {
+    <span class="keyword">this</span>.setState({
+      enter: {delay: <span class="number">0.3</span>},
+      leave: {delay: <span class="number">0</span>}
+    });
+  },
+  render() {
+    <span class="keyword">var</span> key = <span class="keyword">this</span>.props.location.pathname;
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Menu</span> <span class="attribute">style</span>=<span class="value">{{marginBottom:</span> <span class="attribute">20</span>}} <span class="attribute">mode</span>=<span class="value">"horizontal"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">'home'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/"</span> <span class="attribute">onClick</span>=<span class="value">{this.clickPage}</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">'page1'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span> <span class="attribute">onClick</span>=<span class="value">{this.clickPage}</span>&gt;</span>Page 1<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">'page2'</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span> <span class="attribute">onClick</span>=<span class="value">{this.clickPage}</span>&gt;</span>Page 2<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Menu</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">EnterAnimation</span> <span class="attribute">className</span>=<span class="value">'demo-router-wap'</span> <span class="attribute">enter</span>=<span class="value">{this.state.enter}</span> <span class="attribute">leave</span>=<span class="value">{this.state.leave}</span>&gt;</span>
+            {React.cloneElement(this.props.children || <span class="tag">&lt;<span class="title">div</span> <span class="attribute">key</span>=<span class="value">'home'</span> <span class="attribute">className</span>=<span class="value">'demo-router-child'</span>&gt;</span><span class="tag">&lt;<span class="title">h1</span>&gt;</span>Home<span class="tag">&lt;/<span class="title">h1</span>&gt;</span><span class="tag">&lt;<span class="title">div</span>&gt;</span>这是首页<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>, {key: key})}
+        <span class="tag">&lt;/<span class="title">EnterAnimation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+var Page1 = React.createClass({
+  render() {
+    return (
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-router-child"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Page 1<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>依次进场<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page2"</span>&gt;</span>A link to page 2 should be active<span class="tag">&lt;/<span class="title">Link</span>&gt;</span>改变样式<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+var Page2 = React.createClass({
+  render() {
+    return (
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-router-child"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Page 2<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">Link</span> <span class="attribute">to</span>=<span class="value">"/page1"</span>&gt;</span>a link to page 1 <span class="tag">&lt;/<span class="title">Link</span>&gt;</span>我是页面2.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+React.render((
+  <span class="tag">&lt;<span class="title">Router</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Route</span> <span class="attribute">path</span>=<span class="value">"/"</span> <span class="attribute">component</span>=<span class="value">{App}</span> <span class="attribute">ignoreScrollBehavior</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Route</span> <span class="attribute">path</span>=<span class="value">"page1"</span> <span class="attribute">component</span>=<span class="value">{Page1}</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">Route</span> <span class="attribute">path</span>=<span class="value">"page2"</span> <span class="attribute">component</span>=<span class="value">{Page2}</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">Route</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Router</span>&gt;</span>
+), document.getElementById('components-enter-animation-demo-router'));</span></code></pre></div><style>
+#components-enter-animation-demo-router {
+  text-align: center;
+}
+.demo-router-wap{
+  position: relative;
+  transition: height .5s;
+  width: 300px;
+  margin: auto;
+}
+.demo-router-child{
+  text-align:left;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#animation-demo-router">Router 默认进出场</a>
+    </div>
+    <p>router 组合的进场与出场动画。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

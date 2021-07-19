@@ -1,3 +1,3 @@
-const knex = require('../init')
+const knex = require("../init");
 
-module.exports = () => knex.destroy()
+module.exports = () => knex.destroy();

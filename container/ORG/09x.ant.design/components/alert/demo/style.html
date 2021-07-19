@@ -1,0 +1,32 @@
+<div class="code-box" id="demo-style">
+  <div class="code-box-demo">
+    <div id="components-alert-demo-style"></div>
+    <script>(function(){"use strict";
+
+var Alert = antd.Alert;
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(Alert, { message: "成功提示的文案", type: "success" }),
+  React.createElement(Alert, { message: "消息提示的文案", type: "info" }),
+  React.createElement(Alert, { message: "警告提示的文案", type: "warn" }),
+  React.createElement(Alert, { message: "错误提示的文案", type: "error" })
+), document.getElementById('components-alert-demo-style'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Alert = antd.Alert;
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">"成功提示的文案"</span> <span class="attribute">type</span>=<span class="value">"success"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">"消息提示的文案"</span> <span class="attribute">type</span>=<span class="value">"info"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">"警告提示的文案"</span> <span class="attribute">type</span>=<span class="value">"warn"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">"错误提示的文案"</span> <span class="attribute">type</span>=<span class="value">"error"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>,
+document.getElementById('components-alert-demo-style'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-style">四种样式</a>
+    </div>
+    <p>共有四种样式<code>success</code>、<code>info</code>、<code>warn</code>、<code>error</code>。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

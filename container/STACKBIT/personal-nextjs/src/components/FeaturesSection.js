@@ -44,15 +44,18 @@ export default class FeaturesSection extends React.Component {
                                 'cell-md-7': isHorizontal && mediaWidth === 'sixty'
                             })}
                         >
-                            {videoEmbed ? htmlToReact(videoEmbed)
-                                : <img
+                            {videoEmbed ? (
+                                htmlToReact(videoEmbed)
+                            ) : (
+                                <img
                                     src={withPrefix(image)}
                                     alt={imageAlt}
                                     className={classNames({
                                         'mx-auto': alignX === 'center',
                                         'ml-auto': alignX === 'right'
                                     })}
-                                />}
+                                />
+                            )}
                         </div>
                     )}
                     {hasText && (
@@ -68,10 +71,7 @@ export default class FeaturesSection extends React.Component {
                                 'text-right': alignX === 'right'
                             })}
                         >
-                            {title && (
-                                sectionTitle ? <h3 className="feature__title h2">{title}</h3>
-                                    : <h2 className="feature__title h2">{title}</h2>
-                            )}
+                            {title && (sectionTitle ? <h3 className="feature__title h2">{title}</h3> : <h2 className="feature__title h2">{title}</h2>)}
                             {subtitle && <p className="feature__subtitle">{subtitle}</p>}
                             {content && <div className="feature__copy">{markdownify(content)}</div>}
                             {!_.isEmpty(actions) && (
@@ -136,11 +136,7 @@ export default class FeaturesSection extends React.Component {
                         {title && <h2 className="section__title mt-0">{title}</h2>}
                     </div>
                 )}
-                {!_.isEmpty(features) && (
-                    <div className="container">
-                        {_.map(features, (feature, index) => this.renderFeature(feature, index, section))}
-                    </div>
-                )}
+                {!_.isEmpty(features) && <div className="container">{_.map(features, (feature, index) => this.renderFeature(feature, index, section))}</div>}
             </section>
         );
     }

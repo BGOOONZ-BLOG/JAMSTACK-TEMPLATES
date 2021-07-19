@@ -1,0 +1,35 @@
+<div class="code-box" id="demo-text">
+  <div class="code-box-demo">
+    <div id="components-switch-demo-text"></div>
+    <script>(function(){"use strict";
+
+var Switch = antd.Switch;
+var container = document.getElementById('components-switch-demo-text');
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(Switch, { checkedChildren: "开", unCheckedChildren: "关" }),
+  React.createElement(
+    "span",
+    null,
+    " "
+  ),
+  React.createElement(Switch, { checkedChildren: React.createElement("i", { className: "anticon anticon-check" }), unCheckedChildren: React.createElement("i", { className: "anticon anticon-cross" }) })
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Switch = antd.Switch;
+<span class="keyword">var</span> container = document.getElementById(<span class="string">'components-switch-demo-text'</span>);
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Switch</span> <span class="attribute">checkedChildren</span>=<span class="value">"开"</span> <span class="attribute">unCheckedChildren</span>=<span class="value">"关"</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">span</span>&gt;</span> <span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Switch</span> <span class="attribute">checkedChildren</span>=<span class="value">{&lt;i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-check"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>} unCheckedChildren={<span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-cross"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>} /&gt;
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-text">文字和图标</a>
+    </div>
+    <p>带有文字和图标。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

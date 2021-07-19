@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+Validation 表单校验 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/antd-0.9.2.min.css">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="stylesheet" href="../../static/tomorrow.css">
+    <script>
+      (function (con) {
+        'use strict';
+        var prop, method;
+        var empty = {};
+        var dummy = function () {
+        };
+        var properties = 'memory'.split(',');
+        var methods = ('assert,clear,count,debug,dir,dirxml,error,exception,group,' +
+                       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profiles,profileEnd,' +
+                       'show,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn').split(',');
+        while (prop = properties.pop()) {
+          con[prop] = con[prop] || empty;
+        }
+        while (method = methods.pop()) {
+          con[method] = con[method] || dummy;
+        }
+      })(this.console = this.console || {});
+    </script>
+    <script src="https://a.alipayobjects.com/??bluebird/2.9.30/bluebird.js,jquery/jquery/1.11.1/jquery.js,es5-shim/4.1.10/es5-shim.js,es5-shim/4.1.10/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Datepicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'EnterAnimation',
+        desc: '进场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Iconfont',
+        desc: '字体图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script src="../../static/script.js"></script>
+    <script>
+      window.antdVersion = {
+        latest: '0.9.2',
+        stable: '0.9.2'
+      };
+    </script>
+    <script src="../../dist/antd-0.9.2.min.js"></script>
+    <script src="../../dist/demo.js"></script>
+    <script>
+      window.require = function (path) {
+        var result = window;
+        var namespaces = path.split('/');
+        namespaces.forEach(function (key, i) {
+          if (i !== 0 && i === namespaces.length - 1) {
+            key = capitalizeFirstLetter(key);
+          }
+          if (key !== 'lib') {
+            if (result[key]) {
+              result = result[key];
+            } else {
+              throw 'There should not have modules here 2.';
+            }
+          }
+        });
+        function capitalizeFirstLetter(string) {
+          return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        return result;
+      };
+    </script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../.." data-no-instant>首页</a>
+          </li>
+          <li class="">
+            <a href="../../spec/introduce">设计</a>
+          </li>
+          <li>
+            <a class="nav-link-disabled" href="">案例</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/introduce">React</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/ant-design/ant-design">Github</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/introduce" class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/getting-started" class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/download" class="">
+          下载
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog" class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../iconfont/"
+               class=""data-no-instant>
+              Iconfont
+              <span class="chinese">字体图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../datepicker/"
+               class="">
+              Datepicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class="">
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class="">
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../enter-animation/"
+               class="">
+              EnterAnimation
+              <span class="chinese">进场动画</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      Validation 表单校验
+    </h1>
+    <p>表单校验。</p>
+<h2 id="何时使用">何时使用</h2><p>同表单结合使用，对表单域进行校验，提供前台校验和后台实时反馈校验，并对表单错误提供有效信息提示。</p>
+<h2 id="api">API</h2><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">Validation</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Validator</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">CustomComponent</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">CustomComponent</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">Validation</span>&gt;</span></code></pre></div><h3 id="validation">Validation</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onValidate</td>
+<td>func</td>
+<td>当内部 Validator 开始校验时被调用。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>validate(callback)</td>
+<td>对所有表单域进行校验。</td>
+</tr>
+<tr>
+<td>reset()</td>
+<td>将表单域的值恢复为初始值。</td>
+</tr>
+<tr>
+<td>forceValidate(fields, callback)</td>
+<td>对指定的表单域进行校验，fields 对应每个 Validator 包裹的表单域的 name 属性值。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="validation-validator">Validation.Validator</h3><p>一个 Validator 对应一个表单域，校验的表单域需要声明 <code>name</code> 属性作为校验标识，如 <code>&lt;input name=&quot;username&quot;  /&gt;</code>。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rules</td>
+<td>array 或者 object</td>
+<td></td>
+<td>支持多规则校验，默认提供的规则详见 <a href="https://github.com/yiminghe/async-validator">async-validator</a>，同时支持用户自定义校验规则。</td>
+</tr>
+<tr>
+<td>trigger</td>
+<td>String</td>
+<td>onChange</td>
+<td>设定如何触发校验动作。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rules-说明（async-validator）">rules 说明（<a href="https://github.com/yiminghe/async-validator">async-validator</a>）</h3><p>示例： <code>{type: &quot;string&quot;, required: true, min: 5, message: &quot;请至少填写 5 个字符。&quot; }</code></p>
+<ul>
+<li><code>type</code> : 声明校验的值类型（如 string email），这样就会使用默认提供的规则进行校验，更多详见 <a href="https://github.com/yiminghe/async-validator#user-content-type">type</a>；</li>
+<li><code>required</code>: 是否必填；</li>
+<li><code>pattern</code>: 声明校验正则表达式；</li>
+<li><code>min</code> / <code>max</code>: 最小值、最大值声明（对于 string 和 array 来说，针对的是其长度 length。）；</li>
+<li><code>len</code>: 字符长度；</li>
+<li><code>enum</code>: 枚举值，对应 type 值为 <code>enum</code>，例如 <code>role: {type: &quot;enum&quot;, enum: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]}</code>；</li>
+<li><code>whitespace</code>: 是否允许空格， <code>true</code> 为允许；</li>
+<li><code>fields</code>: 当你需要对类型为 object 或者 array 的每个值做校验时使用，详见 <a href="https://github.com/yiminghe/async-validator#deep-rules">fields</a>；</li>
+<li><code>transform</code>: 当你需要在校验前对值做一些处理的时候；</li>
+<li><code>message</code>: 自定义提示信息，<a href="https://github.com/yiminghe/async-validator#messages">更多</a>；</li>
+<li><code>validator</code>: 自定义校验规则。</li>
+</ul>
+
+  </article>
+<h2 class="component-demos">
+  组件演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-validation-demo-basic"></div>
+    <script>(function(){'use strict';
+
+var Validation = antd.Validation;
+var Validator = Validation.Validator;
+var Select = antd.Select;
+var Option = Select.Option;
+var Radio = antd.Radio;
+var RadioGroup = antd.Radio.Group;
+
+function cx(classNames) {
+  if (typeof classNames === 'object') {
+    return Object.keys(classNames).filter(function (className) {
+      return classNames[className];
+    }).join(' ');
+  } else {
+    return Array.prototype.join.call(arguments, ' ');
+  }
+}
+
+function noop() {
+  return false;
+}
+
+var Form = React.createClass({
+  displayName: 'Form',
+
+  mixins: [Validation.FieldMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      status: {
+        email: {},
+        name: {},
+        select: {},
+        radio: {},
+        passwd: {},
+        rePasswd: {},
+        textarea: {}
+      },
+      formData: {
+        email: undefined,
+        name: undefined,
+        select: undefined,
+        radio: undefined,
+        passwd: undefined,
+        rePasswd: undefined,
+        textarea: undefined
+      },
+      isEmailOver: false, // email 是否输入完毕
+      emailValidateMethod: 'onBlur' // 用于改变 email 的验证方法
+    };
+  },
+
+  renderValidateStyle: function renderValidateStyle(item) {
+    var hasFeedback = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = cx({
+      'has-feedback': hasFeedback,
+      'has-error': status[item].errors,
+      'is-validating': status[item].isValidating,
+      'has-success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  handleEmailInputBlur: function handleEmailInputBlur() {
+    this.setState({
+      isEmailOver: true
+    });
+  },
+
+  handleEmailInputFocus: function handleEmailInputFocus() {
+    if (this.state.isEmailOver) {
+      this.setState({
+        emailValidateMethod: 'onChange'
+      });
+    }
+  },
+
+  handleReset: function handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    var _this = this;
+
+    e.preventDefault();
+    this.setState({
+      isEmailOver: true
+    });
+    var validation = this.refs.validation;
+    validation.validate(function (valid) {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(_this.state.formData);
+    });
+  },
+
+  userExists: function userExists(rule, value, callback) {
+    if (!value) {
+      callback();
+    } else {
+      setTimeout(function () {
+        if (value === 'Jasonwood') {
+          callback([new Error('抱歉，该用户名已被占用。')]);
+        } else {
+          callback();
+        }
+      }, 800);
+    }
+  },
+
+  checkPass: function checkPass(rule, value, callback) {
+    if (this.state.formData.passwd) {
+      this.refs.validation.forceValidate(['rePasswd']);
+    }
+
+    callback();
+  },
+
+  checkPass2: function checkPass2(rule, value, callback) {
+    if (value && value !== this.state.formData.passwd) {
+      callback('两次输入密码不一致！');
+    } else {
+      callback();
+    }
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return React.createElement(
+      'form',
+      { onSubmit: this.handleSubmit, className: 'ant-form-horizontal' },
+      React.createElement(
+        Validation,
+        { ref: 'validation', onValidate: this.handleValidate },
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-7', htmlFor: 'name', required: true },
+            '用户名：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('name') },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, min: 5, message: '用户名至少为 5 个字符' }, { validator: this.userExists }] },
+                React.createElement('input', { name: 'name', id: 'name', className: 'ant-input', value: formData.name, placeholder: '实时校验，输入 JasonWood 看看' })
+              ),
+              status.name.isValidating ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                '正在校验中...'
+              ) : null,
+              status.name.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.name.errors.join(',')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-7', htmlFor: 'email', required: true },
+            '邮箱：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('email', this.state.isEmailOver) },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, type: 'email', message: '请输入正确的邮箱地址' }], trigger: this.state.emailValidateMethod },
+                React.createElement('input', { name: 'email', id: 'email', className: 'ant-input', value: formData.email, placeholder: 'onBlur 与 onChange 相结合', onBlur: this.handleEmailInputBlur, onFocus: this.handleEmailInputFocus })
+              ),
+              status.email.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.email.errors.join(',')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-7', required: true },
+            '国籍：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('select', false) },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, message: '请选择您的国籍' }] },
+                React.createElement(
+                  Select,
+                  { size: 'large', placeholder: '请选择国家', style: { width: "100%" }, name: 'select', value: formData.select },
+                  React.createElement(
+                    Option,
+                    { value: 'china' },
+                    '中国'
+                  ),
+                  React.createElement(
+                    Option,
+                    { value: 'use' },
+                    '美国'
+                  ),
+                  React.createElement(
+                    Option,
+                    { value: 'japan' },
+                    '日本'
+                  ),
+                  React.createElement(
+                    Option,
+                    { value: 'korean' },
+                    '韩国'
+                  ),
+                  React.createElement(
+                    Option,
+                    { value: 'Thailand' },
+                    '泰国'
+                  )
+                )
+              ),
+              status.select.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.select.errors.join(',')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item ant-form-item-compact' },
+          React.createElement(
+            'label',
+            { className: 'col-7', required: true },
+            '性别：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('radio', false) },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, message: '请选择您的性别' }] },
+                React.createElement(
+                  RadioGroup,
+                  { name: 'radio', value: formData.radio },
+                  React.createElement(
+                    Radio,
+                    { value: 'male' },
+                    '男'
+                  ),
+                  React.createElement(
+                    Radio,
+                    { value: 'female' },
+                    '女'
+                  )
+                )
+              ),
+              status.radio.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.radio.errors.join(',')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-7', htmlFor: 'password', required: true },
+            '密码：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('passwd') },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, whitespace: true, message: '请填写密码' }, { validator: this.checkPass }] },
+                React.createElement('input', { name: 'passwd', id: 'password', className: 'ant-input', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autocomplete: 'off', value: formData.passwd })
+              ),
+              status.passwd.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.passwd.errors.join(',')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-7', htmlFor: 'password2', required: true },
+            '确认密码：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('rePasswd') },
+              React.createElement(
+                Validator,
+                { rules: [{
+                    required: true,
+                    whitespace: true,
+                    message: '请再次输入密码'
+                  }, { validator: this.checkPass2 }] },
+                React.createElement('input', { name: 'rePasswd', id: 'password2', className: 'ant-input', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autocomplete: 'off', value: formData.rePasswd, placeholder: '两次输入密码保持一致' })
+              ),
+              status.rePasswd.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                ' ',
+                status.rePasswd.errors.join(', ')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-7', htmlFor: 'remark', required: true },
+            '备注：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-12' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('textarea', false) },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, message: '真的不打算写点什么吗？' }] },
+                React.createElement('textarea', { className: 'ant-input', id: 'remark', name: 'textarea', value: formData.textarea, placeholder: '写点什么吧' })
+              ),
+              status.textarea.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.textarea.errors.join(',')
+              ) : null
+            )
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'div',
+            { className: 'col-offset-7 col-12' },
+            React.createElement(
+              'button',
+              { type: 'submit', className: 'ant-btn ant-btn-primary' },
+              '确 定'
+            ),
+            '   ',
+            React.createElement(
+              'a',
+              { href: '#', className: 'ant-btn', onClick: this.handleReset },
+              '重 置'
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Form, null), document.getElementById('components-validation-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Validation = antd.Validation;
+<span class="keyword">var</span> Validator = Validation.Validator;
+<span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+<span class="keyword">var</span> Radio = antd.Radio;
+<span class="keyword">var</span> RadioGroup = antd.Radio.Group;
+
+<span class="function"><span class="keyword">function</span> <span class="title">cx</span><span class="params">(classNames)</span> {</span>
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> classNames === <span class="string">'object'</span>) {
+    <span class="keyword">return</span> Object.keys(classNames).filter(<span class="function"><span class="keyword">function</span><span class="params">(className)</span> {</span>
+      <span class="keyword">return</span> classNames[className];
+    }).join(<span class="string">' '</span>);
+  } <span class="keyword">else</span> {
+    <span class="keyword">return</span> Array.prototype.join.call(arguments, <span class="string">' '</span>);
+  }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">noop</span><span class="params">()</span> {</span>
+  <span class="keyword">return</span> <span class="literal">false</span>;
+}
+
+<span class="keyword">var</span> Form = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    <span class="keyword">return</span> {
+      status: {
+        email: {},
+        name: {},
+        select: {},
+        radio: {},
+        passwd: {},
+        rePasswd: {},
+        textarea: {}
+      },
+      formData: {
+        email: <span class="literal">undefined</span>,
+        name: <span class="literal">undefined</span>,
+        select: <span class="literal">undefined</span>,
+        radio: <span class="literal">undefined</span>,
+        passwd: <span class="literal">undefined</span>,
+        rePasswd: <span class="literal">undefined</span>,
+        textarea: <span class="literal">undefined</span>
+      },
+      isEmailOver: <span class="literal">false</span>, <span class="comment">// email 是否输入完毕</span>
+      emailValidateMethod: <span class="string">'onBlur'</span> <span class="comment">// 用于改变 email 的验证方法</span>
+    };
+  },
+
+  renderValidateStyle(item, hasFeedback=<span class="literal">true</span>) {
+    <span class="keyword">var</span> formData = <span class="keyword">this</span>.state.formData;
+    <span class="keyword">var</span> status = <span class="keyword">this</span>.state.status;
+
+    <span class="keyword">var</span> classes = cx({
+      <span class="string">'has-feedback'</span>: hasFeedback,
+      <span class="string">'has-error'</span>: status[item].errors,
+      <span class="string">'is-validating'</span>: status[item].isValidating,
+      <span class="string">'has-success'</span>: formData[item] &amp;&amp; !status[item].errors &amp;&amp; !status[item].isValidating
+    });
+
+    <span class="keyword">return</span> classes;
+  },
+
+  handleEmailInputBlur() {
+    <span class="keyword">this</span>.setState({
+      isEmailOver: <span class="literal">true</span>
+    });
+  },
+
+  handleEmailInputFocus() {
+    <span class="keyword">if</span> (<span class="keyword">this</span>.state.isEmailOver) {
+      <span class="keyword">this</span>.setState({
+        emailValidateMethod: <span class="string">'onChange'</span>
+      });
+    }
+  },
+
+  handleReset(e) {
+    <span class="keyword">this</span>.refs.validation.reset();
+    <span class="keyword">this</span>.setState(<span class="keyword">this</span>.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="keyword">this</span>.setState({
+      isEmailOver: <span class="literal">true</span>
+    });
+    <span class="keyword">var</span> validation = <span class="keyword">this</span>.refs.validation;
+    validation.validate((valid) =&gt; {
+      <span class="keyword">if</span> (!valid) {
+        console.log(<span class="string">'error in form'</span>);
+        <span class="keyword">return</span>;
+      } <span class="keyword">else</span> {
+        console.log(<span class="string">'submit'</span>);
+      }
+      console.log(<span class="keyword">this</span>.state.formData);
+    });
+  },
+
+  userExists(rule, value, callback) {
+    <span class="keyword">if</span> (!value) {
+      callback();
+    } <span class="keyword">else</span> {
+      setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+        <span class="keyword">if</span> (value === <span class="string">'Jasonwood'</span>) {
+          callback([<span class="keyword">new</span> Error(<span class="string">'抱歉，该用户名已被占用。'</span>)]);
+        } <span class="keyword">else</span> {
+          callback();
+        }
+      }, <span class="number">800</span>);
+    }
+  },
+
+  checkPass(rule, value, callback) {
+    <span class="keyword">if</span> (<span class="keyword">this</span>.state.formData.passwd) {
+      <span class="keyword">this</span>.refs.validation.forceValidate([<span class="string">'rePasswd'</span>]);
+    }
+
+    callback();
+  },
+
+  checkPass2(rule, value, callback) {
+    <span class="keyword">if</span> (value &amp;&amp; value !== <span class="keyword">this</span>.state.formData.passwd) {
+      callback(<span class="string">'两次输入密码不一致！'</span>);
+    } <span class="keyword">else</span> {
+      callback();
+    }
+  },
+
+  render() {
+    <span class="keyword">var</span> formData = <span class="keyword">this</span>.state.formData;
+    <span class="keyword">var</span> status = <span class="keyword">this</span>.state.status;
+
+    <span class="keyword">return</span> (
+      <span class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">onSubmit</span>=<span class="value">{this.handleSubmit}</span> <span class="attribute">className</span>=<span class="value">"ant-form-horizontal"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Validation</span> <span class="attribute">ref</span>=<span class="value">"validation"</span> <span class="attribute">onValidate</span>=<span class="value">{this.handleValidate}</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">htmlFor</span>=<span class="value">"name"</span> <span class="attribute">required</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('name')}</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">min:</span> <span class="attribute">5</span>, <span class="attribute">message:</span> '用户名至少为 <span class="attribute">5</span> 个字符'}, {<span class="attribute">validator:</span> <span class="attribute">this.userExists</span>}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"name"</span> <span class="attribute">id</span>=<span class="value">"name"</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">value</span>=<span class="value">{formData.name}</span> <span class="attribute">placeholder</span>=<span class="value">"实时校验，输入 JasonWood 看看"</span> /&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.name.isValidating ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>正在校验中...<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+                {status.name.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.name.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">htmlFor</span>=<span class="value">"email"</span> <span class="attribute">required</span>&gt;</span>邮箱：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('email',</span> <span class="attribute">this.state.isEmailOver</span>)}&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">type:</span>'<span class="attribute">email</span>', <span class="attribute">message:</span> '请输入正确的邮箱地址'}]} <span class="attribute">trigger</span>=<span class="value">{this.state.emailValidateMethod}</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">id</span>=<span class="value">"email"</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">value</span>=<span class="value">{formData.email}</span>  <span class="attribute">placeholder</span>=<span class="value">"onBlur 与 onChange 相结合"</span> <span class="attribute">onBlur</span>=<span class="value">{this.handleEmailInputBlur}</span> <span class="attribute">onFocus</span>=<span class="value">{this.handleEmailInputFocus}</span> /&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.email.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.email.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">required</span>&gt;</span>国籍：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('select',</span> <span class="attribute">false</span>)}&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">message:</span> '请选择您的国籍'}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">placeholder</span>=<span class="value">"请选择国家"</span> <span class="attribute">style</span>=<span class="value">{{width:"100%"}}</span> <span class="attribute">name</span>=<span class="value">"select"</span> <span class="attribute">value</span>=<span class="value">{formData.select}</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"china"</span>&gt;</span>中国<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"use"</span>&gt;</span>美国<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"japan"</span>&gt;</span>日本<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"korean"</span>&gt;</span>韩国<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"Thailand"</span>&gt;</span>泰国<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+                  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.select.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.select.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item ant-form-item-compact"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">required</span>&gt;</span>性别：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('radio',</span> <span class="attribute">false</span>)}&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">message:</span> '请选择您的性别'}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">RadioGroup</span> <span class="attribute">name</span>=<span class="value">"radio"</span> <span class="attribute">value</span>=<span class="value">{formData.radio}</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Radio</span> <span class="attribute">value</span>=<span class="value">"male"</span>&gt;</span>男<span class="tag">&lt;/<span class="title">Radio</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Radio</span> <span class="attribute">value</span>=<span class="value">"female"</span>&gt;</span>女<span class="tag">&lt;/<span class="title">Radio</span>&gt;</span>
+                  <span class="tag">&lt;/<span class="title">RadioGroup</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.radio.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.radio.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">htmlFor</span>=<span class="value">"password"</span> <span class="attribute">required</span>&gt;</span>密码：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('passwd')}</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">whitespace:</span> <span class="attribute">true</span>, <span class="attribute">message:</span> '请填写密码'}, {<span class="attribute">validator:</span> <span class="attribute">this.checkPass</span>}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"passwd"</span> <span class="attribute">id</span>=<span class="value">"password"</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">onContextMenu</span>=<span class="value">{noop}</span> <span class="attribute">onPaste</span>=<span class="value">{noop}</span> <span class="attribute">onCopy</span>=<span class="value">{noop}</span> <span class="attribute">onCut</span>=<span class="value">{noop}</span> <span class="attribute">autocomplete</span>=<span class="value">"off"</span> <span class="attribute">value</span>=<span class="value">{formData.passwd}</span>/&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.passwd.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.passwd.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">htmlFor</span>=<span class="value">"password2"</span> <span class="attribute">required</span>&gt;</span>确认密码：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('rePasswd')}</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{</span>
+                  <span class="attribute">required:</span> <span class="attribute">true</span>,
+                  <span class="attribute">whitespace:</span> <span class="attribute">true</span>,
+                  <span class="attribute">message:</span> '请再次输入密码'
+                }, {<span class="attribute">validator:</span> <span class="attribute">this.checkPass2</span>}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"rePasswd"</span> <span class="attribute">id</span>=<span class="value">"password2"</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">onContextMenu</span>=<span class="value">{noop}</span> <span class="attribute">onPaste</span>=<span class="value">{noop}</span> <span class="attribute">onCopy</span>=<span class="value">{noop}</span> <span class="attribute">onCut</span>=<span class="value">{noop}</span> <span class="attribute">autocomplete</span>=<span class="value">"off"</span> <span class="attribute">value</span>=<span class="value">{formData.rePasswd}</span> <span class="attribute">placeholder</span>=<span class="value">"两次输入密码保持一致"</span>/&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.rePasswd.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span> {status.rePasswd.errors.join(', ')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-7"</span> <span class="attribute">htmlFor</span>=<span class="value">"remark"</span> <span class="attribute">required</span>&gt;</span>备注：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('textarea',</span> <span class="attribute">false</span>)}&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">message:</span> '真的不打算写点什么吗？'}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">id</span>=<span class="value">"remark"</span> <span class="attribute">name</span>=<span class="value">"textarea"</span> <span class="attribute">value</span>=<span class="value">{formData.textarea}</span> <span class="attribute">placeholder</span>=<span class="value">"写点什么吧"</span>&gt;</span>
+                  <span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.textarea.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.textarea.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-offset-7 col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span>&gt;</span>确 定<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;
+              <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">className</span>=<span class="value">"ant-btn"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleReset}</span>&gt;</span>重 置<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Validation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+    );
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Form</span> /&gt;</span>, document.getElementById('components-validation-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    <p>基本的表单校验例子。</p>
+<p>每个表单域要声明 <code>name</code> 属性作为校验的标识，可通过其 <code>isValidating</code>、<code>errors</code> 属性判断是否处于校验中、是否校验不通过状态，具体可参见 <strong>用户名</strong> 校验。</p>
+<p>表单提交的时候，通过 Validation 的 validate 方法判断是否所有表单域校验通过（isValid 会作为回调函数的参数传入）。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="demo-customize">
+  <div class="code-box-demo">
+    <div id="components-validation-demo-customize"></div>
+    <script>(function(){'use strict';
+
+var Validation = antd.Validation;
+var Validator = Validation.Validator;
+
+function cx(classNames) {
+  if (typeof classNames === 'object') {
+    return Object.keys(classNames).filter(function (className) {
+      return classNames[className];
+    }).join(' ');
+  } else {
+    return Array.prototype.join.call(arguments, ' ');
+  }
+}
+
+function noop() {
+  return false;
+}
+
+var Form = React.createClass({
+  displayName: 'Form',
+
+  mixins: [Validation.FieldMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      status: {
+        pass: {},
+        rePass: {}
+      },
+      formData: {
+        pass: undefined,
+        rePass: undefined
+      },
+      passBarShow: false, // 是否显示密码强度提示条
+      rePassBarShow: false,
+      passStrength: 'L', // 密码强度
+      rePassStrength: 'L'
+    };
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    var _this = this;
+
+    e.preventDefault();
+    var validation = this.refs.validation;
+    validation.validate(function (valid) {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(_this.state.formData);
+    });
+  },
+
+  handleReset: function handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  renderValidateStyle: function renderValidateStyle(item) {
+    var hasFeedback = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = cx({
+      'has-feedback': hasFeedback,
+      'has-error': status[item].errors,
+      'is-validating': status[item].isValidating,
+      'has-success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  getPassStrenth: function getPassStrenth(value, type) {
+    if (value) {
+      var strength;
+      // 密码强度的校验规则自定义，这里只是做个简单的示例
+      if (value.length < 6) {
+        strength = 'L';
+      } else if (value.length <= 9) {
+        strength = 'M';
+      } else {
+        strength = 'H';
+      }
+      type === 'pass' ? this.setState({ passBarShow: true, passStrength: strength }) : this.setState({ rePassBarShow: true, rePassStrength: strength });
+    } else {
+      type === 'pass' ? this.setState({ passBarShow: false }) : this.setState({ rePassBarShow: false });
+    }
+  },
+
+  checkPass: function checkPass(rule, value, callback) {
+    this.getPassStrenth(value, 'pass');
+
+    if (this.state.formData.pass) {
+      this.refs.validation.forceValidate(['rePass']);
+    }
+
+    callback();
+  },
+
+  checkPass2: function checkPass2(rule, value, callback) {
+    this.getPassStrenth(value, 'rePass');
+
+    if (value && value !== this.state.formData.pass) {
+      callback('两次输入密码不一致！');
+    } else {
+      callback();
+    }
+  },
+
+  renderPassStrengthBar: function renderPassStrengthBar(type) {
+    var strength = type === 'pass' ? this.state.passStrength : this.state.rePassStrength;
+    var classSet = cx({
+      'ant-pwd-strength': true,
+      'ant-pwd-strength-low': strength === 'L',
+      'ant-pwd-strength-medium': strength === 'M',
+      'ant-pwd-strength-high': strength === 'H'
+    });
+    var level = {
+      L: '低',
+      M: '中',
+      H: '高'
+    };
+
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'ul',
+        { className: classSet },
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-1' }),
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-2' }),
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-3' }),
+        React.createElement(
+          'span',
+          { className: 'ant-form-text' },
+          level[strength]
+        )
+      )
+    );
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return React.createElement(
+      'form',
+      { onSubmit: this.handleSubmit, className: 'ant-form-horizontal' },
+      React.createElement(
+        Validation,
+        { ref: 'validation', onValidate: this.handleValidate },
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-6', htmlFor: 'confirmPass', required: true },
+            '密码：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-10' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('pass', false) },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, whitespace: true, message: '请填写密码' }, { validator: this.checkPass }], trigger: 'onChange' },
+                React.createElement('input', { name: 'pass', id: 'confirmPass', className: 'ant-input', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autocomplete: 'off', value: formData.pass })
+              ),
+              status.pass.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                status.pass.errors.join(',')
+              ) : null
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-6' },
+            this.state.passBarShow ? this.renderPassStrengthBar('pass') : null
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'label',
+            { className: 'col-6', htmlFor: 'confirmPass2', required: true },
+            '确认密码：'
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-10' },
+            React.createElement(
+              'div',
+              { className: this.renderValidateStyle('rePass', false) },
+              React.createElement(
+                Validator,
+                { rules: [{
+                    required: true,
+                    whitespace: true,
+                    message: '请再次输入密码'
+                  }, { validator: this.checkPass2 }] },
+                React.createElement('input', { name: 'rePass', id: 'confirmPass2', className: 'ant-input', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autocomplete: 'off', value: formData.rePass })
+              ),
+              status.rePass.errors ? React.createElement(
+                'div',
+                { className: 'ant-form-explain' },
+                ' ',
+                status.rePass.errors.join(', ')
+              ) : null
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'col-6' },
+            this.state.rePassBarShow ? this.renderPassStrengthBar('rePass') : null
+          )
+        ),
+        React.createElement(
+          'div',
+          { className: 'ant-form-item' },
+          React.createElement(
+            'div',
+            { className: 'col-offset-6 col-12' },
+            React.createElement(
+              'button',
+              { type: 'submit', className: 'ant-btn ant-btn-primary' },
+              '确 定'
+            ),
+            '   ',
+            React.createElement(
+              'a',
+              { href: '#', className: 'ant-btn', onClick: this.handleReset },
+              '重 置'
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+React.render(React.createElement(Form, null), document.getElementById('components-validation-demo-customize'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Validation = antd.Validation;
+<span class="keyword">var</span> Validator = Validation.Validator;
+
+<span class="function"><span class="keyword">function</span> <span class="title">cx</span><span class="params">(classNames)</span> {</span>
+  <span class="keyword">if</span> (<span class="keyword">typeof</span> classNames === <span class="string">'object'</span>) {
+    <span class="keyword">return</span> Object.keys(classNames).filter(<span class="function"><span class="keyword">function</span><span class="params">(className)</span> {</span>
+      <span class="keyword">return</span> classNames[className];
+    }).join(<span class="string">' '</span>);
+  } <span class="keyword">else</span> {
+    <span class="keyword">return</span> Array.prototype.join.call(arguments, <span class="string">' '</span>);
+  }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">noop</span><span class="params">()</span> {</span>
+  <span class="keyword">return</span> <span class="literal">false</span>;
+}
+
+<span class="keyword">var</span> Form = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    <span class="keyword">return</span> {
+      status: {
+        pass: {},
+        rePass: {}
+      },
+      formData: {
+        pass: <span class="literal">undefined</span>,
+        rePass: <span class="literal">undefined</span>
+      },
+      passBarShow: <span class="literal">false</span>, <span class="comment">// 是否显示密码强度提示条</span>
+      rePassBarShow: <span class="literal">false</span>, 
+      passStrength: <span class="string">'L'</span>, <span class="comment">// 密码强度</span>
+      rePassStrength: <span class="string">'L'</span>
+    };
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="keyword">var</span> validation = <span class="keyword">this</span>.refs.validation;
+    validation.validate((valid) =&gt; {
+      <span class="keyword">if</span> (!valid) {
+        console.log(<span class="string">'error in form'</span>);
+        <span class="keyword">return</span>;
+      } <span class="keyword">else</span> {
+        console.log(<span class="string">'submit'</span>);
+      }
+      console.log(<span class="keyword">this</span>.state.formData);
+    });
+  },
+
+  handleReset(e) {
+    <span class="keyword">this</span>.refs.validation.reset();
+    <span class="keyword">this</span>.setState(<span class="keyword">this</span>.getInitialState());
+    e.preventDefault();
+  },
+
+  renderValidateStyle(item, hasFeedback=<span class="literal">true</span>) {
+    <span class="keyword">var</span> formData = <span class="keyword">this</span>.state.formData;
+    <span class="keyword">var</span> status = <span class="keyword">this</span>.state.status;
+
+    <span class="keyword">var</span> classes = cx({
+      <span class="string">'has-feedback'</span>: hasFeedback,
+      <span class="string">'has-error'</span>: status[item].errors,
+      <span class="string">'is-validating'</span>: status[item].isValidating,
+      <span class="string">'has-success'</span>: formData[item] &amp;&amp; !status[item].errors &amp;&amp; !status[item].isValidating
+    });
+
+    <span class="keyword">return</span> classes;
+  },
+
+  getPassStrenth(value, type) {
+    <span class="keyword">if</span> (value) {
+      <span class="keyword">var</span> strength;
+      <span class="comment">// 密码强度的校验规则自定义，这里只是做个简单的示例</span>
+      <span class="keyword">if</span> (value.length &lt; <span class="number">6</span>) {
+        strength = <span class="string">'L'</span>;
+      } <span class="keyword">else</span> <span class="keyword">if</span> (value.length &lt;= <span class="number">9</span>) {
+        strength = <span class="string">'M'</span>;
+      } <span class="keyword">else</span> {
+        strength = <span class="string">'H'</span>;
+      }
+      type === <span class="string">'pass'</span> ? <span class="keyword">this</span>.setState({ passBarShow: <span class="literal">true</span>, passStrength: strength }) : <span class="keyword">this</span>.setState({ rePassBarShow: <span class="literal">true</span>, rePassStrength: strength });
+    } <span class="keyword">else</span> {
+      type === <span class="string">'pass'</span> ? <span class="keyword">this</span>.setState({ passBarShow: <span class="literal">false</span> }) : <span class="keyword">this</span>.setState({ rePassBarShow: <span class="literal">false</span> });
+    }
+  },
+
+  checkPass(rule, value, callback) {
+    <span class="keyword">this</span>.getPassStrenth(value, <span class="string">'pass'</span>);
+
+    <span class="keyword">if</span> (<span class="keyword">this</span>.state.formData.pass) {
+      <span class="keyword">this</span>.refs.validation.forceValidate([<span class="string">'rePass'</span>]);
+    }
+
+    callback();
+  },
+
+  checkPass2(rule, value, callback) {
+    <span class="keyword">this</span>.getPassStrenth(value, <span class="string">'rePass'</span>);
+
+    <span class="keyword">if</span> (value &amp;&amp; value !== <span class="keyword">this</span>.state.formData.pass) {
+      callback(<span class="string">'两次输入密码不一致！'</span>);
+    } <span class="keyword">else</span> {
+      callback();
+    }
+  },
+
+  renderPassStrengthBar(type) {
+    <span class="keyword">var</span> strength = type === <span class="string">'pass'</span> ? <span class="keyword">this</span>.state.passStrength : <span class="keyword">this</span>.state.rePassStrength;
+    <span class="keyword">var</span> classSet = cx({
+      <span class="string">'ant-pwd-strength'</span>: <span class="literal">true</span>,
+      <span class="string">'ant-pwd-strength-low'</span>: strength === <span class="string">'L'</span>,
+      <span class="string">'ant-pwd-strength-medium'</span>: strength === <span class="string">'M'</span>,
+      <span class="string">'ant-pwd-strength-high'</span>: strength === <span class="string">'H'</span>
+    });
+    <span class="keyword">var</span> level = {
+      L: <span class="string">'低'</span>,
+      M: <span class="string">'中'</span>,
+      H: <span class="string">'高'</span>
+    };
+
+    <span class="keyword">return</span> (
+    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">className</span>=<span class="value">{classSet}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">className</span>=<span class="value">"ant-pwd-strength-item ant-pwd-strength-item-1"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">className</span>=<span class="value">"ant-pwd-strength-item ant-pwd-strength-item-2"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">className</span>=<span class="value">"ant-pwd-strength-item ant-pwd-strength-item-3"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">className</span>=<span class="value">"ant-form-text"</span>&gt;</span>
+          {level[strength]}
+        <span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  },
+
+  render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return (
+      <span class="tag">&lt;<span class="title">form</span> <span class="attribute">onSubmit</span>=<span class="value">{this.handleSubmit}</span> <span class="attribute">className</span>=<span class="value">"ant-form-horizontal"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Validation</span> <span class="attribute">ref</span>=<span class="value">"validation"</span> <span class="attribute">onValidate</span>=<span class="value">{this.handleValidate}</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-6"</span> <span class="attribute">htmlFor</span>=<span class="value">"confirmPass"</span> <span class="attribute">required</span>&gt;</span>密码：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-10"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('pass',</span> <span class="attribute">false</span>)}&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{required:</span> <span class="attribute">true</span>, <span class="attribute">whitespace:</span> <span class="attribute">true</span>, <span class="attribute">message:</span> '请填写密码'}, {<span class="attribute">validator:</span> <span class="attribute">this.checkPass</span>}]} <span class="attribute">trigger</span>=<span class="value">"onChange"</span>&gt;</span>
+                  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"pass"</span> <span class="attribute">id</span>=<span class="value">"confirmPass"</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">onContextMenu</span>=<span class="value">{noop}</span> <span class="attribute">onPaste</span>=<span class="value">{noop}</span> <span class="attribute">onCopy</span>=<span class="value">{noop}</span> <span class="attribute">onCut</span>=<span class="value">{noop}</span> <span class="attribute">autocomplete</span>=<span class="value">"off"</span> <span class="attribute">value</span>=<span class="value">{formData.pass}</span>/&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.pass.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>{status.pass.errors.join(',')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+              {this.state.passBarShow ? this.renderPassStrengthBar('pass') : null}
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-6"</span> <span class="attribute">htmlFor</span>=<span class="value">"confirmPass2"</span> <span class="attribute">required</span>&gt;</span>确认密码：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-10"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">{this.renderValidateStyle('rePass',</span> <span class="attribute">false</span>)}&gt;</span>
+                <span class="tag">&lt;<span class="title">Validator</span> <span class="attribute">rules</span>=<span class="value">{[{</span>
+                  <span class="attribute">required:</span> <span class="attribute">true</span>,
+                  <span class="attribute">whitespace:</span> <span class="attribute">true</span>,
+                  <span class="attribute">message:</span> '请再次输入密码'
+                }, {<span class="attribute">validator:</span> <span class="attribute">this.checkPass2</span>}]}&gt;</span>
+                  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"rePass"</span> <span class="attribute">id</span>=<span class="value">"confirmPass2"</span> <span class="attribute">className</span>=<span class="value">"ant-input"</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">onContextMenu</span>=<span class="value">{noop}</span> <span class="attribute">onPaste</span>=<span class="value">{noop}</span> <span class="attribute">onCopy</span>=<span class="value">{noop}</span> <span class="attribute">onCut</span>=<span class="value">{noop}</span> <span class="attribute">autocomplete</span>=<span class="value">"off"</span> <span class="attribute">value</span>=<span class="value">{formData.rePass}</span>/&gt;</span>
+                <span class="tag">&lt;/<span class="title">Validator</span>&gt;</span>
+                {status.rePass.errors ? <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span> {status.rePass.errors.join(', ')}<span class="tag">&lt;/<span class="title">div</span>&gt;</span> : null}
+              <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+              {this.state.rePassBarShow ? this.renderPassStrengthBar('rePass') : null}
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-offset-6 col-12"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-primary"</span>&gt;</span>确 定<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+              &amp;nbsp;&amp;nbsp;&amp;nbsp;
+              <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">className</span>=<span class="value">"ant-btn"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleReset}</span>&gt;</span>重 置<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Validation</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+    );
+  }
+});
+
+React.render(<span class="tag">&lt;<span class="title">Form</span> /&gt;</span>, document.getElementById('components-validation-demo-customize'));</span></code></pre></div><style>
+  .ant-pwd-strength {
+    display: inline-block;
+    margin-left: 8px;
+    line-height: 32px;
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  .ant-pwd-strength-item {
+    float: left;
+    margin-right: 1px;
+    margin-top: 12px;
+    width: 19px;
+    height: 8px;
+    line-height: 8px;
+    list-style: none;
+    background-color: #f3f3f3;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .ant-pwd-strength-item-1 {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .ant-pwd-strength-item-2 {
+    width: 20px;
+  }
+
+  .ant-pwd-strength-item-3 {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-right: 8px;
+  }
+
+  .ant-pwd-strength-low .ant-pwd-strength-item-1, .ant-pwd-strength-medium .ant-pwd-strength-item-1, .ant-pwd-strength-high .ant-pwd-strength-item-1 {
+    background-color: #FAC450;
+  }
+
+  .ant-pwd-strength-medium .ant-pwd-strength-item-2, .ant-pwd-strength-high .ant-pwd-strength-item-2 {
+    background-color: rgba(135, 208, 104, .6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#9987D068,endColorstr=#9987D068);
+  }
+
+  .ant-pwd-strength-high .ant-pwd-strength-item-3 {
+    background-color: #87D068;
+  }
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-customize">自定义校验规则</a>
+    </div>
+    <p>密码校验实例。</p>
+<p>这里使用了 validation 的 <code>forceValidate(fields, callback)</code>  方法，在对第一次输入的密码进行校验时会触发二次密码的校验。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/tree/master/style">样式</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-bin">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a href="https://github.com/alipay/x/issues">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">问题与建议 - Issues</a>
+    </li>
+    <li>
+      <h3>©2015 蚂蚁金服体验技术部出品</h3>
+      <h3>文档版本：<span id="versions-select"></span></h3>
+    </li>
+  </ul>
+</footer>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1AmXhXg0kXXXXXXXX.js" data-no-instant></script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

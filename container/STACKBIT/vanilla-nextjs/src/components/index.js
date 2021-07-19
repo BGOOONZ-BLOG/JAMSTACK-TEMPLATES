@@ -6,15 +6,7 @@ import SectionContent from './SectionContent';
 import SectionHero from './SectionHero';
 import SectionPosts from './SectionPosts';
 
-export {
-    Action,
-    Footer,
-    Header,
-    Layout,
-    SectionContent,
-    SectionHero,
-    SectionPosts
-};
+export { Action, Footer, Header, Layout, SectionContent, SectionHero, SectionPosts };
 
 export default {
     Action,

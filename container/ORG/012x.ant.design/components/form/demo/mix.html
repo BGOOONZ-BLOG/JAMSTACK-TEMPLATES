@@ -1,0 +1,361 @@
+<div class="code-box" id="demo-mix">
+  <div class="code-box-demo">
+    <div id="components-form-demo-mix"></div>
+    <script>mountNode = document.getElementById('components-form-demo-mix');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require('antd');
+
+var FormItem = _antd.Form.Item;
+var Option = _antd.Select.Option;
+var RadioButton = _antd.Radio.Button;
+var RadioGroup = _antd.Radio.Group;
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+  handleSubmit: function handleSubmit(e) {
+    e.preventDefault();
+    console.log('收到表单值：', this.props.form.getFieldsValue());
+  },
+  normFile: function normFile(e) {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e && e.fileList;
+  },
+  render: function render() {
+    var getFieldProps = this.props.form.getFieldProps;
+
+    return React.createElement(
+      _antd.Form,
+      { horizontal: true, onSubmit: this.handleSubmit },
+      React.createElement(
+        FormItem,
+        {
+          label: 'InputNumber \u6570\u5B57\u8F93\u5165\u6846\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 10 } },
+        React.createElement(_antd.InputNumber, _extends({ min: 1, max: 10, style: { width: 100 }
+        }, getFieldProps('inputNumber', { initialValue: 3 }))),
+        React.createElement(
+          'span',
+          { className: 'ant-form-text' },
+          ' \u53F0\u673A\u5668'
+        )
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: '\u6211\u662F\u6807\u9898\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 10 } },
+        React.createElement(
+          'p',
+          { className: 'ant-form-text', id: 'static', name: 'static' },
+          '\u5527\u5527\u590D\u5527\u5527\u6728\u5170\u5F53\u6237\u7EC7\u5440'
+        ),
+        React.createElement(
+          'p',
+          { className: 'ant-form-text' },
+          React.createElement(
+            'a',
+            { href: '#' },
+            '\u94FE\u63A5\u6587\u5B57'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: 'Switch \u5F00\u5173\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 10 },
+          required: true },
+        React.createElement(_antd.Switch, getFieldProps('switch'))
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: 'Slider \u6ED1\u52A8\u8F93\u5165\u6761\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 10 },
+          required: true },
+        React.createElement(_antd.Slider, _extends({ marks: ['A', 'B', 'C', 'D', 'E', 'F', 'G'] }, getFieldProps('slider')))
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: 'Select \u9009\u62E9\u5668\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 16 },
+          required: true },
+        React.createElement(
+          _antd.Select,
+          _extends({ style: { width: 200 }
+          }, getFieldProps('select')),
+          React.createElement(
+            Option,
+            { value: 'jack' },
+            'jack'
+          ),
+          React.createElement(
+            Option,
+            { value: 'lucy' },
+            'lucy'
+          ),
+          React.createElement(
+            Option,
+            { value: 'disabled', disabled: true },
+            'disabled'
+          ),
+          React.createElement(
+            Option,
+            { value: 'yiminghe' },
+            'yiminghe'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: 'DatePicker \u65E5\u671F\u9009\u62E9\u6846\uFF1A',
+          labelCol: { span: 8 },
+          required: true },
+        React.createElement(
+          _antd.Col,
+          { span: '6' },
+          React.createElement(_antd.DatePicker, getFieldProps('startDate'))
+        ),
+        React.createElement(
+          _antd.Col,
+          { span: '1' },
+          React.createElement(
+            'p',
+            { className: 'ant-form-split' },
+            '-'
+          )
+        ),
+        React.createElement(
+          _antd.Col,
+          { span: '6' },
+          React.createElement(_antd.DatePicker, getFieldProps('endDate'))
+        )
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: 'TimePicker \u65F6\u95F4\u9009\u62E9\u5668\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 16 },
+          required: true },
+        React.createElement(_antd.TimePicker, getFieldProps('time'))
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: '\u9009\u9879\uFF1A',
+          labelCol: { span: 8 } },
+        React.createElement(
+          RadioGroup,
+          getFieldProps('rg'),
+          React.createElement(
+            RadioButton,
+            { value: 'a' },
+            '\u9009\u9879\u4E00'
+          ),
+          React.createElement(
+            RadioButton,
+            { value: 'b' },
+            '\u9009\u9879\u4E8C'
+          ),
+          React.createElement(
+            RadioButton,
+            { value: 'c' },
+            '\u9009\u9879\u4E09'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        {
+          label: 'logo\u56FE\uFF1A',
+          labelCol: { span: 8 },
+          wrapperCol: { span: 16 },
+          help: '\u63D0\u793A\u4FE1\u606F\u8981\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F\u957F' },
+        React.createElement(
+          _antd.Upload,
+          _extends({ name: 'logo', action: '/upload.do', listType: 'picture', onChange: this.handleUpload
+          }, getFieldProps('upload', {
+            valuePropName: 'fileList',
+            normalize: this.normFile
+          })),
+          React.createElement(
+            _antd.Button,
+            { type: 'ghost' },
+            React.createElement(_antd.Icon, { type: 'upload' }),
+            ' \u70B9\u51FB\u4E0A\u4F20'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        { wrapperCol: { span: 16, offset: 8 }, style: { marginTop: 24 } },
+        React.createElement(
+          _antd.Button,
+          { type: 'primary', htmlType: 'submit' },
+          '\u786E\u5B9A'
+        )
+      )
+    );
+  }
+});
+
+Demo = _antd.Form.create()(Demo);
+
+ReactDOM.render(React.createElement(Demo, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Form, Select, InputNumber, DatePicker, TimePicker, Switch, Radio,
+         Slider, Button, Col, Upload, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+<span class="hljs-keyword">const</span> Option = Select.Option;
+<span class="hljs-keyword">const</span> RadioButton = Radio.Button;
+<span class="hljs-keyword">const</span> RadioGroup = Radio.Group;
+
+<span class="hljs-keyword">let</span> Demo = React.createClass({
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'收到表单值：'</span>, <span class="hljs-keyword">this</span>.props.form.getFieldsValue());
+  },
+
+  normFile(e) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Array</span>.isArray(e)) {
+      <span class="hljs-keyword">return</span> e;
+    }
+    <span class="hljs-keyword">return</span> e &amp;&amp; e.fileList;
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> { getFieldProps } = <span class="hljs-keyword">this</span>.props.form;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span> <span class="hljs-attribute">onSubmit</span>=<span class="hljs-value">{this.handleSubmit}</span> &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"InputNumber 数字输入框："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">10</span> }}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">InputNumber</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">{1}</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">{10}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">100</span> }}
+            {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">inputNumber</span>', { <span class="hljs-attribute">initialValue:</span> <span class="hljs-attribute">3</span> })} /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span> 台机器<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"我是标题："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">10</span> }}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"static"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"static"</span>&gt;</span>唧唧复唧唧木兰当户织呀<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>链接文字<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"Switch 开关："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">10</span> }}
+          <span class="hljs-attribute">required</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Switch</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">switch</span>')} /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"Slider 滑动输入条："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">10</span> }}
+          <span class="hljs-attribute">required</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Slider</span> <span class="hljs-attribute">marks</span>=<span class="hljs-value">{['A',</span> '<span class="hljs-attribute">B</span>', '<span class="hljs-attribute">C</span>', '<span class="hljs-attribute">D</span>', '<span class="hljs-attribute">E</span>', '<span class="hljs-attribute">F</span>', '<span class="hljs-attribute">G</span>']} {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">slider</span>')} /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"Select 选择器："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">16</span> }}
+          <span class="hljs-attribute">required</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> <span class="hljs-attribute">200</span> }}
+            {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">select</span>')}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"jack"</span>&gt;</span>jack<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"lucy"</span>&gt;</span>lucy<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"disabled"</span> <span class="hljs-attribute">disabled</span>&gt;</span>disabled<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"yiminghe"</span>&gt;</span>yiminghe<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"DatePicker 日期选择框："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">required</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">startDate</span>')} /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-split"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">endDate</span>')} /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"TimePicker 时间选择器："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">16</span> }}
+          <span class="hljs-attribute">required</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">TimePicker</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">time</span>')} /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"选项："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroup</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">rg</span>')}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">RadioButton</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"a"</span>&gt;</span>选项一<span class="hljs-tag">&lt;/<span class="hljs-title">RadioButton</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">RadioButton</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"b"</span>&gt;</span>选项二<span class="hljs-tag">&lt;/<span class="hljs-title">RadioButton</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">RadioButton</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"c"</span>&gt;</span>选项三<span class="hljs-tag">&lt;/<span class="hljs-title">RadioButton</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"logo图："</span>
+          <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">8</span> }}
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">16</span> }}
+          <span class="hljs-attribute">help</span>=<span class="hljs-value">"提示信息要长长长长长长长长长长长长长长"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"logo"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"/upload.do"</span> <span class="hljs-attribute">listType</span>=<span class="hljs-value">"picture"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleUpload}</span>
+            {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">upload</span>', {
+              <span class="hljs-attribute">valuePropName:</span> '<span class="hljs-attribute">fileList</span>',
+              <span class="hljs-attribute">normalize:</span> <span class="hljs-attribute">this.normFile</span>
+            })}
+          &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">16</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">8</span> }} <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">marginTop:</span> <span class="hljs-attribute">24</span> }}&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">htmlType</span>=<span class="hljs-value">"submit"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+});
+
+Demo = Form.create()(Demo);
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-mix">表单组合</a>
+    </div>
+    
+<p>集中营，展示和表单相关的其他 ant-design 组件。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

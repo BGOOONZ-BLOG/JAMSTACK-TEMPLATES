@@ -1,9 +1,9 @@
-const imagekit = require('../imagekit/init')
+const imagekit = require("../imagekit/init");
 
 const uploadPlaceholders = async ({
   amount = 20,
-  dimensions = '640/480',
-  folder = '/placeholders',
+  dimensions = "640/480",
+  folder = "/placeholders",
 } = {}) => {
   const promises = [...Array(amount)].map((_, i) =>
     imagekit.uploadViaURL(
@@ -14,10 +14,8 @@ const uploadPlaceholders = async ({
         useUniqueFilename: false,
       }
     )
-  )
+  );
 
-  Promise.all(promises)
-    .then(console.log)
-    .catch(console.error)
-}
-module.exports = uploadPlaceholders
+  Promise.all(promises).then(console.log).catch(console.error);
+};
+module.exports = uploadPlaceholders;

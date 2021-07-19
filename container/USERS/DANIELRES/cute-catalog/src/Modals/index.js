@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import bus, { closeModal } from 'Modals/bus'
+import bus, { closeModal } from "Modals/bus";
 
-import Cookies from 'Modals/contents/Cookies'
-import CookiesPolicy from 'Modals/contents/CookiesPolicy'
-import RegistrationConfirmed from 'Modals/contents/RegistrationConfirmed'
-import RegistrationPending from 'Modals/contents/RegistrationPending'
-import UploadImage from 'Modals/contents/UploadImage'
+import Cookies from "Modals/contents/Cookies";
+import CookiesPolicy from "Modals/contents/CookiesPolicy";
+import RegistrationConfirmed from "Modals/contents/RegistrationConfirmed";
+import RegistrationPending from "Modals/contents/RegistrationPending";
+import UploadImage from "Modals/contents/UploadImage";
 
 const Header = ({ children, noCloseButton }) => (
   <div className="modal-header">
@@ -15,13 +15,13 @@ const Header = ({ children, noCloseButton }) => (
       <button
         className="close"
         onClick={closeModal}
-        style={{ outline: 'none' }}
+        style={{ outline: "none" }}
       >
         &times;
       </button>
     )}
   </div>
-)
+);
 
 const Modal = ({ children, noCloseButton, title }) => (
   <div className="modal d-block">
@@ -32,44 +32,47 @@ const Modal = ({ children, noCloseButton, title }) => (
       </div>
     </div>
   </div>
-)
+);
 
-const getErrorMessage = payload => {
+const getErrorMessage = (payload) => {
   if (payload && payload.code && payload.code === 401)
-    return 'Unauthorized action, please login first.'
-  if (payload && payload.message) return payload.message
-  return 'Something went wrong, please try again'
-}
+    return "Unauthorized action, please login first.";
+  if (payload && payload.message) return payload.message;
+  return "Something went wrong, please try again";
+};
 
 const Backdrop = () => (
   <div className="modal-backdrop" style={{ opacity: 0.5 }} />
-)
+);
 
 class ModalContainer extends Component {
   constructor(props) {
-    super(props)
-    this.state = { queue: ['UPLOAD_IMAGE'] }
-    const getQueue = () => this.state.queue
+    super(props);
+    this.state = { queue: ["UPLOAD_IMAGE"] };
+    const getQueue = () => this.state.queue;
 
-    bus.take('OPEN_MODAL', ({ name, payload }) => {
+    bus.take("OPEN_MODAL", ({ name, payload }) => {
       this.setState({
-        queue: [{ name, payload }, ...getQueue().filter(o => o.name !== name)],
-      })
-    })
+        queue: [
+          { name, payload },
+          ...getQueue().filter((o) => o.name !== name),
+        ],
+      });
+    });
 
-    bus.take('CLOSE_MODAL', () =>
+    bus.take("CLOSE_MODAL", () =>
       this.setState({
         queue: getQueue().slice(1, getQueue().length),
       })
-    )
+    );
   }
 
   render() {
-    const { name, payload } = this.state.queue[0]
+    const { name, payload } = this.state.queue[0];
 
     return (
       <>
-        {name === 'AUTOLOGOUT_WARNING' && (
+        {name === "AUTOLOGOUT_WARNING" && (
           <Modal title="Warning">
             <p>
               Your session expires in <b>{payload}</b> minutes.
@@ -80,29 +83,29 @@ class ModalContainer extends Component {
           </Modal>
         )}
 
-        {name === 'COOKIES' && (
+        {name === "COOKIES" && (
           <Modal noCloseButton title="Cookies notice">
             <Cookies />
           </Modal>
         )}
 
-        {name === 'COOKIES_POLICY' && (
+        {name === "COOKIES_POLICY" && (
           <Modal title="Cookies policy">
             <CookiesPolicy />
           </Modal>
         )}
 
-        {name === 'ERROR' && (
+        {name === "ERROR" && (
           <Modal title="Error">{getErrorMessage(payload)} </Modal>
         )}
 
-        {name === 'REGISTRATION_CONFIRMED' && (
+        {name === "REGISTRATION_CONFIRMED" && (
           <Modal title="Welcome aboard!">
             <RegistrationConfirmed />
           </Modal>
         )}
 
-        {name === 'REGISTRATION_PENDING' && (
+        {name === "REGISTRATION_PENDING" && (
           <Modal title="Your registration is pending">
             <RegistrationPending
               registrationTokenMaxAge={payload.registrationTokenMaxAge}
@@ -110,7 +113,7 @@ class ModalContainer extends Component {
           </Modal>
         )}
 
-        {name === 'UPLOAD_IMAGE' && (
+        {name === "UPLOAD_IMAGE" && (
           <Modal title="Upload Image">
             <UploadImage />
           </Modal>
@@ -118,8 +121,8 @@ class ModalContainer extends Component {
 
         {name && <Backdrop />}
       </>
-    )
+    );
   }
 }
 
-export default ModalContainer
+export default ModalContainer;

@@ -5,13 +5,12 @@ sub: With subdomains, on Digital Ocean
 date: 2015-08-20 17:20:55
 <!-- preview: preview.png -->
 categories:
-- programming
-- hosting
-- devops
+  - programming
+  - hosting
+  - devops
 ---
 
 Ok... despite the online documentation and support forums, it took me some time to figure this out.
-
 
 So here is a step-by step guide guide explaining how to host multiple apps on one unique dokku instance, on one unique Digital Ocean droplet, using subdmains that point to the different apps.
 
@@ -21,16 +20,15 @@ With this setup, we'ĺl be able to deploy each app with a simple `git push` like
 
 And browse to our apps using subdomains, like:
 
-* App 1: http://app1.pixarea.com
-* App 2: http://app2.pixarea.com
-* ...
+- App 1: http://app1.pixarea.com
+- App 2: http://app2.pixarea.com
+- ...
 
 All of this using only 1 droplet on Digital Ocean.
 
 Before we begin:
 
 - be sure to have a registered domain name that you can add subdomains to.
-
 
 ## 1. Setting up the dokku droplet on Digital Ocean
 
@@ -48,7 +46,7 @@ Before we begin:
 
 5. Add your public SSH key to be able to `ssh` to your droplet from your computer without having to type a password each time:
 
-  * Just copy the content of your local "id_rsa.pub" file (`cat .ssh/id_rsa.pub`) and paste it here:
+- Just copy the content of your local "id_rsa.pub" file (`cat .ssh/id_rsa.pub`) and paste it here:
 
 <img src="02.png" />
 
@@ -64,16 +62,15 @@ Before we begin:
 
 9. Open a browser window and paste the IP address as the URL. This will lead you to dokku's first setup panel.
 
-  Fill in the fields following the example below:
+Fill in the fields following the example below:
 
-  * Paste-in your id_rsa.pub key again, this will allow you to `git push` your apps without having to type a password each time.
+- Paste-in your id_rsa.pub key again, this will allow you to `git push` your apps without having to type a password each time.
 
-  * Be sure to check **"Use virtualhost naming fo apps"** !
+- Be sure to check **"Use virtualhost naming fo apps"** !
 
-  * Specify your domain name in the form "whatever.com", following my example:
+- Specify your domain name in the form "whatever.com", following my example:
 
 <img src="05b.png" />
-
 
 <br />
 
@@ -85,18 +82,18 @@ Well done !!
 
 1. Note the IP address of your droplet, shown on the top left of the droplet panel
 
-* In this example, it (still) is: `45.55.39.26`
+- In this example, it (still) is: `45.55.39.26`
 
 <img src="06.png" />
 
 2. Access the DNS config of your registrar, add your subdomains and point them to this IP:
 
-  - In order to do that, add a new entry of type "A", then paste the droplet IP address you just copied:
+- In order to do that, add a new entry of type "A", then paste the droplet IP address you just copied:
 
 <img src="08.png" />
 <img src="09.png" />
 
-* Repeat for every subdomain / app
+- Repeat for every subdomain / app
 
 ## 3. Deploy the first app
 
@@ -148,16 +145,10 @@ Clone, then publish my example app (or one of your own apps) as "app2":
 
 Check the result:
 
-* If we browse to http://app2.pixarea.com now, we should see:
+- If we browse to http://app2.pixarea.com now, we should see:
 
 <img src="12.png" />
 
 That's all folks !
 
-Wish you some happy hosting / pushing / dropletting / deploying  !
-
-
-
-
-
-
+Wish you some happy hosting / pushing / dropletting / deploying !

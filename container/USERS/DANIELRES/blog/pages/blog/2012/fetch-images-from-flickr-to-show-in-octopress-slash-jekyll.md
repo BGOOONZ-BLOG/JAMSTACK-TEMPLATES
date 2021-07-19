@@ -1,17 +1,17 @@
 ---
-title: Fetch images from Flickr 
+title: Fetch images from Flickr
 sub: And show them in Octopress/Jekyll
 path: /2012/07/fetch-images-from-flickr-to-show-in-octopress-slash-jekyll/
 date: 2012-07-21 17:53
 categories:
-- programming
-- ruby
+  - programming
+  - ruby
 tags:
-- flickr
-- ruby
-- api
-- octopress
-- jekyll
+  - flickr
+  - ruby
+  - api
+  - octopress
+  - jekyll
 ---
 
 A convenient way to manage images for a blog is to host them on Flickr.
@@ -26,7 +26,7 @@ Flickraw is a very convenient gem for accessing the flickr API, making it super-
 
 Add it to your gemfile:
 
-``` ruby
+```ruby
 # Gemfile
 gem 'flickraw'
 ```
@@ -39,7 +39,7 @@ gem 'flickraw'
 
 Put this file in the 'plugins' directory:
 
-``` ruby
+```ruby
 # flickr_image.rb
 require 'flickraw'
 class FlickrImage < Liquid::Tag
@@ -79,7 +79,7 @@ Liquid::Template.register_tag('flickr_image', FlickrImage)
 
 ## Usage in a post
 
-``` markdown
+```markdown
 ---
 layout: post
 title: "Post with images from Flickr"

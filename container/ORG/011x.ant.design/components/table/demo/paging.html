@@ -1,0 +1,97 @@
+<div class="code-box" id="demo-paging">
+  <div class="code-box-demo">
+    <div id="components-table-demo-paging"></div>
+    <script>mountNode = document.getElementById('components-table-demo-paging');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  render: function render(text) {
+    return React.createElement(
+      'a',
+      { href: '#' },
+      text
+    );
+  }
+}, {
+  title: '年龄',
+  dataIndex: 'age'
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+
+var data = [];
+for (var i = 0; i < 46; i++) {
+  data.push({
+    key: i,
+    name: '李大嘴' + i,
+    age: 32,
+    address: '西湖区湖底公园' + i + '号'
+  });
+}
+
+var pagination = {
+  total: data.length,
+  current: 1,
+  showSizeChanger: true,
+  onShowSizeChange: function onShowSizeChange(current, pageSize) {
+    console.log('Current: ', current, '; PageSize: ', pageSize);
+  },
+  onChange: function onChange(current) {
+    console.log('Current: ', current);
+  }
+};
+
+ReactDOM.render(React.createElement(_antd.Table, { columns: columns, dataSource: data, pagination: pagination }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Table } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> columns = [{
+  title: <span class="hljs-string">'姓名'</span>,
+  dataIndex: <span class="hljs-string">'name'</span>,
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>;</span>
+  }
+}, {
+  title: <span class="hljs-string">'年龄'</span>,
+  dataIndex: <span class="hljs-string">'age'</span>
+}, {
+  title: <span class="hljs-string">'住址'</span>,
+  dataIndex: <span class="hljs-string">'address'</span>
+}];
+
+<span class="hljs-keyword">const</span> data = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">46</span>; i++) {
+  data.push({
+    key: i,
+    name: <span class="hljs-string">'李大嘴'</span> + i,
+    age: <span class="hljs-number">32</span>,
+    address: <span class="hljs-string">'西湖区湖底公园'</span> + i + <span class="hljs-string">'号'</span>
+  });
+}
+
+<span class="hljs-keyword">const</span> pagination = {
+  total: data.length,
+  current: <span class="hljs-number">1</span>,
+  showSizeChanger: <span class="hljs-literal">true</span>,
+  onShowSizeChange: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">current, pageSize</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Current: '</span>, current, <span class="hljs-string">'; PageSize: '</span>, pageSize);
+  },
+  onChange: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">current</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Current: '</span>, current);
+  }
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Table</span> <span class="hljs-attribute">columns</span>=<span class="hljs-value">{columns}</span> <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{data}</span> <span class="hljs-attribute">pagination</span>=<span class="hljs-value">{pagination}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-paging">分页</a>
+    </div>
+    <p>数据项较多时显示分页。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

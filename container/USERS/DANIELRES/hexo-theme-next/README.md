@@ -2,7 +2,7 @@
 
 > 精于心，简于形
 
-[在线预览](http://notes.iissnan.com) |  [README in English](README.en.md)
+[在线预览](http://notes.iissnan.com) | [README in English](README.en.md)
 
 ## 预览
 
@@ -17,12 +17,12 @@
 
 ## 安装
 
-1. 从 GitHub 下载
+1.  从 GitHub 下载
 
         $ cd your-hexo-site
         $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 
-2. 更改**站点** `_config.yml` 中的 `theme` 字段设置为 `next`
+2.  更改**站点** `_config.yml` 中的 `theme` 字段设置为 `next`
 
         theme: next
 
@@ -36,7 +36,6 @@ git pull
 ```
 
 因为主题在不断的更新，所以你可能会遇到冲突，需要手动解决。在更新之前，建议备份下当前的配置。
-
 
 ## 特性
 
@@ -62,8 +61,7 @@ git pull
 - [低版本新浏览器提示](https://github.com/xirong/hexo-theme-next/wiki/ie-8%E4%BB%A5%E4%B8%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%90%E7%A4%BA%E4%BD%BF%E7%94%A8%E6%96%B0%E7%89%88%E6%9C%AC%E8%AE%BF%E9%97%AE%E7%AB%99%E7%82%B9)
 - 增加 360 站点认证 360-site-verification
 - [百度站内分享](https://github.com/xirong/hexo-theme-next/wiki/%E6%96%B0%E5%A2%9E%E7%99%BE%E5%BA%A6%E7%AB%99%E5%86%85%E5%88%86%E4%BA%AB)
-- [简体中文版增加腾讯公益404页面](https://github.com/xirong/hexo-theme-next/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E5%A2%9E%E5%8A%A0%E8%85%BE%E8%AE%AF%E5%85%AC%E7%9B%8A404%E9%A1%B5%E9%9D%A2)
-
+- [简体中文版增加腾讯公益 404 页面](https://github.com/xirong/hexo-theme-next/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E5%A2%9E%E5%8A%A0%E8%85%BE%E8%AE%AF%E5%85%AC%E7%9B%8A404%E9%A1%B5%E9%9D%A2)
 
 ## 配置
 
@@ -86,7 +84,6 @@ duoshuo_shortname: your-duoshuo-shortname
 # DISQUS 帐号 （如果已经设置 多说 帐号，此选项将被跳过）
 disqus_shortname: your-disqus-shortname
 
-
 # 社交链接，将在侧栏中显示
 social:
   GitHub: your-github-url
@@ -96,28 +93,23 @@ social:
   ZhiHu: your-zhihu-url
   # 等等
 
-
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 creative_commons: by-nc-sa
 
-
 # Google 站长工具验证，请选择 `HTML Meta` 验证方式
 # See: https://www.google.com/webmasters/
 google_site_verification: VvyjvVXcJQa0QklHipu6pwm2PJGnnchIqX7s5JbbT_0
 
-
 # Google 分析 ID
 google_analytics:
-
 
 # 百度统计 ID，此 ID 是百度统计提供脚本中 hm.js? 后面那串字符，非百度统计帐号
 baidu_analytics: 50c15455e37f70aea674ff4a663eef27
 
 # 站点起始时间
 since: 2011
-
 # =============================================================================
 # End NexT Theme configuration
 # =============================================================================
@@ -144,14 +136,12 @@ favicon: /favicon.ico
 # 设置成特定的`url`，适用于通过第三方服务定制feed的情况。
 rss: false
 
-
 # 图标字体
 # NexT内建四种图标: default | linecons | fifty-shades | feather
 icon_font: default
 #icon_font: fifty-shades
 #icon_font: feather
 #icon_font: linecons
-
 
 # 代码高亮主题
 # available: normal | night | night eighties | night blue | night bright
@@ -161,10 +151,8 @@ highlight_theme: normal
 # 开启数学公式渲染支持，默认关闭。设置为 `true` 开启。
 mathjax:
 
-
 # Mist
 #scheme: Mist
-
 
 # `阅读全文` 按钮跳转之后是否自动滚动页面到设置 `<!-- more -->` 的地方。
 scroll_to_more: true
@@ -203,16 +191,13 @@ toc_list_number: true
 <img src="/image-url" class="full-image" />
 ```
 
-
 ## 浏览器支持
 
 ![Browser support](http://iissnan.com/nexus/next/browser-support.png)
 
-
 ## 贡献
 
 接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的`PR`。
-
 
 ## 开发
 

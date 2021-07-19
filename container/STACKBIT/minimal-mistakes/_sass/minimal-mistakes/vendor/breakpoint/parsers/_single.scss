@@ -4,11 +4,11 @@
 @import "single/default";
 
 @function breakpoint-parse-single($feature, $empty-media, $first) {
-  $parsed: '';
-  $leader: '';
+  $parsed: "";
+  $leader: "";
   // If we're forcing
-  @if not ($empty-media) or not ($first) {
-    $leader: 'and ';
+  @if not($empty-media) or not ($first) {
+    $leader: "and ";
   }
 
   // If it's a single feature that can stand alone, we let it
@@ -22,5 +22,5 @@
     $parsed: breakpoint-parse-default($feature);
   }
 
-  @return $leader + '(' + $parsed + ')';
+  @return $leader + "(" + $parsed + ")";
 }

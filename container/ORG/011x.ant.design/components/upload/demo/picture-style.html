@@ -1,0 +1,109 @@
+<div class="code-box" id="demo-picture-style">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-picture-style"></div>
+    <script>mountNode = document.getElementById('components-upload-demo-picture-style');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require('antd');
+
+var props = {
+  action: '/upload.do',
+  listType: 'picture',
+  defaultFileList: [{
+    uid: -1,
+    name: 'xxx.png',
+    status: 'done',
+    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+  }, {
+    uid: -2,
+    name: 'yyy.png',
+    status: 'done',
+    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+  }]
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    _antd.Upload,
+    props,
+    React.createElement(
+      _antd.Button,
+      { type: 'ghost' },
+      React.createElement(_antd.Icon, { type: 'upload' }),
+      ' 点击上传'
+    )
+  ),
+  React.createElement('br', null),
+  React.createElement('br', null),
+  React.createElement(
+    _antd.Upload,
+    _extends({}, props, { className: 'upload-list-inline' }),
+    React.createElement(
+      _antd.Button,
+      { type: 'ghost' },
+      React.createElement(_antd.Icon, { type: 'upload' }),
+      ' 点击上传'
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Upload, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> props = {
+  action: <span class="hljs-string">'/upload.do'</span>,
+  listType: <span class="hljs-string">'picture'</span>,
+  defaultFileList: [{
+    uid: -<span class="hljs-number">1</span>,
+    name: <span class="hljs-string">'xxx.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+    thumbUrl: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+  }, {
+    uid: -<span class="hljs-number">2</span>,
+    name: <span class="hljs-string">'yyy.png'</span>,
+    status: <span class="hljs-string">'done'</span>,
+    url: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+    thumbUrl: <span class="hljs-string">'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'</span>,
+  }]
+};
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>}&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Upload</span> {<span class="hljs-attribute">...props</span>} <span class="hljs-attribute">className</span>=<span class="hljs-value">"upload-list-inline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"upload"</span> /&gt;</span> 点击上传
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Upload</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">/* 加几行样式将上传项变成平铺样式 */
+.upload-list-inline .ant-upload-list-item {
+  display: inline-block;
+  width: 200px;
+  margin-right: 8px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-comment">/* 加几行样式将上传项变成平铺样式 */</span>
+<span class="hljs-class">.upload-list-inline</span> <span class="hljs-class">.ant-upload-list-item</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-picture-style">图片列表样式</a>
+    </div>
+    <p>上传文件为图片，可展示本地缩略图。</p>
+<p><code>IE8/9</code> 不支持浏览器本地缩略图展示（<a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL">Ref</a>），可以写 <code>thumbUrl</code> 属性来代替。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

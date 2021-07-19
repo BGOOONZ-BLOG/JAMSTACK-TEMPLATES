@@ -16,18 +16,18 @@ var settings = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
-        initialSlide: 2
-      }
+        initialSlide: 2,
+      },
     },
     {
       breakpoint: 568,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: false
-      }
-    }
-  ]
+        dots: false,
+      },
+    },
+  ],
 };
 
 export default class Photos extends Component {

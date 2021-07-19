@@ -1,0 +1,109 @@
+<div class="code-box" id="demo-control">
+  <div class="code-box-demo">
+    <div id="components-tag-demo-control"></div>
+    <script>mountNode = document.getElementById('components-tag-demo-control');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var index = 2;
+var App = React.createClass({
+  displayName: 'App',
+  getInitialState: function getInitialState() {
+    return {
+      tags: [{ key: 1, name: '标签一' }, { key: 2, name: '标签二' }]
+    };
+  },
+  handleClose: function handleClose(key) {
+    var tags = [].concat(_toConsumableArray(this.state.tags)).filter(function (tag) {
+      return tag.key !== key && tag;
+    });
+    console.log(tags);
+    this.setState({ tags: tags });
+  },
+  addTag: function addTag() {
+    var tags = [].concat(_toConsumableArray(this.state.tags));
+    index += 1;
+    tags.push({ key: index, name: '\u65B0\u6807\u7B7E' + index });
+    this.setState({ tags: tags });
+  },
+  render: function render() {
+    var _this = this;
+
+    return React.createElement(
+      'div',
+      null,
+      this.state.tags.map(function (tag) {
+        return React.createElement(
+          _antd.Tag,
+          { key: tag.key, closable: true, afterClose: _this.handleClose.bind(_this, tag.key) },
+          tag.name
+        );
+      }),
+      React.createElement(
+        'div',
+        null,
+        React.createElement(
+          _antd.Button,
+          { onClick: this.addTag },
+          '\u6DFB\u52A0\u6807\u7B7E'
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tag, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">let</span> index = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      tags: [
+        { key: <span class="hljs-number">1</span>, name: <span class="hljs-string">'标签一'</span> },
+        { key: <span class="hljs-number">2</span>, name: <span class="hljs-string">'标签二'</span> },
+      ],
+    };
+  },
+  handleClose(key) {
+    <span class="hljs-keyword">const</span> tags = [...this.state.tags].filter(tag =&gt; (tag.key !== key) &amp;&amp; tag);
+    <span class="hljs-built_in">console</span>.log(tags);
+    <span class="hljs-keyword">this</span>.setState({ tags });
+  },
+  addTag() {
+    <span class="hljs-keyword">const</span> tags = [...this.state.tags];
+    index += <span class="hljs-number">1</span>;
+    tags.push({ key: index, name: <span class="hljs-string">`新标签<span class="hljs-subst">${index}</span>`</span> });
+    <span class="hljs-keyword">this</span>.setState({ tags });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        {this.state.tags.map(tag =&gt;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Tag</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{tag.key}</span> <span class="hljs-attribute">closable</span> <span class="hljs-attribute">afterClose</span>=<span class="hljs-value">{this.handleClose.bind(this,</span> <span class="hljs-attribute">tag.key</span>)}&gt;</span>{tag.name}<span class="hljs-tag">&lt;/<span class="hljs-title">Tag</span>&gt;</span>
+        )</span>}
+        &lt;div&gt;
+          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.addTag}</span>&gt;</span>添加标签<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-control">数据生成标签</a>
+    </div>
+    
+<p>用数组生成一组标签。</p>
+<blockquote>
+<p>使用 <code>afterClose</code> 而不是 <code>onClose</code>，删除时有动画效果。</p>
+</blockquote>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

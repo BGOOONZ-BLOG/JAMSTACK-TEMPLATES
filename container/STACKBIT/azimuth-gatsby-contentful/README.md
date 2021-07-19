@@ -63,8 +63,8 @@ If you need a hand, make sure to check the [Stackbit support page](https://stack
 
 1.  Set the following environment variables locally.
 
-    - `CONTENTFUL_SPACE_ID` - Contentful Space ID. You can acquire the space ID from Contentful's app URL: https://app.contentful.com/spaces/<SPACE_ID>.
-    - `CONTENTFUL_ACCESS_TOKEN` - Content Delivery API - access token. You can acquire from Contentful's app in API Key's section - "Settings" => "API Keys" => "Content delivery / preview tokens" => "Add API Key" or pick one Stackbit generated for you.
+    -   `CONTENTFUL_SPACE_ID` - Contentful Space ID. You can acquire the space ID from Contentful's app URL: https://app.contentful.com/spaces/<SPACE_ID>.
+    -   `CONTENTFUL_ACCESS_TOKEN` - Content Delivery API - access token. You can acquire from Contentful's app in API Key's section - "Settings" => "API Keys" => "Content delivery / preview tokens" => "Add API Key" or pick one Stackbit generated for you.
 
 1.  Start the Gatsby local development server (run from project root):
 

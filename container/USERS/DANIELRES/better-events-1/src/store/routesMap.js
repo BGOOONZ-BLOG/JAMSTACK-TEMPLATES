@@ -1,10 +1,10 @@
-import 'whatwg-fetch';
+import "whatwg-fetch";
 
-import { types as eventTypes } from './events';
+import { types as eventTypes } from "./events";
 
 const fetchEvent = (eventCode, dispatch) =>
   fetch(`/api/v1/events/${eventCode}`)
-    .then(response => response.json())
+    .then((response) => response.json())
     .then(({ event }) =>
       dispatch({
         type: eventTypes.EVENT_SUCCESS,
@@ -12,7 +12,7 @@ const fetchEvent = (eventCode, dispatch) =>
         eventCode,
       })
     )
-    .catch(error =>
+    .catch((error) =>
       dispatch({
         type: eventTypes.EVENT_FAILURE,
         error,
@@ -21,10 +21,10 @@ const fetchEvent = (eventCode, dispatch) =>
     );
 
 export default {
-  ADMINPAGE: '/admin',
-  HOMEPAGE: '/',
+  ADMINPAGE: "/admin",
+  HOMEPAGE: "/",
   EVENTPAGE: {
-    path: '/:eventCode',
+    path: "/:eventCode",
     thunk: (dispatch, getState) => {
       const { eventCode } = getState().location.payload;
 
@@ -32,7 +32,7 @@ export default {
     },
   },
   EVENTSUBJECTPAGE: {
-    path: '/:eventCode/:subjectId',
+    path: "/:eventCode/:subjectId",
     thunk: (dispatch, getState) => {
       const { eventCode } = getState().location.payload;
 

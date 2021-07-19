@@ -1,3 +1,3 @@
-import db from '../../db/db'
+import db from "../../db/db";
 
-export default done => db.destroy()
+export default (done) => db.destroy();

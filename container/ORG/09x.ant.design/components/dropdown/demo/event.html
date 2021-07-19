@@ -1,0 +1,70 @@
+<div class="code-box" id="demo-event">
+  <div class="code-box-demo">
+    <div id="components-dropdown-demo-event"></div>
+    <script>(function(){"use strict";
+
+var Menu = antd.Menu;
+var Dropdown = antd.Dropdown;
+var onSelect = function onSelect(_ref) {
+  var key = _ref.key;
+
+  alert('选中了菜单' + key);
+};
+
+var menu = React.createElement(
+  Menu,
+  { onSelect: onSelect },
+  React.createElement(
+    Menu.Item,
+    { key: "1" },
+    "第一个菜单项"
+  ),
+  React.createElement(
+    Menu.Item,
+    { key: "2" },
+    "第二个菜单项"
+  ),
+  React.createElement(
+    Menu.Item,
+    { key: "3" },
+    "第三个菜单项"
+  )
+);
+
+React.render(React.createElement(
+  Dropdown,
+  { overlay: menu },
+  React.createElement(
+    "button",
+    { className: "ant-btn ant-btn-menu" },
+    "鼠标移入，点击菜单 ",
+    React.createElement("i", { className: "anticon anticon-down" })
+  )
+), document.getElementById('components-dropdown-demo-event'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Menu = antd.Menu;
+<span class="keyword">var</span> Dropdown = antd.Dropdown;
+<span class="keyword">var</span> onSelect = <span class="function"><span class="keyword">function</span> <span class="params">({key})</span>{</span>
+  alert(<span class="string">'选中了菜单'</span> + key);
+};
+
+<span class="keyword">var</span> menu = <span class="xml"><span class="tag">&lt;<span class="title">Menu</span> <span class="attribute">onSelect</span>=<span class="value">{onSelect}</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>第一个菜单项<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>第二个菜单项<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>第三个菜单项<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">Menu</span>&gt;</span>;</span>
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Dropdown</span> <span class="attribute">overlay</span>=<span class="value">{menu}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-menu"</span>&gt;</span>
+      鼠标移入，点击菜单 <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-down"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Dropdown</span>&gt;</span>
+, document.getElementById('components-dropdown-demo-event'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-event">触发事件</a>
+    </div>
+    <p>点击菜单项后会触发事件，用户可以通过相应的菜单项 key 进行不同的操作。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

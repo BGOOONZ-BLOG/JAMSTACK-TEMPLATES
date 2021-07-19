@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+表格  - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../practice/cases">实践</a>
+          </li>
+          <li class="current">
+            <a href="./navigation">模式</a>
+          </li>
+          <li class="">
+            <a href="../react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="./"
+           class="nav-link-disabled">
+          典型页面
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="navigation"
+           class="">
+          导航
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="form"
+           class="">
+          表单
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="list"
+           class="">
+          列表
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="current">
+        <a href="table"
+           class="">
+          表格
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="complex-table"
+           class="">
+          表格：复杂数据
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="advanced-search"
+           class="">
+          高级搜索
+          <span class="chinese"></span>
+        </a>
+      </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>表格 <span class="subtitle"></span></h1>
+    
+<p>表格可被视为一种列表。它经常和其他界面元素一起协同，用于展示和操作结构化数据，并经常用于详情信息的入口。</p>
+
+    <div class="toc"><ul><li><a href="#内容">内容</a><ul><li><a href="#筛选">筛选</a></li><li><a href="#状态点">状态点</a></li><li><a href="#更多操作">更多操作</a></li><li><a href="#跳转至详情">跳转至详情</a></li></ul></li><li><a href="#交互">交互</a><ul><li><a href="#显示长表格">显示长表格</a></li><li><a href="#全选数据">全选数据</a></li><li><a href="#跨页选数据">跨页选数据</a></li><li><a href="#固定按钮组">固定按钮组</a></li><li><a href="#某一项内容过长">某一项内容过长</a></li><li><a href="#模块编辑">模块编辑</a></li><li><a href="#直接编辑">直接编辑</a></li><li><a href="#悬浮层编辑">悬浮层编辑</a></li></ul></li><li><a href="#规格">规格</a><ul><li><a href="#行高">行高</a></li><li><a href="#列宽">列宽</a></li><li><a href="#对齐方式">对齐方式</a></li></ul></li><li><a href="#案例（敬请期待）"><span class="waiting">案例（敬请期待）</span></a></li></ul></div>
+    <h2 id="内容">内容<a href="#内容" class="anchor">#</a> </h2><p><img class="preview-img" align="right" alt="结构示例" src="https://os.alipayobjects.com/rmsportal/zFqqEqKKAylKkxv.png"></p>
+<p>通常表格的组成元素以及相关元素会有，这几部分组成。</p>
+<ol>
+<li>按钮组</li>
+<li>搜索条件</li>
+<li>排序</li>
+<li>筛选</li>
+<li>状态点</li>
+<li>单行操作</li>
+<li>分页器／无限加载（可选）</li>
+</ol>
+<h3 id="筛选">筛选<a href="#筛选" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="筛选示例" src="https://os.alipayobjects.com/rmsportal/YRcnmAFUvcfMlpN.png"></p>
+<p>当该列选项有限，用户又希望只查看一个或者多个值时，可考虑使用。</p>
+<h3 id="状态点">状态点<a href="#状态点" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="状态示例" src="https://os.alipayobjects.com/rmsportal/EYmtSshUxKydwns.png"></p>
+<p>一般用四种颜色来表明系统的不同状态。</p>
+<h3 id="更多操作">更多操作<a href="#更多操作" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="更多操作示例" description="依次分别为：完整内容、暂时不可用、没有该权限。" src="https://os.alipayobjects.com/rmsportal/ZlcZDOZNZpYQcMM.png"></p>
+<p>该项暂时不可用时，直接灰化该操作；用户没有该权限时，直接隐藏该操作。</p>
+<h3 id="跳转至详情">跳转至详情<a href="#跳转至详情" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="名称跳转示例" src="https://os.alipayobjects.com/rmsportal/tfJiUmrUJRzBlzt.png"></p>
+<p>把 ID、名称等唯一性的表格项处理成文字链，点击后跳转至详情。</p>
+<ul>
+<li>优点：节省空间；</li>
+<li>缺点：可发现性较低；点击区域受到内容限制，可能出现不易点击的情况。</li>
+</ul>
+<p><br></p>
+<p><img class="preview-img" align="right" alt="查看跳转示例" src="https://os.alipayobjects.com/rmsportal/zjDqNVTzSrzXaWg.png"></p>
+<p>在操作中增加一列『查看』，点击后进行跳转至详情。</p>
+<ul>
+<li>优点：可发现性高；点击范围固定，不受影响；</li>
+<li>缺点：比较占空间。</li>
+</ul>
+<p><br></p>
+<p>结论：可根据业务系统中表格的实际情况，统一使用一种类型。</p>
+<h2 id="交互">交互<a href="#交互" class="anchor">#</a> </h2><h3 id="显示长表格">显示长表格<a href="#显示长表格" class="anchor">#</a> </h3><p>参考『列表页面』中的 <a href="/docs/pattern/list#%E6%98%BE%E7%A4%BA%E9%95%BF%E5%88%97%E8%A1%A8">显示长列表</a>。</p>
+<h3 id="全选数据">全选数据<a href="#全选数据" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="状态一" src="https://os.alipayobjects.com/rmsportal/QqafGErOPnuDKyy.png"></p>
+<p><img class="preview-img" align="right" alt="状态二：点击 Table 顶部的复选框，出现『Alert』" src="https://os.alipayobjects.com/rmsportal/qwRSMFNilVCNoym.png"></p>
+<p><img class="preview-img" align="right" alt="状态三：点击『选择全部』后" src="https://os.alipayobjects.com/rmsportal/POvEJGjMYAexGut.png"></p>
+<p>当使用了分页器，又想实现全选数据的功能，可以结合『Alert』来实现。</p>
+<h3 id="跨页选数据">跨页选数据<a href="#跨页选数据" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="状态一：选中一行数据" src="https://os.alipayobjects.com/rmsportal/OcIWSystreURrPV.png"></p>
+<p><img class="preview-img" align="right" alt="状态二：切换分页后，记录所选的项目" src="https://os.alipayobjects.com/rmsportal/HuzwUWDzXszOkEI.png"></p>
+<p><img class="preview-img" align="right" alt="状态三：在其他页中再选择一项，多记录一项选择" src="https://os.alipayobjects.com/rmsportal/yCjrxTSElzNUsFn.png"></p>
+<p><img class="preview-img" align="right" alt="状态四：用户可以在记录条直接取消选择" src="https://os.alipayobjects.com/rmsportal/jtepHsDPApPnQlD.png"></p>
+<p><img class="preview-img" align="right" alt="状态五：表格选择框同步取消选择" src="https://os.alipayobjects.com/rmsportal/OAVQZqxPyuAWvTh.png"></p>
+<p>当需要对表格／列表的数据进行跨分页器选择时，结合『Alert』来实现。</p>
+<h3 id="固定按钮组">固定按钮组<a href="#固定按钮组" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="顶部固定示例" src="https://os.alipayobjects.com/rmsportal/AhgnVIhTIvtHpok.png"></p>
+<p><img class="preview-img" align="right" alt="底部固定示例" src="https://os.alipayobjects.com/rmsportal/hUHidNAJczLRVCg.png"></p>
+<p>用在表格行数很多时（一般多于 20 行），又想对表格数据进行频繁的操作时，尤其适用在无限加载的表格中。</p>
+<h3 id="某一项内容过长">某一项内容过长<a href="#某一项内容过长" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="气泡显示示例" description="当过长信息可以被隐藏时，用户悬浮／点击该项时，用『Tooltip／Popover』来显示完整内容。" src="https://os.alipayobjects.com/rmsportal/vgNHOYAiuQbXCOi.png"></p>
+<p>某一项内容过长／不确定长度，既不希望用户在列表和详情之间来回跳转，又不希望不确定的数据撑爆表格时。</p>
+<h3 id="模块编辑">模块编辑<a href="#模块编辑" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="模块编辑示例" description="启动和禁用要尽可能相似（对称性交互）；保证启用和禁用切换时，页面不在水平方向不错位。" src="https://os.alipayobjects.com/rmsportal/mUhSLOTjzGYTQaE.png"></p>
+<p>适用在易读性高于易编辑性时；适用在有一定数量的项需要编辑时。</p>
+<h3 id="直接编辑">直接编辑<a href="#直接编辑" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="直接编辑示例" description="用户输入后，系统需要及时保存数据。" src="https://os.alipayobjects.com/rmsportal/VgvZjqTZBuAfGuO.png"></p>
+<p>适用在易编辑性高于易读性时。</p>
+<h3 id="悬浮层编辑">悬浮层编辑<a href="#悬浮层编辑" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="悬浮层编辑示例" src="https://os.alipayobjects.com/rmsportal/QhIyXeNxAZEaLjT.png"></p>
+<p>悬浮层会遮挡部分页面，适用在上下文对编辑任务不那么重要时。</p>
+<h2 id="规格">规格<a href="#规格" class="anchor">#</a> </h2><h3 id="行高">行高<a href="#行高" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="标准" src="https://os.alipayobjects.com/rmsportal/OXTCkOkAtaWtzNA.png"></p>
+<p><img class="preview-img" align="right" alt="适中" src="https://os.alipayobjects.com/rmsportal/irjamuwZFdQLYWJ.png"></p>
+<p><img class="preview-img" align="right" alt="紧凑" src="https://os.alipayobjects.com/rmsportal/SdlTVIAoxickNMM.png"></p>
+<p>提供了多种规格的行高，适用在页面、弹出框等场景中。</p>
+<h3 id="列宽">列宽<a href="#列宽" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="错误示例" src="https://os.alipayobjects.com/rmsportal/TbuuZNfOTrSflVg.png" bad></p>
+<p><img class="preview-img" align="right" alt="正确示例" src="https://os.alipayobjects.com/rmsportal/cSSSfNrFMioHDBJ.png" good></p>
+<p>一般是根据栅格来排版，通过设定每一列的宽度比列，来保证一定尺寸之上（eg：1366px）有好的浏览效果。需要注意：</p>
+<ol>
+<li>表头不换行；</li>
+<li>固定字节长度的列尽量不换行（eg：创建时间、操作等）。</li>
+</ol>
+<h3 id="对齐方式">对齐方式<a href="#对齐方式" class="anchor">#</a> </h3><p><img class="preview-img" align="right" alt="对齐示例" src="https://os.alipayobjects.com/rmsportal/RWCMGdnGSZXYULc.png"></p>
+<p>数值右对齐（带小数则按小数点对齐），其余左对齐。</p>
+<h2 id="案例（敬请期待）"><span class="waiting">案例（敬请期待）</span><a href="#案例（敬请期待）" class="anchor">#</a> </h2>
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

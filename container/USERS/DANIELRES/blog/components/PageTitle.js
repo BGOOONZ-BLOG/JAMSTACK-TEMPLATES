@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router'
-import styled from 'styled-components'
-import _O from './Ornament'
-import IBack from 'react-icons/lib/fa/hand-o-left'
+import React from "react";
+import { Link } from "react-router";
+import styled from "styled-components";
+import _O from "./Ornament";
+import IBack from "react-icons/lib/fa/hand-o-left";
 
-const O = () =>
-  <_O width={71} height={20} style={{marginRight: 0}} color='#aaa'  />
-
+const O = () => (
+  <_O width={71} height={20} style={{ marginRight: 0 }} color="#aaa" />
+);
 
 const HMirror = styled.span`
   display: inline-block;
@@ -16,7 +16,7 @@ const HMirror = styled.span`
   transform: scaleX(-1);
   filter: FlipH;
   -ms-filter: "FlipH";
-`
+`;
 const Back = styled.div`
   width: 200px;
   margin-left: -100px;
@@ -24,7 +24,7 @@ const Back = styled.div`
   height: 70px;
   position: absolute;
   left: 50%;
-  .icon{
+  .icon {
     transition-duration: 0.2s;
     color: #666;
     margin-left: 10px;
@@ -36,23 +36,27 @@ const Back = styled.div`
     opacity: 1;
     margin-left: -15px;
   }
-`
+`;
 
-const Title = (props) =>
+const Title = (props) => (
   <div>
     <h3 className={props.className}>
-      <div className='extra1'></div>
+      <div className="extra1"></div>
       <O />
       {props.children}
-      <HMirror><O /></HMirror>
-      { props.link &&
+      <HMirror>
+        <O />
+      </HMirror>
+      {props.link && (
         <Link to={props.link}>
-          <Back><IBack className='icon' /></Back>
+          <Back>
+            <IBack className="icon" />
+          </Back>
         </Link>
-      }
+      )}
     </h3>
   </div>
-
+);
 
 export default styled(Title)`
   font-weight: 100;
@@ -75,4 +79,4 @@ export default styled(Title)`
     border-radius: 100%;
     box-shadow: 0 0 51px 5px white;
   }
-`
+`;

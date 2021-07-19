@@ -2,47 +2,52 @@
 title: UI Kit
 subtitle: Vanilla styleguide.
 seo:
-  title: UI Kit
-  description: This is the UI kit page
-  extra:
-    - name: 'og:type'
-      value: website
-      keyName: property
-    - name: 'og:title'
-      value: UI Kit
-      keyName: property
-    - name: 'og:description'
-      value: This is the UI kit page
-      keyName: property
-    - name: 'twitter:card'
-      value: summary
-    - name: 'twitter:title'
-      value: UI Kit
-    - name: 'twitter:description'
-      value: This is the UI kit page
+    title: UI Kit
+    description: This is the UI kit page
+    extra:
+        - name: 'og:type'
+          value: website
+          keyName: property
+        - name: 'og:title'
+          value: UI Kit
+          keyName: property
+        - name: 'og:description'
+          value: This is the UI kit page
+          keyName: property
+        - name: 'twitter:card'
+          value: summary
+        - name: 'twitter:title'
+          value: UI Kit
+        - name: 'twitter:description'
+          value: This is the UI kit page
 layout: page
 ---
 
 # This is an H1
+
 ## This is an H2
+
 ### This is an H3
+
 #### This is an H4
+
 ##### This is an H5
+
 ###### This is an H6
 
 Donec malesuada, augue eu blandit porta, metus metus auctor leo, non dapibus felis odio non tortor. Mauris sem orci, tristique eget [this is an inline link](https://www.google.com) placerat non, eleifend tempor dolor. Quisque sed nisl elit. Praesent pulvinar id urna quis cursus. In hac habitasse platea dictumst. Mauris sed odio magna. Duis felis turpis, posuere at erat nec, condimentum luctus nibh. Nam leo ante, tempor ut tellus vel, lacinia aliquam velit. Mauris ut purus in nisl suscipit feugiat.
 
-***
+---
 
 Pellentesque tempor aliquet dolor, ac consectetur lorem ornare id. Vestibulum sit amet facilisis elit, sit amet rhoncus felis. Nunc rhoncus porttitor sollicitudin. Quisque eu leo metus. Curabitur gravida nibh eu
 
 ### Unordered List
 
-- Here are some bullet points
-- Here are some bullet points
-- This is a really long bullet point that wraps to multiple lines. Nunc tempus suscipit. Donec quis magna id lacus eleifend volutpat. Suspendisse ac mattis velit, vel sagittis metus. Etiam non massa eu lectus maximus elementum. Etiam id aliquet quam. Vestibulum id lacinia ex, in rutrum metus. Donec varius auctor ligula.
-- Here are some bullet points
-- Here are some bullet points
+-   Here are some bullet points
+-   Here are some bullet points
+-   This is a really long bullet point that wraps to multiple lines. Nunc tempus suscipit. Donec quis magna id lacus eleifend volutpat. Suspendisse ac mattis velit, vel sagittis metus. Etiam non massa eu lectus maximus elementum. Etiam id aliquet quam. Vestibulum id lacinia ex, in rutrum metus. Donec varius auctor ligula.
+-   Here are some bullet points
+-   Here are some bullet points
 
 ### Ordered List
 

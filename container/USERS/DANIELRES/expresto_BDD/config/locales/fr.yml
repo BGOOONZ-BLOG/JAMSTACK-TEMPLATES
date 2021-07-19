@@ -3,7 +3,7 @@
 
 fr:
   hello: "Bonjour monde"
-  sign_in:  "Connexion"
+  sign_in: "Connexion"
   sign_out: "Déconnexion"
   sign_up: Créer un compte
   sign_in_or_sign_up_to_create_expression: "Veuillez d'abord vous connecter ou créer un compte pour ajouter une expression."
@@ -76,9 +76,8 @@ fr:
       choose_your_avatar: Choisissez votre avatar
       how_to_add_your_own_photo: "Astuce: comment ajouter votre propre photo"
       just_create_an_account_at_gravatar: 'Créez simplement un compte sur <a href="http://www.gravatar.com/">Gravatar</a> pour pouvoir associer une image de votre choix à votre adresse mail.'
-      then_come_back_here_and_it_will_be_shown: 'Ensuite revenez ici, et votre image sera disponible dans la liste ci-dessus.'
+      then_come_back_here_and_it_will_be_shown: "Ensuite revenez ici, et votre image sera disponible dans la liste ci-dessus."
       apply: Appliquer
   modals:
     add_comment:
       header: Ajouter un commentaire
-

@@ -1,4 +1,4 @@
 const Loader = ({ children, isLoading }) =>
-  isLoading ? 'Loading...' : children
+  isLoading ? "Loading..." : children;
 
-export default Loader
+export default Loader;

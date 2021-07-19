@@ -1,109 +1,109 @@
 pre.espresso_libre .EmbeddedSource {
-   background-color: #CE9065;
+  background-color: #ce9065;
 }
 pre.espresso_libre .LibraryObject {
-   font-weight: bold;
-   color: #6D79DE;
+  font-weight: bold;
+  color: #6d79de;
 }
 pre.espresso_libre .Section {
-   font-style: italic;
+  font-style: italic;
 }
 pre.espresso_libre .FunctionArgumentAndResultTypes {
-   color: #8B8E9C;
+  color: #8b8e9c;
 }
 pre.espresso_libre .TypeName {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 pre.espresso_libre .Number {
-   color: #44AA43;
+  color: #44aa43;
 }
 pre.espresso_libre {
-   background-color: #2A211C;
-   color: #BDAE9D;
+  background-color: #2a211c;
+  color: #bdae9d;
 }
 pre.espresso_libre .MarkupTagAttribute {
-   font-style: italic;
+  font-style: italic;
 }
 pre.espresso_libre .LibraryVariable {
-   font-weight: bold;
-   color: #2F5FE0;
+  font-weight: bold;
+  color: #2f5fe0;
 }
 pre.espresso_libre .line-numbers {
-   background-color: #C3DCFF;
-   color: #000000;
+  background-color: #c3dcff;
+  color: #000000;
 }
 pre.espresso_libre .FunctionParameter {
-   font-style: italic;
+  font-style: italic;
 }
 pre.espresso_libre .MarkupTag {
-   color: #43A8ED;
+  color: #43a8ed;
 }
 pre.espresso_libre .JsOperator {
-   color: #687687;
+  color: #687687;
 }
 pre.espresso_libre .InheritedClassName {
-   font-style: italic;
+  font-style: italic;
 }
 pre.espresso_libre .StringInterpolation {
-   color: #2FE420;
+  color: #2fe420;
 }
 pre.espresso_libre .MarkupNameOfTag {
-   font-weight: bold;
+  font-weight: bold;
 }
 pre.espresso_libre .InvalidTrailingWhitespace {
-   background-color: #FFD0D0;
+  background-color: #ffd0d0;
 }
 pre.espresso_libre .LibraryConstant {
-   font-weight: bold;
-   color: #00AF0E;
+  font-weight: bold;
+  color: #00af0e;
 }
 pre.espresso_libre .MarkupXmlDeclaration {
-   color: #8F7E65;
+  color: #8f7e65;
 }
 pre.espresso_libre .PreprocessorDirective {
-   font-weight: bold;
-   color: #9AFF87;
+  font-weight: bold;
+  color: #9aff87;
 }
 pre.espresso_libre .BuiltInConstant {
-   font-weight: bold;
-   color: #585CF6;
+  font-weight: bold;
+  color: #585cf6;
 }
 pre.espresso_libre .MarkupDtd {
-   font-style: italic;
+  font-style: italic;
 }
 pre.espresso_libre .Invalid {
-   background-color: #990000;
-   color: #FFFFFF;
+  background-color: #990000;
+  color: #ffffff;
 }
 pre.espresso_libre .LibraryFunction {
-   font-weight: bold;
-   color: #7290D9;
+  font-weight: bold;
+  color: #7290d9;
 }
 pre.espresso_libre .String {
-   color: #049B0A;
+  color: #049b0a;
 }
 pre.espresso_libre .UserDefinedConstant {
-   font-weight: bold;
-   color: #C5656B;
+  font-weight: bold;
+  color: #c5656b;
 }
 pre.espresso_libre .Keyword {
-   font-weight: bold;
-   color: #43A8ED;
+  font-weight: bold;
+  color: #43a8ed;
 }
 pre.espresso_libre .MarkupDoctype {
-   color: #888888;
+  color: #888888;
 }
 pre.espresso_libre .FunctionName {
-   font-weight: bold;
-   color: #FF9358;
+  font-weight: bold;
+  color: #ff9358;
 }
 pre.espresso_libre .PreprocessorLine {
-   color: #1A921C;
+  color: #1a921c;
 }
 pre.espresso_libre .Variable {
-   color: #318495;
+  color: #318495;
 }
 pre.espresso_libre .Comment {
-   color: #0066FF;
-   font-style: italic;
+  color: #0066ff;
+  font-style: italic;
 }

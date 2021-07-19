@@ -20,29 +20,36 @@ many groups including [Google's AMP
 project](https://www.ampproject.org/docs/guides/responsive/style_pages.html).
 
 Each of [the official starters supports this pattern](https://github.com/gatsbyjs/gatsby-starter-default/blob/master/html.js).
- The code to make it happen is in brief:
+The code to make it happen is in brief:
 
 ```javascript
 // In your html.js
-let css
+let css;
 // In development, css is injected by Javascript by the Webpack style-loader.
-if (process.env.NODE_ENV === 'production') {
-  css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
+if (process.env.NODE_ENV === "production") {
+  css = (
+    <style
+      dangerouslySetInnerHTML={{ __html: require("!raw!./public/styles.css") }}
+    />
+  );
 }
 
 // Then in your <head>
-{css}
+{
+  css;
+}
 ```
+
 ## CSS modules
 
 [CSS modules](https://github.com/css-modules/css-modules) are support by default for all files with `.module.(css|less|scss|sass)` extension.
 
 ```javascript
 // Uses CSS Modules
-import './my-component.module.css'
+import "./my-component.module.css";
 
 // Doesn't use CSS Modules
-import './main.css'
+import "./main.css";
 ```
 
 ## Configuring Babel
@@ -61,11 +68,11 @@ will have to also add it to your package.json. You can use any babel-plugin
 that Gatsby packs as a dependency without having to add it to your own
 package.json:
 
-* babel-plugin-add-module-exports
-* babel-plugin-transform-object-assign
-* babel-preset-es2015
-* babel-preset-react
-* babel-preset-stage-0
+- babel-plugin-add-module-exports
+- babel-plugin-transform-object-assign
+- babel-preset-es2015
+- babel-preset-react
+- babel-preset-stage-0
 
 If you need to change the loader to be something completely custom. You will
 have to define your own webpack loader by following the steps [described
@@ -73,18 +80,19 @@ above](https://github.com/gatsbyjs/gatsby#how-to-use-your-own-webpack-loaders).
 
 ## Extending Markdown Syntax with Plugins
 
-Gatsby uses [markdown-it](https://github.com/markdown-it/markdown-it) to parse 
+Gatsby uses [markdown-it](https://github.com/markdown-it/markdown-it) to parse
 markdown files into HTML. By default Gatsby ships with only basic markdown
-support. You can extend the syntax (e.g. for mathematical equations) by installing 
+support. You can extend the syntax (e.g. for mathematical equations) by installing
 [markdown-it plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
 
-If you want to do this you will need to use a custom markdown loader. You can 
+If you want to do this you will need to use a custom markdown loader. You can
 copy the one provided in the default starter [here](https://github.com/gatsbyjs/gatsby-starter-default/blob/master/loaders/markdown-loader/index.js).
 Add the relevant packages to your dependencies, including the markdown-it
 plugins that you want to use and enable them with `md.use(require('markdown-it-plugin-name'))`
 within the markdown loader file.
 
 ## Deploying to Github Pages (and other hosts where your site's links need prefixes)
+
 Gatsby supports automatically prefixing links with its `prefixLink` helper function.
 
 First set the prefix in your config file e.g. `linkPrefix = '/your-project'`
@@ -93,9 +101,9 @@ Then simply import the function and run all links in your site
 thorough it e.g.
 
 ```javascript
-import { prefixLink } from 'gatsby-helpers'
+import { prefixLink } from "gatsby-helpers";
 
-prefixLink('/')
+prefixLink("/");
 // During development this will return "/"
 // When deployed to example.github.io/your-project/ this will return "/your-project/"
 ```
@@ -110,7 +118,8 @@ Both the sample sites are deployed to github pages and use link
 prefixing. Read their source for more help:
 [documentation](https://github.com/gatsbyjs/gatsby-starter-documentation)/[blog](https://github.com/gatsbyjs/gatsby-starter-blog).
 
-## I have an existing site in (Wordpress|Drupal|Blogger|Tumblr|*), how do I convert it to Gatsby?
+## I have an existing site in (Wordpress|Drupal|Blogger|Tumblr|\*), how do I convert it to Gatsby?
+
 Jekyll has a [comprehensive import tool](http://import.jekyllrb.com/) for these and many other website tools.
 Once your pages are converted to markdown, change the file extensions to
 `.md` from the `.markdown` the tool outputs and then use them in your

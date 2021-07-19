@@ -1,12 +1,12 @@
-import Link from 'redux-first-router-link'
-import React from 'react'
+import Link from "redux-first-router-link";
+import React from "react";
 
-import { toRegister } from 'store/routerActions'
+import { toRegister } from "store/routerActions";
 
-import AuthBoxOuter from 'shared/AuthBoxOuter'
-import Separator from 'shared/Separator'
+import AuthBoxOuter from "shared/AuthBoxOuter";
+import Separator from "shared/Separator";
 
-import EmailPasswordForm from './EmailPasswordform'
+import EmailPasswordForm from "./EmailPasswordform";
 
 const LoginBox = () => (
   <>
@@ -26,6 +26,6 @@ const LoginBox = () => (
       <EmailPasswordForm />
     </AuthBoxOuter>
   </>
-)
+);
 
-export default LoginBox
+export default LoginBox;

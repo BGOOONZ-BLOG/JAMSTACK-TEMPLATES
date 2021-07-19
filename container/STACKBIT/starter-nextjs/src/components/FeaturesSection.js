@@ -19,7 +19,7 @@ export default class FeaturesSection extends React.Component {
                 key={index}
                 className={classNames('flex', 'flex--middle', 'flex--center', 'flex--col-2', {
                     'align-center': align === 'center',
-                    'align-right': align === 'right' 
+                    'align-right': align === 'right'
                 })}
             >
                 {image && (
@@ -32,10 +32,7 @@ export default class FeaturesSection extends React.Component {
                     </div>
                 )}
                 <div className="section__body cell">
-                    {title && (
-                        sectionTitle ? <h3 className="section__title">{title}</h3>
-                            : <h2 className="section__title">{title}</h2>
-                    )}
+                    {title && (sectionTitle ? <h3 className="section__title">{title}</h3> : <h2 className="section__title">{title}</h2>)}
                     {content && <div className="section__copy">{markdownify(content)}</div>}
                     {!_.isEmpty(actions) && (
                         <div className="section__actions btn-group">
@@ -44,7 +41,7 @@ export default class FeaturesSection extends React.Component {
                     )}
                 </div>
             </div>
-        )
+        );
     }
 
     render() {
@@ -60,9 +57,7 @@ export default class FeaturesSection extends React.Component {
                     </div>
                 )}
                 {!_.isEmpty(features) && (
-                    <div className="container container--lg">
-                        {_.map(features, (feature, index) => this.renderFeature(feature, index, title))}
-                    </div>
+                    <div className="container container--lg">{_.map(features, (feature, index) => this.renderFeature(feature, index, title))}</div>
                 )}
             </section>
         );

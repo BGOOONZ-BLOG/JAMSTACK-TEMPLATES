@@ -14,10 +14,10 @@ export const TaskSchema = new Mongoose.Schema(
     userId: { type: String, required: true },
     name: { type: String, required: true },
     description: String,
-    completed: Boolean
+    completed: Boolean,
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 

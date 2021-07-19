@@ -34,22 +34,17 @@ icon_font: dare
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
 
-
 # MathJax Support
 mathjax:
-
 
 # Schemes
 #scheme: Mist
 
-
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
 
-
 # Automatically add list number to toc.
 toc_list_number: true
-
 
 ## DO NOT EDIT THE FOLLOWING SETTINGS
 ## UNLESS YOU KNOW WHAT YOU ARE DOING

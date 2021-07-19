@@ -1,25 +1,25 @@
-import { Field, ErrorMessage } from 'formik'
-import React from 'react'
+import { Field, ErrorMessage } from "formik";
+import React from "react";
 
-const upperFirst = lower => lower.replace(/^\w/, c => c.toUpperCase())
+const upperFirst = (lower) => lower.replace(/^\w/, (c) => c.toUpperCase());
 
 const FormRow = ({
   autoComplete = true,
-  component = 'input',
+  component = "input",
   label: l,
   name,
   placeholder: p,
   type,
 }) => {
-  const label = l ? l : upperFirst(name)
-  const placeholder = p ? p : upperFirst(name)
-  const showLabel = l !== null
+  const label = l ? l : upperFirst(name);
+  const placeholder = p ? p : upperFirst(name);
+  const showLabel = l !== null;
 
   return (
     <div className="mb-3">
       {showLabel && <label htmlFor={name}>{label}</label>}
       <Field
-        autoComplete={autoComplete ? 'on' : 'off'}
+        autoComplete={autoComplete ? "on" : "off"}
         className="form-control"
         component={component}
         name={name}
@@ -28,7 +28,7 @@ const FormRow = ({
       />
       <ErrorMessage className="text-danger" component="div" name={name} />
     </div>
-  )
-}
+  );
+};
 
-export default FormRow
+export default FormRow;

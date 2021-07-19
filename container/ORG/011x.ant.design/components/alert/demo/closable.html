@@ -1,0 +1,50 @@
+<div class="code-box" id="demo-closable">
+  <div class="code-box-demo">
+    <div id="components-alert-demo-closable"></div>
+    <script>mountNode = document.getElementById('components-alert-demo-closable');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var onClose = function onClose(e) {
+  console.log(e, '我要被关闭啦！');
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(_antd.Alert, { message: '警告提示的文案',
+    type: 'warn',
+    closable: true,
+    onClose: onClose }),
+  React.createElement(_antd.Alert, { message: '错误提示的文案',
+    description: '错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍',
+    type: 'error',
+    closable: true,
+    onClose: onClose })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Alert } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> onClose = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(e, <span class="hljs-string">'我要被关闭啦！'</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">"警告提示的文案"</span>
+    <span class="hljs-attribute">type</span>=<span class="hljs-value">"warn"</span>
+    <span class="hljs-attribute">closable</span>
+    <span class="hljs-attribute">onClose</span>=<span class="hljs-value">{onClose}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">"错误提示的文案"</span>
+    <span class="hljs-attribute">description</span>=<span class="hljs-value">"错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍错误提示的辅助性文字介绍"</span>
+    <span class="hljs-attribute">type</span>=<span class="hljs-value">"error"</span>
+    <span class="hljs-attribute">closable</span>
+    <span class="hljs-attribute">onClose</span>=<span class="hljs-value">{onClose}</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-closable">可关闭的警告提示</a>
+    </div>
+    <p>显示关闭按钮，点击可关闭警告提示。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

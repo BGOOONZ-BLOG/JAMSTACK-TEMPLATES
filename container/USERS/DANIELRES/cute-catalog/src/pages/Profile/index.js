@@ -1,12 +1,12 @@
-import { connect } from 'react-redux'
-import Cookies from 'js-cookie'
+import { connect } from "react-redux";
+import Cookies from "js-cookie";
 
-import Profile from './Profile'
+import Profile from "./Profile";
 
 const mapStateToProps = ({ currentUser: { currentUser, isLoading } }) => ({
   currentUser,
   isLoading,
-  isLoggedIn: !!Cookies.get('authExpiresAt'),
-})
+  isLoggedIn: !!Cookies.get("authExpiresAt"),
+});
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps)(Profile);

@@ -7,53 +7,53 @@ function SEO({ description, lang, meta, keywords, title, data }) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         return (
           <Helmet
             htmlAttributes={{
-              lang
+              lang,
             }}
             title={title}
             titleTemplate={`%s | ${data.contentfulSiteInformation.siteName}`}
             meta={[
               {
                 name: `description`,
-                content: data.contentfulSiteInformation.siteDescription
+                content: data.contentfulSiteInformation.siteDescription,
               },
               {
                 property: `og:title`,
-                content: title
+                content: title,
               },
               {
                 property: `og:description`,
-                content: data.contentfulSiteInformation.siteDescription
+                content: data.contentfulSiteInformation.siteDescription,
               },
               {
                 property: `og:type`,
-                content: `website`
+                content: `website`,
               },
               {
                 name: `twitter:card`,
-                content: `summary`
+                content: `summary`,
               },
               {
                 name: `twitter:creator`,
-                content: data.contentfulSiteInformation.twiteerHandle
+                content: data.contentfulSiteInformation.twiteerHandle,
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: title,
               },
               {
                 name: `twitter:description`,
-                content: data.contentfulSiteInformation.siteDescription
-              }
+                content: data.contentfulSiteInformation.siteDescription,
+              },
             ]
               .concat(
                 keywords.length > 0
                   ? {
                       name: `keywords`,
-                      content: keywords.join(`, `)
+                      content: keywords.join(`, `),
                     }
                   : []
               )
@@ -68,7 +68,7 @@ function SEO({ description, lang, meta, keywords, title, data }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: []
+  keywords: [],
 };
 
 SEO.propTypes = {
@@ -76,7 +76,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;

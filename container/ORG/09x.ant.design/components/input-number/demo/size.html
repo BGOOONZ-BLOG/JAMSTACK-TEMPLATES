@@ -1,0 +1,43 @@
+<div class="code-box" id="number-demo-size">
+  <div class="code-box-demo">
+    <div id="components-input-number-demo-size"></div>
+    <script>(function(){"use strict";
+
+var InputNumber = antd.InputNumber;
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(InputNumber, { size: "large", min: 1, max: 100000, defaultValue: 3, onChange: onChange }),
+  React.createElement(InputNumber, { min: 1, max: 100000, defaultValue: 3, onChange: onChange }),
+  React.createElement(InputNumber, { size: "small", min: 1, max: 100000, defaultValue: 3, onChange: onChange })
+), document.getElementById('components-input-number-demo-size'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> InputNumber = antd.InputNumber;
+
+<span class="function"><span class="keyword">function</span> <span class="title">onChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'changed'</span>, value);
+}
+
+React.render(
+<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">InputNumber</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">min</span>=<span class="value">{1}</span> <span class="attribute">max</span>=<span class="value">{100000}</span> <span class="attribute">defaultValue</span>=<span class="value">{3}</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">InputNumber</span> <span class="attribute">min</span>=<span class="value">{1}</span> <span class="attribute">max</span>=<span class="value">{100000}</span> <span class="attribute">defaultValue</span>=<span class="value">{3}</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">InputNumber</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">min</span>=<span class="value">{1}</span> <span class="attribute">max</span>=<span class="value">{100000}</span> <span class="attribute">defaultValue</span>=<span class="value">{3}</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-input-number-demo-size'));</span></code></pre></div><style type="text/css">.ant-input-number{
+  margin-right: 10px;
+}</style><div class="highlight"><pre><code class="css"><span class="class">.ant-input-number</span><span class="rules">{
+  <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">10</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#number-demo-size">三种大小</a>
+    </div>
+    <p>三种大小的数字输入框，当 size 分别为 <code>large</code> 和 <code>small</code> 时，输入框高度为 <code>32px</code> 和 <code>22px</code> ，默认高度为 <code>28px</code></p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

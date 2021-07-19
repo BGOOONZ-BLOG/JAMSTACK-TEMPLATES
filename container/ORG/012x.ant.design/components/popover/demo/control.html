@@ -1,0 +1,89 @@
+<div class="code-box" id="demo-control">
+  <div class="code-box-demo">
+    <div id="components-popover-demo-control"></div>
+    <script>mountNode = document.getElementById('components-popover-demo-control');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var App = React.createClass({
+  displayName: "App",
+  getInitialState: function getInitialState() {
+    return {
+      visible: false
+    };
+  },
+  hide: function hide() {
+    this.setState({
+      visible: false
+    });
+  },
+  handleVisibleChange: function handleVisibleChange(visible) {
+    this.setState({ visible: visible });
+  },
+  render: function render() {
+    var content = React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "a",
+        { onClick: this.hide },
+        "\u5173\u95ED\u5361\u7247"
+      )
+    );
+    return React.createElement(
+      _antd.Popover,
+      { overlay: content, title: "\u6807\u9898", trigger: "click",
+        visible: this.state.visible, onVisibleChange: this.handleVisibleChange },
+      React.createElement(
+        _antd.Button,
+        { type: "primary" },
+        "\u70B9\u51FB\u5F39\u51FA\u5361\u7247"
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Popover, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      visible: <span class="hljs-literal">false</span>
+    };
+  },
+  hide() {
+    <span class="hljs-keyword">this</span>.setState({
+      visible: <span class="hljs-literal">false</span>
+    });
+  },
+  handleVisibleChange(visible) {
+    <span class="hljs-keyword">this</span>.setState({ visible });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> content = (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.hide}</span>&gt;</span>关闭卡片<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{content}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"标题"</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"click"</span>
+        <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span> <span class="hljs-attribute">onVisibleChange</span>=<span class="hljs-value">{this.handleVisibleChange}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span>&gt;</span>点击弹出卡片<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-control">从浮层内关闭</a>
+    </div>
+    
+<p>使用 <code>visible</code> 属性控制浮层显示。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

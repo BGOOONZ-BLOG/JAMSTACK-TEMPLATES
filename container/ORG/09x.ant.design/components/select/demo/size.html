@@ -1,0 +1,129 @@
+<div class="code-box" id="demo-size">
+  <div class="code-box-demo">
+    <div id="components-select-demo-size"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    Select,
+    { size: "large", defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "Jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "Lucy"
+    ),
+    React.createElement(
+      Option,
+      { value: "disabled", disabled: true },
+      "Disabled"
+    ),
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  ),
+  React.createElement(
+    Select,
+    { defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "Jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "Lucy"
+    ),
+    React.createElement(
+      Option,
+      { value: "disabled", disabled: true },
+      "Disabled"
+    ),
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  ),
+  React.createElement(
+    Select,
+    { size: "small", defaultValue: "lucy", style: { width: 200 }, onChange: handleChange },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "Jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "Lucy"
+    ),
+    React.createElement(
+      Option,
+      { value: "disabled", disabled: true },
+      "Disabled"
+    ),
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  )
+), document.getElementById('components-select-demo-size'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-select-demo-size'));</span></code></pre></div><style type="text/css">.code-box-demo .ant-select {
+  margin: 0 10px 10px 0;
+}</style><div class="highlight"><pre><code class="css"><span class="class">.code-box-demo</span> <span class="class">.ant-select</span> <span class="rules">{
+  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">10</span>px <span class="number">10</span>px <span class="number">0</span></span></span>;
+<span class="rule">}</span></span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-size">三种大小</a>
+    </div>
+    <p>三种大小的选择框，当 size 分别为 <code>large</code> 和 <code>small</code> 时，输入框高度为 <code>32px</code> 和 <code>22px</code> ，默认高度为 <code>28px</code></p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

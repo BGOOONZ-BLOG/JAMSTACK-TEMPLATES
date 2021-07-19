@@ -1,7 +1,7 @@
 export const types = {
-  EVENT_REQUEST: 'EVENT_REQUEST',
-  EVENT_SUCCESS: 'EVENT_SUCCESS',
-  EVENT_FAILURE: 'EVENT_FAILURE',
+  EVENT_REQUEST: "EVENT_REQUEST",
+  EVENT_SUCCESS: "EVENT_SUCCESS",
+  EVENT_FAILURE: "EVENT_FAILURE",
 };
 
 export const initialState = { entries: {} };

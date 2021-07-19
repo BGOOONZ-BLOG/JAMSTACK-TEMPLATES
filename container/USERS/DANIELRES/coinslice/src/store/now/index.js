@@ -1,16 +1,16 @@
 // @flow
-import type { Action, NowValues } from '../../types'
+import type { Action, NowValues } from "../../types";
 
-const initialState: NowValues = {}
+const initialState: NowValues = {};
 
 export default (state: NowValues = initialState, action: Action): NowValues => {
   switch (action.type) {
-    case 'NOW/SUCCESS':
-      return { ...action.payload }
-    case 'NOW/FAILURE':
-      console.error(action.error)
-      return {}
+    case "NOW/SUCCESS":
+      return { ...action.payload };
+    case "NOW/FAILURE":
+      console.error(action.error);
+      return {};
     default:
-      return state
+      return state;
   }
-}
+};

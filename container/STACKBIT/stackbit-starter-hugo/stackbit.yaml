@@ -1,6 +1,6 @@
 stackbitVersion: ~0.3.0
 ssgName: hugo
-ssgVersion: '0.48'
+ssgVersion: "0.48"
 buildCommand: hugo
 publishDir: public
 staticDir: static
@@ -14,21 +14,21 @@ logicFields:
 pageData:
   - pagePath: /
     initialExpandedPaths:
-      - '[0]'
-      - '[0].fields.title'
-      - '[0].fields.sections'
-      - '[0].fields.sections.items[0]'
-      - '[0].fields.sections.items[0].fields.title'
-      - '[0].fields.sections.items[0].fields.content'
-      - '[0].fields.sections.items[1]'
-      - '[0].fields.sections.items[1].fields.title'
-      - '[0].fields.sections.items[1].fields.subtitle'
-      - '[0].fields.sections.items[1].fields.features'
-      - '[0].fields.sections.items[0].fields.actions'
-      - '[0].fields.sections.items[0].fields.actions.items[0]'
-      - '[0].fields.sections.items[0].fields.actions.items[0].fields.label'
-      - '[1]'
-      - '[1].fields.palette'
+      - "[0]"
+      - "[0].fields.title"
+      - "[0].fields.sections"
+      - "[0].fields.sections.items[0]"
+      - "[0].fields.sections.items[0].fields.title"
+      - "[0].fields.sections.items[0].fields.content"
+      - "[0].fields.sections.items[1]"
+      - "[0].fields.sections.items[1].fields.title"
+      - "[0].fields.sections.items[1].fields.subtitle"
+      - "[0].fields.sections.items[1].fields.features"
+      - "[0].fields.sections.items[0].fields.actions"
+      - "[0].fields.sections.items[0].fields.actions.items[0]"
+      - "[0].fields.sections.items[0].fields.actions.items[0].fields.label"
+      - "[1]"
+      - "[1].fields.palette"
 models:
   config:
     type: config
@@ -89,7 +89,7 @@ models:
             - RSS
             - sitemap
             - robotsTXT
-            - '404'
+            - "404"
         hidden: true
       - type: boolean
         name: uglyURLs
@@ -231,7 +231,7 @@ models:
         description: The excerpt of the page displayed in meta data
   post:
     type: page
-    urlPath: '/blog/{slug}'
+    urlPath: "/blog/{slug}"
     label: Post
     layout: post
     folder: blog

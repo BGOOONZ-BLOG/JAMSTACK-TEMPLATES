@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {getData, Link, withPrefix} from '../utils';
+import { getData, Link, withPrefix } from '../utils';
 
 export default class BlogPostCategories extends React.Component {
     renderCategory(categoryRef, categoryLength, index, data) {
@@ -22,7 +22,7 @@ export default class BlogPostCategories extends React.Component {
                     <span>{category.title}</span>
                     {index < categoryLength - 1 && ', '}
                 </React.Fragment>
-            )
+            );
         }
     }
 

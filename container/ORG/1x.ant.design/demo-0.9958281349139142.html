@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../index-1.css" />
+    <link rel="stylesheet" href="../index-2.css" />
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: none;
+      }
+      #components-breadcrumb-demo-router iframe {
+  height: 180px;
+}
+.demo-nav {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  background: #f8f8f8;
+}
+.demo-nav a {
+  line-height: 30px;
+  padding: 0 10px;
+}
+.app-list {
+  margin-top: 15px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="components-breadcrumb-demo-router" class="code-box-demo"></div>
+    <script>
+      function require(module) {
+        if (module === 'react-router') {
+          return window.ReactRouter;
+        }
+        return window.parent[module];
+      }
+      var mountNode = document.getElementById('components-breadcrumb-demo-router');
+    </script>
+    <script src="https://unpkg.com/react/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/react-router/umd/ReactRouter.js"></script>
+    <script>
+      'use strict';
+
+var _reactRouter = require('react-router');
+
+var _antd = require('antd');
+
+var Apps = function Apps() {
+  return React.createElement(
+    'ul',
+    { className: 'app-list' },
+    React.createElement(
+      'li',
+      null,
+      React.createElement(
+        _reactRouter.Link,
+        { to: '/apps/1' },
+        'Application1'
+      ),
+      '\uFF1A',
+      React.createElement(
+        _reactRouter.Link,
+        { to: '/apps/1/detail' },
+        'Detail'
+      )
+    ),
+    React.createElement(
+      'li',
+      null,
+      React.createElement(
+        _reactRouter.Link,
+        { to: '/apps/2' },
+        'Application2'
+      ),
+      '\uFF1A',
+      React.createElement(
+        _reactRouter.Link,
+        { to: '/apps/2/detail' },
+        'Detail'
+      )
+    )
+  );
+};
+
+var Home = function Home(props) {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'div',
+      { className: 'demo-nav' },
+      React.createElement(
+        _reactRouter.Link,
+        { to: '/' },
+        'Home'
+      ),
+      React.createElement(
+        _reactRouter.Link,
+        { to: '/apps' },
+        'Application List'
+      )
+    ),
+    props.children || 'Home',
+    React.createElement(
+      'div',
+      {
+        style: {
+          marginBottom: 15,
+          marginTop: 15,
+          paddingBottom: 15,
+          borderBottom: '1px dashed #ccc'
+        }
+      },
+      'Click the navigation above to switch:'
+    ),
+    React.createElement(_antd.Breadcrumb, props)
+  );
+};
+
+ReactDOM.render(React.createElement(
+  _reactRouter.Router,
+  { history: _reactRouter.hashHistory },
+  React.createElement(
+    _reactRouter.Route,
+    { name: 'home', breadcrumbName: 'Home', path: '/', component: Home },
+    React.createElement(
+      _reactRouter.Route,
+      { name: 'apps', breadcrumbName: 'Application List', path: 'apps', component: Apps },
+      React.createElement(
+        _reactRouter.Route,
+        { name: 'app', breadcrumbName: 'Application:id', path: ':id' },
+        React.createElement(_reactRouter.Route, { name: 'detail', breadcrumbName: 'Detail', path: 'detail' })
+      )
+    )
+  )
+), mountNode);
+    </script>
+  </body>
+</html>

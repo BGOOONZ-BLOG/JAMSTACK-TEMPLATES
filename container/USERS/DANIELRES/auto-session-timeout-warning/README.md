@@ -19,6 +19,7 @@ Or install it yourself as:
     $ gem install auto-session-timeout-warning
 
 ## Usage
+
 Add jquery and jquery-ui on your application.js file, set the current_user helper method in application controller if its not yet defined
 
 Add before_timedout_action in application controller
@@ -31,6 +32,7 @@ end
 ```
 
 If you want to override the before_timedout, just add protected before_timedout action and add your custom implementation here
+
 ```
 class ApplicationController < ActionController::Base
   before_timedout_action
@@ -45,11 +47,10 @@ end
 
 and follow all steps as for https://github.com/pelargir/auto-session-timeout.
 
-
 Check below configuration for warning message
 
-
 ## Warning message Configuration
+
     <html>
       <head>...</head>
       <body>
@@ -76,7 +77,8 @@ start: 60,
 warning: 20
 
 ## TODO
-* setting timeout in controller vs. user
+
+- setting timeout in controller vs. user
 
 ## Contributing
 
@@ -88,4 +90,4 @@ warning: 20
 
 ## Resources
 
-* Source Repository: http://github.com/pelargir/auto-session-timeout/
+- Source Repository: http://github.com/pelargir/auto-session-timeout/

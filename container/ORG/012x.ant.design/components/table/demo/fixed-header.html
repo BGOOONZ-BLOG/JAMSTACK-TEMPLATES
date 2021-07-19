@@ -1,0 +1,71 @@
+<div class="code-box" id="demo-fixed-header">
+  <div class="code-box-demo">
+    <div id="components-table-demo-fixed-header"></div>
+    <script>mountNode = document.getElementById('components-table-demo-fixed-header');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  width: 150
+}, {
+  title: '年龄',
+  dataIndex: 'age',
+  width: 150
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+
+var data = [];
+for (var i = 0; i < 100; i++) {
+  data.push({
+    key: i,
+    name: '\u674E\u5927\u5634' + i,
+    age: 32,
+    address: '\u897F\u6E56\u533A\u6E56\u5E95\u516C\u56ED' + i + '\u53F7'
+  });
+}
+
+ReactDOM.render(React.createElement(_antd.Table, { columns: columns, dataSource: data, pagination: { pageSize: 50 }, useFixedHeader: true }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Table } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> columns = [{
+  title: <span class="hljs-string">'姓名'</span>,
+  dataIndex: <span class="hljs-string">'name'</span>,
+  width: <span class="hljs-number">150</span>,
+}, {
+  title: <span class="hljs-string">'年龄'</span>,
+  dataIndex: <span class="hljs-string">'age'</span>,
+  width: <span class="hljs-number">150</span>,
+}, {
+  title: <span class="hljs-string">'住址'</span>,
+  dataIndex: <span class="hljs-string">'address'</span>,
+}];
+
+<span class="hljs-keyword">const</span> data = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+  data.push({
+    key: i,
+    name: <span class="hljs-string">`李大嘴<span class="hljs-subst">${i}</span>`</span>,
+    age: <span class="hljs-number">32</span>,
+    address: <span class="hljs-string">`西湖区湖底公园<span class="hljs-subst">${i}</span>号`</span>
+  });
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Table</span> <span class="hljs-attribute">columns</span>=<span class="hljs-value">{columns}</span> <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{data}</span> <span class="hljs-attribute">pagination</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">pageSize:</span> <span class="hljs-attribute">50</span> }} <span class="hljs-attribute">useFixedHeader</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-fixed-header">固定表头</a>
+    </div>
+    
+<p>方便一页内展示大量数据。</p>
+<p>需要指定 column 的 <code>width</code> 属性，否则列头和内容可能不对齐。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

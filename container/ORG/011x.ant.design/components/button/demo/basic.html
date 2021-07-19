@@ -1,0 +1,57 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-button-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-button-demo-basic');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Button,
+    { type: "primary" },
+    "主按钮"
+  ),
+  React.createElement(
+    _antd.Button,
+    null,
+    "次按钮"
+  ),
+  React.createElement(
+    _antd.Button,
+    { type: "ghost" },
+    "幽灵按钮"
+  ),
+  React.createElement(
+    _antd.Button,
+    { type: "dashed" },
+    "虚线按钮"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span>&gt;</span>主按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>次按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span>&gt;</span>幽灵按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"dashed"</span>&gt;</span>虚线按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+mountNode);</span></code></pre></div><style>
+#components-button-demo-basic .ant-btn {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">按钮类型</a>
+    </div>
+    <p>按钮有三种类型：主按钮、次按钮、幽灵按钮。</p>
+<p>通过设置 <code>type</code> 为 <code>primary</code> <code>ghost</code> 可分别创建主按钮、幽灵按钮，若不设置 <code>type</code> 值则为次按钮。不同的样式可以用来区别其重要程度。</p>
+<p>主按钮和次按钮可独立使用，需要强引导用主按钮。幽灵按钮用于和主按钮组合。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

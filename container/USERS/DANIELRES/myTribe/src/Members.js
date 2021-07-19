@@ -1,13 +1,13 @@
-import { connectLean } from 'lean-redux'
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import { connectLean } from "lean-redux";
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import Entry from './shared/Entry'
-import LinkTo from './shared/LinkTo'
-import MemberForm from './MemberForm'
-import PageTitle from './shared/PageTitle'
+import Entry from "./shared/Entry";
+import LinkTo from "./shared/LinkTo";
+import MemberForm from "./MemberForm";
+import PageTitle from "./shared/PageTitle";
 
-const Wrapper = styled.section``
+const Wrapper = styled.section``;
 
 const Grid = styled.div`
   display: flex;
@@ -17,20 +17,23 @@ const Grid = styled.div`
     margin-left: 20px;
     margin-right: 20px;
   }
-`
-const Button = styled.button`padding: 10px;`
+`;
+const Button = styled.button`
+  padding: 10px;
+`;
 
-const ToggleFormButton = ({ onClick }) =>
+const ToggleFormButton = ({ onClick }) => (
   <Button onClick={onClick}>Toggle form</Button>
+);
 
 class Members extends Component {
   componentDidMount() {
-    const { fetchMembers } = this.props
-    fetchMembers()
+    const { fetchMembers } = this.props;
+    fetchMembers();
   }
 
   render() {
-    const { members, onToggleForm, onMemberFormSubmit } = this.props
+    const { members, onToggleForm, onMemberFormSubmit } = this.props;
 
     return (
       <Wrapper>
@@ -41,34 +44,32 @@ class Members extends Component {
 
         <MemberForm onSubmit={onMemberFormSubmit} />
         <div className="entries">
-          {members.map(member =>
+          {members.map((member) => (
             <LinkTo key={member.id} target={member.url}>
-              <Entry>
-                {member.displayName}
-              </Entry>
+              <Entry>{member.displayName}</Entry>
             </LinkTo>
-          )}
+          ))}
         </div>
       </Wrapper>
-    )
+    );
   }
 }
 
 const Connected = connectLean({
   getInitialState() {
-    return { members: [] }
+    return { members: [] };
   },
   fetchMembers() {
-    fetch('/api/members')
-      .then(res => res.json())
-      .then(members => this.setState({ members }))
+    fetch("/api/members")
+      .then((res) => res.json())
+      .then((members) => this.setState({ members }));
   },
   onToggleForm() {
-    console.log('TODO: toggle form !')
+    console.log("TODO: toggle form !");
   },
   onMemberFormSubmit() {
-    this.fetchMembers()
+    this.fetchMembers();
   },
-})(Members)
+})(Members);
 
-export default Connected
+export default Connected;

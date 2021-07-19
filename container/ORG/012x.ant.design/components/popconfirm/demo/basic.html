@@ -1,0 +1,50 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-popconfirm-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-popconfirm-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function confirm() {
+  _antd.message.success('点击了确定');
+}
+
+function cancel() {
+  _antd.message.error('点击了取消');
+}
+
+ReactDOM.render(React.createElement(
+  _antd.Popconfirm,
+  { title: '\u786E\u5B9A\u8981\u5220\u9664\u8FD9\u4E2A\u4EFB\u52A1\u5417\uFF1F', onConfirm: confirm, onCancel: cancel },
+  React.createElement(
+    'a',
+    { href: '#' },
+    '\u5220\u9664'
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Popconfirm, message } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">confirm</span>(<span class="hljs-params"></span>) </span>{
+  message.success(<span class="hljs-string">'点击了确定'</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cancel</span>(<span class="hljs-params"></span>) </span>{
+  message.error(<span class="hljs-string">'点击了取消'</span>);
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Popconfirm</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"确定要删除这个任务吗？"</span> <span class="hljs-attribute">onConfirm</span>=<span class="hljs-value">{confirm}</span> <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{cancel}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Popconfirm</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    
+<p>最简单的用法。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

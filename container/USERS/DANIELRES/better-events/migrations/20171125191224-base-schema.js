@@ -1,4 +1,4 @@
-exports.up = db =>
+exports.up = (db) =>
   db.runSql(`
     -- User
 
@@ -42,15 +42,15 @@ exports.up = db =>
     CREATE TRIGGER update_message_updated_at
       BEFORE UPDATE ON message
       FOR EACH ROW EXECUTE PROCEDURE update_updated_at();
-`)
+`);
 
-exports.down = db =>
+exports.down = (db) =>
   db.runSql(`
     DROP TABLE message;
     DROP TABLE discussion;
     DROP TABLE "user";
-`)
+`);
 
 exports._meta = {
   version: 1,
-}
+};

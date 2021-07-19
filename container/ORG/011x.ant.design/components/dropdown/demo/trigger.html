@@ -1,0 +1,79 @@
+<div class="code-box" id="demo-trigger">
+  <div class="code-box-demo">
+    <div id="components-dropdown-demo-trigger"></div>
+    <script>mountNode = document.getElementById('components-dropdown-demo-trigger');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var menu = React.createElement(
+  _antd.Menu,
+  null,
+  React.createElement(
+    _antd.Menu.Item,
+    { key: "0" },
+    React.createElement(
+      "a",
+      { href: "http://www.alipay.com/" },
+      "第一个菜单项"
+    )
+  ),
+  React.createElement(
+    _antd.Menu.Item,
+    { key: "1" },
+    React.createElement(
+      "a",
+      { href: "http://www.taobao.com/" },
+      "第二个菜单项"
+    )
+  ),
+  React.createElement(_antd.Menu.Divider, null),
+  React.createElement(
+    _antd.Menu.Item,
+    { key: "3" },
+    "第三个菜单项"
+  )
+);
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Dropdown,
+    { overlay: menu, trigger: ['click'] },
+    React.createElement(
+      "a",
+      { className: "ant-dropdown-link", href: "#" },
+      "点击触发 ",
+      React.createElement(_antd.Icon, { type: "down" })
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Menu, Dropdown, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.alipay.com/"</span>&gt;</span>第一个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.taobao.com/"</span>&gt;</span>第二个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Divider</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>第三个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>;</span>
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{['click']}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-dropdown-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>
+      点击触发 <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"down"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-trigger">触发方式</a>
+    </div>
+    <p>默认是移入触发菜单，可以点击触发。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

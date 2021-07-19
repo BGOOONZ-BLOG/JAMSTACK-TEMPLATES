@@ -1,149 +1,149 @@
 pre.cobalt .BlockQuote {
-   background-color: #004480;
+  background-color: #004480;
 }
 pre.cobalt .DiffInserted {
-   background-color: #154F00;
-   color: #F8F8F8;
+  background-color: #154f00;
+  color: #f8f8f8;
 }
 pre.cobalt .DiffHeader {
-   background-color: #000E1A;
-   color: #F8F8F8;
+  background-color: #000e1a;
+  color: #f8f8f8;
 }
 pre.cobalt .CssPropertyValue {
-   color: #F6F080;
+  color: #f6f080;
 }
 pre.cobalt .CCPreprocessorDirective {
-   color: #AFC4DB;
+  color: #afc4db;
 }
 pre.cobalt .Constant {
-   color: #FF628C;
+  color: #ff628c;
 }
 pre.cobalt .List {
-   background-color: #130D26;
+  background-color: #130d26;
 }
 pre.cobalt .DiffChanged {
-   background-color: #806F00;
-   color: #F8F8F8;
+  background-color: #806f00;
+  color: #f8f8f8;
 }
 pre.cobalt .EmbeddedSource {
-   background-color: #223545;
-   color: #FFFFFF;
+  background-color: #223545;
+  color: #ffffff;
 }
 pre.cobalt .Support {
-   color: #80FFBB;
+  color: #80ffbb;
 }
 pre.cobalt .Punctuation {
-   color: #E1EFFF;
+  color: #e1efff;
 }
 pre.cobalt .RawMarkup {
-   background-color: #74B9D3;
+  background-color: #74b9d3;
 }
 pre.cobalt .CssConstructorArgument {
-   color: #EB939A;
+  color: #eb939a;
 }
 pre.cobalt .LangVariable {
-   color: #FF80E1;
+  color: #ff80e1;
 }
 pre.cobalt .Storage {
-   color: #FFEE80;
+  color: #ffee80;
 }
 pre.cobalt .line-numbers {
-   background-color: #B36539;
-   color: #000000;
+  background-color: #b36539;
+  color: #000000;
 }
 pre.cobalt .CssClass {
-   color: #5FE461;
+  color: #5fe461;
 }
 pre.cobalt .StringConstant {
-   color: #80FF82;
+  color: #80ff82;
 }
 pre.cobalt .CssAtRule {
-   color: #F6AA11;
+  color: #f6aa11;
 }
 pre.cobalt .BoldMarkup {
-   font-weight: bold;
-   color: #C1AFFF;
+  font-weight: bold;
+  color: #c1afff;
 }
 pre.cobalt .CssTagName {
-   color: #9EFFFF;
+  color: #9effff;
 }
 pre.cobalt .Exception {
-   color: #FF1E00;
+  color: #ff1e00;
 }
 pre.cobalt .SupportConstant {
-   color: #EB939A;
+  color: #eb939a;
 }
 pre.cobalt .ItalicMarkup {
-   color: #B8FFD9;
-   font-style: italic;
+  color: #b8ffd9;
+  font-style: italic;
 }
 pre.cobalt .DiffDeleted {
-   background-color: #4C0900;
-   color: #F8F8F8;
+  background-color: #4c0900;
+  color: #f8f8f8;
 }
 pre.cobalt .CCPreprocessorLine {
-   color: #8996A8;
+  color: #8996a8;
 }
 pre.cobalt .SupportFunction {
-   color: #FFB054;
+  color: #ffb054;
 }
 pre.cobalt .CssAdditionalConstants {
-   color: #EDF080;
+  color: #edf080;
 }
 pre.cobalt .MetaTagA {
-   color: #9EFFFF;
+  color: #9effff;
 }
 pre.cobalt .StringRegexp {
-   color: #80FFC2;
+  color: #80ffc2;
 }
 pre.cobalt .StringEmbeddedSource {
-   color: #9EFF80;
+  color: #9eff80;
 }
 pre.cobalt .EntityInheritedClass {
-   color: #80FCFF;
-   font-style: italic;
+  color: #80fcff;
+  font-style: italic;
 }
 pre.cobalt .FunctionCall {
-   color: #FFEE80;
+  color: #ffee80;
 }
 pre.cobalt {
-   background-color: #002240;
-   color: #FFFFFF;
+  background-color: #002240;
+  color: #ffffff;
 }
 pre.cobalt .CssId {
-   color: #FFB454;
+  color: #ffb454;
 }
 pre.cobalt .StringVariable {
-   color: #EDEF7D;
+  color: #edef7d;
 }
 pre.cobalt .Invalid {
-   background-color: #800F00;
-   color: #F8F8F8;
+  background-color: #800f00;
+  color: #f8f8f8;
 }
 pre.cobalt .String {
-   color: #3AD900;
+  color: #3ad900;
 }
 pre.cobalt .Keyword {
-   color: #FF9D00;
+  color: #ff9d00;
 }
 pre.cobalt .HeadingMarkup {
-   font-weight: bold;
-   background-color: #001221;
-   color: #C8E4FD;
+  font-weight: bold;
+  background-color: #001221;
+  color: #c8e4fd;
 }
 pre.cobalt .CssPropertyName {
-   color: #9DF39F;
+  color: #9df39f;
 }
 pre.cobalt .DoctypeXmlProcessing {
-   color: #73817D;
+  color: #73817d;
 }
 pre.cobalt .Variable {
-   color: #CCCCCC;
+  color: #cccccc;
 }
 pre.cobalt .Comment {
-   color: #0088FF;
-   font-style: italic;
+  color: #0088ff;
+  font-style: italic;
 }
 pre.cobalt .Entity {
-   color: #FFDD00;
+  color: #ffdd00;
 }

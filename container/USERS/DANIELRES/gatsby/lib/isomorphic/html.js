@@ -1,7 +1,7 @@
 /* @flow weak */
 
-import React, { PropTypes } from 'react'
-import { prefixLink } from 'gatsby-helpers'
+import React, { PropTypes } from "react";
+import { prefixLink } from "gatsby-helpers";
 
 const defaultMessage = `
 Gatsby is currently using the default template for HTML. You can override
@@ -9,10 +9,10 @@ this functionality by creating a React component at "/html.js"
 
 You can see what this default template does by visiting:
 https://github.com/gatsbyjs/gatsby/blob/master/lib/isomorphic/html.js
-`
-console.info(defaultMessage)
+`;
+console.info(defaultMessage);
 
-function HTML (props) {
+function HTML(props) {
   return (
     <html lang="en">
       <head>
@@ -24,13 +24,16 @@ function HTML (props) {
         />
       </head>
       <body>
-        <div id="react-mount" dangerouslySetInnerHTML={{ __html: props.body }} />
-        <script src={prefixLink('/bundle.js')} />
+        <div
+          id="react-mount"
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
+        <script src={prefixLink("/bundle.js")} />
       </body>
     </html>
-  )
+  );
 }
 
-HTML.propTypes = { body: PropTypes.node }
+HTML.propTypes = { body: PropTypes.node };
 
-module.exports = HTML
+module.exports = HTML;

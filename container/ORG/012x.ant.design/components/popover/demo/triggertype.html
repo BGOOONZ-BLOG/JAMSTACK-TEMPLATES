@@ -1,0 +1,86 @@
+<div class="code-box" id="demo-triggertype">
+  <div class="code-box-demo">
+    <div id="components-popover-demo-triggertype"></div>
+    <script>mountNode = document.getElementById('components-popover-demo-triggertype');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var content = React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "p",
+    null,
+    "\u5185\u5BB9"
+  ),
+  React.createElement(
+    "p",
+    null,
+    "\u5185\u5BB9"
+  )
+);
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Popover,
+    { overlay: content, title: "\u6807\u9898", trigger: "hover" },
+    React.createElement(
+      _antd.Button,
+      null,
+      "\u79FB\u5165"
+    )
+  ),
+  React.createElement(
+    _antd.Popover,
+    { overlay: content, title: "\u6807\u9898", trigger: "focus" },
+    React.createElement(
+      _antd.Button,
+      null,
+      "\u805A\u7126"
+    )
+  ),
+  React.createElement(
+    _antd.Popover,
+    { overlay: content, title: "\u6807\u9898", trigger: "click" },
+    React.createElement(
+      _antd.Button,
+      null,
+      "\u70B9\u51FB"
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Popover, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> content = (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+)</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{content}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"标题"</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"hover"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>移入<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{content}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"标题"</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"focus"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>聚焦<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{content}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"标题"</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"click"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>点击<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-triggertype">三种触发方式</a>
+    </div>
+    
+<p>鼠标移入、聚集、点击。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

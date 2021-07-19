@@ -1,5 +1,5 @@
 body {
-  background: #eee
+  background: #eee;
 }
 
 a {
@@ -8,10 +8,10 @@ a {
 
 .textual-content a,
 a.text-link {
-  border-bottom: 1px dotted #ABDDFE;
+  border-bottom: 1px dotted #abddfe;
   transition-duration: 0.2s;
   &:hover {
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid;
   }
 }
 

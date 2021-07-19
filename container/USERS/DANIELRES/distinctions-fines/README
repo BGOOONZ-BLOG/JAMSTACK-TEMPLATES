@@ -2,7 +2,7 @@
 
 Hi, this is my blog engine made from ground up using Rails 3.1, for my upcoming personal blog.
 
-Concepts and values of this project:  
+Concepts and values of this project:
 
 - Minimalism, simplicity, use of standard gems (devise, omniauth, compass, bluecloth, ...) to build most parts of the app.
 - Observing the Rails conventions at all circumstances.

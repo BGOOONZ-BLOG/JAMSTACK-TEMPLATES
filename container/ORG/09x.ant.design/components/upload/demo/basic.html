@@ -1,0 +1,66 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-upload-demo-basic"></div>
+    <script>(function(){'use strict';
+
+var Upload = antd.Upload;
+var message = antd.message;
+
+var props = {
+  name: 'file',
+  action: '/upload.do',
+  onChange: function onChange(info) {
+    if (info.file.status !== 'uploading') {
+      console.log(info.file, info.fileList);
+    }
+    if (info.file.status === 'done') {
+      message.success(info.file.name + ' 上传成功。');
+    } else if (info.file.status === 'error') {
+      message.error(info.file.name + ' 上传失败。');
+    }
+  }
+};
+
+React.render(React.createElement(
+  Upload,
+  props,
+  React.createElement(
+    'button',
+    { type: 'button', className: 'ant-btn ant-btn-ghost' },
+    React.createElement('i', { className: 'anticon anticon-upload' }),
+    ' 点击上传'
+  )
+), document.getElementById('components-upload-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Upload = antd.Upload;
+<span class="keyword">var</span> message = antd.message;
+
+<span class="keyword">var</span> props = {
+  name: <span class="string">'file'</span>,
+  action: <span class="string">'/upload.do'</span>,
+  onChange(info) {
+    <span class="keyword">if</span> (info.file.status !== <span class="string">'uploading'</span>) {
+      console.log(info.file, info.fileList);
+    }
+    <span class="keyword">if</span> (info.file.status === <span class="string">'done'</span>) {
+      message.success(info.file.name + <span class="string">' 上传成功。'</span>);
+    } <span class="keyword">else</span> <span class="keyword">if</span> (info.file.status === <span class="string">'error'</span>) {
+      message.error(info.file.name + <span class="string">' 上传失败。'</span>);
+    }
+  }
+};
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Upload</span> {<span class="attribute">...props</span>}&gt;</span>
+    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">className</span>=<span class="value">"ant-btn ant-btn-ghost"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-upload"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span> 点击上传
+    <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Upload</span>&gt;</span>
+, document.getElementById('components-upload-demo-basic'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">点击上传</a>
+    </div>
+    <p>经典款式，用户点击按钮弹出文件选择框。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 module.exports = {
-  client: 'pg',
+  client: "pg",
   connection: {
     database: process.env.PGDB,
     host: process.env.PGHOST,
@@ -7,7 +7,7 @@ module.exports = {
     user: process.env.PGUSER,
   },
   migrations: {
-    directory: __dirname + '/migrations',
-    tableName: 'knex_migrations',
+    directory: __dirname + "/migrations",
+    tableName: "knex_migrations",
   },
 };

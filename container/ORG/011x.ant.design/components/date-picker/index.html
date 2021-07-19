@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+DatePicker 日期选择框 - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css?20160114">
+    <!--[if IE 8]>
+    <script src="https://t.alipayobjects.com/images/rmsweb/T1q8JiXftaXXXXXXXX.js"></script>
+    <![endif]-->
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.1.14/es5-shim.min.js,es5-shim/4.1.14/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '文件上传'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Validation',
+        desc: '表单校验'
+      });
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.11.3'
+      };
+    </script>
+    <script src="../../dist/demo.js?20160114"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../../docs/practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../../docs/pattern/navigation">模式</a>
+          </li>
+          <li class="current">
+            <a href="../../docs/react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../../docs/spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../../docs/resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="../../docs/react/introduce"
+           class="">
+          Ant Design of React
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/getting-started"
+           class="">
+          快速上手
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/install"
+           class="">
+          安装
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../docs/react/upgrade-notes"
+           class="">
+          升级指南
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="../../changelog"
+           class="">
+          更新日志
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>Components</h4>
+      <ul class="">
+          <li class="type-divider">基本</li>
+          <li class="">
+            <a href="../button/"
+               class="">
+              Button
+              <span class="chinese">按钮</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../icon/"
+               class="">
+              Icon
+              <span class="chinese">图标</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../layout/"
+               class="">
+              Layout
+              <span class="chinese">布局</span>
+            </a>
+          </li>
+          <li class="type-divider">表单</li>
+          <li class="">
+            <a href="../checkbox/"
+               class="">
+              Checkbox
+              <span class="chinese">多选框</span>
+            </a>
+          </li>
+          <li class="current">
+            <a href="./"
+               class="">
+              DatePicker
+              <span class="chinese">日期选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../form/"
+               class="">
+              Form
+              <span class="chinese">表单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../input-number/"
+               class="">
+              InputNumber
+              <span class="chinese">数字输入框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../radio/"
+               class="">
+              Radio
+              <span class="chinese">单选框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../select/"
+               class="">
+              Select
+              <span class="chinese">选择器</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../slider/"
+               class="">
+              Slider
+              <span class="chinese">滑动输入条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../switch/"
+               class="">
+              Switch
+              <span class="chinese">开关</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../time-picker/"
+               class="">
+              TimePicker
+              <span class="chinese">时间选择框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../transfer/"
+               class="">
+              Transfer
+              <span class="chinese">穿梭框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../upload/"
+               class="">
+              Upload
+              <span class="chinese">文件上传</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../validation/"
+               class="">
+              Validation
+              <span class="chinese">表单校验</span>
+            </a>
+          </li>
+          <li class="type-divider">展示</li>
+          <li class="">
+            <a href="../alert/"
+               class="">
+              Alert
+              <span class="chinese">警告提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../badge/"
+               class="">
+              Badge
+              <span class="chinese">徽标数</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../calendar/"
+               class="">
+              Calendar
+              <span class="chinese">日历</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../carousel/"
+               class="">
+              Carousel
+              <span class="chinese">走马灯</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../collapse/"
+               class="">
+              Collapse
+              <span class="chinese">折叠面板</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../dropdown/"
+               class="">
+              Dropdown
+              <span class="chinese">下拉菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../message/"
+               class=""data-no-instant>
+              Message
+              <span class="chinese">全局提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../modal/"
+               class="">
+              Modal
+              <span class="chinese">对话框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../notification/"
+               class=""data-no-instant>
+              Notification
+              <span class="chinese">通知提醒框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popconfirm/"
+               class="">
+              Popconfirm
+              <span class="chinese">气泡确认框</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../popover/"
+               class="">
+              Popover
+              <span class="chinese">气泡卡片</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../progress/"
+               class="">
+              Progress
+              <span class="chinese">进度条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../table/"
+               class="">
+              Table
+              <span class="chinese">表格</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tag/"
+               class="">
+              Tag
+              <span class="chinese">标签</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../timeline/"
+               class="">
+              Timeline
+              <span class="chinese">时间轴</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tooltip/"
+               class="">
+              Tooltip
+              <span class="chinese">文字提示</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tree/"
+               class="">
+              Tree
+              <span class="chinese">树形控件</span>
+            </a>
+          </li>
+          <li class="type-divider">导航</li>
+          <li class="">
+            <a href="../breadcrumb/"
+               class="">
+              Breadcrumb
+              <span class="chinese">面包屑</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../menu/"
+               class="">
+              Menu
+              <span class="chinese">导航菜单</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../pagination/"
+               class="">
+              Pagination
+              <span class="chinese">分页</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../steps/"
+               class="">
+              Steps
+              <span class="chinese">步骤条</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../tabs/"
+               class="">
+              Tabs
+              <span class="chinese">标签页</span>
+            </a>
+          </li>
+          <li class="type-divider">其他</li>
+          <li class="">
+            <a href="../affix/"
+               class="">
+              Affix
+              <span class="chinese">固钉</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../queue-anim/"
+               class="">
+              QueueAnim
+              <span class="chinese">进出场动画</span>
+            </a>
+          </li>
+          <li class="">
+            <a href="../spin/"
+               class="">
+              Spin
+              <span class="chinese">加载中</span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>
+      DatePicker 日期选择框
+    </h1>
+    <p>输入或选择日期的控件。</p>
+<h2 id="何时使用">何时使用<a href="#何时使用" class="anchor">#</a> </h2><p>当用户需要输入一个日期，可以点击标准输入框，弹出日期面板进行选择。</p>
+<h2 id="api">API<a href="#api" class="anchor">#</a> </h2><h3 id="datepicker">DatePicker<a href="#datepicker" class="anchor">#</a> </h3><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"2015-01-01"</span> /&gt;</span></code></pre></div><blockquote>
+<p>注意：<code>0.11+</code> 后 <code>Datepicker</code> 改名为 <code>DatePicker</code>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>日期</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>默认日期</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>format</td>
+<td>展示的日期格式</td>
+<td>string</td>
+<td>&quot;yyyy-MM-dd&quot;</td>
+</tr>
+<tr>
+<td>disabledDate</td>
+<td>不可选择的日期</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>时间发生变化的回调，发生在用户选择时间时</td>
+<td>function(Date value)</td>
+<td>无</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>禁用</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>style</td>
+<td>自定义输入框样式</td>
+<td>object</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>popupStyle</td>
+<td>格外的弹出日历样式</td>
+<td>object</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>size</td>
+<td>输入框大小，<code>large</code> 高度为 32px，<code>small</code> 为 22px，默认是 28px</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>国际化配置</td>
+<td>object</td>
+<td><a href="https://github.com/ant-design/ant-design/issues/424">默认配置</a></td>
+</tr>
+<tr>
+<td>showTime</td>
+<td>增加时间选择功能</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>onOk</td>
+<td>点击确定按钮的回调</td>
+<td>function</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rangepicker">RangePicker<a href="#rangepicker" class="anchor">#</a> </h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>日期</td>
+<td>[string, string]</td>
+<td>无</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>默认日期</td>
+<td>[string, string]</td>
+<td>无</td>
+</tr>
+<tr>
+<td>format</td>
+<td>展示的日期格式</td>
+<td>string</td>
+<td>&quot;yyyy-MM-dd HH:mm:ss&quot;</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>时间发生变化的回调，发生在用户选择时间时</td>
+<td>function([Date start, Date end])</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><code>disabled</code> <code>style</code> <code>popupStyle</code> <code>size</code> <code>locale</code> <code>showTime</code> <code>onOk</code> 属性与 DatePicker 的一致。</p>
+<style>
+.code-box-demo .ant-calendar-picker {
+  margin: 0 8px 12px 0;
+}
+</style>
+
+  </article>
+<h2 class="component-demos">
+  代码演示
+  <i class="anticon anticon-appstore icon-all" title="展开全部代码"></i>
+</h2>
+<div class="code-boxes">
+  <div class="code-boxes-col-2-1"><div class="code-box" id="picker-demo-basic">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-basic');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function onChange(value) {
+  console.log(value);
+}
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { onChange: onChange }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value);
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-basic">基本</a>
+    </div>
+    <p>最简单的用法。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-size">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-size"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-size');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(_antd.DatePicker, { size: "large" }),
+  React.createElement(_antd.DatePicker, null),
+  React.createElement(_antd.DatePicker, { size: "small" })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-size">三种大小</a>
+    </div>
+    <p>三种大小的输入框，大的用在表单中，中的为默认。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-disabled">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-disabled"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-disabled');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { defaultValue: "2015-06-06", disabled: true }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"2015-06-06"</span> <span class="hljs-attribute">disabled</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-disabled">禁用</a>
+    </div>
+    <p>选择框的不可用状态。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-start-end">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-start-end"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-start-end');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var DateRange = React.createClass({
+  displayName: 'DateRange',
+  getInitialState: function getInitialState() {
+    return {
+      startValue: null,
+      endValue: null
+    };
+  },
+  disabledStartDate: function disabledStartDate(startValue) {
+    if (!startValue || !this.state.endValue) {
+      return false;
+    }
+    return startValue.getTime() >= this.state.endValue.getTime();
+  },
+  disabledEndDate: function disabledEndDate(endValue) {
+    if (!endValue || !this.state.startValue) {
+      return false;
+    }
+    return endValue.getTime() <= this.state.startValue.getTime();
+  },
+  onChange: function onChange(field, value) {
+    console.log(field, 'change', value);
+    this.setState(_defineProperty({}, field, value));
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(_antd.DatePicker, { disabledDate: this.disabledStartDate,
+        value: this.state.startValue,
+        placeholder: '开始日期',
+        onChange: this.onChange.bind(this, 'startValue') }),
+      React.createElement(_antd.DatePicker, { disabledDate: this.disabledEndDate,
+        value: this.state.endValue,
+        placeholder: '结束日期',
+        onChange: this.onChange.bind(this, 'endValue') })
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(DateRange, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> DateRange = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      startValue: <span class="hljs-literal">null</span>,
+      endValue: <span class="hljs-literal">null</span>
+    };
+  },
+  disabledStartDate(startValue) {
+    <span class="hljs-keyword">if</span> (!startValue || !<span class="hljs-keyword">this</span>.state.endValue) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">return</span> startValue.getTime() &gt;= <span class="hljs-keyword">this</span>.state.endValue.getTime();
+  },
+  disabledEndDate(endValue) {
+    <span class="hljs-keyword">if</span> (!endValue || !<span class="hljs-keyword">this</span>.state.startValue) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">return</span> endValue.getTime() &lt;= <span class="hljs-keyword">this</span>.state.startValue.getTime();
+  },
+  onChange(field, value) {
+    <span class="hljs-built_in">console</span>.log(field, <span class="hljs-string">'change'</span>, value);
+    <span class="hljs-keyword">this</span>.setState({
+      [field]: value,
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">disabledDate</span>=<span class="hljs-value">{this.disabledStartDate}</span>
+        <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.startValue}</span>
+        <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"开始日期"</span>
+        <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange.bind(this,</span> '<span class="hljs-attribute">startValue</span>')} /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">disabledDate</span>=<span class="hljs-value">{this.disabledEndDate}</span>
+        <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.endValue}</span>
+        <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"结束日期"</span>
+        <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange.bind(this,</span> '<span class="hljs-attribute">endValue</span>')} /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DateRange</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-start-end">日期范围一</a>
+    </div>
+    <p>可以设置 <code>disabledDate</code> 方法，来约束开始和结束日期。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-month-picker">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-month-picker"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-month-picker');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var MonthPicker = _antd.DatePicker.MonthPicker;
+ReactDOM.render(React.createElement(MonthPicker, { defaultValue: "2015-12" }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> MonthPicker = DatePicker.MonthPicker;
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">MonthPicker</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"2015-12"</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-month-picker">月选择器</a>
+    </div>
+    <p>使用 <code>MonthPicker</code> 实现月选择器.</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+  <div class="code-boxes-col-2-1"><div class="code-box" id="picker-demo-formatter">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-formatter"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-formatter');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { defaultValue: "2015/01/01", format: "yyyy/MM/dd" }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"2015/01/01"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy/MM/dd"</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-formatter">日期格式</a>
+    </div>
+    <p>使用 <code>format</code> 属性，可以自定义你需要的日期显示格式，如 <code>yyyy/MM/dd</code>。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-time">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-time"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-time');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function onChange(value) {
+  console.log('选择了时间：', value);
+}
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { showTime: true, format: 'yyyy-MM-dd HH:mm:ss', onChange: onChange, style: { width: 160 } }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'选择了时间：'</span>, value);
+}
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">showTime</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy-MM-dd HH:mm:ss"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> <span class="hljs-attribute">160</span>}} /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-time">日期时间选择</a>
+    </div>
+    <p>增加选择时间功能。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-disabled-date">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-disabled-date"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-disabled-date');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var disabledDate = function disabledDate(current) {
+  // can not select days after today
+  return current && current.getTime() > Date.now();
+};
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { disabledDate: disabledDate }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> disabledDate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">current</span>) </span>{
+  <span class="hljs-comment">// can not select days after today</span>
+  <span class="hljs-keyword">return</span> current &amp;&amp; current.getTime() &gt; <span class="hljs-built_in">Date</span>.now();
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">disabledDate</span>=<span class="hljs-value">{disabledDate}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-disabled-date">指定不可选择日期</a>
+    </div>
+    <p>设置 <code>disabledDate</code> 方法，来确定不可选时段。</p>
+<p>如上例：不可选择今天之后的日期。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-range">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-range"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-range');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var RangePicker = _antd.DatePicker.RangePicker;
+
+function onChange(value) {
+  console.log('From: ', value[0], ', to: ', value[1]);
+}
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(RangePicker, { style: { width: 184 }, onChange: onChange }),
+  React.createElement('br', null),
+  React.createElement(RangePicker, { showTime: true, format: 'yyyy-MM-dd HH:mm:ss', onChange: onChange })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> RangePicker = DatePicker.RangePicker;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'From: '</span>, value[<span class="hljs-number">0</span>], <span class="hljs-string">', to: '</span>, value[<span class="hljs-number">1</span>]);
+}
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">RangePicker</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> <span class="hljs-attribute">184</span>}} <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">RangePicker</span> <span class="hljs-attribute">showTime</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy-MM-dd HH:mm:ss"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-range">日期范围二</a>
+    </div>
+    <p>使用 <code>RangePicker</code> 实现日期范围选择有更好的交互体验。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div><div class="code-box" id="picker-demo-locale">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-locale"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-locale');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var _en_US = require('antd/lib/date-picker/locale/en_US');
+
+var _en_US2 = _interopRequireDefault(_en_US);
+
+var _objectAssign = require('object-assign');
+
+var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = React.createClass({
+  displayName: 'App',
+  getInitialState: function getInitialState() {
+    return {
+      locale: (0, _objectAssign2.default)({}, _en_US2.default, {
+        timezoneOffset: 0 * 60,
+        firstDayOfWeek: 0,
+        minimalDaysInFirstWeek: 1
+      })
+    };
+  },
+  render: function render() {
+    return React.createElement(_antd.DatePicker, { locale: this.state.locale });
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> enUS <span class="hljs-keyword">from</span> <span class="hljs-string">'antd/lib/date-picker/locale/en_US'</span>;
+<span class="hljs-keyword">import</span> assign <span class="hljs-keyword">from</span> <span class="hljs-string">'object-assign'</span>;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      locale: assign({}, enUS, {
+        timezoneOffset: <span class="hljs-number">0</span> * <span class="hljs-number">60</span>,
+        firstDayOfWeek: <span class="hljs-number">0</span>,
+        minimalDaysInFirstWeek: <span class="hljs-number">1</span>,
+      })
+    };
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">locale</span>=<span class="hljs-value">{this.state.locale}</span> /&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-locale">国际化</a>
+    </div>
+    <p>通过 <code>locale</code> 配置时区、语言等, 默认支持 en_US, zh_CN</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>
+  </div>
+</div>
+<ul class="toc demos-anchor">
+  <li>
+    <a title="基本" href="#picker-demo-basic">
+      <span>基本</span>
+    </a>
+  </li>
+  <li>
+    <a title="日期格式" href="#picker-demo-formatter">
+      <span>日期格式</span>
+    </a>
+  </li>
+  <li>
+    <a title="三种大小" href="#picker-demo-size">
+      <span>三种大小</span>
+    </a>
+  </li>
+  <li>
+    <a title="日期时间选择" href="#picker-demo-time">
+      <span>日期时间选择</span>
+    </a>
+  </li>
+  <li>
+    <a title="禁用" href="#picker-demo-disabled">
+      <span>禁用</span>
+    </a>
+  </li>
+  <li>
+    <a title="指定不可选择日期" href="#picker-demo-disabled-date">
+      <span>指定不可选择日期</span>
+    </a>
+  </li>
+  <li>
+    <a title="日期范围一" href="#picker-demo-start-end">
+      <span>日期范围一</span>
+    </a>
+  </li>
+  <li>
+    <a title="日期范围二" href="#picker-demo-range">
+      <span>日期范围二</span>
+    </a>
+  </li>
+  <li>
+    <a title="月选择器" href="#picker-demo-month-picker">
+      <span>月选择器</span>
+    </a>
+  </li>
+  <li>
+    <a title="国际化" href="#picker-demo-locale">
+      <span>国际化</span>
+    </a>
+  </li>
+</ul>
+  <div class="api-container markdown"></div>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

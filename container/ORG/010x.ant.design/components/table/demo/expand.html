@@ -1,0 +1,68 @@
+<div class="code-box" id="demo-expand">
+  <div class="code-box-demo">
+    <div id="components-table-demo-expand"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function renderAction() {
+  return React.createElement(
+    'a',
+    { href: '#' },
+    '删除'
+  );
+}
+
+function expandedRowRender(record) {
+  return React.createElement(
+    'p',
+    null,
+    record.description
+  );
+}
+
+var columns = [{ title: '姓名', dataIndex: 'name', key: 'name' }, { title: '年龄', dataIndex: 'age', key: 'age' }, { title: '住址', dataIndex: 'address', key: 'address' }, { title: '操作', dataIndex: '', key: 'x', render: renderAction }];
+
+var data = [{ key: 1, name: '胡彦斌', age: 32, address: '西湖区湖底公园1号', description: '我是胡彦斌，今年32岁，住在西湖区湖底公园1号。' }, { key: 2, name: '吴彦祖', age: 42, address: '西湖区湖底公园2号', description: '我是吴彦祖，今年42岁，住在西湖区湖底公园2号。' }, { key: 3, name: '李大嘴', age: 32, address: '西湖区湖底公园3号', description: '我是李大嘴，今年32岁，住在西湖区湖底公园3号。' }];
+
+ReactDOM.render(React.createElement(_antd.Table, { columns: columns,
+  expandedRowRender: expandedRowRender,
+  dataSource: data,
+  className: 'table' }), document.getElementById('components-table-demo-expand'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Table } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderAction</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>;</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">expandedRowRender</span>(<span class="hljs-params">record</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{record.description}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>;</span>
+}
+
+<span class="hljs-keyword">const</span> columns = [
+  {title: <span class="hljs-string">'姓名'</span>, dataIndex: <span class="hljs-string">'name'</span>, key: <span class="hljs-string">'name'</span>},
+  {title: <span class="hljs-string">'年龄'</span>, dataIndex: <span class="hljs-string">'age'</span>, key: <span class="hljs-string">'age'</span>},
+  {title: <span class="hljs-string">'住址'</span>, dataIndex: <span class="hljs-string">'address'</span>, key: <span class="hljs-string">'address'</span>},
+  {title: <span class="hljs-string">'操作'</span>, dataIndex: <span class="hljs-string">''</span>, key: <span class="hljs-string">'x'</span>, render: renderAction}
+];
+
+<span class="hljs-keyword">const</span> data = [
+  {key: <span class="hljs-number">1</span>, name: <span class="hljs-string">'胡彦斌'</span>, age: <span class="hljs-number">32</span>, address: <span class="hljs-string">'西湖区湖底公园1号'</span>, description: <span class="hljs-string">'我是胡彦斌，今年32岁，住在西湖区湖底公园1号。'</span>},
+  {key: <span class="hljs-number">2</span>, name: <span class="hljs-string">'吴彦祖'</span>, age: <span class="hljs-number">42</span>, address: <span class="hljs-string">'西湖区湖底公园2号'</span>, description: <span class="hljs-string">'我是吴彦祖，今年42岁，住在西湖区湖底公园2号。'</span>},
+  {key: <span class="hljs-number">3</span>, name: <span class="hljs-string">'李大嘴'</span>, age: <span class="hljs-number">32</span>, address: <span class="hljs-string">'西湖区湖底公园3号'</span>, description: <span class="hljs-string">'我是李大嘴，今年32岁，住在西湖区湖底公园3号。'</span>}
+];
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Table</span> <span class="hljs-attribute">columns</span>=<span class="hljs-value">{columns}</span>
+  <span class="hljs-attribute">expandedRowRender</span>=<span class="hljs-value">{expandedRowRender}</span>
+  <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{data}</span>
+  <span class="hljs-attribute">className</span>=<span class="hljs-value">"table"</span> /&gt;</span>
+, document.getElementById('components-table-demo-expand'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-expand">可展开</a>
+    </div>
+    <p>当表格内容较多不能一次性完全展示时。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

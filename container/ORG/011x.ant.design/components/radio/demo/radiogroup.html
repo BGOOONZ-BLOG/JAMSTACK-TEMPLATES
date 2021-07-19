@@ -1,0 +1,98 @@
+<div class="code-box" id="demo-radiogroup">
+  <div class="code-box-demo">
+    <div id="components-radio-demo-radiogroup"></div>
+    <script>mountNode = document.getElementById('components-radio-demo-radiogroup');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var RadioGroup = _antd.Radio.Group;
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {
+      value: 'a'
+    };
+  },
+  onChange: function onChange(e) {
+    console.log('radio checked:' + e.target.value);
+    this.setState({
+      value: e.target.value
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        RadioGroup,
+        { onChange: this.onChange, value: this.state.value },
+        React.createElement(
+          _antd.Radio,
+          { value: 'a' },
+          'A'
+        ),
+        React.createElement(
+          _antd.Radio,
+          { value: 'b' },
+          'B'
+        ),
+        React.createElement(
+          _antd.Radio,
+          { value: 'c' },
+          'C'
+        ),
+        React.createElement(
+          _antd.Radio,
+          { value: 'd' },
+          'D'
+        )
+      ),
+      React.createElement(
+        'div',
+        { style: { marginTop: 20 } },
+        '你选中的: ',
+        this.state.value
+      )
+    );
+  }
+});
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Radio } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> RadioGroup = Radio.Group;
+
+<span class="hljs-keyword">const</span> App = React.createClass({
+  getInitialState: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      value: <span class="hljs-string">'a'</span>
+    };
+  },
+  onChange(e) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'radio checked:'</span> + e.target.value);
+    <span class="hljs-keyword">this</span>.setState({
+      value: e.target.value
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroup</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange}</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"a"</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"b"</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"c"</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"d"</span>&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroup</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{marginTop:</span> <span class="hljs-attribute">20</span>}}&gt;</span>你选中的: {this.state.value}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+  }
+});
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-radiogroup">RadioGroup 组合</a>
+    </div>
+    <p>一组互斥的 Radio 配合使用。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

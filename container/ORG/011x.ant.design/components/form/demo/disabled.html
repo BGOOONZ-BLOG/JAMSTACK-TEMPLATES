@@ -1,0 +1,115 @@
+<div class="code-box" id="demo-disabled">
+  <div class="code-box-demo">
+    <div id="components-form-demo-disabled"></div>
+    <script>mountNode = document.getElementById('components-form-demo-disabled');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var FormItem = _antd.Form.Item;
+
+ReactDOM.render(React.createElement(
+  _antd.Form,
+  { horizontal: true },
+  React.createElement(
+    FormItem,
+    {
+      label: "单独禁用输入框：",
+      labelCol: { span: 5 },
+      wrapperCol: { span: 12 } },
+    React.createElement(_antd.Input, { defaultValue: "我是禁用的", disabled: true })
+  ),
+  React.createElement(
+    "fieldset",
+    { disabled: true },
+    React.createElement(
+      "legend",
+      null,
+      "禁用的 fieldset"
+    ),
+    React.createElement(
+      FormItem,
+      {
+        id: "userName",
+        label: "用户名：",
+        labelCol: { span: 5 },
+        wrapperCol: { span: 12 },
+        required: true },
+      React.createElement(
+        "p",
+        { className: "ant-form-text" },
+        "大眼萌 minion"
+      )
+    ),
+    React.createElement(
+      FormItem,
+      {
+        id: "password",
+        label: "密码：",
+        labelCol: { span: 5 },
+        wrapperCol: { span: 12 },
+        required: true },
+      React.createElement(_antd.Input, { type: "password", defaultValue: "123456", id: "password" })
+    ),
+    React.createElement(
+      _antd.Row,
+      null,
+      React.createElement(
+        _antd.Col,
+        { span: "12", offset: "5" },
+        React.createElement(
+          _antd.Button,
+          { htmlType: "submit", type: "primary" },
+          "确定"
+        )
+      )
+    )
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> {Row, Col, Button, Input, Form} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+      <span class="hljs-attribute">label</span>=<span class="hljs-value">"单独禁用输入框："</span>
+      <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:5}}</span>
+      <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:12}}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"我是禁用的"</span> <span class="hljs-attribute">disabled</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span>禁用的 fieldset<span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+        <span class="hljs-attribute">id</span>=<span class="hljs-value">"userName"</span>
+        <span class="hljs-attribute">label</span>=<span class="hljs-value">"用户名："</span>
+        <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:5}}</span>
+        <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:12}}</span>
+        <span class="hljs-attribute">required</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span>大眼萌 minion<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+        <span class="hljs-attribute">id</span>=<span class="hljs-value">"password"</span>
+        <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>
+        <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:5}}</span>
+        <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:12}}</span>
+        <span class="hljs-attribute">required</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"123456"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"password"</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"12"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"5"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">htmlType</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-disabled">禁用状态</a>
+    </div>
+    <p>1) 单独为输入控件设置 <code>disabled</code> 属性；</p>
+<p>2) 为 <code>&lt;fieldset&gt;</code> 设置 <code>disabled</code> 属性，可以禁用 <code>&lt;fieldset&gt;</code> 中包含的所有控件。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

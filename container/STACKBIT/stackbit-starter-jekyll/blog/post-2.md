@@ -1,6 +1,6 @@
 ---
-title: 'Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis'
-date: '2020-05-25'
+title: "Non Minor, Inquit, Voluptas Percipitur Ex Vilissimis"
+date: "2020-05-25"
 author: _data/team/miles-tone.yaml
 categories:
   - _data/categories/news.yaml

@@ -2,18 +2,10 @@
   "name": "isn-next",
   "version": "0.3.0",
   "homepage": "https://github.com/iissnan/hexo-theme-next",
-  "authors": [
-    "iissnan <iissnan@gmail.com>"
-  ],
+  "authors": ["iissnan <iissnan@gmail.com>"],
   "description": "High quality and elegant theme for Hexo",
   "repository": "https://github.com/iissnan/hexo-theme-next",
-  "keywords": [
-    "hexo",
-    "notes",
-    "theme",
-    "iissnan",
-    "NexT"
-  ],
+  "keywords": ["hexo", "notes", "theme", "iissnan", "NexT"],
   "license": "MIT",
   "ignore": [
     "**/.*",

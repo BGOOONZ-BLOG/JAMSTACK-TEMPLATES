@@ -24,7 +24,8 @@ body {
   padding: 10px 0;
 }
 
-.table td, th {
+.table td,
+th {
   padding: 5px;
 }
 
@@ -37,7 +38,7 @@ body {
   background: #bbb;
   border-bottom: 20px solid #aaa;
 }
-  
+
 .table.entries .date,
 .table.entries .amount,
 .table.entries .price,
@@ -47,4 +48,3 @@ body {
   text-align: right;
   width: calc(100% / 6);
 }
-

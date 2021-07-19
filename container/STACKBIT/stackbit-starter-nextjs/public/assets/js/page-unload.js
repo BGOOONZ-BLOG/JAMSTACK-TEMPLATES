@@ -1,3 +1,3 @@
-window.onNextjsRouteChangeStart = function() {
-window.removeMainNavigationHandlers();
+window.onNextjsRouteChangeStart = function () {
+  window.removeMainNavigationHandlers();
 };

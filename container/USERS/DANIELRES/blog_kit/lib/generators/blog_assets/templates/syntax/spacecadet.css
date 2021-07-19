@@ -1,51 +1,51 @@
 pre.spacecadet .Constant {
-   color: #BF9960;
+  color: #bf9960;
 }
 pre.spacecadet .Support {
-   color: #8A4B66;
+  color: #8a4b66;
 }
 pre.spacecadet .InheritedClass {
-   font-style: italic;
+  font-style: italic;
 }
 pre.spacecadet .LibraryVariable {
 }
 pre.spacecadet .Storage {
-   color: #9EBF60;
+  color: #9ebf60;
 }
 pre.spacecadet .line-numbers {
-   background-color: #40002F;
-   color: #FFFFFF;
+  background-color: #40002f;
+  color: #ffffff;
 }
 pre.spacecadet {
-   background-color: #0D0D0D;
-   color: #DDE6CF;
+  background-color: #0d0d0d;
+  color: #dde6cf;
 }
 pre.spacecadet .TagName {
 }
 pre.spacecadet .Exception {
-   color: #893062;
+  color: #893062;
 }
 pre.spacecadet .LibraryConstant {
 }
 pre.spacecadet .Invalid {
-   background-color: #5F0047;
+  background-color: #5f0047;
 }
 pre.spacecadet .LibraryClassType {
 }
 pre.spacecadet .TagAttribute {
 }
 pre.spacecadet .Keyword {
-   color: #728059;
+  color: #728059;
 }
 pre.spacecadet .String {
-   color: #805978;
+  color: #805978;
 }
 pre.spacecadet .Entity {
-   color: #6078BF;
+  color: #6078bf;
 }
 pre.spacecadet .Variable {
-   color: #596380;
+  color: #596380;
 }
 pre.spacecadet .Comment {
-   color: #473C45;
+  color: #473c45;
 }

@@ -1,0 +1,73 @@
+<div class="code-box" id="demo-optgroup">
+  <div class="code-box-demo">
+    <div id="components-select-demo-optgroup"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+var OptGroup = Select.OptGroup;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { defaultValue: "lucy",
+    style: { width: 200 },
+    showSearch: false,
+    onChange: handleChange },
+  React.createElement(
+    OptGroup,
+    { label: "Manager" },
+    React.createElement(
+      Option,
+      { value: "jack" },
+      "jack"
+    ),
+    React.createElement(
+      Option,
+      { value: "lucy" },
+      "lucy"
+    )
+  ),
+  React.createElement(
+    OptGroup,
+    { label: "Engineer" },
+    React.createElement(
+      Option,
+      { value: "yiminghe" },
+      "yiminghe"
+    )
+  )
+), document.getElementById('components-select-demo-optgroup'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+<span class="keyword">var</span> OptGroup = Select.OptGroup;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span>
+    <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+    <span class="attribute">showSearch</span>=<span class="value">{false}</span>
+    <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">OptGroup</span> <span class="attribute">label</span>=<span class="value">"Manager"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">OptGroup</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">OptGroup</span> <span class="attribute">label</span>=<span class="value">"Engineer"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">OptGroup</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-optgroup'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-optgroup">分组</a>
+    </div>
+    <p>option分组</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

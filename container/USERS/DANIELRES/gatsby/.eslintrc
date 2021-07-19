@@ -1,16 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "eslint-config-airbnb",
-    "plugin:ava/recommended"
-  ],
-  "plugins": [
-    "ava",
-    "flowtype",
-    "flow-vars"
-  ],
+  "extends": ["eslint-config-airbnb", "plugin:ava/recommended"],
+  "plugins": ["ava", "flowtype", "flow-vars"],
   "rules": {
-    "indent": [2, 2, {"SwitchCase": 1}],
+    "indent": [2, 2, { "SwitchCase": 1 }],
     "no-console": [0],
     "func-names": [0],
     "semi": [2, "never"],
@@ -30,33 +23,33 @@
     "import/no-dynamic-require": [0],
     "import/newline-after-import": [0],
     "react/jsx-filename-extension": [0],
-    "react/no-danger": [0],
+    "react/no-danger": [0]
     /*"flowtype/require-parameter-type": 1,*/
     /*"flowtype/require-return-type": [*/
-      /*1,*/
-      /*"always",*/
-      /*{*/
-        /*"annotateUndefined": "never"*/
-      /*}*/
+    /*1,*/
+    /*"always",*/
+    /*{*/
+    /*"annotateUndefined": "never"*/
+    /*}*/
     /*],*/
     /*"flowtype/space-after-type-colon": [*/
-      /*1,*/
-      /*"always"*/
+    /*1,*/
+    /*"always"*/
     /*],*/
     /*"flowtype/space-before-type-colon": [*/
-      /*1,*/
-      /*"never"*/
+    /*1,*/
+    /*"never"*/
     /*],*/
     /*"flowtype/type-id-match": [*/
-      /*0,*/
-      /*"^([A-Z][a-z0-9]+)+Type$"*/
+    /*0,*/
+    /*"^([A-Z][a-z0-9]+)+Type$"*/
     /*],*/
     /*"flow-vars/define-flow-type": 1,*/
     /*"flow-vars/use-flow-type": 1,*/
   },
   "globals": {
     "__PREFIX_LINKS__": true,
-    "document": true,
+    "document": true
   },
   "settings": {
     "flowtype": {

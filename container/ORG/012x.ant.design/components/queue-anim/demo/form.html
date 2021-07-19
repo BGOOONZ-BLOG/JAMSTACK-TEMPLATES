@@ -1,0 +1,162 @@
+<div class="code-box" id="anim-demo-form">
+  <div class="code-box-demo">
+    <div id="components-queue-anim-demo-form"></div>
+    <script>mountNode = document.getElementById('components-queue-anim-demo-form');</script>
+    <script>(function(){"use strict";
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require("antd");
+
+var FormItem = _antd.Form.Item;
+var RadioGroup = _antd.Radio.Group;
+
+var Test = React.createClass({
+  displayName: "Test",
+  getInitialState: function getInitialState() {
+    return {
+      show: true
+    };
+  },
+  onClick: function onClick() {
+    this.setState({
+      show: !this.state.show
+    });
+  },
+  render: function render() {
+    var formItemLayout = {
+      labelCol: { span: 6 },
+      wrapperCol: { span: 14 }
+    };
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "p",
+        { className: "buttons" },
+        React.createElement(
+          _antd.Button,
+          { type: "primary", onClick: this.onClick },
+          "\u5207\u6362"
+        )
+      ),
+      React.createElement(
+        _antd.QueueAnim,
+        { component: _antd.Form, className: "ant-form ant-form-horizontal", type: "bottom", leaveReverse: true },
+        this.state.show ? [React.createElement(
+          FormItem,
+          _extends({ key: "item1" }, formItemLayout, { label: "\u7528\u6237\u540D\uFF1A" }),
+          React.createElement(
+            "p",
+            { className: "ant-form-text" },
+            "\u5927\u773C\u840C minion"
+          )
+        ), React.createElement(
+          FormItem,
+          _extends({ key: "item2" }, formItemLayout, { label: "\u5BC6\u7801\uFF1A" }),
+          React.createElement(_antd.Input, { type: "password", placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801" })
+        ), React.createElement(
+          FormItem,
+          _extends({ key: "item3" }, formItemLayout, { label: "\u60A8\u7684\u6027\u522B\uFF1A" }),
+          React.createElement(
+            RadioGroup,
+            null,
+            React.createElement(
+              _antd.Radio,
+              { value: "male" },
+              "\u7537\u7684"
+            ),
+            React.createElement(
+              _antd.Radio,
+              { value: "female" },
+              "\u5973\u7684"
+            )
+          )
+        ), React.createElement(
+          FormItem,
+          _extends({ key: "item4" }, formItemLayout, { label: "\u5907\u6CE8\uFF1A" }),
+          React.createElement(_antd.Input, { type: "textarea", placeholder: "\u968F\u4FBF\u5199" })
+        ), React.createElement(
+          _antd.Row,
+          { key: "submit" },
+          React.createElement(
+            _antd.Col,
+            { span: "16", offset: "6" },
+            React.createElement(
+              _antd.Button,
+              { type: "primary", htmlType: "submit" },
+              "\u786E\u5B9A"
+            )
+          )
+        )] : null
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { QueueAnim, Button, Radio, Input, Form, Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+<span class="hljs-keyword">const</span> RadioGroup = Radio.Group;
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      show: <span class="hljs-literal">true</span>
+    };
+  },
+  onClick() {
+    <span class="hljs-keyword">this</span>.setState({
+      show: !<span class="hljs-keyword">this</span>.state.show
+    });
+  },
+  render() {
+    <span class="hljs-keyword">const</span> formItemLayout = {
+      labelCol: { span: <span class="hljs-number">6</span> },
+      wrapperCol: { span: <span class="hljs-number">14</span> },
+    };
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"buttons"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.onClick}</span>&gt;</span>切换<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">QueueAnim</span> <span class="hljs-attribute">component</span>=<span class="hljs-value">{Form}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form ant-form-horizontal"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"bottom"</span> <span class="hljs-attribute">leaveReverse</span>&gt;</span>
+          {this.state.show ? [
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item1"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"用户名："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span>大眼萌 minion<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item2"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请输入密码"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item3"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"您的性别："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroup</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"male"</span>&gt;</span>男的<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"female"</span>&gt;</span>女的<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroup</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"item4"</span> {<span class="hljs-attribute">...formItemLayout</span>} <span class="hljs-attribute">label</span>=<span class="hljs-value">"备注："</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"textarea"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"随便写"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>,
+            <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"submit"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"16"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">htmlType</span>=<span class="hljs-value">"submit"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>,
+          ] : null}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">QueueAnim</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#anim-demo-form">表单动画进出场</a>
+    </div>
+    
+<p>表单组合的进场与出场动画。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

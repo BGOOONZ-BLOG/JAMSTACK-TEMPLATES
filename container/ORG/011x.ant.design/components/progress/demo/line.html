@@ -1,0 +1,39 @@
+<div class="code-box" id="demo-line">
+  <div class="code-box-demo">
+    <div id="components-progress-demo-line"></div>
+    <script>mountNode = document.getElementById('components-progress-demo-line');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var ProgressLine = _antd.Progress.Line;
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(ProgressLine, { percent: 30 }),
+  React.createElement(ProgressLine, { percent: 50, status: "active" }),
+  React.createElement(ProgressLine, { percent: 70, status: "exception", format: React.createElement(_antd.Icon, { type: "exclamation" }) }),
+  React.createElement(ProgressLine, { percent: 100 }),
+  React.createElement(ProgressLine, { percent: 50, showInfo: false })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Progress, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> ProgressLine = Progress.Line;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{30}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{50}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"active"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{70}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"exception"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">{&lt;Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"exclamation"</span> /&gt;</span>} /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{100}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ProgressLine</span> <span class="hljs-attribute">percent</span>=<span class="hljs-value">{50}</span> <span class="hljs-attribute">showInfo</span>=<span class="hljs-value">{false}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-line">进度条</a>
+    </div>
+    <p>标准的进度条。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

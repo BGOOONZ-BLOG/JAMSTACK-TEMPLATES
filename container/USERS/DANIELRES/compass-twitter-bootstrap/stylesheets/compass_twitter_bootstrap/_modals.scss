@@ -12,7 +12,9 @@
   z-index: $zindexModalBackdrop;
   background-color: $black;
   // Fade for backdrop
-  &.fade { opacity: 0; }
+  &.fade {
+    opacity: 0;
+  }
 }
 
 .modal-backdrop,
@@ -30,25 +32,29 @@
   margin-left: -280px;
   background-color: $white;
   border: 1px solid #999;
-  border: 1px solid rgba(0,0,0,.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   *border: 1px solid #999; /* IE6-7 */
   @include ctb-border-radius(6px);
-  @include ctb-box-shadow(0 3px 7px rgba(0,0,0,0.3));
+  @include ctb-box-shadow(0 3px 7px rgba(0, 0, 0, 0.3));
   @include ctb-background-clip(padding-box);
   // Remove focus outline from opened modal
   outline: none;
 
   &.fade {
-    @include ctb-transition('opacity .3s linear, top .3s ease-out');
+    @include ctb-transition("opacity .3s linear, top .3s ease-out");
     top: -25%;
   }
-  &.fade.in { top: 10%; }
+  &.fade.in {
+    top: 10%;
+  }
 }
 .modal-header {
   padding: 9px 15px;
   border-bottom: 1px solid #eee;
   // Close icon
-  .close { margin-top: 2px; }
+  .close {
+    margin-top: 2px;
+  }
   // Heading
   h3 {
     margin: 0;
@@ -77,7 +83,9 @@
   border-top: 1px solid #ddd;
   @include ctb-border-radius(0 0 6px 6px);
   @include ctb-box-shadow(inset 0 1px 0 $white);
-  @include ctb-clearfix(); // clear it in case folks use .pull-* classes on buttons
+  @include ctb-clearfix(
+
+  ); // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
   .btn + .btn {

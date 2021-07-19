@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+引言  - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../practice/cases">实践</a>
+          </li>
+          <li class="">
+            <a href="../pattern/navigation">模式</a>
+          </li>
+          <li class="">
+            <a href="../react/introduce">组件</a>
+          </li>
+          <li class="current">
+            <a href="./introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="introduce"
+           class="">
+          Ant Design
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="feature"
+           class="">
+          三大特性
+          <span class="chinese"></span>
+        </a>
+      </li>
+    <li open="open">
+      <h4>十大原则</h4>
+      <ul class="">
+          <li class="current">
+            <a href="principle"
+               class="">
+              引言
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="proximity"
+               class="">
+              亲密性
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="alignment"
+               class="">
+              对齐
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="contrast"
+               class="">
+              对比
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="repetition"
+               class="">
+              重复
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="direct"
+               class="">
+              直截了当
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="lightweight"
+               class="">
+              简化交互
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="stay"
+               class="">
+              足不出户
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="invitation"
+               class="">
+              提供邀请
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="transition"
+               class="">
+              巧用过渡
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="reaction"
+               class="">
+              即时反应
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>设计基础</h4>
+      <ul class="">
+          <li class="">
+            <a href="font"
+               class="">
+              字体
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="typography"
+               class="">
+              排版
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="colors"
+               class="">
+              色彩
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="layout/"
+               class="">
+              常用布局
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+    <li open="open">
+      <h4>动画</h4>
+      <ul class="">
+          <li class="">
+            <a href="easing"
+               class="">
+              自然运动
+              <span class="chinese"></span>
+            </a>
+          </li>
+          <li class="">
+            <a href="motion"
+               class="">
+              组件动画
+              <span class="chinese"></span>
+            </a>
+          </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>引言 <span class="subtitle">Introduction</span></h1>
+    
+<p>『好设计比差设计更难发现』，因为好设计是如此的自然，帮助用户轻松的完成目标，以至于用户根本意识不到好设计的存在。</p>
+<p>我们借鉴了《写给大家看的设计书》、《Web 界面设计》对设计原则的总结和推理，并结合我们团队的实践和理解，制定了以下十大原则，为『设计者』提供解决具体问题的准则和启示。</p>
+<blockquote>
+<p>注：设计原则是对具象设计的抽象和总结，然而产品是一个整体，用户对整个产品的认知也是从全局到局部，所以忽略全局，只在局部套用原则是不可取的。对于这些原则，『设计者』应当理性地学会它，而后勇敢地抛弃它。</p>
+</blockquote>
+
+    <div class="toc"></div>
+    <div class="resource-cards">
+<a target="_blank" href="http://book.douban.com/subject/3323633/" class="resource-card">
+  <img src="https://os.alipayobjects.com/rmsportal/SNdJVyZaZwdwJmr.png">
+  <span class="resource-card-content">
+    <span class="resource-card-title">写给大家看的设计书</span>
+    <span class="resource-card-description">作者: Robin Williams</span>
+    <span class="resource-card-description">出版社: 人民邮电出版社</span>
+  </span>
+</a>
+<a target="_blank" href="http://book.douban.com/subject/3821157/" class="resource-card">
+  <img src="https://os.alipayobjects.com/rmsportal/CoojVXLtoWrUSmI.png">
+  <span class="resource-card-content">
+    <span class="resource-card-title">Web 界面设计</span>
+    <span class="resource-card-description">作者: Bill Scott / Theresa Neil</span>
+    <span class="resource-card-description">出版社: 电子工业出版社</span>
+  </span>
+</a>
+</div>
+
+<h4 id="ant-design-十大设计原则">Ant Design 十大设计原则<a href="#ant-design-十大设计原则" class="anchor">#</a> </h4><ul>
+<li><a href="./proximity">亲密性 Proximity</a></li>
+<li><a href="./alignment">对齐 Alignment</a></li>
+<li><a href="./contrast">对比 Contrast</a></li>
+<li><a href="./repetition">重复 Repetition</a></li>
+<li><a href="./direct">直截了当 Make it Direct</a></li>
+<li><a href="./lightweight">简化交互 Keep it Lightweight</a></li>
+<li><a href="./stay">足不出户 Stay in the Page</a></li>
+<li><a href="./invitation">提供邀请 Provide Invitation</a></li>
+<li><a href="./transition">巧用过渡 Use Transition</a></li>
+<li><a href="./reaction">即时反应 React Immediately</a></li>
+</ul>
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

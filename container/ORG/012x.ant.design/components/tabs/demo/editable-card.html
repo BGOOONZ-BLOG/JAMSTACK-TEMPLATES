@@ -1,0 +1,133 @@
+<div class="code-box" id="demo-editable-card">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-editable-card"></div>
+    <script>mountNode = document.getElementById('components-tabs-demo-editable-card');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var TabPane = _antd.Tabs.TabPane;
+
+var Demo = React.createClass({
+  displayName: "Demo",
+  getInitialState: function getInitialState() {
+    this.newTabIndex = 0;
+    var panes = [React.createElement(
+      TabPane,
+      { tab: "\u9009\u9879\u5361", key: "1" },
+      "\u9009\u9879\u5361\u4E00\u5185\u5BB9"
+    ), React.createElement(
+      TabPane,
+      { tab: "\u9009\u9879\u5361", key: "2" },
+      "\u9009\u9879\u5361\u4E8C\u5185\u5BB9"
+    )];
+    return {
+      activeKey: panes[0].key,
+      panes: panes
+    };
+  },
+  onChange: function onChange(activeKey) {
+    this.setState({ activeKey: activeKey });
+  },
+  onEdit: function onEdit(targetKey, action) {
+    this[action](targetKey);
+  },
+  add: function add() {
+    var panes = this.state.panes;
+    var activeKey = "newTab" + this.newTabIndex++;
+    panes.push(React.createElement(
+      TabPane,
+      { tab: "\u65B0\u5EFA\u9875\u7B7E", key: activeKey },
+      "\u65B0\u9875\u9762"
+    ));
+    this.setState({ panes: panes, activeKey: activeKey });
+  },
+  remove: function remove(targetKey) {
+    var activeKey = this.state.activeKey;
+    var lastIndex = void 0;
+    this.state.panes.forEach(function (pane, i) {
+      if (pane.key === targetKey) {
+        lastIndex = i - 1;
+      }
+    });
+    var panes = this.state.panes.filter(function (pane) {
+      return pane.key !== targetKey;
+    });
+    if (lastIndex >= 0 && activeKey === targetKey) {
+      activeKey = panes[lastIndex].key;
+    }
+    this.setState({ panes: panes, activeKey: activeKey });
+  },
+  render: function render() {
+    return React.createElement(
+      _antd.Tabs,
+      { onChange: this.onChange, activeKey: this.state.activeKey,
+        type: "editable-card", onEdit: this.onEdit },
+      this.state.panes
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Tabs } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">this</span>.newTabIndex = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> panes = [
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>,
+      <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"选项卡"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二内容<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>,
+    ];
+    return {
+      activeKey: panes[0].key,
+      panes,
+    };
+  },
+  onChange(activeKey) {
+    this.setState({ activeKey });
+  },
+  onEdit(targetKey, action) {
+    this[action](targetKey);
+  },
+  add() {
+    const panes = this.state.panes;
+    const activeKey = `newTab${this.newTabIndex++}`;
+    panes.push(<span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"新建页签"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{activeKey}</span>&gt;</span>新页面<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>)</span>;
+    <span class="hljs-keyword">this</span>.setState({ panes, activeKey });
+  },
+  remove(targetKey) {
+    <span class="hljs-keyword">let</span> activeKey = <span class="hljs-keyword">this</span>.state.activeKey;
+    <span class="hljs-keyword">let</span> lastIndex;
+    <span class="hljs-keyword">this</span>.state.panes.forEach((pane, i) =&gt; {
+      <span class="hljs-keyword">if</span> (pane.key === targetKey) {
+        lastIndex = i - <span class="hljs-number">1</span>;
+      }
+    });
+    <span class="hljs-keyword">const</span> panes = <span class="hljs-keyword">this</span>.state.panes.filter(pane =&gt; pane.key !== targetKey);
+    <span class="hljs-keyword">if</span> (lastIndex &gt;= <span class="hljs-number">0</span> &amp;&amp; activeKey === targetKey) {
+      activeKey = panes[lastIndex].key;
+    }
+    <span class="hljs-keyword">this</span>.setState({ panes, activeKey });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange}</span> <span class="hljs-attribute">activeKey</span>=<span class="hljs-value">{this.state.activeKey}</span>
+        <span class="hljs-attribute">type</span>=<span class="hljs-value">"editable-card"</span> <span class="hljs-attribute">onEdit</span>=<span class="hljs-value">{this.onEdit}</span>&gt;</span>
+        {this.state.panes}
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-editable-card">新增和关闭页签</a>
+    </div>
+    
+<p>只有卡片样式的页签支持新增和关闭选项。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

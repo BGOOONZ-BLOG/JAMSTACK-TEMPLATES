@@ -8,23 +8,23 @@
 */
 
 .flash_notice {
-  background: #50AE00;
+  background: #50ae00;
   color: #efefef;
 }
 
-.flash_alert, .flash_error {
-  background: #AE0F00;
+.flash_alert,
+.flash_error {
+  background: #ae0f00;
   color: #efefef;
 }
 
 .flash {
-  padding: .3em;
+  padding: 0.3em;
   font-style: italic;
   font-weight: bold;
   margin-bottom: 1em;
-  -webkit-border-radius: .2em;
+  -webkit-border-radius: 0.2em;
 }
-
 
 #warning {
   background: #bcbcbc;

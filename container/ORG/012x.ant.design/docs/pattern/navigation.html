@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="一个 UI 设计语言"/>
+    <title>
+导航  - Ant Design
+</title>
+    <link rel="icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://t.alipayobjects.com/images/T1QUBfXo4fXXXXXXXX.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="../../dist/demo.css">
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js,jquery/1.11.3/jquery.min.js,bluebird/3.1.1/bluebird.min.js"></script>
+    <script>
+    (function() {
+      window.ANT_COMPONENTS = [];
+      window.InstantClickChangeFns = [];
+      ANT_COMPONENTS.push({
+        title: 'Pagination',
+        desc: '分页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Affix',
+        desc: '固钉'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Badge',
+        desc: '徽标数'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Breadcrumb',
+        desc: '面包屑'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Button',
+        desc: '按钮'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Calendar',
+        desc: '日历'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Carousel',
+        desc: '走马灯'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Cascader',
+        desc: '级联选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Checkbox',
+        desc: '多选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Collapse',
+        desc: '折叠面板'
+      });
+      ANT_COMPONENTS.push({
+        title: 'DatePicker',
+        desc: '日期选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Dropdown',
+        desc: '下拉菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Form',
+        desc: '表单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Icon',
+        desc: '图标'
+      });
+      ANT_COMPONENTS.push({
+        title: 'InputNumber',
+        desc: '数字输入框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Layout',
+        desc: '布局'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Menu',
+        desc: '导航菜单'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Message',
+        desc: '全局提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Modal',
+        desc: '对话框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Notification',
+        desc: '通知提醒框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Alert',
+        desc: '警告提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popconfirm',
+        desc: '气泡确认框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Popover',
+        desc: '气泡卡片'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Progress',
+        desc: '进度条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'QueueAnim',
+        desc: '进出场动画'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Radio',
+        desc: '单选框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Select',
+        desc: '选择器'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Slider',
+        desc: '滑动输入条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Spin',
+        desc: '加载中'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Steps',
+        desc: '步骤条'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Switch',
+        desc: '开关'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Table',
+        desc: '表格'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tabs',
+        desc: '标签页'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tag',
+        desc: '标签'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TimePicker',
+        desc: '时间选择框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Timeline',
+        desc: '时间轴'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tooltip',
+        desc: '文字提示'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Transfer',
+        desc: '穿梭框'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Tree',
+        desc: '树形控件'
+      });
+      ANT_COMPONENTS.push({
+        title: 'TreeSelect',
+        desc: '树选择'
+      });
+      ANT_COMPONENTS.push({
+        title: 'Upload',
+        desc: '上传'
+      });
+      // fix ie location origin
+      // http://stackoverflow.com/questions/22564167/window-location-origin-gives-wrong-value-when-using-ie
+      if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//"
+          + window.location.hostname
+          + (window.location.port ? ':' + window.location.port : '');
+      }
+      var i = location.pathname.split('/').lastIndexOf('ant-design');
+      if (i > 0) {
+        window.rootUrl = location.origin + location.pathname.split('/').slice(0, 2+1).join('/');
+      } else {
+        window.rootUrl = location.origin;
+      }
+    })();
+    </script>
+    <script>
+      window.antdVersion = {
+        latest: '0.12.17'
+      };
+    </script>
+    <script src="../../dist/demo.js"></script>
+    
+  </head>
+  <body >
+    <header id="header" class="clearfix">
+      <a class="logo" href="../..">
+        <img width="60" src="https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg">
+        Ant Design
+      </a>
+      <div class="search">
+        <div id="autoComplete"></div>
+      </div>
+      <nav class="nav" tabindex="-1">
+        <span class="bar"></span>
+        <ul>
+          <li class="">
+            <a href="../..">首页</a>
+          </li>
+          <li class="">
+            <a href="../practice/cases">实践</a>
+          </li>
+          <li class="current">
+            <a href="./navigation">模式</a>
+          </li>
+          <li class="">
+            <a href="../react/introduce">组件</a>
+          </li>
+          <li class="">
+            <a href="../spec/introduce">语言</a>
+          </li>
+          <li class="">
+            <a href="../resource/download">资源</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-phone-icon"></div>
+    </header>
+    <div class="main-wrapper">
+      
+<aside class="aside-container">
+  <ul>
+      <li class="">
+        <a href="./"
+           class="nav-link-disabled">
+          典型页面
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="current">
+        <a href="navigation"
+           class="">
+          导航
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="form"
+           class="">
+          表单
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="list"
+           class="">
+          列表
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="table"
+           class="">
+          表格
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="complex-table"
+           class="">
+          表格：复杂数据
+          <span class="chinese"></span>
+        </a>
+      </li>
+      <li class="">
+        <a href="advanced-search"
+           class="">
+          高级搜索
+          <span class="chinese"></span>
+        </a>
+      </li>
+  </ul>
+</aside>
+ 
+<section class="main-container">
+  <article class="markdown">
+    <h1>导航 <span class="subtitle"></span></h1>
+    
+<p>在广义上，任何告知用户他在哪里，他能去什么地方以及如何到达那里的方式，都可以称之为导航。而我们将中后台常见的导航方式进行提炼和封装，帮助设计者快速构建清晰和流畅的系统。当设计者使用导航或者自定义一些导航结构时，请注意：</p>
+<ol>
+<li>尽可能提供标示、上下文线索以及网站地图，避免用户迷路；</li>
+<li>保持导航样式和行为一致或者减少导航数量，降低用户学习成本；</li>
+<li>尽可能减少页面间的跳转（eg：一个常见任务需要多个页面跳转时，请减少至一至两次），让用户移动距离保持简短。</li>
+</ol>
+
+    <div class="toc"><ul><li><a href="#常见导航">常见导航</a></li><li><a href="#侧栏导航">侧栏导航</a></li><li><a href="#顶部导航">顶部导航</a></li></ul></div>
+    <h2 id="常见导航">常见导航<a href="#常见导航" class="anchor">#</a> </h2><Table style="font-size:12px;float:right;width:600px;margin-left:60px;margin-bottom:100px;">
+  <tr>
+    <th></th>
+    <th>侧栏导航</th>
+    <th>顶部导航</th>
+  </tr>
+  <tr>
+    <th>优点</th>
+    <td>导航的层级扩展性强；水平空间利用率高，可展示更多内容；导航可以固定，使得用户在操作和浏览时可以快速定位和切换当前位置，非常高效。</td>
+    <td>人的浏览习惯是自上而下的，便于浏览和点击；通常将内容放在固定尺寸（例如：1208px）内，整个页面排版稳定，不受用户终端显示器影响。</td>
+  </tr>
+  <tr>
+    <th>缺点</th>
+    <td>内容区域一般放置在栅格上，所以排版受用户终端显示器影响大。</td>
+    <td>目前显示器多为宽屏，顶部导航对垂直空间占用率大，而对水平空间利用率低；由于中英文都是横向书写，顶部导航会限制导航类目的数量和长度。</td>
+  </tr>
+  <tr>
+    <th>总结</th>
+    <td>适用在操作性强、中后台管理性质的应用。</td>
+    <td>一般适用在浏览性强、门户性质的网站，以及一些比较前台化的应用。</td>
+  </tr>
+</Table>
+
+<p>我们将常见的导航模式分为：侧栏导航和顶部导航，两者各有优缺点，设计者可以根据各自的业务需求进行选择。</p>
+<p>前端实现代码可以参考 <a href="/docs/spec/layout/#layout-demo-top">常用布局</a>。</p>
+<h2 id="侧栏导航">侧栏导航<a href="#侧栏导航" class="anchor">#</a> </h2><hr>
+<p><img class="preview-img" noPadding align="right" alt="结构示例" src="https://os.alipayobjects.com/rmsportal/hutiGZWQYmIspjw.png"></p>
+<p>导航的结构由以下几部分组成。</p>
+<ol>
+<li>产品 Logo 和名称</li>
+<li>业务类目</li>
+<li>登陆工具</li>
+<li>面包屑（可选）</li>
+</ol>
+<h4 id="关于面包屑">关于面包屑<a href="#关于面包屑" class="anchor">#</a> </h4><blockquote>
+<ol>
+<li>尽可能不使用面包屑，尤其是当前页面的导航能清晰的告诉用户他在哪里时。</li>
+<li>面包屑可以分为这几类：<ul>
+<li>路径型：是一个动态显示用户到达页面经过的途径。</li>
+<li>位置型：位置型是固定的，显示了页面在网站结构中的位置。</li>
+<li>属性型：属性型给出当前页面的分类信息。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p><br></p>
+<p><img class="preview-img" noPadding align="right" alt="一级类目" src="https://os.alipayobjects.com/rmsportal/IeuIHdFfKCIABHV.png"></p>
+<p><img class="preview-img" noPadding align="right" alt="二级类目" src="https://os.alipayobjects.com/rmsportal/kAbbeJekohMtubV.png"></p>
+<p><img class="preview-img" noPadding align="right" alt="三级类目及以上" src="https://os.alipayobjects.com/rmsportal/qaOifucSTWooBTL.png"></p>
+<p>我们定义了不同类目层级所对应的导航样式。</p>
+<h2 id="顶部导航">顶部导航<a href="#顶部导航" class="anchor">#</a> </h2><hr>
+<p><img class="preview-img" noPadding align="right" alt="结构示例" src="https://os.alipayobjects.com/rmsportal/MVccMQxgCeYfwjS.png"></p>
+<p>导航的结构由以下几部分组成。</p>
+<ol>
+<li>产品 Logo 和名称</li>
+<li>业务类目</li>
+<li>登陆工具</li>
+<li>面包屑（可选）</li>
+</ol>
+<p><br></p>
+<p><img class="preview-img" noPadding align="right" alt="一级类目" src="https://os.alipayobjects.com/rmsportal/KvEsIDOYzknbsPT.png"></p>
+<p><img class="preview-img" noPadding align="right" alt="二级类目" src="https://os.alipayobjects.com/rmsportal/xXaCRVPIfmjDyIL.png"></p>
+<p><img class="preview-img" noPadding align="right" alt="三级类目及以上" src="https://os.alipayobjects.com/rmsportal/ollkHeFUFQElelm.png"></p>
+<p>不同类目层级。</p>
+
+  </article>
+</section>
+
+    </div><footer id="footer">
+  <ul>
+    <li>
+      <h2>GitHub</h2>
+      <a target="_blank "href="https://github.com/ant-design/ant-design">仓库</a>
+      <a target="_blank" href="https://github.com/ant-design/antd-init">脚手架</a>
+      <a target="_blank" href="http://ant-tool.github.io/">开发工具</a>
+    </li>
+    <li>
+      <h2>关于我们</h2>
+      <a target="_blank" href="https://github.com/ant-ued/blog">博客 - Ant UED</a>
+    </li>
+    <li>
+      <h2>联系我们</h2>
+      <a target="_blank" href="https://github.com/ant-design/ant-design/issues">反馈和建议</a>
+      <a target="_blank" href="https://gitter.im/ant-design/ant-design">讨论</a>
+      <a target="_blank" href="http://dwz.cn/2AF9ao">报告 Bug</a>
+    </li>
+    <li>
+      <div>©2015 蚂蚁金服体验技术部出品</div>
+      <div>文档版本：<span id="versions-select"></span></div>
+    </li>
+  </ul>
+</footer>
+    <script data-no-instant>
+    if (!location.port) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-72788897-1', 'auto');
+      ga('send', 'pageview');
+      InstantClick.on('change', function() {
+        ga('send', 'pageview', location.pathname + location.search);
+      });
+    }
+    </script>
+    <script data-no-instant>
+      InstantClick.on('change', function() {
+        InstantClickChangeFns.forEach(function(fn) {
+          fn();
+        });
+      });
+      InstantClick.init();
+    </script>
+  </body>
+</html>

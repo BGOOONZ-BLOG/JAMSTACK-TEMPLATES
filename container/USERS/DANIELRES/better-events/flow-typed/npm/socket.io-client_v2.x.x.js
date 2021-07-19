@@ -14,11 +14,11 @@ declare module "socket.io-client" {
     timeout: number,
     autoConnect: boolean,
     query: { [string]: string },
-    parser: any
+    parser: any,
   }>;
 
   declare type SocketOptions = $Shape<{
-    query: string
+    query: string,
   }>;
 
   declare class Emitter<T> {
@@ -65,7 +65,7 @@ declare module "socket.io-client" {
     {
       forceNew: boolean,
       "force new connection": true,
-      multiplex: boolean
+      multiplex: boolean,
     } & ManagerOptions
   >;
 
@@ -73,5 +73,5 @@ declare module "socket.io-client" {
 
   declare export var protocol: 4;
   declare export var connect: Lookup;
-  declare export default Lookup
+  declare export default Lookup;
 }

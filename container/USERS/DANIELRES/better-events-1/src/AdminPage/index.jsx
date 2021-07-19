@@ -5,15 +5,14 @@ import {
   Panel,
   PanelGroup,
   Row,
-} from 'react-bootstrap';
-import { connect } from 'react-redux';
-import Link from 'redux-first-router-link';
-import React from 'react';
+} from "react-bootstrap";
+import { connect } from "react-redux";
+import Link from "redux-first-router-link";
+import React from "react";
 
-const panelTitle = discussion => (
+const panelTitle = (discussion) => (
   <h3>
-    event: {discussion.event.name} | Started by:{' '}
-    {discussion.author.displayName}
+    event: {discussion.event.name} | Started by: {discussion.author.displayName}
   </h3>
 );
 
@@ -30,13 +29,13 @@ const AdminPage = ({ discussions }) => (
               key={discussion.id}
             >
               <ListGroup fill>
-                {discussion.messages.map(message => (
+                {discussion.messages.map((message) => (
                   <ListGroupItem key={message.id}>
                     <Row>
                       <Col xs={1} md={2}>
                         <small>
                           {message.author.displayName}
-                          {': '}
+                          {": "}
                         </small>
                       </Col>
                       <Col xs={11} md={11}>
@@ -57,40 +56,40 @@ const AdminPage = ({ discussions }) => (
 const mapState = () => ({
   discussions: [
     {
-      id: 'kjkweg23',
-      event: { id: '2jh393', name: 'Mock event 1' },
-      author: { id: 'njh23jh4', displayName: 'Anon1' },
+      id: "kjkweg23",
+      event: { id: "2jh393", name: "Mock event 1" },
+      author: { id: "njh23jh4", displayName: "Anon1" },
       messages: [
         {
-          author: { id: 'njh23jh4', displayName: 'Anon1' },
-          body: 'Hello there',
-          id: 'al3k8dh',
-          timestamp: '2017-01-01:10:00:01',
+          author: { id: "njh23jh4", displayName: "Anon1" },
+          body: "Hello there",
+          id: "al3k8dh",
+          timestamp: "2017-01-01:10:00:01",
         },
         {
-          author: { id: 'njh23jh4', displayName: 'Anon1' },
-          body: 'Is there anyone ?',
-          id: 'kne72ts',
-          timestamp: '2017-01-01:10:00:02',
+          author: { id: "njh23jh4", displayName: "Anon1" },
+          body: "Is there anyone ?",
+          id: "kne72ts",
+          timestamp: "2017-01-01:10:00:02",
         },
       ],
     },
     {
-      id: 'aj4jd73',
-      event: { id: '2jh393', name: 'Mock event 2' },
-      author: { id: 'njh23jhx', displayName: 'Anon2' },
+      id: "aj4jd73",
+      event: { id: "2jh393", name: "Mock event 2" },
+      author: { id: "njh23jhx", displayName: "Anon2" },
       messages: [
         {
-          author: { id: 'njh23jhq', displayName: 'Anon2' },
-          body: 'Hello there',
-          id: 'al3k8dh',
-          timestamp: '2017-01-01:10:00:01',
+          author: { id: "njh23jhq", displayName: "Anon2" },
+          body: "Hello there",
+          id: "al3k8dh",
+          timestamp: "2017-01-01:10:00:01",
         },
         {
-          author: { id: 'njh23jhs', displayName: 'Anon2' },
-          body: 'Is there anyone ?',
-          id: 'kne72ts',
-          timestamp: '2017-01-01:10:00:02',
+          author: { id: "njh23jhs", displayName: "Anon2" },
+          body: "Is there anyone ?",
+          id: "kne72ts",
+          timestamp: "2017-01-01:10:00:02",
         },
       ],
     },

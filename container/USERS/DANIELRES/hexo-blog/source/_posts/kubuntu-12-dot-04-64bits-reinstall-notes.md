@@ -1,11 +1,14 @@
-title: kubuntu 12.04 Precise 64bits reinstall notes 
+title: kubuntu 12.04 Precise 64bits reinstall notes
 sub: On my Dell XPS m1530
 date: 2012-08-02 14:21
-categories: 
+categories:
+
 - Linux
+
 ---
 
 &nbsp;
+
 <!-- more -->
 
 When it comes to the usage of my computer, I have a precise set of requirements, combining the needs of web/ruby programming with the graphic/web design and digital painting.
@@ -13,7 +16,6 @@ When it comes to the usage of my computer, I have a precise set of requirements,
 I've used Gnome 2, then fought Unity (and lost the figh), and experimented with Gnome 3. but finally moved to KDE after reading [this article](http://www.davidrevoy.com/?article110/kubuntu-11-10-for-digital-painting) from David Revoy.
 
 KDE proved to be the only desktop environment I've tried so far which was able to meet all my requirements out of the box, or with relatively simple customization. It's flexibility and no-nonsense makes it the most friendly and productive environment I've used so far. I have the feeling that KDE evolution was made without forgetting the priorities, and while I'm not convinced by some of its newest features (activities, nepomunk, ...), they are easy to disable or ignore, and don't interfere in my workflow at all.
-
 
 I was very happy with my Mint 12 KDE (which is a derivative from Ubuntu 11), but I was not able to install Skype and Gimp 2.8 because of some dependencies problems.
 
@@ -51,7 +53,7 @@ So I decided to try Kubuntu 12.04, after backing up my home directory to another
 
 After having downloaded the [Kubuntu 12.04 iso image](http://www.kubuntu.org/getkubuntu/download#download-block), I used the "Startup disk creator" utility under Kubuntu to create a Kubuntu bootable usb stick.
 
-(Or you can  use [Unetbootin](http://unetbootin.sourceforge.net/) to create the same usb stick, from any operating system)
+(Or you can use [Unetbootin](http://unetbootin.sourceforge.net/) to create the same usb stick, from any operating system)
 
 ### 1.2. Booting on the usb stick
 
@@ -61,7 +63,7 @@ After having downloaded the [Kubuntu 12.04 iso image](http://www.kubuntu.org/get
 
 ### 1.3. Kubuntu desktop, booted from USB
 
-Now, the original system is untouched but we are already under a Kubuntu desktop living in RAM, which allows us to use the computer, browse the net and, and install Kubuntu on the Original system 
+Now, the original system is untouched but we are already under a Kubuntu desktop living in RAM, which allows us to use the computer, browse the net and, and install Kubuntu on the Original system
 
 ### 1.4. Installing Kubuntu on the original system
 
@@ -79,7 +81,7 @@ Click on the desktop icon "install Kubuntu 12.04 LTS"
     - sda5 ( 4gb): swap
     - Boot loader: /dev/sda
   - User info:
-      - encrypt home folder: yes
+    - encrypt home folder: yes
 
 Reboot the computer
 
@@ -101,12 +103,12 @@ In a terminal (konsole):
     # folowing the ínfos in "rvm requirements":
     sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
     rvm install 1.9.3
-    
+
     # wait a few minutes while rvm compiles ruby
     rvm use 1.9.3 --default
     gem install bundler --no-rdoc --no-ri
     gem install rails --no-rdoc --no-ri
-    
+
     # testing if everything works with ruby and rails:
     irb # launch ruby interactive console => OK
     rails new test-app
@@ -119,7 +121,8 @@ In a terminal (konsole):
 
 Using the "muon software center" (from the KDE menu):
 
-- Remove: 
+- Remove:
+
   - Amarok
 
 - Install:
@@ -143,17 +146,17 @@ Using the "muon software center" (from the KDE menu):
 
     sudo add-apt-repository ppa:otto-kesselgulasch/gimp
     sudo apt-get update && sudo apt-get install gimp
-  
+
 HUH ? Seems like Gimp 2.6 was installed instead of 2.8.
-  
+
 Trying again:
 
     sudo apt-get purge gimp
-    sudo add-apt-repository ppa:otto-kesselgulasch/gimp  
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
     sudo apt-get update && sudo apt-get install gimp
-    
+
 Gimp 2.8 was installed successfully this time.
-  
+
 ### 2.5. Firefox, Chromium
 
 - Launch "Mozilla Firefox browser installer" from the kubuntu menu.
@@ -195,15 +198,15 @@ The drivers already work smoothly out of the box, but I want a conrol panel so I
 Under KDE, it's easy:
 
     sudo apt-get install kde-config-tablet
-  
+
 ### 2.11. Various developer tools: s3cmd, gitk
 
-  sudo apt-get install s3cmd gitk
+sudo apt-get install s3cmd gitk
 
 ### 2.12. Bluetooth
 
 Despite my efforts, i couldn't make bluetooth work correctly with my headset.
-  
-Fortunately, blueman solves this
-- Using the Software Center, find and install "blueman"
 
+Fortunately, blueman solves this
+
+- Using the Software Center, find and install "blueman"

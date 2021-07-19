@@ -77,5 +77,3 @@ migration ..20201103025142-emojimoods
 +  admins User[] @relation("UserToVenueAdministrationManyToMany")
 +}
 ```
-
-

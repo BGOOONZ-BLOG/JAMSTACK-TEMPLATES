@@ -1,0 +1,71 @@
+<div class="code-box" id="demo-with-icon">
+  <div class="code-box-demo">
+    <div id="components-notification-demo-with-icon"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var openNotificationWithIcon = function openNotificationWithIcon(type) {
+  return function () {
+    _antd.notification[type]({
+      message: '这是标题',
+      description: '这是提示框的文案这是提示框示框的文案这是提示是提示框的文案这是提示框的文案'
+    });
+  };
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    _antd.Button,
+    { onClick: openNotificationWithIcon('success') },
+    '成功'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: openNotificationWithIcon('info') },
+    '消息'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: openNotificationWithIcon('warn') },
+    '警告'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: openNotificationWithIcon('error') },
+    '错误'
+  )
+), document.getElementById('components-notification-demo-with-icon'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Button, notification } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> openNotificationWithIcon = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    notification[type]({
+      message: <span class="hljs-string">'这是标题'</span>,
+      description: <span class="hljs-string">'这是提示框的文案这是提示框示框的文案这是提示是提示框的文案这是提示框的文案'</span>
+    });
+  };
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{openNotificationWithIcon('success')}</span>&gt;</span>成功<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{openNotificationWithIcon('info')}</span>&gt;</span>消息<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{openNotificationWithIcon('warn')}</span>&gt;</span>警告<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{openNotificationWithIcon('error')}</span>&gt;</span>错误<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, document.getElementById('components-notification-demo-with-icon'));</span></code></pre></div><style>
+.code-box-demo .ant-btn {
+  margin-right: 1em;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-with-icon">带有Icon的通知提醒框</a>
+    </div>
+    <p>通知提醒框左侧有图标。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -9,10 +9,7 @@
     }
   ],
   "description": "Accelerated JavaScript animation.",
-  "main": [
-    "./velocity.js",
-    "./velocity.ui.js"
-  ],
+  "main": ["./velocity.js", "./velocity.ui.js"],
   "keywords": [
     "animation",
     "jquery",
@@ -25,12 +22,7 @@
     "javascript"
   ],
   "license": "MIT",
-  "ignore": [
-    "*.json",
-    "!/bower.json",
-    "LICENSE",
-    "*.md"
-  ],
+  "ignore": ["*.json", "!/bower.json", "LICENSE", "*.md"],
   "dependencies": {
     "jquery": "*"
   },

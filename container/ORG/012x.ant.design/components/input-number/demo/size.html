@@ -1,0 +1,46 @@
+<div class="code-box" id="number-demo-size">
+  <div class="code-box-demo">
+    <div id="components-input-number-demo-size"></div>
+    <script>mountNode = document.getElementById('components-input-number-demo-size');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function onChange(value) {
+  console.log('changed', value);
+}
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(_antd.InputNumber, { size: 'large', min: 1, max: 100000, defaultValue: 3, onChange: onChange }),
+  React.createElement(_antd.InputNumber, { min: 1, max: 100000, defaultValue: 3, onChange: onChange }),
+  React.createElement(_antd.InputNumber, { size: 'small', min: 1, max: 100000, defaultValue: 3, onChange: onChange })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { InputNumber } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onChange</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'changed'</span>, value);
+}
+
+ReactDOM.render(
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">InputNumber</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">{1}</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">{100000}</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{3}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">InputNumber</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">{1}</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">{100000}</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{3}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">InputNumber</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">{1}</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">{100000}</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{3}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{onChange}</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div><style type="text/css">.ant-input-number{
+  margin-right: 10px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.ant-input-number</span><span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#number-demo-size">三种大小</a>
+    </div>
+    
+<p>三种大小的数字输入框，当 size 分别为 <code>large</code> 和 <code>small</code> 时，输入框高度为 <code>32px</code> 和 <code>22px</code> ，默认高度为 <code>28px</code></p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

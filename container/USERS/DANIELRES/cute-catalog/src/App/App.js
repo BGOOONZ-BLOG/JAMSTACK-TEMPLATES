@@ -1,20 +1,20 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import React from 'react'
+import React from "react";
 
-import Product from '../pages/Product'
-import Products from '../Products'
+import Product from "../pages/Product";
+import Products from "../Products";
 
-import Admin from '../pages/Admin'
-import Profile from '../pages/Profile'
-import LoginBox from '../pages/Login/LoginBox'
-import RegisterBox from '../pages/Register/RegisterBox'
+import Admin from "../pages/Admin";
+import Profile from "../pages/Profile";
+import LoginBox from "../pages/Login/LoginBox";
+import RegisterBox from "../pages/Register/RegisterBox";
 
-import Navbar from './Navbar'
+import Navbar from "./Navbar";
 
-import Modals from 'Modals'
+import Modals from "Modals";
 
-import GlobalStyle from './GlobalStyle'
+import GlobalStyle from "./GlobalStyle";
 
 const App = ({ page }) => (
   <div className="container">
@@ -23,29 +23,29 @@ const App = ({ page }) => (
 
     <Navbar />
     <div className="pt-3">
-      {page === 'ADMIN' && (
+      {page === "ADMIN" && (
         <>
           <h2>Admin</h2>
           <Admin />
         </>
       )}
 
-      {page === 'HOME' && <Products />}
+      {page === "HOME" && <Products />}
 
-      {page === 'LOGIN' && <LoginBox />}
+      {page === "LOGIN" && <LoginBox />}
 
-      {page === 'PRODUCT' && <Product />}
+      {page === "PRODUCT" && <Product />}
 
-      {page === 'PROFILE' && (
+      {page === "PROFILE" && (
         <>
           <h2>Profile</h2>
           <Profile />
         </>
       )}
 
-      {page === 'REGISTER' && <RegisterBox />}
+      {page === "REGISTER" && <RegisterBox />}
     </div>
   </div>
-)
+);
 
-export default App
+export default App;

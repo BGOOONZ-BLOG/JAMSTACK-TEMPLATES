@@ -1,0 +1,550 @@
+<div class="code-box" id="demo-customize">
+  <div class="code-box-demo">
+    <div id="components-validation-demo-customize"></div>
+    <script>(function(){'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _antd = require('antd');
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var Validator = _antd.Validation.Validator;
+var FormItem = _antd.Form.Item;
+
+function noop() {
+  return false;
+}
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+
+  mixins: [_antd.Validation.FieldMixin],
+
+  getInitialState: function getInitialState() {
+    return {
+      status: {
+        pass: {},
+        rePass: {}
+      },
+      formData: {
+        pass: undefined,
+        rePass: undefined
+      },
+      passBarShow: false, // 是否显示密码强度提示条
+      rePassBarShow: false,
+      passStrength: 'L', // 密码强度
+      rePassStrength: 'L'
+    };
+  },
+
+  handleSubmit: function handleSubmit(e) {
+    var _this = this;
+
+    e.preventDefault();
+    var validation = this.refs.validation;
+    validation.validate(function (valid) {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(_this.state.formData);
+    });
+  },
+
+  handleReset: function handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  renderValidateStyle: function renderValidateStyle(item) {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = (0, _classnames2['default'])({
+      'error': status[item].errors,
+      'validating': status[item].isValidating,
+      'success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  getPassStrenth: function getPassStrenth(value, type) {
+    if (value) {
+      var strength = undefined;
+      // 密码强度的校验规则自定义，这里只是做个简单的示例
+      if (value.length < 6) {
+        strength = 'L';
+      } else if (value.length <= 9) {
+        strength = 'M';
+      } else {
+        strength = 'H';
+      }
+      if (type === 'pass') {
+        this.setState({ passBarShow: true, passStrength: strength });
+      } else {
+        this.setState({ rePassBarShow: true, rePassStrength: strength });
+      }
+    } else {
+      if (type === 'pass') {
+        this.setState({ passBarShow: false });
+      } else {
+        this.setState({ rePassBarShow: false });
+      }
+    }
+  },
+
+  checkPass: function checkPass(rule, value, callback) {
+    this.getPassStrenth(value, 'pass');
+
+    if (this.state.formData.pass) {
+      this.refs.validation.forceValidate(['rePass']);
+    }
+
+    callback();
+  },
+
+  checkPass2: function checkPass2(rule, value, callback) {
+    this.getPassStrenth(value, 'rePass');
+
+    if (value && value !== this.state.formData.pass) {
+      callback('两次输入密码不一致！');
+    } else {
+      callback();
+    }
+  },
+
+  renderPassStrengthBar: function renderPassStrengthBar(type) {
+    var strength = type === 'pass' ? this.state.passStrength : this.state.rePassStrength;
+    var classSet = (0, _classnames2['default'])({
+      'ant-pwd-strength': true,
+      'ant-pwd-strength-low': strength === 'L',
+      'ant-pwd-strength-medium': strength === 'M',
+      'ant-pwd-strength-high': strength === 'H'
+    });
+    var level = {
+      L: '低',
+      M: '中',
+      H: '高'
+    };
+
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'ul',
+        { className: classSet },
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-1' }),
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-2' }),
+        React.createElement('li', { className: 'ant-pwd-strength-item ant-pwd-strength-item-3' }),
+        React.createElement(
+          'span',
+          { className: 'ant-form-text' },
+          level[strength]
+        )
+      )
+    );
+  },
+
+  render: function render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return React.createElement(
+      _antd.Form,
+      { horizontal: true },
+      React.createElement(
+        _antd.Validation,
+        { ref: 'validation', onValidate: this.handleValidate },
+        React.createElement(
+          _antd.Row,
+          null,
+          React.createElement(
+            _antd.Col,
+            { span: '18' },
+            React.createElement(
+              FormItem,
+              {
+                label: '密码：',
+                id: 'confirmPass',
+                labelCol: { span: 6 },
+                wrapperCol: { span: 18 },
+                validateStatus: this.renderValidateStyle('pass'),
+                help: status.pass.errors ? status.pass.errors.join(',') : null,
+                required: true },
+              React.createElement(
+                Validator,
+                { rules: [{ required: true, whitespace: true, message: '请填写密码' }, { validator: this.checkPass }], trigger: 'onChange' },
+                React.createElement(_antd.Input, { name: 'pass', id: 'confirmPass', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autoComplete: 'off', value: formData.pass })
+              )
+            )
+          ),
+          React.createElement(
+            _antd.Col,
+            { span: '6' },
+            this.state.passBarShow ? this.renderPassStrengthBar('pass') : null
+          )
+        ),
+        React.createElement(
+          _antd.Row,
+          null,
+          React.createElement(
+            _antd.Col,
+            { span: '18' },
+            React.createElement(
+              FormItem,
+              {
+                label: '确认密码：',
+                id: 'confirmPass2',
+                labelCol: { span: 6 },
+                wrapperCol: { span: 18 },
+                validateStatus: this.renderValidateStyle('rePass'),
+                help: status.rePass.errors ? status.rePass.errors.join(',') : null,
+                required: true },
+              React.createElement(
+                Validator,
+                { rules: [{
+                    required: true,
+                    whitespace: true,
+                    message: '请再次输入密码'
+                  }, { validator: this.checkPass2 }] },
+                React.createElement(_antd.Input, { name: 'rePass', id: 'confirmPass2', type: 'password', onContextMenu: noop, onPaste: noop, onCopy: noop, onCut: noop, autoComplete: 'off', value: formData.rePass })
+              )
+            )
+          ),
+          React.createElement(
+            _antd.Col,
+            { span: '6' },
+            this.state.rePassBarShow ? this.renderPassStrengthBar('rePass') : null
+          )
+        ),
+        React.createElement(
+          FormItem,
+          {
+            wrapperCol: { span: 12, offset: 6 },
+            required: true },
+          React.createElement(
+            _antd.Button,
+            { type: 'primary', onClick: this.handleSubmit },
+            '确定'
+          ),
+          '   ',
+          React.createElement(
+            _antd.Button,
+            { type: 'ghost', onClick: this.handleReset },
+            '重置'
+          )
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-validation-demo-customize'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Validation, Button, Form, Input, Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> classNames <span class="hljs-keyword">from</span> <span class="hljs-string">'classnames'</span>;
+<span class="hljs-keyword">const</span> Validator = Validation.Validator;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noop</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-keyword">const</span> Demo = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      status: {
+        pass: {},
+        rePass: {}
+      },
+      formData: {
+        pass: <span class="hljs-literal">undefined</span>,
+        rePass: <span class="hljs-literal">undefined</span>
+      },
+      passBarShow: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 是否显示密码强度提示条</span>
+      rePassBarShow: <span class="hljs-literal">false</span>,
+      passStrength: <span class="hljs-string">'L'</span>, <span class="hljs-comment">// 密码强度</span>
+      rePassStrength: <span class="hljs-string">'L'</span>
+    };
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">const</span> validation = <span class="hljs-keyword">this</span>.refs.validation;
+    validation.validate((valid) =&gt; {
+      <span class="hljs-keyword">if</span> (!valid) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'error in form'</span>);
+        <span class="hljs-keyword">return</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'submit'</span>);
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.formData);
+    });
+  },
+
+  handleReset(e) {
+    <span class="hljs-keyword">this</span>.refs.validation.reset();
+    <span class="hljs-keyword">this</span>.setState(<span class="hljs-keyword">this</span>.getInitialState());
+    e.preventDefault();
+  },
+
+  renderValidateStyle(item) {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">const</span> classes = classNames({
+      <span class="hljs-string">'error'</span>: status[item].errors,
+      <span class="hljs-string">'validating'</span>: status[item].isValidating,
+      <span class="hljs-string">'success'</span>: formData[item] &amp;&amp; !status[item].errors &amp;&amp; !status[item].isValidating
+    });
+
+    <span class="hljs-keyword">return</span> classes;
+  },
+
+  getPassStrenth(value, type) {
+    <span class="hljs-keyword">if</span> (value) {
+      <span class="hljs-keyword">let</span> strength;
+      <span class="hljs-comment">// 密码强度的校验规则自定义，这里只是做个简单的示例</span>
+      <span class="hljs-keyword">if</span> (value.length &lt; <span class="hljs-number">6</span>) {
+        strength = <span class="hljs-string">'L'</span>;
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value.length &lt;= <span class="hljs-number">9</span>) {
+        strength = <span class="hljs-string">'M'</span>;
+      } <span class="hljs-keyword">else</span> {
+        strength = <span class="hljs-string">'H'</span>;
+      }
+      <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'pass'</span>) {
+        <span class="hljs-keyword">this</span>.setState({ passBarShow: <span class="hljs-literal">true</span>, passStrength: strength });
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({ rePassBarShow: <span class="hljs-literal">true</span>, rePassStrength: strength });
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'pass'</span>) {
+        <span class="hljs-keyword">this</span>.setState({ passBarShow: <span class="hljs-literal">false</span> });
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.setState({ rePassBarShow: <span class="hljs-literal">false</span> });
+      }
+    }
+  },
+
+  checkPass(rule, value, callback) {
+    <span class="hljs-keyword">this</span>.getPassStrenth(value, <span class="hljs-string">'pass'</span>);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.formData.pass) {
+      <span class="hljs-keyword">this</span>.refs.validation.forceValidate([<span class="hljs-string">'rePass'</span>]);
+    }
+
+    callback();
+  },
+
+  checkPass2(rule, value, callback) {
+    <span class="hljs-keyword">this</span>.getPassStrenth(value, <span class="hljs-string">'rePass'</span>);
+
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value !== <span class="hljs-keyword">this</span>.state.formData.pass) {
+      callback(<span class="hljs-string">'两次输入密码不一致！'</span>);
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  renderPassStrengthBar(type) {
+    <span class="hljs-keyword">const</span> strength = type === <span class="hljs-string">'pass'</span> ? <span class="hljs-keyword">this</span>.state.passStrength : <span class="hljs-keyword">this</span>.state.rePassStrength;
+    <span class="hljs-keyword">const</span> classSet = classNames({
+      <span class="hljs-string">'ant-pwd-strength'</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">'ant-pwd-strength-low'</span>: strength === <span class="hljs-string">'L'</span>,
+      <span class="hljs-string">'ant-pwd-strength-medium'</span>: strength === <span class="hljs-string">'M'</span>,
+      <span class="hljs-string">'ant-pwd-strength-high'</span>: strength === <span class="hljs-string">'H'</span>
+    });
+    <span class="hljs-keyword">const</span> level = {
+      L: <span class="hljs-string">'低'</span>,
+      M: <span class="hljs-string">'中'</span>,
+      H: <span class="hljs-string">'高'</span>
+    };
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classSet}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-pwd-strength-item ant-pwd-strength-item-1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-pwd-strength-item ant-pwd-strength-item-2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-pwd-strength-item ant-pwd-strength-item-3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"ant-form-text"</span>&gt;</span>
+            {level[strength]}
+          <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">this</span>.state.formData;
+    <span class="hljs-keyword">const</span> status = <span class="hljs-keyword">this</span>.state.status;
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Validation</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"validation"</span> <span class="hljs-attribute">onValidate</span>=<span class="hljs-value">{this.handleValidate}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"18"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+                <span class="hljs-attribute">label</span>=<span class="hljs-value">"密码："</span>
+                <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass"</span>
+                <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">6</span>}}
+                <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">18</span>}}
+                <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('pass')}</span>
+                <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.pass.errors</span> ? <span class="hljs-attribute">status.pass.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+                <span class="hljs-attribute">required</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{required:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">whitespace:</span> <span class="hljs-attribute">true</span>, <span class="hljs-attribute">message:</span> '请填写密码'}, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkPass</span>}]} <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"onChange"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"pass"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.pass}</span>/&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+              {this.state.passBarShow ? this.renderPassStrengthBar('pass') : null}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"18"</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+                <span class="hljs-attribute">label</span>=<span class="hljs-value">"确认密码："</span>
+                <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass2"</span>
+                <span class="hljs-attribute">labelCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">6</span>}}
+                <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">18</span>}}
+                <span class="hljs-attribute">validateStatus</span>=<span class="hljs-value">{this.renderValidateStyle('rePass')}</span>
+                <span class="hljs-attribute">help</span>=<span class="hljs-value">{status.rePass.errors</span> ? <span class="hljs-attribute">status.rePass.errors.join</span>(',') <span class="hljs-attribute">:</span> <span class="hljs-attribute">null</span>}
+                <span class="hljs-attribute">required</span>&gt;</span>
+                  <span class="hljs-tag">&lt;<span class="hljs-title">Validator</span> <span class="hljs-attribute">rules</span>=<span class="hljs-value">{[{</span>
+                    <span class="hljs-attribute">required:</span> <span class="hljs-attribute">true</span>,
+                    <span class="hljs-attribute">whitespace:</span> <span class="hljs-attribute">true</span>,
+                    <span class="hljs-attribute">message:</span> '请再次输入密码'
+                  }, {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">this.checkPass2</span>}]}&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"rePass"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"confirmPass2"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"password"</span> <span class="hljs-attribute">onContextMenu</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onPaste</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCopy</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">onCut</span>=<span class="hljs-value">{noop}</span> <span class="hljs-attribute">autoComplete</span>=<span class="hljs-value">"off"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{formData.rePass}</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">Validator</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span>&gt;</span>
+              {this.state.rePassBarShow ? this.renderPassStrengthBar('rePass') : null}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+
+          <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+            <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{span:</span> <span class="hljs-attribute">12</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">6</span>}}
+            <span class="hljs-attribute">required</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleSubmit}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            &amp;nbsp;&amp;nbsp;&amp;nbsp;
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleReset}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Validation</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-validation-demo-customize'));</span></code></pre></div><style type="text/css">.ant-pwd-strength {
+  display: inline-block;
+  margin-left: 8px;
+  line-height: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.ant-pwd-strength-item {
+  float: left;
+  margin-right: 1px;
+  margin-top: 12px;
+  width: 19px;
+  height: 8px;
+  line-height: 8px;
+  list-style: none;
+  background-color: #f3f3f3;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ant-pwd-strength-item-1 {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.ant-pwd-strength-item-2 {
+  width: 20px;
+}
+
+.ant-pwd-strength-item-3 {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 8px;
+}
+
+.ant-pwd-strength-low .ant-pwd-strength-item-1, .ant-pwd-strength-medium .ant-pwd-strength-item-1, .ant-pwd-strength-high .ant-pwd-strength-item-1 {
+  background-color: #FAC450;
+}
+
+.ant-pwd-strength-medium .ant-pwd-strength-item-2, .ant-pwd-strength-high .ant-pwd-strength-item-2 {
+  background-color: rgba(135, 208, 104, .6);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#9987D068,endColorstr=#9987D068);
+}
+
+.ant-pwd-strength-high .ant-pwd-strength-item-3 {
+  background-color: #87D068;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.ant-pwd-strength</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> middle</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> left</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">1px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">12px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">19px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f3f3f3</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all <span class="hljs-number">0.3s</span> <span class="hljs-function">cubic-bezier</span>(<span class="hljs-number">0.645</span>, <span class="hljs-number">0.045</span>, <span class="hljs-number">0.355</span>, <span class="hljs-number">1</span>)</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item-1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item-2</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-item-3</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">6px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">8px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-low</span> <span class="hljs-class">.ant-pwd-strength-item-1</span>, <span class="hljs-class">.ant-pwd-strength-medium</span> <span class="hljs-class">.ant-pwd-strength-item-1</span>, <span class="hljs-class">.ant-pwd-strength-high</span> <span class="hljs-class">.ant-pwd-strength-item-1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#FAC450</span></span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-medium</span> <span class="hljs-class">.ant-pwd-strength-item-2</span>, <span class="hljs-class">.ant-pwd-strength-high</span> <span class="hljs-class">.ant-pwd-strength-item-2</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-function">rgba</span>(<span class="hljs-number">135</span>, <span class="hljs-number">208</span>, <span class="hljs-number">104</span>, .<span class="hljs-number">6</span>)</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">filter</span>:<span class="hljs-value">progid:DXImageTransform.Microsoft.<span class="hljs-function">gradient</span>(startColorstr=<span class="hljs-hexcolor">#9987D068</span>,endColorstr=<span class="hljs-hexcolor">#9987D068</span>)</span></span>;
+}</span>
+
+<span class="hljs-class">.ant-pwd-strength-high</span> <span class="hljs-class">.ant-pwd-strength-item-3</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#87D068</span></span></span>;
+}</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-customize">自定义校验规则</a>
+    </div>
+    <p>密码校验实例。</p>
+<p>这里使用了 validation 的 <code>forceValidate(fields, callback)</code>  方法，在对第一次输入的密码进行校验时会触发二次密码的校验。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

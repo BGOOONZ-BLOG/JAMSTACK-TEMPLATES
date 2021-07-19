@@ -1,66 +1,66 @@
-import { connectLean } from 'lean-redux'
-import { push } from 'react-router-redux'
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import { connectLean } from "lean-redux";
+import { push } from "react-router-redux";
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import PageTitle from './shared/PageTitle'
-import Profile from './shared/Profile'
+import PageTitle from "./shared/PageTitle";
+import Profile from "./shared/Profile";
 
-const Wrapper = styled.section``
+const Wrapper = styled.section``;
 
 class Member extends Component {
   componentDidMount() {
-    const { fetchMember, slug } = this.props
-    fetchMember(slug)
+    const { fetchMember, slug } = this.props;
+    fetchMember(slug);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { fetchMember, slug } = this.props
+    const { fetchMember, slug } = this.props;
     if (this.props.slug !== prevProps.slug) {
-      fetchMember(slug)
+      fetchMember(slug);
     }
   }
 
   render() {
-    const { handleBackClick, member } = this.props
+    const { handleBackClick, member } = this.props;
     return (
       <Wrapper>
         <PageTitle>
           <span
             onClick={handleBackClick}
-            style={{ textDecoration: 'underline', cursor: 'pointer' }}
+            style={{ textDecoration: "underline", cursor: "pointer" }}
           >
             Members
           </span>
-          {' / '}
+          {" / "}
           {member.displayName}
         </PageTitle>
 
         <Profile person={member} />
       </Wrapper>
-    )
+    );
   }
 }
 
 const Connected = connectLean({
   getInitialState() {
-    return { member: { infos: {} } }
+    return { member: { infos: {} } };
   },
 
   mapState: (state, ownProps) => ({
     member: state.member,
-    slug: ownProps.location.pathname.split('/')[2],
+    slug: ownProps.location.pathname.split("/")[2],
   }),
 
   fetchMember(slug) {
     fetch(`/api/members/${slug}`)
-      .then(res => res.json())
-      .then(member => this.setState({ member }))
+      .then((res) => res.json())
+      .then((member) => this.setState({ member }));
   },
 
   handleBackClick(path) {
-    this.dispatch(push('/members'))
+    this.dispatch(push("/members"));
   },
-})(Member)
+})(Member);
 
-export default Connected
+export default Connected;

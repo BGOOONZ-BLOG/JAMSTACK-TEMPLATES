@@ -3,16 +3,15 @@ import {
   createStore,
   applyMiddleware,
   compose as _compose,
-} from 'redux';
-import { connectRoutes } from 'redux-first-router';
-import createHistory from 'history/createBrowserHistory';
+} from "redux";
+import { connectRoutes } from "redux-first-router";
+import createHistory from "history/createBrowserHistory";
 
-import { eventsReducer } from './events';
-import { messagesReducer } from './messages';
-import routesMap from './routesMap';
+import { eventsReducer } from "./events";
+import { messagesReducer } from "./messages";
+import routesMap from "./routesMap";
 
-const compose =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _compose;
+const compose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || _compose;
 
 const history = createHistory();
 
@@ -30,9 +29,6 @@ const rootReducer = combineReducers({
 
 const middlewares = applyMiddleware(routerMiddleware);
 
-const store = createStore(
-  rootReducer,
-  compose(routerEnhancer, middlewares)
-);
+const store = createStore(rootReducer, compose(routerEnhancer, middlewares));
 
 export default store;

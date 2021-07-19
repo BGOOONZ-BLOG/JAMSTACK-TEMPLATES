@@ -1,8 +1,6 @@
 // SVG Utilities
 // =============
 
-
-
 // SVG Validate Units
 // ------------------
 /// Make sure a length is supported in svg
@@ -17,23 +15,19 @@
 ///
 /// @return {Length} -
 ///   An svg-validated length, or comparable valid length
-@function _susy-svg-validate-units(
-  $length,
-  $name: null
-) {
-  $_svg-units: ('em', 'ex', 'px', 'pt', 'pc', 'cm', 'mm', 'in', '%');
-  $string: type-of($length) == 'string';
+@function _susy-svg-validate-units($length, $name: null) {
+  $_svg-units: ("em", "ex", "px", "pt", "pc", "cm", "mm", "in", "%");
+  $string: type-of($length) == "string";
 
   @if ($length == 0) or ($string) or index($_svg-units, unit($length)) {
     @return $length;
   }
 
   @return _susy-error(
-    '`#{unit($length)}` #{$name} units are not supported in SVG',
-    '_susy-svg-validate-units');
+    "`#{unit($length)}` #{$name} units are not supported in SVG",
+    "_susy-svg-validate-units"
+  );
 }
-
-
 
 // SVG Rect
 // --------
@@ -50,31 +44,25 @@
 ///
 /// @return {String} -
 ///   Escaped string representing one svg rectangle
-@function _susy-svg-rect(
-  $x,
-  $width,
-  $offset: null
-) {
+@function _susy-svg-rect($x, $width, $offset: null) {
   $x: _susy-svg-validate-units($x);
   $width: _susy-svg-validate-units($width);
   $offset: if($offset == 0, null, $offset);
 
-  @if (type-of($offset) == 'number') and (type-of($x) == 'number') {
+  @if (type-of($offset) == "number") and (type-of($x) == "number") {
     @if comparable($x, $offset) {
       $x: $x + $offset;
     } @else {
-      $x: 'calc(#{$x} + #{$offset})';
+      $x: "calc(#{$x} + #{$offset})";
     }
   } @else if $offset and ($x != 0) {
-    $x: 'calc(#{$x} + #{$offset})';
+    $x: "calc(#{$x} + #{$offset})";
   } @else if $offset {
     $x: $offset;
   }
 
   @return '%3Crect x="#{$x}" width="#{$width}" height="100%"/%3E';
 }
-
-
 
 // SVG Color
 // ---------
@@ -87,19 +75,15 @@
 ///
 /// @return {String} -
 ///   Escaped string value of color
-@function _susy-svg-color(
-  $color
-) {
+@function _susy-svg-color($color) {
   $color: inspect($color); // convert to string
 
-  @if (str-index($color, '#') == 1) {
-    $color: '%23' + str-slice($color, 2);
+  @if (str-index($color, "#") == 1) {
+    $color: "%23" + str-slice($color, 2);
   }
 
   @return $color;
 }
-
-
 
 // SVG Gradient
 // ------------
@@ -114,9 +98,7 @@
 /// @return {String} -
 ///   Escaped string representing one svg gradient
 ///   (`id="susy-svg-gradient"`)
-@function _susy-svg-gradient(
-  $colors
-) {
+@function _susy-svg-gradient($colors) {
   $gradient: '%3Cdefs%3E%3ClinearGradient spreadMethod="pad"';
   $gradient: '#{$gradient} id="susy-svg-gradient"';
   $gradient: '#{$gradient} x1="0%" y1="0%" x2="100%" y2="0%"%3E';
@@ -129,5 +111,5 @@
     $gradient: $gradient + $stop;
   }
 
-  @return $gradient + '%3C/linearGradient%3E%3C/defs%3E';
+  @return $gradient + "%3C/linearGradient%3E%3C/defs%3E";
 }

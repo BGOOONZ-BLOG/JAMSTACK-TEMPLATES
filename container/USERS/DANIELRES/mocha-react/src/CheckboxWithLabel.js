@@ -1,14 +1,14 @@
-var React = require('react/addons');
-var BigComplicatedComponent = require('./BigComplicatedComponent.js');
+var React = require("react/addons");
+var BigComplicatedComponent = require("./BigComplicatedComponent.js");
 
 var CheckboxWithLabel = React.createClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return { isChecked: false };
   },
-  onChange: function() {
-    this.setState({isChecked: !this.state.isChecked});
+  onChange: function () {
+    this.setState({ isChecked: !this.state.isChecked });
   },
-  render: function() {
+  render: function () {
     return (
       <label className="CheckboxWithLabel">
         <input
@@ -20,7 +20,7 @@ var CheckboxWithLabel = React.createClass({
         <BigComplicatedComponent />
       </label>
     );
-  }
+  },
 });
 
 module.exports = CheckboxWithLabel;

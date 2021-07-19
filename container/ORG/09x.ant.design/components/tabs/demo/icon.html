@@ -1,0 +1,68 @@
+<div class="code-box" id="demo-icon">
+  <div class="code-box-demo">
+    <div id="components-tabs-demo-icon"></div>
+    <script>(function(){"use strict";
+
+var Tabs = antd.Tabs;
+var TabPane = Tabs.TabPane;
+
+var tabContent = [React.createElement(
+  "span",
+  null,
+  React.createElement("i", { className: "anticon anticon-apple" }),
+  "选项卡一"
+), React.createElement(
+  "span",
+  null,
+  React.createElement("i", { className: "anticon anticon-android" }),
+  "选项卡二"
+), React.createElement(
+  "span",
+  null,
+  React.createElement("i", { className: "anticon anticon-lock" }),
+  "选项卡三"
+)];
+
+React.render(React.createElement(
+  Tabs,
+  { defaultActiveKey: "2" },
+  React.createElement(
+    TabPane,
+    { tab: tabContent[0], key: "1" },
+    "选项卡一"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: tabContent[1], key: "2" },
+    "选项卡二"
+  ),
+  React.createElement(
+    TabPane,
+    { tab: tabContent[2], key: "3" },
+    "选项卡三"
+  )
+), document.getElementById('components-tabs-demo-icon'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tabs = antd.Tabs;
+<span class="keyword">var</span> TabPane = Tabs.TabPane;
+
+<span class="keyword">var</span> tabContent = [
+  <span class="xml"><span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-apple"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>选项卡一<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,
+  <span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-android"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>选项卡二<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,
+  <span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-lock"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>选项卡三<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,
+];
+
+React.render(
+  <span class="tag">&lt;<span class="title">Tabs</span> <span class="attribute">defaultActiveKey</span>=<span class="value">"2"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">{tabContent[0]}</span> <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>选项卡一<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">{tabContent[1]}</span> <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>选项卡二<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">{tabContent[2]}</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>选项卡三<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Tabs</span>&gt;</span>
+, document.getElementById('components-tabs-demo-icon'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-icon">图标</a>
+    </div>
+    <p>有图标的标签。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="code-box" id="demo-basic">
+  <div class="code-box-demo">
+    <div id="components-popover-demo-basic"></div>
+    <script>mountNode = document.getElementById('components-popover-demo-basic');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+var content = React.createElement(
+  "div",
+  null,
+  React.createElement(
+    "p",
+    null,
+    "\u5185\u5BB9"
+  ),
+  React.createElement(
+    "p",
+    null,
+    "\u5185\u5BB9"
+  )
+);
+
+ReactDOM.render(React.createElement(
+  _antd.Popover,
+  { overlay: content, title: "\u6807\u9898" },
+  React.createElement(
+    _antd.Button,
+    { type: "primary" },
+    "\u5F39\u51FA\u5361\u7247"
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Popover, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> content = (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+)</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{content}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"标题"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span>&gt;</span>弹出卡片<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-basic">基本</a>
+    </div>
+    
+<p>最简单的用法，浮层的大小由内容区域决定。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

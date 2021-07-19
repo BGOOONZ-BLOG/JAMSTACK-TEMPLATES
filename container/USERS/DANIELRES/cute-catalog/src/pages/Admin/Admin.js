@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
-import Loader from 'shared/Loader'
-import ProductForm from './ProductForm/index'
-import Products from './Products'
+import Loader from "shared/Loader";
+import ProductForm from "./ProductForm/index";
+import Products from "./Products";
 
 const Admin = ({ currentUser, isLoading }) => (
   <Loader isLoading={isLoading}>
@@ -18,6 +18,6 @@ const Admin = ({ currentUser, isLoading }) => (
       </div>
     </div>
   </Loader>
-)
+);
 
-export default Admin
+export default Admin;

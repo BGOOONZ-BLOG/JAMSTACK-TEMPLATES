@@ -8,24 +8,23 @@ Starter is a flexible, multi-purpose Jekyll theme built for developers and ready
 
 ![Stackbit Starter Jekyll Theme screenshot](https://themes.stackbit.com/images/starter-demo-1024x768.png)
 
-
 # Running Your Site Locally
 
-1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
+1.  Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
 
-2. Install Jekyll and Bundler
+2.  Install Jekyll and Bundler
 
         gem install jekyll bundler
 
-3. Install dependencies from Gemfile:
+3.  Install dependencies from Gemfile:
 
         bundle install
 
-4. Build the site and make it available on a local server
+4.  Build the site and make it available on a local server
 
         bundle exec jekyll serve --livereload
 
-5. Browse to [http://localhost:4000](http://localhost:4000)
+5.  Browse to [http://localhost:4000](http://localhost:4000)
 
 # Deployment
 

@@ -17,7 +17,7 @@ export default class service extends Component {
                     <h3>{item.node.title}</h3>
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: item.node.description.childMarkdownRemark.html
+                        __html: item.node.description.childMarkdownRemark.html,
                       }}
                     />
                   </div>

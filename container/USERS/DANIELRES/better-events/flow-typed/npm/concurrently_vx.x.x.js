@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'concurrently' {
+declare module "concurrently" {
   declare module.exports: any;
 }
 
@@ -22,32 +22,32 @@ declare module 'concurrently' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'concurrently/src/main' {
+declare module "concurrently/src/main" {
   declare module.exports: any;
 }
 
-declare module 'concurrently/test/support/signal' {
+declare module "concurrently/test/support/signal" {
   declare module.exports: any;
 }
 
-declare module 'concurrently/test/test-functional' {
+declare module "concurrently/test/test-functional" {
   declare module.exports: any;
 }
 
-declare module 'concurrently/test/utils' {
+declare module "concurrently/test/utils" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'concurrently/src/main.js' {
-  declare module.exports: $Exports<'concurrently/src/main'>;
+declare module "concurrently/src/main.js" {
+  declare module.exports: $Exports<"concurrently/src/main">;
 }
-declare module 'concurrently/test/support/signal.js' {
-  declare module.exports: $Exports<'concurrently/test/support/signal'>;
+declare module "concurrently/test/support/signal.js" {
+  declare module.exports: $Exports<"concurrently/test/support/signal">;
 }
-declare module 'concurrently/test/test-functional.js' {
-  declare module.exports: $Exports<'concurrently/test/test-functional'>;
+declare module "concurrently/test/test-functional.js" {
+  declare module.exports: $Exports<"concurrently/test/test-functional">;
 }
-declare module 'concurrently/test/utils.js' {
-  declare module.exports: $Exports<'concurrently/test/utils'>;
+declare module "concurrently/test/utils.js" {
+  declare module.exports: $Exports<"concurrently/test/utils">;
 }

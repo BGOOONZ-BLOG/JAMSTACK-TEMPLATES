@@ -15,7 +15,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
 } from "reactstrap";
 
 import { useAuth0 } from "../react-auth0-spa";
@@ -27,7 +27,7 @@ const NavBar = () => {
 
   const logoutWithRedirect = () =>
     logout({
-      returnTo: window.location.origin
+      returnTo: window.location.origin,
     });
 
   return (

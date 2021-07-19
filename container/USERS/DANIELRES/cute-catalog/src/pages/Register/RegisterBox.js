@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import AuthBoxOuter from 'shared/AuthBoxOuter'
-import Separator from 'shared/Separator'
+import AuthBoxOuter from "shared/AuthBoxOuter";
+import Separator from "shared/Separator";
 
-import RegisterForm from './RegisterForm'
+import RegisterForm from "./RegisterForm";
 
 const LoginBox = () => (
   <AuthBoxOuter>
@@ -15,6 +15,6 @@ const LoginBox = () => (
 
     <RegisterForm />
   </AuthBoxOuter>
-)
+);
 
-export default LoginBox
+export default LoginBox;

@@ -1,0 +1,187 @@
+<div class="code-box" id="demo-ajax">
+  <div class="code-box-demo">
+    <div id="components-table-demo-ajax"></div>
+    <script>mountNode = document.getElementById('components-table-demo-ajax');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var _reqwest = require('reqwest');
+
+var _reqwest2 = _interopRequireDefault(_reqwest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  filters: [{
+    text: '姓李的',
+    value: '李'
+  }, {
+    text: '姓胡的',
+    value: '胡'
+  }]
+}, {
+  title: '年龄',
+  dataIndex: 'age',
+  sorter: true
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+
+var Test = React.createClass({
+  displayName: 'Test',
+  getInitialState: function getInitialState() {
+    return {
+      data: [],
+      pagination: {},
+      loading: false
+    };
+  },
+  handleTableChange: function handleTableChange(pagination, filters, sorter) {
+    var pager = this.state.pagination;
+    pager.current = pagination.current;
+    this.setState({
+      pagination: pager
+    });
+    var params = {
+      pageSize: pagination.pageSize,
+      currentPage: pagination.current,
+      sortField: sorter.field,
+      sortOrder: sorter.order
+    };
+    for (var key in filters) {
+      params[key] = filters[key];
+    }
+    this.fetch(params);
+  },
+  fetch: function fetch() {
+    var _this = this;
+
+    var params = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+    console.log('请求参数：', params);
+    this.setState({ loading: true });
+    (0, _reqwest2.default)({
+      url: 'demo/data.json',
+      method: 'get',
+      data: params,
+      type: 'json',
+      success: function success(result) {
+        var pagination = _this.state.pagination;
+        pagination.total = result.totalCount;
+        _this.setState({
+          loading: false,
+          data: result.data,
+          pagination: pagination
+        });
+      }
+    });
+  },
+  componentDidMount: function componentDidMount() {
+    this.fetch();
+  },
+  render: function render() {
+    return React.createElement(_antd.Table, { columns: columns,
+      dataSource: this.state.data,
+      pagination: this.state.pagination,
+      loading: this.state.loading,
+      onChange: this.handleTableChange });
+  }
+});
+
+ReactDOM.render(React.createElement(Test, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Table } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> reqwest <span class="hljs-keyword">from</span> <span class="hljs-string">'reqwest'</span>;
+
+<span class="hljs-keyword">const</span> columns = [{
+  title: <span class="hljs-string">'姓名'</span>,
+  dataIndex: <span class="hljs-string">'name'</span>,
+  filters: [{
+    text: <span class="hljs-string">'姓李的'</span>,
+    value: <span class="hljs-string">'李'</span>
+  }, {
+    text: <span class="hljs-string">'姓胡的'</span>,
+    value: <span class="hljs-string">'胡'</span>
+  }]
+}, {
+  title: <span class="hljs-string">'年龄'</span>,
+  dataIndex: <span class="hljs-string">'age'</span>,
+  sorter: <span class="hljs-literal">true</span>
+}, {
+  title: <span class="hljs-string">'住址'</span>,
+  dataIndex: <span class="hljs-string">'address'</span>
+}];
+
+<span class="hljs-keyword">const</span> Test = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      data: [],
+      pagination: {},
+      loading: <span class="hljs-literal">false</span>,
+    };
+  },
+  handleTableChange(pagination, filters, sorter) {
+    <span class="hljs-keyword">const</span> pager = <span class="hljs-keyword">this</span>.state.pagination;
+    pager.current = pagination.current;
+    <span class="hljs-keyword">this</span>.setState({
+      pagination: pager
+    });
+    <span class="hljs-keyword">const</span> params = {
+      pageSize: pagination.pageSize,
+      currentPage: pagination.current,
+      sortField: sorter.field,
+      sortOrder: sorter.order
+    };
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> filters) {
+      params[key] = filters[key];
+    }
+    <span class="hljs-keyword">this</span>.fetch(params);
+  },
+  fetch(params = {}) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'请求参数：'</span>, params);
+    <span class="hljs-keyword">this</span>.setState({ loading: <span class="hljs-literal">true</span> });
+    reqwest({
+      url: <span class="hljs-string">'demo/data.json'</span>,
+      method: <span class="hljs-string">'get'</span>,
+      data: params,
+      type: <span class="hljs-string">'json'</span>,
+      success: (result) =&gt; {
+        <span class="hljs-keyword">const</span> pagination = <span class="hljs-keyword">this</span>.state.pagination;
+        pagination.total = result.totalCount;
+        <span class="hljs-keyword">this</span>.setState({
+          loading: <span class="hljs-literal">false</span>,
+          data: result.data,
+          pagination,
+        });
+      }
+    });
+  },
+  componentDidMount() {
+    <span class="hljs-keyword">this</span>.fetch();
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Table</span> <span class="hljs-attribute">columns</span>=<span class="hljs-value">{columns}</span>
+             <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{this.state.data}</span>
+             <span class="hljs-attribute">pagination</span>=<span class="hljs-value">{this.state.pagination}</span>
+             <span class="hljs-attribute">loading</span>=<span class="hljs-value">{this.state.loading}</span>
+             <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleTableChange}</span> /&gt;</span>
+    )</span>;
+  }
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Test</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-ajax">远程加载数据</a>
+    </div>
+    <p>在 <code>0.11.0</code> 以后，<code>dataSource</code> 远程模式被移除，用户可以自行实现数据读取方式。</p>
+<p>这个例子通过简单的 ajax 读取方式，演示了如何从服务端读取并展现数据，具有筛选、排序等功能以及页面 loading 效果。开发者可以自行接入其他数据处理方式。</p>
+<p>另外，本例也展示了筛选排序功能如何交给服务端实现，列不需要指定具体的 <code>onFilter</code> 和 <code>sorter</code> 函数，而是在把筛选和排序的参数发到服务端来处理。</p>
+<p><strong>注意，此示例是静态数据模拟，展示数据不会变化，请打开网络面板查看请求。</strong></p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

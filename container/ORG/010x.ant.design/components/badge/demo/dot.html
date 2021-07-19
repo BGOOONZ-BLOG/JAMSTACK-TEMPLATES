@@ -1,0 +1,51 @@
+<div class="code-box" id="demo-dot">
+  <div class="code-box-demo">
+    <div id="components-badge-demo-dot"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Badge,
+    { dot: true },
+    React.createElement(_antd.Icon, { type: "notification" })
+  ),
+  React.createElement(
+    _antd.Badge,
+    { dot: true },
+    React.createElement(
+      "a",
+      { href: "#" },
+      "一个链接"
+    )
+  )
+), document.getElementById('components-badge-demo-dot'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Badge, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Badge</span> <span class="hljs-attribute">dot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"notification"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Badge</span> <span class="hljs-attribute">dot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>一个链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Badge</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, document.getElementById('components-badge-demo-dot'));</span></code></pre></div><style>
+.anticon-notification {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-dot">讨嫌的小红点</a>
+    </div>
+    <p>没有具体的数字。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -11,7 +11,6 @@ menu:
   about: 关于
   commonweal: 公益404
 
-
 sidebar:
   overview: 站点概览
   toc: 文章目录
@@ -30,7 +29,6 @@ page:
 footer:
   powered: "由 %s 强力驱动"
   theme: 主题
-
 
 counter:
   tag_cloud:
@@ -65,5 +63,5 @@ cheers:
 keep_on: 继续努力。
 
 symbol:
-  comma: '， '
-  period: '。 '
+  comma: "， "
+  period: "。 "

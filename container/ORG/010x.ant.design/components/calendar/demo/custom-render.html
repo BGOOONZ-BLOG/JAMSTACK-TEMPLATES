@@ -1,0 +1,47 @@
+<div class="code-box" id="demo-custom-render">
+  <div class="code-box-demo">
+    <div id="components-calendar-demo-custom-render"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+function dateCellRender(value) {
+  return React.createElement(
+    'div',
+    null,
+    '自定义日数据'
+  );
+}
+
+function monthCellRender(value) {
+  return React.createElement(
+    'div',
+    null,
+    '自定义月数据'
+  );
+}
+
+ReactDOM.render(React.createElement(_antd.Calendar, { defaultValue: new Date('2010-10-10'),
+  dateCellRender: dateCellRender, monthCellRender: monthCellRender }), document.getElementById('components-calendar-demo-custom-render'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Calendar } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dateCellRender</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>自定义日数据<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">monthCellRender</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>自定义月数据<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{new</span> <span class="hljs-attribute">Date</span>('<span class="hljs-attribute">2010-10-10</span>')}
+  <span class="hljs-attribute">dateCellRender</span>=<span class="hljs-value">{dateCellRender}</span> <span class="hljs-attribute">monthCellRender</span>=<span class="hljs-value">{monthCellRender}</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-custom-render'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-custom-render">自定义渲染</a>
+    </div>
+    <p>用 <code>dateCellRender</code> 和 <code>monthCellRender</code> 函数来自定义需要渲染的数据。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

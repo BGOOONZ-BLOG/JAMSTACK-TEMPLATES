@@ -1,13 +1,11 @@
-'use strict';
+"use strict";
 
-var Reflux  = require('reflux');
-var GroupActions = require('actions/group_actions');
+var Reflux = require("reflux");
+var GroupActions = require("actions/group_actions");
 
-var ApiHelper = require('helpers/api_helper');
-
+var ApiHelper = require("helpers/api_helper");
 
 module.exports = Reflux.createStore({
-
   listenables: [GroupActions],
 
   getInitialState: function () {
@@ -18,9 +16,7 @@ module.exports = Reflux.createStore({
     ApiHelper.fetchGroup(groupId);
   },
 
-  onFetchCompleted: function(result){
+  onFetchCompleted: function (result) {
     this.trigger(result);
   },
-
 });
-

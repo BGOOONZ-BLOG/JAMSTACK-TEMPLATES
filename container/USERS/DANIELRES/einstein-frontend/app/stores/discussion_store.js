@@ -1,10 +1,9 @@
-'use strict';
+"use strict";
 
-var Reflux  = require('reflux');
+var Reflux = require("reflux");
 
-var DiscussionActions = require('actions/discussion_actions');
-var ApiHelper = require('helpers/api_helper');
-
+var DiscussionActions = require("actions/discussion_actions");
+var ApiHelper = require("helpers/api_helper");
 
 module.exports = Reflux.createStore({
   listenables: [DiscussionActions],
@@ -14,9 +13,8 @@ module.exports = Reflux.createStore({
   },
 
   onLoad: function (discussionId) {
-    if(discussionId !== undefined){
+    if (discussionId !== undefined) {
       ApiHelper.fetchDiscussion(discussionId, this);
     }
-  }
+  },
 });
-

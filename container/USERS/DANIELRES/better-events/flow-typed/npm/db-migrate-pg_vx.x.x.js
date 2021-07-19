@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'db-migrate-pg' {
+declare module "db-migrate-pg" {
   declare module.exports: any;
 }
 
@@ -23,11 +23,10 @@ declare module 'db-migrate-pg' {
  * needed.
  */
 
-
 // Filename aliases
-declare module 'db-migrate-pg/index' {
-  declare module.exports: $Exports<'db-migrate-pg'>;
+declare module "db-migrate-pg/index" {
+  declare module.exports: $Exports<"db-migrate-pg">;
 }
-declare module 'db-migrate-pg/index.js' {
-  declare module.exports: $Exports<'db-migrate-pg'>;
+declare module "db-migrate-pg/index.js" {
+  declare module.exports: $Exports<"db-migrate-pg">;
 }

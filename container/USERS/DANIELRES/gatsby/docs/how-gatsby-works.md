@@ -1,11 +1,12 @@
 # How Gatsby Works
 
 ## How files become pages
+
 The process is file --> Webpack loader --> React.js wrapper component
 --> static HTML page.
 
 Gatsby leverages [Webpack](http://webpack.github.io/) extensively.
- Webpack is a sophisticated module bundler that can turn any sort of
+Webpack is a sophisticated module bundler that can turn any sort of
 file into a commonjs module. Webpack uses "Loaders" to convert a file
 into a module. These loaded modules are then wrapped inside a React.js
 component that's specific to a given file type. Gatsby then generates a
@@ -20,8 +21,8 @@ converting a markdown file into an HTML page.
 
 The [default Gatsby markdown
 loader](https://github.com/gatsbyjs/gatsby/blob/master/lib/loaders/markdown-loader/index.js)
- parses the markdown into HTML and uses [Highlight.js](https://highlightjs.org/)
- to syntax highlight code blocks.
+parses the markdown into HTML and uses [Highlight.js](https://highlightjs.org/)
+to syntax highlight code blocks.
 
 Our markdown file at `your-project/pages/index.md`:
 
@@ -36,7 +37,8 @@ someArray: [ 1, 2 ]
 ## Hi friends.
 This is a markdown file.
 ```
-Everything *between* the triple-dashes is frontmatter. It must be in YAML format. Everything *after* the frontmatter is markdown, and will be parsed into HTML. Note that you can also include raw HTML here, and it will be passed through unmodified.
+
+Everything _between_ the triple-dashes is frontmatter. It must be in YAML format. Everything _after_ the frontmatter is markdown, and will be parsed into HTML. Note that you can also include raw HTML here, and it will be passed through unmodified.
 
 When automatically loaded and required, the resulting javascript object looks like the following:
 
@@ -55,6 +57,7 @@ When automatically loaded and required, the resulting javascript object looks li
   }
 }
 ```
+
 Now Gatsby wraps the markdown file in this very simple React.js component. By default, it looks something like this, and you can edit it to handle any custom frontmatter as you see fit:
 
 ```javascript
@@ -72,42 +75,35 @@ export default class MarkdownWrapper extends Component {
 }
 ```
 
-Next is the template for your pages (*edited for brevity*):
-
+Next is the template for your pages (_edited for brevity_):
 
 ```javascript
 // your-project/pages/_template.js
 export default class PageTemplate extends Component {
   render() {
     // children will be the result of MarkdownWrapper.render()
-    const { children } = this.props
-    
-    return (
-      <div className="page-template">
-        {children}
-      </div>
-    )
+    const { children } = this.props;
+
+    return <div className="page-template">{children}</div>;
   }
 }
 ```
 
-Finally, it gets passed through the outer-most template (*edited for brevity*):
+Finally, it gets passed through the outer-most template (_edited for brevity_):
 
 ```javascript
 // your-project/html.js
 export default class HTML extends Component {
   render() {
     // body will be the result of PageTemplate.render()
-    const { body } = this.props
+    const { body } = this.props;
     return (
       <html lang="en">
         <body>
-          <div id="react-mount"
-               dangerouslySetInnerHTML={{ __html: body }} 
-          />
+          <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
         </body>
       </html>
-    )
+    );
   }
 }
 ```
@@ -116,27 +112,30 @@ Rendering a final result of:
 
 ```html
 <html lang="en">
-<body>
-  <div id="react-mount">
-    <div class="page-template">
-      <div class="markdown">
-        <h1>This is a title</h1>
-        <h2>Hi friends.</h2>
-        <p>This is a markdown file.</p>
+  <body>
+    <div id="react-mount">
+      <div class="page-template">
+        <div class="markdown">
+          <h1>This is a title</h1>
+          <h2>Hi friends.</h2>
+          <p>This is a markdown file.</p>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
 ```
 
 ## Notable props-of-interest available in templates
 
-### All pages 
+### All pages
+
 `this.props.route.pages`
 
-### The current template's children 
+### The current template's children
+
 `this.props.route.childRoutes`
 
-### The current page 
+### The current page
+
 `this.props.routes[this.props.routes.length - 1].page`

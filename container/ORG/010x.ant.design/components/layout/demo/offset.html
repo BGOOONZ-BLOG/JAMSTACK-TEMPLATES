@@ -1,0 +1,75 @@
+<div class="code-box" id="demo-offset">
+  <div class="code-box-demo">
+    <div id="components-layout-demo-offset"></div>
+    <script>(function(){"use strict";
+
+var _antd = require('antd');
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "8" },
+      ".col-8"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "8", offset: "8" },
+      ".col-8"
+    )
+  ),
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "6", offset: "6" },
+      ".col-6 .col-offset-6"
+    ),
+    React.createElement(
+      _antd.Col,
+      { span: "6", offset: "6" },
+      ".col-6 .col-offset-6"
+    )
+  ),
+  React.createElement(
+    _antd.Row,
+    null,
+    React.createElement(
+      _antd.Col,
+      { span: "12", offset: "6" },
+      ".col-12 .col-offset-6"
+    )
+  )
+), document.getElementById('components-layout-demo-offset'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Row, Col } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"8"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"8"</span>&gt;</span>.col-8<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6 .col-offset-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-6 .col-offset-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">span</span>=<span class="hljs-value">"12"</span> <span class="hljs-attribute">offset</span>=<span class="hljs-value">"6"</span>&gt;</span>.col-12 .col-offset-6<span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>,
+  document.getElementById('components-layout-demo-offset')
+);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-offset">左右偏移</a>
+    </div>
+    <p>列偏移。</p>
+<p>使用 <code>.col-offset-*</code> 类可以将列向右侧偏。例如，<code>.col-offset-4</code> 类将 <code>.col-4</code> 元素向右侧偏移了4个列（column）的宽度。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

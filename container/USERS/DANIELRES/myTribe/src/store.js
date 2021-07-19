@@ -1,20 +1,14 @@
-import {
-  createStore,
-  combineReducers,
-  applyMiddleware,
-  compose,
-} from 'redux'
-import { leanReducer } from 'lean-redux'
-import { routerReducer, routerMiddleware } from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import { leanReducer } from "lean-redux";
+import { routerReducer, routerMiddleware } from "react-router-redux";
+import createHistory from "history/createBrowserHistory";
 
-const composeEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const history = createHistory()
-const middleware = routerMiddleware(history)
+const history = createHistory();
+const middleware = routerMiddleware(history);
 
-leanReducer.setGlobalScope('lean')
+leanReducer.setGlobalScope("lean");
 
 const store = createStore(
   combineReducers({
@@ -22,7 +16,7 @@ const store = createStore(
     router: routerReducer,
   }),
   composeEnhancers(applyMiddleware(middleware))
-)
+);
 
-export default store
-export { history }
+export default store;
+export { history };

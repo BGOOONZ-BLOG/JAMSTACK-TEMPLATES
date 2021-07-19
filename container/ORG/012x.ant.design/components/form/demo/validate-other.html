@@ -1,0 +1,423 @@
+<div class="code-box" id="demo-validate-other">
+  <div class="code-box-demo">
+    <div id="components-form-demo-validate-other"></div>
+    <script>mountNode = document.getElementById('components-form-demo-validate-other');</script>
+    <script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _antd = require('antd');
+
+var Option = _antd.Select.Option;
+var RadioGroup = _antd.Radio.Group;
+var createForm = _antd.Form.create;
+var FormItem = _antd.Form.Item;
+
+var Demo = React.createClass({
+  displayName: 'Demo',
+  componentDidMount: function componentDidMount() {
+    this.props.form.setFieldsValue({
+      eat: true,
+      sleep: true,
+      beat: true
+    });
+  },
+  handleReset: function handleReset(e) {
+    e.preventDefault();
+    this.props.form.resetFields();
+  },
+  handleSubmit: function handleSubmit(e) {
+    e.preventDefault();
+    this.props.form.validateFieldsAndScroll(function (errors, values) {
+      if (!!errors) {
+        console.log('Errors in form!!!');
+        return;
+      }
+      console.log('Submit!!!');
+      console.log(values);
+    });
+  },
+  checkBirthday: function checkBirthday(rule, value, callback) {
+    if (value && value.getTime() >= Date.now()) {
+      callback(new Error('你不可能在未来出生吧!'));
+    } else {
+      callback();
+    }
+  },
+  checkPrime: function checkPrime(rule, value, callback) {
+    if (value !== 11) {
+      callback(new Error('8~12之间的质数明明是11啊!'));
+    } else {
+      callback();
+    }
+  },
+  render: function render() {
+    var address = [{
+      value: 'zhejiang',
+      label: '浙江',
+      children: [{
+        value: 'hangzhou',
+        label: '杭州'
+      }]
+    }];
+    var getFieldProps = this.props.form.getFieldProps;
+
+    var selectProps = getFieldProps('select', {
+      rules: [{ required: true, message: '请选择您的国籍' }]
+    });
+    var multiSelectProps = getFieldProps('multiSelect', {
+      rules: [{ required: true, message: '请选择您喜欢的颜色', type: 'array' }]
+    });
+    var radioProps = getFieldProps('radio', {
+      rules: [{ required: true, message: '请选择您的性别' }]
+    });
+    var birthdayProps = getFieldProps('birthday', {
+      rules: [{
+        required: true,
+        type: 'date',
+        message: '你的生日是什么呢?'
+      }, {
+        validator: this.checkBirthday
+      }]
+    });
+    var primeNumberProps = getFieldProps('primeNumber', {
+      rules: [{ validator: this.checkPrime }]
+    });
+    var addressProps = getFieldProps('address', {
+      rules: [{ required: true, type: 'array' }]
+    });
+    var formItemLayout = {
+      labelCol: { span: 7 },
+      wrapperCol: { span: 12 }
+    };
+    return React.createElement(
+      _antd.Form,
+      { horizontal: true, form: this.props.form },
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '\u56FD\u7C4D\uFF1A' }),
+        React.createElement(
+          _antd.Select,
+          _extends({}, selectProps, { placeholder: '\u8BF7\u9009\u62E9\u56FD\u5BB6', style: { width: '100%' } }),
+          React.createElement(
+            Option,
+            { value: 'china' },
+            '\u4E2D\u56FD'
+          ),
+          React.createElement(
+            Option,
+            { value: 'use' },
+            '\u7F8E\u56FD'
+          ),
+          React.createElement(
+            Option,
+            { value: 'japan' },
+            '\u65E5\u672C'
+          ),
+          React.createElement(
+            Option,
+            { value: 'korean' },
+            '\u97E9\u56FD'
+          ),
+          React.createElement(
+            Option,
+            { value: 'Thailand' },
+            '\u6CF0\u56FD'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '\u559C\u6B22\u7684\u989C\u8272\uFF1A' }),
+        React.createElement(
+          _antd.Select,
+          _extends({}, multiSelectProps, { multiple: true, placeholder: '\u8BF7\u9009\u62E9\u989C\u8272', style: { width: '100%' } }),
+          React.createElement(
+            Option,
+            { value: 'red' },
+            '\u7EA2\u8272'
+          ),
+          React.createElement(
+            Option,
+            { value: 'orange' },
+            '\u6A59\u8272'
+          ),
+          React.createElement(
+            Option,
+            { value: 'yellow' },
+            '\u9EC4\u8272'
+          ),
+          React.createElement(
+            Option,
+            { value: 'green' },
+            '\u7EFF\u8272'
+          ),
+          React.createElement(
+            Option,
+            { value: 'blue' },
+            '\u84DD\u8272'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '\u6027\u522B\uFF1A' }),
+        React.createElement(
+          RadioGroup,
+          radioProps,
+          React.createElement(
+            _antd.Radio,
+            { value: 'male' },
+            '\u7537'
+          ),
+          React.createElement(
+            _antd.Radio,
+            { value: 'female' },
+            '\u5973'
+          )
+        )
+      ),
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '\u5174\u8DA3\u7231\u597D\uFF1A' }),
+        React.createElement(_antd.Checkbox, getFieldProps('eat', {
+          valuePropName: 'checked'
+        })),
+        '\u5403\u996D\u996D \xA0',
+        React.createElement(_antd.Checkbox, getFieldProps('sleep', {
+          valuePropName: 'checked'
+        })),
+        '\u7761\u89C9\u89C9 \xA0',
+        React.createElement(_antd.Checkbox, getFieldProps('beat', {
+          valuePropName: 'checked'
+        })),
+        '\u6253\u8C46\u8C46 \xA0'
+      ),
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '\u751F\u65E5\uFF1A' }),
+        React.createElement(_antd.DatePicker, birthdayProps)
+      ),
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '8~12\u95F4\u7684\u8D28\u6570\uFF1A' }),
+        React.createElement(_antd.InputNumber, _extends({}, primeNumberProps, { min: 8, max: 12 }))
+      ),
+      React.createElement(
+        FormItem,
+        _extends({}, formItemLayout, {
+          label: '\u9009\u62E9\u5730\u5740\uFF1A' }),
+        React.createElement(_antd.Cascader, _extends({}, addressProps, { options: address }))
+      ),
+      React.createElement(
+        FormItem,
+        {
+          wrapperCol: { span: 12, offset: 7 } },
+        React.createElement(
+          _antd.Button,
+          { type: 'primary', onClick: this.handleSubmit },
+          '\u786E\u5B9A'
+        ),
+        '\xA0\xA0\xA0',
+        React.createElement(
+          _antd.Button,
+          { type: 'ghost', onClick: this.handleReset },
+          '\u91CD\u7F6E'
+        )
+      )
+    );
+  }
+});
+
+Demo = createForm()(Demo);
+ReactDOM.render(React.createElement(Demo, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Select, Radio, Checkbox, Button, DatePicker, InputNumber, Form, Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Option = Select.Option;
+<span class="hljs-keyword">const</span> RadioGroup = Radio.Group;
+<span class="hljs-keyword">const</span> createForm = Form.create;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+
+<span class="hljs-keyword">let</span> Demo = React.createClass({
+  componentDidMount() {
+    <span class="hljs-keyword">this</span>.props.form.setFieldsValue({
+      eat: <span class="hljs-literal">true</span>,
+      sleep: <span class="hljs-literal">true</span>,
+      beat: <span class="hljs-literal">true</span>,
+    });
+  },
+
+  handleReset(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.props.form.resetFields();
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    <span class="hljs-keyword">this</span>.props.form.validateFieldsAndScroll((errors, values) =&gt; {
+      <span class="hljs-keyword">if</span> (!!errors) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Errors in form!!!'</span>);
+        <span class="hljs-keyword">return</span>;
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Submit!!!'</span>);
+      <span class="hljs-built_in">console</span>.log(values);
+    });
+  },
+
+  checkBirthday(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (value &amp;&amp; value.getTime() &gt;= <span class="hljs-built_in">Date</span>.now()) {
+      callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'你不可能在未来出生吧!'</span>));
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  checkPrime(rule, value, callback) {
+    <span class="hljs-keyword">if</span> (value !== <span class="hljs-number">11</span>) {
+      callback(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'8~12之间的质数明明是11啊!'</span>));
+    } <span class="hljs-keyword">else</span> {
+      callback();
+    }
+  },
+
+  render() {
+    <span class="hljs-keyword">const</span> address = [{
+      value: <span class="hljs-string">'zhejiang'</span>,
+      label: <span class="hljs-string">'浙江'</span>,
+      children: [{
+        value: <span class="hljs-string">'hangzhou'</span>,
+        label: <span class="hljs-string">'杭州'</span>,
+      }],
+    }];
+    <span class="hljs-keyword">const</span> { getFieldProps } = <span class="hljs-keyword">this</span>.props.form;
+    <span class="hljs-keyword">const</span> selectProps = getFieldProps(<span class="hljs-string">'select'</span>, {
+      rules: [
+        { required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">'请选择您的国籍'</span> }
+      ],
+    });
+    <span class="hljs-keyword">const</span> multiSelectProps = getFieldProps(<span class="hljs-string">'multiSelect'</span>, {
+      rules: [
+        { required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">'请选择您喜欢的颜色'</span>, type: <span class="hljs-string">'array'</span> },
+      ]
+    });
+    <span class="hljs-keyword">const</span> radioProps = getFieldProps(<span class="hljs-string">'radio'</span>, {
+      rules: [
+        { required: <span class="hljs-literal">true</span>, message: <span class="hljs-string">'请选择您的性别'</span> }
+      ]
+    });
+    <span class="hljs-keyword">const</span> birthdayProps = getFieldProps(<span class="hljs-string">'birthday'</span>, {
+      rules: [
+        {
+          required: <span class="hljs-literal">true</span>,
+          type: <span class="hljs-string">'date'</span>,
+          message: <span class="hljs-string">'你的生日是什么呢?'</span>,
+        }, {
+          validator: <span class="hljs-keyword">this</span>.checkBirthday,
+        }
+      ]
+    });
+    <span class="hljs-keyword">const</span> primeNumberProps = getFieldProps(<span class="hljs-string">'primeNumber'</span>, {
+      rules: [{ validator: <span class="hljs-keyword">this</span>.checkPrime }],
+    });
+    <span class="hljs-keyword">const</span> addressProps = getFieldProps(<span class="hljs-string">'address'</span>, {
+      rules: [{ required: <span class="hljs-literal">true</span>, type: <span class="hljs-string">'array'</span> }],
+    });
+    <span class="hljs-keyword">const</span> formItemLayout = {
+      labelCol: { span: <span class="hljs-number">7</span> },
+      wrapperCol: { span: <span class="hljs-number">12</span> },
+    };
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">horizontal</span> <span class="hljs-attribute">form</span>=<span class="hljs-value">{this.props.form}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"国籍："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Select</span> {<span class="hljs-attribute">...selectProps</span>} <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请选择国家"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> '<span class="hljs-attribute">100</span>%' }}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"china"</span>&gt;</span>中国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"use"</span>&gt;</span>美国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"japan"</span>&gt;</span>日本<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"korean"</span>&gt;</span>韩国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Thailand"</span>&gt;</span>泰国<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"喜欢的颜色："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Select</span> {<span class="hljs-attribute">...multiSelectProps</span>} <span class="hljs-attribute">multiple</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请选择颜色"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">width:</span> '<span class="hljs-attribute">100</span>%' }}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"red"</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"orange"</span>&gt;</span>橙色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"yellow"</span>&gt;</span>黄色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"green"</span>&gt;</span>绿色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"blue"</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"性别："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroup</span> {<span class="hljs-attribute">...radioProps</span>}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"male"</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Radio</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"female"</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-title">Radio</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroup</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"兴趣爱好："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Checkbox</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">eat</span>', {
+            <span class="hljs-attribute">valuePropName:</span> '<span class="hljs-attribute">checked</span>',
+          })} /&gt;</span>吃饭饭 &amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Checkbox</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">sleep</span>', {
+            <span class="hljs-attribute">valuePropName:</span> '<span class="hljs-attribute">checked</span>',
+          })} /&gt;</span>睡觉觉 &amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Checkbox</span> {<span class="hljs-attribute">...getFieldProps</span>('<span class="hljs-attribute">beat</span>', {
+            <span class="hljs-attribute">valuePropName:</span> '<span class="hljs-attribute">checked</span>',
+          })} /&gt;</span>打豆豆 &amp;nbsp;
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"生日："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> {<span class="hljs-attribute">...birthdayProps</span>} /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"8~12间的质数："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">InputNumber</span> {<span class="hljs-attribute">...primeNumberProps</span>} <span class="hljs-attribute">min</span>=<span class="hljs-value">{8}</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">{12}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          {<span class="hljs-attribute">...formItemLayout</span>}
+          <span class="hljs-attribute">label</span>=<span class="hljs-value">"选择地址："</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> {<span class="hljs-attribute">...addressProps</span>} <span class="hljs-attribute">options</span>=<span class="hljs-value">{address}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">FormItem</span>
+          <span class="hljs-attribute">wrapperCol</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">span:</span> <span class="hljs-attribute">12</span>, <span class="hljs-attribute">offset:</span> <span class="hljs-attribute">7</span> }} &gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleSubmit}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+          &amp;nbsp;&amp;nbsp;&amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"ghost"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleReset}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">FormItem</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+    )</span>;
+  },
+});
+
+Demo = createForm()(Demo);
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-validate-other">校验其他组件</a>
+    </div>
+    
+<p>提供以下组件表单域的校验：<code>Select</code> <code>Radio</code> <code>DatePicker</code> <code>InputNumber</code> <code>Cascader</code>。在 submit 时使用 <code>validateFieldsAndScroll</code>，进行校验，可以自动把不在可见范围内的校验不通过的菜单域滚动进可见范围。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

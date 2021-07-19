@@ -1,0 +1,34 @@
+<div class="code-box" id="demo-icon">
+  <div class="code-box-demo">
+    <div id="components-steps-demo-icon"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Step = _antd.Steps.Step;
+var container = document.getElementById('components-steps-demo-icon');
+
+ReactDOM.render(React.createElement(
+  _antd.Steps,
+  null,
+  React.createElement(Step, { status: 'finish', title: '步骤1', icon: 'cloud' }),
+  React.createElement(Step, { status: 'process', title: '步骤2', icon: 'apple' }),
+  React.createElement(Step, { status: 'wait', title: '步骤3', icon: 'github' })
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Steps } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> Step = Steps.Step;
+<span class="hljs-keyword">const</span> container = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-steps-demo-icon'</span>);
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"finish"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"步骤1"</span> <span class="hljs-attribute">icon</span>=<span class="hljs-value">"cloud"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"process"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"步骤2"</span> <span class="hljs-attribute">icon</span>=<span class="hljs-value">"apple"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">"wait"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"步骤3"</span> <span class="hljs-attribute">icon</span>=<span class="hljs-value">"github"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-icon">带ICON图标的步骤条</a>
+    </div>
+    <p>通过设置 <code>Steps.Step</code> 的 <code>icon</code> 属性，可以启用自定义图标。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

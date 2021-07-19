@@ -1,0 +1,124 @@
+<div class="code-box" id="demo-row-selection-props">
+  <div class="code-box-demo">
+    <div id="components-table-demo-row-selection-props"></div>
+    <script>mountNode = document.getElementById('components-table-demo-row-selection-props');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  render: function render(text) {
+    return React.createElement(
+      'a',
+      { href: '#' },
+      text
+    );
+  }
+}, {
+  title: '年龄',
+  dataIndex: 'age'
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+var data = [{
+  key: '1',
+  name: '胡彦斌',
+  age: 32,
+  address: '西湖区湖底公园1号'
+}, {
+  key: '2',
+  name: '胡彦祖',
+  age: 42,
+  address: '西湖区湖底公园1号'
+}, {
+  key: '3',
+  name: '李大嘴',
+  age: 32,
+  address: '西湖区湖底公园1号'
+}];
+
+// 通过 rowSelection 对象表明需要行选择
+var rowSelection = {
+  getCheckboxProps: function getCheckboxProps(record) {
+    return {
+      defaultChecked: record.name === '李大嘴', // 配置默认勾选的列
+      disabled: record.name === '胡彦祖' // 配置无法勾选的列
+    };
+  },
+  onChange: function onChange(selectedRowKeys) {
+    console.log('selectedRowKeys changed: ' + selectedRowKeys);
+  },
+
+  onSelect: function onSelect(record, selected, selectedRows) {
+    console.log(record, selected, selectedRows);
+  },
+  onSelectAll: function onSelectAll(selected, selectedRows) {
+    console.log(selected, selectedRows);
+  }
+};
+
+ReactDOM.render(React.createElement(_antd.Table, { rowSelection: rowSelection, columns: columns, dataSource: data }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Table } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> columns = [{
+  title: <span class="hljs-string">'姓名'</span>,
+  dataIndex: <span class="hljs-string">'name'</span>,
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>;</span>
+  }
+}, {
+  title: <span class="hljs-string">'年龄'</span>,
+  dataIndex: <span class="hljs-string">'age'</span>
+}, {
+  title: <span class="hljs-string">'住址'</span>,
+  dataIndex: <span class="hljs-string">'address'</span>
+}];
+<span class="hljs-keyword">const</span> data = [{
+  key: <span class="hljs-string">'1'</span>,
+  name: <span class="hljs-string">'胡彦斌'</span>,
+  age: <span class="hljs-number">32</span>,
+  address: <span class="hljs-string">'西湖区湖底公园1号'</span>
+}, {
+  key: <span class="hljs-string">'2'</span>,
+  name: <span class="hljs-string">'胡彦祖'</span>,
+  age: <span class="hljs-number">42</span>,
+  address: <span class="hljs-string">'西湖区湖底公园1号'</span>
+}, {
+  key: <span class="hljs-string">'3'</span>,
+  name: <span class="hljs-string">'李大嘴'</span>,
+  age: <span class="hljs-number">32</span>,
+  address: <span class="hljs-string">'西湖区湖底公园1号'</span>
+}];
+
+<span class="hljs-comment">// 通过 rowSelection 对象表明需要行选择</span>
+<span class="hljs-keyword">const</span> rowSelection = {
+  getCheckboxProps: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record</span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      defaultChecked: record.name === <span class="hljs-string">'李大嘴'</span>, <span class="hljs-comment">// 配置默认勾选的列</span>
+      disabled: record.name === <span class="hljs-string">'胡彦祖'</span>    <span class="hljs-comment">// 配置无法勾选的列</span>
+    };
+  },
+  onChange(selectedRowKeys) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'selectedRowKeys changed: '</span> + selectedRowKeys);
+  },
+  onSelect: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, selected, selectedRows</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(record, selected, selectedRows);
+  },
+  onSelectAll: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">selected, selectedRows</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(selected, selectedRows);
+  },
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Table</span> <span class="hljs-attribute">rowSelection</span>=<span class="hljs-value">{rowSelection}</span> <span class="hljs-attribute">columns</span>=<span class="hljs-value">{columns}</span> <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{data}</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-row-selection-props">选择框属性</a>
+    </div>
+    <p>配置选择框的默认属性。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

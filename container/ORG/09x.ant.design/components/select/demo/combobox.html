@@ -1,0 +1,93 @@
+<div class="code-box" id="demo-combobox">
+  <div class="code-box-demo">
+    <div id="components-select-demo-combobox"></div>
+    <script>(function(){'use strict';
+
+var Select = antd.Select;
+var Option = Select.Option;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      options: []
+    };
+  },
+  handleChange: function handleChange(value) {
+    var options;
+    if (!value || value.indexOf('@') >= 0) {
+      options = [];
+    } else {
+      options = ['gmail.com', '163.com', 'qq.com'].map(function (domain) {
+        var email = value + '@' + domain;
+        return React.createElement(
+          Option,
+          { key: email },
+          email
+        );
+      });
+    }
+    this.setState({
+      options: options
+    });
+  },
+  render: function render() {
+    // filterOption 需要设置为 false，数据是动态设置的
+    return React.createElement(
+      Select,
+      { combobox: true,
+        style: { width: 200 },
+        onChange: this.handleChange,
+        filterOption: false,
+        searchPlaceholder: '请输入账户名' },
+      this.state.options
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-select-demo-combobox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      options: []
+    };
+  },
+  handleChange(value) {
+    <span class="keyword">var</span> options;
+    <span class="keyword">if</span> (!value || value.indexOf(<span class="string">'@'</span>) &gt;= <span class="number">0</span>) {
+      options = [];
+    } <span class="keyword">else</span> {
+      options = [<span class="string">'gmail.com'</span>, <span class="string">'163.com'</span>, <span class="string">'qq.com'</span>].map(<span class="function"><span class="keyword">function</span><span class="params">(domain)</span> {</span>
+        <span class="keyword">var</span> email = value + <span class="string">'@'</span> + domain;
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{email}</span>&gt;</span>{email}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+      });
+    }
+    <span class="keyword">this</span>.setState({
+      options: options
+    });
+  },
+  render() {
+  <span class="comment">// filterOption 需要设置为 false，数据是动态设置的</span>
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">combobox</span>
+      <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+      <span class="attribute">onChange</span>=<span class="value">{this.handleChange}</span>
+      <span class="attribute">filterOption</span>=<span class="value">{false}</span>
+      <span class="attribute">searchPlaceholder</span>=<span class="value">"请输入账户名"</span>&gt;</span>
+      {this.state.options}
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>;</span>
+  }
+});
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Test</span> /&gt;</span>, document.getElementById('components-select-demo-combobox'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-combobox">智能提示</a>
+    </div>
+    <p>输入框自动完成功能，下面是一个账号注册表单的例子。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

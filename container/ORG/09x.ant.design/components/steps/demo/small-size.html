@@ -1,0 +1,61 @@
+<div class="code-box" id="demo-small-size">
+  <div class="code-box-demo">
+    <div id="components-steps-demo-small-size"></div>
+    <script>(function(){'use strict';
+
+var Steps = antd.Steps;
+var Step = Steps.Step;
+var container = document.getElementById('components-steps-demo-small-size');
+
+var steps = [{
+  status: 'finish',
+  title: '已完成'
+}, {
+  status: 'process',
+  title: '进行中'
+}, {
+  status: 'wait',
+  title: '待运行'
+}, {
+  status: 'wait',
+  title: '待运行'
+}].map(function (s, i) {
+  return React.createElement(Step, { key: i, title: s.title, description: s.description });
+});
+
+React.render(React.createElement(
+  Steps,
+  { size: 'small', current: 1 },
+  steps
+), container);})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = antd.Steps;
+<span class="keyword">var</span> Step = Steps.Step;
+<span class="keyword">var</span> container = document.getElementById(<span class="string">'components-steps-demo-small-size'</span>);
+
+<span class="keyword">var</span> steps = [{
+  status: <span class="string">'finish'</span>,
+  title: <span class="string">'已完成'</span>
+}, {
+  status: <span class="string">'process'</span>,
+  title: <span class="string">'进行中'</span>
+}, {
+  status: <span class="string">'wait'</span>,
+  title: <span class="string">'待运行'</span>
+}, {
+  status: <span class="string">'wait'</span>,
+  title: <span class="string">'待运行'</span>
+}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
+  <span class="keyword">return</span> (
+    <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
+  );
+});
+
+React.render(<span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>, container);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-small-size">迷你版</a>
+    </div>
+    <p>迷你版的步骤条，通过设置 <code>&lt;Steps size=&quot;small&quot;&gt;</code> 启用.</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -62,5 +62,5 @@ cheers:
 keep_on: Keep on posting.
 
 symbol:
-  comma: ', '
-  period: '. '
+  comma: ", "
+  period: ". "

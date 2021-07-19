@@ -14,18 +14,18 @@ export default class blogPost extends Component {
     const disqusShortname = "RohitGupta";
     const disqusConfig = {
       identifier: data.id,
-      title: data.title
+      title: data.title,
     };
 
     const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
-    const twiteerhandle = this.props.data.contentfulSiteInformation
-      .twiteerHandle;
+    const twiteerhandle =
+      this.props.data.contentfulSiteInformation.twiteerHandle;
     const socialConfigss = {
       site: {
-        siteMetadata: { siteurl, twiteerhandle }
+        siteMetadata: { siteurl, twiteerhandle },
       },
       title: data.title,
-      slug: data.slug
+      slug: data.slug,
     };
 
     return (
@@ -36,7 +36,7 @@ export default class blogPost extends Component {
             `Rohit Gupta`,
             `Frontend Developer`,
             `Developer`,
-            `${data.title}`
+            `${data.title}`,
           ]}
         />
         <div className="site-container blog-post">
@@ -60,7 +60,7 @@ export default class blogPost extends Component {
               </span>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data.description.childMarkdownRemark.html
+                  __html: data.description.childMarkdownRemark.html,
                 }}
               />
             </div>
@@ -69,8 +69,8 @@ export default class blogPost extends Component {
                 ...socialConfigss.site.siteMetadata.twiteerhandletitle,
                 config: {
                   url: `${siteurl}${socialConfigss.slug}`,
-                  title: `${socialConfigss.title}`
-                }
+                  title: `${socialConfigss.title}`,
+                },
               }}
             />
             <DiscussionEmbed

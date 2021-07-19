@@ -1,0 +1,36 @@
+<div class="code-box" id="demo-size">
+  <div class="code-box-demo">
+    <div id="components-spin-demo-size"></div>
+    <script>mountNode = document.getElementById('components-spin-demo-size');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(_antd.Spin, { size: "small" }),
+  React.createElement("br", null),
+  React.createElement(_antd.Spin, null),
+  React.createElement("br", null),
+  React.createElement(_antd.Spin, { size: "large" })
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Spin } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Spin</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Spin</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Spin</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-size">各种大小</a>
+    </div>
+    <p>小的用于文本加载，默认用于卡片容器级加载，大的用于<strong>页面级</strong>加载。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

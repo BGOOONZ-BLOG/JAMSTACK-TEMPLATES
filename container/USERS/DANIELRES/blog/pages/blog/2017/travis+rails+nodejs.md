@@ -60,6 +60,3 @@ Here is the config file that makes it work:
   "os": "linux"
 }
 ```
-
-
-

@@ -17,83 +17,75 @@
  * limitations under the License.
  * ========================================================== */
 
-
-!function ($) {
-
+!(function ($) {
   "use strict"; // jshint ;_;
 
+  /* ALERT CLASS DEFINITION
+   * ====================== */
 
- /* ALERT CLASS DEFINITION
-  * ====================== */
-
-  var dismiss = '[data-dismiss="alert"]'
-    , Alert = function (el) {
-        $(el).on('click', dismiss, this.close)
-      }
+  var dismiss = '[data-dismiss="alert"]',
+    Alert = function (el) {
+      $(el).on("click", dismiss, this.close);
+    };
 
   Alert.prototype.close = function (e) {
-    var $this = $(this)
-      , selector = $this.attr('data-target')
-      , $parent
+    var $this = $(this),
+      selector = $this.attr("data-target"),
+      $parent;
 
     if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
+      selector = $this.attr("href");
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ""); //strip for ie7
     }
 
-    $parent = $(selector)
+    $parent = $(selector);
 
-    e && e.preventDefault()
+    e && e.preventDefault();
 
-    $parent.length || ($parent = $this.hasClass('alert') ? $this : $this.parent())
+    $parent.length ||
+      ($parent = $this.hasClass("alert") ? $this : $this.parent());
 
-    $parent.trigger(e = $.Event('close'))
+    $parent.trigger((e = $.Event("close")));
 
-    if (e.isDefaultPrevented()) return
+    if (e.isDefaultPrevented()) return;
 
-    $parent.removeClass('in')
+    $parent.removeClass("in");
 
     function removeElement() {
-      $parent
-        .trigger('closed')
-        .remove()
+      $parent.trigger("closed").remove();
     }
 
-    $.support.transition && $parent.hasClass('fade') ?
-      $parent.on($.support.transition.end, removeElement) :
-      removeElement()
-  }
+    $.support.transition && $parent.hasClass("fade")
+      ? $parent.on($.support.transition.end, removeElement)
+      : removeElement();
+  };
 
+  /* ALERT PLUGIN DEFINITION
+   * ======================= */
 
- /* ALERT PLUGIN DEFINITION
-  * ======================= */
-
-  var old = $.fn.alert
+  var old = $.fn.alert;
 
   $.fn.alert = function (option) {
     return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('alert')
-      if (!data) $this.data('alert', (data = new Alert(this)))
-      if (typeof option == 'string') data[option].call($this)
-    })
-  }
+      var $this = $(this),
+        data = $this.data("alert");
+      if (!data) $this.data("alert", (data = new Alert(this)));
+      if (typeof option == "string") data[option].call($this);
+    });
+  };
 
-  $.fn.alert.Constructor = Alert
+  $.fn.alert.Constructor = Alert;
 
-
- /* ALERT NO CONFLICT
-  * ================= */
+  /* ALERT NO CONFLICT
+   * ================= */
 
   $.fn.alert.noConflict = function () {
-    $.fn.alert = old
-    return this
-  }
+    $.fn.alert = old;
+    return this;
+  };
 
+  /* ALERT DATA-API
+   * ============== */
 
- /* ALERT DATA-API
-  * ============== */
-
-  $(document).on('click.alert.data-api', dismiss, Alert.prototype.close)
-
-}(window.jQuery);
+  $(document).on("click.alert.data-api", dismiss, Alert.prototype.close);
+})(window.jQuery);

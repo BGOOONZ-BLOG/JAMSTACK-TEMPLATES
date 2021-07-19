@@ -28,7 +28,7 @@ const register = async (
 
     return setAuthStrategy(server, {
       config: serverConfig,
-      validate: validateUser
+      validate: validateUser,
     });
   } catch (err) {
     console.log(`Error registering jwt plugin: ${err}`);
@@ -41,8 +41,8 @@ const setAuthStrategy = async (server, { config, validate }) => {
     key: config.jwtSecret,
     validate,
     verifyOptions: {
-      algorithms: ["HS256"]
-    }
+      algorithms: ["HS256"],
+    },
   });
 
   server.auth.default("jwt");
@@ -55,6 +55,6 @@ export default (): IPlugin => {
     register,
     info: () => {
       return { name: "JWT Authentication", version: "1.0.0" };
-    }
+    },
   };
 };

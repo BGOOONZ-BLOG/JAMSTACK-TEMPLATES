@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {Link, withPrefix, classNames} from '../utils';
+import { Link, withPrefix, classNames } from '../utils';
 
 export default class Action extends React.Component {
     render() {
@@ -10,7 +10,7 @@ export default class Action extends React.Component {
         const label = _.get(action, 'label');
         const style = _.get(action, 'style', 'link');
         const classes = classNames({
-            'btn': style !== 'link',
+            btn: style !== 'link',
             'btn--secondary': style === 'secondary'
         });
         const newWindow = _.get(action, 'new_window');
@@ -20,7 +20,7 @@ export default class Action extends React.Component {
             attrs.target = '_blank';
         }
         if (newWindow || noFollow) {
-            attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
+            attrs.rel = [newWindow ? 'noopener' : '', noFollow ? 'nofollow' : ''].filter(Boolean).join(' ');
         }
         return (
             <Link href={withPrefix(url)} {...attrs} className={classes}>

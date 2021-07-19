@@ -1,0 +1,344 @@
+<div class="code-box" id="demo-mix">
+  <div class="code-box-demo">
+    <div id="components-form-demo-mix"></div>
+    <script>(function(){"use strict";
+
+var Select = antd.Select;
+var Option = Select.Option;
+var InputNumber = antd.InputNumber;
+var Datepicker = antd.Datepicker;
+var Switch = antd.Switch;
+var Menu = antd.Menu;
+var Dropdown = antd.Dropdown;
+var Slider = antd.Slider;
+
+var menu = React.createElement(
+  Menu,
+  null,
+  React.createElement(
+    Menu.Item,
+    null,
+    React.createElement(
+      "a",
+      { target: "_blank", href: "http://www.alipay.com/" },
+      ".net"
+    )
+  ),
+  React.createElement(
+    Menu.Item,
+    null,
+    React.createElement(
+      "a",
+      { target: "_blank", href: "http://www.taobao.com/" },
+      ".jp"
+    )
+  ),
+  React.createElement(
+    Menu.Item,
+    null,
+    React.createElement(
+      "a",
+      { target: "_blank", href: "http://www.tmall.com/" },
+      ".org"
+    )
+  )
+);
+
+function handleSelectChange(value) {
+  console.log('selected ' + value);
+}
+
+function onInputNumberChange(v) {
+  console.log('changed', v);
+}
+
+React.render(React.createElement(
+  "form",
+  { className: "ant-form-horizontal" },
+  React.createElement(
+    "div",
+    { className: "ant-form-item" },
+    React.createElement(
+      "label",
+      { className: "col-8", required: true },
+      "InputNumber 数字输入框："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-10" },
+      React.createElement(InputNumber, { size: "large", min: 1, max: 10, defaultValue: 3, onChange: onInputNumberChange, style: { width: 100 } }),
+      React.createElement(
+        "span",
+        { className: "ant-form-text" },
+        " 台机器"
+      )
+    )
+  ),
+  React.createElement(
+    "div",
+    { className: "ant-form-item ant-form-item-compact" },
+    React.createElement(
+      "label",
+      { className: "col-8", required: true },
+      React.createElement("i", { className: "anticon anticon-exclamation-circle", style: { color: '#f60' } }),
+      " 我是标题："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-10" },
+      React.createElement(
+        "p",
+        { className: "ant-form-text" },
+        "唧唧复唧唧木兰当户织呀"
+      ),
+      React.createElement(
+        "p",
+        { className: "ant-form-text" },
+        React.createElement(
+          "a",
+          { href: "javascript:;" },
+          "链接文字"
+        )
+      )
+    )
+  ),
+  React.createElement(
+    "div",
+    { className: "ant-form-item" },
+    React.createElement(
+      "label",
+      { htmlFor: "", className: "col-8", required: true },
+      "Switch 开关："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-10" },
+      React.createElement(Switch, null)
+    )
+  ),
+  React.createElement(
+    "div",
+    { className: "ant-form-item" },
+    React.createElement(
+      "label",
+      { htmlFor: "", className: "col-8", required: true },
+      "Slider 滑动输入条："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-10" },
+      React.createElement(Slider, { marks: ["A", "B", "C", "D", "E", "F", "G"] })
+    )
+  ),
+  React.createElement(
+    "div",
+    { className: "ant-form-item" },
+    React.createElement(
+      "label",
+      { htmlFor: "", className: "col-8", required: true },
+      "Select 选择器："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-16" },
+      React.createElement(
+        Select,
+        { size: "large", defaultValue: "lucy", style: { width: 200 }, onChange: handleSelectChange },
+        React.createElement(
+          Option,
+          { value: "jack" },
+          "jack"
+        ),
+        React.createElement(
+          Option,
+          { value: "lucy" },
+          "lucy"
+        ),
+        React.createElement(
+          Option,
+          { value: "disabled", disabled: true },
+          "disabled"
+        ),
+        React.createElement(
+          Option,
+          { value: "yiminghe" },
+          "yiminghe"
+        )
+      )
+    )
+  ),
+  React.createElement(
+    "div",
+    { className: "ant-form-item" },
+    React.createElement(
+      "label",
+      { htmlFor: "", className: "col-8", required: true },
+      "Datepicker 日期选择框："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-6" },
+      React.createElement(Datepicker, null)
+    ),
+    React.createElement(
+      "div",
+      { className: "col-1" },
+      React.createElement(
+        "p",
+        { className: "ant-form-split" },
+        "-"
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "col-6" },
+      React.createElement(Datepicker, null)
+    )
+  ),
+  React.createElement(
+    "div",
+    { className: "ant-form-item has-error" },
+    React.createElement(
+      "label",
+      { htmlFor: "", className: "col-8", required: true },
+      "Datepicker 校验："
+    ),
+    React.createElement(
+      "div",
+      { className: "col-6" },
+      React.createElement(Datepicker, null)
+    ),
+    React.createElement(
+      "div",
+      { className: "col-1" },
+      React.createElement(
+        "p",
+        { className: "ant-form-split" },
+        "-"
+      )
+    ),
+    React.createElement(
+      "div",
+      { className: "col-6" },
+      React.createElement(Datepicker, null)
+    ),
+    React.createElement(
+      "div",
+      { className: "col-19 col-offset-8" },
+      React.createElement(
+        "p",
+        { className: "ant-form-explain" },
+        "请输入正确选项"
+      )
+    )
+  )
+), document.getElementById('components-form-demo-mix'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = antd.Select;
+<span class="keyword">var</span> Option = Select.Option;
+<span class="keyword">var</span> InputNumber = antd.InputNumber;
+<span class="keyword">var</span> Datepicker = antd.Datepicker;
+<span class="keyword">var</span> Switch = antd.Switch;
+<span class="keyword">var</span> Menu = antd.Menu;
+<span class="keyword">var</span> Dropdown = antd.Dropdown;
+<span class="keyword">var</span> Slider = antd.Slider;
+
+<span class="keyword">var</span> menu = <span class="xml"><span class="tag">&lt;<span class="title">Menu</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Menu.Item</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">target</span>=<span class="value">"_blank"</span> <span class="attribute">href</span>=<span class="value">"http://www.alipay.com/"</span>&gt;</span>.net<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Menu.Item</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">target</span>=<span class="value">"_blank"</span> <span class="attribute">href</span>=<span class="value">"http://www.taobao.com/"</span>&gt;</span>.jp<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Menu.Item</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">target</span>=<span class="value">"_blank"</span> <span class="attribute">href</span>=<span class="value">"http://www.tmall.com/"</span>&gt;</span>.org<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">Menu</span>&gt;</span>;</span>
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleSelectChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">onInputNumberChange</span><span class="params">(v)</span>{</span>
+  console.log(<span class="string">'changed'</span>,v);
+}
+
+React.render(
+<span class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">className</span>=<span class="value">"ant-form-horizontal"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>InputNumber 数字输入框：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-10"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">InputNumber</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">min</span>=<span class="value">{1}</span> <span class="attribute">max</span>=<span class="value">{10}</span> <span class="attribute">defaultValue</span>=<span class="value">{3}</span> <span class="attribute">onChange</span>=<span class="value">{onInputNumberChange}</span> <span class="attribute">style</span>=<span class="value">{{width:100}}</span>/&gt;</span>
+      <span class="tag">&lt;<span class="title">span</span> <span class="attribute">className</span>=<span class="value">"ant-form-text"</span>&gt;</span> 台机器<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item ant-form-item-compact"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"anticon anticon-exclamation-circle"</span> <span class="attribute">style</span>=<span class="value">{{color:</span> '#<span class="attribute">f60</span>'}}&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span> 我是标题：
+    <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-10"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-text"</span>&gt;</span>唧唧复唧唧木兰当户织呀<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-text"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>链接文字<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">""</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>Switch 开关：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-10"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Switch</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">""</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>Slider 滑动输入条：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-10"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Slider</span> <span class="attribute">marks</span>=<span class="value">{["A","B","C","D","E","F","G"]}</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">""</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>Select 选择器：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-16"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleSelectChange}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">""</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>Datepicker 日期选择框：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Datepicker</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-1"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-split"</span>&gt;</span>-<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Datepicker</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"ant-form-item has-error"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">label</span> <span class="attribute">htmlFor</span>=<span class="value">""</span> <span class="attribute">className</span>=<span class="value">"col-8"</span> <span class="attribute">required</span>&gt;</span>Datepicker 校验：<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Datepicker</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-1"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-split"</span>&gt;</span>-<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-6"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Datepicker</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"col-19 col-offset-8"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span> <span class="attribute">className</span>=<span class="value">"ant-form-explain"</span>&gt;</span>请输入正确选项<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+, document.getElementById('components-form-demo-mix'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-mix">表单组合</a>
+    </div>
+    <p>集中营，展示和表单相关的其他 ant-design 组件。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'eslint-plugin-class-property' {
+declare module "eslint-plugin-class-property" {
   declare module.exports: any;
 }
 
@@ -22,24 +22,24 @@ declare module 'eslint-plugin-class-property' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'eslint-plugin-class-property/lib/rules/class-property-semicolon' {
+declare module "eslint-plugin-class-property/lib/rules/class-property-semicolon" {
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-class-property/test/lib/rules/class-property-semicolon' {
+declare module "eslint-plugin-class-property/test/lib/rules/class-property-semicolon" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'eslint-plugin-class-property/index' {
-  declare module.exports: $Exports<'eslint-plugin-class-property'>;
+declare module "eslint-plugin-class-property/index" {
+  declare module.exports: $Exports<"eslint-plugin-class-property">;
 }
-declare module 'eslint-plugin-class-property/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-class-property'>;
+declare module "eslint-plugin-class-property/index.js" {
+  declare module.exports: $Exports<"eslint-plugin-class-property">;
 }
-declare module 'eslint-plugin-class-property/lib/rules/class-property-semicolon.js' {
-  declare module.exports: $Exports<'eslint-plugin-class-property/lib/rules/class-property-semicolon'>;
+declare module "eslint-plugin-class-property/lib/rules/class-property-semicolon.js" {
+  declare module.exports: $Exports<"eslint-plugin-class-property/lib/rules/class-property-semicolon">;
 }
-declare module 'eslint-plugin-class-property/test/lib/rules/class-property-semicolon.js' {
-  declare module.exports: $Exports<'eslint-plugin-class-property/test/lib/rules/class-property-semicolon'>;
+declare module "eslint-plugin-class-property/test/lib/rules/class-property-semicolon.js" {
+  declare module.exports: $Exports<"eslint-plugin-class-property/test/lib/rules/class-property-semicolon">;
 }

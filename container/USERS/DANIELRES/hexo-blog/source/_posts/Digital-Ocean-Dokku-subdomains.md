@@ -1,8 +1,10 @@
 title: "How to set up dokku to host multiple apps with different subdomains on a Digital Ocean droplet"
 date: 2015-08-19 17:39:55
 categories:
+
 - programming
 - devops
+
 ---
 
 <span style="display: none"></span> <!-- more -->
@@ -22,58 +24,64 @@ With this setup, we'ĺl be able to deploy each apps with a simple git push like 
 
 And access our apps using subdomains, like:
 
-  * App 1: http://app1.pixarea.com
-  * App 2: http://app2.pixarea.com
-  * ...
+- App 1: http://app1.pixarea.com
+- App 2: http://app2.pixarea.com
+- ...
 
 All of this using only 1 droplet on Digital Ocean.
 
 Before we begin:
 
-  - be sure to have a registered domain name that you can add subdomains to.
-
+- be sure to have a registered domain name that you can add subdomains to.
 
 ## 1) Setting up the dokku droplet on Digital Ocean
 
-  1. Go to https://www.digitalocean.com and login or signup.
+1. Go to https://www.digitalocean.com and login or signup.
 
-  2. Under "Droplets": click the big button "Create Droplet" on the right:
+2. Under "Droplets": click the big button "Create Droplet" on the right:
+
 
     <img src="{% asset_path 00.png %}" />
 
-  3. Name the droplet to your liking ("pixarea01" in this example), select size and region.
+3. Name the droplet to your liking ("pixarea01" in this example), select size and region.
 
-  4. Under "Select Image", choose "Applications" then "Dokku 0.3.23 on 14.04" or whatever newer version.
+4. Under "Select Image", choose "Applications" then "Dokku 0.3.23 on 14.04" or whatever newer version.
+
 
     <img src="{% asset_path 01.png %}" />
 
-  5. Add your public SSH key to avoid having to type a password every time you deploy.
+5. Add your public SSH key to avoid having to type a password every time you deploy.
+
 
     * Copy the content of your local "id_rsa.pub" file (`cat .ssh/id_rsa.pub`) and paste it here:
 
     <img src="{% asset_path 02.png %}" />
 
-  6. Now you can click on the big button "Create Droplet".
+6. Now you can click on the big button "Create Droplet".
 
-  7. You should see this progress bar:
+7. You should see this progress bar:
+
 
     <img src="{% asset_path 04.png %}" />
 
-  8. Then the control panel for your newly created droplet should appear:
+8. Then the control panel for your newly created droplet should appear:
+
 
     <img src="{% asset_path 05.png %}" />
 
     Yay ! Well done !
 
-
 ## 2) Pointing the subdomains to your droplet
 
-  1. Note the IP address of your droplet, shown on the top left of the droplet panel
+1. Note the IP address of your droplet, shown on the top left of the droplet panel
+
+
     * In this example, it is: `45.55.39.26`
 
     <img src="{% asset_path 06.png %}" />
 
-  2. Access the DNS config of your registrar, add your subdomains and point them to this IP:
+2. Access the DNS config of your registrar, add your subdomains and point them to this IP:
+
 
     - In order to do that, add a new entry of type "A", then paste the droplet IP address you just copied:
 
@@ -81,8 +89,6 @@ Before we begin:
       <img src="{% asset_path 09.png %}" />
 
     - Repeat for every subdomain / app
-
-
 
 ## 3) Deploy the first app
 
@@ -113,11 +119,10 @@ And you should see something like this:
 
 <img src="{% asset_path 11.png %}" />
 
-
 ## 4) Repeat the process for other apps
 
-  1. Access the control panel of the registrar for the domain name
-  2. Add a new entry "app2" of type "A" that points to the droplet IP
+1. Access the control panel of the registrar for the domain name
+2. Add a new entry "app2" of type "A" that points to the droplet IP
 
 Clone, then publish an app as "app2":
 
@@ -131,14 +136,6 @@ Clone, then publish an app as "app2":
 
 Check the result:
 
-* If we browse to http://app2.pixarea.com now, we can see:
+- If we browse to http://app2.pixarea.com now, we can see:
 
 <img src="{% asset_path 12.png %}" />
-
-
-
-
-
-
-
-

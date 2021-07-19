@@ -1,0 +1,42 @@
+<div class="code-box" id="demo-overflow">
+  <div class="code-box-demo">
+    <div id="components-badge-demo-overflow"></div>
+    <script>mountNode = document.getElementById('components-badge-demo-overflow');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    _antd.Badge,
+    { count: 99, overflowCount: 10 },
+    React.createElement("a", { href: "#", className: "head-example" })
+  ),
+  React.createElement(
+    _antd.Badge,
+    { count: 1000, overflowCount: 999 },
+    React.createElement("a", { href: "#", className: "head-example" })
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Badge } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Badge</span> <span class="hljs-attribute">count</span>=<span class="hljs-value">{99}</span> <span class="hljs-attribute">overflowCount</span>=<span class="hljs-value">{10}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"head-example"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Badge</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Badge</span> <span class="hljs-attribute">count</span>=<span class="hljs-value">{1000}</span> <span class="hljs-attribute">overflowCount</span>=<span class="hljs-value">{999}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"head-example"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Badge</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-overflow">封顶数字</a>
+    </div>
+    
+<p>超过 <code>overflowCount</code> 的会显示为 <code>${overflowCount}+</code>。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

@@ -35,23 +35,21 @@ declare module "react-redux" {
     React$Component<CP>
   > & { defaultProps: DP };
 
-  declare class ConnectedComponentWithDefaultProps<
-    OP,
-    DP,
-    CP
-  > extends React$Component<OP> {
-    static defaultProps: DP, // <= workaround for https://github.com/facebook/flow/issues/4644
-    static WrappedComponent: Class<React$Component<CP>>,
-    getWrappedInstance(): React$Component<CP>,
-    props: OP,
-    state: void
+  declare class ConnectedComponentWithDefaultProps<OP, DP, CP>
+    extends React$Component<OP>
+  {
+    static defaultProps: DP; // <= workaround for https://github.com/facebook/flow/issues/4644
+    static WrappedComponent: Class<React$Component<CP>>;
+    getWrappedInstance(): React$Component<CP>;
+    props: OP;
+    state: void;
   }
 
   declare class ConnectedComponent<OP, P> extends React$Component<OP> {
-    static WrappedComponent: Class<React$Component<P>>,
-    getWrappedInstance(): React$Component<P>,
-    props: OP,
-    state: void
+    static WrappedComponent: Class<React$Component<P>>;
+    getWrappedInstance(): React$Component<P>;
+    props: OP;
+    state: void;
   }
 
   declare type ConnectedComponentWithDefaultPropsClass<OP, DP, CP> = Class<
@@ -67,10 +65,12 @@ declare module "react-redux" {
   ) => ConnectedComponentWithDefaultPropsClass<OP, DP, CP>) &
     ((component: React$ComponentType<P>) => ConnectedComponentClass<OP, P>);
 
-  declare class Provider<S, A> extends React$Component<{
-    store: Store<S, A>,
-    children?: any
-  }> {}
+  declare class Provider<S, A>
+    extends
+      React$Component<{
+        store: Store<S, A>,
+        children?: any,
+      }> {}
 
   declare function createProvider(
     storeKey?: string,
@@ -79,7 +79,7 @@ declare module "react-redux" {
 
   declare type ConnectOptions = {
     pure?: boolean,
-    withRef?: boolean
+    withRef?: boolean,
   };
 
   declare type Null = null | void;

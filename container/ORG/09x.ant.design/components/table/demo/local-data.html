@@ -1,0 +1,178 @@
+<div class="code-box" id="demo-local-data">
+  <div class="code-box-demo">
+    <div id="components-table-demo-local-data"></div>
+    <script>(function(){'use strict';
+
+var Table = antd.Table;
+var columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  render: function render(text) {
+    return React.createElement(
+      'a',
+      { href: 'javascript:;' },
+      text
+    );
+  }
+}, {
+  title: '年龄',
+  dataIndex: 'age'
+}, {
+  title: '住址',
+  dataIndex: 'address'
+}];
+var data1 = [{
+  key: '1',
+  name: '胡彦斌',
+  age: 32,
+  address: '西湖区湖底公园1号'
+}, {
+  key: '2',
+  name: '胡彦祖',
+  age: 42,
+  address: '西湖区湖底公园1号'
+}, {
+  key: '3',
+  name: '李大嘴',
+  age: 32,
+  address: '西湖区湖底公园1号'
+}];
+var data2 = [{
+  key: '11',
+  name: '胡彦斌2',
+  age: 32,
+  address: '西湖区湖底公园2号'
+}, {
+  key: '22',
+  name: '胡彦祖2',
+  age: 42,
+  address: '西湖区湖底公园2号'
+}, {
+  key: '33',
+  name: '李大嘴2',
+  age: 32,
+  address: '西湖区湖底公园2号'
+}];
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {
+      data: []
+    };
+  },
+  handleClick1: function handleClick1() {
+    this.setState({
+      data: data1
+    });
+  },
+  handleClick2: function handleClick2() {
+    this.setState({
+      data: data2
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(Table, { columns: columns, dataSource: this.state.data }),
+      React.createElement(
+        'button',
+        { className: 'ant-btn', onClick: this.handleClick1 },
+        '加载本地数据1'
+      ),
+      ' ',
+      React.createElement(
+        'button',
+        { className: 'ant-btn', onClick: this.handleClick2 },
+        '加载本地数据2'
+      )
+    );
+  }
+});
+
+React.render(React.createElement(App, null), document.getElementById('components-table-demo-local-data'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Table = antd.Table;
+<span class="keyword">var</span> columns = [{
+  title: <span class="string">'姓名'</span>,
+  dataIndex: <span class="string">'name'</span>,
+  render: <span class="function"><span class="keyword">function</span><span class="params">(text)</span> {</span>
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">a</span>&gt;</span>;</span>
+  }
+}, {
+  title: <span class="string">'年龄'</span>,
+  dataIndex: <span class="string">'age'</span>
+}, {
+  title: <span class="string">'住址'</span>,
+  dataIndex: <span class="string">'address'</span>
+}];
+<span class="keyword">var</span> data1 = [{
+  key: <span class="string">'1'</span>,
+  name: <span class="string">'胡彦斌'</span>,
+  age: <span class="number">32</span>,
+  address: <span class="string">'西湖区湖底公园1号'</span>
+}, {
+  key: <span class="string">'2'</span>,
+  name: <span class="string">'胡彦祖'</span>,
+  age: <span class="number">42</span>,
+  address: <span class="string">'西湖区湖底公园1号'</span>
+}, {
+  key: <span class="string">'3'</span>,
+  name: <span class="string">'李大嘴'</span>,
+  age: <span class="number">32</span>,
+  address: <span class="string">'西湖区湖底公园1号'</span>
+}];
+<span class="keyword">var</span> data2 = [{
+  key: <span class="string">'11'</span>,
+  name: <span class="string">'胡彦斌2'</span>,
+  age: <span class="number">32</span>,
+  address: <span class="string">'西湖区湖底公园2号'</span>
+}, {
+  key: <span class="string">'22'</span>,
+  name: <span class="string">'胡彦祖2'</span>,
+  age: <span class="number">42</span>,
+  address: <span class="string">'西湖区湖底公园2号'</span>
+}, {
+  key: <span class="string">'33'</span>,
+  name: <span class="string">'李大嘴2'</span>,
+  age: <span class="number">32</span>,
+  address: <span class="string">'西湖区湖底公园2号'</span>
+}];
+
+<span class="keyword">var</span> App = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      data: []
+    };
+  },
+  handleClick1() {
+    <span class="keyword">this</span>.setState({
+      data: data1
+    });
+  },
+  handleClick2() {
+    <span class="keyword">this</span>.setState({
+      data: data2
+    });
+  },
+  render() {
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Table</span> <span class="attribute">columns</span>=<span class="value">{columns}</span> <span class="attribute">dataSource</span>=<span class="value">{this.state.data}</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick1}</span>&gt;</span>加载本地数据1<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+      &amp;nbsp;
+      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"ant-btn"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick2}</span>&gt;</span>加载本地数据2<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
+  }
+})
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">App</span> /&gt;</span>
+, document.getElementById('components-table-demo-local-data'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-local-data">外界控制数据</a>
+    </div>
+    <p>由父元素控制自身数据展示。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

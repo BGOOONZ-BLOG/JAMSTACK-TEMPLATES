@@ -11,7 +11,7 @@ export default class Header extends React.Component {
                 {_.map(navLinks, (action, index) => {
                     const actionUrl = _.trim(_.get(action, 'url'), '/');
                     const classes = classNames('nav-link', {
-                        'active': pageUrl === actionUrl
+                        active: pageUrl === actionUrl
                     });
                     return <Action key={index} action={action} actionClass={classes} />;
                 })}
@@ -30,7 +30,11 @@ export default class Header extends React.Component {
 
         return (
             <header id="header" className="header container">
-                {title && <Link href={withPrefix('/')} className="logo">{title}</Link>}
+                {title && (
+                    <Link href={withPrefix('/')} className="logo">
+                        {title}
+                    </Link>
+                )}
                 {hasNav && !_.isEmpty(navLinks) && this.renderNavLinks(navLinks, pageUrl)}
             </header>
         );

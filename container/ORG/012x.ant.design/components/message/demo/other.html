@@ -1,0 +1,73 @@
+<div class="code-box" id="demo-other">
+  <div class="code-box-demo">
+    <div id="components-message-demo-other"></div>
+    <script>mountNode = document.getElementById('components-message-demo-other');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var success = function success() {
+  _antd.message.success('这是一条成功提示');
+};
+
+var error = function error() {
+  _antd.message.error('这是一条报错提示');
+};
+
+var warn = function warn() {
+  _antd.message.warn('这是一条警告提示');
+};
+
+ReactDOM.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    _antd.Button,
+    { onClick: success },
+    '\u663E\u793A\u6210\u529F\u63D0\u793A'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: error },
+    '\u663E\u793A\u62A5\u9519\u63D0\u793A'
+  ),
+  React.createElement(
+    _antd.Button,
+    { onClick: warn },
+    '\u663E\u793A\u8B66\u544A\u63D0\u793A'
+  )
+), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { message, Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> success = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  message.success(<span class="hljs-string">'这是一条成功提示'</span>);
+};
+
+<span class="hljs-keyword">const</span> error = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  message.error(<span class="hljs-string">'这是一条报错提示'</span>);
+};
+
+<span class="hljs-keyword">const</span> warn = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  message.warn(<span class="hljs-string">'这是一条警告提示'</span>);
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>显示成功提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{error}</span>&gt;</span>显示报错提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{warn}</span>&gt;</span>显示警告提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, mountNode);</span></code></pre></div><style>
+#components-message-demo-other .ant-btn {
+  margin-right: 8px;
+}
+</style>
+
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-other">其他提示类型</a>
+    </div>
+    
+<p>包括成功、失败、警告。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

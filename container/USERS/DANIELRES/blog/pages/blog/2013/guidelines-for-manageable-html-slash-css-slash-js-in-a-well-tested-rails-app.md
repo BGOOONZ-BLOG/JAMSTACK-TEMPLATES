@@ -4,42 +4,38 @@ sub: Simple guidelines for resilient tests
 path: /2013/02/guidelines-for-manageable-html-slash-css-slash-js-in-a-well-tested-rails-app/
 date: 2013-02-12 14:47
 categories:
-- programming
-- testing
-- ruby
+  - programming
+  - testing
+  - ruby
 tags:
-- TDD
-- cucumber
-- capybara
-- rspec
+  - TDD
+  - cucumber
+  - capybara
+  - rspec
 ---
 
 # Typical scenario
 
 Consider this HTML fragment:
 
-```html
+````html
 <section id="recipes">
-  <h1>The tasty recipes of uncle Alfred <button class="close">Close</button></h1>
+  <h1>
+    The tasty recipes of uncle Alfred <button class="close">Close</button>
+  </h1>
   <div id="toad-recipe" class="recipe">
     <h2>Toad lasagna <button class="add">Add to favorites</button></h2>
     <p>First, you have to catch a big, juicy toad.</p>
   </div>
 </section>
-```html
-
-And this css:
-
-```css
-section#recipes button.close{
-  /* some funky styles */
-}
-```
+```html And this css: ```css section#recipes button.close{ /* some funky styles
+*/ }
+````
 
 And javascript (jQuery):
 
 ```javascript
-$("#recipes > h1 > button.close").click(function(){
+$("#recipes > h1 > button.close").click(function () {
   /* some funky behavior */
 });
 ```
@@ -64,9 +60,9 @@ Should you want to change the h2 for an h3, and you'll have to fix everything ev
 
 Here are my guidelines for manageable html, css and javascript in a well-tested project, I'm still experimenting with this and I'm open to any suggestion or critic.
 
-* For css: use class attributes only
-* For javascript: use IDs for unique elements or data-attributes for generic elements
-* For testing: use data-attributes only, except when you're targeting a specific object from the domain, in which case you're allowed to use the ID.
+- For css: use class attributes only
+- For javascript: use IDs for unique elements or data-attributes for generic elements
+- For testing: use data-attributes only, except when you're targeting a specific object from the domain, in which case you're allowed to use the ID.
 
 The refactored HTML fragment:
 
@@ -95,7 +91,7 @@ And css:
 ```
 
 ```js
-$("[data-purpose='add-button']").click(function(){
+$("[data-purpose='add-button']").click(function () {
   // some funky javascript
 });
 ```
@@ -121,17 +117,17 @@ On a large project, it's a life saver.
 
 For css:
 
-* You should really never use ids to style elements, find a way to tag the specific element with a meaningful class instead.
+- You should really never use ids to style elements, find a way to tag the specific element with a meaningful class instead.
 
 For javascript:
 
-* Instead of writing js code for specific cases, write generic code and use data-attributes instead, like Twitter Bootstrap does.
-* Use ids only to target a unique element corresponding to real objects in the domain logic, ex: #post51.
+- Instead of writing js code for specific cases, write generic code and use data-attributes instead, like Twitter Bootstrap does.
+- Use ids only to target a unique element corresponding to real objects in the domain logic, ex: #post51.
 
 For tests:
 
-* Use data attributes instead of classes to describe the purpose of elements
-* With links: use the rel attribute to describe its purpose, as [described by Steve Klabnik](http://blog.steveklabnik.com/posts/2011-12-20-write-better-cukes-with-the-rel-attribute#making_our_link__with_semantics_) on his blog:
+- Use data attributes instead of classes to describe the purpose of elements
+- With links: use the rel attribute to describe its purpose, as [described by Steve Klabnik](http://blog.steveklabnik.com/posts/2011-12-20-write-better-cukes-with-the-rel-attribute#making_our_link__with_semantics_) on his blog:
 
 ```html
 <a href="/articles/1/edit" rel="edit-article">Edit this article</a>
@@ -142,6 +138,3 @@ When /^I choose to edit the article$/ do
   find("//a[@rel='edit-article']").click
 end
 ```
-
-
-

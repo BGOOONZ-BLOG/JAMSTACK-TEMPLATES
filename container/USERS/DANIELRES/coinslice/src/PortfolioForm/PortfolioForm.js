@@ -1,20 +1,20 @@
 // @flow
-import * as React from 'react'
-import type { PortfolioForm } from '../types'
+import * as React from "react";
+import type { PortfolioForm } from "../types";
 
 type Props = {
   onSubmit: Function,
   portfolioForm: PortfolioForm,
   updateForm: Function,
-}
+};
 
 const errorStyle = {
-  background: '#e9c2c2',
-  color: 'darkred',
-  fontWeight: 'bold',
+  background: "#e9c2c2",
+  color: "darkred",
+  fontWeight: "bold",
   padding: 20,
   marginBottom: 20,
-}
+};
 
 export default ({
   onSubmit,
@@ -22,14 +22,16 @@ export default ({
   updateForm,
 }: Props) => (
   <form
-    onSubmit={e => {
-      e.preventDefault()
-      onSubmit(data)
+    onSubmit={(e) => {
+      e.preventDefault();
+      onSubmit(data);
     }}
   >
     {hasErrors && (
       <div style={errorStyle}>
-        {Object.entries(errors).map(([k, v]) => <li key={k}>{v}</li>)}
+        {Object.entries(errors).map(([k, v]) => (
+          <li key={k}>{v}</li>
+        ))}
       </div>
     )}
     <div>
@@ -51,4 +53,4 @@ export default ({
     </div>
     <button>Submit</button>
   </form>
-)
+);

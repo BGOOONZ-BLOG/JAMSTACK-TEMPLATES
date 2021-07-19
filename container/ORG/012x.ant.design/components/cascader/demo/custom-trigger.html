@@ -1,0 +1,111 @@
+<div class="code-box" id="demo-custom-trigger">
+  <div class="code-box-demo">
+    <div id="components-cascader-demo-custom-trigger"></div>
+    <script>mountNode = document.getElementById('components-cascader-demo-custom-trigger');</script>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var options = [{
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州'
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京'
+  }]
+}];
+
+var CitySwitcher = React.createClass({
+  displayName: 'CitySwitcher',
+  getInitialState: function getInitialState() {
+    return {
+      text: '未选择'
+    };
+  },
+  onChange: function onChange(value, selectedOptions) {
+    this.setState({
+      text: selectedOptions.map(function (o) {
+        return o.label;
+      }).join(', ')
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'span',
+      null,
+      this.state.text,
+      '\xA0',
+      React.createElement(
+        _antd.Cascader,
+        { options: options, onChange: this.onChange },
+        React.createElement(
+          'a',
+          { href: '#' },
+          '\u5207\u6362\u57CE\u5E02'
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(CitySwitcher, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Cascader } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+  }],
+}];
+
+<span class="hljs-keyword">const</span> CitySwitcher = React.createClass({
+  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      text: <span class="hljs-string">'未选择'</span>,
+    };
+  },
+  onChange(value, selectedOptions) {
+    <span class="hljs-keyword">this</span>.setState({
+      text: selectedOptions.map(o =&gt; o.label).join(<span class="hljs-string">', '</span>),
+    });
+  },
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>
+        {this.state.text}
+        &amp;nbsp;
+        <span class="hljs-tag">&lt;<span class="hljs-title">Cascader</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.onChange}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>切换城市<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">Cascader</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    )</span>;
+  },
+});
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">CitySwitcher</span> /&gt;</span>, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-custom-trigger">可以自定义显示</a>
+    </div>
+    
+<p>切换按钮和结果分开。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="code-box" id="demo-step-next">
+  <div class="code-box-demo">
+    <div id="components-steps-demo-step-next"></div>
+    <script>mountNode = document.getElementById('components-steps-demo-step-next');</script>
+    <style type="text/css">#components-steps-demo-step-next > div > div {
+  margin-bottom: 30px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-id">#components-steps-demo-step-next</span> &gt; <span class="hljs-tag">div</span> &gt; <span class="hljs-tag">div</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+}</span></code></pre></div><script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Step = _antd.Steps.Step;
+var array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
+var steps = array.map(function (item, i) {
+  return {
+    title: '\u6B65\u9AA4' + (i + 1)
+  };
+});
+
+var App = React.createClass({
+  displayName: 'App',
+  getInitialState: function getInitialState() {
+    return {
+      currentStep: Math.floor(Math.random() * steps.length)
+    };
+  },
+  next: function next() {
+    var s = this.state.currentStep + 1;
+    if (s === steps.length) {
+      s = 0;
+    }
+    this.setState({
+      currentStep: s
+    });
+  },
+  render: function render() {
+    var cs = this.state.currentStep;
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'div',
+        null,
+        '\u5F53\u524D\u6B63\u5728\u6267\u884C\u7B2C ',
+        cs + 1,
+        ' \u6B65'
+      ),
+      React.createElement(
+        _antd.Steps,
+        { current: cs },
+        steps.map(function (s, i) {
+          return React.createElement(Step, { key: i, title: s.title, description: s.description });
+        })
+      ),
+      React.createElement(
+        'div',
+        null,
+        React.createElement(
+          _antd.Button,
+          { onClick: this.next },
+          '\u4E0B\u4E00\u6B65'
+        )
+      )
+    );
+  }
+});
+
+ReactDOM.render(React.createElement(App, null), mountNode);})()</script><div class="highlight"><pre><code class="javascript">import { Steps, Button } from 'antd';
+const Step = Steps.Step;
+const array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
+const steps = array.map((item, i) =&gt; {
+  return {
+    title: `步骤${i + 1}`
+  };
+});
+
+const App = React.createClass({
+  getInitialState() {
+    return {
+      currentStep: Math.floor(Math.random() * steps.length)
+    };
+  },
+  next() {
+    let s = this.state.currentStep + 1;
+    if (s === steps.length) {
+      s = 0;
+    }
+    this.setState({
+      currentStep: s
+    });
+  },
+  render() {
+    const cs = this.state.currentStep;
+    return (
+      &lt;div&gt;
+        &lt;div&gt;当前正在执行第 {cs + 1} 步&lt;/div&gt;
+        &lt;Steps current={cs}&gt;
+          {steps.map((s, i) =&gt; &lt;Step key={i} title={s.title} description={s.description} /&gt;)}
+        &lt;/Steps&gt;
+        &lt;div&gt;
+          &lt;Button onClick={this.next}&gt;下一步&lt;/Button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(&lt;App /&gt;, mountNode);</code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-step-next">切换到下一步</a>
+    </div>
+    
+<p>随机生成 3~6 个步骤，初始随机进行到其中一个步骤。</p>
+
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none"></span>
+  </div>
+</div>

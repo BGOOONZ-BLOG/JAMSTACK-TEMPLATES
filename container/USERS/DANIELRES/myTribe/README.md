@@ -6,12 +6,12 @@ This project is a personal experiment for running a javascript app with decouple
 
 The whole application is composed of several independent layers assembled together using docker-compose:
 
-
 - in all environments:
+
   - the `web` container is the core of the application
   - the `db` container provides a postgresql database
 
-- in production only: 
+- in production only:
   - `https-portal` enables https on the whole application
   - the `auth` container has to be used on a subdomain of the app, and provides authentication using various providers like Facebook
 
@@ -22,7 +22,7 @@ This might hopefully become a very convenient base for rapid development of simp
 
 The app is composed of:
 
-- a `web` container with: 
+- a `web` container with:
   - a frontend (create-react-app)
   - a backend (express.js)
 - a `db` container (postgres)
@@ -41,6 +41,7 @@ Deployment:
 The app needs a number of environment variables to be set:
 
 - used in all environments:
+
   - `PGPASSWORD`
   - `PGUSER`
   - `PGDB`
@@ -55,7 +56,7 @@ The app needs a number of environment variables to be set:
 
 In development, these needed env variables are set automatically, reading from the `.env` file.
 
-In production, you need to define these variables yourself. 
+In production, you need to define these variables yourself.
 
 Here is an example launch command for production:
 
@@ -80,7 +81,7 @@ If you want to use a minimal Digital Ocean droplet for 5$/month (512 mb RAM, 20G
 
 `docker-machine create --driver digitalocean --digitalocean-access-token=YOUR_DIGITALOCEAN_ACCESS_TOKEN --digitalocean-size 512mb YOUR_DOCKER_MACHINE_NAME`
 
-This is the cheapest option available and comes with limitations that require some little tweaks. The main problem is that the droplet doesn't have enough RAM to be able to complete the `npm install` (or `yarn install`) command. 
+This is the cheapest option available and comes with limitations that require some little tweaks. The main problem is that the droplet doesn't have enough RAM to be able to complete the `npm install` (or `yarn install`) command.
 
 Luckily, they provide more than enough hard disk space for us to set up a 1Gb swapfile, which solves our probem.
 

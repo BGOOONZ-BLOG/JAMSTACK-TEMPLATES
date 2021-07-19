@@ -43,13 +43,22 @@ export default class Header extends React.Component {
     renderNavLinks(navLinks, pageUrl) {
         return (
             <React.Fragment>
-                <button aria-label="Menu" className="btn btn--icon btn--clear navbar__menu-btn js-nav-toggle" ref={this.menuOpenRef} onClick={this.handleMenuToggle.bind(this)}>
+                <button
+                    aria-label="Menu"
+                    className="btn btn--icon btn--clear navbar__menu-btn js-nav-toggle"
+                    ref={this.menuOpenRef}
+                    onClick={this.handleMenuToggle.bind(this)}
+                >
                     <Icon icon="hamburger" />
                 </button>
                 <div className="navbar__menu">
                     <div className="navbar__scroller">
                         <div className="navbar__inner">
-                            <button aria-label="Close" className="btn btn--icon btn--clear navbar__close-btn js-nav-toggle" onClick={this.handleMenuToggle.bind(this)}>
+                            <button
+                                aria-label="Close"
+                                className="btn btn--icon btn--clear navbar__close-btn js-nav-toggle"
+                                onClick={this.handleMenuToggle.bind(this)}
+                            >
                                 <Icon icon="close" />
                             </button>
                             <ul className="navbar__list menu">
@@ -71,7 +80,7 @@ export default class Header extends React.Component {
                     </div>
                 </div>
             </React.Fragment>
-        )
+        );
     }
 
     render() {
@@ -89,10 +98,18 @@ export default class Header extends React.Component {
             <header className="site-header">
                 <div className="container container--lg">
                     <nav className="navbar" aria-label="Main Navigation">
-                        <Link className="sr-only" href="#content">Skip to main content</Link>
-                        {logo ? <Link className="navbar__logo" href={withPrefix('/')}><img src={withPrefix(logo)} alt={logoAlt} /></Link>
-                            : <Link className="h4 navbar__title" href={withPrefix('/')}>{title}</Link>
-                        }
+                        <Link className="sr-only" href="#content">
+                            Skip to main content
+                        </Link>
+                        {logo ? (
+                            <Link className="navbar__logo" href={withPrefix('/')}>
+                                <img src={withPrefix(logo)} alt={logoAlt} />
+                            </Link>
+                        ) : (
+                            <Link className="h4 navbar__title" href={withPrefix('/')}>
+                                {title}
+                            </Link>
+                        )}
                         {hasNav && !_.isEmpty(navLinks) && this.renderNavLinks(navLinks, pageUrl)}
                     </nav>
                 </div>

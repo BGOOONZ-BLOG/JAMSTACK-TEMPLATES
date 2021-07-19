@@ -1,0 +1,69 @@
+<div class="code-box" id="demo-event">
+  <div class="code-box-demo">
+    <div id="components-dropdown-demo-event"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var onClick = function onClick(_ref) {
+  var key = _ref.key;
+
+  console.log('点击了菜单' + key);
+};
+
+var menu = React.createElement(
+  _antd.Menu,
+  { onClick: onClick },
+  React.createElement(
+    _antd.Menu.Item,
+    { key: '1' },
+    '第一个菜单项'
+  ),
+  React.createElement(
+    _antd.Menu.Item,
+    { key: '2' },
+    '第二个菜单项'
+  ),
+  React.createElement(
+    _antd.Menu.Item,
+    { key: '3' },
+    '第三个菜单项'
+  )
+);
+
+ReactDOM.render(React.createElement(
+  _antd.Dropdown,
+  { overlay: menu },
+  React.createElement(
+    _antd.Button,
+    null,
+    '鼠标移入，点击菜单 ',
+    React.createElement(_antd.Icon, { type: 'down' })
+  )
+), document.getElementById('components-dropdown-demo-event'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Menu, Dropdown, Button, Icon } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> onClick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">{key}</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'点击了菜单'</span> + key);
+};
+
+<span class="hljs-keyword">const</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{onClick}</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>第一个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>第二个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>第三个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>;</span>
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>
+      鼠标移入，点击菜单 <span class="hljs-tag">&lt;<span class="hljs-title">Icon</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"down"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>
+, document.getElementById('components-dropdown-demo-event'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-event">触发事件</a>
+    </div>
+    <p>点击菜单项后会触发事件，用户可以通过相应的菜单项 key 进行不同的操作。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

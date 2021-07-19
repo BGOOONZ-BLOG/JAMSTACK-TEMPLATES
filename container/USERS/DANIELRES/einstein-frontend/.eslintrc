@@ -12,7 +12,7 @@
     "comma-dangle": 0,
     "quotes": [2, "single"],
     "no-multi-spaces": 0,
-    "key-spacing": [2, { align: "value" }],
+    "key-spacing": [2, { "align": "value" }],
     "eol-last": [0],
     "no-mixed-requires": [0],
     "no-underscore-dangle": [0],
@@ -37,9 +37,7 @@
     "react/sort-comp": 1,
     "react/wrap-multilines": 1
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "ecmaFeatures": {
     "jsx": true
   }

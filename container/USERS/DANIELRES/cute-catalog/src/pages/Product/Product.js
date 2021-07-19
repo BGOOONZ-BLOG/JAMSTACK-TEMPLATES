@@ -1,10 +1,10 @@
-import Link from 'redux-first-router-link'
-import React from 'react'
+import Link from "redux-first-router-link";
+import React from "react";
 
-import { toProduct } from 'store/routerActions'
+import { toProduct } from "store/routerActions";
 
-import Loader from 'shared/Loader'
-import ProductCard from 'shared/ProductCard'
+import Loader from "shared/Loader";
+import ProductCard from "shared/ProductCard";
 
 const Thumbs = ({ prevProduct, product, nextProduct }) => (
   <div className="row justify-content-center">
@@ -42,7 +42,7 @@ const Thumbs = ({ prevProduct, product, nextProduct }) => (
       <i className="fa fa-chevron-right mb-4" />
     </Link>
   </div>
-)
+);
 
 const Product = ({ isLoading, product, nextProduct, prevProduct }) => (
   <Loader isLoading={isLoading}>
@@ -60,6 +60,6 @@ const Product = ({ isLoading, product, nextProduct, prevProduct }) => (
       nextProduct={nextProduct}
     />
   </Loader>
-)
+);
 
-export default Product
+export default Product;

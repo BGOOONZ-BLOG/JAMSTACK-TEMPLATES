@@ -1,0 +1,41 @@
+<div class="code-box" id="demo-select">
+  <div class="code-box-demo">
+    <div id="components-datepicker-demo-select"></div>
+    <script>(function(){'use strict';
+
+var _antd = require('antd');
+
+var Picker = React.createClass({
+  displayName: 'Picker',
+
+  handleChange: function handleChange(value) {
+    console.log(new Date(value.getTime()));
+  },
+  render: function render() {
+    return React.createElement(_antd.Datepicker, { onChange: this.handleChange });
+  }
+});
+
+ReactDOM.render(React.createElement(Picker, null), document.getElementById('components-datepicker-demo-select'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { Datepicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+<span class="hljs-keyword">const</span> Picker = React.createClass({
+  handleChange: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(value.getTime()));
+  },
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Datepicker</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange}</span> /&gt;</span>;</span>
+  }
+});
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Picker</span> /&gt;</span>
+, document.getElementById('components-datepicker-demo-select'));</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#demo-select">选择日期</a>
+    </div>
+    <p>通过设置选择日期的回调事件 <code>onChange</code>，完成交互行为。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="code-box" id="picker-demo-formatter">
+  <div class="code-box-demo">
+    <div id="components-date-picker-demo-formatter"></div>
+    <script>mountNode = document.getElementById('components-date-picker-demo-formatter');</script>
+    <script>(function(){"use strict";
+
+var _antd = require("antd");
+
+ReactDOM.render(React.createElement(_antd.DatePicker, { defaultValue: "2015/01/01", format: "yyyy/MM/dd" }), mountNode);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> { DatePicker } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">DatePicker</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"2015/01/01"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy/MM/dd"</span> /&gt;</span>
+, mountNode);</span></code></pre></div>
+  </div>
+  <div class="code-box-meta markdown">
+    <div class="code-box-title">
+      <a href="#picker-demo-formatter">日期格式</a>
+    </div>
+    <p>使用 <code>format</code> 属性，可以自定义你需要的日期显示格式，如 <code>yyyy/MM/dd</code>。</p>
+    <span class="collapse anticon anticon-circle-o-right" unselectable="none" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></span>
+  </div>
+</div>

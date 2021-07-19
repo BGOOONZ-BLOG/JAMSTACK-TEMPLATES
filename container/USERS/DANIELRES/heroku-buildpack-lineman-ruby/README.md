@@ -1,6 +1,7 @@
 **Warning, the following is not implemented**
-* Using git to pull down lineman apps
-* Moving images, fonts, static pages, and templates from lineman to the destination
+
+- Using git to pull down lineman apps
+- Moving images, fonts, static pages, and templates from lineman to the destination
 
 # Heroku buildpack: Lineman + Ruby
 
@@ -65,6 +66,7 @@ app_root/
 ```
 
 ### Additional configuration
+
 In addition to the above configuration, the following optional configuration is available
 
 ```

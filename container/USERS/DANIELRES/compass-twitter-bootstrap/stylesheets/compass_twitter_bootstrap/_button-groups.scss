@@ -2,7 +2,6 @@
 // Button groups
 // --------------------------------------------------
 
-
 // Make the div behave like a button
 .btn-group {
   position: relative;
@@ -94,8 +93,6 @@
   outline: 0;
 }
 
-
-
 // Split button dropdowns
 // ----------------------
 
@@ -103,7 +100,11 @@
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
-  @include ctb-box-shadow(#{inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)});
+  @include ctb-box-shadow(
+    #{inset 1px 0 0 rgba(255, 255, 255, 0.125),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.05)}
+  );
   *padding-top: 5px;
   *padding-bottom: 5px;
 }
@@ -125,12 +126,14 @@
 }
 
 .btn-group.open {
-
   // The clickable button for toggling the menu
   // Remove the gradient and set the same inset shadow as the :active state
   .dropdown-toggle {
     background-image: none;
-    @include ctb-box-shadow(#{inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)});
+    @include ctb-box-shadow(
+      #{inset 0 2px 4px rgba(0, 0, 0, 0.15),
+      0 1px 2px rgba(0, 0, 0, 0.05)}
+    );
   }
 
   // Keep the hover's background when dropdown is open
@@ -157,7 +160,6 @@
   }
 }
 
-
 // Reposition the caret
 .btn .caret {
   margin-top: 8px;
@@ -170,16 +172,14 @@
   margin-top: 6px;
 }
 .btn-large .caret {
-  border-left-width:  5px;
+  border-left-width: 5px;
   border-right-width: 5px;
-  border-top-width:   5px;
+  border-top-width: 5px;
 }
 // Upside down carets for .dropup
 .dropup .btn-large .caret {
   border-bottom-width: 5px;
 }
-
-
 
 // Account for other colors
 .btn-primary,
@@ -193,8 +193,6 @@
     border-bottom-color: $white;
   }
 }
-
-
 
 // Vertical button groups
 // ----------------------
