@@ -1,0 +1,11 @@
+& {
+  border: 1px solid green;
+}
+
+.foo {
+  color: blue;
+}
+
+.foo .bar {
+  color: red;
+}

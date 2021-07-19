@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div>
+  <h1 class="h0 py4">
+    Notes <br>
+    <small>EmberConf 2015</small>
+  </h1>
+
+  <p class="mb4">
+    I will be aggregating my notes from EmberConf 2015 on this website, with links to the speakers
+    themselves and their slides (if provided).
+  </p>
+
+  <ul class="post-list">
+    {% for post in site.posts reversed %}
+      <li class="post-list-item">
+        <h2>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <br>
+          <small>by {{ post.speaker }}</small>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

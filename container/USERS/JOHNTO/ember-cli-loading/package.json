@@ -1,0 +1,26 @@
+{
+  "name": "ember-cli-loading",
+  "version": "0.1.1",
+  "description": "Ember addon for SVG loading components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnotander/ember-cli-loading/"
+  },
+  "keywords": [
+    "ember-addon",
+    "ember",
+    "ember-cli",
+    "loading",
+    "svg"
+  ],
+  "bugs": {
+    "url": "https://github.com/johnotander/ember-cli-loading/issues"
+  },
+  "homepage": "https://github.com/johnotander/ember-cli-loading",
+  "author": "John Otander <johnotander@gmail.com> (http://johnotander.com/)",
+  "license": "MIT"
+}

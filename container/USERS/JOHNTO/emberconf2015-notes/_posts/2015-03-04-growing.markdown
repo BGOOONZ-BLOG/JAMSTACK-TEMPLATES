@@ -1,0 +1,58 @@
+---
+layout: post
+title:  Growing Ember One Tomster at a Time
+date:   2015-03-04 11:30:20
+categories:
+speaker: Jamie White
+---
+
+Many communities focus on the code, assuming the community will follow. However,
+the community needs just as much design and engineering.
+
+## Tomster
+
+Started as an illustration for productivity, swiftly became an icon. The friendlier
+something is, the more likely a user is to feel welcome.
+
+Means good defaults, juxtaposes ambition _and_ friendliness. Tomster punctuates a
+loaded statement. He's hackable.
+
+> okay, this is for me
+
+Encapsulates productivity and friendliness, a tool.
+
+## Language
+
+Words stick, a shared vocabulary aides communication.
+
+> stability without stagnation
+
+Or
+
+> glimmer
+
+The correct language can transcend projects and communities. Inclusivity:
+
+"Hack" => "project nights" => "BYOP"
+
+> If something's difficult to explain, it probably mean's we're exposing the wrong primitives. - @trek
+
+## User interfaces
+
+A friendly website introduces the visual language of the authors.
+
+> I consider a programming language as a user interface... - Matz
+
+The documentation and community are _also_ user interfaces.
+
+## Hackability
+
+> It has to feel hackable, parts have to be accessible - Stefan Penner
+
+## Roles
+
+A community has specialized roles, too. Documenteer, mentor, student, explorer, critic, etc.
+
+# Provide a home for good ideas
+
+

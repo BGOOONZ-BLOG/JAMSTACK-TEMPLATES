@@ -1,0 +1,47 @@
+{
+  "name": "ember-cli-babel",
+  "version": "5.1.6",
+  "main": "index.js",
+  "keywords": [
+    "ember-addon"
+  ],
+  "author": "Gordon Kristan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/babel/ember-cli-babel.git"
+  },
+  "scripts": {
+    "test": "ember test",
+    "jshint": "jshint",
+    "bower:install": "bower install"
+  },
+  "bugs": {
+    "url": "https://github.com/babel/ember-cli-babel/issues"
+  },
+  "homepage": "https://github.com/babel/ember-cli-babel",
+  "dependencies": {
+    "broccoli-babel-transpiler": "^5.4.5",
+    "broccoli-funnel": "^1.0.0",
+    "clone": "^1.0.2",
+    "ember-cli-version-checker": "^1.0.2",
+    "resolve": "^1.1.2"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "broccoli-asset-rev": "^2.0.0",
+    "ember-cli": "^0.2.0",
+    "ember-cli-app-version": "0.3.1",
+    "ember-cli-dependency-checker": "0.0.7",
+    "ember-cli-htmlbars": "^0.7.4",
+    "ember-cli-qunit": "0.3.7",
+    "ember-cli-uglify": "1.0.1",
+    "ember-export-application-global": "^1.0.2",
+    "express": "^4.8.5",
+    "glob": "^4.0.5",
+    "jshint": "^2.6.3"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  }
+}

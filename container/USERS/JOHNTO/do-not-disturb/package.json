@@ -1,0 +1,46 @@
+{
+  "name": "do-not-disturb",
+  "version": "1.2.0",
+  "description": "Toggle do not disturb mode for macOS",
+  "license": "MIT",
+  "repository": "johno/do-not-disturb",
+  "author": {
+    "name": "John Otander",
+    "email": "johnotander@gmail.com",
+    "website": "http://johnotander.com"
+  },
+  "bin": {
+    "do-not-disturb": "cli.js"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "keywords": [
+    "cli",
+    "disturb",
+    "do",
+    "macos",
+    "not",
+    "notification"
+  ],
+  "dependencies": {
+    "meow": "^3.6.0",
+    "run-applescript": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "0.17.0",
+    "execa": "^0.4.0",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true
+  }
+}

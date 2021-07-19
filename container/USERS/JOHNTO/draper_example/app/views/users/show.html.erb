@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to users_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_user_path(@user), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show user</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Email:</dt>
+  <dd><%= @user.email_or_request_button %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @user.full_name %></dd>
+
+  <dt>Joined:</dt>
+  <dd><%= @user.joined_at %></dd>
+
+  <dt>Password:</dt>
+  <dd><%= @user.password %></dd>
+
+  <dt>Username:</dt>
+  <dd><%= @user.username %></dd>
+
+  <dt>Bio:</dt>
+  <dd><%= @user.bio %></dd>
+
+  <dt>Website:</dt>
+  <dd><%= @user.website %></dd>
+
+</dl>

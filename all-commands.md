@@ -228,7 +228,7 @@ git stash pop
 ---------------------------------------------------------------------------------------------------------
 clone all of a user's git repositories
 
-CNTX={users}; NAME={willjw3}; PAGE=1
+CNTX={users}; NAME={johno}; PAGE=1
 curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
   grep -e 'git_url*' |
   cut -d \" -f 4 |
@@ -259,7 +259,7 @@ curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=200"?branch=m
   xargs -L1 git clone
 
 
-CNTX={organizations}; NAME={hasura}; PAGE=1
+CNTX={organizations}; NAME={johno}; PAGE=1
 curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=200"?branch=master |
   grep -e 'git_url*' |
   cut -d \" -f 4 |

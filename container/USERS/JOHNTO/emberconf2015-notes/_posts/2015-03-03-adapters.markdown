@@ -1,0 +1,35 @@
+---
+layout: post
+title:  Hijacking Hacker News with Ember.js 
+date:   2015-03-03 13:30:20
+categories:
+speaker: Godfrey Chan
+---
+
+The adapter pattern can be leveraged to expose an interface that the
+returning end expects.
+
+Sometimes one doesn't have access to a JSON API. Luckily, an adapter can
+be added to determine how the data is accessed. Ember Data is now more or less
+a local object store. The adapter handles the data sourcing.
+
+Adapter is responsible for fetching the data, the serializer is responsible for
+parsing the data and shaping it into what Ember Data expects.
+
+Router API allows for flexibility, however, deviating too far requires fighting
+the framework. When there's an extreme case where the router needs to be customized
+(HN urls don't following the Ember routing conventions), it can be done.
+
+Ember router => actual app states
+HN Urls => serialized app states
+
+`Ember.HistoryLocation`/`Ember.HashLocation` expose a uniform interface for the stack
+to consume. For the sake of hn-reader, a new adapter can be created.
+
+Local storage is very similar to `Ember.Observable`. 
+
+The adapter pattern is rad.
+
+Possibilities:
+
+* CocoaBars!

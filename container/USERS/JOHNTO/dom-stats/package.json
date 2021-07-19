@@ -1,0 +1,32 @@
+{
+  "name": "dom-stats",
+  "description": "Parse and return statistics for an html string",
+  "author": "John Otander",
+  "version": "2.0.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ava -v"
+  },
+  "repository": "johnotander/dom-stats",
+  "keywords": [
+    "dom",
+    "stats",
+    "statistics",
+    "html"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "html-tags": "^1.1.1",
+    "is-present": "1.0.0"
+  },
+  "devDependencies": {
+    "ava": "*"
+  }
+}
