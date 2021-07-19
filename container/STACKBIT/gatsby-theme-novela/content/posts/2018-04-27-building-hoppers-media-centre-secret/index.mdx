@@ -119,7 +119,7 @@ function SocialLinks({ fill = "#73737D" }: { fill: string }) {
 
   return (
     <>
-      {socialOptions.map(option => {
+      {socialOptions.map((option) => {
         const Icon = icons[option.name];
 
         return (
@@ -149,7 +149,9 @@ import React from "react";
 import { ThemeProvider } from "theme-ui";
 import theme from "./theme";
 
-export default props => <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
+export default (props) => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+);
 ```
 
 At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.

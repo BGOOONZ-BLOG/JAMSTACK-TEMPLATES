@@ -5,7 +5,6 @@ category: literature
 layout: post
 ---
 
-
 “I am afraid, Watson, that I shall have to go,” said Holmes, as we sat down together to our breakfast one morning.
 
 “Go! Where to?”
@@ -379,13 +378,14 @@ The Colonel was very angry. “I have been on the turf for twenty years, and nev
 As the drag drew up in the enclosure near the grand stand I glanced at the card to see the entries.
 
 Wessex Plate [it ran] 50 sovs. each h ft with 1000 sovs. added, for four and five year olds. Second, £300. Third, £200. New course (one mile and five furlongs).
+
 1.  Mr Heath Newton's The Negro. Red cap. Cinnamon jacket.
 2.  Colonel Wardlaw's Pugilist. Pink cap. Blue and black jacket.
 3.  Lord Backwater's Desborough. Yellow cap and sleeves.
 4.  Colonel Ross's Silver Blaze. Black cap. Red jacket.
 5.  Duke of Balmoral's Iris. Yellow and black stripes.
 6.  Lord Singleford's Rasper. Purple cap. Black sleeves.
-“We scratched our other one, and put all hopes on your word,” said the Colonel. “Why, what is that? Silver Blaze favorite?”
+    “We scratched our other one, and put all hopes on your word,” said the Colonel. “Why, what is that? Silver Blaze favorite?”
 
 “Five to four against Silver Blaze!” roared the ring. “Five to four against Silver Blaze! Five to fifteen against Desborough! Five to four on the field!”
 

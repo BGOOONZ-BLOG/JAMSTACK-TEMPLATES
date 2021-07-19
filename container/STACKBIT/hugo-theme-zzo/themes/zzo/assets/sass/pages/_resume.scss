@@ -20,13 +20,12 @@
     }
 
     &--info {
-      
     }
   }
 
   &__section {
     @include flexbox();
-    
+
     @media only screen and (max-width: 769px) {
       @include flex-direction(column);
     }
@@ -36,13 +35,13 @@
         font-family: $title-font;
         padding: 0 1rem;
         font-size: 1.25rem;
-        color: themed('gtt-color');
+        color: themed("gtt-color");
       }
 
       &--title {
         font-family: $title-font;
         font-size: 1.125rem;
-        color: themed('meta-color');
+        color: themed("meta-color");
 
         @include flexbox();
         @include align-items(center);
@@ -57,11 +56,11 @@
       }
 
       &--subtitle {
-        
       }
 
       &--contents {
-        ol, ul {
+        ol,
+        ul {
           margin-left: 2.5rem;
         }
         li {
@@ -70,7 +69,7 @@
       }
     }
 
-    &[data-dir='rtl'] {
+    &[data-dir="rtl"] {
       .resume__section--side {
         word-wrap: break-word;
         width: 30%;

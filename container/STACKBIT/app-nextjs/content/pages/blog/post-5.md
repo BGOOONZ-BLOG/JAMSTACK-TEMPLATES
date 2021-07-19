@@ -1,45 +1,45 @@
 ---
 title: 6 Tips to Achieve Work Life Balance
 subtitle: >-
-  Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus.
+    Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus.
 date: 2020-06-02
 categories:
-  - content/data/categories/tutorials.yaml
+    - content/data/categories/tutorials.yaml
 tags:
-  - content/data/tags/tips.yaml
+    - content/data/tags/tips.yaml
 excerpt: >-
-  Setting realistic expectations for yourself and your colleagues, putting down your phone for 30 minutes a day, and the "no cellphone in bed" rule  — what's the best way to get to Zen?
+    Setting realistic expectations for yourself and your colleagues, putting down your phone for 30 minutes a day, and the "no cellphone in bed" rule  — what's the best way to get to Zen?
 thumb_image: images/post-1.jpg
 thumb_image_alt: Post 5 placeholder image
 image: images/post-1.jpg
 image_alt: Post 5 placeholder image
 image_position: right
 seo:
-  title: 6 Tips to Achieve Work Life Balance
-  description: Estne, quaeso, inquam, sitienti in bibendo voluptas
-  extra:
-    - name: og:type
-      value: article
-      keyName: property
-    - name: og:title
-      value: 6 Tips to Achieve Work Life Balance
-      keyName: property
-    - name: og:description
-      value: Estne, quaeso, inquam, sitienti in bibendo voluptas
-      keyName: property
-    - name: og:image
-      value: images/post-1.jpg
-      keyName: property
-      relativeUrl: true
-    - name: twitter:card
-      value: summary_large_image
-    - name: twitter:title
-      value: 6 Tips to Achieve Work Life Balance
-    - name: twitter:description
-      value: Estne, quaeso, inquam, sitienti in bibendo voluptas
-    - name: twitter:image
-      value: images/post-1.jpg
-      relativeUrl: true
+    title: 6 Tips to Achieve Work Life Balance
+    description: Estne, quaeso, inquam, sitienti in bibendo voluptas
+    extra:
+        - name: og:type
+          value: article
+          keyName: property
+        - name: og:title
+          value: 6 Tips to Achieve Work Life Balance
+          keyName: property
+        - name: og:description
+          value: Estne, quaeso, inquam, sitienti in bibendo voluptas
+          keyName: property
+        - name: og:image
+          value: images/post-1.jpg
+          keyName: property
+          relativeUrl: true
+        - name: twitter:card
+          value: summary_large_image
+        - name: twitter:title
+          value: 6 Tips to Achieve Work Life Balance
+        - name: twitter:description
+          value: Estne, quaeso, inquam, sitienti in bibendo voluptas
+        - name: twitter:image
+          value: images/post-1.jpg
+          relativeUrl: true
 layout: post
 ---
 

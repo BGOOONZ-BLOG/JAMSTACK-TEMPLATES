@@ -29,13 +29,13 @@ import:
 models:
   page:
     type: page
-    urlPath: '/{slug}'
+    urlPath: "/{slug}"
   post:
     type: page
-    urlPath: '/blog/{slug}'
+    urlPath: "/blog/{slug}"
   advanced:
     type: page
-    urlPath: '/{slug}'
+    urlPath: "/{slug}"
   blog_category:
     type: page
-    urlPath: '/blog/category/{slug}'
+    urlPath: "/blog/category/{slug}"

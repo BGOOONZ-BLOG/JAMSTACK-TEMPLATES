@@ -1,103 +1,95 @@
-import validatejs from 'validate.js';
+import validatejs from "validate.js";
 
-const validation = (function() {
+const validation = (function () {
+  /* Initialize form validation */
+  const init = () => {
+    const form = document.getElementById("contact_form");
 
-    /* Initialize form validation */
-    const init = () => {
+    const constraints = {
+      name: {
+        presence: true,
+      },
+      email: {
+        presence: true,
+        email: true,
+      },
+      message: {
+        presence: true,
+      },
+    };
 
-        const form = document.getElementById('contact_form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
 
-        const constraints = {
-            name: {
-                presence: true
-            },
-            email: {
-                presence: true,
-                email: true
-            },
-            message: {
-                presence: true
-            }
-        };
+      handleSubmit(form, constraints);
+    });
+  };
 
-        form.addEventListener('submit', (e) => {
+  /* Handle form submission */
+  const handleSubmit = (form, constraints) => {
+    let errors = validatejs.validate(form, constraints);
 
-            e.preventDefault();
+    clearErrors(constraints);
 
-            handleSubmit(form, constraints);
-        });
+    if (typeof errors === "object") {
+      showErrors(errors);
+
+      return false;
     }
 
-    /* Handle form submission */
-    const handleSubmit = (form, constraints) => {
+    form.submit();
+  };
 
-        let errors = validatejs.validate(form, constraints);
+  /* Displays errors */
+  const showErrors = errors => {
+    let keys = Object.keys(errors);
 
-        clearErrors(constraints);
+    keys.forEach(key => {
+      showError(key, errors);
+    });
+  };
 
-        if (typeof errors === 'object') {
+  /* Display individual error */
+  const showError = (name, errors) => {
+    let input = document.getElementById(name);
 
-            showErrors(errors);
+    input.classList.add("input--error");
 
-            return false;
-        }
+    input.parentNode.insertBefore(
+      createErrorMessage(errors[name][0]),
+      input.nextSibling
+    );
+  };
 
-        form.submit();
-    }
+  /* Creates an error message */
+  const createErrorMessage = error_message => {
+    let message = document.createElement("span");
 
-    /* Displays errors */
-    const showErrors = (errors) => {
-       
-        let keys = Object.keys(errors);
+    message.innerHTML = error_message;
 
-        keys.forEach(key => {
-            showError(key, errors);
-        });
-    }
+    //message.classList.add('text-sm', 'text-error', 'block', 'mt-2')
 
-    /* Display individual error */
-    const showError = (name, errors) => {
+    return message;
+  };
 
-        let input = document.getElementById(name);
+  /* Clears all errors based on given constraints*/
+  const clearErrors = constraints => {
+    let keys = Object.keys(constraints);
 
-        input.classList.add('input--error');
+    keys.forEach(name => {
+      let input = document.getElementById(name);
 
-        input.parentNode.insertBefore(createErrorMessage(errors[name][0]),input.nextSibling);
-    }
+      if (input.classList.contains("input--error")) {
+        input.classList.remove("input--error");
 
-    /* Creates an error message */
-    const createErrorMessage = (error_message) => {
+        input.nextSibling.remove();
+      }
+    });
+  };
 
-        let message = document.createElement('span');
-
-        message.innerHTML = error_message;
-
-        //message.classList.add('text-sm', 'text-error', 'block', 'mt-2')
-
-        return message;
-    }
-
-    /* Clears all errors based on given constraints*/
-    const clearErrors = (constraints) => {
-
-        let keys = Object.keys(constraints);
-
-        keys.forEach(name => {
-
-            let input = document.getElementById(name) 
-
-            if (input.classList.contains('input--error')) {
-
-                input.classList.remove('input--error');
-
-                input.nextSibling.remove();
-            }
-        });
-    }
-
-    return {
-        init
-    }
+  return {
+    init,
+  };
 })();
 
 export default validation;

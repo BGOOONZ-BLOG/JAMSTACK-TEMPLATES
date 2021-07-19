@@ -14,14 +14,14 @@ export default class SubscribeForm extends React.Component {
                 name={formId}
                 id={formId}
                 className="subscribe-form"
-                {...(formAction ? ({ action: formAction }) : null)}
+                {...(formAction ? { action: formAction } : null)}
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot={formHoneypotName}
             >
                 <div className="screen-reader-text">
                     <label id={formHoneypotLabelId} htmlFor={formHoneypotInputId}>
-                        Don't fill this out if you're human: 
+                        Don't fill this out if you're human:
                         <input aria-labelledby={formHoneypotLabelId} id={formHoneypotInputId} name={formHoneypotName} />
                     </label>
                 </div>
@@ -32,7 +32,9 @@ export default class SubscribeForm extends React.Component {
                         <input type="email" name="email" placeholder="Your email address" required />
                     </label>
                 </div>
-                <button className="button" type="submit">Subscribe</button>
+                <button className="button" type="submit">
+                    Subscribe
+                </button>
             </form>
         );
     }

@@ -89,7 +89,7 @@ export default class BlogFeedSection extends React.Component {
             >
                 <div
                     className={classNames('item', {
-                        'card': isCard,
+                        card: isCard,
                         'card--highlight': isCard,
                         'card--vert': isCard
                     })}
@@ -98,12 +98,14 @@ export default class BlogFeedSection extends React.Component {
                         {image && showImage && (
                             <div
                                 className={classNames('item__media', 'mb-3', {
-                                    'card__media': isCard,
+                                    card__media: isCard,
                                     'card__media--fill': isCard,
                                     'card__media--top': isCard
                                 })}
                             >
-                                <Link href={postUrl}><img src={withPrefix(image)} alt={imageAlt} /></Link>
+                                <Link href={postUrl}>
+                                    <img src={withPrefix(image)} alt={imageAlt} />
+                                </Link>
                             </div>
                         )}
                         <div
@@ -124,14 +126,18 @@ export default class BlogFeedSection extends React.Component {
                                             {showDate && <span className="item__meta-sep"> &middot; </span>}
                                         </React.Fragment>
                                     )}
-                                    {showDate && <span className="item__date"><time dateTime={dateTimeAttr}>{formattedDate}</time></span>}
+                                    {showDate && (
+                                        <span className="item__date">
+                                            <time dateTime={dateTimeAttr}>{formattedDate}</time>
+                                        </span>
+                                    )}
                                 </div>
                             )}
                             {sectionTitle ? (
                                 <h3
                                     className={classNames('item__title', 'mt-0', {
-                                        'h3': sectionColumns === 'two',
-                                        'h4': sectionColumns === 'three'
+                                        h3: sectionColumns === 'two',
+                                        h4: sectionColumns === 'three'
                                     })}
                                 >
                                     <Link href={postUrl}>{title}</Link>
@@ -139,17 +145,19 @@ export default class BlogFeedSection extends React.Component {
                             ) : (
                                 <h2
                                     className={classNames('item__title', 'mt-0', {
-                                        'h3': sectionColumns === 'two',
-                                        'h4': sectionColumns === 'three'
+                                        h3: sectionColumns === 'two',
+                                        h4: sectionColumns === 'three'
                                     })}
                                 >
                                     <Link href={postUrl}>{title}</Link>
                                 </h2>
                             )}
-                            {excerpt && showExcerpt && <div className="item__copy"><p>{excerpt}</p></div>}
-                            {author && showAuthor && (
-                                <BlogPostAuthor author={author} data={data} containerClass={'item__byline'} avatarSize={'small'} />
+                            {excerpt && showExcerpt && (
+                                <div className="item__copy">
+                                    <p>{excerpt}</p>
+                                </div>
                             )}
+                            {author && showAuthor && <BlogPostAuthor author={author} data={data} containerClass={'item__byline'} avatarSize={'small'} />}
                         </div>
                     </div>
                 </div>

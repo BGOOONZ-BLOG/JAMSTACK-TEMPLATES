@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {getData, Link, withPrefix, classNames} from '../utils';
+import { getData, Link, withPrefix, classNames } from '../utils';
 
 export default class BlogPostAuthor extends React.Component {
     render() {

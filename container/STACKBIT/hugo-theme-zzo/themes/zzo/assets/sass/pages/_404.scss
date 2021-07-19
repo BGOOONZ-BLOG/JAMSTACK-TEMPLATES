@@ -9,11 +9,11 @@
 
   @include themify($themes) {
     .title {
-      color: themed('title-color');
+      color: themed("title-color");
     }
 
     .subtitle {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
   }
 }

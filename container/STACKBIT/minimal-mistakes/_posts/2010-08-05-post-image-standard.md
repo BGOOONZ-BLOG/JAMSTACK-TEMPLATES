@@ -14,7 +14,10 @@ Standard image with no width modifier classes applied.
 **HTML:**
 
 ```html
-{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg" alt="">{% endraw %}
+{% raw %}<img
+  src="{{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg"
+  alt=""
+/>{% endraw %}
 ```
 
 **or Kramdown:**
@@ -30,7 +33,11 @@ Image that fills page content container by adding the `.full` class with:
 **HTML:**
 
 ```html
-{% raw %}<img src="{{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg" alt="" class="full">{% endraw %}
+{% raw %}<img
+  src="{{ site.url }}{{ site.baseurl }}/assets/images/filename.jpg"
+  alt=""
+  class="full"
+/>{% endraw %}
 ```
 
 **or Kramdown:**

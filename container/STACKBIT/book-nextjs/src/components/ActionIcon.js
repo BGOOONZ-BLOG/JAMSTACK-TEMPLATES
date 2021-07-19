@@ -27,7 +27,7 @@ export default class ActionIcon extends React.Component {
             attrs.target = '_blank';
         }
         if (newWindow || noFollow) {
-            attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
+            attrs.rel = [newWindow ? 'noopener' : '', noFollow ? 'nofollow' : ''].filter(Boolean).join(' ');
         }
 
         return (

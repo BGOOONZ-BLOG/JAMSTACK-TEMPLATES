@@ -1,4 +1,4 @@
-English | 
+English |
 [한국어](https://github.com/zzossig/hugo-theme-zzo/blob/master/README.ko.md)
 
 ## Hugo Theme Zzo
@@ -17,21 +17,21 @@ Your support will be of great help in maintaining the project.
 
 ## 💡 Features
 
-* Multiple Skins(dark, light, solarized, ...)
-* Mobile menu
-* Search
-* Search Engine Optimization(SEO)
-* Multilingual (i18n)
-* Responsive design
-* Customizable UI
-* RSS
-* Gallery
-* Fast code highlighting
-* Talks page
-* Showcase page
-* Publication Page
-* Resume Page
-* Presentation Page
+- Multiple Skins(dark, light, solarized, ...)
+- Mobile menu
+- Search
+- Search Engine Optimization(SEO)
+- Multilingual (i18n)
+- Responsive design
+- Customizable UI
+- RSS
+- Gallery
+- Fast code highlighting
+- Talks page
+- Showcase page
+- Publication Page
+- Resume Page
+- Presentation Page
 
 ## Minimum Hugo version
 

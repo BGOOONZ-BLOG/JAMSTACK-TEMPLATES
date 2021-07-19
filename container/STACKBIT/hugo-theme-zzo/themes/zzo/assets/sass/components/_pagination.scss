@@ -7,7 +7,7 @@
   @include align-items(center);
   @include justify-content(center);
   @include themify($themes) {
-    background-color: themed('pagination-background-color');
+    background-color: themed("pagination-background-color");
   }
 
   li {
@@ -16,37 +16,37 @@
       a {
         @include on-event {
           @include themify($themes) {
-            color: themed('pagination-number-color');
+            color: themed("pagination-number-color");
             text-decoration: none;
-          }      
+          }
         }
       }
     }
-    
+
     &.active {
       font-weight: bold;
       a {
         @include themify($themes) {
-          color: themed('link-hover');
-        }      
+          color: themed("link-hover");
+        }
       }
     }
   }
 
   a {
     font-size: 1.25rem;
-    padding: 0.5rem 0.75rem;    
+    padding: 0.5rem 0.75rem;
     @include themify($themes) {
-      color: themed('pagination-number-color');
+      color: themed("pagination-number-color");
       @include on-event {
-        color: themed('link-hover');
+        color: themed("link-hover");
       }
     }
   }
 
   .active {
     @include themify($themes) {
-      background-color: themed('pagination-background-color');
+      background-color: themed("pagination-background-color");
     }
   }
 }
@@ -66,7 +66,7 @@
     @include align-items(center);
     @include justify-content(center);
     @include transition(all, 0.2s, ease-out);
-    
+
     font-family: $title-font;
     padding: 0.25rem;
     border-radius: 0.125rem;
@@ -78,8 +78,8 @@
     @include on-event {
       .pagination-single__icon {
         @include themify($themes) {
-          color: themed('gtt-hover-color');
-          background-color: themed('gtt-hover-background-color');
+          color: themed("gtt-hover-color");
+          background-color: themed("gtt-hover-background-color");
         }
       }
     }
@@ -88,7 +88,7 @@
   &__left {
     @include on-event {
       @include translateX(-0.25rem);
-    }    
+    }
   }
 
   &__right {
@@ -107,8 +107,8 @@
     @include align-items(center);
     @include justify-content(center);
     @include themify($themes) {
-      color: themed('gtt-color');
-      background-color: themed('gtt-background-color');
+      color: themed("gtt-color");
+      background-color: themed("gtt-background-color");
     }
   }
 }

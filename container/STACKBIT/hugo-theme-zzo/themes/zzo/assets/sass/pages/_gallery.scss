@@ -25,7 +25,7 @@
 
 /* clear fix */
 .grid:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -52,7 +52,6 @@
   max-width: 100%;
 }
 
-
 .gallery {
   padding: 1rem;
   @include flexbox();
@@ -67,7 +66,7 @@
     opacity: 1;
     height: auto;
     cursor: pointer;
-    
+
     @include flexbox();
     @include justify-content(center);
     @include align-items(flex-start);
@@ -80,18 +79,18 @@
       width: 100%;
       height: 100%;
       border-radius: 0.25rem;
-      z-index: z('gallery-mask');
+      z-index: z("gallery-mask");
       font-family: $title-font;
       font-weight: 700;
       cursor: pointer;
-      
+
       @include box-shadow(0, 0, 0, 0, rgba(0, 0, 0, 0));
       @include on-event {
         @include box-shadow(0, 4px, 4px, 0, rgba(0, 0, 0, 0.4));
         @include transition(all, 0.25s, ease);
         @include themify($themes) {
-          color: themed('gallery-mask-color');
-          background-color: themed('gallery-mask-background-color');
+          color: themed("gallery-mask-color");
+          background-color: themed("gallery-mask-background-color");
         }
       }
 
@@ -100,13 +99,13 @@
         left: 50%;
         top: 50%;
         word-wrap: break-word;
-        
+
         @include flexbox();
         @include flex-direction(column);
         @include align-items(center);
         @include translate(-50%, -50%);
         @include themify($themes) {
-          color: themed('link');
+          color: themed("link");
         }
 
         &::after {

@@ -24,18 +24,28 @@ export default class FormField extends React.Component {
                 return (
                     <div className="form-checkbox">
                         <input type="checkbox" id={name} name={name} {...attr} />
-                        {label && <label htmlFor={name} id={labelId}>{label}</label>}
+                        {label && (
+                            <label htmlFor={name} id={labelId}>
+                                {label}
+                            </label>
+                        )}
                     </div>
                 );
             case 'select':
                 return (
                     <React.Fragment>
-                        {label && <label htmlFor={name} id={labelId}>{label}</label>}
+                        {label && (
+                            <label htmlFor={name} id={labelId}>
+                                {label}
+                            </label>
+                        )}
                         <div className="form-select">
                             <select id={name} name={name} {...attr}>
                                 {defaultValue && <option value="">{defaultValue}</option>}
                                 {_.map(options, (option, index) => (
-                                    <option key={index} value={option}>{option}</option>
+                                    <option key={index} value={option}>
+                                        {option}
+                                    </option>
                                 ))}
                             </select>
                         </div>
@@ -44,14 +54,22 @@ export default class FormField extends React.Component {
             case 'textarea':
                 return (
                     <React.Fragment>
-                        {label && <label htmlFor={name} id={labelId}>{label}</label>}
+                        {label && (
+                            <label htmlFor={name} id={labelId}>
+                                {label}
+                            </label>
+                        )}
                         <textarea name={name} id={name} rows="5" {...(defaultValue ? { placeholder: defaultValue } : null)} {...attr} />
                     </React.Fragment>
                 );
             default:
                 return (
                     <React.Fragment>
-                        {label && <label htmlFor={name} id={labelId}>{label}</label>}
+                        {label && (
+                            <label htmlFor={name} id={labelId}>
+                                {label}
+                            </label>
+                        )}
                         <input type={inputType} name={name} id={name} {...(defaultValue ? { placeholder: defaultValue } : null)} {...attr} />
                         <span className="animate-border" aria-hidden="true" />
                     </React.Fragment>

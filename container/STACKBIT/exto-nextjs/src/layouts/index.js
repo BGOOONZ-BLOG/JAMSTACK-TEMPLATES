@@ -5,14 +5,7 @@ import portfolio from './portfolio';
 import post from './post';
 import project from './project';
 
-export {
-    advanced,
-    blog,
-    page,
-    portfolio,
-    post,
-    project
-};
+export { advanced, blog, page, portfolio, post, project };
 
 export default {
     advanced,

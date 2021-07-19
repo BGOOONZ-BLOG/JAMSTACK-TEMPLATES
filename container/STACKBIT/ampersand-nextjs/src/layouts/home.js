@@ -28,7 +28,9 @@ export default class Home extends React.Component {
                     <div className="post-card-content">
                         <header className="post-header">
                             <div className="post-meta">
-                                <time className="published" dateTime={dateTimeAttr}>{formattedDate}</time>
+                                <time className="published" dateTime={dateTimeAttr}>
+                                    {formattedDate}
+                                </time>
                             </div>
                             <h2 className="post-title">
                                 <Link href={postUrl}>{title}</Link>
@@ -36,7 +38,13 @@ export default class Home extends React.Component {
                         </header>
                         <div className="post-excerpt">
                             {excerpt && <p>{excerpt}</p>}
-                            {hasMoreLink && moreLinkText && <p className="read-more"><Link className="button button-secondary" href={postUrl}>{moreLinkText}</Link></p>}
+                            {hasMoreLink && moreLinkText && (
+                                <p className="read-more">
+                                    <Link className="button button-secondary" href={postUrl}>
+                                        {moreLinkText}
+                                    </Link>
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -63,15 +71,15 @@ export default class Home extends React.Component {
                             {introContent && <div className="intro-text">{markdownify(introContent)}</div>}
                             {!_.isEmpty(introActions) && (
                                 <div className="intro-cta">
-                                    {_.map(introActions, (action, index) => <ActionLink key={index} action={action} />)}
+                                    {_.map(introActions, (action, index) => (
+                                        <ActionLink key={index} action={action} />
+                                    ))}
                                 </div>
                             )}
                         </div>
                     </div>
                 )}
-                <div className="post-feed">
-                    {_.map(posts, (post, index) => this.renderPost(post, index, hasMoreLink, moreLinkText))}
-                </div>
+                <div className="post-feed">{_.map(posts, (post, index) => this.renderPost(post, index, hasMoreLink, moreLinkText))}</div>
             </Layout>
         );
     }

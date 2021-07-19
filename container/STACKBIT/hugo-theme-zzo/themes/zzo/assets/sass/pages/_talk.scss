@@ -10,13 +10,13 @@
     position: relative;
 
     &[data-ani="true"] {
-      @include animation('slide-in-left .2s .5s 1 ease both');
+      @include animation("slide-in-left .2s .5s 1 ease both");
     }
-    
+
     @include truncate(100px);
     @include themify($themes) {
-      color: themed('archive-meta-color');
-      background-color: themed('archive-type-background-color');
+      color: themed("archive-meta-color");
+      background-color: themed("archive-type-background-color");
     }
 
     &[data-dir="rtl"] {
@@ -41,9 +41,9 @@
 
   &__icon {
     margin: auto 0.25rem;
-    
+
     @include themify($themes) {
-      color: themed('social-icon-color');
+      color: themed("social-icon-color");
     }
   }
 
@@ -59,20 +59,20 @@
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
-    
+
     &[data-dir="ltr"] {
       @include on-event {
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           left: 3rem;
           width: 0.25rem;
           height: 30px;
-          
+
           @include themify($themes) {
-            background-color: themed('archive-hover-line-color');
-            
-            @media only screen and (max-width:768px) {
+            background-color: themed("archive-hover-line-color");
+
+            @media only screen and (max-width: 768px) {
               top: 13px;
               left: 0;
               height: 24px;

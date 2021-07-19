@@ -20,10 +20,10 @@ export default class Announcement extends React.Component {
             const anncmntKey = 'hide-announcement-bar';
             const anncmntCurrentValue = anncmntElm.dataset.anncmntId;
             if (hasLocalStorage) {
-                if (localStorage.getItem(anncmntKey) != anncmntCurrentValue ) {
+                if (localStorage.getItem(anncmntKey) != anncmntCurrentValue) {
                     this.setState({
                         isHidden: false
-                    })
+                    });
                 }
             }
         }
@@ -36,7 +36,7 @@ export default class Announcement extends React.Component {
 
         this.setState({
             isHidden: true
-        })
+        });
 
         if (hasLocalStorage) {
             localStorage.setItem(anncmntKey, anncmntCurrentValue);
@@ -57,7 +57,7 @@ export default class Announcement extends React.Component {
                     'js-announcement': anncmntHasClose,
                     'is-hidden': anncmntHasClose && isHidden
                 })}
-                {...(anncmntHasClose ? ({ "data-anncmnt-id": anncmntId }) : null)}
+                {...(anncmntHasClose ? { 'data-anncmnt-id': anncmntId } : null)}
                 ref={this.anncmntRef}
             >
                 <div className="container">
@@ -71,11 +71,7 @@ export default class Announcement extends React.Component {
                             {markdownify(anncmntContent)}
                         </div>
                         {anncmntHasClose && (
-                            <button
-                                aria-label="Close"
-                                className="btn btn--icon btn--clear js-announcment-close"
-                                onClick={this.handleAnncmntClose.bind(this)}
-                            >
+                            <button aria-label="Close" className="btn btn--icon btn--clear js-announcment-close" onClick={this.handleAnncmntClose.bind(this)}>
                                 <Icon icon={'close'} />
                                 <span className="sr-only">Close</span>
                             </button>
@@ -92,17 +88,11 @@ export default class Announcement extends React.Component {
         const anncmnt = _.get(this.props, 'anncmnt');
         const anncmntHomeOnly = _.get(anncmnt, 'anncmnt_is_home_only');
 
-        return (
-            anncmntHomeOnly ? (
-                (pageUrl === '/') && this.renderAnncmnt(anncmnt)
-            ) : (
-                this.renderAnncmnt(anncmnt)
-            )
-        );
+        return anncmntHomeOnly ? pageUrl === '/' && this.renderAnncmnt(anncmnt) : this.renderAnncmnt(anncmnt);
     }
 }
 
-const hasLocalStorage = (function() {
+const hasLocalStorage = (function () {
     try {
         localStorage.setItem('__test', true);
         localStorage.removeItem('__test');
@@ -110,4 +100,4 @@ const hasLocalStorage = (function() {
     } catch (exception) {
         return false;
     }
-}());
+})();

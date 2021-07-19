@@ -1,6 +1,6 @@
 stackbitVersion: ~0.3.0
 ssgName: hugo
-ssgVersion: '0.74.3'
+ssgVersion: "0.74.3"
 buildCommand: hugo
 publishDir: public
 staticDir: static

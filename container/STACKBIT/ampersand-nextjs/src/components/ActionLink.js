@@ -12,7 +12,7 @@ export default class ActionLink extends React.Component {
         const style = _.get(action, 'style', 'link');
         const icon = _.get(action, 'icon_class', 'dev');
         const classes = classNames({
-            'button': style !== 'link',
+            button: style !== 'link',
             'button-secondary': style === 'secondary',
             'button-icon': style === 'icon'
         });
@@ -23,7 +23,7 @@ export default class ActionLink extends React.Component {
             attrs.target = '_blank';
         }
         if (newWindow || noFollow) {
-            attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
+            attrs.rel = [newWindow ? 'noopener' : '', noFollow ? 'nofollow' : ''].filter(Boolean).join(' ');
         }
 
         return (

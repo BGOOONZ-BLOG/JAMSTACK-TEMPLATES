@@ -64,7 +64,6 @@ Accessing the Page Parameter "bar"
 
     {{ if or (isset .Params "alt") (isset .Params "caption") }} Caption {{ end }}
 
-
 ## Variables
 
 Each go template has a struct (object) made available to it. In hugo each
@@ -80,7 +79,6 @@ Variables can also be defined and referenced.
 
     {{ $address := "123 Main St."}}
     {{ $address }}
-
 
 ## Functions
 
@@ -106,7 +104,6 @@ the /layout/ directory within Hugo.
 **Example:**
 
     {{ template "chrome/header.html" . }}
-
 
 ## Logic
 
@@ -142,12 +139,11 @@ range.
 If, else, with, or, & and provide the framework for handling conditional
 logic in Go Templates. Like range, each statement is closed with `end`.
 
-
 Go Templates treat the following values as false:
 
-* false
-* 0
-* any array, slice, map, or string of length zero
+-   false
+-   0
+-   any array, slice, map, or string of length zero
 
 **Example 1: If**
 
@@ -226,7 +222,6 @@ Could be rewritten as
     Stuff Here
     {{ end }}
 
-
 ## Context (aka. the dot)
 
 The most easily overlooked concept to understand about go templates is that {{ . }}
@@ -255,7 +250,6 @@ through the site configuration (for sitewide values), or through the meta
 data of each specific piece of content. You can define any values of any
 type (supported by your front matter/config format) and use them however
 you want to inside of your templates.
-
 
 ## Using Content (page) Parameters
 
@@ -289,9 +283,8 @@ Here is the corresponding code inside of the template:
         </div>
       {{ end }}
 
-
-
 ## Using Site (config) Parameters
+
 In your top-level configuration file (eg, `config.yaml`) you can define site
 parameters, which are values which will be available to you in chrome.
 
@@ -299,15 +292,15 @@ For instance, you might declare:
 
 ```yaml
 params:
-  CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
-  TwitterUser: "spf13"
-  SidebarRecentLimit: 5
+    CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
+    TwitterUser: "spf13"
+    SidebarRecentLimit: 5
 ```
 
 Within a footer layout, you might then declare a `<footer>` which is only
 provided if the `CopyrightHTML` parameter is provided, and if it is given,
 you would declare it to be HTML-safe, so that the HTML entity is not escaped
-again.  This would let you easily update just your top-level config file each
+again. This would let you easily update just your top-level config file each
 January 1st, instead of hunting through your templates.
 
 ```
@@ -340,6 +333,5 @@ so, such as in this example:
 </nav>
 ```
 
-
-[go]: <http://golang.org/>
-[gohtmltemplate]: <http://golang.org/pkg/html/template/>
+[go]: http://golang.org/
+[gohtmltemplate]: http://golang.org/pkg/html/template/

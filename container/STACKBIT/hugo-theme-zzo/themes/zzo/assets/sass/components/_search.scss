@@ -3,19 +3,19 @@
   border-radius: 0.25rem;
   height: 35px;
   max-width: 928px;
-  z-index: z('search');
-  margin-bottom: 0.5rem;  
-  
+  z-index: z("search");
+  margin-bottom: 0.5rem;
+
   @include box-shadow(0, 0, 0, 3px, transparent);
   @include transition(all, 0.15s, ease-in);
   @include flexbox();
   @include align-items(center);
   @include themify($themes) {
-    border: 2px solid themed('search-border-color');
+    border: 2px solid themed("search-border-color");
     background-color: themed("search-background-color");
     &:focus-within {
-      border: 2px solid themed('search-border-active-color');
-      @include box-shadow(0, 0, 0, 3px, themed('search-border-outline-color'));
+      border: 2px solid themed("search-border-active-color");
+      @include box-shadow(0, 0, 0, 3px, themed("search-border-outline-color"));
     }
   }
 
@@ -49,7 +49,7 @@
     margin-top: 0.25rem;
     max-height: 350px;
     overflow: auto;
-    
+
     a {
       text-decoration: none !important;
       &:not(:last-child) {
@@ -63,7 +63,7 @@
 
   &__highlight {
     @include themify($themes) {
-      color: themed('search-highlight-color');
+      color: themed("search-highlight-color");
     }
   }
 
@@ -75,11 +75,11 @@
     height: 100%;
 
     @include themify($themes) {
-      background-color: themed('body-background-color');
+      background-color: themed("body-background-color");
     }
 
     &[data-display="block"] {
-      display: block; 
+      display: block;
     }
 
     &[data-display="none"] {
@@ -98,14 +98,20 @@
       height: 100%;
 
       @include themify($themes) {
-        @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
-        @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+        @include moz-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
+        @include webkit-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
       }
     }
 
     &__item {
       &:not(first-child) {
-        padding-bottom: 2.25rem; 
+        padding-bottom: 2.25rem;
       }
 
       &--title {
@@ -127,22 +133,22 @@
     &__close {
       position: absolute;
       cursor: pointer;
-      
+
       &[data-dir="ltr"] {
         right: 0.5rem;
         top: -1.5rem;
       }
-      
+
       &[data-dir="rtl"] {
         left: 0.5rem;
         top: -1.5rem;
       }
 
       @include themify($themes) {
-        color: themed('social-icon-color');
+        color: themed("social-icon-color");
 
         @include on-event {
-          color: themed('social-icon-hover-color');
+          color: themed("social-icon-hover-color");
         }
       }
     }
@@ -154,13 +160,13 @@
 
   &__title {
     font-size: 1rem;
-    
+
     @include themify($themes) {
-      color: themed('body-color');
+      color: themed("body-color");
     }
 
     &::before {
-      content: '📄 ';
+      content: "📄 ";
     }
   }
 
@@ -170,7 +176,7 @@
 
     @include truncate($grid_main_side_width + $grid_main_side_unit);
     @include themify($themes) {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
   }
 }
@@ -188,8 +194,8 @@
       border-radius: 0.1rem;
       @include box-shadow(0, 1px, 3px, 0, rgba(0, 0, 0, 0.4));
       @include themify($themes) {
-        color: themed('search-content-color');
-        background-color: themed('search-content-background-color');
+        color: themed("search-content-color");
+        background-color: themed("search-content-background-color");
       }
     }
   }
@@ -197,8 +203,14 @@
   .dropdown {
     &-content {
       @include themify($themes) {
-        @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
-        @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+        @include moz-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
+        @include webkit-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
       }
 
       @include flexbox();
@@ -210,18 +222,18 @@
       padding: 0.125rem 0.25rem;
       @include on-event {
         @include themify($themes) {
-          background-color: themed('search-hover-background-color');
+          background-color: themed("search-hover-background-color");
         }
         border-bottom-left-radius: 0.1rem;
-        border-bottom-right-radius: 0.1rem;        
+        border-bottom-right-radius: 0.1rem;
       }
 
       &.is-active {
         @include themify($themes) {
-          background-color: themed('search-hover-background-color');
+          background-color: themed("search-hover-background-color");
         }
       }
-    }    
+    }
   }
 }
 
@@ -229,12 +241,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: z('modal');
+  z-index: z("modal");
   width: 100%;
   overflow: hidden;
 
   @include themify($themes) {
-    @include webkit-scrollbars2(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+    @include webkit-scrollbars2(
+      themed("custom-scrollbar-foreground-color"),
+      themed("custom-scrollbar-background-color")
+    );
   }
 
   &__top {
@@ -247,8 +262,8 @@
     @include flexbox();
     @include align-items(center);
     @include themify($themes) {
-      border-bottom: 1px solid themed('navbar-border-bottom-color');
-      background-color: themed('navbar-background-color');
+      border-bottom: 1px solid themed("navbar-border-bottom-color");
+      background-color: themed("navbar-background-color");
     }
 
     &--icon {
@@ -262,9 +277,9 @@
       @include align-items(center);
       @include justify-content(center);
       @include themify($themes) {
-        color: themed('burger-menu-color');
+        color: themed("burger-menu-color");
         @include on-event {
-          color: themed('link-hover');
+          color: themed("link-hover");
         }
       }
     }
@@ -278,10 +293,10 @@
       border-radius: 0.25rem;
       padding: 0 1rem;
       font-size: 1.1rem;
-      
+
       @include themify($themes) {
-        color: themed('body-color');
-        background-color: themed('navbar-background-color');
+        color: themed("body-color");
+        background-color: themed("navbar-background-color");
 
         @include input-placeholder {
           font-family: $title-font;
@@ -295,12 +310,15 @@
     width: 100vw;
     height: 100vh;
     overflow-y: auto;
-    
-    @include themify($themes) {
-      color: themed('body-color');
-      background-color: themed('body-background-color');
 
-      @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+    @include themify($themes) {
+      color: themed("body-color");
+      background-color: themed("body-background-color");
+
+      @include moz-scrollbars(
+        themed("custom-scrollbar-foreground-color"),
+        themed("custom-scrollbar-background-color")
+      );
     }
   }
 
@@ -308,7 +326,7 @@
     .mobile-search__top--icon {
       right: 0;
     }
-    
+
     .mobile-search__body {
       direction: ltr;
     }
@@ -321,11 +339,11 @@
 
   &[data-dir="rtl"] {
     .mobile-search__top--icon {
-      left: 0; 
+      left: 0;
     }
 
     .mobile-search__body {
-      direction: rtl; 
+      direction: rtl;
     }
 
     .mobile-search__top--input {
@@ -343,18 +361,18 @@
     padding: 0.25rem;
     cursor: pointer;
     display: none;
-    z-index: z('search-btn');
+    z-index: z("search-btn");
 
     &[data-ani="true"] {
-      @include animation('slide-in-down .5s .25s 1 ease both');
+      @include animation("slide-in-down .5s .25s 1 ease both");
     }
-    
+
     @include themify($themes) {
-      color: themed('burger-menu-color');
-      background-color: themed('navbar-background-color');
-      border-bottom: 1px solid themed('navbar-border-bottom-color');
+      color: themed("burger-menu-color");
+      background-color: themed("navbar-background-color");
+      border-bottom: 1px solid themed("navbar-border-bottom-color");
       @include on-event {
-        color: themed('navbar-title-hover-color');   
+        color: themed("navbar-title-hover-color");
       }
     }
 
@@ -365,13 +383,13 @@
     }
   }
 
-  &__content {    
+  &__content {
     a {
       text-decoration: none !important;
     }
   }
 
-  &__item {   
+  &__item {
     padding: 0.5rem;
     list-style-type: none;
 
@@ -381,10 +399,10 @@
 
     &--title {
       font-family: $title-font;
-      font-size: 1.2rem;      
+      font-size: 1.2rem;
       margin: 0.25rem 0;
       @include themify($themes) {
-        color: themed('body-color');
+        color: themed("body-color");
       }
 
       &::before {
@@ -395,16 +413,16 @@
     &--desc {
       font-size: 0.9rem;
       padding: 0.25rem 0.5rem;
-      
+
       @include truncate(960px);
       @include themify($themes) {
-        color: themed('search-color');
+        color: themed("search-color");
       }
     }
-    
+
     @include on-event {
       @include themify($themes) {
-        background-color: themed('search-hover-background-color');
+        background-color: themed("search-hover-background-color");
       }
     }
   }

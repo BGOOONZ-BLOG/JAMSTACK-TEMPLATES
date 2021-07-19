@@ -23,22 +23,22 @@
     padding: 0.5rem 0.75rem;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-    
+
     @include themify($themes) {
-      color: themed('navbar-title-color');
-      background-color: themed('body-background-color');
+      color: themed("navbar-title-color");
+      background-color: themed("body-background-color");
       border: none;
-      border-bottom: 1px solid themed('hr-color');
+      border-bottom: 1px solid themed("hr-color");
 
       &.active {
-        background-color: themed('body-background-color');
-        border: 1px solid themed('hr-color');
+        background-color: themed("body-background-color");
+        border: 1px solid themed("hr-color");
         border-bottom: none;
       }
 
       @include on-event {
-        color: themed('navbar-title-hover-color');
-        background-color: themed('content-pre-header-background-color');
+        color: themed("navbar-title-hover-color");
+        background-color: themed("content-pre-header-background-color");
       }
     }
   }
@@ -50,8 +50,8 @@
     border-top-left-radius: 0;
 
     @include themify($themes) {
-      border: 1px solid themed('hr-color');
-      background-color: themed('body-background-color');
+      border: 1px solid themed("hr-color");
+      background-color: themed("body-background-color");
     }
   }
 }

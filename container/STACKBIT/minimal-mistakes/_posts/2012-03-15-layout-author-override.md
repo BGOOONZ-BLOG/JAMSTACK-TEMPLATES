@@ -14,9 +14,9 @@ To attribute an author to a post or page that is different from the site author 
 # /_data/authors.yml
 
 Billy Rick:
-  name        : "Billy Rick"
-  bio         : "What do you want, jewels? I am a very extravagant man."
-  avatar      : "/assets/images/bio-photo-2.jpg"
+  name: "Billy Rick"
+  bio: "What do you want, jewels? I am a very extravagant man."
+  avatar: "/assets/images/bio-photo-2.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -29,9 +29,9 @@ Billy Rick:
       url: "https://twitter.com/extravagantman"
 
 Cornelius Fiddlebone:
-  name        : "Cornelius Fiddlebone"
-  bio         : "I ordered what?"
-  avatar      : "/assets/images/bio-photo.jpg"
+  name: "Cornelius Fiddlebone"
+  bio: "I ordered what?"
+  avatar: "/assets/images/bio-photo.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -41,7 +41,7 @@ Cornelius Fiddlebone:
       url: "https://twitter.com/rhymeswithsackit"
 ```
 
-**Step 2.** Assign one of the authors in `authors.yml` to a post or page you wish to override the `site.author` with. 
+**Step 2.** Assign one of the authors in `authors.yml` to a post or page you wish to override the `site.author` with.
 
 Example: To assign `Billy Rick` as an author for a post the following YAML Front Matter would be applied:
 

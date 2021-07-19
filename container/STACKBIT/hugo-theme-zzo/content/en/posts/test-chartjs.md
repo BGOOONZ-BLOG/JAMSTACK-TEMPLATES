@@ -6,20 +6,20 @@ draft: false
 enableToc: false
 enableTocContent: false
 tags:
--
+  -
 series:
--
+  -
 categories:
-- diagram
+  - diagram
 libraries:
-- chart
+  - chart
 image: images/feature1/graph.png
 ---
 
 ```chart
 {
     "type": "bar",
-    "data": 
+    "data":
        {
         "labels": ["One", "Two", "Three", "Four", "Five", "Six"],
         "datasets": [{

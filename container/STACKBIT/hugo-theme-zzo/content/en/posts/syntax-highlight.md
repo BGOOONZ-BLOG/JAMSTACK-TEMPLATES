@@ -10,23 +10,23 @@ author: Jeus
 authorEmoji: 🎅
 pinned: true
 tags:
-- hugo
+  - hugo
 series:
--
+  -
 categories:
-- hugo
+  - hugo
 image: images/feature2/color-palette.png
 ---
 
 ## Code Syntax Highlighting
 
-Verify the following code blocks render as code blocks and highlight properly. 
+Verify the following code blocks render as code blocks and highlight properly.
 
 More about tuning syntax highlighting is the [Hugo documentation](https://gohugo.io/content-management/syntax-highlighting/).
 
 ### Diff
 
-``` diff {hl_lines=[4,"6-7"]}
+```diff {hl_lines=[4,"6-7"]}
 *** /path/to/original	''timestamp''
 --- /path/to/new	''timestamp''
 ***************
@@ -54,7 +54,7 @@ It is important to spell
 
 ### Makefile
 
-``` makefile {linenos=false}
+```makefile {linenos=false}
 CC=gcc
 CFLAGS=-I.
 
@@ -62,7 +62,7 @@ hellomake: hellomake.o hellofunc.o
      $(CC) -o hellomake hellomake.o hellofunc.o -I.
 ```
 
-``` makefile
+```makefile
 CC=gcc
 CFLAGS=-I.
 
@@ -72,37 +72,35 @@ hellomake: hellomake.o hellofunc.o
 
 ### JSON
 
-``` json
-{"employees":[
-    {"firstName":"John", "lastName":"Doe"},
-]}
+```json
+{ "employees": [{ "firstName": "John", "lastName": "Doe" }] }
 ```
 
 ### Markdown
 
-``` markdown
-**bold** 
-*italics* 
+```markdown
+**bold**
+_italics_
 [link](www.example.com)
 ```
 
 ### JavaScript
 
-``` javascript
-document.write('Hello, world!');
+```javascript
+document.write("Hello, world!");
 ```
 
 ### CSS
 
-``` css
+```css
 body {
-    background-color: red;
+  background-color: red;
 }
 ```
 
 ### Objective C
 
-``` objectivec
+```objectivec
 #import <stdio.h>
 
 int main (void)
@@ -113,13 +111,13 @@ int main (void)
 
 ### Python
 
-``` python
+```python
 print "Hello, world!"
 ```
 
 ### XML
 
-``` xml
+```xml
 <employees>
     <employee>
         <firstName>John</firstName> <lastName>Doe</lastName>
@@ -129,31 +127,31 @@ print "Hello, world!"
 
 ### Perl
 
-``` perl
+```perl
 print "Hello, World!\n";
 ```
 
 ### Bash
 
-``` bash
+```bash
 echo "Hello World"
 ```
 
 ### PHP
 
-``` php
- <?php echo '<p>Hello World</p>'; ?> 
+```php
+ <?php echo '<p>Hello World</p>'; ?>
 ```
 
 ### CoffeeScript
 
-``` coffeescript
+```coffeescript
 console.log(“Hello world!”);
 ```
 
 ### C#
 
-``` cs
+```cs
 using System;
 class Program
 {
@@ -166,7 +164,7 @@ class Program
 
 ### C++
 
-``` cpp
+```cpp
 #include <iostream.h>
 
 main()
@@ -176,16 +174,16 @@ main()
 }
 ```
 
-### SQL 
+### SQL
 
-``` sql
+```sql
 SELECT column_name,column_name
 FROM table_name;
 ```
 
 ### Go
 
-``` go
+```go
 package main
 import "fmt"
 func main() {
@@ -266,18 +264,22 @@ export  $initHighlight;
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Hello world</title>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="index.css" />
-</head>
-<body>
-  <div id="app"></div>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
-  <script src="vendor/prism.js"></script>
-  <script src="examples.bundle.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello world</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+    <script src="vendor/prism.js"></script>
+    <script src="examples.bundle.js"></script>
+  </body>
 </html>
 ```
 
@@ -290,7 +292,7 @@ code {
   color: #5c6e74;
   font-size: 13px;
   text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -313,13 +315,13 @@ code::selection {
 }
 pre[class*="language-"] {
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   overflow: auto;
   background: #f8f5ec;
 }
 :not(pre) > code {
-  padding: .1em .3em;
-  border-radius: .3em;
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
   color: #db4c69;
   background: #f9f2f4;
 }

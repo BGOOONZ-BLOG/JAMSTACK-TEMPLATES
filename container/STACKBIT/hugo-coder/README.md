@@ -16,7 +16,7 @@ See [here](https://hugo-coder.netlify.app/).
 
 ## Extra Guides
 
-* [Multilingual Mode](https://github.com/luizdepra/hugo-coder/wiki/Multilingual-Mode)
+-   [Multilingual Mode](https://github.com/luizdepra/hugo-coder/wiki/Multilingual-Mode)
 
 ## Stackbit
 
@@ -40,5 +40,5 @@ If you like my project or it was useful for you, consider supporting its develop
 
 ## Special Thanks
 
-- Gleen McComb, for his great [article](https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/) about custom pagination.
-- All contributors, for every PR and Issue reported.
+-   Gleen McComb, for his great [article](https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/) about custom pagination.
+-   All contributors, for every PR and Issue reported.

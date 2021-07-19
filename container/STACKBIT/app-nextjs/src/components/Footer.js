@@ -19,7 +19,7 @@ export default class Footer extends React.Component {
                     ))}
                 </ul>
             </div>
-        )
+        );
     }
 
     render() {
@@ -43,7 +43,10 @@ export default class Footer extends React.Component {
 
         return (
             <footer className="site-footer">
-                {(logo || (hasPrimaryNav && !_.isEmpty(primaryNavLinks)) || (hasSecondaryNav && !_.isEmpty(secondaryNavLinks)) || (hasTertiaryNav && !_.isEmpty(tertiaryNavLinks))) && (
+                {(logo ||
+                    (hasPrimaryNav && !_.isEmpty(primaryNavLinks)) ||
+                    (hasSecondaryNav && !_.isEmpty(secondaryNavLinks)) ||
+                    (hasTertiaryNav && !_.isEmpty(tertiaryNavLinks))) && (
                     <div className="site-footer__nav py-5 py-md-6">
                         <div className="container">
                             <div
@@ -51,7 +54,11 @@ export default class Footer extends React.Component {
                                     'justify-md-center': logo
                                 })}
                             >
-                                {logo && <Link className="site-footer__logo cell-12 cell-md-5 my-4" href={withPrefix('/')}><img src={withPrefix(logo)} alt={logoAlt} /></Link>}
+                                {logo && (
+                                    <Link className="site-footer__logo cell-12 cell-md-5 my-4" href={withPrefix('/')}>
+                                        <img src={withPrefix(logo)} alt={logoAlt} />
+                                    </Link>
+                                )}
                                 {hasPrimaryNav && !_.isEmpty(primaryNavLinks) && this.renderNav(primaryNavLinks, primaryNavTitle)}
                                 {hasSecondaryNav && !_.isEmpty(secondaryNavLinks) && this.renderNav(secondaryNavLinks, secondaryNavTitle)}
                                 {hasTertiaryNav && !_.isEmpty(tertiaryNavLinks) && this.renderNav(tertiaryNavLinks, tertiaryNavTitle)}

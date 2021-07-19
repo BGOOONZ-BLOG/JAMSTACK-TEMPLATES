@@ -4,7 +4,7 @@
   &:hover,
   &:focus-within {
     .post-link {
-      opacity: .6;
+      opacity: 0.6;
     }
   }
 }
@@ -18,8 +18,8 @@
   display: flex;
   flex-direction: column-reverse;
   text-decoration: none;
-  padding: .25em;
-  transition: opacity .125s ease-in-out;
+  padding: 0.25em;
+  transition: opacity 0.125s ease-in-out;
   &:hover,
   &:focus {
     opacity: 1 !important;
@@ -38,7 +38,7 @@
   display: block;
   margin-right: 4em;
   @media (min-width: $on-tablet) {
-    padding: .25em 0;
+    padding: 0.25em 0;
   }
   h1 {
     font-size: 1em;
@@ -48,12 +48,12 @@
 }
 
 .post-link__title + .post-link__excerpt {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .post-pagination {
   margin-top: 4rem;
-  font-size: .75em;
+  font-size: 0.75em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,13 +66,13 @@
   &:hover,
   &:focus-within {
     a {
-      opacity: .6;
+      opacity: 0.6;
     }
   }
   a {
     text-decoration: none;
     text-transform: uppercase;
-    transition: opacity .125s ease-in-out;
+    transition: opacity 0.125s ease-in-out;
     &:hover,
     &:focus {
       opacity: 1;

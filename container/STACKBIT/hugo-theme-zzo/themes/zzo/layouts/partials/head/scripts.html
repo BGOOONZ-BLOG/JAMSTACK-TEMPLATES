@@ -1,29 +1,24 @@
-{{ if .Site.Params.custom_js }}
-{{ range .Site.Params.custom_js }}
-  {{ $custom_template := resources.Get . }}
-  {{ if $custom_template }}
-    {{ $custom_js := $custom_template | resources.Minify | resources.Fingerprint }}
-    <script defer src="{{ $custom_js.RelPermalink }}"></script>
-  {{ end }}
-{{ end }}
-{{ end }}
-
-{{ if $.Param "enableSearch" }}
-  {{ $fuse := resources.Get "js/fuse.min.js" | resources.Fingerprint }}
-  <script defer src="{{ $fuse.RelPermalink }}"></script>
-{{ end }}
-
-{{ $enquire := resources.Get "js/enquire.min.js" | resources.Fingerprint }}
+{{ if .Site.Params.custom_js }} {{ range .Site.Params.custom_js }} {{
+$custom_template := resources.Get . }} {{ if $custom_template }} {{ $custom_js
+:= $custom_template | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $custom_js.RelPermalink }}"></script>
+{{ end }} {{ end }} {{ end }} {{ if $.Param "enableSearch" }} {{ $fuse :=
+resources.Get "js/fuse.min.js" | resources.Fingerprint }}
+<script defer src="{{ $fuse.RelPermalink }}"></script>
+{{ end }} {{ $enquire := resources.Get "js/enquire.min.js" |
+resources.Fingerprint }}
 <script src="{{ $enquire.RelPermalink }}"></script>
 {{ $lazysizes := resources.Get "js/lazysizes.min.js" | resources.Fingerprint }}
 <script defer src="{{ $lazysizes.RelPermalink }}"></script>
-{{ $getParents := resources.Get "js/helper/getParents.js" | resources.Minify | resources.Fingerprint }}
+{{ $getParents := resources.Get "js/helper/getParents.js" | resources.Minify |
+resources.Fingerprint }}
 <script defer src="{{ $getParents.RelPermalink }}"></script>
-{{ $fadeinout := resources.Get "js/helper/fadeinout.js" | resources.Minify | resources.Fingerprint }}
+{{ $fadeinout := resources.Get "js/helper/fadeinout.js" | resources.Minify |
+resources.Fingerprint }}
 <script defer src="{{ $fadeinout.RelPermalink }}"></script>
 {{ $closest := resources.Get "js/helper/closest.js" | resources.Minify }}
 <script defer src="{{ $closest.RelPermalink }}"></script>
-  
+
 <script>
   "use strict";
 
@@ -121,7 +116,7 @@
     var footNoteRefs = document.querySelectorAll('.footnote-ref');
     var footNoteBackRefs = document.querySelectorAll('.footnote-backref');
 
-    footNoteRefs ? 
+    footNoteRefs ?
     footNoteRefs.forEach(function(elem, idx) {
       elem.onmouseenter = function () {
         if (navbar.classList.contains('scrolling')) {
@@ -146,7 +141,7 @@
       }
     }) : null;
 
-    footNoteBackRefs ? 
+    footNoteBackRefs ?
     footNoteBackRefs.forEach(function(elem, idx) {
       elem.onmouseenter = function () {
         if (navbar.classList.contains('scrolling')) {
@@ -185,7 +180,7 @@
 
 
     // ============================ tab ============================
-    document.querySelectorAll('.tab') ? 
+    document.querySelectorAll('.tab') ?
     document.querySelectorAll('.tab').forEach(function(elem, idx) {
       var containerId = elem.getAttribute('id');
       var containerElem = elem;
@@ -214,7 +209,7 @@
 
 
     // ========================== codetab ==========================
-    document.querySelectorAll('.codetab') ? 
+    document.querySelectorAll('.codetab') ?
     document.querySelectorAll('.codetab').forEach(function(elem, idx) {
       var containerId = elem.getAttribute('id');
       var containerElem = elem;
@@ -310,7 +305,7 @@
     var tocFolding = JSON.parse({{ $tocFolding | jsonify }});
     {{ $tocLevels := ($.Param "tocLevels") }}
     var tocLevels = JSON.parse({{ $tocLevels | jsonify }});
-    
+
     if (tocLevels) {
       tocLevels = tocLevels.toString();
     } else {
@@ -345,10 +340,10 @@
       });
     }) : null;
 
-    
+
     window.onscroll = function () {
       scrollFunction();
-      
+
       var st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > lastScrollTop) { // scroll down
         if (st < 250) {
@@ -379,7 +374,7 @@
               if (notAllowedTitleIds && notAllowedTitleIds.includes(elem.getAttribute('id'))) {
                 return null;
               }
-              
+
               if (document.documentElement.scrollTop >= elem.offsetTop) {
                 if (tableOfContentsElem) {
                   var id = elem.getAttribute('id');
@@ -390,7 +385,7 @@
                     tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
 
                   if (false === tocFolding) {
-                    
+
                   } else {
                     tableOfContentsElem.querySelectorAll('ul') ?
                       tableOfContentsElem.querySelectorAll('ul').forEach(function (rootUl) {
@@ -447,7 +442,7 @@
               if (toggleTocElem && !toggleTocElem.checked) {
                 return null;
               }
-              
+
               if (notAllowedTitleIds && notAllowedTitleIds.includes(elem.getAttribute('id'))) {
                 return null;
               }
@@ -462,7 +457,7 @@
                     tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
 
                   if (false === tocFolding) {
-                    
+
                   } else {
                     tableOfContentsElem.querySelectorAll('ul') ?
                       tableOfContentsElem.querySelectorAll('ul').forEach(function (rootUl) {
@@ -493,7 +488,7 @@
               tocFlexboxOuter.classList.add('hide');
             }
           }
-          
+
         }
 
         if (tableOfContentsElem && document.documentElement.scrollTop < 250) {
@@ -519,7 +514,7 @@
     var rootEleme = document.getElementById('root');
     var selectThemeElem = document.querySelectorAll('.select-theme');
     var selectThemeItemElem = document.querySelectorAll('.select-theme__item');
-    
+
     {{ $skinDarkCode := (i18n "skin-dark") }}
     var skinDarkCode = JSON.parse({{ $skinDarkCode | jsonify }});
     {{ $skinLightCode := (i18n "skin-light") }}
@@ -578,9 +573,9 @@
         return 'kimbie';
       }
     }
-    
+
     if (localTheme) {
-      selectThemeItemElem ? 
+      selectThemeItemElem ?
       selectThemeItemElem.forEach(function (elem) {
         if (elem.text.trim() === localTheme) {
           elem.classList.add('is-active');
@@ -594,7 +589,7 @@
       setMetaColor(rootEleme.className);
     }
 
-    selectThemeItemElem ? 
+    selectThemeItemElem ?
     selectThemeItemElem.forEach(function (v, i) {
       v.addEventListener('click', function (e) {
         var selectedThemeVariant = parseSkinCode(e.target.text.trim());
@@ -659,7 +654,7 @@
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
-    
+
     {{ $enableSearch := ($.Param "enableSearch") }}
     var enableSearch = JSON.parse({{ $enableSearch | jsonify }});
     {{ $enableSearchHighlight := ($.Param "enableSearchHighlight") }}
@@ -670,7 +665,7 @@
     var sectionType = JSON.parse({{ $sectionType | jsonify }});
     {{ $kind := .Kind }}
     var kind = JSON.parse({{ $kind | jsonify }});
-    
+
     var fuse = null;
 
     if (enableSearch) {
@@ -681,7 +676,7 @@
         } else {
           xhr.open('GET', baseurl + langprefix + "/index.json");
         }
-        
+
         xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
         xhr.onload = function () {
           if (xhr.status === 200) {
@@ -711,7 +706,7 @@
     function makeLi(ulElem, obj) {
       var li = document.createElement('li');
       li.className = 'search-result__item';
-      
+
       var a = document.createElement('a');
       a.innerHTML = obj.item.title;
       a.setAttribute('class', 'search-result__item--title');
@@ -724,7 +719,7 @@
       } else if (obj.item.content) {
         descDiv.innerHTML = obj.item.content.substring(0, 225);
       }
-      
+
       li.appendChild(a);
       li.appendChild(descDiv);
       ulElem.appendChild(li);
@@ -748,7 +743,7 @@
             a.setAttribute('class', 'search-result__item--title');
             a.setAttribute('href', obj.item.uri);
           }
-          
+
           if ('description' === obj.matches[i].key) {
             descDiv = document.createElement('div');
             descDiv.setAttribute('class', 'search-result__item--desc');
@@ -786,7 +781,7 @@
       searchResults = document.getElementById('search-results');
       searchMenu = document.getElementById('search-menu');
       searchResults.setAttribute('class', 'dropdown is-active');
-      
+
       var ul = document.createElement('ul');
       ul.setAttribute('class', 'dropdown-content search-content');
 
@@ -826,7 +821,7 @@
           searchMenu.lastChild
         );
       }
-      
+
       searchMenu.appendChild(ul);
     }
 
@@ -851,7 +846,7 @@
           var titleDiv = document.createElement('div');
           titleDiv.innerHTML = result.item.title;
           titleDiv.setAttribute('class', 'menu-item__title');
-          
+
           if (result.matches && result.matches.length) {
             for (var i = 0; i < result.matches.length; i++) {
               if ('title' === result.matches[i].key) {
@@ -880,7 +875,7 @@
                 }
               }
             }
-            
+
             li.appendChild(titleDiv);
             if (descDiv) {
               li.appendChild(descDiv);
@@ -925,7 +920,7 @@
       while (wrap.firstChild) {
         wrap.removeChild(wrap.firstChild)
       }
-      searchResults.appendChild(content);      
+      searchResults.appendChild(content);
     }
 
     function renderSearchHighlightResultsMobile(searchText, results) {
@@ -947,7 +942,7 @@
           var titleDiv = document.createElement('div');
           titleDiv.innerHTML = result.item.title;
           titleDiv.setAttribute('class', 'mobile-search__item--title');
-          
+
           if (result.matches && result.matches.length) {
             for (var i = 0; i < result.matches.length; i++) {
               if ('title' === result.matches[i].key) {
@@ -976,7 +971,7 @@
                 }
               }
             }
-            
+
             li.appendChild(titleDiv);
             if (descDiv) {
               li.appendChild(descDiv);
@@ -1007,7 +1002,7 @@
         if (region[0] === region[1]) {
           return null;
         }
-        
+
         content += '' +
           text.substring(nextUnhighlightedRegionStartingIndex, region[0]) +
           '<span class="search__highlight">' +
@@ -1037,7 +1032,7 @@
 
       searchText = e.target.value;
       var results = fuse.search(e.target.value);
-      
+
       if (searchResultPosition === "main") {
         if (enableSearchHighlight) {
           renderSearchHighlightResultsMain(searchText, results);
@@ -1050,7 +1045,7 @@
         } else {
           renderSearchResultsSide(searchText, results);
         }
-        
+
         var dropdownItems = searchResultsContainer.querySelectorAll('.dropdown-item');
         dropdownItems ? dropdownItems.forEach(function(item) {
           item.addEventListener('mousedown', function(e) {
@@ -1060,7 +1055,7 @@
       }
     }) : null;
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('blur', function() {
       if (window.innerWidth < 770) {
         return null;
@@ -1068,7 +1063,7 @@
       searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dropdown') : null;
     }) : null;
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('click', function(e) {
       if (window.innerWidth < 770) {
         return null;
@@ -1109,7 +1104,7 @@
     var items = null;
     var searchContainerMaxHeight = 350;
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('keydown', function(e) {
       if (window.innerWidth < 770) {
         return null;
@@ -1126,7 +1121,7 @@
       if (!items || !items.length) {
         return null;
       }
-      
+
       if (e.key === 'ArrowDown' || keyCode === 40) {
         if (activeIndex === null) {
           activeIndex = 0;
@@ -1152,7 +1147,7 @@
           activeIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
         }
         items[activeIndex].classList.add('is-active');
-        
+
         let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
         if (overflowedPixel < 0) {
           document.querySelector(".search-content").scrollTop -= items[activeIndex].getBoundingClientRect().height;
@@ -1171,7 +1166,7 @@
       }
     }) : null;
 
-    searchMobile ? 
+    searchMobile ?
     searchMobile.addEventListener('input', function(e) {
       if (!e.target.value) {
         let wrap = document.getElementById('search-mobile-results');
@@ -1206,7 +1201,7 @@
       mobileSearchClassElem.style.display = 'none';
     }
 
-    mobileSearchBtnElems ? 
+    mobileSearchBtnElems ?
     mobileSearchBtnElems.forEach(function (elem, idx) {
       elem.addEventListener('click', function () {
         if (mobileSearchContainer) {
@@ -1223,7 +1218,7 @@
       });
     }) : null;
 
-    mobileSearchCloseBtnElem ? 
+    mobileSearchCloseBtnElem ?
     mobileSearchCloseBtnElem.addEventListener('click', function() {
       if (mobileSearchContainer) {
         mobileSearchContainer.style.display = 'none';
@@ -1232,7 +1227,7 @@
       if (mobileSearchInputElem) {
         mobileSearchInputElem.value = '';
       }
-      
+
       if (mobileSearchResultsElem) {
         while (mobileSearchResultsElem.firstChild) {
           mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
@@ -1251,7 +1246,7 @@
         if (mobileSearchContainer) {
           mobileSearchContainer.style.display = 'none';
         }
-        
+
         if (mobileSearchInputElem) {
           mobileSearchInputElem.value = '';
         }
@@ -1274,7 +1269,7 @@
       var searchBody = document.querySelector('.search-result__body');
       var originUl = searchBody.querySelector('ul');
       var ul = document.createElement('ul');
-      
+
       if (!searchText) {
         searchResult ? searchResult.setAttribute('data-display', 'none') : null;
         summaryContainer ? summaryContainer.setAttribute('data-display', 'block') : null;

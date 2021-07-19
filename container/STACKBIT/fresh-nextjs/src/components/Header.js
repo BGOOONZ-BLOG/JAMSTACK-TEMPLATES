@@ -56,10 +56,10 @@ export default class Header extends React.Component {
                         >
                             <Action action={action} />
                         </li>
-                    )
+                    );
                 })}
             </ul>
-        )
+        );
     }
 
     renderSocialLinks(socialLinks) {
@@ -71,7 +71,7 @@ export default class Header extends React.Component {
                     const style = _.get(action, 'style', 'link');
                     const icon = _.get(action, 'icon_class', 'dev');
                     const classes = classNames({
-                        'button': style === 'icon',
+                        button: style === 'icon',
                         'button-icon': style === 'icon'
                     });
                     const newWindow = _.get(action, 'new_window');
@@ -81,23 +81,23 @@ export default class Header extends React.Component {
                         attrs.target = '_blank';
                     }
                     if (newWindow || noFollow) {
-                        attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
+                        attrs.rel = [newWindow ? 'noopener' : '', noFollow ? 'nofollow' : ''].filter(Boolean).join(' ');
                     }
                     return (
                         <Link key={index} href={withPrefix(url)} {...attrs} className={classes}>
-                            {(style === 'icon' && icon) ? (
+                            {style === 'icon' && icon ? (
                                 <React.Fragment>
                                     <Icon icon={icon} />
                                     <span className="screen-reader-text">{label}</span>
                                 </React.Fragment>
-                            ) :
+                            ) : (
                                 label
-                            }
+                            )}
                         </Link>
-                    )
+                    );
                 })}
             </div>
-        )
+        );
     }
 
     render() {
@@ -128,10 +128,17 @@ export default class Header extends React.Component {
                                 </p>
                             )}
                             <div className="site-identity">
-                                <p className="site-title"><Link href={withPrefix('/')}>{title}</Link></p>
+                                <p className="site-title">
+                                    <Link href={withPrefix('/')}>{title}</Link>
+                                </p>
                                 {tagline && <p className="site-description">{tagline}</p>}
                             </div>
-                            {((hasNav && !_.isEmpty(navLinks)) || (hasSocial && !_.isEmpty(socialLinks))) && <button id="menu-toggle" className="menu-toggle" ref={this.menuOpenRef} onClick={this.handleMenuToggle.bind(this)}><span className="screen-reader-text">Menu</span><span className="icon-menu" aria-hidden="true" /></button>}
+                            {((hasNav && !_.isEmpty(navLinks)) || (hasSocial && !_.isEmpty(socialLinks))) && (
+                                <button id="menu-toggle" className="menu-toggle" ref={this.menuOpenRef} onClick={this.handleMenuToggle.bind(this)}>
+                                    <span className="screen-reader-text">Menu</span>
+                                    <span className="icon-menu" aria-hidden="true" />
+                                </button>
+                            )}
                         </div>
                         {((hasNav && !_.isEmpty(navLinks)) || (hasSocial && !_.isEmpty(socialLinks))) && (
                             <nav id="main-navigation" className="site-navigation" aria-label="Main Navigation">

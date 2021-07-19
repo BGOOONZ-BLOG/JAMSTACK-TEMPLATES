@@ -1,19 +1,21 @@
 # Zzo theme for Hugo
 
-[English](https://github.com/zzossig/hugo-theme-zzo/blob/master/README.md) | 
+[English](https://github.com/zzossig/hugo-theme-zzo/blob/master/README.md) |
 한국어
 
 🔥🔥🔥
 zzo theme을 업데이트한 후 `config.toml` 파일에서 page 변수를 삭제해주세요
+
 ```diff
 [outputs]
   <del>page = ["HTML", "SearchIndex"]</del>
 ```
+
 검색 관련 인덱스 생성위치를 변경했습니다
 🔥🔥🔥
 
 클릭해 주셔서 감사합니다. Zzo theme은 많은 기능을 지원하고있고 있습니다. 기술 블로그를 운영하기에 최적화 되어있습니다!(적어도 제생각엔...)
-Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로 저와 소통할 수 있다는 점? 입니다. 
+Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로 저와 소통할 수 있다는 점? 입니다.
 
 ## Documentation
 
@@ -22,38 +24,38 @@ Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로
 
 ## Table of contents
 
-* [기능](#features)
-* [최소 휴고 버전](#minimum-hugo-version)
-* [설치](#installation)
-* [업데이트](#updating)
-* [예제 사이트 돌리기](#run-example-site)
-* [설정](#configuration)
-* [갤러리](#gallery)
-* [컨택 페이지](#contact-page)
-* [토크 페이지](#talks-page)
-* [쇼케이스 페이지](#showcase-page)
-* [다국어](#multi-language)
-* [저자](#author)
-* [Favicon](#favicon)
-* [커스터마이징](#customizing)
-* [외부 라이브러리 사용](#external-library)
-* [Shortcodes](#shortcodes)
+- [기능](#features)
+- [최소 휴고 버전](#minimum-hugo-version)
+- [설치](#installation)
+- [업데이트](#updating)
+- [예제 사이트 돌리기](#run-example-site)
+- [설정](#configuration)
+- [갤러리](#gallery)
+- [컨택 페이지](#contact-page)
+- [토크 페이지](#talks-page)
+- [쇼케이스 페이지](#showcase-page)
+- [다국어](#multi-language)
+- [저자](#author)
+- [Favicon](#favicon)
+- [커스터마이징](#customizing)
+- [외부 라이브러리 사용](#external-library)
+- [Shortcodes](#shortcodes)
 
 ## Features
 
-* 다양한 스킨 지원(dark, light, solarized, ...)
-* 모바일 메뉴
-* 최신 HTML5, CSS 기술 이용
-* 심플한 블로그
-* 검색 엔진 최적화 (SEO)
-* 다국어 지원 (i18n)
-* 반응형 디자인
-* RSS feed 지원
-* 검색 (지원 예정)
-* 갤러리 지원
-* 코드 하이라이트
-* 토크 페이지
-* 쇼케이스 페이지
+- 다양한 스킨 지원(dark, light, solarized, ...)
+- 모바일 메뉴
+- 최신 HTML5, CSS 기술 이용
+- 심플한 블로그
+- 검색 엔진 최적화 (SEO)
+- 다국어 지원 (i18n)
+- 반응형 디자인
+- RSS feed 지원
+- 검색 (지원 예정)
+- 갤러리 지원
+- 코드 하이라이트
+- 토크 페이지
+- 쇼케이스 페이지
 
 ## Minimum Hugo version
 
@@ -105,10 +107,10 @@ hugo new site .
 ```
 
 1. 0번 단계에서 만드신 디렉토리로 들어가주세요.
-config.toml 파일이 보이신다면, 과감하게 지워주세요. 아래 단계들은 제가 사용하는 config 파일들입니다.
-모두 그냥 복사, 붙여넣기 해서 파일을 만드시면 되는데, 귀찮으신 분들은 exampleSite 폴더에 있는 config 폴더를
-루트 디렉토리에 그냥 복사 붙여넣기 하셔도 됩니다.
- 
+   config.toml 파일이 보이신다면, 과감하게 지워주세요. 아래 단계들은 제가 사용하는 config 파일들입니다.
+   모두 그냥 복사, 붙여넣기 해서 파일을 만드시면 되는데, 귀찮으신 분들은 exampleSite 폴더에 있는 config 폴더를
+   루트 디렉토리에 그냥 복사 붙여넣기 하셔도 됩니다.
+
 아래는 설정 파일 구조구요. _default폴더의 _(언더스코어) 뺴먹지 마세요!
 
 ```bash
@@ -205,7 +207,7 @@ You shoud make your own menu.
   name = "gallery"
   url = "gallery"
   weight = 3
-    
+
 [[main]]
   parent = "gallery"
   name = "cartoon"
@@ -221,7 +223,7 @@ You shoud make your own menu.
   name = "posts"
   url = "posts"
   weight = 4
-    
+
 [[main]]
   identifier = "notes"
   name = "notes"
@@ -312,7 +314,7 @@ enableSidebarPostsByOrder = false # another lists in the sidebar
 
 # footer
 showPoweredBy = true # show footer text: Powered by Hugo and Zzo theme
-showFeedLinks = true # RSS Feed 
+showFeedLinks = true # RSS Feed
 showSocialLinks = true # email, facebook, twitter ...
 enableLangChange = true # show button at bottom left of footer.
 
@@ -331,7 +333,7 @@ fullContents = false
 
 # comment
 enableComment = true
-disqus_shortname = "" 
+disqus_shortname = ""
 commento = false
 
 [gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
@@ -361,7 +363,7 @@ commento = false
   appKey = '你的appKey'
   notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
   verify = false # Verification code
-  avatar = 'mm' 
+  avatar = 'mm'
   placeholder = '说点什么吧...'
   visitor = false
 
@@ -450,7 +452,7 @@ content/gallery/anygalleryname/index.md
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-description: 
+description:
 type: gallery
 mode: one-by-one # at-once or one-by-one
 tags:
@@ -469,7 +471,7 @@ images: # when mode is one-by-one, images front-matter variable works
 
 ```
 
-갤러리를 만드시려면 우선 type을 갤러리로 하셔야 하구요, mode를 one-by-one으로 하시면 images에 이미지를 위와 같이 하나씩 입력해주셔야 해요. 
+갤러리를 만드시려면 우선 type을 갤러리로 하셔야 하구요, mode를 one-by-one으로 하시면 images에 이미지를 위와 같이 하나씩 입력해주셔야 해요.
 그럼 이미지가 위에 적힌 순서대로 나타날거에요. mode를 at-once로 하시면, static 폴더에 있는 이미지를 전부 불러올거에요. 예를들어 위의 코드에서 mode를 at-once로 했다면,
 static/gallery/anygalleryname 폴더에 있는 이미지를 전부 읽어 갤러리 페이지에 나타날 거에요.
 
@@ -521,11 +523,10 @@ type: contact
 service: formspree
 formId: "your@email.com"
 ---
-
 This is contact page.
 ```
 
-2. 컨택트 메뉴를 다음 경로에 추가해줍니다. root/config/_default/menus.en.toml.
+2. 컨택트 메뉴를 다음 경로에 추가해줍니다. root/config/\_default/menus.en.toml.
 
 ```toml
 ...
@@ -540,7 +541,7 @@ This is contact page.
 
 Talks 페이지는 아카이브 페이지와 유사한 UI의 페이지입니다. 비디오, 피티 등등의 링크를 모아서 보여주는 용도로 씁니다. Talks 페이지를 추가하려면 아래의 순서대로 따라해주세요.
 
-1. 파일을 root/content/talks/_index.md. 경로에 다음과 같이 만듭니다.
+1. 파일을 root/content/talks/\_index.md. 경로에 다음과 같이 만듭니다.
 
 ```yaml
 ---
@@ -551,7 +552,7 @@ titleWrap: wrap # wrap, nowrap
 ---
 ```
 
-2. 또 다른 파일을 만들어 줍니다. 이곳에 내용을 넣어주세요. 
+2. 또 다른 파일을 만들어 줍니다. 이곳에 내용을 넣어주세요.
 
 root/content/talks/myLinks.md
 
@@ -562,17 +563,17 @@ date: 2019-12-31T00:04:50+09:00
 publishDate: 2019-12-31
 description:
 tags:
--
+  -
 series:
--
+  -
 categories:
--
+  -
 ---
 ```
 
-3. 마지막으로 메뉴만 다음 과 같이 만들어 주면 됩니다. 
+3. 마지막으로 메뉴만 다음 과 같이 만들어 주면 됩니다.
 
-root/config/_default/menus.en.toml file
+root/config/\_default/menus.en.toml file
 
 ```toml
 [[main]]
@@ -584,25 +585,23 @@ root/config/_default/menus.en.toml file
 
 4. 추가적으로, date를 미래의 날짜를 쓰고 싶으시면 다음 단계를 따라서 해주세요.
 
-    - 다음 경로의 설정파일(root/config/_default/config.toml)에서 `buildFuture`를 추가해주세요.
+   - 다음 경로의 설정파일(root/config/\_default/config.toml)에서 `buildFuture`를 추가해주세요.
 
-    ```toml
-    ...
-    buildFuture = true
-    ...
-    ```
+   ```toml
+   ...
+   buildFuture = true
+   ...
+   ```
 
-    - talks폴더의 마크다운 파일에 `publishDate`를 추가해주세요. root/content/talks/myLinks.md
+   - talks폴더의 마크다운 파일에 `publishDate`를 추가해주세요. root/content/talks/myLinks.md
 
-    ```yaml
-    ---
-    title:
-    date:
-    publishDate: 2020-02-20
-    ...
-    ---
-    ...
-    ```
+   ```yaml
+   ---
+   title:
+   date:
+   publishDate: 2020-02-20
+   ---
+   ```
 
 ## Showcase Page
 
@@ -666,7 +665,7 @@ Zzo theme의 기본 언어는 영어입니다. 한국어로 바꾸시려면 다�
 
 1. 우선 메뉴파일을 만듭니다.
 
-```bash 
+```bash
 root
 ├── config
 │   ├── _default
@@ -782,8 +781,8 @@ assets/js/custom.js
 
 ### custom syntax highlighting
 
-1. root/data 폴더에 skin.toml파일을 만들어주세요. theme_dark_chroma, theme_light_chroma, ... 파라미터의 항목의 값을 원하시는 코드 하이라이트 테마값으로 변경해주세요. [이 링크](https://xyproto.github.io/splash/docs/all.html)를 참조해서 값을 변경하시면 됩니다. 만약 theme_[xxxx]_chroma 값에 - 나 _ 같은 특수문자가 있다면 지워주세요.
-예를들어, solarized-dark256 값을 입력하시려면, 다음과 같이 해주세요.
+1. root/data 폴더에 skin.toml파일을 만들어주세요. theme*dark_chroma, theme_light_chroma, ... 파라미터의 항목의 값을 원하시는 코드 하이라이트 테마값으로 변경해주세요. [이 링크](https://xyproto.github.io/splash/docs/all.html)를 참조해서 값을 변경하시면 됩니다. 만약 theme*[xxxx]_chroma 값에 - 나 _ 같은 특수문자가 있다면 지워주세요.
+   예를들어, solarized-dark256 값을 입력하시려면, 다음과 같이 해주세요.
 
 ```
 root/data/skin.toml
@@ -805,9 +804,9 @@ root/assets/scss/custom.scss
 
 홈페이지에서 헤더 부분에 4가지 종류의 헤더를 입힐 수 있습니다. 슬라이더, 이미지, 텍스트, 그리고 아무것도 입력 안하시면 빈공간이 됩니다.
 
-1. config/_default/params.toml 설정파일에 homeHeaderType 값을 변경해주세요. 가능한 값은 slide, img, text, typewriter입니다.
+1. config/\_default/params.toml 설정파일에 homeHeaderType 값을 변경해주세요. 가능한 값은 slide, img, text, typewriter입니다.
 
-2. root/content/_index.md에 _index.md 파일을 만들어주세요 그리고 아래 내용을 복붙해주세요.
+2. root/content/\_index.md에 \_index.md 파일을 만들어주세요 그리고 아래 내용을 복붙해주세요.
 
 3. 변수의 이름만으로 의미가 전달된다고 생각합니다. 값을 하나씩 변경해보면서 원하시는 대로 커스터마이징 해주세요.
 
@@ -830,7 +829,7 @@ header:
     subtitleCursive: false
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
-  
+
   - type: img
     imageSrc: images/header/background.jpg # your image file path: root/static/images/header/background.jpg
     imageSize: cover # auto|length|cover|contain|initial|inherit
@@ -855,13 +854,13 @@ header:
   - type: slide
     height: 235
     options:
-        startSlide: 0
-        auto: 5000 # auto slide delay 5000ms(5sec)
-        draggable: true # slide draggable
-        autoRestart: true # restart after drag finished
-        continuous: true # last to first
-        disableScroll: true
-        stopPropagation: true
+      startSlide: 0
+      auto: 5000 # auto slide delay 5000ms(5sec)
+      draggable: true # slide draggable
+      autoRestart: true # restart after drag finished
+      continuous: true # last to first
+      disableScroll: true
+      stopPropagation: true
     slide:
       - paddingX: 50
         paddingY: 0
@@ -951,19 +950,19 @@ custom_css = ["css/font.css"]
 
 ```css
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat-black.woff2') format('woff2'),
-         url('../fonts/montserrat-black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-black.woff2") format("woff2"), url("../fonts/montserrat-black.woff")
+      format("woff");
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Merriweather';
-    src: url('../fonts/merriweather-regular.woff2') format('woff2'),
-         url('../fonts/merriweather-regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Merriweather";
+  src: url("../fonts/merriweather-regular.woff2") format("woff2"), url("../fonts/merriweather-regular.woff")
+      format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 ```
 
@@ -981,7 +980,10 @@ content_font = "\"Merriweather\", serif"
 root/layouts/partials/head/custom-head.html 경로에 파일을 만드시고 폰트를 그곳에서 로드해주세요.
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap&subset=korean" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap&subset=korean"
+  rel="stylesheet"
+/>
 ```
 
 ### custom copyright
@@ -989,13 +991,14 @@ root/layouts/partials/head/custom-head.html 경로에 파일을 만드시고 폰
 footer의 저작권 텍스트에 링크를 넣고 싶으면 다음과 같이 커스터마이징 하면 됩니다.
 
 1. 설정 파일인 config.toml 에서 copyright 파라미터 값을 설정해주세요.
+
 ```toml
 ...
 copyright = This is my {} copyright text
 ...
 ```
-{} 로 쓰여진 부분이 링크가 들어갈 부분입니다.
-2. 설정 파일인 params.toml 에서 copyrightOptions 파라미터 값을 설정해주세요.
+
+{} 로 쓰여진 부분이 링크가 들어갈 부분입니다. 2. 설정 파일인 params.toml 에서 copyrightOptions 파라미터 값을 설정해주세요.
 
 ```toml
 ...
@@ -1053,7 +1056,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 ...
 libraries:
-- katex 
+- katex
 - mathjax
 - chart
 - flowchartjs
@@ -1121,7 +1124,7 @@ Some markdown contents
 
 ### code / codes => 코드를 여러 버전으로 제공할 때 쓰세요. 들여쓰기 잘못하면 이상하게 나와요.
 
-`````
+````
 {{< codes java javascript >}}
   {{< code >}}
   ```java
@@ -1134,13 +1137,13 @@ Some markdown contents
   ```
   {{< /code >}}
 {{< /codes >}}
-`````
+````
 
 ### tab / tabs => 여러 버전의 뷰를 제공할 때 쓰세요
 
 탭을 만들 때, 각 탭마다 안의 내용에 따라 고유 아이디를 부여하기 때문에, Tab 안에 있는 내용이 서로 달라야합니다.
 
-`````
+````
 {{< tabs Windows MacOS Ubuntu >}}
   {{< tab >}}
 
@@ -1164,4 +1167,4 @@ Some markdown contents
   Great!
   {{< /tab >}}
 {{< /tabs >}}
-`````
+````

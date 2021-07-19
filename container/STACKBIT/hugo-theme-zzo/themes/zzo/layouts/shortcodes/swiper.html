@@ -1,25 +1,24 @@
-{{ $swiper_style := resources.Get "lib/swiper/swiper.min.css" | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $swiper_style.RelPermalink }}">
-{{ $swiper_script := resources.Get "lib/swiper/swiper.min.js" | resources.Fingerprint }}
+{{ $swiper_style := resources.Get "lib/swiper/swiper.min.css" |
+resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $swiper_style.RelPermalink }}" />
+{{ $swiper_script := resources.Get "lib/swiper/swiper.min.js" |
+resources.Fingerprint }}
 <script defer src="{{ $swiper_script.RelPermalink }}"></script>
 
-{{ $id := substr (md5 .Inner) 0 16 }}
-{{ $enableNavigation := .Get "enableNavigation" }}
-{{ $enablePagination := .Get "enablePagination" }}
+{{ $id := substr (md5 .Inner) 0 16 }} {{ $enableNavigation := .Get
+"enableNavigation" }} {{ $enablePagination := .Get "enablePagination" }}
 
 <div id="{{ $id }}" class="swiper-container">
   <div class="swiper-wrapper">
     <!-- Slides -->
     {{ .Inner }}
   </div>
-  
-  {{ if $enablePagination }}
-    <div class="swiper-pagination"></div>
-  {{ end }}
 
-  {{ if $enableNavigation }}
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+  {{ if $enablePagination }}
+  <div class="swiper-pagination"></div>
+  {{ end }} {{ if $enableNavigation }}
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
   {{ end }}
 </div>
 
@@ -31,7 +30,7 @@
     var options = JSON.parse({{ $swiper | jsonify }});
     {{ $optionName := .Params.option }}
     var optionName = JSON.parse({{ $optionName | jsonify }});
-    
+
     var id = JSON.parse({{ $id | jsonify }});
     var enableNavigation = JSON.parse({{ $enableNavigation | jsonify }});
     var enablePagination = JSON.parse({{ $enablePagination | jsonify }});
@@ -45,7 +44,7 @@
         el: '.swiper-pagination',
       };
     }
-    
+
     if (optionName && enableNavigation) {
       parsedOptions.navigation = {
         nextEl: '.swiper-button-next',
@@ -60,7 +59,7 @@
         slideElem.style.padding = '0 40px';
       }) : null;
     }
-    
+
     var mySwiper = new Swiper('#' + id, parsedOptions);
 
   });

@@ -46,35 +46,36 @@
 
   @include themify($themes) {
     &[data-color="default"] {
-      color: themed('link');
-      border: 1px solid themed('link');
+      color: themed("link");
+      border: 1px solid themed("link");
 
       @include on-event {
-        color: themed('link-hover');
-        border: 1px solid themed('link-hover');
+        color: themed("link-hover");
+        border: 1px solid themed("link-hover");
       }
     }
 
     &[data-color="primary"] {
-      color: themed('button-primary-color');
-      border: 1px solid themed('button-primary-color');
+      color: themed("button-primary-color");
+      border: 1px solid themed("button-primary-color");
 
       @include on-event {
-        color: themed('link-hover');
-        border: 1px solid themed('link-hover');
+        color: themed("link-hover");
+        border: 1px solid themed("link-hover");
       }
     }
 
     &[data-variant="contained"] {
-      &[data-color="primary"], &[data-color="default"] {
+      &[data-color="primary"],
+      &[data-color="default"] {
         color: #111;
-        background: themed('button-primary-color');
-        @include box-shadow(1px, 1px, 3px, 0, themed('share-shadow-color'));
+        background: themed("button-primary-color");
+        @include box-shadow(1px, 1px, 3px, 0, themed("share-shadow-color"));
         border: none;
 
         @include on-event {
           color: #111;
-          background: darken(themed('button-primary-color'), 4%);
+          background: darken(themed("button-primary-color"), 4%);
           border: none;
         }
       }

@@ -1,40 +1,40 @@
 .taxo {
   margin: 2.5rem 0;
-  z-index: z('taxo');
+  z-index: z("taxo");
 
   &-root {
     position: -webkit-sticky;
     position: sticky;
     top: $grid_navbar_height;
     @include themify($themes) {
-      background-color: themed('body-background-color');
-    }    
+      background-color: themed("body-background-color");
+    }
   }
 
   &__title {
     font-weight: 700;
     font-family: $title-font;
     @include themify($themes) {
-      color: themed('taxo-title-color');
+      color: themed("taxo-title-color");
       &:hover {
-        color: themed('link-hover');
+        color: themed("link-hover");
       }
     }
   }
 
   &__link {
-    text-decoration: none !important;   
+    text-decoration: none !important;
 
     &[data-dir="ltr"] {
       .taxo__text {
         border-top-left-radius: 0.175rem;
         border-bottom-left-radius: 0.175rem;
       }
-      
+
       .taxo__num {
         padding: 0.125rem 0.25rem;
         border-top-right-radius: 0.175rem;
-        border-bottom-right-radius: 0.175rem;    
+        border-bottom-right-radius: 0.175rem;
       }
     }
 
@@ -43,18 +43,18 @@
         border-top-right-radius: 0.175rem;
         border-bottom-right-radius: 0.175rem;
       }
-      
+
       .taxo__num {
         padding: 0.125rem 0.25rem;
         border-top-left-radius: 0.175rem;
-        border-bottom-left-radius: 0.175rem;    
+        border-bottom-left-radius: 0.175rem;
       }
     }
   }
 
   &__text {
-    @include on-event {        
-      text-decoration: underline !important;   
+    @include on-event {
+      text-decoration: underline !important;
     }
     @include themify($themes) {
       color: inherit;
@@ -63,8 +63,8 @@
 
   &__num {
     @include themify($themes) {
-      color: themed('taxo-num-color');
-      background-color: themed('taxo-num-background-color');    
+      color: themed("taxo-num-color");
+      background-color: themed("taxo-num-background-color");
     }
   }
 
@@ -78,21 +78,21 @@
   .tag {
     margin: 0;
     margin-right: 0.25rem;
-    margin-bottom: 0.25rem;        
-    font-size: 0.8rem;    
+    margin-bottom: 0.25rem;
+    font-size: 0.8rem;
     display: inline-block;
 
     @include themify($themes) {
-      color: themed('taxo-title-color');
+      color: themed("taxo-title-color");
     }
   }
 
   .is-tags {
     border-radius: 0.175rem;
-    
+
     @include themify($themes) {
-      color: themed('taxo-tags-color');
-      background-color: themed('taxo-tags-background-color');
+      color: themed("taxo-tags-color");
+      background-color: themed("taxo-tags-background-color");
     }
 
     &[data-dir="ltr"] {
@@ -106,10 +106,10 @@
 
   .is-categories {
     border-radius: 0.175rem;
-    
+
     @include themify($themes) {
-      color: themed('taxo-categories-color');
-      background-color: themed('taxo-categories-background-color');
+      color: themed("taxo-categories-color");
+      background-color: themed("taxo-categories-background-color");
     }
 
     &[data-dir="ltr"] {
@@ -123,10 +123,10 @@
 
   .is-series {
     border-radius: 0.175rem;
-    
+
     @include themify($themes) {
-      color: themed('taxo-series-color');
-      background-color: themed('taxo-series-background-color');
+      color: themed("taxo-series-color");
+      background-color: themed("taxo-series-background-color");
     }
 
     &[data-dir="ltr"] {

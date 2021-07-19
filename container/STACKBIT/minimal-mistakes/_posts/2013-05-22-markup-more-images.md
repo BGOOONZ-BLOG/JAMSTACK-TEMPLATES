@@ -3,7 +3,7 @@ title: "Markup: Another Post with Images"
 excerpt: "Examples and code for displaying images in posts."
 header:
   teaser: "http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg"
-tags: 
+tags:
   - sample post
   - images
   - test
@@ -28,9 +28,13 @@ Apply the `half` class like so to display two images side by side that share the
 
 ```html
 <figure class="half">
-    <a href="/assets/images/image-filename-1-large.jpg"><img src="/assets/images/image-filename-1.jpg"></a>
-    <a href="/assets/images/image-filename-2-large.jpg"><img src="/assets/images/image-filename-2.jpg"></a>
-    <figcaption>Caption describing these two images.</figcaption>
+  <a href="/assets/images/image-filename-1-large.jpg"
+    ><img src="/assets/images/image-filename-1.jpg"
+  /></a>
+  <a href="/assets/images/image-filename-2-large.jpg"
+    ><img src="/assets/images/image-filename-2.jpg"
+  /></a>
+  <figcaption>Caption describing these two images.</figcaption>
 </figure>
 ```
 
@@ -48,10 +52,10 @@ Apply the `third` class like so to display three images side by side that share 
 
 ```html
 <figure class="third">
-	<img src="/images/image-filename-1.jpg">
-	<img src="/images/image-filename-2.jpg">
-	<img src="/images/image-filename-3.jpg">
-	<figcaption>Caption describing these three images.</figcaption>
+  <img src="/images/image-filename-1.jpg" />
+  <img src="/images/image-filename-2.jpg" />
+  <img src="/images/image-filename-3.jpg" />
+  <figcaption>Caption describing these three images.</figcaption>
 </figure>
 ```
 

@@ -8,8 +8,8 @@
 
   @include truncate($grid_max_width + $grid_max_unit);
   @include themify($themes) {
-    background-color: themed('breadcrumb-background-color');
-  }   
+    background-color: themed("breadcrumb-background-color");
+  }
 
   ol {
     @include flexbox();
@@ -19,12 +19,12 @@
   li {
     display: inline;
     font-size: 0.9rem;
-    
+
     a {
       @include themify($themes) {
-        color: themed('breadcrumb-item-color');
+        color: themed("breadcrumb-item-color");
         @include on-event {
-          color: themed('link-hover');
+          color: themed("link-hover");
         }
       }
     }
@@ -32,16 +32,16 @@
     &:last-child {
       @include truncate($grid_max_width + $grid_max_unit);
       @include themify($themes) {
-        color: themed('breadcrumb-item-active-color');
+        color: themed("breadcrumb-item-active-color");
       }
     }
   }
 
-  li+li:before {
-    padding: 0.5rem;    
+  li + li:before {
+    padding: 0.5rem;
     content: "/\00a0";
     @include themify($themes) {
-      color: themed('breadcrumb-item-color');
+      color: themed("breadcrumb-item-color");
     }
   }
 }

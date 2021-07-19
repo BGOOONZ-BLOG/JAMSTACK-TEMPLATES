@@ -3,11 +3,11 @@
   border-radius: 1em;
   color: $text-color;
   display: inline;
-  font-size: .75em;
+  font-size: 0.75em;
   font-weight: 700;
-  padding: 0 .75em;
+  padding: 0 0.75em;
   text-decoration: none;
-  margin: 0 .25em;
+  margin: 0 0.25em;
   &:hover,
   &:focus {
     background: $brand-color;
@@ -16,7 +16,7 @@
 }
 
 .footnotes::before {
-  content: '';
+  content: "";
   @include divider;
   margin: 4em auto;
 }
@@ -30,6 +30,6 @@
 }
 
 .reversefootnote {
-  font-size: .75em;
-  opacity: .75;
+  font-size: 0.75em;
+  opacity: 0.75;
 }

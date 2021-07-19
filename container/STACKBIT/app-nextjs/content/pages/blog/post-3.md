@@ -1,43 +1,43 @@
 ---
 title: Using App Land For Travel
 subtitle: >-
-  Innumerabilia dici possunt in hanc sententiam, sed non necesse est. Putabam equidem satis, inquit, me dixisse.
+    Innumerabilia dici possunt in hanc sententiam, sed non necesse est. Putabam equidem satis, inquit, me dixisse.
 date: 2020-05-28
 categories:
-  - content/data/categories/general.yaml
+    - content/data/categories/general.yaml
 excerpt: >-
-  Planning a trip is easy with App Land — from itinerary to touristic attractions, shopping and fine dining, everything can be turned into a schedule and task list!
+    Planning a trip is easy with App Land — from itinerary to touristic attractions, shopping and fine dining, everything can be turned into a schedule and task list!
 thumb_image: images/post-3.jpg
 thumb_image_alt: Post 3 placeholder image
 image: images/post-3.jpg
 image_alt: Post 3 placeholder image
 image_position: top
 seo:
-  title: Using App Land For Travel
-  description: Quis est, qui non oderit libidinosam, protervam adolescentiam
-  extra:
-    - name: og:type
-      value: article
-      keyName: property
-    - name: og:title
-      value: Using App Land For Travel
-      keyName: property
-    - name: og:description
-      value: Quis est, qui non oderit libidinosam, protervam adolescentiam
-      keyName: property
-    - name: og:image
-      value: images/post-3.jpg
-      keyName: property
-      relativeUrl: true
-    - name: twitter:card
-      value: summary_large_image
-    - name: twitter:title
-      value: Using App Land For Travel
-    - name: twitter:description
-      value: Quis est, qui non oderit libidinosam, protervam adolescentiam
-    - name: twitter:image
-      value: images/post-3.jpg
-      relativeUrl: true
+    title: Using App Land For Travel
+    description: Quis est, qui non oderit libidinosam, protervam adolescentiam
+    extra:
+        - name: og:type
+          value: article
+          keyName: property
+        - name: og:title
+          value: Using App Land For Travel
+          keyName: property
+        - name: og:description
+          value: Quis est, qui non oderit libidinosam, protervam adolescentiam
+          keyName: property
+        - name: og:image
+          value: images/post-3.jpg
+          keyName: property
+          relativeUrl: true
+        - name: twitter:card
+          value: summary_large_image
+        - name: twitter:title
+          value: Using App Land For Travel
+        - name: twitter:description
+          value: Quis est, qui non oderit libidinosam, protervam adolescentiam
+        - name: twitter:image
+          value: images/post-3.jpg
+          relativeUrl: true
 layout: post
 ---
 

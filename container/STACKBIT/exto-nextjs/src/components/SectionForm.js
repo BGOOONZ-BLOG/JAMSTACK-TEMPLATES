@@ -22,7 +22,7 @@ export default class SectionForm extends React.Component {
         return (
             <section id={sectionId} className="block block-form outer">
                 <div className="inner">
-                {(title || subtitle) && (
+                    {(title || subtitle) && (
                         <div className="block-header inner-sm">
                             {title && <h2 className="block-title line-top">{title}</h2>}
                             {subtitle && <p className="block-subtitle">{htmlToReact(subtitle)}</p>}
@@ -33,7 +33,7 @@ export default class SectionForm extends React.Component {
                         <form
                             name={formId}
                             id={formId}
-                            {...(formAction ? ({ action: formAction }) : null)}
+                            {...(formAction ? { action: formAction } : null)}
                             method="POST"
                             data-netlify="true"
                             data-netlify-honeypot={formHoneypotName}
@@ -45,9 +45,13 @@ export default class SectionForm extends React.Component {
                                 </label>
                             </div>
                             <input type="hidden" name="form-name" value={formId} />
-                            {_.map(formFields, (field, index) => <FormField key={index} {...this.props} field={field} />)}
+                            {_.map(formFields, (field, index) => (
+                                <FormField key={index} {...this.props} field={field} />
+                            ))}
                             <div className="form-submit">
-                                <button type="submit" className="button">{submitLabel}</button>
+                                <button type="submit" className="button">
+                                    {submitLabel}
+                                </button>
                             </div>
                         </form>
                     </div>

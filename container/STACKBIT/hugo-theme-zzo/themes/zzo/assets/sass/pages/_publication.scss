@@ -9,13 +9,13 @@
     @include flexbox();
     @include flex-direction(column);
   }
-  
+
   &__toolbar {
     &--search {
       width: 240px;
       padding: 0 0.5rem;
       margin-right: 1rem;
-      
+
       @media only screen and (max-width: 600px) {
         width: 100%;
       }
@@ -38,9 +38,9 @@
 
     a {
       @include themify($themes) {
-        color: themed('title-color');
+        color: themed("title-color");
         @include on-event {
-          color: themed('link-hover');
+          color: themed("link-hover");
         }
       }
     }
@@ -51,7 +51,7 @@
     display: inline-block;
 
     @include themify($themes) {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
   }
 
@@ -64,12 +64,12 @@
   &__btn {
     padding: 0 0.4rem;
     border-radius: 0.2rem;
-    
+
     @include themify($themes) {
-      color: themed('body-color') !important;
-      background-color: themed('donation-background-color');
+      color: themed("body-color") !important;
+      background-color: themed("donation-background-color");
       @include on-event {
-        background-color: darken(themed('donation-background-color'), 5%);
+        background-color: darken(themed("donation-background-color"), 5%);
       }
     }
   }
@@ -84,7 +84,7 @@
   &__tags {
     display: inline-block;
     list-style-type: none;
-    z-index: z('card-outter');
+    z-index: z("card-outter");
 
     @include flexbox();
     @include align-items(center);
@@ -93,9 +93,9 @@
   &__tag {
     padding: 0 0.25rem;
     @include themify($themes) {
-      color: themed('link') !important;
+      color: themed("link") !important;
       @include on-event {
-        color: themed('link-hover') !important;
+        color: themed("link-hover") !important;
       }
     }
   }
@@ -112,8 +112,8 @@
     @include flex-direction(column);
     @include justify-content(flex-start);
     @include themify($themes) {
-      border: 1px solid themed('content-box-border-color');
-      background-color: themed('body-background-color');
+      border: 1px solid themed("content-box-border-color");
+      background-color: themed("body-background-color");
     }
 
     @include on-event {
@@ -124,9 +124,9 @@
     &--title {
       font-size: 1rem;
       font-family: $title-font;
-      
+
       @include themify($themes) {
-        color: themed('title-color');
+        color: themed("title-color");
       }
     }
 
@@ -144,28 +144,28 @@
 
       a {
         margin: 0.125rem;
-        z-index: z('card-outter');
-        
+        z-index: z("card-outter");
+
         @include themify($themes) {
-          color: themed('meta-color');
+          color: themed("meta-color");
           text-decoration: none;
 
           @include on-event {
-            color: themed('link-hover');
+            color: themed("link-hover");
           }
         }
       }
 
       &[data-dir="ltr"] {
         a:not(.pub__tag) {
-            &:first-child {
+          &:first-child {
             margin-right: 1rem;
           }
         }
       }
       &[data-dir="rtl"] {
         a:not(.pub__tag) {
-            &:first-child {
+          &:first-child {
             margin-left: 1rem;
           }
         }
@@ -189,7 +189,7 @@
 
 /* clear fix */
 .pgrid:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -205,7 +205,7 @@
   width: 49.5%;
 }
 
-@media only screen and (max-width:769px) {
+@media only screen and (max-width: 769px) {
   .pgrid-sizer,
   .pgrid-item {
     width: 100%;

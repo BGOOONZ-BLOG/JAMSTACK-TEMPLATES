@@ -16,18 +16,19 @@ code {
     top: -1px;
     background-color: #f6f6f6;
     border-radius: 2px;
-    border: 1px solid rgba(128,128,128,0.1);
+    border: 1px solid rgba(128, 128, 128, 0.1);
   }
 }
 
 // Codeblock Theme
-pre.highlight, pre {
+pre.highlight,
+pre {
   margin: 0 -27px;
   @include media-query($on-mobile) {
     margin: 0 calc(51% - 51vw);
     padding-left: 20px;
   }
-  border: 1px solid rgba(128,128,128,0.1);
+  border: 1px solid rgba(128, 128, 128, 0.1);
   background-color: #1a1b21;
   border-radius: 2px;
   padding: 10px;

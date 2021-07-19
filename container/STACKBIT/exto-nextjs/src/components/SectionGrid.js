@@ -14,18 +14,18 @@ export default class SectionGrid extends React.Component {
 
         return (
             <div key={index} className="grid-item">
-                {isNumbered && <span className="grid-item-counter" aria-hidden="true">{index + 1}.</span>}
+                {isNumbered && (
+                    <span className="grid-item-counter" aria-hidden="true">
+                        {index + 1}.
+                    </span>
+                )}
                 {image && (
                     <div className="grid-item-image">
                         <img src={withPrefix(image)} alt={imageAlt} />
                     </div>
                 )}
                 {title && <h3 className="grid-item-title">{title}</h3>}
-                {content && (
-                    <div className="grid-item-content">
-                        {markdownify(content)}
-                    </div>
-                )}
+                {content && <div className="grid-item-content">{markdownify(content)}</div>}
                 {!_.isEmpty(actions) && (
                     <div className="grid-item-buttons">
                         <CtaButtons actions={actions} />

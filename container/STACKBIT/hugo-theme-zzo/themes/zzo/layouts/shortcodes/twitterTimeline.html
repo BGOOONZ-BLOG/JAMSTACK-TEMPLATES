@@ -1,14 +1,12 @@
 {{ $id := substr (md5 .Inner) 0 16 }}
-<div id="{{ $id }}">
-  
-</div>
+<div id="{{ $id }}"></div>
 
 <script>
   'use strict';
 
   var id = JSON.parse({{ $id | jsonify }});
   var root = document.getElementById('root');
-  
+
   {{ $href := (.Get "href") }}
   var href = JSON.parse({{ $href | jsonify }});
   {{ $height := (.Get "height") }}
@@ -39,7 +37,7 @@
     }
 
     var themeOption = root.getAttribute('class');
-    
+
     if (themeOption.includes('light') || themeOption.includes('solarized')) {
       card.setAttribute('data-theme', 'light');
     } else {

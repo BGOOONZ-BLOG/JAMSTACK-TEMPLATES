@@ -3,7 +3,7 @@
   margin: 2em auto;
   max-width: 60rem;
   padding: 2em 0;
-  box-shadow: 12px 18px 24px rgba(darken($brand-color, 50%), .1);
+  box-shadow: 12px 18px 24px rgba(darken($brand-color, 50%), 0.1);
 }
 
 .post > * {
@@ -58,7 +58,7 @@
 
 .back-link {
   display: inline-block;
-  font-size: .75em;
+  font-size: 0.75em;
   padding: 1em;
   text-decoration: none;
   text-transform: uppercase;

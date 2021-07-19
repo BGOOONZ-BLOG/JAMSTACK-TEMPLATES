@@ -1,51 +1,51 @@
 ---
 title: The Advantages and Disadvantages of Working from Home
 excerpt: >-
-  Work at home parent is an entrepreneur who works from home and integrates
-  parenting into his or her business activities. They are sometimes referred to
-  as a WAHM (work at home mom) or a WAHD (work at home dad).
+    Work at home parent is an entrepreneur who works from home and integrates
+    parenting into his or her business activities. They are sometimes referred to
+    as a WAHM (work at home mom) or a WAHD (work at home dad).
 date: '2016-08-22'
 thumb_img_path: images/9.jpg
 thumb_img_alt: Home office setup
 content_img_path: images/9.jpg
 seo:
-  title: The Advantages and Disadvantages of Working from Home
-  description: >-
-    Work at home parent is an entrepreneur who works from home and integrates
-    parenting into his or her business activities
-  extra:
-    - name: 'og:type'
-      value: article
-      keyName: property
-    - name: 'og:title'
-      value: The Advantages and Disadvantages of Working from Home
-      keyName: property
-    - name: 'og:description'
-      value: >-
-        Work at home parent is an entrepreneur who works from home and
-        integrates parenting into his or her business activities
-      keyName: property
-    - name: 'og:image'
-      value: images/9.jpg
-      keyName: property
-      relativeUrl: true
-    - name: 'twitter:card'
-      value: summary_large_image
-    - name: 'twitter:title'
-      value: The Advantages and Disadvantages of Working from Home
-    - name: 'twitter:description'
-      value: >-
-        Work at home parent is an entrepreneur who works from home and
-        integrates parenting into his or her business activities
-    - name: 'twitter:image'
-      value: images/9.jpg
-      relativeUrl: true
+    title: The Advantages and Disadvantages of Working from Home
+    description: >-
+        Work at home parent is an entrepreneur who works from home and integrates
+        parenting into his or her business activities
+    extra:
+        - name: 'og:type'
+          value: article
+          keyName: property
+        - name: 'og:title'
+          value: The Advantages and Disadvantages of Working from Home
+          keyName: property
+        - name: 'og:description'
+          value: >-
+              Work at home parent is an entrepreneur who works from home and
+              integrates parenting into his or her business activities
+          keyName: property
+        - name: 'og:image'
+          value: images/9.jpg
+          keyName: property
+          relativeUrl: true
+        - name: 'twitter:card'
+          value: summary_large_image
+        - name: 'twitter:title'
+          value: The Advantages and Disadvantages of Working from Home
+        - name: 'twitter:description'
+          value: >-
+              Work at home parent is an entrepreneur who works from home and
+              integrates parenting into his or her business activities
+        - name: 'twitter:image'
+          value: images/9.jpg
+          relativeUrl: true
 layout: post
 ---
 
 **Working from home** convallis aenean et tortor at risus viverra adipiscing at in. Maecenas accumsan lacus vel facilisis volutpat est. Nisl suscipit adipiscing bibendum est ultricies. Nulla facilisi cras fermentum odio eu feugiat pretium. Donec ac odio tempor orci dapibus. Eget velit aliquet sagittis id. Morbi non arcu risus quis varius quam quisque id diam. Facilisis gravida neque convallis a cras semper auctor neque vitae. Diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet. Aliquam vestibulum morbi blandit cursus risus. Eget mauris pharetra et ultrices neque ornare.
 
-## Advantages and Disadvantages 
+## Advantages and Disadvantages
 
 Dignissim diam quis enim lobortis scelerisque. Vitae elementum curabitur vitae nunc. Ultrices neque ornare aenean euismod elementum nisi quis eleifend quam. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Quam lacus suspendisse faucibus interdum posuere. Bibendum arcu vitae elementum curabitur vitae nunc. Ullamcorper malesuada proin libero nunc. Sit amet risus nullam eget felis eget nunc lobortis. Elementum curabitur vitae nunc sed velit dignissim sodales. Turpis in eu mi bibendum neque egestas congue quisque egestas.
 

@@ -26,11 +26,11 @@ albis](#cecidit-opem), aquilam tela simul ignorant, quicquid.
 
 ## Rogatque est moras ille
 
-Ille *rector forma*, corneaque, silices planissima vulneribus sonitum perdam
+Ille _rector forma_, corneaque, silices planissima vulneribus sonitum perdam
 ante Ciconum. Silvas veri tetigisse et Peleus adspicis infixum. Iuvenem misso
 iamque quasi; est mota cogitat remos cognataque lato pressus regionibus
-pugnacem. Iuvenem lumen corpus, tangit, virginitate Olympo, *cecidisse est
-longo* non Solis suspensus missae.
+pugnacem. Iuvenem lumen corpus, tangit, virginitate Olympo, _cecidisse est
+longo_ non Solis suspensus missae.
 
 Vultus filia caelestia corpore. Nec alta aegre ut modo Latona rugas, matura ad
 tumulo et atra. Est hortis rerum fide opposuitque cessant Iuppiter genitore
@@ -52,8 +52,8 @@ poterat vulnera, communemque ipse.
 
 > Quantum et unum sermone, ancora avidoque cura hunc auditos aequaverit? Vellens
 > heres quibus, Hesperium nisi, et, spes periclo accepit, commune vel, falcato
-> iam *tellurem*. Certe ver et aliquid quoscumque Lapithae sublimis nequiquam
-> *arbiter postis*, et non sit, amplectitur seque.
+> iam _tellurem_. Certe ver et aliquid quoscumque Lapithae sublimis nequiquam
+> _arbiter postis_, et non sit, amplectitur seque.
 
 Lino pararet lapillos. Colla colebatur [est scopulis murum](#solet) silendo;
 ignara animam rugis similis. Femina equo, in pontus templa: et num avarae cervix

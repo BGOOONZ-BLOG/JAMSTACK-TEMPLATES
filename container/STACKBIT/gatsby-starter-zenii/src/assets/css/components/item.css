@@ -1,15 +1,15 @@
 .item {
-    @apply flex;
+  @apply flex;
 }
 
 .item__icon {
-    @apply text-4xl mr-4;
+  @apply text-4xl mr-4;
 }
 
 .item__title {
-    @apply text-lg mb-2;
+  @apply text-lg mb-2;
 }
 
 .item__text {
-    @apply text-sm w-full;
+  @apply text-sm w-full;
 }

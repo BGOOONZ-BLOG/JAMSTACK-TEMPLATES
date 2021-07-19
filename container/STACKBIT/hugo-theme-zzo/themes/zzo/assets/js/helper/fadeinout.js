@@ -1,4 +1,4 @@
-var fadeOut = function(node, duration) {
+var fadeOut = function (node, duration) {
   node.style.opacity = 1;
 
   var start = performance.now();
@@ -10,17 +10,17 @@ var fadeOut = function(node, duration) {
     if (easing < 1) {
       requestAnimationFrame(tick);
     } else {
-      node.style.opacity = '';
-      node.classList.add('hide');
+      node.style.opacity = "";
+      node.classList.add("hide");
     }
   });
-}
+};
 
 var fadeIn = function (node, duration) {
-  if (getComputedStyle(node).display !== 'none') return;
+  if (getComputedStyle(node).display !== "none") return;
 
-  if (node.classList.contains('hide')) {
-    node.classList.remove('hide');
+  if (node.classList.contains("hide")) {
+    node.classList.remove("hide");
   }
   node.style.opacity = 0;
 
@@ -33,7 +33,7 @@ var fadeIn = function (node, duration) {
     if (easing < 1) {
       requestAnimationFrame(tick);
     } else {
-      node.style.opacity = '';
+      node.style.opacity = "";
     }
   });
-}
+};

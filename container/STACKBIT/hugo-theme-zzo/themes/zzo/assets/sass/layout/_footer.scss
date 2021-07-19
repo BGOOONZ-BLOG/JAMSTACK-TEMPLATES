@@ -3,8 +3,8 @@
   position: relative;
 
   @include themify($themes) {
-    color: themed('footer-color');
-    background-color: themed('footer-background-color');
+    color: themed("footer-color");
+    background-color: themed("footer-background-color");
   }
 
   &__social {
@@ -12,7 +12,7 @@
     position: -webkit-sticky;
     position: sticky;
     bottom: 70px;
-    
+
     @include flexbox();
     @include justify-content(center);
   }
@@ -30,8 +30,8 @@
 
   &__copyright {
     &--img {
-      margin-bottom: 0.25rem; 
-      
+      margin-bottom: 0.25rem;
+
       @include flexbox();
       @include align-items(center);
       @include justify-content(center);
@@ -53,13 +53,13 @@
 
     @include flexbox();
     @include align-items(center);
-    @include justify-content(center);    
+    @include justify-content(center);
     @include themify($themes) {
-      color: themed('gtt-color');
-      background-color: themed('gtt-background-color');
+      color: themed("gtt-color");
+      background-color: themed("gtt-background-color");
       @include on-event {
-        color: themed('gtt-hover-color');
-        background-color: themed('gtt-hover-background-color');
+        color: themed("gtt-hover-color");
+        background-color: themed("gtt-hover-background-color");
       }
     }
 
@@ -70,13 +70,13 @@
       border: none;
       width: 100%;
       height: 100%;
-      
+
       @include themify($themes) {
-        color: themed('gtt-color');
-        background-color: themed('gtt-background-color');
+        color: themed("gtt-color");
+        background-color: themed("gtt-background-color");
         @include on-event {
-          color: themed('gtt-hover-color');
-          background-color: themed('gtt-hover-background-color');
+          color: themed("gtt-hover-color");
+          background-color: themed("gtt-hover-background-color");
         }
       }
     }
@@ -87,7 +87,7 @@
       left: 0;
       display: none;
       height: auto;
-      z-index: z("dropdown");      
+      z-index: z("dropdown");
       border-top-left-radius: 0.15rem;
       border-top-right-radius: 0.15rem;
 
@@ -134,10 +134,10 @@
     }
   }
 
-  .select-theme {    
-    &__label {      
+  .select-theme {
+    &__label {
       color: inherit;
-      text-transform: capitalize;            
+      text-transform: capitalize;
     }
 
     &__item {
@@ -155,14 +155,14 @@
   .social {
     margin: 0.25rem;
     a {
-      @include themify($themes) {        
+      @include themify($themes) {
         text-decoration: none;
-        color: themed('social-icon-color');
+        color: themed("social-icon-color");
         &:hover {
-          color: themed('social-icon-hover-color');
+          color: themed("social-icon-hover-color");
           transition: color 0.2s ease;
-        }        
-      }   
+        }
+      }
     }
   }
 
@@ -172,7 +172,7 @@
 
   hr {
     @include themify($themes) {
-      border-top: 1px solid themed('hr-color') !important;
+      border-top: 1px solid themed("hr-color") !important;
     }
   }
 }

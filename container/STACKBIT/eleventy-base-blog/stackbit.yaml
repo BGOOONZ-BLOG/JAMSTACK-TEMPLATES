@@ -65,7 +65,7 @@ models:
   page:
     type: page
     label: About
-    file: 'about/index.md'
+    file: "about/index.md"
     fields:
       - name: title
         label: Title

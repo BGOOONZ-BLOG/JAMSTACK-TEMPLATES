@@ -1,12 +1,12 @@
 .modal {
   &__overlay {
-    z-index: z('modal');
+    z-index: z("modal");
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     @include flexbox();
     @include justify-content(center);
     @include align-items(center);
@@ -30,7 +30,7 @@
     top: 0;
     width: 100%;
     height: 50px;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
   }
 
   &__caption {
@@ -38,12 +38,12 @@
     bottom: 0;
     left: 50%;
     width: 100%;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
 
     @include no-select;
     @include translateX(-50%);
     @include themify($themes) {
-      color: themed('gtt-color');
+      color: themed("gtt-color");
     }
 
     &--text {
@@ -70,7 +70,7 @@
 
     @include no-select;
     @include themify($themes) {
-      color: themed('gtt-color');
+      color: themed("gtt-color");
     }
   }
 
@@ -89,14 +89,14 @@
 
   &__toolbar {
     @include themify($themes) {
-      color: themed('gtt-color');
+      color: themed("gtt-color");
 
       @include on-event {
-        color: themed('gtt-hover-color');
-        background: rgba(0,0,0,0.4);
+        color: themed("gtt-hover-color");
+        background: rgba(0, 0, 0, 0.4);
       }
     }
-    
+
     &--close {
       top: 0.4rem;
       right: 0.25rem;
@@ -115,12 +115,12 @@
 
   &__arrow {
     @include themify($themes) {
-      color: themed('gtt-color');
-      background: rgba(0,0,0,0.45);
+      color: themed("gtt-color");
+      background: rgba(0, 0, 0, 0.45);
 
       @include on-event {
-        color: themed('gtt-hover-color');
-        background: rgba(0,0,0,0.5);
+        color: themed("gtt-hover-color");
+        background: rgba(0, 0, 0, 0.5);
       }
     }
 
@@ -148,10 +148,16 @@
       width: 100%;
     }
     @include themify($themes) {
-      border: 4px solid themed('hr-color');
-      background-color: themed('body-background-color');
-      @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
-      @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+      border: 4px solid themed("hr-color");
+      background-color: themed("body-background-color");
+      @include webkit-scrollbars(
+        themed("custom-scrollbar-foreground-color"),
+        themed("custom-scrollbar-background-color")
+      );
+      @include moz-scrollbars(
+        themed("custom-scrollbar-foreground-color"),
+        themed("custom-scrollbar-background-color")
+      );
     }
 
     &--exist {
@@ -161,9 +167,15 @@
       overflow-x: auto;
 
       @include themify($themes) {
-        background-color: themed('body-background-color');
-        @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
-        @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+        background-color: themed("body-background-color");
+        @include webkit-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
+        @include moz-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
       }
     }
 
@@ -182,13 +194,21 @@
 }
 
 @keyframes mmfadeIn {
-    from { opacity: 0; }
-      to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes mmfadeOut {
-    from { opacity: 1; }
-      to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .micromodal-slide {
@@ -200,19 +220,19 @@
 }
 
 .micromodal-slide[aria-hidden="false"] .modal__overlay {
-  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .micromodal-slide[aria-hidden="false"] .modal__container {
-  animation: mmfadeIn .3s cubic-bezier(0, 0, .2, 1);
+  animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .micromodal-slide[aria-hidden="true"] .modal__overlay {
-  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .micromodal-slide[aria-hidden="true"] .modal__container {
-  animation: mmfadeOut .3s cubic-bezier(0, 0, .2, 1);
+  animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .micromodal-slide .modal__container,

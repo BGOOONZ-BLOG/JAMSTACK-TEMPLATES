@@ -95,7 +95,7 @@ const icons = {
   twitter: SocialIcons.TwitterIcon,
   facebook: SocialIcons.FacebookIcon,
   instagram: SocialIcons.InstagramIcon,
-  github: SocialIcons.GithubIcon
+  github: SocialIcons.GithubIcon,
 };
 
 function SocialLinks({ fill = "#73737D" }: { fill: string }) {
@@ -104,7 +104,7 @@ function SocialLinks({ fill = "#73737D" }: { fill: string }) {
 
   return (
     <>
-      {socialOptions.map(option => {
+      {socialOptions.map((option) => {
         const Icon = icons[option.name];
 
         return (
@@ -133,7 +133,7 @@ const Wrapper = ({ children }) => (
     style={{
       background: "papayawhip",
       width: "100%",
-      padding: "2rem"
+      padding: "2rem",
     }}
   >
     {children}

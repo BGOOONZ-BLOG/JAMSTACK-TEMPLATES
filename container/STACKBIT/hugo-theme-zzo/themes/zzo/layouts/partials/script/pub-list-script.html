@@ -2,7 +2,8 @@
 <script defer src="{{ $shave.RelPermalink }}"></script>
 {{ $masonry := resources.Get "js/masonry.pkgd.min.js" | resources.Fingerprint }}
 <script defer src="{{ $masonry.RelPermalink }}"></script>
-{{ $imagesloaded := resources.Get "js/imagesloaded.pkgd.min.js" | resources.Fingerprint }}
+{{ $imagesloaded := resources.Get "js/imagesloaded.pkgd.min.js" |
+resources.Fingerprint }}
 <script defer src="{{ $imagesloaded.RelPermalink }}"></script>
 
 <script>
@@ -12,7 +13,7 @@
   var isFirstSection = JSON.parse({{ $isFirstSection | jsonify }});
   {{ $tagsBaseURL := ("/tags/" | relLangURL) }}
   var tagsBaseURL = JSON.parse({{ $tagsBaseURL | jsonify }});
-  
+
   document.addEventListener('DOMContentLoaded', function () {
     var originHtmlText = JSON.stringify(document.querySelector('.pub__ul').innerHTML);
 
@@ -96,7 +97,7 @@
       if (obj.abstract) {
         descDiv.innerHTML = obj.abstract.substr(0, 300);
       }
-      
+
       li.appendChild(titleLink);
       li.appendChild(metaDiv);
       li.appendChild(descDiv);
@@ -109,7 +110,7 @@
     var makeHighlightLi = function (ulElem, obj) {
       var li = document.createElement('li');
       li.className = 'pub__item';
-      
+
       var titleLink = document.createElement('a');
       titleLink.innerHTML = obj.item.title;
       titleLink.setAttribute('href', obj.item.uri);
@@ -120,7 +121,7 @@
         descDiv.innerHTML = obj.item.abstract;
         descDiv.className = 'pub__summary';
       }
-      
+
       if (obj.matches && obj.matches.length) {
         for (var i = 0; i < obj.matches.length; i++) {
           titleLink.innerHTML = obj.item.title;
@@ -171,7 +172,7 @@
             typeSpan.innerText = '{{ ($.Site.Params.typeIcon | safeHTML) | default "🎯" }} ' + obj.item.ENTRYTYPE;
             metaDiv.appendChild(typeSpan);
           }
-          
+
           var tagsUl = null;
           if (obj.item.tags && obj.item.tags.length) {
             tagsUl = document.createElement('ul');
@@ -206,7 +207,7 @@
         if (tagsUl && metaDiv) {
           metaDiv.appendChild(tagsUl);
         }
-        
+
         ulElem.appendChild(li);
       }
     }
@@ -240,7 +241,7 @@
     pubSearch ?
     pubSearch.addEventListener('input', function(e) {
       var results = fuse.search(e.target.value);
-      
+
       if (enableSearchHighlight) {
         renderSearchHighlightResults(e.target.value, results);
       } else {

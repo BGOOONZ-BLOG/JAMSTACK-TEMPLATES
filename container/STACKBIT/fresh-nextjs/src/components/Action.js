@@ -10,7 +10,7 @@ export default class Action extends React.Component {
         const label = _.get(action, 'label');
         const style = _.get(action, 'style', 'link');
         const classes = classNames({
-            'button': style === 'button'
+            button: style === 'button'
         });
         const newWindow = _.get(action, 'new_window');
         const noFollow = _.get(action, 'no_follow');
@@ -19,7 +19,7 @@ export default class Action extends React.Component {
             attrs.target = '_blank';
         }
         if (newWindow || noFollow) {
-            attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
+            attrs.rel = [newWindow ? 'noopener' : '', noFollow ? 'nofollow' : ''].filter(Boolean).join(' ');
         }
         return (
             <Link href={withPrefix(url)} {...attrs} className={classes}>

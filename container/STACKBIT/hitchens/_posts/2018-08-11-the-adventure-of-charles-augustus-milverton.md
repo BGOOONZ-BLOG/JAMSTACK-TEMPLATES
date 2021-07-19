@@ -20,12 +20,12 @@ returned about six o'clock on a cold, frosty winter's evening. As
 Holmes turned up the lamp the light fell upon a card on the table. He
 glanced at it, and then, with an ejaculation of disgust, threw it on
 the floor. I picked it up and read:--
-                              
->Charles Augustus Milverton,                              
->Appledore Towers,  
->Hampstead.  
->Agent.  
-                               
+
+> Charles Augustus Milverton,  
+> Appledore Towers,  
+> Hampstead.  
+> Agent.
+
 "Who is he?" I asked.
 
 "The worst man in London," Holmes answered, as he sat down and

@@ -6,14 +6,14 @@
     top: 0;
     left: 0;
     height: 30px;
-    z-index: z('clipboard');
+    z-index: z("clipboard");
     border-top-left-radius: 0.25rem;
 
     @include flexbox();
     @include align-items(center);
     @include justify-content(flex-start);
     @include themify($codeblock) {
-      background-color: themed('content-pre-header-background-color');
+      background-color: themed("content-pre-header-background-color");
     }
   }
 
@@ -30,25 +30,25 @@
     &:first-child {
       border-top-left-radius: 0.25rem;
     }
-    
+
     @include transition(all, 0.2s, ease-in);
     @include themify($themes) {
-      color: themed('navbar-title-color');
+      color: themed("navbar-title-color");
       border-top: 1px solid transparent;
       &.active {
-        border-top: 1px solid themed('content-pre-header-background-color');
+        border-top: 1px solid themed("content-pre-header-background-color");
       }
     }
 
     @include themify($codeblock) {
-      background-color: themed('content-pre-header-background-color');
+      background-color: themed("content-pre-header-background-color");
 
       &.active {
-        background-color: themed('content-pre-background-color');
+        background-color: themed("content-pre-background-color");
       }
 
       @include on-event {
-        background-color: themed('content-pre-background-color');
+        background-color: themed("content-pre-background-color");
       }
     }
   }

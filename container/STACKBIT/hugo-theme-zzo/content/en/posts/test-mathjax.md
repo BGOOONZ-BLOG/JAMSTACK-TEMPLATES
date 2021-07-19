@@ -6,13 +6,13 @@ draft: false
 enableToc: false
 enableTocContent: false
 tags:
-- 
+  -
 series:
--
+  -
 categories:
-- math
+  - math
 libraries:
-- mathjax
+  - mathjax
 image: images/feature1/infinity.png
 ---
 

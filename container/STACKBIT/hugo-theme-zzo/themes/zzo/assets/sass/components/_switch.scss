@@ -6,7 +6,7 @@
   margin-left: 1rem;
 
   &[data-ani="true"] {
-    @include animation('slide-in-down-little .2s .3s 1 ease-in backwards');
+    @include animation("slide-in-down-little .2s .3s 1 ease-in backwards");
   }
 }
 
@@ -26,7 +26,7 @@
 
   @include transition(all, 0.2s, ease);
   @include themify($themes) {
-    background-color: themed('switch-background-color');
+    background-color: themed("switch-background-color");
   }
 }
 
@@ -40,20 +40,20 @@
 
   @include transition(all, 0.2s, ease);
   @include themify($themes) {
-    background-color: themed('switch-button-color');
+    background-color: themed("switch-button-color");
   }
 }
 
 input:checked + .slider {
   @include themify($themes) {
-    background-color: themed('switch-active-color');
+    background-color: themed("switch-active-color");
   }
 }
 
 input:focus + .slider {
   @include themify($themes) {
-    box-shadow: 0 0 1px themed('switch-active-color');
-  }  
+    box-shadow: 0 0 1px themed("switch-active-color");
+  }
 }
 
 input:checked + .slider:before {

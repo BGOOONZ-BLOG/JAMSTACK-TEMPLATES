@@ -21,7 +21,7 @@ Il y a plusieurs manières pour intégrer des SVG dans votre application React :
 ### 1. Utiliser un tag img
 
 ```js
-const Star = props => (
+const Star = (props) => (
   <img src="star.svg" alt="Star" width="20" height="20" {...props} />
 )
 ```
@@ -34,7 +34,7 @@ Cette solution est tout à fait viable. Vous pouvez vous servir de [SVGO](https:
 ### 2. Utiliser du JSX
 
 ```js
-const Star = props => (
+const Star = (props) => (
   <svg viewBox="0 0 512 512" width="20" height="20" {...props}>
     <path
       fill="currentColor"
@@ -105,7 +105,7 @@ J'obtiens le code du composant suivant:
 ```js
 import React from 'react'
 
-const SvgComponent = props => (
+const SvgComponent = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 48 1" {...props}>
     <path d="M0 0h48v1H0z" fill="currentColor" fillRule="evenodd" />
   </svg>
@@ -210,7 +210,7 @@ const svgCode = `
 `
 
 svgr(svgCode, { prettier: false, componentName: 'MyComponent' }).then(
-  jsCode => {
+  (jsCode) => {
     console.log(jsCode)
   },
 )

@@ -14,7 +14,7 @@ export default class Action extends React.Component {
         const icon = _.get(action, 'icon');
         const iconPos = _.get(action, 'icon_position', 'right');
         const classes = classNames({
-            'btn': style === 'primary' || style === 'secondary' || (hasIcon && icon),
+            btn: style === 'primary' || style === 'secondary' || (hasIcon && icon),
             'btn--primary': style === 'primary',
             'btn--secondary': style === 'secondary',
             'btn--icon': hasIcon && icon && iconPos === 'center',
@@ -27,12 +27,12 @@ export default class Action extends React.Component {
             attrs.target = '_blank';
         }
         if (newWindow || noFollow) {
-            attrs.rel = [(newWindow ? 'noopener' : ''), (noFollow ? 'nofollow' : '')].filter(Boolean).join(' ');
+            attrs.rel = [newWindow ? 'noopener' : '', noFollow ? 'nofollow' : ''].filter(Boolean).join(' ');
         }
 
         return (
             <Link href={withPrefix(url)} {...attrs} className={classes}>
-                {(hasIcon && icon) ? (
+                {hasIcon && icon ? (
                     <React.Fragment>
                         <Icon icon={icon} />
                         <span
@@ -44,9 +44,9 @@ export default class Action extends React.Component {
                             {label}
                         </span>
                     </React.Fragment>
-                ) :
+                ) : (
                     label
-                }
+                )}
             </Link>
         );
     }

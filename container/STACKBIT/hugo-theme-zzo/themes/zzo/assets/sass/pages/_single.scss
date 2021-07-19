@@ -12,26 +12,26 @@
     overflow-wrap: break-word;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    
+
     @include themify($themes) {
       color: themed("single-header-title-color");
     }
 
     &[data-ani="true"] {
-      @include animation('slide-in-down .2s .3s 1 ease-in both');
+      @include animation("slide-in-down .2s .3s 1 ease-in both");
     }
   }
 
   &__subtitle {
     margin-bottom: 1.75rem;
     font-family: $title-font;
-    
+
     @include themify($themes) {
       color: themed("toc-title-color");
     }
 
     &[data-ani="true"] {
-      @include animation('slide-in-down .2s .3s 1 ease-in both');
+      @include animation("slide-in-down .2s .3s 1 ease-in both");
     }
   }
 
@@ -56,7 +56,7 @@
     @include flex-wrap(wrap);
     @include flex-grow(1);
     @include themify($themes) {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
     @media only screen and (max-width: 769px) {
       @include flexbox();
@@ -85,9 +85,9 @@
 
   &__contents {
     &[data-ani="true"] {
-      @include animation('slide-in-left-little .2s .6s 1 ease-in both');
+      @include animation("slide-in-left-little .2s .6s 1 ease-in both");
     }
-    
+
     &--gallery {
       overflow: hidden;
     }
@@ -107,7 +107,7 @@
     h4,
     h5,
     h6 {
-      position: relative;      
+      position: relative;
       line-height: 1.25;
       font-family: $title-font;
     }
@@ -117,7 +117,7 @@
       padding: 0;
       color: inherit;
       font-weight: 900;
-      text-rendering: optimizeLegibility; 
+      text-rendering: optimizeLegibility;
 
       @include themify($themes) {
         color: themed("single-contents-title-color");
@@ -170,10 +170,16 @@
       line-height: 1.5;
       font-size: 13.8px;
       direction: ltr;
-      
+
       @include themify($themes) {
-        @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
-        @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+        @include webkit-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
+        @include moz-scrollbars(
+          themed("custom-scrollbar-foreground-color"),
+          themed("custom-scrollbar-background-color")
+        );
       }
     }
 
@@ -190,8 +196,8 @@
         }
       }
     }
-    
-    pre > code:not([class^=language]) {
+
+    pre > code:not([class^="language"]) {
       &::before {
         position: absolute;
         top: 0;
@@ -199,26 +205,26 @@
         padding: 2px 7px;
         width: 100%;
         height: 30px;
-        z-index: z('content');
+        z-index: z("content");
         line-height: 30px;
         font-size: 13.8px;
         font-family: $title-font;
         font-weight: bold;
         display: inline-block;
-        text-transform: capitalize;      
-        content: 'Code';
+        text-transform: capitalize;
+        content: "Code";
 
         @include themify($codeblock) {
-          color: themed('content-pre-header-color');
-          background: themed('content-pre-header-background-color');
+          color: themed("content-pre-header-color");
+          background: themed("content-pre-header-background-color");
         }
       }
     }
 
-    p > code:not([class^=language]) {
+    p > code:not([class^="language"]) {
       padding: 0.25rem 0.5rem;
       @include themify($codeblock) {
-        color: themed('content-code-color');
+        color: themed("content-code-color");
       }
     }
 
@@ -227,7 +233,7 @@
       right: 4px;
       top: 5px;
       border-radius: 2px;
-      z-index: z('clipboard');
+      z-index: z("clipboard");
       @include transition(all, 0.2s, ease);
     }
 
@@ -239,7 +245,7 @@
       height: 1.45rem;
       top: -1px;
       vertical-align: middle;
-      position: relative;      
+      position: relative;
       margin-left: -0.2rem;
       cursor: pointer;
       border-radius: 0 2px 2px 0;
@@ -252,23 +258,23 @@
     .chroma .copy-to-clipboard {
       position: absolute;
       right: 4px;
-      top: 5px;      
+      top: 5px;
       border-radius: 2px;
-      z-index: z('clipboard');
+      z-index: z("clipboard");
     }
     .language-code .copy-to-clipboard {
       position: absolute;
       right: 4px;
-      top: 5px;      
+      top: 5px;
       border-radius: 2px;
-      z-index: z('clipboard');
+      z-index: z("clipboard");
     }
     .highlight > .copy-to-clipboard {
       position: absolute;
       right: 4px;
-      top: 5px;      
+      top: 5px;
       border-radius: 2px;
-      z-index: z('clipboard');
+      z-index: z("clipboard");
     }
 
     blockquote {
@@ -278,10 +284,10 @@
       opacity: 0.8;
       position: relative;
 
-      code:not([class^=language]) {
+      code:not([class^="language"]) {
         padding: 3px 7px;
         @include themify($codeblock) {
-          color: themed('content-code-color');
+          color: themed("content-code-color");
         }
       }
     }
@@ -294,12 +300,12 @@
 
     p {
       margin: 0 0 1.75rem 0;
-      padding: 0;      
+      padding: 0;
 
-      code:not([class^=language]) {
+      code:not([class^="language"]) {
         padding: 3px 7px;
         @include themify($codeblock) {
-          color: themed('content-code-color');
+          color: themed("content-code-color");
         }
       }
     }
@@ -321,7 +327,8 @@
         padding: 0 1.42188rem 0 0;
 
         @include themify($themes) {
-          border-right: 0.32813rem solid themed("single-blockquote-border-color");
+          border-right: 0.32813rem solid
+            themed("single-blockquote-border-color");
         }
       }
     }
@@ -348,9 +355,9 @@
         padding: 2px 7px;
       }
 
-      code:not([class^=language]) {
+      code:not([class^="language"]) {
         @include themify($codeblock) {
-          color: themed('content-code-color');
+          color: themed("content-code-color");
         }
       }
 
@@ -370,7 +377,7 @@
     }
 
     dl dt::after {
-        content: ':';
+      content: ":";
     }
 
     dd {
@@ -397,7 +404,7 @@
     }
 
     .table-wrapper {
-      overflow-x: auto;      
+      overflow-x: auto;
 
       > table {
         max-width: 100%;
@@ -405,27 +412,27 @@
         border-spacing: 0;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.125);
 
-        
         @include themify($codeblock) {
           thead {
-            background: themed('content-pre-header-background-color');
+            background: themed("content-pre-header-background-color");
           }
 
           th {
-            color: themed('content-pre-header-color');            
+            color: themed("content-pre-header-color");
           }
 
-          th, td {
+          th,
+          td {
             padding: 0.25rem 0.5rem;
-            border: 1px double themed('content-pre-border-background-color');
+            border: 1px double themed("content-pre-border-background-color");
           }
         }
       }
 
-      code:not([class^=language]) {
+      code:not([class^="language"]) {
         padding: 3px 7px;
         @include themify($codeblock) {
-          color: themed('content-code-color');
+          color: themed("content-code-color");
         }
       }
     }
@@ -444,8 +451,9 @@
   }
 }
 
-code, pre {  
-  padding: .5rem 0;
+code,
+pre {
+  padding: 0.5rem 0;
   line-height: 1.5;
   font-size: 13.8px;
   font-family: $code-font-stack;
@@ -457,10 +465,11 @@ code, pre {
 }
 
 *:not(.chroma) {
-  code, pre {
+  code,
+  pre {
     @include themify($codeblock) {
-      color: themed('content-pre-color');
-      background: themed('content-pre-background-color');
+      color: themed("content-pre-color");
+      background: themed("content-pre-background-color");
     }
   }
 
@@ -469,11 +478,11 @@ code, pre {
   }
 }
 
-code:not([class^=language]) {  
+code:not([class^="language"]) {
   padding: 3px 0;
   border-radius: 4px;
   @include themify($codeblock) {
-    color: themed('content-code-color');
+    color: themed("content-code-color");
   }
 }
 
@@ -481,7 +490,8 @@ pre:not(.chroma) {
   overflow: auto;
 }
 
-.single__contents > .language-code, li > .language-code {
+.single__contents > .language-code,
+li > .language-code {
   overflow-x: auto;
   position: relative;
   margin: 1rem 0;
@@ -501,14 +511,14 @@ pre:not(.chroma) {
     padding: 2px 7px;
     width: 100%;
     height: 30px;
-    z-index: z('toc');
+    z-index: z("toc");
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-    content: '';
+    content: "";
 
     @include themify($codeblock) {
-        color: themed('content-pre-header-color');
-        background: themed('content-pre-header-background-color');
+      color: themed("content-pre-header-color");
+      background: themed("content-pre-header-background-color");
     }
   }
 }
@@ -526,27 +536,27 @@ pre:not(.chroma) {
 .highlight > .chroma {
   margin: 1em 0;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
-  z-index: z('content');
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+  z-index: z("content");
   overflow-x: auto;
   direction: ltr;
   position: relative;
 
   @include themify($codeblock) {
-    color: themed('content-pre-color');
-    background: themed('content-pre-background-color');
+    color: themed("content-pre-color");
+    background: themed("content-pre-background-color");
   }
 
   code {
     padding: 0;
   }
-  
+
   code[data-lang] {
     &::before {
       position: absolute;
       top: 0;
       left: 0;
-      z-index: z('grid');
+      z-index: z("grid");
       padding: 2px 7px;
       width: 100%;
       height: 30px;
@@ -554,17 +564,19 @@ pre:not(.chroma) {
       font-size: 13.8px;
       font-family: $title-font;
       font-weight: bold;
-      display: inline-block;      
+      display: inline-block;
       content: attr(data-lang);
 
       @include themify($codeblock) {
-        color: themed('content-pre-header-color');
-        background: themed('content-pre-header-background-color');
+        color: themed("content-pre-header-color");
+        background: themed("content-pre-header-background-color");
       }
     }
   }
 
-  table, tr, td {
+  table,
+  tr,
+  td {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -592,18 +604,24 @@ pre:not(.chroma) {
     }
   }
 
-  /* LineNumbersTable */  
+  /* LineNumbersTable */
   .lnt {
     @include themify($codeblock) {
-      color: themed('content-pre-number-color');
+      color: themed("content-pre-number-color");
     }
   }
 
   table.lntable {
     overflow-x: auto;
     @include themify($themes) {
-      @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
-      @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
+      @include webkit-scrollbars(
+        themed("custom-scrollbar-foreground-color"),
+        themed("custom-scrollbar-background-color")
+      );
+      @include moz-scrollbars(
+        themed("custom-scrollbar-foreground-color"),
+        themed("custom-scrollbar-background-color")
+      );
     }
   }
 }

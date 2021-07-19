@@ -7,31 +7,31 @@ thumb_image_alt: A black headphones on a yeallow background
 image: images/7.jpg
 image_alt: A black headphones on a yeallow background
 seo:
-  title: Project Title 7
-  description: This is the project 7 description
-  extra:
-    - name: 'og:type'
-      value: website
-      keyName: property
-    - name: 'og:title'
-      value: Project Title 7
-      keyName: property
-    - name: 'og:description'
-      value: This is the project 7 description
-      keyName: property
-    - name: 'og:image'
-      value: images/7.jpg
-      keyName: property
-      relativeUrl: true
-    - name: 'twitter:card'
-      value: summary_large_image
-    - name: 'twitter:title'
-      value: Project Title 7
-    - name: 'twitter:description'
-      value: This is the project 7 description
-    - name: 'twitter:image'
-      value: images/7.jpg
-      relativeUrl: true
+    title: Project Title 7
+    description: This is the project 7 description
+    extra:
+        - name: 'og:type'
+          value: website
+          keyName: property
+        - name: 'og:title'
+          value: Project Title 7
+          keyName: property
+        - name: 'og:description'
+          value: This is the project 7 description
+          keyName: property
+        - name: 'og:image'
+          value: images/7.jpg
+          keyName: property
+          relativeUrl: true
+        - name: 'twitter:card'
+          value: summary_large_image
+        - name: 'twitter:title'
+          value: Project Title 7
+        - name: 'twitter:description'
+          value: This is the project 7 description
+        - name: 'twitter:image'
+          value: images/7.jpg
+          relativeUrl: true
 layout: project
 ---
 
@@ -39,7 +39,7 @@ Diam maecenas sed enim ut sem. Nisl purus in mollis nunc sed id semper. Dictum s
 
 Sed risus pretium quam vulputate dignissim suspendisse in est. Vitae auctor eu augue ut lectus arcu. Tristique magna sit amet purus. Aliquet enim tortor at auctor urna nunc. Id leo in vitae turpis massa sed elementum tempus. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at. Amet consectetur adipiscing elit duis tristique sollicitudin. Egestas sed sed risus pretium quam vulputate. Nunc eget lorem dolor sed viverra ipsum nunc. Consequat mauris nunc congue nisi vitae suscipit tellus. Fames ac turpis egestas maecenas pharetra convallis posuere morbi leo. Et ultrices neque ornare aenean euismod elementum nisi quis. Varius morbi enim nunc faucibus a pellentesque sit amet. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. In mollis nunc sed id semper risus in hendrerit gravida.
 
->"Design is not a single object or dimension. Design is messy and complex." - Natasha Jen
+> "Design is not a single object or dimension. Design is messy and complex." - Natasha Jen
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tincidunt augue interdum velit euismod in. Justo laoreet sit amet cursus sit amet dictum sit. Viverra aliquet eget sit amet. Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Lectus nulla at volutpat diam ut venenatis tellus. Nunc consequat interdum varius sit. Ultrices neque ornare aenean euismod elementum. Ante metus dictum at tempor commodo. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Etiam non quam lacus suspendisse faucibus interdum posuere lorem.
 

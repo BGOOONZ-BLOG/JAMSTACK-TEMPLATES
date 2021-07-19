@@ -6,7 +6,7 @@ pagesDir: null
 
 assets:
   assetsDir: content/images
-  uploadDir: ''
+  uploadDir: ""
   referenceType: relative
 
 logicFields:

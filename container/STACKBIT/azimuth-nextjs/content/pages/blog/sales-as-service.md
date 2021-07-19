@@ -2,38 +2,38 @@
 title: Sales as a Service
 subtitle: A interesting tale about Sales
 excerpt: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut elementum
-  purus.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut elementum
+    purus.
 author: content/data/authors/jane-doe.yaml
 date: '2018-01-15'
 thumb_image: images/4_thumb.jpg
 image: images/4.jpg
 seo:
-  title: Sales as a Service
-  description: A interesting tale about Sales
-  extra:
-    - name: 'og:type'
-      value: article
-      keyName: property
-    - name: 'og:title'
-      value: Sales as a Service
-      keyName: property
-    - name: 'og:description'
-      value: A interesting tale about Sales
-      keyName: property
-    - name: 'og:image'
-      value: images/4.jpg
-      keyName: property
-      relativeUrl: true
-    - name: 'twitter:card'
-      value: summary_large_image
-    - name: 'twitter:title'
-      value: Sales as a Service
-    - name: 'twitter:description'
-      value: A interesting tale about Sales
-    - name: 'twitter:image'
-      value: images/4.jpg
-      relativeUrl: true
+    title: Sales as a Service
+    description: A interesting tale about Sales
+    extra:
+        - name: 'og:type'
+          value: article
+          keyName: property
+        - name: 'og:title'
+          value: Sales as a Service
+          keyName: property
+        - name: 'og:description'
+          value: A interesting tale about Sales
+          keyName: property
+        - name: 'og:image'
+          value: images/4.jpg
+          keyName: property
+          relativeUrl: true
+        - name: 'twitter:card'
+          value: summary_large_image
+        - name: 'twitter:title'
+          value: Sales as a Service
+        - name: 'twitter:description'
+          value: A interesting tale about Sales
+        - name: 'twitter:image'
+          value: images/4.jpg
+          relativeUrl: true
 layout: post
 ---
 
@@ -46,5 +46,3 @@ Mauris a rhoncus purus, ac tincidunt dui. Phasellus lobortis rhoncus dolor, eges
 Donec et eros euismod tellus congue bibendum vitae sit amet lacus. Nam tempus at nunc eget elementum. Quisque tincidunt diam nulla, eget finibus risus dignissim ut. Fusce eget tincidunt mi, sit amet sollicitudin neque. Cras facilisis ex at massa pretium, ut sollicitudin neque rutrum. Quisque tincidunt purus congue, auctor augue quis, aliquet dui. Nullam orci risus, congue non faucibus in, blandit et leo. Suspendisse eu purus blandit, ultricies orci non, accumsan velit. Suspendisse convallis nisi et vehicula congue. Etiam iaculis nisi mauris, vel ultricies erat egestas quis. Vivamus eros urna, lacinia nec elit euismod, auctor cursus elit. Nunc lobortis hendrerit efficitur. Vivamus ultricies, metus et semper aliquet, ligula elit pulvinar nisi, non ultricies eros velit id felis. Phasellus blandit felis quam, id accumsan arcu luctus non.
 
 Aliquam blandit facilisis ultricies. Ut hendrerit tellus id nunc interdum vehicula. Proin feugiat arcu a mi mattis, in semper lectus sagittis. Mauris rhoncus vestibulum magna, nec vestibulum orci porta quis. Vivamus at ante ullamcorper, commodo risus vel, facilisis diam. Vivamus nec dui bibendum mauris consectetur hendrerit. Morbi a lacus in risus convallis cursus et ut leo. Aliquam vitae aliquam justo. Curabitur efficitur sapien vel dolor mollis interdum dignissim eget lorem. Maecenas aliquam molestie felis vel sollicitudin. Nulla auctor nisl mattis sapien pulvinar, vel sollicitudin eros pellentesque. Nullam bibendum at metus ac mollis.
-
-

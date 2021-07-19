@@ -3,12 +3,7 @@ import blog from './blog';
 import page from './page';
 import post from './post';
 
-export {
-    advanced,
-    blog,
-    page,
-    post
-};
+export { advanced, blog, page, post };
 
 export default {
     advanced,

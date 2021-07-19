@@ -21,20 +21,11 @@ common-js:
 
 <!DOCTYPE html>
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
-<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
-{% include head.html %}
+  <!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+  {% include head.html %}
 
-<body>
-
-  {% include gtm_body.html %}
-
-  {% include nav.html %}
-
-  {{ content }}
-
-  {% include footer.html %}
-
-  {% include footer-scripts.html %}
-
-</body>
+  <body>
+    {% include gtm_body.html %} {% include nav.html %} {{ content }} {% include
+    footer.html %} {% include footer-scripts.html %}
+  </body>
 </html>

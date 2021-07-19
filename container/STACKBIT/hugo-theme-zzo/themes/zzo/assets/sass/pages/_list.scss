@@ -1,9 +1,9 @@
 .list {
   &__main {
     position: relative;
-  
+
     &[data-display="block"] {
-      display: block; 
+      display: block;
     }
 
     &[data-display="none"] {
@@ -46,7 +46,7 @@
 
     &--title {
       @include themify($themes) {
-        color: themed('list-header-title-color');
+        color: themed("list-header-title-color");
       }
     }
 

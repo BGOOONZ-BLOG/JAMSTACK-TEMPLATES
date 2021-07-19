@@ -134,16 +134,16 @@ models:
     file: 404.md
     hideContent: true
     fields:
-        - type: string
-          name: title
-        - type: string
-          name: permalink
-          label: Slug
-          hidden: true
-        - type: string
-          name: layout
-          hidden: true
-          const: 404
+      - type: string
+        name: title
+      - type: string
+        name: permalink
+        label: Slug
+        hidden: true
+      - type: string
+        name: layout
+        hidden: true
+        const: 404
   post:
     type: page
     label: Post

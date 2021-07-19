@@ -38,18 +38,18 @@ exports.createPages = ({ graphql, actions }) => {
         ${pageFields}
       }
     }
-    `).then(result => {
+    `).then((result) => {
         if (result.errors) {
             return Promise.reject(result.errors);
         }
 
         const pageNodes = _.concat(
-            _.map(result.data.allContentfulLanding.edges, ({node}) => node),
-            _.map(result.data.allContentfulPage.edges, ({node}) => node),
-            _.map(result.data.allContentfulPost.edges, ({node}) => node)
+            _.map(result.data.allContentfulLanding.edges, ({ node }) => node),
+            _.map(result.data.allContentfulPage.edges, ({ node }) => node),
+            _.map(result.data.allContentfulPost.edges, ({ node }) => node)
         );
 
-        pageNodes.forEach(node => {
+        pageNodes.forEach((node) => {
             const template = node.sys.contentType.sys.id;
             const contentfulId = node.contentful_id;
             const component = path.resolve(`./src/templates/${template}.js`);
@@ -57,7 +57,9 @@ exports.createPages = ({ graphql, actions }) => {
 
             // if slug is not defined, don't create a page
             if (!slug) {
-                console.error(`Error: page of type "${template}" and contentful id "${contentfulId}" does not have a "slug" field, page will not be created`);
+                console.error(
+                    `Error: page of type "${template}" and contentful id "${contentfulId}" does not have a "slug" field, page will not be created`
+                );
                 return;
             }
 

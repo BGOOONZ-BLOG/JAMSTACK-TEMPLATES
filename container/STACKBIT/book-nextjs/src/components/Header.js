@@ -56,10 +56,10 @@ export default class Header extends React.Component {
                         >
                             <Action action={action} />
                         </li>
-                    )
+                    );
                 })}
             </ul>
-        )
+        );
     }
 
     render() {
@@ -79,17 +79,30 @@ export default class Header extends React.Component {
             <header className="site-header py-2">
                 <div className="container">
                     <nav className="navbar flex items-center" aria-label="Main Navigation">
-                        <Link className="sr-only" href="#content">Skip to main content</Link>
+                        <Link className="sr-only" href="#content">
+                            Skip to main content
+                        </Link>
                         <div className="navbar__branding mr-2">
-                            {logo ? <Link className="navbar__logo m-0" href={withPrefix('/')}><img src={withPrefix(logo)} alt={logoAlt} /></Link>
-                                : <Link className="navbar__title h4 m-0" href={withPrefix('/')}>{title}</Link>}
+                            {logo ? (
+                                <Link className="navbar__logo m-0" href={withPrefix('/')}>
+                                    <img src={withPrefix(logo)} alt={logoAlt} />
+                                </Link>
+                            ) : (
+                                <Link className="navbar__title h4 m-0" href={withPrefix('/')}>
+                                    {title}
+                                </Link>
+                            )}
                         </div>
                         {((hasPrimaryNav && !_.isEmpty(primaryNavLinks)) || (hasSecondaryNav && !_.isEmpty(secondaryNavLinks))) && (
                             <React.Fragment>
                                 <div className="navbar__container flex-md-auto">
                                     <div className="navbar__scroller">
                                         <div className="navbar__inner">
-                                            <button aria-label="Close" className="btn btn--icon btn--clear navbar__close-btn" onClick={this.handleMenuToggle.bind(this)}>
+                                            <button
+                                                aria-label="Close"
+                                                className="btn btn--icon btn--clear navbar__close-btn"
+                                                onClick={this.handleMenuToggle.bind(this)}
+                                            >
                                                 <Icon icon={'close'} />
                                                 <span className="sr-only">Close</span>
                                             </button>
@@ -100,12 +113,17 @@ export default class Header extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <button aria-label="Menu" className="btn btn--icon btn--clear navbar__menu-btn ml-auto" ref={this.menuOpenRef} onClick={this.handleMenuToggle.bind(this)}>
+                                <button
+                                    aria-label="Menu"
+                                    className="btn btn--icon btn--clear navbar__menu-btn ml-auto"
+                                    ref={this.menuOpenRef}
+                                    onClick={this.handleMenuToggle.bind(this)}
+                                >
                                     <Icon icon={'menu'} />
                                     <span className="sr-only">Menu</span>
                                 </button>
-                            </React.Fragment>)
-                        }
+                            </React.Fragment>
+                        )}
                     </nav>
                 </div>
             </header>

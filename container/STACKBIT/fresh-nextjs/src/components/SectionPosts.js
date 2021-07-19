@@ -26,7 +26,9 @@ export default class SectionPosts extends React.Component {
                     )}
                     <header className="post-header">
                         <h3 className="post-title">
-                            <Link href={postUrl} rel="bookmark">{title}</Link>
+                            <Link href={postUrl} rel="bookmark">
+                                {title}
+                            </Link>
                         </h3>
                     </header>
                     {excerpt && (
@@ -35,7 +37,9 @@ export default class SectionPosts extends React.Component {
                         </div>
                     )}
                     <footer className="post-meta">
-                        <time className="published" dateTime={dateTimeAttr}>{formattedDate}</time>
+                        <time className="published" dateTime={dateTimeAttr}>
+                            {formattedDate}
+                        </time>
                     </footer>
                 </div>
             </article>
@@ -55,9 +59,7 @@ export default class SectionPosts extends React.Component {
             <section id={sectionId} className="block block-posts">
                 {title && <h2 className="block-title underline inner-sm">{title}</h2>}
                 <div className="post-feed">
-                    <div className="post-feed-inside">
-                        {_.map(recentPosts, (post, index) => this.renderPost(post, index))}
-                    </div>
+                    <div className="post-feed-inside">{_.map(recentPosts, (post, index) => this.renderPost(post, index))}</div>
                 </div>
                 {!_.isEmpty(actions) && (
                     <div className="block-buttons inner-sm">

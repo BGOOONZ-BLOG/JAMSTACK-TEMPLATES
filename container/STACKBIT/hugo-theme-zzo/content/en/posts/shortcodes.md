@@ -8,11 +8,11 @@ enableToc: true
 enableTocContent: true
 tocPosition: inner
 tags:
-- shortcode
+  - shortcode
 series:
--
+  -
 categories:
--
+  -
 image: images/feature3/code-file.png
 ---
 
@@ -33,49 +33,49 @@ This is **box** shortcode
 Make it easy to switch between different code
 
 {{< codes java javascript >}}
-  {{< code >}}
+{{< code >}}
 
-  ```java
-  System.out.println('Hello World!');
-  ```
+```java
+System.out.println('Hello World!');
+```
 
-  {{< /code >}}
+{{< /code >}}
 
-  {{< code >}}
+{{< code >}}
 
-  ```javascript
-  console.log('Hello World!');
-  ```
-  
-  {{< /code >}}
+```javascript
+console.log("Hello World!");
+```
+
+{{< /code >}}
 {{< /codes >}}
 
 ## Tabs for general purpose
 
 {{< tabs Windows MacOS Ubuntu >}}
-  {{< tab >}}
+{{< tab >}}
 
-  ### Windows section
+### Windows section
 
-  ```javascript
-  console.log('Hello World!');
-  ```
+```javascript
+console.log("Hello World!");
+```
 
-  ⚠️Becareful that the content in the tab should be different from each other. The tab makes unique id hashes depending on the tab contents. So, If you just copy-paste the tabs with multiple times, since it has the same contents, the tab will not work.
+⚠️Becareful that the content in the tab should be different from each other. The tab makes unique id hashes depending on the tab contents. So, If you just copy-paste the tabs with multiple times, since it has the same contents, the tab will not work.
 
-  {{< /tab >}}
-  {{< tab >}}
+{{< /tab >}}
+{{< tab >}}
 
-  ### MacOS section
+### MacOS section
 
-  Hello world!
-  {{< /tab >}}
-  {{< tab >}}
+Hello world!
+{{< /tab >}}
+{{< tab >}}
 
-  ### Ubuntu section
+### Ubuntu section
 
-  Great!
-  {{< /tab >}}
+Great!
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Expand

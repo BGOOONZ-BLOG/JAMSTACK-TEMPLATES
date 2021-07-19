@@ -26,14 +26,14 @@ export default class SectionForm extends React.Component {
                     <form
                         name={formId}
                         id={formId}
-                        {...(formAction ? ({ action: formAction }) : null)}
+                        {...(formAction ? { action: formAction } : null)}
                         method="POST"
                         data-netlify="true"
                         data-netlify-honeypot={formHoneypotName}
                     >
                         <div className="screen-reader-text">
                             <label id={formHoneypotLabelId} htmlFor={formHoneypotInputId}>
-                                Don't fill this out if you're human: 
+                                Don't fill this out if you're human:
                                 <input aria-labelledby={formHoneypotLabelId} id={formHoneypotInputId} name={formHoneypotName} />
                             </label>
                         </div>
@@ -42,7 +42,9 @@ export default class SectionForm extends React.Component {
                             <FormField key={index} field={field} />
                         ))}
                         <div className="form-submit">
-                            <button type="submit" className="button">{submitLabel}</button>
+                            <button type="submit" className="button">
+                                {submitLabel}
+                            </button>
                         </div>
                     </form>
                 </div>

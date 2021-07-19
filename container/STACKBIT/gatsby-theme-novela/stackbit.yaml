@@ -60,7 +60,7 @@ models:
   post:
     type: page
     label: Post
-    urlPath: '{title}'
+    urlPath: "{title}"
     filePath: '{moment_format("YYYY-MM-DD")}-{title}/index.mdx'
     fields:
       - type: string

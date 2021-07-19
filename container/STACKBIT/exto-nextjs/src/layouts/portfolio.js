@@ -43,9 +43,7 @@ export default class Portfolio extends React.Component {
                         <h1 className="page-title line-top">{title}</h1>
                         {subtitle && <div className="page-subtitle">{subtitle}</div>}
                     </header>
-                    <div className={`portfolio-feed layout-${layoutStyle}`}>
-                        {_.map(projects, (project, index) => this.renderProject(project, index))}
-                    </div>
+                    <div className={`portfolio-feed layout-${layoutStyle}`}>{_.map(projects, (project, index) => this.renderProject(project, index))}</div>
                 </div>
             </Layout>
         );

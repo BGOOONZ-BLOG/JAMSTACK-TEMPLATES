@@ -4,7 +4,7 @@
   @include align-items(flex-start);
   @include flex-direction(column);
   @include themify($codeblock) {
-    color: themed('content-pre-color');
+    color: themed("content-pre-color");
   }
 
   width: 100%;
@@ -19,13 +19,13 @@
     @include box-shadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.25));
 
     &[data-ani="true"] {
-      @include animation('slide-in-down-little .2s .6s 1 ease-in both');
+      @include animation("slide-in-down-little .2s .6s 1 ease-in both");
     }
 
     &-wrapper {
       width: 90%;
       height: 100%;
-      border-radius: 0.25rem;  
+      border-radius: 0.25rem;
       margin: 1rem auto;
       @include flexbox();
       @include align-items(center);
@@ -62,7 +62,7 @@
         @include flexbox();
         @include align-items(center);
         @include themify($themes) {
-          color: themed('social-icon-color');
+          color: themed("social-icon-color");
         }
       }
 
@@ -77,11 +77,11 @@
     .bio__info {
       &--icon {
         margin-left: 0.25rem !important;
-        
+
         @include flexbox();
         @include align-items(center);
         @include themify($themes) {
-          color: themed('social-icon-color');
+          color: themed("social-icon-color");
         }
       }
 
@@ -95,22 +95,22 @@
   &__social {
     width: 100%;
     margin-top: 0.5rem;
-    
+
     @include flexbox();
     @include flex-wrap(wrap);
     a {
       text-decoration: none !important;
       padding: 0.5rem;
       border-radius: 0.125rem;
-      
+
       @include flexbox();
       @include flex-grow(1);
       @include align-items(center);
       @include justify-content(flex-start);
       @include themify($themes) {
-        color: themed('social-icon-color');
+        color: themed("social-icon-color");
         @include on-event {
-          color: themed('social-icon-hover-color');
+          color: themed("social-icon-hover-color");
         }
       }
     }

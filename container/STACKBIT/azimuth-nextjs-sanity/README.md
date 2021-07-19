@@ -35,7 +35,6 @@ The Next.js [SSG support](https://nextjs.org/blog/next-9-3#next-gen-static-site-
 has been leveraged to support client side rendering when navigating the internal
 links of the site.
 
-
 ## Quick Start 🏎
 
 [Create a site](https://app.stackbit.com/create?theme=https://github.com/stackbit-themes/azimuth-nextjs-sanity&utm_source=theme-readme&utm_medium=referral&utm_campaign=stackbit_themes) from this theme using Stackbit.
@@ -48,7 +47,7 @@ Stackbit will execute following steps for you
 - Create [Netlify](https://www.netlify.com) site connected to the GitHub repo
 - Deploy the Netlify site.
 - Create a Stackbit project that will allow you edit your website via on-page
-  visual editing experience. 
+  visual editing experience.
 
 Additionally, Stackbit will connect all services together:
 
@@ -56,7 +55,6 @@ Additionally, Stackbit will connect all services together:
   soon as new commit is pushed to GitHub.
 - Create a "publish" webhook in Sanity that will trigger Netlify deployment as
   soon as content is published in Sanity.
-
 
 ## Editing Content 📝
 
@@ -75,22 +73,21 @@ Here's a few resources to get you started:
 
 If you need a hand, make sure to check the [Stackbit support page](https://stackbit.link/project-readme-support).
 
-
 ## Develop Locally 🛠
 
-1. [Create a site](https://app.stackbit.com/create?theme=https://github.com/stackbit-themes/azimuth-nextjs-sanity&utm_source=theme-readme&utm_medium=referral&utm_campaign=stackbit_themes) from this theme using Stackbit.
+1.  [Create a site](https://app.stackbit.com/create?theme=https://github.com/stackbit-themes/azimuth-nextjs-sanity&utm_source=theme-readme&utm_medium=referral&utm_campaign=stackbit_themes) from this theme using Stackbit.
 
-1. Once finished, you will be redirected to Stackbit Studio where you will be
-   able to edit the content using the free on-page editing experience, and
-   publish new versions of your site.
+1.  Once finished, you will be redirected to Stackbit Studio where you will be
+    able to edit the content using the free on-page editing experience, and
+    publish new versions of your site.
 
-1. To further develop your site, clone the generated repository.
+1.  To further develop your site, clone the generated repository.
 
-1. Install dependencies
+1.  Install dependencies
 
-       run npm install
+    run npm install
 
-1. Optionally, run Sanity Studio locally by installing sanity-cli, and then installing and running the studio from the `/studio` directory. You may be required to login with the Sanity CLI.
+1.  Optionally, run Sanity Studio locally by installing sanity-cli, and then installing and running the studio from the `/studio` directory. You may be required to login with the Sanity CLI.
 
         npm install -g @sanity/cli
         cd studio
@@ -98,20 +95,19 @@ If you need a hand, make sure to check the [Stackbit support page](https://stack
         sanity install
         sanity start
 
-1. Set the following environment variables locally.
+1.  Set the following environment variables locally.
 
-   - `SANITY_PROJECT_ID` - Sanity project ID (you can copy it from the `api.projectId` key in [studio/sanity.json](studio/sanity.json))
-   - `SANITY_DATASET` - Sanity dataset name (optional, default is `production`)
-   - `SANITY_TOKEN` - Sanity read-write token (you can copy it from the "environment" section in your Netlify site https://app.netlify.com/sites/<netlify-site-name>/settings/deploys#environment)
+    - `SANITY_PROJECT_ID` - Sanity project ID (you can copy it from the `api.projectId` key in [studio/sanity.json](studio/sanity.json))
+    - `SANITY_DATASET` - Sanity dataset name (optional, default is `production`)
+    - `SANITY_TOKEN` - Sanity read-write token (you can copy it from the "environment" section in your Netlify site https://app.netlify.com/sites/<netlify-site-name>/settings/deploys#environment)
 
-1. Start the Gatsby local development server (run from project root):
+1.  Start the Gatsby local development server (run from project root):
 
         npm run dev
 
-1. Navigate to [http://localhost:3000](http://localhost:3000) to see the site.
-   You can now edit the site contents in the local Sanity Studio, and the
-   browser will live-update your changes. 🎉
-
+1.  Navigate to [http://localhost:3000](http://localhost:3000) to see the site.
+    You can now edit the site contents in the local Sanity Studio, and the
+    browser will live-update your changes. 🎉
 
 ## Contributing 🙏
 
@@ -146,10 +142,10 @@ To contribute to this theme please follow the following steps:
    ```shell
    node sanity-export/create-project.js
    ```
-   
+
    This will create an empty Sanity project and a "production" dataset.
    The output will include the project ID, you will need it in next steps:
-   
+
    ```
    > creating a project...
    > created a project, projectId: dgaiu42f
@@ -181,7 +177,7 @@ To contribute to this theme please follow the following steps:
 
 1. Define following environment variables to allow Sourcebit to fetch the content
    from Sanity when developing or building the site locally. You will need to create
-   a "read-write" token in your Sanity project settings page 
+   a "read-write" token in your Sanity project settings page
    (https://manage.sanity.io/projects/__PROJECT_ID__/settings/api)
 
    ```shell
@@ -211,16 +207,14 @@ To contribute to this theme please follow the following steps:
 
 1. Commit, push and submit a pull-request 🎉
 
-
 ## Building for production 🏗
 
 To build a static site for production, run the following command
 
     npm run build
 
-The exported site will be written to `out` folder. The contents of this folder 
+The exported site will be written to `out` folder. The contents of this folder
 can be deployed by serverless deployment platform such as [Netlify](https://www.netlify.com).
-
 
 ## Learn More 📚
 

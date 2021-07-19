@@ -350,7 +350,7 @@ export default function Post({ data }) {
 }
 
 export const pageQuery = graphql`
-  query($id: String!, $slug: String!, $langKey: String!) {
+  query ($id: String!, $slug: String!, $langKey: String!) {
     site {
       siteMetadata {
         canonicalUrl

@@ -7,7 +7,7 @@
   @include flex-direction(column);
   @include justify-content(flex-start);
 
-  @media only screen and (max-width:768px) {
+  @media only screen and (max-width: 768px) {
     padding: 2rem 1rem 0;
   }
 
@@ -20,14 +20,14 @@
 
     &[data-dir="rtl"] {
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         right: 3rem;
         top: 0;
         width: 0.25rem;
         height: 100%;
         @include themify($themes) {
-          background-color: themed('toc-vertical-line');
+          background-color: themed("toc-vertical-line");
         }
       }
 
@@ -40,14 +40,14 @@
 
     &[data-dir="ltr"] {
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 3rem;
         top: 0;
         width: 0.25rem;
         height: 100%;
         @include themify($themes) {
-          background-color: themed('toc-vertical-line');
+          background-color: themed("toc-vertical-line");
         }
       }
       @media only screen and (max-width: 769px) {
@@ -56,7 +56,6 @@
         }
       }
     }
-
   }
 
   &__li {
@@ -102,12 +101,12 @@
     @include align-items(center);
     @include justify-content(center);
     @include themify($themes) {
-      color: themed('archive-key-color');
-      background-color: themed('archive-key-background-color');
+      color: themed("archive-key-color");
+      background-color: themed("archive-key-background-color");
     }
 
     &[data-ani="true"] {
-      @include animation('slide-in-down .4s .2s 1 ease both');
+      @include animation("slide-in-down .4s .2s 1 ease both");
     }
 
     &:not(:first-child) {
@@ -121,13 +120,13 @@
   &__meta {
     border-radius: 0.25rem;
     min-width: 100px;
-    max-width: 100px;    
+    max-width: 100px;
 
     @include flexbox();
     @include align-items(center);
 
     &[data-ani="true"] {
-      @include animation('slide-in-left .2s .5s 1 ease both');
+      @include animation("slide-in-left .2s .5s 1 ease both");
     }
   }
 
@@ -143,11 +142,11 @@
 
     @include truncate(50px);
     @include themify($themes) {
-      color: themed('archive-type-color');
-      background-color: themed('archive-type-background-color');
+      color: themed("archive-type-color");
+      background-color: themed("archive-type-background-color");
 
       @media only screen and (max-width: 769px) {
-        border-right: 2px solid themed('toc-vertical-line');
+        border-right: 2px solid themed("toc-vertical-line");
       }
     }
   }
@@ -160,21 +159,21 @@
     width: 50%;
     height: 24px;
     line-height: 24px;
-    text-align: center;        
+    text-align: center;
 
     @include truncate(50px);
     @include themify($themes) {
-      color: themed('archive-meta-color');
-      background-color: themed('archive-type-background-color');
+      color: themed("archive-meta-color");
+      background-color: themed("archive-type-background-color");
 
       @media only screen and (max-width: 769px) {
-        border-left: 2px solid themed('toc-vertical-line');
+        border-left: 2px solid themed("toc-vertical-line");
       }
     }
   }
 
   &__title {
-    margin-right: 0.5rem;    
+    margin-right: 0.5rem;
     margin-left: 1rem;
     font-family: $title-font;
 
@@ -186,20 +185,20 @@
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
-    
+
     @include on-event {
       &[data-dir="ltr"] {
         &::before {
-          content: '';
+          content: "";
           position: absolute;
-          left: 3rem;                
+          left: 3rem;
           width: 0.25rem;
           height: 30px;
-          
+
           @include themify($themes) {
-            background-color: themed('archive-hover-line-color');
-            
-            @media only screen and (max-width:768px) {
+            background-color: themed("archive-hover-line-color");
+
+            @media only screen and (max-width: 768px) {
               top: 13px;
               height: 24px;
             }
@@ -215,16 +214,16 @@
 
       &[data-dir="rtl"] {
         &::before {
-          content: '';
+          content: "";
           position: absolute;
-          right: 3rem;                
+          right: 3rem;
           width: 0.25rem;
           height: 30px;
-          
+
           @include themify($themes) {
-            background-color: themed('archive-hover-line-color');
-            
-            @media only screen and (max-width:768px) {
+            background-color: themed("archive-hover-line-color");
+
+            @media only screen and (max-width: 768px) {
               top: 13px;
               height: 24px;
             }
@@ -246,9 +245,9 @@
     font-family: $title-font;
 
     @include themify($themes) {
-      color: themed('terms-title-color');
+      color: themed("terms-title-color");
     }
-    @media only screen and (max-width:600px) {
+    @media only screen and (max-width: 600px) {
       margin-bottom: 1rem;
     }
   }

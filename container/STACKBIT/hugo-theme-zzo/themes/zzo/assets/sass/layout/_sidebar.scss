@@ -10,9 +10,9 @@
       font-size: 0.95rem;
 
       @include themify($themes) {
-        color: themed('sidebar-title-color');
+        color: themed("sidebar-title-color");
         &:hover {
-          color: themed('link-hover');
+          color: themed("link-hover");
         }
       }
     }
@@ -35,7 +35,7 @@
       font-family: $title-font;
       font-size: 0.95rem;
       @include themify($themes) {
-        color: themed('sidebar-li-color');
+        color: themed("sidebar-li-color");
       }
     }
   }

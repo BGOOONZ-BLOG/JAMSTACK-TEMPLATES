@@ -12,8 +12,8 @@
 
     @include transition(all, 0.2s, ease);
     @include themify($themes) {
-      border-top: 1px solid themed('content-box-border-color');
-      background-color: themed('toc-body-background-color');
+      border-top: 1px solid themed("content-box-border-color");
+      background-color: themed("toc-body-background-color");
     }
 
     li {
@@ -34,9 +34,9 @@
       font-family: $title-font;
       font-size: 15.2px;
       li {
-        list-style-type: '📂 ';
+        list-style-type: "📂 ";
         li {
-          list-style-type: '📄 ';
+          list-style-type: "📄 ";
         }
       }
     }
@@ -59,9 +59,9 @@
     @include align-items(center);
     @include themify($themes) {
       color: inherit;
-      background-color: themed('toc-header-background-color');
+      background-color: themed("toc-header-background-color");
       @include on-event {
-        background-color: themed('toc-header-background-color-hover');
+        background-color: themed("toc-header-background-color-hover");
       }
     }
   }
@@ -75,7 +75,7 @@
   &-icon {
     padding-top: 0.125rem;
     padding-right: 0.5rem;
-    
+
     &__down {
       @include rotate(90);
       @include transition(all, 0.15s, ease);

@@ -259,9 +259,9 @@ function ProjectTemplate({
             ),
           ).then((res) => res.json())
         : 0,
-      fetch(
-        `https://api.npmjs.org/downloads/point/last-week/${npm}`,
-      ).then((res) => res.json()),
+      fetch(`https://api.npmjs.org/downloads/point/last-week/${npm}`).then(
+        (res) => res.json(),
+      ),
     ])
       .then(setData)
       .catch(() => {

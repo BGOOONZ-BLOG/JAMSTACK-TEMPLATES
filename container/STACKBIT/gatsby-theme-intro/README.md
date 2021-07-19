@@ -52,7 +52,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ### Run your site
@@ -134,7 +134,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 After modyfying `gatsby-config.js` it may be required to restart `gatsby develop` process.

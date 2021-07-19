@@ -1,38 +1,38 @@
 ---
 title: Behind the Scenes - The Design of Azimuth
 excerpt: >-
-  Quisque ultrices metus sed libero ultricies condimentum. Suspendisse ut
-  faucibus purus. Mauris at pharetra risus.
+    Quisque ultrices metus sed libero ultricies condimentum. Suspendisse ut
+    faucibus purus. Mauris at pharetra risus.
 author: content/data/authors/jane-doe.yaml
 date: '2018-01-09'
 thumb_image: images/6_thumb.jpg
 image: images/6.jpg
 seo:
-  title: Behind the Scenes - The Design of Azimuth
-  description: Quisque ultrices metus sed libero ultricies condimentum.
-  extra:
-    - name: 'og:type'
-      value: article
-      keyName: property
-    - name: 'og:title'
-      value: Behind the Scenes - The Design of Azimuth
-      keyName: property
-    - name: 'og:description'
-      value: Quisque ultrices metus sed libero ultricies condimentum.
-      keyName: property
-    - name: 'og:image'
-      value: images/6.jpg
-      keyName: property
-      relativeUrl: true
-    - name: 'twitter:card'
-      value: summary_large_image
-    - name: 'twitter:title'
-      value: Behind the Scenes - The Design of Azimuth
-    - name: 'twitter:description'
-      value: Quisque ultrices metus sed libero ultricies condimentum.
-    - name: 'twitter:image'
-      value: images/6.jpg
-      relativeUrl: true
+    title: Behind the Scenes - The Design of Azimuth
+    description: Quisque ultrices metus sed libero ultricies condimentum.
+    extra:
+        - name: 'og:type'
+          value: article
+          keyName: property
+        - name: 'og:title'
+          value: Behind the Scenes - The Design of Azimuth
+          keyName: property
+        - name: 'og:description'
+          value: Quisque ultrices metus sed libero ultricies condimentum.
+          keyName: property
+        - name: 'og:image'
+          value: images/6.jpg
+          keyName: property
+          relativeUrl: true
+        - name: 'twitter:card'
+          value: summary_large_image
+        - name: 'twitter:title'
+          value: Behind the Scenes - The Design of Azimuth
+        - name: 'twitter:description'
+          value: Quisque ultrices metus sed libero ultricies condimentum.
+        - name: 'twitter:image'
+          value: images/6.jpg
+          relativeUrl: true
 layout: post
 ---
 

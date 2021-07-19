@@ -44,7 +44,7 @@ export default class NavOverlay extends React.Component {
         const hasSecondaryNav = _.get(header, 'has_secondary_nav');
         const secondaryNavLinks = _.get(header, 'secondary_nav_links');
 
-        if ((!hasPrimaryNav || _.isEmpty(primaryNavLinks)) && (!hasSecondaryNav && _.isEmpty(secondaryNavLinks))) {
+        if ((!hasPrimaryNav || _.isEmpty(primaryNavLinks)) && !hasSecondaryNav && _.isEmpty(secondaryNavLinks)) {
             return null;
         }
 

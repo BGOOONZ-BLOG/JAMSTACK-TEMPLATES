@@ -2,9 +2,9 @@
 
 Put an `x` into the box(es) that apply:
 
-- [ ] This pull request fixes a bug.
-- [ ] This pull request adds a feature.
-- [ ] This pull request introduces breaking change.
+-   [ ] This pull request fixes a bug.
+-   [ ] This pull request adds a feature.
+-   [ ] This pull request introduces breaking change.
 
 ### Description
 
@@ -20,14 +20,14 @@ Put an `x` into the box(es) that apply:
 
 #### General
 
-- [ ] Describe what changes are being made
-- [ ] Explain why and how the changes were necessary and implemented respectively
-- [ ] Reference issue with `#<ISSUE_NO>` if applicable
+-   [ ] Describe what changes are being made
+-   [ ] Explain why and how the changes were necessary and implemented respectively
+-   [ ] Reference issue with `#<ISSUE_NO>` if applicable
 
 #### Resources
 
-- [ ] If you have changed any SCSS code, run `make release` to regenerate all CSS files
+-   [ ] If you have changed any SCSS code, run `make release` to regenerate all CSS files
 
 #### Contributors
 
-- [ ] Add yourself to `CONTRIBUTORS.md` if you aren't on it already
+-   [ ] Add yourself to `CONTRIBUTORS.md` if you aren't on it already

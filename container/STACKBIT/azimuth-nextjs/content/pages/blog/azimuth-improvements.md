@@ -1,46 +1,46 @@
 ---
 title: Release Notes - Azimuth Improvements and New Integrations
 subtitle: >-
-  Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa
-  massa primis.
+    Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa
+    massa primis.
 author: content/data/authors/john-doe.yaml
 excerpt: >-
-  Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan
-  sapien blandit ac amet faucibus aliquet placerat commodo.
+    Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan
+    sapien blandit ac amet faucibus aliquet placerat commodo.
 date: '2017-03-26'
 thumb_image: images/1_thumb.jpg
 seo:
-  title: Release Notes - Azimuth Improvements and New Integrations
-  description: >-
-    Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa
-    massa primis.
-  extra:
-    - name: 'og:type'
-      value: article
-      keyName: property
-    - name: 'og:title'
-      value: Release Notes - Azimuth Improvements and New Integrations
-      keyName: property
-    - name: 'og:description'
-      value: >-
-        Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum
-        massa massa primis.
-      keyName: property
-    - name: 'og:image'
-      value: images/1.jpg
-      keyName: property
-      relativeUrl: true
-    - name: 'twitter:card'
-      value: summary_large_image
-    - name: 'twitter:title'
-      value: Release Notes - Azimuth Improvements and New Integrations
-    - name: 'twitter:description'
-      value: >-
-        Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum
-        massa massa primis.
-    - name: 'twitter:image'
-      value: images/1.jpg
-      relativeUrl: true
+    title: Release Notes - Azimuth Improvements and New Integrations
+    description: >-
+        Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa
+        massa primis.
+    extra:
+        - name: 'og:type'
+          value: article
+          keyName: property
+        - name: 'og:title'
+          value: Release Notes - Azimuth Improvements and New Integrations
+          keyName: property
+        - name: 'og:description'
+          value: >-
+              Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum
+              massa massa primis.
+          keyName: property
+        - name: 'og:image'
+          value: images/1.jpg
+          keyName: property
+          relativeUrl: true
+        - name: 'twitter:card'
+          value: summary_large_image
+        - name: 'twitter:title'
+          value: Release Notes - Azimuth Improvements and New Integrations
+        - name: 'twitter:description'
+          value: >-
+              Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum
+              massa massa primis.
+        - name: 'twitter:image'
+          value: images/1.jpg
+          relativeUrl: true
 layout: post
 ---
 

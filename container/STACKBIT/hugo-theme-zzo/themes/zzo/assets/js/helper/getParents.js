@@ -5,7 +5,6 @@
  * @return {Array} Null if no match
  */
 var getParents = function (elem, selector) {
-
   var parents = [];
   var firstChar;
   if (selector) {
@@ -15,23 +14,22 @@ var getParents = function (elem, selector) {
   // Get matches
   for (; elem && elem !== document; elem = elem.parentNode) {
     if (selector) {
-
       // If selector is a class
-      if (firstChar === '.') {
+      if (firstChar === ".") {
         if (elem.classList.contains(selector.substr(1))) {
           parents.push(elem);
         }
       }
 
       // If selector is an ID
-      if (firstChar === '#') {
+      if (firstChar === "#") {
         if (elem.id === selector.substr(1)) {
           parents.push(elem);
         }
       }
 
       // If selector is a data attribute
-      if (firstChar === '[') {
+      if (firstChar === "[") {
         if (elem.hasAttribute(selector.substr(1, selector.length - 1))) {
           parents.push(elem);
         }
@@ -41,11 +39,9 @@ var getParents = function (elem, selector) {
       if (elem.tagName.toLowerCase() === selector) {
         parents.push(elem);
       }
-
     } else {
       parents.push(elem);
     }
-
   }
 
   // Return parents if any exist
@@ -54,5 +50,4 @@ var getParents = function (elem, selector) {
   } else {
     return parents;
   }
-
 };

@@ -7,16 +7,7 @@ import Icon from './Icon';
 import Subscribe from './Subscribe';
 import SubscribeForm from './SubscribeForm';
 
-export {
-    ActionLink,
-    Footer,
-    FormField,
-    Header,
-    Layout,
-    Icon,
-    Subscribe,
-    SubscribeForm
-};
+export { ActionLink, Footer, FormField, Header, Layout, Icon, Subscribe, SubscribeForm };
 
 export default {
     ActionLink,

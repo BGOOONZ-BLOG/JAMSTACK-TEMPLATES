@@ -38,7 +38,7 @@ export default class Post extends React.Component {
                             className={classNames('mb-4', {
                                 'mb-sm-5': imagePosition !== 'top',
                                 'mb-md-6': imagePosition !== 'top',
-                                'grid': imagePosition !== 'top',
+                                grid: imagePosition !== 'top',
                                 'items-center': image && imagePosition !== 'top'
                             })}
                         >
@@ -67,7 +67,9 @@ export default class Post extends React.Component {
                                             <span className="post__meta-sep"> &middot; </span>
                                         </React.Fragment>
                                     )}
-                                    <span className="post__date"><time dateTime={dateTimeAttr}>{formattedDate}</time></span>
+                                    <span className="post__date">
+                                        <time dateTime={dateTimeAttr}>{formattedDate}</time>
+                                    </span>
                                 </div>
                                 <h1 className="post__title mt-0">{title}</h1>
                                 {subtitle && <p className="post__subtitle">{subtitle}</p>}

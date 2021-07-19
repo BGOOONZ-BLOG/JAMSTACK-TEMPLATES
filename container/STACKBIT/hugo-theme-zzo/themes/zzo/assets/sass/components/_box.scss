@@ -7,7 +7,7 @@
   border-radius: 0.5rem;
 
   @include themify($themes) {
-    border: 1px solid themed('content-box-border-color');
-    background-color: themed('content-box-background-color');
+    border: 1px solid themed("content-box-border-color");
+    background-color: themed("content-box-background-color");
   }
 }

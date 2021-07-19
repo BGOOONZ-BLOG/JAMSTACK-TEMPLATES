@@ -12,11 +12,16 @@
 .staticman-comments form br {
   display: none;
 }
-.staticman-comments label, .staticman-comments input, .staticman-comments button, .staticman-comments textarea {
+.staticman-comments label,
+.staticman-comments input,
+.staticman-comments button,
+.staticman-comments textarea {
   vertical-align: baseline;
   vertical-align: middle;
 }
-.staticman-comments input, .staticman-comments button, .staticman-comments textarea {
+.staticman-comments input,
+.staticman-comments button,
+.staticman-comments textarea {
   box-sizing: border-box;
 }
 .staticman-comments label {
@@ -28,10 +33,12 @@
 .staticman-comments label small {
   font-size: 0.75em;
 }
-.staticman-comments label input, .staticman-comments label textarea {
+.staticman-comments label input,
+.staticman-comments label textarea {
   display: block;
 }
-.staticman-comments input, .staticman-comments textarea {
+.staticman-comments input,
+.staticman-comments textarea {
   display: inline-block;
   width: 100%;
   padding: 0.25em;
@@ -48,7 +55,9 @@
 .staticman-comments .input-small {
   width: 90px;
 }
-.staticman-comments input[type="button"], .staticman-comments input[type="reset"], .staticman-comments input[type="submit"] {
+.staticman-comments input[type="button"],
+.staticman-comments input[type="reset"],
+.staticman-comments input[type="submit"] {
   width: auto;
   height: auto;
   cursor: pointer;
@@ -69,13 +78,17 @@
 /*
  Focus & active state
  ========================================================================== */
-.staticman-comments input:focus, .staticman-comments textarea:focus {
+.staticman-comments input:focus,
+.staticman-comments textarea:focus {
   border-color: #7a8288;
   outline: 0;
   outline: thin dotted \9;
-  box-shadow: inset 0 1px 3px rgba(73, 78, 82, 0.06), 0 0 5px rgba(122, 130, 136, 0.7);
+  box-shadow: inset 0 1px 3px rgba(73, 78, 82, 0.06),
+    0 0 5px rgba(122, 130, 136, 0.7);
 }
-.staticman-comments input[type="file"]:focus, .staticman-comments input[type="radio"]:focus, .staticman-comments input[type="checkbox"]:focus:focus {
+.staticman-comments input[type="file"]:focus,
+.staticman-comments input[type="radio"]:focus,
+.staticman-comments input[type="checkbox"]:focus:focus {
   box-shadow: none;
 }
 /*
@@ -117,7 +130,10 @@
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.staticman-comments .page__comments-form.disabled input, .staticman-comments .page__comments-form.disabled button, .staticman-comments .page__comments-form.disabled textarea, .staticman-comments .page__comments-form.disabled label {
+.staticman-comments .page__comments-form.disabled input,
+.staticman-comments .page__comments-form.disabled button,
+.staticman-comments .page__comments-form.disabled textarea,
+.staticman-comments .page__comments-form.disabled label {
   pointer-events: none;
   cursor: not-allowed;
   filter: alpha(opacity=65);
@@ -162,10 +178,23 @@
   /*
    Hide the following elements on print
    ========================================================================== */
-.staticman-comments [hidden] {
+  .staticman-comments [hidden] {
     display: none;
   }
-.staticman-comments .masthead, .staticman-comments .toc, .staticman-comments .page__share, .staticman-comments .page__related, .staticman-comments .pagination, .staticman-comments .ads, .staticman-comments .page__footer, .staticman-comments .page__comments-form, .staticman-comments .author__avatar, .staticman-comments .author__content, .staticman-comments .author__urls-wrapper, .staticman-comments .nav__list, .staticman-comments .sidebar, .staticman-comments .adsbygoogle {
+  .staticman-comments .masthead,
+  .staticman-comments .toc,
+  .staticman-comments .page__share,
+  .staticman-comments .page__related,
+  .staticman-comments .pagination,
+  .staticman-comments .ads,
+  .staticman-comments .page__footer,
+  .staticman-comments .page__comments-form,
+  .staticman-comments .author__avatar,
+  .staticman-comments .author__content,
+  .staticman-comments .author__urls-wrapper,
+  .staticman-comments .nav__list,
+  .staticman-comments .sidebar,
+  .staticman-comments .adsbygoogle {
     display: none !important;
     height: 1px !important;
   }

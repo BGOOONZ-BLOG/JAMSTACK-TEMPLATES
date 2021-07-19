@@ -26,7 +26,9 @@ export default class Blog extends React.Component {
                     )}
                     <header className="post-header">
                         <h2 className="post-title">
-                            <Link href={postUrl} rel="bookmark">{title}</Link>
+                            <Link href={postUrl} rel="bookmark">
+                                {title}
+                            </Link>
                         </h2>
                     </header>
                     {excerpt && (
@@ -35,7 +37,9 @@ export default class Blog extends React.Component {
                         </div>
                     )}
                     <footer className="post-meta">
-                        <time className="published" dateTime={dateTimeAttr}>{formattedDate}</time>
+                        <time className="published" dateTime={dateTimeAttr}>
+                            {formattedDate}
+                        </time>
                     </footer>
                 </div>
             </article>
@@ -55,9 +59,7 @@ export default class Blog extends React.Component {
                     <h1>{title}</h1>
                 </header>
                 <div className="post-feed">
-                    <div className="post-feed-inside">
-                        {_.map(posts, (post, index) => this.renderPost(post, index))}
-                    </div>
+                    <div className="post-feed-inside">{_.map(posts, (post, index) => this.renderPost(post, index))}</div>
                 </div>
             </Layout>
         );

@@ -1,10 +1,11 @@
-{{ $micromodal := resources.Get "js/micromodal.min.js" | resources.Fingerprint }}
+{{ $micromodal := resources.Get "js/micromodal.min.js" | resources.Fingerprint
+}}
 <script defer src="{{ $micromodal.RelPermalink }}"></script>
 {{ $clipboard := resources.Get "js/clipboard.min.js" | resources.Fingerprint }}
 <script defer src="{{ $clipboard.RelPermalink }}"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // modal
     MicroModal.init({
       disableScroll: true,
@@ -12,19 +13,19 @@
       awaitOpenAnimation: false,
       awaitCloseAnimation: false,
       debugMode: false,
-      onClose: function(modal) {
+      onClose: function (modal) {
         if (clipboard) {
           clipboard = null;
         }
       },
     });
 
-    var citeBtn = document.getElementById('citeBtn');
-    citeBtn.addEventListener('click', function () {
-      MicroModal.show('modal');
+    var citeBtn = document.getElementById("citeBtn");
+    citeBtn.addEventListener("click", function () {
+      MicroModal.show("modal");
     });
 
     // clipboard
-    var clipboard = new ClipboardJS('#copyBtn');
+    var clipboard = new ClipboardJS("#copyBtn");
   });
 </script>

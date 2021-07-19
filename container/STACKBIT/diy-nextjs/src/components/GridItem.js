@@ -15,9 +15,9 @@ export default class GridItem extends React.Component {
         const subtitle = _.get(item, 'subtitle');
         const titleAlignX = _.get(item, 'title_align', 'left');
         const titleClasses = classNames('item__title', {
-            'h3': sectionColumns === 'two',
-            'h4': sectionColumns === 'three',
-            'h5': sectionColumns === 'four',
+            h3: sectionColumns === 'two',
+            h4: sectionColumns === 'three',
+            h5: sectionColumns === 'four',
             'text-center': titleAlignX === 'center',
             'text-right': titleAlignX === 'right'
         });
@@ -48,7 +48,7 @@ export default class GridItem extends React.Component {
             >
                 <div
                     className={classNames('item', {
-                        'card': isCard,
+                        card: isCard,
                         'card--highlight': isCard,
                         'card--horiz': isCard && isHorizontal,
                         'card--vert': isCard && !isHorizontal,
@@ -58,9 +58,9 @@ export default class GridItem extends React.Component {
                 >
                     <div
                         className={classNames({
-                            'grid': isHorizontal,
+                            grid: isHorizontal,
                             'grid-gap-none': isHorizontal,
-                            'flex': !isHorizontal,
+                            flex: !isHorizontal,
                             'flex-column': !isHorizontal
                         })}
                     >
@@ -77,7 +77,7 @@ export default class GridItem extends React.Component {
                             >
                                 <div
                                     className={classNames('item__media', {
-                                        'card__media': isCard,
+                                        card__media: isCard,
                                         'card__media--fill': isCard && !hasImagePadding,
                                         'card__media--top': isCard && imagePosition === 'top',
                                         'card__media--bottom': isCard && imagePosition === 'bottom',
@@ -128,10 +128,7 @@ export default class GridItem extends React.Component {
                                         'pr-md-3': isCard && image && !hasImagePadding && imagePosition === 'right'
                                     })}
                                 >
-                                    {title && (
-                                        sectionTitle ? <h3 className={titleClasses}>{title}</h3>
-                                            : <h2 className={titleClasses}>{title}</h2>
-                                    )}
+                                    {title && (sectionTitle ? <h3 className={titleClasses}>{title}</h3> : <h2 className={titleClasses}>{title}</h2>)}
                                     {subtitle && (
                                         <p
                                             className={classNames('item__subtitle', {

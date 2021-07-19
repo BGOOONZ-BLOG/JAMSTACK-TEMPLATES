@@ -1,8 +1,8 @@
 .summary-card {
   padding: 1rem;
-  
+
   &[data-ani="true"] {
-    @include animation('slide-in-down .2s .3s 1 ease-in both');
+    @include animation("slide-in-down .2s .3s 1 ease-in both");
   }
 
   .title {
@@ -12,17 +12,17 @@
       word-break: break-word;
 
       @include themify($themes) {
-          color: themed('title-color');
-          @include on-event {
-            color: themed('link-hover');
-          }
+        color: themed("title-color");
+        @include on-event {
+          color: themed("link-hover");
+        }
       }
     }
   }
 
   .subtitle {
     @include themify($themes) {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
   }
 
@@ -42,9 +42,9 @@
     height: 100%;
 
     &[data-ani="true"] {
-      @include animation('slide-in-left .2s .6s 1 ease-in both');
+      @include animation("slide-in-left .2s .6s 1 ease-in both");
     }
-    
+
     &-wrapper {
       height: 100%;
       width: auto;
@@ -68,12 +68,12 @@
   hr {
     margin-top: 1.5rem;
     @include themify($themes) {
-        border-top: 1px solid themed('hr-color');
+      border-top: 1px solid themed("hr-color");
     }
   }
   &:not(:last-child) {
     hr {
-      margin-bottom: 2.5rem;      
+      margin-bottom: 2.5rem;
     }
   }
   &:last-child {
@@ -89,7 +89,7 @@
   @include flex-direction(column);
 
   &[data-ani="true"] {
-    @include animation('slide-in-down .2s .3s 1 ease-in both');
+    @include animation("slide-in-down .2s .3s 1 ease-in both");
   }
 
   .title {
@@ -98,26 +98,26 @@
     a {
       font-family: $title-font;
       font-weight: 700;
-      word-break:break-word;
+      word-break: break-word;
 
       @include themify($themes) {
-          color: themed('title-color');
-          @include on-event {
-            color: themed('link-hover');
-          }
+        color: themed("title-color");
+        @include on-event {
+          color: themed("link-hover");
+        }
       }
     }
   }
 
   .subtitle {
     @include themify($themes) {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
   }
 
   &__flex-box {
     @include flexbox();
-    
+
     margin-top: 1rem;
     margin-bottom: 1rem;
 
@@ -129,7 +129,7 @@
   &__content {
     width: 100%;
     padding: 0 0.5rem;
-    
+
     @include flexbox();
     @include flex-direction(column);
     @include justify-content(flex-start);
@@ -142,7 +142,7 @@
 
   &__image {
     &[data-ani="true"] {
-      @include animation('slide-in-left .2s .6s 1 ease-in both');
+      @include animation("slide-in-left .2s .6s 1 ease-in both");
     }
 
     &-container {
@@ -156,11 +156,11 @@
       }
 
       &[data-position="left"] {
-        margin-left: .5rem;
+        margin-left: 0.5rem;
       }
-      
+
       &[data-position="right"] {
-        margin-right: .5rem;
+        margin-right: 0.5rem;
       }
 
       @include transition(all, 0.2s, ease-out);
@@ -169,7 +169,7 @@
         background-color: rgba(125, 125, 125, 0.1);
       }
     }
-        
+
     &-wrapper {
       max-width: 130px;
       min-width: 130px;
@@ -190,16 +190,16 @@
 
   hr {
     @include themify($themes) {
-        border-top: 1px solid themed('hr-color');
+      border-top: 1px solid themed("hr-color");
     }
   }
 
   &:not(:last-child) {
     hr {
-      margin-bottom: 1.5rem;      
+      margin-bottom: 1.5rem;
     }
   }
-  
+
   &:last-child {
     hr {
       display: none;
@@ -211,15 +211,15 @@
   padding: 0 1rem;
 
   &[data-ani="true"] {
-    @include animation('slide-in-down .2s .3s 1 ease-in both');
+    @include animation("slide-in-down .2s .3s 1 ease-in both");
   }
 
   .title {
     a {
       @include themify($themes) {
-        color: themed('title-color');
+        color: themed("title-color");
         @include on-event {
-          color: themed('link-hover');
+          color: themed("link-hover");
         }
       }
     }
@@ -227,10 +227,10 @@
 
   .subtitle {
     @include themify($themes) {
-      color: themed('meta-color');
+      color: themed("meta-color");
     }
   }
-  
+
   &__flexbox {
     @include flexbox();
     margin-top: 1rem;
@@ -253,8 +253,8 @@
     cursor: pointer;
 
     @include themify($themes) {
-      color: themed('body-color');
-      background-color: themed('taxo-tags-background-color');
+      color: themed("body-color");
+      background-color: themed("taxo-tags-background-color");
     }
 
     &--wrapper {
@@ -267,7 +267,7 @@
 
   hr {
     @include themify($themes) {
-        border-top: 1px solid themed('hr-color');
+      border-top: 1px solid themed("hr-color");
     }
   }
 }

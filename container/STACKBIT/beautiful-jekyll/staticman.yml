@@ -25,7 +25,7 @@ comments:
   #
   # Name of the branch being used. Must match the `branch` in the theme config
   # file.
-  branch: "master"   #  use "master" for user page or "gh-pages" for project pages
+  branch: "master" #  use "master" for user page or "gh-pages" for project pages
 
   commitMessage: "New comment by {fields.name}"
 
@@ -69,18 +69,18 @@ comments:
   # via email when someone adds a reply or a new comment. This requires an account
   # with Mailgun, which you can get for free at https://mailgun.com.
   # notifications:
-    # Enable notifications
-    # enabled: true
+  # Enable notifications
+  # enabled: true
 
-    # (!) ENCRYPTED
-    #
-    # Mailgun API key
-    # apiKey: ""
+  # (!) ENCRYPTED
+  #
+  # Mailgun API key
+  # apiKey: ""
 
-    # (!) ENCRYPTED
-    #
-    # Mailgun domain (encrypted)
-    # domain: ""
+  # (!) ENCRYPTED
+  #
+  # Mailgun domain (encrypted)
+  # domain: ""
 
   # (*) REQUIRED
   #

@@ -66,13 +66,13 @@ export default class Header extends React.Component {
                                     >
                                         <ActionLink action={action} />
                                     </li>
-                                )
+                                );
                             })}
                         </ul>
                     </div>
                 </nav>
             </React.Fragment>
-        )
+        );
     }
 
     render() {
@@ -94,11 +94,20 @@ export default class Header extends React.Component {
                         <div className="site-branding">
                             {logo && (
                                 <p className="site-logo">
-                                    <Link href={withPrefix('/')}><img src={withPrefix(logo)} alt={logoAlt} /></Link>
+                                    <Link href={withPrefix('/')}>
+                                        <img src={withPrefix(logo)} alt={logoAlt} />
+                                    </Link>
                                 </p>
                             )}
-                            {pageLayout === 'home' ? <h1 className="site-title"><Link href={withPrefix('/')}>{title}</Link></h1>
-                                : <p className="site-title"><Link href={withPrefix('/')}>{title}</Link></p>}
+                            {pageLayout === 'home' ? (
+                                <h1 className="site-title">
+                                    <Link href={withPrefix('/')}>{title}</Link>
+                                </h1>
+                            ) : (
+                                <p className="site-title">
+                                    <Link href={withPrefix('/')}>{title}</Link>
+                                </p>
+                            )}
                         </div>
                         {hasNav && !_.isEmpty(navLinks) && this.renderNavLinks(navLinks, pageUrl)}
                     </div>
