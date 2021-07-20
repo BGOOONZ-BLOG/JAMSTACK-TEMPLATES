@@ -63,7 +63,7 @@ GEM
     do_sqlite3 (0.10.12)
       data_objects (= 0.10.12)
     fastercsv (1.5.5)
-    ffi (1.6.0)
+    ffi (1.15.3)
     gherkin (2.11.6)
       json (>= 1.7.6)
     guard (1.6.2)
