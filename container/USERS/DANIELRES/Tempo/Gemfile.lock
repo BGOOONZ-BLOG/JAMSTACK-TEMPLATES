@@ -74,7 +74,8 @@ GEM
     guard-rspec (2.5.1)
       guard (>= 1.1)
       rspec (~> 2.11)
-    haml (4.0.1)
+    haml (5.2.1)
+      temple (>= 0.8.0)
       tilt
     json (1.7.7)
     json_pure (1.7.7)
@@ -123,9 +124,11 @@ GEM
       tilt (~> 2.0)
     slop (3.4.4)
     stringex (1.5.1)
+    temple (0.8.2)
     terminal-table (1.4.5)
     thor (0.18.0)
-    tilt (2.0.10)
+    tilt (1.4.1)
+
     turnip (1.1.0)
       gherkin (>= 2.5)
       rspec (~> 2.0)
