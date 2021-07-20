@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -53,8 +55,10 @@ GEM
       railties (~> 3.1)
       warden (~> 1.1.1)
     diff-lcs (1.1.3)
-    dragonfly (0.9.10)
-      rack
+    dragonfly (1.4.0)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack (>= 1.3)
     erubis (2.7.0)
     excon (0.6.6)
     execjs (1.3.0)
@@ -103,7 +107,8 @@ GEM
     orm_adapter (0.0.6)
     pg (0.13.2)
     polyglot (0.3.3)
-    rack (1.4.1)
+    public_suffix (4.0.6)
+    rack (1.4.7)
     rack-cache (1.1)
       rack (>= 0.4)
     rack-ssl (1.3.2)
@@ -189,7 +194,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
   devise
-  dragonfly (~> 0.9.10)
+  dragonfly (~> 1.4.0)
   execjs
   exifr
   factory_girl_rails
