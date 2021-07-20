@@ -92,7 +92,7 @@ GEM
     factory_girl_rails (3.6.0)
       factory_girl (~> 3.6.0)
       railties (>= 3.0.0)
-    ffi (1.8.1)
+    ffi (1.15.3)
     formatador (0.2.4)
     friendly_id (4.0.9)
     fssm (0.2.10)
