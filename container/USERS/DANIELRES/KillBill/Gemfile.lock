@@ -23,7 +23,7 @@ GEM
       http_parser.rb (~> 0.5.3)
     eventmachine (1.0.3)
     extlib (0.9.16)
-    ffi (1.8.1)
+    ffi (1.15.3)
     formatador (0.2.4)
     gherkin (2.12.0)
       multi_json (~> 1.3)
