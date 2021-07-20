@@ -71,7 +71,7 @@ GEM
     equalizer (0.0.11)
     erubis (2.7.0)
     eventmachine (1.0.7)
-    ffi (1.9.8)
+    ffi (1.9.25)
     formatador (0.2.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
