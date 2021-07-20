@@ -51,7 +51,7 @@ end
 
 gem 'simple_form'
 gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly', '~>0.9.10'
+gem 'dragonfly', '~> 1.4.0'
 gem 'simple_form'
 
 gem 'exifr'
