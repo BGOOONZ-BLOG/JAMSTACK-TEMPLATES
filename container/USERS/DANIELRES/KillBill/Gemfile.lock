@@ -65,8 +65,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     r18n-core (1.1.6)
-    rack (1.4.0)
-    rack-protection (1.2.0)
+    rack (1.6.13)
+    rack-protection (1.5.5)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
