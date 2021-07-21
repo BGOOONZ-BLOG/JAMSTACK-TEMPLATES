@@ -22,7 +22,7 @@ GEM
     mime-types (1.22)
     multi_json (1.7.2)
     progress (2.4.0)
-    rake (10.0.4)
+    rake (13.0.6)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec-core (2.13.1)
