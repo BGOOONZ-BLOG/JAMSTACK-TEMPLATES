@@ -33,7 +33,7 @@
     "imagekit": "^1.4.1",
     "js-cookie": "^2.2.0",
     "jsonwebtoken": "^8.4.0",
-    "knex": "^0.16.3",
+    "knex": "^0.95.7",
     "lodash": "^4.17.11",
     "morgan": "~1.9.0",
     "objection": "^1.5.3",
