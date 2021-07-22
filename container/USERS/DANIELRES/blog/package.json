@@ -10,7 +10,7 @@
     "cheerio": "^0.22.0",
     "gatsby": "^0.12.6",
     "image-size": "^0.5.0",
-    "lodash": "^4.15.0",
+    "lodash": "^4.17.21",
     "mkdirp": "^0.5.1",
     "moment": "^2.14.1",
     "node-sass": "^3.11.1",
