@@ -3471,9 +3471,9 @@ heavy@3.x.x:
     hoek "2.x.x"
     joi "6.x.x"
 
-highlight.js@^9.6.0:
-  version "9.9.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.9.0.tgz#b9995dcfdc2773e307a34f0460d92b9a474782c0"
+highlight.js@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.1.0.tgz#0198f7326e64ddfbea5f76b00e84ab542cf24ae8"
 
 history@^2.1.2:
   version "2.1.2"
