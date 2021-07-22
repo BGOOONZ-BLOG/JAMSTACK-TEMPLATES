@@ -61,7 +61,7 @@
     "negotiator": "^0.6.1",
     "node-cjsx": "^1.0.0",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.8.0",
+    "node-sass": "^6.0.1",
     "null-loader": "^0.1.1",
     "object-assign": "^4.1.0",
     "opn": "^4.0.2",
