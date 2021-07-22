@@ -32,7 +32,7 @@
     "db-migrate": "^0.10.0",
     "db-migrate-pg": "^0.2.5",
     "express": "^4.16.2",
-    "next": "^4.1.4",
+    "next": "^11.0.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
