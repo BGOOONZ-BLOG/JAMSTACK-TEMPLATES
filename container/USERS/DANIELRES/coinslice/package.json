@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "joi-browser": "^13.0.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
