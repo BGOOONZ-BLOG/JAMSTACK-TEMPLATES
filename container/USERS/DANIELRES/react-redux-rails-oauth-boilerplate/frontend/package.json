@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@mars/heroku-js-runtime-env": "^3.0.0",
-    "axios": "^0.15.3",
+    "axios": "^0.21.1",
     "bootstrap": "^3.3.7",
     "lodash": "^4.17.3",
     "react": "^15.4.1",
