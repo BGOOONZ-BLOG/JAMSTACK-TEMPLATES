@@ -91,7 +91,7 @@
     "passport-github": "^1.1.0",
     "pg": "^7.1.0",
     "pretty-error": "^2.1.1",
-    "prismjs": "^1.6.0",
+    "prismjs": "^1.24.1",
     "promirepl": "^1.0.1",
     "prop-types": "^15.5.10",
     "raven": "^2.1.1",
