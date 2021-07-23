@@ -22,7 +22,7 @@
     "e:test": "dotenv -e .env.test.local -e .env.test -e .env.local -e .env"
   },
   "dependencies": {
-    "apollo-server": "^2.8.1",
+    "apollo-server": "^2.25.2",
     "graphql": "^14.4.2",
     "graphql-tag": "^2.10.1",
     "neo4j-driver": "^1.7.5",
