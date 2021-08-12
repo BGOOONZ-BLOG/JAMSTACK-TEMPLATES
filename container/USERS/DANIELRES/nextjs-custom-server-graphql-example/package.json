@@ -10,7 +10,7 @@
     "apollo-server-express": "^2.13.1",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "next": "latest",
+    "next": "^11.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "swr": "^0.2.2"
