@@ -1,25 +1,45 @@
-find . -empty -type f -print -delete
+# Resources:
 
-find . -empty -type d -print -delete
+- [holy grail](https://gist.github.com/bgoonz/df74dfa73bb5edd239ac738a14104eee)
 
-find . \( -name ".git" -o -name ".gitignore" -o -name ".gitmodules" -o -name ".gitattributes" \) -exec rm -rf -- {} +
 
-find . \( -name "*SECURITY.txt" -o -name "*RELEASE.txt" -o -name "*CHANGELOG.txt" -o -name "*LICENSE.txt" -o -name "*CONTRIBUTING.txt" -name "*HISTORY.md" -o -name "*LICENSE" -o -name "*SECURITY.md" -o -name "*RELEASE.md" -o -name "*CHANGELOG.md" -o -name "*LICENSE.md" -o -name "*CODE_OF_CONDUCT.md" -o -name "\*CONTRIBUTING.md" \) -exec rm -rf -- {} +
+# 1. Remove spaces from file and folder names and then remove numbers from files and folder names....
+
+### Description: need to : `sudo apt install rename`
+
+
+>Notes: Issue when renaming file without numbers collides with existing file name...
+
+
+###### code:
+
+
 ```sh
-git init
-git add .
-git commit -m"update"
-git push -u origin master
+find . -name "* *" -type d | rename 's/ /_/g'   
+find . -name "* *" -type f | rename 's/ /_/g'
 ```
-CNTX={users}; NAME={johno}; PAGE=1
-curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
-grep -e 'git_url\*' |
-cut -d \" -f 4 |
-xargs -L1 git clone
+```sh
 
-find . -empty -type d -print -delete
+```sh
+find $dir -type f | sed 's|\(.*/\)[^A-Z]*\([A-Z].*\)|mv \"&\" \"\1\2\"|' | sh
 
-#!/bin/bash
-for i in $(curl "https://api.github.com/orgs/ant-design/repos" | grep -oP '"clone_url":\s*"\K[^"]+'); do
-  echo git clone "$i"
-done
+find $dir -type d | sed 's|\(.*/\)[^A-Z]*\([A-Z].*\)|mv \"&\" \"\1\2\"|' | sh
+
+for i in *.html; do mv "$i" "${i%-*}.html"; done
+
+for i in *.*; do mv "$i" "${i%-*}.${i##*.}"; done
+
+---
+### Description: combine the contents of every file in the contaning directory.
+
+
+>Notes: this includes the contents of the file it's self...
+
+
+###### code:
+
+
+```js
+//APPEND-DIR.js
+const fs = require('fs');
+let cat = requ

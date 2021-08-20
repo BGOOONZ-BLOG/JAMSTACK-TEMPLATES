@@ -1,1 +1,0 @@
-export { default } from 'ember-cli-weather-icons/components/weather-icon';

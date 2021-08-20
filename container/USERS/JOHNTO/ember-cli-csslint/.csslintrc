@@ -1,6 +1,0 @@
-{
-  "exclude-list": [
-    "assets/vendor.css",
-    "assets/test-support.css"
-  ]
-}

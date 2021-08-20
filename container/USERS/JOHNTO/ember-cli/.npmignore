@@ -1,7 +1,0 @@
-/assets
-/blueprints/.jshintrc
-/dev
-/docs
-/tests/!(helpers)
-/tmp
-/*.*

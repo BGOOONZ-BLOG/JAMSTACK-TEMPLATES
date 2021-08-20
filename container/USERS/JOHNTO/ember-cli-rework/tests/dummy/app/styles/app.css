@@ -1,9 +1,0 @@
-@import "furtive-vertical-center";
-
-:root {
-  --gray: #fafafa;
-}
-
-body {
-  color: var(--gray);
-}

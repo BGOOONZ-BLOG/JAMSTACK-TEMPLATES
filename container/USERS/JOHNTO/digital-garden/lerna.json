@@ -1,7 +1,0 @@
-{
-  "packages": [
-    "examples/*",
-    "packages/*"
-  ],
-  "version": "0.2.3"
-}

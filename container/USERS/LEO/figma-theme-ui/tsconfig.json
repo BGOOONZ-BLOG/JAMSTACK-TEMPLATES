@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "target": "es6",
-    "lib": ["es2019"],
-    "esModuleInterop": true,
-    "moduleResolution": "node"
-  }
-}

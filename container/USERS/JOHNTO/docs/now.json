@@ -1,7 +1,0 @@
-{
-  "type": "docker",
-  "alias": "docs.zeit.sh",
-  "features": {
-    "cloud": "v2"
-  }
-}
