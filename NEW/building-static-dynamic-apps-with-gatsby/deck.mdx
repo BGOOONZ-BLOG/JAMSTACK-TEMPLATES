@@ -1,0 +1,353 @@
+export { future as theme } from "mdx-deck/themes";
+import { Invert, FullScreenCode } from "mdx-deck/layouts";
+import { Head, Appear, Image } from "mdx-deck";
+import Flex from "./components/Flex";
+import Item from "./components/Item";
+import Sponsor from "./components/Sponsor";
+
+<Head>
+  <title>Building static and dynamic apps with Gatsby</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@smakosh" />
+  <meta
+    name="twitter:title"
+    content="Building static and dynamic apps with Gatsby"
+  />
+  <meta
+    name="twitter:description"
+    content="An introductory presentation about Gatsby"
+  />
+</Head>
+
+<div style={{ textAlign: "left" }}>
+  <h1>Building static and dynamic apps with Gatsby</h1>
+</div>
+
+---
+
+### Who am I?
+
+<ul style={{ textAlign: "left" }}>
+  <Appear>
+    <li>I'm Ismail Ghallou aka Smakosh,</li>
+    <li>
+      I work as a Front-end developer at Obytes with an amazing team of talented
+      people.
+    </li>
+    <li>
+      I also work on side projects like{" "}
+      <a
+        style={{ color: "#fff" }}
+        href="https://ai-hashtags.com/?ref=gatsby-slides"
+        target="_blank"
+      >
+        Ai Hashtags{" "}
+      </a>
+      & <a
+        style={{ color: "#fff" }}
+        href="https://beafapp.com/?ref=gatsby-slides"
+        target="_blank"
+      >
+        Beaf
+      </a>
+    </li>
+    <li>
+      I publish articles at my personal blog:{" "}
+      <a
+        style={{ color: "#fff" }}
+        href="https://smakosh.com/blog/?ref=gatsby-slides"
+        target="_blank"
+      >
+        smakosh.com/blog
+      </a>
+    </li>
+    <li>
+      And I contribute to OSS whenever I'm free, I'm the maker of{" "}
+      <a
+        style={{ color: "#fff" }}
+        href="https://unnamed.smakosh.com/?ref=gatsby-slides"
+        target="_blank"
+      >
+        Unnamed
+      </a>{" "}
+      [A simple colorful CSS framework].
+    </li>
+  </Appear>
+</ul>
+
+---
+
+As a web developer, who wants to make a static or dynamic web app, you're surrounded by so many choices, resources & communities.
+
+---
+
+<Image src="https://i.imgur.com/4TX9hXn.jpg" />
+
+---
+
+But all these tools have to use HTML, CSS & JavaScript somehow as the app will run on the browser.
+
+---
+
+But, what if you are a React developer
+
+---
+
+export default Invert;
+
+You might think, you will just run `create-react-app myApp` and that's it!
+
+---
+
+But unfortunately, that's not the case
+
+---
+
+The truth is you will end up trying to pick one of these 3 choices
+
+<Flex>
+  <Item width="30">
+    <Appear>
+      <p>CRA</p>
+      <p>CSR</p>
+    </Appear>
+  </Item>
+  <Item width="30">
+    <Appear>
+      <p>Next Js</p>
+      <p>SSR</p>
+    </Appear>
+  </Item>
+  <Item width="30">
+    <Appear>
+      <p>Gatsby Js</p>
+      <p>PR (SSR at build time)</p>
+    </Appear>
+  </Item>
+</Flex>
+
+---
+
+export default Invert;
+
+### So What's Gatsby?
+
+---
+
+<img width="128" src="https://i.imgur.com/Tckm11A.png" alt="Gatsby logo" />
+
+#### Gatsby is a new Static Site Generator - Built with React, webpack & GraphQL.
+
+##### It creates hybrid websites: think of it as a mixture of a static website and a React app.
+
+<ul style={{ textAlign: "left" }}>
+  <li>It generates HTML pages (files) at build time</li>
+  <li>
+    Navigates between pages with pushState just like a SPA using @reach/router
+  </li>
+</ul>
+
+---
+
+export default Invert;
+
+### What’s so awesome about it?
+
+---
+
+<Flex>
+  <Item width="50">
+    <ul>
+      <li>You can build both static and dynamic apps.</li>
+      <li>Use different Data sources or file formats to manage content.</li>
+      <li>
+        Implement different services easily like search/auth/cart/payments
+        etc... using Gatsby plugins.
+      </li>
+    </ul>
+  </Item>
+  <Item width="50">
+    <img src="https://i.imgur.com/f0plKJG.png" alt="chart" />
+  </Item>
+</Flex>
+
+---
+
+### Pros & cons
+
+---
+
+<Flex>
+  <Item width="50">
+    <h4>Pros</h4>
+    <ul>
+      <li>Secured as it’s static (not applicable for dynamic apps)</li>
+      <li>Cacheable</li>
+      <li>Cheap to host</li>
+      <li>Out of the box good performance, pwa & best practices.</li>
+      <li>Loads blazing fast</li>
+      <li>SPA look alike</li>
+      <li>Hot reload</li>
+    </ul>
+  </Item>
+  <Item width="50">
+    <h4>Cons</h4>
+    <ul>
+      <li>
+        Does Not generate new files on demand but does it during build time
+        & for only predicted pages. But we don't have to worry about this one
+        anymore as Google and other crawlers can crawl JavaScript now!
+      </li>
+    </ul>
+  </Item>
+</Flex>
+
+---
+
+export default Invert;
+
+### How Gatsby renders the content?
+
+---
+
+<Flex>
+  <Item width="30">
+    <h4>Step 1</h4>
+    <ul>
+      <li>
+        It opens & validates gatsby config, then it loads the plugins after
+        deleting the html/css files of the previous build.
+      </li>
+    </ul>
+  </Item>
+  <Item width="30">
+    <h4>Step 2</h4>
+    <ul>
+      <li>
+        Gets the content (if there is any) from your files or platforms such as
+        Contentful/Wordpress etc...
+      </li>
+    </ul>
+  </Item>
+  <Item width="30">
+    <h4>Step 3</h4>
+    <ul>
+      <li>
+        Extracts & runs the queries, then it generates necessary pages if you
+        used their APIs to do so on gatsby-node file.
+      </li>
+    </ul>
+  </Item>
+</Flex>
+
+---
+
+export default Invert;
+
+### Page & Static queries
+
+---
+
+##### Gatsby has templates, pages & components
+
+<ul style={{ textAlign: "left" }}>
+  <li>
+    Page queries do accept variables via pageContext in gatsby-config but can
+    only be added to page components & templates (templates === pages).
+  </li>
+  <br />
+  <li>Static queries do not accept variables and can be used on components.</li>
+</ul>
+
+---
+
+export default Invert;
+
+### Gatsby plugins
+
+---
+
+<ul style={{ textAlign: "left" }}>
+  <h4>Source plugins</h4>
+  <li>
+    Add external data or content (e.g. your CMS, static files, a REST API) to
+    your Gatsby GraphQL data.
+  </li>
+</ul>
+
+<ul style={{ textAlign: "left" }}>
+  <h4>Transformers</h4>
+  <li>
+    Transform data from other formats (e.g. Markdown, YAML, CSV) to JSON
+    objects.
+  </li>
+</ul>
+
+<ul style={{ textAlign: "left" }}>
+  <h4>Services</h4>
+  <li>
+    Add different third-party services to your Gatsby site like (GA, Mixpanel,
+    Sentry, Algolia, Auth0…).
+  </li>
+</ul>
+
+---
+
+### Gatsby is used by popular corporations
+
+<Flex>
+  <Item width="30">
+    <img src="https://i.imgur.com/7nt0ZXJ.png" alt="figma" />
+  </Item>
+  <Item width="30">
+    <img src="https://i.imgur.com/v37Eil4.png" alt="ibm" />
+  </Item>
+  <Item width="30">
+    <img src="https://i.imgur.com/kvOXIBG.jpg" alt="airbnb" />
+  </Item>
+  <Item width="30">
+    <img src="https://i.imgur.com/gRTuxfA.png" alt="nike" />
+  </Item>
+  <Item width="30">
+    <img src="https://i.imgur.com/GpG0oda.jpg" alt="sendgrid" />
+  </Item>
+  <Item width="30">
+    <img src="https://i.imgur.com/3Mpao1W.png" alt="ghost" />
+  </Item>
+</Flex>
+
+---
+
+### Demo 1
+
+Building a Blog with markdown files
+
+---
+
+export default Invert;
+
+### Demo 2
+
+Building a Not Todo app connected to a REST API
+
+---
+
+export default Invert;
+
+### Questions?
+
+---
+
+### References & links
+
+- https://smakosh.com
+- https://github.com/smakosh/building-static-dynamic-apps-with-gatsby
+- https://Gatsbyjs.org
+
+---
+
+### links
+
+- Demo 1: https://github.com/smakosh/devc-blog
+- REST API: https://github.com/smakosh/not-todo-api
+- Gatsby App: https://github.com/smakosh/gatsby-app-starter-rest-api
