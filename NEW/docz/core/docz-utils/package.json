@@ -1,0 +1,50 @@
+{
+  "name": "docz-utils",
+  "version": "2.0.0-rc.64",
+  "description": "Some methods used and utilities used on docz",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib/",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development yarn build -w",
+    "build": "trash lib && cross-env NODE_ENV=production rollup -c",
+    "fix": "yarn lint --fix",
+    "lint": "eslint . --ext mdx,ts,tsx",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.5.5",
+    "@babel/parser": "^7.5.5",
+    "@babel/traverse": "^7.5.5",
+    "art-template": "^4.13.2",
+    "fs-extra": "^8.1.0",
+    "humanize-string": "^2.1.0",
+    "js-string-escape": "^1.0.1",
+    "jsx-ast-utils": "^2.2.1",
+    "lodash": "^4.17.14",
+    "prettier": "^1.18.2",
+    "remark-frontmatter": "^1.3.2",
+    "remark-parse": "^6.0.2",
+    "remark-parse-yaml": "^0.0.2",
+    "remark-slug": "^5.1.2",
+    "signale": "^1.4.0",
+    "strip-indent": "^3.0.0",
+    "to-vfile": "^6.0.0",
+    "unescape-js": "^1.1.1",
+    "unified": "^8.3.2",
+    "unist-util-find": "^1.0.1",
+    "unist-util-is": "^3.0.0",
+    "unist-util-visit": "^1.4.1"
+  },
+  "devDependencies": {
+    "docz-rollup": "2.0.0-rc.64",
+    "eslint-config-docz-ts": "2.0.0-rc.64",
+    "trash": "^6.0.0"
+  }
+}

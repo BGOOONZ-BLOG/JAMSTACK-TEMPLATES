@@ -1,0 +1,28 @@
+{
+  "name": "react-docgen-actual-name-handler",
+  "version": "2.0.0-rc.64",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development yarn build -w",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "fix": "yarn lint --fix",
+    "lint": "eslint . --ext mdx,ts,tsx",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "react-docgen": "^4.1.1",
+    "recast": "^0.18.1"
+  },
+  "devDependencies": {
+    "docz-rollup": "2.0.0-rc.64",
+    "eslint-config-docz-ts": "2.0.0-rc.64"
+  }
+}
