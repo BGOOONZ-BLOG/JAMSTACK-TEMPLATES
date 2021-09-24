@@ -1,0 +1,38 @@
+<div class="card post">
+  <div class="card-header">
+    <span class="avatar"></span>
+    <h4>{{post.name}}</h4>
+  </div>
+  <div class="both">
+
+    <div class="card-img">
+      <img src="../assets/{{post.beforeImg}}" alt="">
+    </div>
+
+    <div class="card-img">
+      <img src="../assets/{{post.afterImg}}" alt="">
+    </div>
+
+  </div>
+  <div class="card-footer description">
+    <h4>{{post.description}}</h4>
+    <p>{{post.time}}</p>
+  </div>
+  <div class="card-footer votes">
+    <div class="row">
+
+      <div class="column small-6">
+        <div class="right">
+          <p [ngClass]="{'hide': post.voteB == 0}">{{post.voteB}}</p>
+          <button data-tooltip="Before" (click)="voteB('B')" class="voteB" [ngClass]="{'focused_vote_B': post.voteB > 0}">B</button>
+        </div>
+      </div>
+
+      <div class="column small-6">
+        <button data-tooltip="After" (click)="voteA('A')" class="voteA" [ngClass]="{'focused_vote_A': post.voteA > 0}">A</button>
+        <p [ngClass]="{'hide': post.voteA == 0}">{{post.voteA}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
