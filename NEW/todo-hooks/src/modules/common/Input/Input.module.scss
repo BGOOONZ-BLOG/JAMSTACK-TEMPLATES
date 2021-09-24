@@ -1,0 +1,24 @@
+.Wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.FieldSet {
+    width: 100%;
+    display: flex;
+}
+
+.Field {
+    padding: .5rem 1rem;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1.2rem;
+    border: 1px solid #e4e9ec;
+    font-size: 14pt;
+    font-family: "Questrial", sans-serif;
+    margin-bottom: 2rem;
+
+    &:focus {
+        outline: none;
+    }
+}

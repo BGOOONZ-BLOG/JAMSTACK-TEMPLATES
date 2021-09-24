@@ -1,0 +1,97 @@
+.Wrapper {
+    width: 70%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 960px) {
+        width: 100%;
+    }
+}
+
+.Card {
+    padding: 2rem;
+    margin: 0 auto;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .02), 0 0 2px rgba(0, 0, 0, .14);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    border-radius: .2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, .05), 0 10px 10px rgba(0, 0, 0, .12);
+        transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    }
+
+    @media screen and (max-width: 680px) {
+        flex-direction: column;
+    }
+
+    h2 {
+        margin: 0;
+        text-align: left;
+        width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1 auto;
+
+        @media screen and (max-width: 680px) {
+            width: 100%;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    }
+}
+
+.Switch {
+    width: 20%;
+    flex: 1 auto;
+
+    @media screen and (max-width: 680px) {
+        width: 100%;
+    }
+}
+
+.Label {
+    position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 20px;
+    
+    input {
+        display: none;
+
+        &:checked + span {
+            background-color: #eee;
+        }
+
+        &:checked + span:before {
+            transform: translateX(30px);
+            background: #000;
+        }
+    }
+}
+
+.Slider {
+    position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	transition: .4s;
+    border-radius: 34px;
+
+	&:before {
+		position: absolute;
+		content: "";
+		height: 12px;
+		width: 12px;
+		left: 4px;
+		bottom: 4px;
+		transition: .4s;
+		border-radius: 50%;
+		background-color: #fff;
+	}
+}
