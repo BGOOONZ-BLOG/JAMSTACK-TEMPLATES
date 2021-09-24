@@ -1,0 +1,37 @@
+---
+name: Add Favicon and Metadata
+route: /docs/add-favicon-and-metadata
+parent: Documentation
+menu: Customizing
+---
+
+# Add favicon and metadata
+
+Adding metadata to your site is done by configuring Gatsby in combination with [`react-helmet`](https://github.com/nfl/react-helmet) [**source @ gatsby**](https://www.gatsbyjs.org/docs/add-page-metadata/).
+
+
+### Shadowing the Wrapper-component
+
+The metadata is set up in a file called `wrapper.js` which lives in docz theme package: `gatsby-theme-docz`. To override it we need to [Shadow the component](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/), which means that we need to create a copy of the file with the "same" file path and name in our own `src`-directory.
+
+1. Create a file called `wrapper.js` in `src/gatsby-theme-docz`. Then path is important.
+2. Paste the following content and edit it to your liking
+```js
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
+
+const Wrapper = ({ children }) => <React.Fragment>
+	<Helmet>
+		<meta charSet="utf-8" />
+		<title>My Shadow!</title>
+		<link rel="icon"
+      		type="image/png"
+		      href="http://example.com/myicon.png"
+		/>
+	</Helmet>
+	{children}
+</React.Fragment>
+export default Wrapper
+```
+
+If you rebuild your site now it should use this component as a wrapper instead of the themes component.
