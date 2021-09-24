@@ -1,0 +1,166 @@
+import { themes, Head } from 'mdx-deck'
+
+<Head>
+  <title>Build a blog with Contentful and Gatsby</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@smakosh" />
+  <meta name="twitter:title" content="Build a blog with Contentful and Gatsby" />
+  <meta name="twitter:description" content="A talk by Smakosh" />
+  <meta name="twitter:image" content="https://2020.css-grids-talk.talks.smakosh.com/images/cover.png" />
+</Head>
+
+export const theme = {
+  ...themes.yellow,
+  ...themes.prism
+}
+
+# Build a blog with Contentful and Gatsby
+
+### A talk by [Smakosh](https://smakosh.com)
+
+---
+
+## Who's Smakosh? on one hand
+
+Smakosh LLC is a one man software company that crafts software for startups using JavaScript tools like:
+
+- Gatsby js
+- Next js
+- React Native
+- etc...
+
+---
+
+## On the other hand
+
+I'm Ismail Ghallou
+
+- A self-taught JavaScript developer
+- I work as a Full stack JavaScript developer at Maltem Africa
+- Speaker
+- Blogger
+- Maker of [Ai Hashtags](https://ai-hashtags.com) and other [open source tools](https://github.com/smakosh)
+
+---
+
+## What this talk is about?
+
+- What's Headless CMS? and why it's way better than traditional CMS
+- Micro introduction to Gatsby js
+- The JAMStack, the What/Why/How?
+- Introduction to Contentful
+- Building a blog using Contentful and Gatsby
+
+---
+
+## What this talk isn't about?
+
+- Fundamentals and basics of GraphQL
+- Feel free to use the CMS that fits your use case
+- Fundamentals and basics of React js
+
+---
+
+## What's Headless CMS?
+
+---
+
+Before I answer this question, let's see how "Traditional CMS" works
+
+[Walt Disney Company](https://thewaltdisneycompany.com/)
+
+---
+
+Now let's see an example of a website built with the JAMStack (Headless CMS + JavaScript)
+
+[Waddle](https://www.waddle.com.au/)
+
+---
+
+But if data already exists and is not fetched at run time, then when does it get fetched?
+
+---
+
+import Box from './Box.js'
+import GatsbyLogo from './images/gatsby.svg'
+
+## Meet Gatsby js
+
+<Box>
+  <img src={GatsbyLogo} alt="Gatsby logo" />
+</Box>
+
+---
+
+A modern web framework built with React, GraphQL and Webpack
+
+It is known for it's great SSG feature which lets you do SSR (Server Side rendering) during build time
+
+---
+
+This lets us fetch content from Contentful during build time, create the pages for each content
+
+---
+
+> You can build dynamic apps with it and fetch content from Contentful using their API too
+
+---
+
+## Benefits?
+
+<Steps>
+
+- Blazing fast as it's a hydrated SPA (Single Page App)
+- You could turn your website into a PWA in seconds and have content reachable offline
+- SEO friendly as there exists an HTML page that can be crawled by web crawlers
+
+</Steps>
+
+---
+
+> Modern web crawlers like Google's bot can actually crawl JavaScript, your SPA can be crawled now
+
+---
+
+## JAMStack, the what/why/how?
+
+The Jamstack is not about specific technologies. It’s a new way of building websites and apps that delivers:
+
+- better performance
+- higher security
+- lower cost of scaling
+- and a better developer experience.
+
+From [JAMStack.org](https://jamstack.org)
+
+---
+
+import ContentfulLogo from './images/contentful.png'
+
+## Contentful - Distribute Content to any platform
+
+<Box>
+  <img style={{width: 256}} src={ContentfulLogo} alt="Contentful logo" />
+</Box>
+
+---
+
+A modern CMS that acts like a content infrastructure which can be used as a headless CMS
+
+---
+
+## Time to build our JAMStack powered blog
+
+---
+
+## Thank you!
+
+Feel free to ask me anything
+
+---
+
+## Referrences
+
+- https://contentful.com
+- https://jamstack.org
+- https://gatsbyjs.org
