@@ -1,0 +1,16 @@
+# Site settings
+title: Landing page Boilerplate
+email: youremail@email.service
+description: A simple Jekyll starterkit for landing pages
+baseurl: ""
+url: "" 
+
+#social media
+twitter_username: username
+github_username:  username
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
