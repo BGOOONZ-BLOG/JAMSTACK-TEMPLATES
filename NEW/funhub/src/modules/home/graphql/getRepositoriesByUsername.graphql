@@ -1,0 +1,14 @@
+query getRepositoriesByUsername($username: String!) {
+  repositoryOwner(login: $username) {
+    repositories(first: 20, orderBy: {field: STARGAZERS, direction: DESC}) {
+      edges {
+        node {
+          id
+          name
+          url
+          createdAt
+        }
+      }
+    }
+  }
+}

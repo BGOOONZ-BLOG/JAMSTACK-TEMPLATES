@@ -1,0 +1,9 @@
+query getRepositoryByNameAndOwnerName($repoName: String!, $username: String!) {
+  repository(name: $repoName, owner: $username) {
+    name
+    stargazers {
+      totalCount
+    }
+    description
+  }
+}
