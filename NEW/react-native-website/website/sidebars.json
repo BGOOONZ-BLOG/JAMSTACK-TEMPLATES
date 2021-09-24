@@ -1,0 +1,151 @@
+{
+  "docs": {
+    "The Basics": [
+      "getting-started",
+      "intro-react-native-components",
+      "intro-react",
+      "handling-text-input",
+      "using-a-scrollview",
+      "using-a-listview",
+      "troubleshooting",
+      "platform-specific-code",
+      "more-resources"
+    ],
+    "Environment setup": [
+      "environment-setup",
+      "integration-with-existing-apps",
+      "building-for-tv",
+      "out-of-tree-platforms"
+    ],
+    "Workflow": [
+      "running-on-device",
+      "fast-refresh",
+      "debugging",
+      "testing-overview",
+      "libraries",
+      "typescript",
+      "upgrading"
+    ],
+    "Design": ["style", "height-and-width", "flexbox", "images", "colors"],
+    "Interaction": [
+      "handling-touches",
+      "navigation",
+      "animations",
+      "gesture-responder-system"
+    ],
+    "Inclusion": ["accessibility"],
+    "Performance": [
+      "performance",
+      "optimizing-flatlist-configuration",
+      "ram-bundles-inline-requires",
+      "profiling"
+    ],
+    "JavaScript Runtime": ["javascript-environment", "timers", "hermes"],
+    "Connectivity": ["network", "security"],
+    "Native Components and Modules": [
+      "native-modules-setup",
+      "direct-manipulation"
+    ],
+    "Guides (Android)": [
+      "native-modules-android",
+      "native-components-android",
+      "headless-js-android",
+      "signed-apk-android",
+      "removing-default-permissions"
+    ],
+    "Guides (iOS)": [
+      "native-modules-ios",
+      "native-components-ios",
+      "linking-libraries-ios",
+      "running-on-simulator-ios",
+      "communication-ios",
+      "app-extensions"
+    ]
+  },
+  "api": {
+    "APIs": [
+      "accessibilityinfo",
+      "alert",
+      "animated",
+      "animatedvalue",
+      "animatedvaluexy",
+      "appearance",
+      "appregistry",
+      "appstate",
+      "devsettings",
+      "dimensions",
+      "easing",
+      "interactionmanager",
+      "keyboard",
+      "layoutanimation",
+      "linking",
+      "panresponder",
+      "pixelratio",
+      "platformcolor",
+      "share",
+      "stylesheet",
+      "systrace",
+      "transforms",
+      "vibration",
+      {
+        "type": "subcategory",
+        "label": "Hooks",
+        "ids": ["usecolorscheme", "usewindowdimensions"]
+      },
+      {
+        "type": "subcategory",
+        "label": "Android APIs",
+        "ids": ["backhandler", "permissionsandroid", "toastandroid"]
+      },
+      {
+        "type": "subcategory",
+        "label": "iOS APIs",
+        "ids": ["actionsheetios", "dynamiccolorios", "settings"]
+      }
+    ]
+  },
+  "components": {
+    "Core Components": [
+      "components-and-apis",
+      "activityindicator",
+      "button",
+      "flatlist",
+      "image",
+      "imagebackground",
+      "keyboardavoidingview",
+      "modal",
+      "pressable",
+      "refreshcontrol",
+      "safeareaview",
+      "scrollview",
+      "sectionlist",
+      "statusbar",
+      "switch",
+      "text",
+      "textinput",
+      "touchablehighlight",
+      "touchableopacity",
+      "touchablewithoutfeedback",
+      "view",
+      "virtualizedlist",
+      {
+        "type": "subcategory",
+        "label": "Android Components",
+        "ids": ["drawerlayoutandroid", "touchablenativefeedback"]
+      },
+      {
+        "type": "subcategory",
+        "label": "iOS Components",
+        "ids": ["inputaccessoryview", "maskedviewios"]
+      }
+    ],
+    "Props": [
+      "image-style-props",
+      "layout-props",
+      "shadow-props",
+      "text-style-props",
+      "view-style-props"
+    ],
+    "Object Types": ["pressevent", "react-node", "rect"]
+  }
+}
