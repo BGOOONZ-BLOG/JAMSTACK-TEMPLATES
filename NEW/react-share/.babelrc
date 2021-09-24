@@ -1,0 +1,37 @@
+{
+  "env": {
+    "commonjs": {
+      "presets": ["env"],
+      "plugins": [
+        "transform-runtime",
+        "transform-react-jsx",
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ]
+    },
+    "es": {
+      "presets": [
+        [
+          "env",
+          { "modules": false }
+        ]
+      ],
+      "plugins": [
+        "transform-runtime",
+        "transform-react-jsx",
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ]
+    },
+    "with_react_hot_loader": {
+      "presets": ["env"],
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-runtime",
+        "transform-react-jsx",
+        "transform-class-properties",
+        "transform-object-rest-spread"
+      ]
+    }
+  }
+}
