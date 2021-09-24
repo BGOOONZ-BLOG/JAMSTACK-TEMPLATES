@@ -1,0 +1,30 @@
+.Overlay  {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, .65);
+    color: #fff;
+}
+.Overlay h2  {
+    margin-bottom: 3rem;
+}
+
+.red-btn {
+    background: #ea4c89;
+    border-radius: 40px;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+    transition: .3s;
+}
+
+.red-btn:hover {
+    background: #f15893;
+    transition: .3s;
+}
+
+.red-btn:focus {
+    background: #f1689d;
+    transition: .3s;
+}

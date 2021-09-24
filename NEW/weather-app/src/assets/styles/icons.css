@@ -1,0 +1,60 @@
+.icon-weather {
+    padding: 2rem 0;
+}
+
+.icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 6rem;
+}
+
+/* 
+    Weather icons available: 
+        clear-night, clear-day, wind, partly-cloudy-day, partly-cloudy-night, rain, snow, sleet, fog, cloudy
+*/
+
+.clearNight-icon{
+    background-image: url('../img/weather-icons/clear-night.svg');
+}
+
+.clearDay-icon{
+    background-image: url('../img/weather-icons/clear-day.svg');
+}
+
+.wind-icon{
+    background-image: url('../img/weather-icons/wind.svg');
+    padding: 4rem;
+}
+
+.partlyCloudyDay-icon{
+    background-image: url('../img/weather-icons/partly-cloudy-day.svg');
+}
+
+.partlyCloudyNight-icon{
+    background-image: url('../img/weather-icons/partly-cloudy-night.svg');
+}
+
+.rain-icon{
+    background-image: url('../img/weather-icons/rain.svg');
+    padding: 4rem;
+}
+
+.snow-icon{
+    background-image: url('../img/weather-icons/snow.svg');
+    padding: 4rem;
+}
+
+.sleet-icon{
+    background-image: url('../img/weather-icons/sleet.svg');
+    padding: 4rem;
+}
+
+.fog-icon{
+    background-image: url('../img/weather-icons/fog.svg');
+    padding: 4rem;
+}
+
+.cloudy-icon{
+    background-image: url('../img/weather-icons/cloudy.svg');
+}
