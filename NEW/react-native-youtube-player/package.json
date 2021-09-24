@@ -1,0 +1,112 @@
+{
+  "name": "react-native-yt-player",
+  "version": "1.0.4",
+  "description": "Youtube Player for React Native",
+  "main": "lib/commonjs/mobile/index.js",
+  "react-native": "lib/module/mobile/index.js",
+  "module": "lib/module/mobile/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "start:web": "parcel ./src/web/index.html",
+    "build:web": "rm -rf ./src/web/dist &&  rm -rf ./src/web/dist2 &&  parcel build ./src/web/index.html --out-dir ./src/web/dist && parcel build ./src/web/index2.js  --out-dir  ./src/web/dist2  ",
+    "start:mobile": "yarn example start",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint --ext .js,.ts,.tsx .",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn && yarn example",
+    "prepare": "bob build"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react-native-youtube",
+    "react-youtube",
+    "react-native",
+    "ios",
+    "android",
+    "tab",
+    "youtube-player",
+    "youtube"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obytes/react-native-youtube-player.git"
+  },
+  "author": "Youssouf EL Azizi <youssoufelazizi@gmail.com> (https://github.com/yjose/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/obytes/react-native-youtube-player/issues"
+  },
+  "homepage": "https://github.com/obytes/react-native-youtube-player#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@expo/vector-icons": "^9.0.0",
+    "@react-native-community/bob": "^0.4.1",
+    "@types/expo": "^32.0.13",
+    "@types/react": "^16.8.17",
+    "babel-jest": "^24.1.0",
+    "babel-preset-react-native": "^4.0.0",
+    "commitlint": "^7.5.2",
+    "conventional-changelog-cli": "^2.0.12",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-satya164": "^2.4.1",
+    "eslint-plugin-react-native-globals": "^0.1.2",
+    "husky": "^2.3.0",
+    "jest": "^24.1.0",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-inline-source": "^1.0.0",
+    "prettier": "^1.17.1",
+    "react-native-reanimated": "^1.0.1",
+    "release-it": "^10.1.0",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "@react-native-community/slider": "^1.1.2",
+    "react": "*",
+    "react-native": "*",
+    "react-native-reanimated": "*",
+    "react-native-webview": "^5.10.0",
+    "react-native-webview-invoke": "^0.5.0",
+    "youtube-player": "^5.5.2",
+    "react-native-orientation": "^3.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn typescript"
+    }
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "@react-native-community/slider": "^1.1.2",
+    "react-native-orientation": "^3.1.3",
+    "react-native-reanimated": "^1.0.1",
+    "react-native-webview": "^5.10.0",
+    "react-native-webview-invoke": "git://github.com/yjose/react-native-webview-invoke.git#fix/android_issue",
+    "youtube-player": "^5.5.2"
+  }
+}
