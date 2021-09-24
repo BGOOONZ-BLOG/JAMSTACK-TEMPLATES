@@ -1,0 +1,389 @@
+export { future as theme } from "mdx-deck/themes";
+import { Invert, FullScreenCode } from "mdx-deck/layouts";
+import { Head, Appear, Image } from "mdx-deck";
+import Flex from "./components/Flex";
+import Item from "./components/Item";
+import Sponsor from "./components/Sponsor";
+
+<Head>
+  <title>Gatsby meets Airtable</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@smakosh" />
+  <meta name="twitter:title" content="Gatsby meets Airtable" />
+  <meta
+    name="twitter:description"
+    content="Gatsby meets Airtable"
+  />
+</Head>
+
+<div style={{ textAlign: "left" }}>
+  <h1>Gatsby meets Airtable</h1>
+</div>
+
+---
+
+### Who am I?
+
+<ul style={{ textAlign: "left" }}>
+  <Appear>
+    <li>I'm Ismail Ghallou aka Smakosh,</li>
+    <li>
+      I work as a Front-end developer at Obytes with an amazing team of talented
+      people.
+    </li>
+    <li>
+      I also work on side projects like{" "}
+      <a
+        style={{ color: "#fff" }}
+        href="https://ai-hashtags.com/?ref=gatsby-slides"
+        target="_blank"
+      >
+        Ai Hashtags{" "}
+      </a>
+      & <a
+        style={{ color: "#fff" }}
+        href="https://beafapp.com/?ref=gatsby-slides"
+        target="_blank"
+      >
+        Beaf
+      </a>
+    </li>
+    <li>
+      I publish articles at my personal blog:{" "}
+      <a
+        style={{ color: "#fff" }}
+        href="https://smakosh.com/blog/?ref=gatsby-slides"
+        target="_blank"
+      >
+        smakosh.com/blog
+      </a>
+    </li>
+    <li>
+      And I contribute to OSS whenever I'm free, I'm the maker of{" "}
+      <a
+        style={{ color: "#fff" }}
+        href="https://unnamed.smakosh.com/?ref=gatsby-slides"
+        target="_blank"
+      >
+        Unnamed
+      </a>{" "}
+      [A simple colorful CSS framework].
+    </li>
+  </Appear>
+</ul>
+
+---
+
+### This Webinar is about
+
+Building a working, blazing fast and quick mvp with state of the art and easy to use tech tools
+
+---
+
+But before we get into the definitions, let's explore the choices we have
+
+---
+
+Let's keep in mind that you are a React developer and you have limited knowledge about the backend
+
+---
+
+export default Invert;
+
+Most React developers will just run `create-react-app myApp` and start coding which is the wrong approach imo
+
+---
+
+The best approach is what we're doing now, exploring the options we have, their pros/cons in order to choose the right one
+
+---
+
+Our 3 options:
+
+<Flex>
+  <Item width="30">
+    <Appear>
+      <p>CRA</p>
+      <p>CSR</p>
+    </Appear>
+  </Item>
+  <Item width="30">
+    <Appear>
+      <p>Next Js</p>
+      <p>SSR</p>
+    </Appear>
+  </Item>
+  <Item width="30">
+    <Appear>
+      <p>Gatsby Js</p>
+      <p>PR (SSR during build time)</p>
+    </Appear>
+  </Item>
+</Flex>
+
+---
+
+export default Invert;
+
+### So What's Gatsby and why is it the right choice?
+
+---
+
+<img width="128" src="https://i.imgur.com/Tckm11A.png" alt="Gatsby logo" />
+
+#### Gatsby is a new Static Site Generator - Built with React, webpack & GraphQL.
+
+##### It creates hybrid websites: think of it as a mixture of a static website and a React app.
+
+<ul style={{ textAlign: "left" }}>
+  <li>It generates HTML pages (files) at build time</li>
+  <li>
+    Navigates between pages with pushState just like a SPA using @reach/router
+  </li>
+  <li>Lets you build Static & Dynamic apps quickly.</li>
+</ul>
+
+---
+
+export default Invert;
+
+### What’s so awesome about it?
+
+---
+
+<Flex>
+  <Item width="50">
+    <ul>
+      <li>You can build both static and dynamic apps.</li>
+      <li>Use different Data sources or file formats to manage content.</li>
+      <li>
+        Implement different services easily like search/auth/cart/payments
+        etc... using Gatsby plugins.
+      </li>
+    </ul>
+  </Item>
+  <Item width="50">
+    <img src="https://i.imgur.com/f0plKJG.png" alt="chart" />
+  </Item>
+</Flex>
+
+---
+
+### Pros & cons
+
+---
+
+<Flex>
+  <Item width="50">
+    <h4>Pros</h4>
+    <ul>
+      <li>Secured as it’s static (not applicable for dynamic apps)</li>
+      <li>Cacheable</li>
+      <li>Cheap to host</li>
+      <li>Out of the box good performance, pwa & best practices.</li>
+      <li>Loads blazing fast</li>
+      <li>SPA look alike</li>
+      <li>Hot reload</li>
+    </ul>
+  </Item>
+  <Item width="50">
+    <h4>Cons</h4>
+    <ul>
+      <li>
+        Does Not generate new files on demand but does it during build time &
+        for only predicted pages. But we don't have to worry about this one
+        anymore as Google and the other crawlers can crawl JavaScript now!
+      </li>
+    </ul>
+  </Item>
+</Flex>
+
+---
+
+export default Invert;
+
+### How Gatsby renders the content?
+
+---
+
+<Flex>
+  <Item width="30">
+    <h4>Step 1</h4>
+    <ul>
+      <li>
+        It opens & validates gatsby config, then it loads the plugins after
+        deleting the html/css files of the previous build.
+      </li>
+    </ul>
+  </Item>
+  <Item width="30">
+    <h4>Step 2</h4>
+    <ul>
+      <li>
+        Gets the content (if there is any) from your files or platforms such as
+        Airtable, Contentful, Wordpress etc...
+      </li>
+    </ul>
+  </Item>
+  <Item width="30">
+    <h4>Step 3</h4>
+    <ul>
+      <li>
+        Extracts & runs the queries, then it generates necessary pages if you
+        used their APIs to do so on gatsby-node file.
+      </li>
+    </ul>
+  </Item>
+</Flex>
+
+---
+
+export default Invert;
+
+### Page & Static queries
+
+Yup, Gatsby has an internal GraphQL API built in
+
+---
+
+##### Gatsby has templates, pages & components
+
+<ul style={{ textAlign: "left" }}>
+  <li>
+    Page queries do accept variables via pageContext in gatsby-config but can
+    only be added to page components & templates (meaning that templates are basically pages that get generated during build time).
+  </li>
+  <br />
+  <li>Static queries do not accept variables and are meant to be used on components.</li>
+</ul>
+
+---
+
+export default Invert;
+
+### Gatsby plugins
+
+---
+
+<ul style={{ textAlign: "left" }}>
+  <h4>Source plugins</h4>
+  <li>
+    Add external data or content (e.g. your CMS, static files, a REST API) to
+    your Gatsby GraphQL data.
+  </li>
+</ul>
+
+<ul style={{ textAlign: "left" }}>
+  <h4>Transformers</h4>
+  <li>
+    Transform data from other formats (e.g. Markdown, YAML, CSV) to JSON
+    objects.
+  </li>
+</ul>
+
+<ul style={{ textAlign: "left" }}>
+  <h4>Services</h4>
+  <li>
+    Add different third-party services to your Gatsby site like (GA, Mixpanel,
+    Sentry, Algolia, Auth0…).
+  </li>
+</ul>
+
+---
+
+<img width="128" src="https://i.imgur.com/tih9hTW.png" alt="Airtable logo" />
+
+### Let's move on to Airtable!
+
+Airtable is simply a better Google spreadsheet that can be used like an admin panel to manage your content.
+
+---
+
+### Bases
+
+What are Airtable bases and how to query them?
+
+---
+
+### There is always a Gatsby plugin
+
+Exploring Gatsby source Airtable
+
+---
+
+### Different approaches to interact with Airtable API
+
+1. Using the source plugin, you can fetch the content during build time but you cannot perform any CRUD operation
+2. Sending requests directly to the API to perform CRUD operations
+
+---
+
+### Approach 1
+
+<Flex>
+  <Item width="50">
+    <h4>Pros</h4>
+    <ul>
+      <li>The content is static and no request to the API will be performed on run time.</li>
+      <li>The API key is not exposed to the client.</li>
+      <li>Fast as it's static</li>
+      <li>Cheap as all the requests will be performed only when you re-deploy your website.</li>
+      </ul>
+  </Item>
+  <Item width="50">
+    <h4>Cons</h4>
+    <ul>
+      <li>No CRUD operations</li>
+      <li>Not Suitable for few use cases</li>
+    </ul>
+  </Item>
+</Flex>
+
+---
+
+### Approach 2
+
+<Flex>
+  <Item width="50">
+    <h4>Pros</h4>
+    <ul>
+      <li>Basically the cons of Approach 1</li>
+     </ul>
+  </Item>
+  <Item width="50">
+    <h4>Cons</h4>
+    <ul>
+      <li>Your API key gets exposed to the client, there are workarounds to avoid this though.</li>
+    </ul>
+  </Item>
+</Flex>
+
+---
+
+### Demo time: Videography app
+
+- Gatsby app with static/dynamic content
+- CRA app with dynamic only content
+
+---
+
+export default Invert;
+
+### Questions?
+
+---
+
+### References & links
+
+- https://smakosh.com
+- https://github.com/smakosh/building-static-dynamic-apps-with-gatsby
+- https://Gatsbyjs.org
+- https://airtable.com/
+
+---
+
+### links
+
+- Slides: https://gatsby-airtable-webinar.smakosh.com/
+- Gatsby app: https://github.com/smakosh/gatsby-airtable-starter
+- CRA app: https://github.com/smakosh/CRA-Airtable
