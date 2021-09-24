@@ -1,0 +1,24 @@
+{
+  "name": "unnamed.smakosh.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "docz": "^2.0.0-rc.75",
+    "gatsby": "^2.17.7",
+    "gatsby-plugin-google-analytics": "^2.1.27",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-theme-docz": "^2.0.0-rc.68",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "react-twitter-widgets": "^1.7.1",
+    "unnamed": "^1.2.6"
+  },
+  "scripts": {
+    "start": "gatsby develop",
+    "reset": "rm -rf .cache/",
+    "clean": "rm -rf node_modules .cache/",
+    "build": "gatsby build"
+  }
+}

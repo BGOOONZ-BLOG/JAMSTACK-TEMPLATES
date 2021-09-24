@@ -1,0 +1,65 @@
+---
+name: 1. Introduction
+route: /
+---
+
+import { navigate } from 'gatsby'
+import { Timeline, Follow } from 'react-twitter-widgets'
+import introData from '../intro.json'
+
+<div className="container center-text intro">
+    <div className="branding">
+        <img src="/assets/logo.svg" alt="unnamed logo" />
+        <h2>Unnamed</h2>
+        <p>A colorful css framework made by a human not an Ai</p>
+    </div>
+    <div className="row mb2">
+        {
+            introData.map(intro => (
+                <div key={intro.id} className="column xlarge-4 small-12">
+                    <h3>{intro.title}</h3>
+                    <p>{intro.description}</p>
+                </div>
+            ))
+        }
+    </div>
+    <div className="github-buttons mb2">
+        <iframe
+            className="iframe"
+            src="https://ghbtns.com/github-btn.html?user=smakosh&repo=unnamed-css-framework&type=star&count=true"
+            frameBorder="0"
+            scrolling="0"
+            width="90px"
+            height="20px"
+            title="stars"
+        />
+        <iframe
+            className="iframe forkit"
+            src="https://ghbtns.com/github-btn.html?user=smakosh&repo=unnamed-css-framework&type=fork&count=true"
+            frameBorder="0"
+            scrolling="0"
+            width="90px"
+            height="20px"
+            title="forks"
+        />
+    </div>
+    <div className="mb2">
+        <button type="button" className="btn btn-primary gradient-green" onClick={() => navigate('/getting-started')}>
+            Getting started
+        </button>
+    </div>
+    <Follow
+        username="unnamedcss"
+    />
+    <Timeline
+        dataSource={{
+            sourceType: 'profile',
+            screenName: 'unnamedcss'
+        }}
+        options={{
+            username: 'unnamedcss',
+            height: '800'
+        }}
+        onLoad={() => console.log('Timeline is loaded!')}
+    />
+    </div>

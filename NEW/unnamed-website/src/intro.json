@@ -1,0 +1,17 @@
+[
+    {
+        "id": 0,
+        "title": "Easy to use",
+        "description": "Easy to memorize class names and feel free to copy/paste the code if you\"re too lazy to remember them."
+    },
+    {
+        "id": 1,
+        "title": "Works with SPA too",
+        "description": "import unnamed is all you need to be able to use the class names."
+    },
+    {
+        "id": 2,
+        "title": "Free and for ever",
+        "description": "You can support this project via opencollective.com/unnamed"
+    }
+]
