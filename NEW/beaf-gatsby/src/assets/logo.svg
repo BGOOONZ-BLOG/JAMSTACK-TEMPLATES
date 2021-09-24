@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286.437 226">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: tomato;
+      }
+
+      .cls-2 {
+        fill: #536dfe;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-size: 50px;
+        font-family: HelveticaNeue-Bold, Helvetica Neue;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="Group_10" data-name="Group 10" transform="translate(-831.282 -412)">
+    <circle id="Ellipse_10" data-name="Ellipse 10" class="cls-1" cx="95.479" cy="95.479" r="95.479" transform="translate(831.282 429.521)"/>
+    <circle id="Ellipse_12" data-name="Ellipse 12" class="cls-1" cx="95.479" cy="95.479" r="95.479" transform="translate(926.761 429.521)"/>
+    <circle id="Ellipse_11" data-name="Ellipse 11" class="cls-2" cx="113" cy="113" r="113" transform="translate(857 412)"/>
+    <text id="BEAF" class="cls-3" transform="translate(904 544)"><tspan x="0" y="0">BEAF</tspan></text>
+  </g>
+</svg>
