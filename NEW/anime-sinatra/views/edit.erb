@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="center-text">Edit <%= @title %></h1>
+  <form method="post" action="/<%= @title %>">
+    <input type="hidden" name="_method" value="put">
+    <div class="input-field black-input text-area-field" style="margin-bottom:2rem">
+        <span class="edit-icon"></span>
+        <textarea value="<%= @content %>" placeholder="Bio" name="content"><%= @content %></textarea>
+    </div>
+    <div class="center-text">
+      <button type="submit" class="btn btn-primary gradient-purple">Submit</button>
+    </div>
+  </form>
+</div>
