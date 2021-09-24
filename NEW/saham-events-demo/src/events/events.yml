@@ -1,0 +1,12 @@
+- title: ZEIT community meetup
+  description: First ZEIT community meetup in Morocco
+  state: happing now!
+  slug: zeit-community
+- title: React meetup
+  description: First ZEIT community meetup in Morocco
+  state: upcoming
+  slug: react-meetup
+- title: JAM stack event
+  description: First ZEIT community meetup in Morocco
+  state: passed
+  slug: jam-stack-meetup
