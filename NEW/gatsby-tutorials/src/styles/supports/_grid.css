@@ -1,0 +1,34 @@
+/* 
+ * 
+ * Grid component classes (only applied if grid is supported)
+ *
+ * NOTE: reset margins and widths here (not using utilities) so these resets
+ * only kick in if the grid layout is supported
+ * 
+ */
+
+@supports (display: grid) {
+  
+  /* .search-grid {
+    position: sticky;
+    top: 0;
+  } */
+
+  .directory-grid {
+    @media (--md) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      & > ul > li { @apply .pr4 }
+
+      & aside {
+        @apply .bl .b--black-10;
+        /* position: sticky;
+        top: 0; */
+
+        & a,
+        section { @apply .pl4 }
+      }
+    }
+  }
+}
