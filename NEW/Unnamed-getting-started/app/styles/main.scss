@@ -1,0 +1,66 @@
+// bower:scss
+// endbower
+@import "colors";
+@import "fonts";
+@import "grid";
+@import "forms";
+@import "cards";
+@import "default";
+@import "gradient";
+@import "buttons";
+
+body {
+  font-family: 'roboto';
+  padding: 0;
+  margin: 0;
+}
+
+.header  {
+
+  padding: 6rem 0;
+  text-align: center;
+  .brand  {
+
+    padding: 4rem 0;
+    .logo  {
+
+      background-image: url('http://localhost:9000/images/unnamed.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 6rem 6rem;
+    }
+    h2  {
+
+      margin-top: 8rem;
+    }
+  }
+  .github  {
+
+    color: #000;
+    font-size: 16pt;
+    font-weight: 500;
+    &:visited  {
+
+      color: $black;
+    }
+    &:focus  {
+
+      color: $black;
+    }
+  }
+  a  {
+
+    color: $blue;
+    &:visited  {
+
+      color: $blue;
+    }
+  }
+  .center-text  {
+
+    margin-top: 2rem;
+  }
+}
+
+
