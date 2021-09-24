@@ -1,0 +1,42 @@
+{
+  "name": "boilerplate-rest-api",
+  "version": "1.0.0",
+  "description": "rest api boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "database": "mongods"
+  },
+  "author": "smakosh",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "crypto-js": "^3.1.9-1",
+    "dotenv": "^6.0.0",
+    "event-stream": "^4.0.1",
+    "express": "^4.16.3",
+    "flatmap-stream": "^0.0.1-security",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.15",
+    "mixin-deep": "^2.0.1",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.7.9",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-simple-random": "^0.4.1",
+    "mongoose-unique-validator": "^2.0.2",
+    "set-value": "^3.0.1",
+    "uuid": "^3.3.2",
+    "validator": "^10.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "nodemon": "^1.18.6"
+  }
+}
