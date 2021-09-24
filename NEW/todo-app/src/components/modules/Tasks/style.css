@@ -1,0 +1,146 @@
+.tasks  {
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    background-color: #fff;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .tasks {
+        width: 80%;
+    }
+}
+
+.single-task  {
+    color: rgb(34, 34, 34);
+    background-color: #fff;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12);
+    padding: 0 1rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    transition: .2s;
+}
+
+.single-task:hover  {
+    box-shadow: 0 8px 26px 0 rgba(0,0,0,.09);
+    transform: scale(1.03);
+    transition: .2s;
+}
+
+.single-task:last-child  {
+    margin-bottom: unset;
+}
+
+.single-task-done {
+    background: #efefef;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete {
+    padding: .2rem 0;
+}
+
+.fa  {
+    cursor: pointer;
+}
+
+.fa-close {
+    color: #f03f3f;
+    font-size: 1.4em;
+}
+
+.edit-part {
+    padding: 1rem 0;
+}
+
+.edit-part .edit  {
+    color: #1f97fa;
+}
+
+.add-card  {
+    padding: 2rem 0;
+    position: relative;
+    top: -2.8rem;
+    margin-bottom: -2.8rem;
+}
+
+.add-card a  {
+    color: #fff;
+    font-weight: 500;
+    transition: .3s;
+    font-size: 16pt;
+    background: #ef5350;
+    border-radius: 100%;
+    padding: 1.2rem 1.5rem;
+}
+
+.add-card a:hover  {
+    color: #1f97fa;
+    transition: .3s;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.complete input[type=checkbox]+span:before, .complete input[type=checkbox]:checked+span:before {
+    border-radius: 100%;
+}
+
+.empty-state h2 {
+    margin-bottom: 3rem;
+}
+
+.badge {
+    padding: .2rem .5rem;
+    border-radius: 1.5rem;
+    color: #fff;
+}
+
+.Other {
+    background: #FF5722;
+}
+
+.Lifestyle {
+    background: #4CAF50;
+}
+
+.Design {
+    background: #009688;
+}
+
+.Code {
+    background: #673AB7;
+}
+
+.add-card-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+    .tasks {
+        width: 90%;
+    }
+
+    .add-card {
+        display: none;
+    }
+
+    .add-card-mobile {
+        z-index: 1;
+        display: block;
+        position: fixed;
+        padding: 1.3rem 1.4rem;
+        border-radius: 100%;
+        background: #f44336;
+        right: 1.5rem;
+        bottom: 2.5rem;
+    }
+}

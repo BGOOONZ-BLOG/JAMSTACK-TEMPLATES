@@ -1,0 +1,21 @@
+.filter-by {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter-by .active-filter {
+    background-color: #7274ff;
+    color: #fff;
+}
+
+.filter-by .active-filter:hover {
+    background-color: #7274ff;
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    .filter-by {
+        display: none;
+    }
+}
