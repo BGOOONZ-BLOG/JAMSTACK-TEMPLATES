@@ -1,0 +1,13 @@
+.btn-primary {
+    padding: .8rem 2rem;
+    background: #1fab82;
+    color: #fff;
+    text-transform: uppercase;
+    border: unset;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:focus {
+        outline: unset;
+    }
+}

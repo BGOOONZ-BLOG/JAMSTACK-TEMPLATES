@@ -1,0 +1,30 @@
+.tabs-container {
+    display: none;
+    background: #fff;
+    padding: 1rem;
+    
+    @media screen and (max-width: 680px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: -2px 0 20px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .tab {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        a {
+            color: #212121;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}

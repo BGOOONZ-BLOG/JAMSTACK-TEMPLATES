@@ -1,0 +1,34 @@
+.footer-part {
+    border-top: 3px solid #1eab81;
+
+    .footer {
+        padding: 4rem 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    
+        @media screen and (max-width: 960px) {
+            flex-direction: column;
+            text-align: center;
+
+            div {
+                align-self: center;
+            }
+        }
+    
+        ul {
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            -webkit-padding-start: 0;
+    
+            li {
+                list-style: none;
+                margin-bottom: .5rem;
+    
+                &:last-child {
+                    margin-bottom: unset;
+                }
+            }
+        }
+    }
+}

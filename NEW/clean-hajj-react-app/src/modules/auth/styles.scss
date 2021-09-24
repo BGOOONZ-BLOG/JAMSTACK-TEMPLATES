@@ -1,0 +1,40 @@
+.auth {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.auth .card, .signup .card {
+    align-self: center;
+    width: 60%;
+    padding: 4rem 2rem;
+
+    @media screen and (max-width: 1200px) {
+        width: 70%;
+    }
+
+    @media screen and (max-width: 960px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 680px) {
+        width: 90%;
+    }
+
+    .brand {
+        position: relative;
+        top: -9rem;
+        margin-bottom: -7rem;
+        text-align: center;
+    }
+
+    .center {
+        text-align: center;
+    }
+}
+
+.signup {
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+}

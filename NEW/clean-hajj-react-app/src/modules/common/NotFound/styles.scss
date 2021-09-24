@@ -1,0 +1,9 @@
+.full-height {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    .vertical-align {
+        align-self: center;
+    }
+}
