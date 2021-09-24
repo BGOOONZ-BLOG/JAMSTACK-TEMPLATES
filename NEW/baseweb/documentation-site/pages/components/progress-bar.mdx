@@ -1,0 +1,95 @@
+<!--
+Copyright (c) 2018-2020 Uber Technologies, Inc.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+import Example from '../../components/example';
+import Layout from '../../components/layout';
+import Exports from '../../components/exports';
+
+import Basic from 'examples/progress-bar/basic.js';
+import Negative from 'examples/progress-bar/negative.js';
+import WithLabel from 'examples/progress-bar/with-label.js';
+import CustomLabel from 'examples/progress-bar/custom-label.js';
+import Customization from 'examples/progress-bar/overrides.js';
+import ProgressBarRounded from 'examples/progress-bar/rounded.js';
+
+import {ProgressBar} from 'baseui/progress-bar';
+import * as ProgressBarExports from 'baseui/progress-bar';
+
+import Yard from '../../components/yard/index';
+import progressBarYardConfig from '../../components/yard/config/progress-bar';
+import ApiTable from '../../components/api-table';
+
+export default Layout;
+
+# Progress Bar
+
+<Yard placeholderHeight={28} {...progressBarYardConfig} />
+
+Indicates a wait time for actions - either within an experience flow or loading data.
+
+## Accessibility
+
+- The progress bar always sets `role="progressbar"`
+- When `infinite` is `false` (the progress bar is determinate), these determinate aria tags are set:
+  - `aria-valuenow={value}`
+  - `aria-valuemin={0}`
+  - `aria-valuemax={100}`
+- It's important to normalize the value in the range 0 - 100 to properly support screen-reader users. You can apply this formula:
+  - `(value - MIN) * 100 / (MAX - MIN)`
+
+## Examples
+
+<Example title="Progress bar Basic Usage" path="progress-bar/basic.js">
+  <Basic />
+</Example>
+
+<Example
+  title="Progress bar with Negative Color"
+  path="progress-bar/negative.js"
+>
+  <Negative />
+</Example>
+
+<Example
+  title="Progress bar with Visible Label"
+  path="progress-bar/with-label.js"
+>
+  <WithLabel />
+</Example>
+
+<Example
+  title="Progress bar with Custom Label"
+  path="progress-bar/custom-label.js"
+>
+  <CustomLabel />
+</Example>
+
+<Example title="Progress bar with Overrides" path="progress-bar/overrides.js">
+  <Customization />
+</Example>
+
+## Progress bar rounded
+
+There also is a rounded version of the progress bar
+
+<Example title="Basic Usage" path="progress-bar/rounded.js">
+  <ProgressBarRounded />
+</Example>
+
+## API
+
+<ApiTable
+  title="Progress Bar props"
+  config={progressBarYardConfig}
+  types={require('!!extract-react-types-loader!../../../src/progress-bar/progressbar.js')}
+/>
+
+<Exports
+  component={ProgressBarExports}
+  title="Progress Bar exports"
+  path="baseui/progress-bar"
+/>

@@ -1,0 +1,15 @@
+node_modules
+dist
+flow-typed
+storybook-static
+coverage
+docs
+webpack.e2e.config.js
+documentation-site/.next
+documentation-site/examples
+documentation-site/posts.js
+documentation-site/cheat-sheet.js
+public
+out
+packages/eslint-plugin-baseui/__tests__/example-config
+__artifacts__

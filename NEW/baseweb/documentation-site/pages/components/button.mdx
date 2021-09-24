@@ -1,0 +1,109 @@
+<!--
+Copyright (c) 2018-2020 Uber Technologies, Inc.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+import Example from '../../components/example';
+import Exports from '../../components/exports';
+import Layout from '../../components/layout';
+import SEO from '../../components/meta-seo';
+
+import BasicButton from 'examples/button/basic.js';
+import Kinds from 'examples/button/kinds.js';
+import Sizes from 'examples/button/sizes.js';
+import WithEnhancer from 'examples/button/with-enhancers.js';
+import States from 'examples/button/states.js';
+import Shapes from 'examples/button/shapes.js';
+import Dropdown from 'examples/button/dropdown.js';
+import ButtonAsAnAnchor from 'examples/button/as-an-anchor.js';
+
+import {Button, KIND} from 'baseui/button';
+import * as ButtonExports from 'baseui/button';
+import Upload from 'baseui/icon/upload';
+import ArrowRight from 'baseui/icon/arrow-right';
+
+import Yard from '../../components/yard/index';
+import buttonYardConfig from '../../components/yard/config/button';
+import ApiTable from '../../components/api-table';
+
+<SEO
+  description="Buttons provide cues for actions and events. These fundamental components allow users to process actions or navigate an experience."
+  keywords="button, react button, react cta, react call to action"
+/>
+
+export default Layout;
+
+# Button
+
+<Yard placeholderHeight={52} {...buttonYardConfig} />
+
+Buttons provide cues for actions and events. These fundamental components allow users to process actions or navigate an experience.
+
+## When to use
+
+When a person:
+
+- submits a form,
+- starts a new task / action.
+
+The Button component has 4 different `kind` variants: `primary`, `secondary`, `tertiary`, and `minimal`.
+
+**Primary** buttons are intended to be used as the leading trigger or cue of action. Primary buttons are
+bold with a dominant color background and white text/icons. These are to be used sparingly as the
+sole action of a view. Primary buttons can be accompanied by secondary button to balance action hierarchy.
+
+**Secondary** buttons should be used in combination with a primary button as a way to create action hierarchy.
+Secondary buttons are subdued in value with the primary color text to compliment the primary buttons.
+
+**Tertiary** buttons can used as a substitute for a secondary buttons, but should never take the role of a
+primary button action. As the name implies, it’s offered to supplement to create variation within an experience.
+
+## Examples
+
+<Example title="Basic usage" path="button/basic.js">
+  <BasicButton />
+</Example>
+
+<Example title="Kinds" path="button/kinds.js">
+  <Kinds />
+</Example>
+
+<Example title="States" path="button/states.js">
+  <States />
+</Example>
+
+<Example title="Sizes" path="button/sizes.js">
+  <Sizes />
+</Example>
+
+<Example title="Shapes" path="button/shapes.js">
+  <Shapes />
+</Example>
+
+<Example title="Adding enhancers" path="button/with-enhancers.js">
+  <WithEnhancer />
+</Example>
+
+<Example title="As a dropdown" path="button/dropdown.js">
+  <Dropdown />
+</Example>
+
+<Example title="As an anchor" path="button/as-an-anchor.js">
+  <ButtonAsAnAnchor />
+</Example>
+
+## API
+
+<ApiTable
+  title="Button props"
+  config={buttonYardConfig}
+  types={require('!!extract-react-types-loader!../../../src/button/button.js')}
+/>
+
+<Exports
+  component={ButtonExports}
+  title="Button exports"
+  path="baseui/button"
+/>

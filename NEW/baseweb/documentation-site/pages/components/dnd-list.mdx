@@ -1,0 +1,97 @@
+<!--
+Copyright (c) 2018-2020 Uber Technologies, Inc.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+import Example from '../../components/example';
+import Layout from '../../components/layout';
+import Exports from '../../components/exports';
+
+import Basic from 'examples/dnd-list/basic.js';
+import Stateless from 'examples/dnd-list/stateless.js';
+import Removable from 'examples/dnd-list/removable.js';
+import VaryingHeights from 'examples/dnd-list/varyingHeights.js';
+import CustomDragHandle from 'examples/dnd-list/customDragHandle.js';
+import OverrideLabel from 'examples/dnd-list/overrideLabel.js';
+
+import {StatefulList} from 'baseui/dnd-list';
+import * as ListExports from 'baseui/dnd-list';
+import Yard from '../../components/yard/index';
+import dndListYardConfig from '../../components/yard/config/dnd-list';
+import ApiTable from '../../components/api-table';
+
+export default Layout;
+
+# Drag and Drop List
+
+<Yard placeholderHeight={208} {...dndListYardConfig} />
+
+Allows users to create vertically sortable lists supporting drag and drop, touch or keyboard input.
+
+## When to use
+
+- When a user wants to change a collection order.
+
+## Accessibility
+
+- `tab` and `shift+tab` to focus items
+- `space` to `lift` or drop the item
+- `j` or `arrow down` to move the lifted item down
+- `k` or `arrow up` to move the lifted item up
+- `escape` to cancel the lift and return the item to its initial position
+
+This component also supports iOS and Android browsers and screen readers.
+
+## Examples
+
+<Example title="Drag and Drop basic usage" path="dnd-list/stateless.js">
+  <Stateless />
+</Example>
+
+<Example title="Drag and Drop stateful usage" path="dnd-list/basic.js">
+  <Basic />
+</Example>
+
+<Example
+  title="Drag and Drop with removable items"
+  path="dnd-list/removable.js"
+>
+  <Removable />
+</Example>
+
+<Example
+  title="Drag and Drop with varying heights"
+  path="dnd-list/varyingHeights.js"
+>
+  <VaryingHeights />
+</Example>
+
+<Example
+  title="Drag and Drop with custom drag handle"
+  path="dnd-list/customDragHandle.js"
+>
+  <CustomDragHandle />
+</Example>
+
+<Example
+  title="Drag and Drop with label override"
+  path="dnd-list/overrideLabel.js"
+>
+  <OverrideLabel />
+</Example>
+
+## API
+
+<ApiTable
+  title="Dnd List props"
+  config={dndListYardConfig}
+  types={require('!!extract-react-types-loader!../../../src/dnd-list/list.js')}
+/>
+
+<Exports
+  component={ListExports}
+  title="Dnd List exports"
+  path="baseui/dnd-list"
+/>

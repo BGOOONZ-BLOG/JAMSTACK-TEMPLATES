@@ -1,0 +1,60 @@
+<!--
+Copyright (c) 2018-2020 Uber Technologies, Inc.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+import Example from '../../components/example';
+import Layout from '../../components/layout';
+import Exports from '../../components/exports';
+
+import CardBasic from 'examples/card/basic.js';
+import CardWithImageCta from 'examples/card/image-cta.js';
+import CardWithThumbnailCta from 'examples/card/thumbnail-cta.js';
+
+import {Card, StyledBody, StyledAction, StyledThumbnail} from 'baseui/card';
+import {Button} from 'baseui/button';
+import * as CardExports from 'baseui/card';
+
+import Yard from '../../components/yard/index';
+import cardYardConfig from '../../components/yard/config/card';
+import ApiTable from '../../components/api-table';
+
+export default Layout;
+
+# Card
+
+<Yard placeholderHeight={178} {...cardYardConfig} />
+
+Cards are a self-contained unit of information, usually as part of a feed or series of similar
+content. Cards have a dynamic range of modifiers that allow text-only, text and illustration,
+and photography. All cards have an option to include text links or buttons as a primary action.
+The entire card can become an active click-target.
+
+## Examples
+
+<Example title="Card basic usage" path="card/basic.js">
+  <CardBasic />
+</Example>
+
+<Example title="Card with image and call to action" path="card/image-cta.js">
+  <CardWithImageCta />
+</Example>
+
+<Example
+  title="Card with thumbnail and call to action"
+  path="card/thumbnail-cta.js"
+>
+  <CardWithThumbnailCta />
+</Example>
+
+## API
+
+<ApiTable
+  title="Card props"
+  config={cardYardConfig}
+  types={require('!!extract-react-types-loader!../../../src/card/card.js')}
+/>
+
+<Exports component={CardExports} title="Card exports" path="baseui/card" />

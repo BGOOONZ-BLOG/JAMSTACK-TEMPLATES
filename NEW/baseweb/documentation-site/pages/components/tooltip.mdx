@@ -1,0 +1,62 @@
+<!--
+Copyright (c) 2018-2020 Uber Technologies, Inc.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+import Example from '../../components/example';
+import Layout from '../../components/layout';
+import Exports from '../../components/exports';
+
+import Stateful from 'examples/tooltip/stateful.js';
+import StatefulComplexContent from 'examples/tooltip/stateful-complex-content.js';
+
+import {StatefulTooltip} from 'baseui/tooltip';
+import * as TooltipExports from 'baseui/tooltip';
+import {styled} from 'baseui';
+
+import Yard from '../../components/yard/index';
+import tooltipYardConfig from '../../components/yard/config/tooltip';
+import ApiTable from '../../components/api-table';
+
+export default Layout;
+
+# Tooltip
+
+<Yard placeholderHeight={20} {...tooltipYardConfig} />
+
+Tooltips provide additional information upon hover or click. They often include
+contextual helper text to guide the user through the experience or provide more detail.
+Tooltips in Base have no arrow indicator and can be placed around any point of an object.
+Motion helps to reinforce its origin position.
+
+## Examples
+
+<Example title="Tooltip stateful example" path="tooltip/stateful.js">
+  <Stateful />
+</Example>
+
+<Example
+  title="Tooltip stateful example with complex content"
+  path="tooltip/stateful-complex-content.js"
+>
+  <StatefulComplexContent />
+</Example>
+
+Keep in mind that the tooltip's background may not have enough contrast with your content. In these situations, you can either wrap your content in a theme or override the styles for individual components.
+
+## API
+
+<ApiTable
+  title="Tooltip props"
+  config={tooltipYardConfig}
+  types={require('!!extract-react-types-loader!../../../src/tooltip/tooltip.js')}
+/>
+
+<Exports
+  component={TooltipExports}
+  title="Tooltip exports"
+  path="baseui/tooltip"
+  cheatsheet={false}
+/>

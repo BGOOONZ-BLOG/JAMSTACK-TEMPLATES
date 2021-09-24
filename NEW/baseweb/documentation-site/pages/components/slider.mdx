@@ -1,0 +1,106 @@
+<!--
+Copyright (c) 2018-2020 Uber Technologies, Inc.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
+import Example from '../../components/example';
+import Layout from '../../components/layout';
+import Exports from '../../components/exports';
+
+import Basic from 'examples/slider/basic.js';
+import Marks from 'examples/slider/marks.js';
+import Stateful from 'examples/slider/stateful.js';
+import Disabled from 'examples/slider/disabled.js';
+import Range from 'examples/slider/range.js';
+import StepMinMax from 'examples/slider/step-min-max.js';
+import CustomTicks from 'examples/slider/custom-ticks.js';
+import Customization from 'examples/slider/overrides.js';
+
+import {StatefulSlider as Slider} from 'baseui/slider';
+import * as SliderExports from 'baseui/slider';
+
+import Yard from '../../components/yard/index';
+import sliderYardConfig from '../../components/yard/config/slider';
+import ApiTable from '../../components/api-table';
+
+export default Layout;
+
+# Slider
+
+<Yard placeholderHeight={90} {...sliderYardConfig} />
+
+Control input with sliding axis to choose a single value or range between min and max values.
+
+There are two slider options in Base that allow users to select a single value or a range.
+Each slider has a primary control handle that cues user interaction.
+
+## Accessibility
+
+Slider sets these attributes:
+
+- `role="slider"`
+- `aria-valuemin`
+- `aria-valuemax`
+- `aria-valuenow`
+
+Thumbs can be focused and **controlled by the keyboard**:
+
+- `tab` and `shift+tab` to focus thumbs
+- `arrow up` or `arrow right` or `k` to increase the thumb value by one step
+- `arrow down` or `arrow left` or `j` to decrease the thumb value by one step
+- `page up` to increase the thumb value by ten steps
+- `page down` to decrease the thumb value by ten steps
+
+The component is also **optimized for iOS and Android devices**.
+
+## Examples
+
+<Example title="Basic usage" path="slider/basic.js">
+  <Basic />
+</Example>
+
+<Example title="Marks" path="slider/marks.js">
+  <Marks />
+</Example>
+
+<Example title="Range" path="slider/range.js">
+  <Range />
+</Example>
+
+<Example title="Disabled state" path="slider/disabled.js">
+  <Disabled />
+</Example>
+
+<Example title="Custom min, max and step" path="slider/step-min-max.js">
+  <StepMinMax />
+</Example>
+
+<Example title="Custom ticks" path="slider/custom-ticks.js">
+  <CustomTicks />
+</Example>
+
+<Example title="Overrides usage" path="slider/overrides.js">
+  <Customization />
+</Example>
+
+<Example title="Stateful (uncontrolled) usage" path="slider/stateful.js">
+  <Stateful />
+</Example>
+
+As with many of our components, there is also an [uncontrolled](https://reactjs.org/docs/uncontrolled-components.html) version, `StatefulSlider`, which manages its own state.
+
+## API
+
+<ApiTable
+  title="Slider props"
+  config={sliderYardConfig}
+  types={require('!!extract-react-types-loader!../../../src/slider/slider.js')}
+/>
+
+<Exports
+  component={SliderExports}
+  title="Slider exports"
+  path="baseui/slider"
+/>
