@@ -1,0 +1,8 @@
+{
+	"DOMESTIC": 1,
+	"INTERNATIONAL": 2,
+	"properties": {
+		"1": { "label": "domestic" },
+		"2": { "label": "international" }
+	}
+}

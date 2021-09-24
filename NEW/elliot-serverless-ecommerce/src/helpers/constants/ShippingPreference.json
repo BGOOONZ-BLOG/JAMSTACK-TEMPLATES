@@ -1,0 +1,8 @@
+{
+	"STANDARD": 1,
+	"IN_STORE": 2,
+	"properties": {
+		"1": { "label": "Standard Shipping" },
+		"2": { "label": "In-store Self Checkout" }
+	}
+}

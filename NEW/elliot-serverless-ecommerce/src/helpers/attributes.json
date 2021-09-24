@@ -1,0 +1,16 @@
+{
+	"SIZE": 1,
+	"COLOR": 2,
+	"FABRIC": 3,
+	"OCCASION": 4,
+	"TEXTURE": 5,
+	"MATERIAL": 6,
+	"properties": {
+		"1": { "key": "size" },
+		"2": { "key": "color" },
+		"3": { "key": "fabric" },
+		"4": { "key": "occasion" },
+		"5": { "key": "texture" },
+		"6": { "key": "material" }
+	}
+}

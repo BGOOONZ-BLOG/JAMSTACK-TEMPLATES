@@ -1,0 +1,20 @@
+{
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"react/display-name": 0,
+		"react/prop-types": 0,
+		"no-prototype-builtins": 0,
+		"no-mixed-spaces-and-tabs": 0,
+		"no-async-promise-executor": 0
+	},
+	"parser": "babel-eslint",
+	"globals": {
+		"React": "writable"
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"es6": true
+	}
+}

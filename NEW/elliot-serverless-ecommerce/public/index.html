@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="robots" content="noindex, nofollow" />
+		<script>
+			const getBrowserLocale = defaultLocale => {
+				if (navigator.languages != undefined) {
+					return navigator.languages[0].split("-")[0] || defaultLocale || "en";
+				} else {
+					return navigator.language || defaultLocale || "en";
+				}
+			};
+			window.location.href = `/${getBrowserLocale()}`;
+		</script>
+	</head>
+</html>

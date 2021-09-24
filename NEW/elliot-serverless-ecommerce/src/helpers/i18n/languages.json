@@ -1,0 +1,90 @@
+[
+	{
+		"title": "English",
+		"code": "en"
+	},
+	{
+		"title": "French",
+		"code": "fr"
+	},
+	{
+		"title": "German",
+		"code": "de"
+	},
+	{
+		"title": "Danish",
+		"code": "da"
+	},
+	{
+		"title": "Greek",
+		"code": "el"
+	},
+	{
+		"title": "Spanish",
+		"code": "es"
+	},
+	{
+		"title": "Finnish",
+		"code": "fi"
+	},
+	{
+		"title": "Hindi",
+		"code": "hi"
+	},
+	{
+		"title": "Italian",
+		"code": "it"
+	},
+	{
+		"title": "Japanese",
+		"code": "ja"
+	},
+	{
+		"title": "Korean",
+		"code": "ko"
+	},
+	{
+		"title": "Malay",
+		"code": "ms"
+	},
+	{
+		"title": "Dutch",
+		"code": "nl"
+	},
+	{
+		"title": "Norwegian",
+		"code": "no"
+	},
+	{
+		"title": "",
+		"code": "pl"
+	},
+	{
+		"title": "Polish",
+		"code": "pt"
+	},
+	{
+		"title": "Russian",
+		"code": "ru"
+	},
+	{
+		"title": "Swedish",
+		"code": "sv"
+	},
+	{
+		"title": "Turkish",
+		"code": "tr"
+	},
+	{
+		"title": "Vietnamese",
+		"code": "vi"
+	},
+	{
+		"title": "Chinese",
+		"code": "zh"
+	},
+	{
+		"title": "Arabic",
+		"code": "ar"
+	}
+]

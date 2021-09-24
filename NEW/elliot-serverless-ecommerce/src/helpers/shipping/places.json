@@ -1,0 +1,16 @@
+{
+	"types": {
+		"address": "address",
+		"streetNumber": "street_number",
+		"route": "route",
+		"streetAddress": "street_address",
+		"country": "country",
+		"state": "administrative_area_level_1",
+		"locality": "locality",
+		"sublocality": "sublocality",
+		"postalCode": "postal_code",
+		"postalCodeSuffix": "postal_code_suffix",
+		"regions": "(regions)",
+		"cities": "(cities)"
+	}
+}

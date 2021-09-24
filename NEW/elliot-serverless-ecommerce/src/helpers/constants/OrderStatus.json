@@ -1,0 +1,12 @@
+{
+	"SUCCEEDED": 1,
+	"FAILED": 2,
+	"FAILED_OUT_OF_STOCK": 3,
+	"PROCESSING": 4,
+	"properties": {
+		"1": { "label": "succeeded" },
+		"2": { "label": "failed" },
+		"3": { "label": "failedOutOfStock" },
+		"4": { "label": "processing" }
+	}
+}
