@@ -1,0 +1,66 @@
+- title: The Perceptron - Understanding the maths under the hood
+  summary: During this talk, I covered a brief history about Ai, defined ML/DL & explained the difference between the two, started by recognizing an unknown type of flower from basic data we collected and how intuition managed to draw a line between the two types of flowers from our dataset, then I moved on to automate what we manually did and ended up making a Perceptron from scratch.
+  slides: https://docs.google.com/presentation/d/1YTl4g36z22bJJmzfHtNd9QEibeotgNmieikO6G7gK3U/edit?usp=sharing
+  date: 2018-04-03T10:38:01.889Z
+  thumbnail: "./assets/talks/perceptron-talk.jpg"
+  demos:
+    - link: https://github.com/smakosh/Perceptron-neural-net-from-scratch
+- title: Introducing Gatsby, the best SSG for React developers.
+  summary: In this talk, I introduced Gatsby to developers, which is one of the three choices you'd consider when building a React app, it offers pre-rendering, has a huge community who have shipped many Gatsby plugins that help make the process easy, I discussed about what's so awesome about it, how it renders content & built a blog with markdown files in 5 minutes live coding with the attendees.
+  slides: https://introducing-gatsby.netlify.com/#0
+  date: 2019-02-14T10:38:01.889Z
+  thumbnail: "./assets/talks/first-gatsby-talk.jpg"
+  demos:
+    - link: https://github.com/smakosh/devc-blog
+- title: Building static & dynamic apps with Gatsby
+  summary: In this talk, I covered the same points I mentioned in my previous Gatsby talk as most of the attendees haven't any idea what Gatsby was, then I jumped into the dynamic Not Todo app I built during that morning which is connected to a REST API built quickly with express & mongoDB, I went through how to setup the routes using reach-router & how to use the "createPages" Gatsby API to create that page (since it's a SPA, there is only one page generated).
+  slides: https://building-apps-with-gatsby.netlify.com/
+  date: 2019-05-14T10:38:01.889Z
+  thumbnail: "./assets/talks/second-gatsby-talk.jpg"
+  demos:
+    - link: https://github.com/smakosh/devc-blog
+    - link: https://github.com/smakosh/gatsby-app-starter-rest-api
+- title: Introducing Gatsby, — The modern web framework for building blazing fast websites and apps.
+  summary: In this talk, I re-introduced Gatsby as a modern web framework for building blazing fast websites and apps, answered the "what? why and how?" questions with a demo at the end of a static website consuming data from a single YAML file and deployed to ZEIT now in less than 10s.
+  slides: https://zeit-gatsby-talk.smakosh.com/
+  date: 2019-12-17T10:38:01.889Z
+  thumbnail: "./assets/talks/zeit-gatsby-talk.jpeg"
+  watch: https://youtu.be/nXRmOrN7m9o?t=1465
+  demos:
+    - link: https://github.com/smakosh/saham-events-demo
+- title: The evolution of grid systems on the web
+  summary: talked about CSS Grid systems, the reason we need them, life before/after CSS and the clearfix hack, flexBox and CSS Grid
+  slides: https://2020.css-grids-talk.talks.smakosh.com/
+  date: 2020-02-27T10:38:01.889Z
+  thumbnail: "./assets/talks/grid-systems-talk.jpeg"
+- title: Build a blog with Contentful and Gatsby
+  summary: talked about headless CMS, why it's better than traditional CMS, micro introduction to Gatsby, what's the JAMStack...
+  slides: https://2020.headless-cms.talks.smakosh.com/
+  date: 2020-02-29T10:38:01.889Z
+  thumbnail: "./assets/talks/rabatjs-talk.jpeg"
+  demos:
+    - link: https://github.com/smakosh/test-i18n-contentful
+- title: Gatsby js talk and workshop
+  summary: In this talk, I re-introduced Gatsby as a modern web framework for building blazing fast websites and apps, answered the "what? why and how?" questions with a demo at the end, built a blog and deployed to ZEIT now.
+  slides: https://docs.google.com/presentation/d/10UJ2G8CbcZK6EUHKA-MHsNxJwDgLPYH6C06sceeVPAw/edit?usp=sharing
+  date: 2020-03-08T10:38:01.889Z
+  thumbnail: "./assets/talks/wtm-talk.jpeg"
+  demos:
+    - link: https://github.com/smakosh/wtm-blog
+- title: WTH is static site regeneration
+  summary: Quick explanation of Icremental Static Regeneration using Next js, I explained the difference between SSG vs SSR vs CSR vs ISR, gave an introduction about Next js, I went through Next's 3 API functions one by one and showed a demo of Ontwik.dev and how are we using ISR for listing approved developers and their profiles.
+  slides: http://2020.wth-isg.talks.smakosh.com/
+  date: 2020-10-22T10:38:01.889Z
+  thumbnail: "./assets/talks/blablaconf.jpeg"
+  watch: https://youtu.be/p7yLbnxGvlw
+  demos:
+    - link: https://github.com/smakosh/blablaconf-talk-2020
+- title: Learn to implement authentication cheaply and securely
+  summary: An online workshop on which I shared my knowledge about the different approaches to implement authentication, the pros and cons of each with a demo at the end implementing session http only cookie authentication using the hype beast.
+  slides: https://2021.custom-auth.talks.smakosh.com
+  date: 2021-03-31T10:38:01.889Z
+  thumbnail: "./assets/talks/open-source-days-talks.jpeg"
+  watch: https://www.facebook.com/Opensdays/videos/158209136082880/?story_fbid=158209136082880&id=1381978402047509
+  demos:
+    - link: https://github.com/smakosh/auth-ts-boilerplate
+    - link: https://github.com/smakosh/auth-ts-next-boilerplate

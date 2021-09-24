@@ -1,0 +1,12 @@
+- title: Ontwik
+  image: "../src/assets/images/side-projects/ontwik.png"
+  link: https://ontwik-dev.com/founders
+  description: Connecting remote developers with founders anywhere in the world
+- title: Ai Hashtags
+  image: "../src/assets/images/side-projects/aihashtags.jpg"
+  link: https://ai-hashtags.com
+  description: Generate hashtags using Artificial intelligence
+- title: Catch it 1.0
+  image: "../src/assets/images/side-projects/catchit.jpg"
+  link: https://play.google.com/store/apps/details?id=com.smakosh.atchit
+  description: Collect stars & avoid obstacles while trying to put the ball into the right basket to unlock new levels!
