@@ -1,0 +1,49 @@
+{
+  "name": "@littleplusbig/gatsby-theme-legals-prismic",
+  "author": "Allan Pooley",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/littleplusbig/gatsby-theme-legals-prismic"
+  },
+  "bugs": {
+    "url": "https://github.com/littleplusbig/gatsby-theme-legals-prismic/issues"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin",
+    "prismic",
+    "terms and conditions",
+    "privacy policy",
+    "legal"
+  ],
+  "version": "1.0.12",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.41",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.41",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "@mdx-js/react": "^1.0.27",
+    "gatsby-plugin-theme-ui": "^0.2.25",
+    "gatsby-source-prismic": "^2.3.0-alpha.3",
+    "react-helmet": "^5.2.1",
+    "react-intersection-observer": "^8.24.1",
+    "styled-components": "^4.3.2",
+    "theme-ui": "^0.2.25"
+  }
+}
