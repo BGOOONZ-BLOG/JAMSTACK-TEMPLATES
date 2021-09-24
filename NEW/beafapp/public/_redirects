@@ -1,0 +1,7 @@
+# Redirect domain aliases to primary domain
+https://www.app.beafapp.com/* https://app.beafapp.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://beafapp.netlify.com/* https://app.beafapp.com/:splat 301!
+
+/*    /index.html   200

@@ -1,0 +1,58 @@
+[
+  {
+    "label": "Entertainment",
+    "value": "entertainment"
+  },
+  {
+    "label": "Sports",
+    "value": "sports"
+  },
+  {
+    "label": "Politics",
+    "value": "politics"
+  },
+  {
+    "label": "Gaming",
+    "value": "gaming"
+  },
+  {
+    "label": "Movies",
+    "value": "movies"
+  },
+  {
+    "label": "Memes",
+    "value": "memes"
+  },
+  {
+    "label": "Automotive",
+    "value": "automotive"
+  },
+  {
+    "label": "Fashion",
+    "value": "fashion"
+  },
+  {
+    "label": "Food",
+    "value": "food"
+  },
+  {
+    "label": "Tech",
+    "value": "tech"
+  },
+  {
+    "label": "Science",
+    "value": "science"
+  },
+  {
+    "label": "Animals",
+    "value": "animals"
+  },
+  {
+    "label": "Photography",
+    "value": "photography"
+  },
+  {
+    "label": "Travel",
+    "value": "travel"
+  }
+]
