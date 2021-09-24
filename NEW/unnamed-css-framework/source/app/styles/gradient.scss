@@ -1,0 +1,14 @@
+@import "colors";
+@import "mixins";
+
+.gradient-green {
+  @include linear-gradient($green, $blue);
+}
+
+.gradient-orange {
+  @include linear-gradient($yellow, $orange);
+}
+
+.gradient-purple {
+  @include linear-gradient($dark-blue, $purple);
+}
