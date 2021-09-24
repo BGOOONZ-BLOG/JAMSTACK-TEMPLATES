@@ -1,0 +1,158 @@
+import "./styles.css";
+
+<Head>
+	<title>How to implement authentication cheaply and securely</title>
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@smakosh" />
+	<meta
+		name="twitter:title"
+		content="How to implement authentication cheaply and securely"
+	/>
+	<meta
+		name="twitter:description"
+		content="How to implement authentication cheaply and securely"
+	/>
+	<meta
+		name="twitter:image"
+		content="https://2021.custom-auth.talks.smakosh.com/images/card.png"
+	/>
+</Head>
+
+# Hello world!
+
+---
+
+## Implementing authentication cheaply and securely
+
+---
+
+## About me
+
+- I'm Ismail Ghallou, a Software Consultant @ [The Landing](https://thelanding.app?utm_source=smakosh_talk)
+  > A social design platform that empowers everyone to create together
+- Building [Ontwik](https://ontwik-dev.com?utm_source=smakosh_talk) with my friend Jeffrey!
+  > A hiring platform that connects remote developers with founders around the world
+- I love open source, building digital products and watching anime.
+  > My fav project is a portfolio theme that you can deploy in one click and Code geass is my fav anime
+
+---
+
+Key points
+
+<Steps>
+
+- Custom auth vs services
+- Sessions with cookies vs jwt with localStorage
+- Pros/Cons of jwt
+- Pros/Cons of http only cookie
+- Demo
+
+</Steps>
+
+---
+
+## Let's get started!
+
+---
+
+## Custom auth VS services
+
+---
+
+## Custom implementation
+
+### Pros:
+
+- Cheap
+- Secure (relatively) if you use trusted and maintained libraries
+- Control over data
+
+---
+
+### Cons:
+
+- You're responsible if something breaks
+- Costs time and engineering resources to implement
+
+---
+
+import services from "./images/services.png";
+
+<div style={{ width: 900, height: 900 }}>
+	<img src={services} />
+</div>
+
+---
+
+## Services
+
+### Pros
+
+- Time saving and doesn't require lot of engineering resources to implement
+- Support provided by the service
+- The service is responsible if something breaks
+- Scalable automatically
+- Secure (relatively) and the service is responsible if something goes wrong
+
+---
+
+### Cons
+
+- It gets expensive
+- You don't have full control over your data
+- Locked to the service
+
+---
+
+## Sessions with cookies VS JWT with localStorage
+
+---
+
+## Sessions with cookies
+
+### Pros
+
+- Secure, not vulnerable to XSS and CSRF attacks (if you set it to be http only and define the sameSite property with `Lax` as value)
+- Cookie can be passed through sub domains
+
+---
+
+### Cons
+
+- Cookie cannot be passed cross domains
+- Requires server side validation each time the user visits a protected route
+
+---
+
+## JWT with localStorage
+
+### Pros
+
+- You can set the same token on different applications/domains
+- Doesn't require server side validation each time the user visits a protected route
+
+---
+
+### Cons
+
+- vulnerable to XSS attacks
+
+---
+
+## Time to code!
+
+---
+
+## Questions time!
+
+---
+
+Refs:
+
+- GraphQL Docs
+- GraphQL Codegen Docs
+- https://redislabs.com/solutions/use-cases/session-management/
+- Next js Docs
+- MDX Deck and Code surf for slides
+- https://en.wikipedia.org/wiki/Cross-site_request_forgery
+- https://en.wikipedia.org/wiki/Cross-site_scripting
