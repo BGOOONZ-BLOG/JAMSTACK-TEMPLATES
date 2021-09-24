@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,700);
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scroll {
+  height: 600px !important;
+  overflow-y: scroll;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.success {
+  padding-top: 80px;
+}
+
+.success .card {
+  border-radius: 30px;
+}
+
+.success .card .resized2 {
+  padding-top: 10px;
+}
+
+.success .card .resized2 i {
+  font-size: 32pt;
+  transition: .5s;
+}
+
+.success .card .resized2 i:hover {
+  opacity: 0.6;
+  transition: .5s;
+}
+
+.success .card .resized2 img {
+  border: 2px #93d49a solid;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.success .card .resized2 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.09), 0 2px 10px 0 rgba(0, 0, 0, 0.09);
+  transition: all .2s ease-in-out;
+}
+
+.success .card .card-action {
+  background: none;
+}
+
+.damn {
+  height: 100vh;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.damn .meh .card {
+  padding: 80px 60px;
+}
+
+.damn .meh .card .logo {
+  background-image: url("../img/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 40px;
+  padding-right: 59px;
+}
+
+.damn .meh .card .button-rounded {
+  border-radius: 40px;
+}
+
+.damn .meh .card .meh2 {
+  margin-bottom: 60px;
+}
+
+.damn .meh .card .file-field {
+  margin-bottom: 40px;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(meh.woff2) format("woff2");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

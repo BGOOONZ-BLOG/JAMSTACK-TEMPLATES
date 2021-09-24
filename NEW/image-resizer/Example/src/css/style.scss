@@ -1,0 +1,115 @@
+@import 'variables';
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,700);
+
+.scroll  {
+
+  height: 600px !important;
+  overflow-y : scroll;
+  padding-top: 80px;
+  padding-bottom: 60px;
+
+}
+
+.success  {
+
+   padding-top: 80px;
+  .card  {
+
+    border-radius: 30px;
+    .resized2  {
+
+      padding-top: 10px;
+      i  {
+
+        font-size: 32pt;
+        transition: .5s;
+        &:hover {
+
+          opacity: 0.6;
+          transition: .5s;
+        }
+      }
+      img  {
+
+        border: 2px $green solid;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+    &:hover  {
+
+      transform: scale(1.1);
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.09),
+                  0 2px 10px 0 rgba(0,0,0,0.09);
+      transition: all .2s ease-in-out;
+    }
+      }
+      }
+      .card-action  {
+
+        background: none;
+      }
+  }
+}
+
+
+.damn  {
+
+  height: 100vh;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  .meh  {
+
+    .card  {
+
+       padding: 80px 60px;
+
+       .logo  {
+
+         background-image: url('../img/logo.svg');
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+         padding-top: 40px;
+         padding-right: 59px;
+       }
+       .button-rounded  {
+
+         border-radius: 40px;
+       }
+       .meh2  {
+
+         margin-bottom: 60px;
+       }
+       .file-field  {
+
+         margin-bottom: 40px;
+       }
+    }
+  }
+}
+
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(meh.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
