@@ -15,7 +15,7 @@
         "classnames": "^2.2.6",
         "lodash": "^4.17.21",
         "marked": "^2.0.0",
-        "moment": "^2.29.1",
+        "moment": "^2.29.2",
         "moment-strftime": "^0.5.0",
         "next": "^10.0.7",
         "node-sass": "^5.0.0",
