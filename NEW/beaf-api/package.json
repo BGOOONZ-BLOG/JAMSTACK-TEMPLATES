@@ -18,7 +18,7 @@
     "crypto-js": "^3.1.9-1",
     "dotenv": "^6.0.0",
     "event-stream": "^4.0.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "flatmap-stream": "^0.0.1-security",
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.15",
