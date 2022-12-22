@@ -20,7 +20,7 @@
     "event-stream": "^4.0.1",
     "express": "^4.16.3",
     "flatmap-stream": "^0.0.1-security",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "mixin-deep": "^2.0.1",
     "moment": "^2.22.2",
