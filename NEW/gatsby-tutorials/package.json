@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/plugin-transform-react-constant-elements": "^7.0.0-rc.1",
     "autoprefixer": "^9.3.1",
-    "gatsby": "^2.0.45",
+    "gatsby": "^2.32.13",
     "gatsby-cli": "^2.4.5",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-google-analytics": "^2.0.7",
