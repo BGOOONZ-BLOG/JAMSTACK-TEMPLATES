@@ -7,7 +7,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^8.0.0",
-    "gatsby": "^2.4.3",
+    "gatsby": "^5.3.3",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.0",
